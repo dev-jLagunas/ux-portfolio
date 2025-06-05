@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #819a91;
+  --color-link: hsl(49, 100%, 7%);
+  --color-line: hsl(49, 23%, 90%);
+  --color-tag: hsl(49, 22%, 88%);
+}
