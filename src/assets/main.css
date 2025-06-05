@@ -1,8 +1,13 @@
 @import 'tailwindcss';
+@import './fonts/fonts.css';
+
+/******************Global Styles***********************/
+body {
+  max-width: 90vw;
+  margin-inline: auto;
+}
 
 @theme {
-  --color-primary: #819a91;
-  --color-link: hsl(49, 100%, 7%);
-  --color-line: hsl(49, 23%, 90%);
-  --color-tag: hsl(49, 22%, 88%);
+  --font-headings: 'Montserrat', sans-serif;
+  --font-body: 'Monda', sans-serif;
 }
