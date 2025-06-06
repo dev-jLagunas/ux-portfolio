@@ -1,25 +1,12 @@
 <script setup>
-import { computed, watch, ref } from 'vue'
 import artistImg from '@/assets/images/hero-artist.png'
 import builderImg from '@/assets/images/hero-builder.png'
 import designerImg from '@/assets/images/hero-designer.png'
 import developerImg from '@/assets/images/hero-developer.png'
 import dreamerImg from '@/assets/images/hero-dreamer.png'
 import photographerImg from '@/assets/images/hero-photographer.png'
-import arrowDark from '@/assets/svgs/arrow-dark.svg'
-import arrowLight from '@/assets/svgs/arrow-light.svg'
-
-// Reactive Properties
-const isDarkMode = ref(false)
-
-// Computed Properties
-const arrowIcon = computed(() => (isDarkMode.value ? arrowLight : arrowDark))
-
-// Watchers
-watch(isDarkMode, (val) => {
-  const root = document.documentElement
-  val ? root.classList.add('dark') : root.classList.remove('dark')
-})
+// import arrowDark from '@/assets/svgs/arrow-dark.svg'
+// import arrowLight from '@/assets/svgs/arrow-light.svg'
 </script>
 
 <template>
