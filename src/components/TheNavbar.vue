@@ -35,23 +35,32 @@ watch(isDarkMode, (val) => {
       </div>
     </div>
     <ul class="flex-row-center w-full">
-      <li class="nav-list-styles hover:cursor-pointer">
-        <img :src="workIcon" alt="Monitor design svg" class="h-7" />
-        <p>Work</p>
-      </li>
-      <li class="nav-list-styles hover:cursor-pointer">
-        <img :src="userIcon" alt="user shaped svg" class="h-7" />
-        <p>About</p>
-      </li>
-      <li class="nav-list-styles hover:cursor-pointer">
-        <img :src="personalIcon" alt="Mona lisa svg" class="h-7" />
-        <p>Personal</p>
-      </li>
+      <router-link to="/work"
+        ><li class="nav-list-styles hover:cursor-pointer">
+          <img :src="workIcon" alt="Monitor design svg" class="h-7" />
+          <p>Work</p>
+        </li></router-link
+      >
+      <router-link to="/about"
+        ><li class="nav-list-styles hover:cursor-pointer">
+          <img :src="userIcon" alt="user shaped svg" class="h-7" />
+          <p>About</p>
+        </li></router-link
+      >
+      <router-link to="/personal">
+        <li class="nav-list-styles hover:cursor-pointer">
+          <img :src="personalIcon" alt="Mona lisa svg" class="h-7" />
+          <p>Personal</p>
+        </li></router-link
+      >
+
       <div class="flex flex-col gap-2 items-center lg:flex-row">
         <li>
-          <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
-            Contact
-          </button>
+          <router-link to="/contact"
+            ><button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+              Contact
+            </button></router-link
+          >
         </li>
         <li>
           <button

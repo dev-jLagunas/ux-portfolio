@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import hamburgerDarkIcon from '@/assets/svgs/hamburger-menu-dark.svg'
@@ -7,6 +8,8 @@ import hamburgerLightIcon from '@/assets/svgs/hamburger-menu-white.svg'
 import userSvg from '@/assets/svgs/white-user.svg'
 import workSvg from '@/assets/svgs/white-design-works.svg'
 import personalSvg from '@/assets/svgs/white-artwork.svg'
+
+const router = useRouter()
 
 // Reactive Properties
 const isOpen = ref(false)
@@ -19,6 +22,11 @@ const nameLogo = computed(() => (isDarkMode.value ? nameLogoLight : nameLogoDark
 // Methods
 function toggleSidebar() {
   isOpen.value = !isOpen.value
+}
+
+function navigateAndClose(path) {
+  isOpen.value = false
+  router.push(path)
 }
 
 // Watchers
@@ -50,21 +58,27 @@ watch(isDarkMode, (val) => {
     <aside :class="['sidebar', { open: isOpen }]">
       <div class="flex-col-center h-full w-full">
         <ul class="text-white text-xl">
-          <li class="nav-list-styles mb-4">
+          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateAndClose('/work')">
             <img :src="workSvg" alt="Monitor design svg" class="h-7" />
             <p>Work</p>
           </li>
-          <li class="nav-list-styles mb-4">
+          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateAndClose('/about')">
             <img :src="userSvg" alt="user shaped svg" class="h-7" />
             <p>About</p>
           </li>
-          <li class="nav-list-styles mb-4">
+          <li
+            class="nav-list-styles mb-4 hover:cursor-pointer"
+            @click="navigateAndClose('/personal')"
+          >
             <img :src="personalSvg" alt="Mona lisa svg" class="h-7" />
             <p>Personal</p>
           </li>
           <div class="flex-col-center gap-2">
             <li>
-              <button class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer">
+              <button
+                class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer"
+                @click="navigateAndClose('/contact')"
+              >
                 Contact
               </button>
             </li>
