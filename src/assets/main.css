@@ -23,11 +23,20 @@ Tailwind Variables
   --color-pink: #fe6567;
   --color-blue: #2ed6fd;
   --color-green: #006a61;
+  --color-dark: #0f0f0f;
 }
 
 /***************************************
 Tailwind Custom Classes
 *****************************************/
+body {
+  @apply bg-white text-black transition-colors;
+}
+
+.dark body {
+  @apply bg-dark text-white;
+}
+
 .flex-row-center {
   @apply flex items-center justify-evenly;
 }

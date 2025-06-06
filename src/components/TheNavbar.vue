@@ -1,8 +1,28 @@
 <script setup>
-import nameLogo from '@/assets/images/name_logo_sm.png'
-import userSvg from '@/assets/svgs/nav-user.svg'
-import workSvg from '@/assets/svgs/nav-design-works.svg'
-import personalSvg from '@/assets/svgs/nav-artwork.svg'
+import { ref, watch, computed } from 'vue'
+import nameLogoDark from '@/assets/images/name_logo_sm.png'
+import nameLogoLight from '@/assets/images/name-logo-light.png'
+import userDarkSvg from '@/assets/svgs/dark-user.svg'
+import workDarkSvg from '@/assets/svgs/dark-design-works.svg'
+import personalDarkSvg from '@/assets/svgs/dark-artwork.svg'
+import userWhiteSvg from '@/assets/svgs/white-user.svg'
+import workWhiteSvg from '@/assets/svgs/white-design-works.svg'
+import personalWhiteSvg from '@/assets/svgs/white-artwork.svg'
+
+// Reactive Properties
+const isDarkMode = ref(false)
+
+// Computed Properties
+const workIcon = computed(() => (isDarkMode.value ? workWhiteSvg : workDarkSvg))
+const userIcon = computed(() => (isDarkMode.value ? userWhiteSvg : userDarkSvg))
+const personalIcon = computed(() => (isDarkMode.value ? personalWhiteSvg : personalDarkSvg))
+const nameLogo = computed(() => (isDarkMode.value ? nameLogoLight : nameLogoDark))
+
+// Watchers
+watch(isDarkMode, (val) => {
+  const root = document.documentElement
+  val ? root.classList.add('dark') : root.classList.remove('dark')
+})
 </script>
 
 <template>
@@ -16,15 +36,15 @@ import personalSvg from '@/assets/svgs/nav-artwork.svg'
     </div>
     <ul class="flex-row-center w-full">
       <li class="nav-list-styles hover:cursor-pointer">
-        <img :src="workSvg" alt="Monitor design svg" class="h-7" />
+        <img :src="workIcon" alt="Monitor design svg" class="h-7" />
         <p>Work</p>
       </li>
       <li class="nav-list-styles hover:cursor-pointer">
-        <img :src="userSvg" alt="user shaped svg" class="h-7" />
+        <img :src="userIcon" alt="user shaped svg" class="h-7" />
         <p>About</p>
       </li>
       <li class="nav-list-styles hover:cursor-pointer">
-        <img :src="personalSvg" alt="Mona lisa svg" class="h-7" />
+        <img :src="personalIcon" alt="Mona lisa svg" class="h-7" />
         <p>Personal</p>
       </li>
       <div class="flex flex-col gap-2 items-center lg:flex-row">
@@ -34,7 +54,10 @@ import personalSvg from '@/assets/svgs/nav-artwork.svg'
           </button>
         </li>
         <li>
-          <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+          <button
+            class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
+            @click="isDarkMode = !isDarkMode"
+          >
             Lights Off
           </button>
         </li>

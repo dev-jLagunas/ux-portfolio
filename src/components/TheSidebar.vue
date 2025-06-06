@@ -1,18 +1,31 @@
 <script setup>
-import { ref } from 'vue'
-import nameLogo from '@/assets/images/name_logo_sm.png'
-import hamburgerIcon from '@/assets/svgs/nav-hamburger-menu.svg'
-import userSvg from '@/assets/svgs/side-user.svg'
-import workSvg from '@/assets/svgs/side-design-works.svg'
-import personalSvg from '@/assets/svgs/side-artwork.svg'
+import { ref, watch, computed } from 'vue'
+import nameLogoDark from '@/assets/images/name_logo_sm.png'
+import nameLogoLight from '@/assets/images/name-logo-light.png'
+import hamburgerDarkIcon from '@/assets/svgs/hamburger-menu-dark.svg'
+import hamburgerLightIcon from '@/assets/svgs/hamburger-menu-white.svg'
+import userSvg from '@/assets/svgs/white-user.svg'
+import workSvg from '@/assets/svgs/white-design-works.svg'
+import personalSvg from '@/assets/svgs/white-artwork.svg'
 
 // Reactive Properties
 const isOpen = ref(false)
+const isDarkMode = ref(false)
+
+// Computed Properties
+const hamburgerIcon = computed(() => (isDarkMode.value ? hamburgerLightIcon : hamburgerDarkIcon))
+const nameLogo = computed(() => (isDarkMode.value ? nameLogoLight : nameLogoDark))
 
 // Methods
 function toggleSidebar() {
   isOpen.value = !isOpen.value
 }
+
+// Watchers
+watch(isDarkMode, (val) => {
+  const root = document.documentElement
+  val ? root.classList.add('dark') : root.classList.remove('dark')
+})
 </script>
 
 <template>
@@ -49,7 +62,10 @@ function toggleSidebar() {
               </button>
             </li>
             <li>
-              <button class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer">
+              <button
+                class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer"
+                @click="isDarkMode = !isDarkMode"
+              >
                 Lights Off
               </button>
             </li>
