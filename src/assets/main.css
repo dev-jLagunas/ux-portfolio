@@ -1,13 +1,37 @@
 @import 'tailwindcss';
 @import './fonts/fonts.css';
 
-/******************Global Styles***********************/
+/***************************************
+Global Styles
+*****************************************/
+
 body {
-  max-width: 90vw;
+  max-width: 1000px;
   margin-inline: auto;
 }
 
+/***************************************
+Tailwind Variables
+*****************************************/
+
 @theme {
+  /* Fonts */
   --font-headings: 'Montserrat', sans-serif;
   --font-body: 'Monda', sans-serif;
+
+  /* Colors */
+  --color-pink: #fe6567;
+  --color-blue: #2ed6fd;
+  --color-green: #006a61;
+}
+
+/***************************************
+Tailwind Custom Classes
+*****************************************/
+.nav-list-styles {
+  @apply flex flex-col items-center;
+}
+
+.nav-btn-styles {
+  @apply border p-1 rounded-sm;
 }
