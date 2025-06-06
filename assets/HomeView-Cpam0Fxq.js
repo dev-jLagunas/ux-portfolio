@@ -1,0 +1,1 @@
+import{_ as n,c as r,a as o,F as t,o as s}from"./index-EnCc10Qo.js";const l={};function a(i,e){return s(),r(t,null,[e[0]||(e[0]=o("h1",null,"home view here",-1)),e[1]||(e[1]=o("p",null,"home view content here for example hero component",-1)),e[2]||(e[2]=o("p",null,"perhaps quick view of work. in cards view",-1))],64)}const p=n(l,[["render",a]]);export{p as default};
