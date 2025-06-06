@@ -29,10 +29,10 @@ watch(isDarkMode, (val) => {
   <nav class="hidden font-headings px-2 md:flex md:mt-4 md:gap-8">
     <div class="flex items-center mr-8">
       <img :src="nameLogo" alt="designer logo" class="h-20" />
-      <div class="flex items-start gap-1 text-2xl ml-2 lg:text-3xl">
+      <router-link class="flex items-start gap-1 text-2xl ml-2 lg:text-3xl" to="/">
         <p><span class="text-pink font-bold">J</span>uan</p>
         <p><span class="text-blue font-bold">L</span>agunas</p>
-      </div>
+      </router-link>
     </div>
     <ul class="flex-row-center w-full">
       <router-link to="/work"

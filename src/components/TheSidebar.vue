@@ -37,7 +37,7 @@ watch(isDarkMode, (val) => {
 </script>
 
 <template>
-  <div class="mt-4 md:hidden">
+  <div class="mt-4 md:hidden font-headings">
     <div class="flex-row-center">
       <img :src="nameLogo" alt="designer logo" class="h-20" />
       <div class="flex gap-1 text-3xl -ml-2">

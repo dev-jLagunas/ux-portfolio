@@ -1,9 +1,9 @@
-<script setup></script>
+<script setup>
+import TheHero from '@/components/TheHero.vue'
+</script>
 
 <template>
-  <h1>home view here</h1>
-  <p>home view content here for example hero component</p>
-  <p>perhaps quick view of work. in cards view</p>
+  <TheHero />
 </template>
 
 <style scoped></style>
