@@ -1,0 +1,1 @@
+import{_ as o,a as n,d as r,F as s,o as t}from"./index-CUEJzp9G.js";const a={};function l(f,e){return t(),n(s,null,[e[0]||(e[0]=r("h1",null,"work view goes here",-1)),e[1]||(e[1]=r("p",null,"perhaps a different quick view of projects",-1))],64)}const p=o(a,[["render",l]]);export{p as default};

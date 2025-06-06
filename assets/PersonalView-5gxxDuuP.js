@@ -1,0 +1,1 @@
+import{_ as r,a as n,d as o,F as s,o as a}from"./index-CUEJzp9G.js";const l={};function t(p,e){return a(),n(s,null,[e[0]||(e[0]=o("h1",null,"personal view goes here",-1)),e[1]||(e[1]=o("p",null,"all my personal work like artwork and photos go here",-1))],64)}const f=r(l,[["render",t]]);export{f as default};
