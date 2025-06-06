@@ -36,9 +36,16 @@ watch(isDarkMode, (val) => {
         <p><span class="text-pink font-bold">J</span>uan</p>
         <p><span class="text-blue font-bold">L</span>agunas</p>
       </div>
-      <button @click="toggleSidebar" class="hover:cursor-pointer">
-        <img :src="hamburgerIcon" alt="hamburger icon" class="h-12" />
-      </button>
+      <div class="relative group">
+        <button @click="toggleSidebar" class="hover:cursor-pointer">
+          <img :src="hamburgerIcon" alt="hamburger icon" class="h-12" />
+        </button>
+        <span
+          class="absolute -translate-x-1/2 top-full text-sm bg-pink text-white p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50"
+        >
+          See menu
+        </span>
+      </div>
     </div>
     <aside :class="['sidebar', { open: isOpen }]">
       <div class="flex-col-center h-full w-full">
