@@ -1,1 +1,0 @@
-import{_ as r,a as t,d as o,F as s,o as n}from"./index-CUEJzp9G.js";const a={};function l(u,e){return n(),t(s,null,[e[0]||(e[0]=o("h1",null,"about me view goes here",-1)),e[1]||(e[1]=o("p",null,"whatever is related to me personally goes here",-1))],64)}const d=r(a,[["render",l]]);export{d as default};
