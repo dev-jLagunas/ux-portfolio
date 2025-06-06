@@ -1,0 +1,1 @@
+import{_ as r,c as n,b as o,F as s,o as l}from"./index-BjveVy12.js";const a={};function t(p,e){return l(),n(s,null,[e[0]||(e[0]=o("h1",null,"personal view goes here",-1)),e[1]||(e[1]=o("p",null,"all my personal work like artwork and photos go here",-1))],64)}const f=r(a,[["render",t]]);export{f as default};
