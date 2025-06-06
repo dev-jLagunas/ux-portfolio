@@ -28,6 +28,14 @@ Tailwind Variables
 /***************************************
 Tailwind Custom Classes
 *****************************************/
+.flex-row-center {
+  @apply flex items-center justify-evenly;
+}
+
+.flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
 .nav-list-styles {
   @apply flex flex-col items-center;
 }
