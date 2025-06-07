@@ -1,0 +1,1 @@
+import{_ as o,c as n,b as r,F as s,o as t}from"./index-DNIYTLN1.js";const a={};function l(f,e){return t(),n(s,null,[e[0]||(e[0]=r("h1",null,"work view goes here",-1)),e[1]||(e[1]=r("p",null,"perhaps a different quick view of projects",-1))],64)}const i=o(a,[["render",l]]);export{i as default};
