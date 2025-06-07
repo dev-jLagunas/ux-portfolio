@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @import './fonts/fonts.css';
-@import url('https://fonts.googleapis.com/css?family=Monoton');
 
 /***************************************
 Global Styles
@@ -9,8 +8,7 @@ Global Styles
 body {
   max-width: 1100px;
   margin-inline: auto;
-  padding-inline: 10px;
-  margin-bottom: 5rem;
+  padding-inline: 1rem;
 }
 
 /***************************************

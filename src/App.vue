@@ -1,6 +1,7 @@
 <script setup>
 import TheNavbar from './components/TheNavbar.vue'
 import TheSidebar from './components/TheSidebar.vue'
+import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import TheSidebar from './components/TheSidebar.vue'
       <component :is="Component" />
     </transition>
   </router-view>
+  <TheFooter />
 </template>
 
 <style scoped>

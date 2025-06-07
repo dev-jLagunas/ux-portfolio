@@ -1,6 +1,4 @@
 <script setup>
-import instagramIcon from '@/assets/svgs/instagram-icon.svg'
-
 // Props
 defineProps({
   title: {
@@ -24,7 +22,11 @@ defineProps({
   >
     <h2 class="font-bold">{{ title }}</h2>
     <img :src="icon" alt="" class="h-20 pb-2" />
-    <button class="text-sm border-2 border-pink p-2 rounded-sm tracking-widest">See Now</button>
+    <button
+      class="text-sm border-2 border-pink p-2 rounded-sm tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer"
+    >
+      See Now
+    </button>
   </article>
 </template>
 
