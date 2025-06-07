@@ -1,13 +1,29 @@
 <script setup>
 import instagramIcon from '@/assets/svgs/instagram-icon.svg'
+
+// Props
+defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  icon: {
+    type: String,
+    required: true,
+  },
+  url: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
 <template>
   <article
-    class="rounded-md h-fit p-4 font-headings flex flex-col justify-center items-center w-fit mt-8 border border-gray-200"
+    class="rounded-md h-fit p-4 font-headings flex flex-col justify-center items-center w-full mt-8 border border-gray-200"
   >
-    <h2 class="font-bold">My Instagram</h2>
-    <img :src="instagramIcon" alt="" class="h-20 pb-2" />
+    <h2 class="font-bold">{{ title }}</h2>
+    <img :src="icon" alt="" class="h-20 pb-2" />
     <button class="text-sm border-2 border-pink p-2 rounded-sm tracking-widest">See Now</button>
   </article>
 </template>
