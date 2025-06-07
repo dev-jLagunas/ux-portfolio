@@ -40,10 +40,10 @@ watch(isDarkMode, (val) => {
   <div class="mt-4 md:hidden font-headings">
     <div class="flex-row-center">
       <img :src="nameLogo" alt="designer logo" class="h-20" />
-      <div class="flex gap-1 text-3xl -ml-2">
+      <router-link to="/" class="flex gap-1 text-3xl -ml-2">
         <p><span class="text-pink font-bold">J</span>uan</p>
         <p><span class="text-blue font-bold">L</span>agunas</p>
-      </div>
+      </router-link>
       <div class="relative group">
         <button @click="toggleSidebar" class="hover:cursor-pointer">
           <img :src="hamburgerIcon" alt="hamburger icon" class="h-12" />
