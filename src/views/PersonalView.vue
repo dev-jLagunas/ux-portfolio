@@ -21,28 +21,30 @@ import flanPhoto from '@/assets/images/personal/flan-cafe.jpg'
 import picoPhoto from '@/assets/images/personal/pico-cafe.jpg'
 import lunchPhoto from '@/assets/images/personal/lunch-cafe.jpg'
 import mokoPhoto from '@/assets/images/personal/moko-cafe.jpg'
+import christmasArt from '@/assets/images/personal/christmas-art.jpg'
+import catArt from '@/assets/images/personal/cat-art.jpg'
+import mindArt from '@/assets/images/personal/mind-art.jpg'
+import newYearsArt from '@/assets/images/personal/newyears-art.jpg'
+import cafeUi from '@/assets/images/personal/cafe-ui.png'
+import chicanoUi from '@/assets/images/personal/chicano-ui.png'
+import galleryUi from '@/assets/images/personal/gallery-ui.png'
+import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
 </script>
 
 <template>
   <section>
     <article class="font-headings mt-8">
-      <h2 class="text-6xl mb-4 text-center md:text-start">Digital Art</h2>
-      <p>
-        Here I want to add some paragraph quickly explaining digital art. and here is a bit more
-        filler text just to seee how it looks
+      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Photography</h2>
+      <p class="mb-2 text-sm md:text-base">
+        I bought a Fuji X-A5 when we started the café, and that’s where my love for photography
+        began. I taught myself to use the manual controls and spent a lot of time doing food
+        photography for the café. Experimenting with new techniques, backgrounds, and environments
+        was genuinely exciting.
       </p>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
-        <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
-        <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
-        <DisplayCard title="Walking Fido" :content="walkingFido" bgColor="bg-blue" />
-      </div>
-    </article>
-    <article class="font-headings mt-8">
-      <h2 class="text-6xl mb-4 text-center md:text-start">Photography</h2>
-      <p>
-        Here I want to add some paragraph quickly explaining digital art. and here is a bit more
-        filler text just to seee how it looks
+      <p class="mb-2 text-sm md:text-base">
+        I’m still actively challenging myself with new shots, because capturing life is such a
+        beautiful thing. I don’t actually know if I’m any good at it but that matters far less than
+        how much I truly enjoy it.
       </p>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <DisplayCard title="Moko the King" :content="catPhoto" bgColor="bg-pink" />
@@ -56,10 +58,38 @@ import mokoPhoto from '@/assets/images/personal/moko-cafe.jpg'
       </div>
     </article>
     <article class="font-headings mt-8">
-      <h2 class="text-6xl mb-4 text-center md:text-start">Cafe Triangle</h2>
-      <p>
-        Here I want to add some paragraph quickly explaining digital art. and here is a bit more
-        filler text just to seee how it looks
+      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Digital Art</h2>
+      <p class="mb-2 text-sm md:text-base">
+        I’ve always enjoyed sketching and drawing on paper, but it wasn’t until last year that I
+        started exploring digital art. I use Linearity Curve on my iPad to create, and I
+        occasionally use other apps to add text and experiment with graphic design.
+      </p>
+      <p class="mb-4 text-sm md:text-base">
+        I’m drawn to color and simplicity, which I think comes through not only in my art, but also
+        in my photography and UI design.
+      </p>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
+        <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
+        <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
+        <DisplayCard title="Walking Fido" :content="walkingFido" bgColor="bg-blue" />
+        <DisplayCard title="Christmas Mummies" :content="christmasArt" bgColor="bg-pink" />
+        <DisplayCard title="Introspective Cat" :content="catArt" bgColor="bg-blue" />
+        <DisplayCard title="Mind Crimes" :content="mindArt" bgColor="bg-pink" />
+        <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
+      </div>
+    </article>
+    <article class="font-headings mt-8">
+      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Cafe Triangle</h2>
+      <p class="mb-2 text-sm md:text-base">
+        Café Triangle was the café my wife and I used to own in Japan. It was one of the most
+        transformative experiences of my life and also one of the most practical. It taught me a
+        multitude of skills that align perfectly with UX: empathy, branding, service design,
+        problem-solving, and visual communication.
+      </p>
+      <p class="mb-2 text-sm md:text-base">
+        Our days were filled with delicious pastries, lovely guests, wonderful animal friends, and
+        the joy of being next to my wife all day, every day.
       </p>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <DisplayCard title="Anko and Moe" :content="ankoPhoto" bgColor="bg-pink" />
@@ -70,6 +100,26 @@ import mokoPhoto from '@/assets/images/personal/moko-cafe.jpg'
         <DisplayCard title="Pico De Gallo" :content="picoPhoto" bgColor="bg-blue" />
         <DisplayCard title="Lunch Items" :content="lunchPhoto" bgColor="bg-pink" />
         <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
+      </div>
+    </article>
+    <article class="font-headings mt-8">
+      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">UI Design</h2>
+      <p class="mb-2 text-sm md:text-base">
+        I started teaching myself frontend development about two and a half years ago. I began with
+        the foundations — HTML, CSS, and JavaScript — then moved on to frameworks like Angular and
+        Vue.
+      </p>
+      <p class="mb-2 text-sm md:text-base">
+        While I’m not as active with development as I once was, I still continue learning. These
+        days, my focus has shifted more toward full-stack. I’m currently working through the
+        Boot.dev course to learn Python, TypeScript, Go, and deepen my understanding of backend
+        development.
+      </p>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <DisplayCard title="Anko and Moe" :content="cafeUi" bgColor="bg-pink" />
+        <DisplayCard title="Tres Leches Cake" :content="galleryUi" bgColor="bg-blue" />
+        <DisplayCard title="Chai Mix" :content="tiktokUi" bgColor="bg-pink" />
+        <DisplayCard title="Cookie Marketing" :content="chicanoUi" bgColor="bg-blue" />
       </div>
     </article>
   </section>
