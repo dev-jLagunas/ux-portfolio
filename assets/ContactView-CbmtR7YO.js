@@ -1,0 +1,1 @@
+import{_ as n,c as o,b as t,F as r,o as s}from"./index-Df4lCAfs.js";const a={};function c(l,e){return s(),o(r,null,[e[0]||(e[0]=t("h1",null,"contact view goes here",-1)),e[1]||(e[1]=t("p",null,"contact me links go here. links to my contact info here",-1))],64)}const f=n(a,[["render",c]]);export{f as default};
