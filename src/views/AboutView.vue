@@ -1,8 +1,12 @@
-<script setup></script>
+<script setup>
+import StorySection from '@/components/reusable/StorySection.vue'
+</script>
 
 <template>
-  <h1>about me view goes here</h1>
-  <p>whatever is related to me personally goes here</p>
+  <div class="my-16">
+    <h2 class="text-center my-8 font-bold text-5xl">My Story</h2>
+    <StorySection />
+  </div>
 </template>
 
 <style scoped></style>
