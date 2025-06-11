@@ -11,17 +11,23 @@ import globalIcon from '@/assets/svgs/skills/global-skill.svg'
 import listeningIcon from '@/assets/svgs/skills/listen-skill.svg'
 import problemIcon from '@/assets/svgs/skills/problem-skill.svg'
 import codeIcon from '@/assets/svgs/skills/code-skill.svg'
-import growthIcon from '@/assets/svgs/skills/growth-skill.svg'
-import innovateIcon from '@/assets/svgs/skills/innovate-skill.svg'
-import visualIcon from '@/assets/svgs/skills/visual-skill.svg'
-import systemsIcon from '@/assets/svgs/skills/systems-icon.svg'
 import operationsIcon from '@/assets/svgs/skills/operational-skill.svg'
 import adaptIcon from '@/assets/svgs/skills/adapt-skill.svg'
 import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
+import informationIcon from '@/assets/svgs/skills/architecture-skill.svg'
+import optimizeIcon from '@/assets/svgs/skills/optimize-skill.svg'
+import marketingIcon from '@/assets/svgs/skills/marketing-skill.svg'
+import systemsIcon from '@/assets/svgs/skills/systems-icon.svg'
+import userIcon from '@/assets/svgs/skills/user-centered-skill.svg'
+import collabIcon from '@/assets/svgs/skills/collaborative-skill.svg'
+import learnerIcon from '@/assets/svgs/skills/learner-skill.svg'
+import impactIcon from '@/assets/svgs/skills/impact-skill.svg'
+import balanceIcon from '@/assets/svgs/skills/balance-skill.svg'
+import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
 </script>
 
 <template>
-  <section class="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-8">
+  <section class="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-8 font-headings">
     <article class="flex flex-col items-center justify-center relative md:mb-8">
       <img :src="selfPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
@@ -44,7 +50,8 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         UX design is the perfect way to bring a lifetime of problem-solving and refining ideas to
         life.
       </p>
-      <ul class="flex justify-between items-center mt-8 w-full px-2 gap-2">
+      <h4 class="mt-4 tracking-widest">Skills Acquired</h4>
+      <div class="flex justify-between items-center mt-2 w-full px-2 gap-2 relative">
         <figure class="flex justify-center items-center flex-col gap-2">
           <img :src="empathyIcon" alt="" class="h-10" />
           <figcaption class="text-sm text-center">User Empathy</figcaption>
@@ -57,7 +64,7 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
           <img :src="problemIcon" alt="" class="h-10" />
           <figcaption class="text-sm text-center">Problem Solving</figcaption>
         </figure>
-      </ul>
+      </div>
       <ArrowTransition
         customClass="scale-75 md:absolute md:-rotate-90 md:-right-18 md:-top-14 md:scale-50  lg:scale-40 lg:-right-18 "
       />
@@ -87,7 +94,8 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         perspectives,
         <strong>and deepened my ability to connect with and understand diverse users.</strong>
       </p>
-      <ul class="flex justify-between items-center mt-8 w-full px-2 gap-2">
+      <h4 class="mt-4 tracking-widest">Skills Acquired</h4>
+      <div class="flex justify-between items-center mt-2 w-full px-2 gap-2">
         <figure class="flex justify-center items-center flex-col gap-2">
           <img :src="globalIcon" alt="" class="h-10" />
           <figcaption class="text-sm text-center">Cross-Cultural</figcaption>
@@ -101,7 +109,7 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
           <img :src="listeningIcon" alt="" class="h-10" />
           <figcaption class="text-sm text-center">User Advocacy</figcaption>
         </figure>
-      </ul>
+      </div>
       <ArrowTransition customClass="scale-75 md:hidden" />
     </article>
     <article
@@ -128,7 +136,8 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         It was during this period that <strong>I first encountered the term "UX,"</strong> a casual
         introduction that deeply planted a seed for my future path.
       </p>
-      <ul class="flex justify-between items-center mt-8 w-full gap-2">
+      <h4 class="mt-4 tracking-widest">Skills Acquired</h4>
+      <div class="flex justify-between items-center mt-2 w-full gap-2">
         <figure class="flex justify-center items-center flex-col gap-2">
           <img :src="codeIcon" alt="" class="h-10" />
           <figcaption class="text-sm text-center">Front-End Development</figcaption>
@@ -139,9 +148,9 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
           <img :src="creativityIcon" alt="" class="h-10" />
-          <figcaption class="text-sm text-center">Problem Solving</figcaption>
+          <figcaption class="text-sm text-center">Creative Execution</figcaption>
         </figure>
-      </ul>
+      </div>
       <ArrowTransition
         customClass="scale-75  md:absolute md:rotate-90 md:-top-14 md:-left-20 lg:-rotate-90 lg:-left-18 md:scale-50 lg:scale-40 "
       />
@@ -169,20 +178,21 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         "UX." This hands-on application, combined with extensive UX reading and completing Google's
         Coursera UX course, definitively cemented
       </p>
-      <ul class="flex justify-between items-center mt-8 w-full">
+      <h4 class="mt-4 tracking-widest">Skills Acquired</h4>
+      <div class="flex justify-between items-center mt-2 w-full gap-2 text-center">
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="empathyIcon" alt="" class="h-10" />
+          <img :src="informationIcon" alt="" class="h-10" />
           <figcaption class="text-sm">User Empathy</figcaption>
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="systemsIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">Systems Thinking</figcaption>
+          <img :src="marketingIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">Marketing Strategy</figcaption>
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="problemIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">Problem Solving</figcaption>
+          <img :src="optimizeIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">Analytics & Optimization</figcaption>
         </figure>
-      </ul>
+      </div>
       <ArrowTransition
         customClass="scale-75 md:hidden lg:block lg:absolute lg:rotate-90 lg:scale-40 lg:-top-14 lg:-left-18"
       />
@@ -208,20 +218,21 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         >
         I'm eager to jump in, collaborate, and continue learning and growing within the UX field.
       </p>
-      <ul class="flex justify-between items-center mt-8 w-full">
+      <h4 class="mt-4 tracking-widest">What I Bring</h4>
+      <div class="flex justify-between items-center mt-2 w-full gap-2 text-center">
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="empathyIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">User Empathy</figcaption>
+          <img :src="userIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">User-Centered Mindset</figcaption>
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="systemsIcon" alt="" class="h-10" />
+          <img :src="collabIcon" alt="" class="h-10" />
           <figcaption class="text-sm">Systems Thinking</figcaption>
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="problemIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">Problem Solving</figcaption>
+          <img :src="learnerIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">Continuous Learner</figcaption>
         </figure>
-      </ul>
+      </div>
       <ArrowTransition
         customClass="scale-75 md:scale-50 md:absolute md:-rotate-90 md:-right-14 md:-top-14 lg:rotate-90 lg:scale-40 lg:hidden"
       />
@@ -251,18 +262,19 @@ import creativityIcon from '@/assets/svgs/skills/creativity-skill.svg'
         marking this not just as a job, but as the culmination of a lifetime spent observing,
         solving, and striving to make things better—now clearly defined as UX design.
       </p>
-      <ul class="flex justify-between items-center mt-8 w-full">
+      <h4 class="mt-4 tracking-widest">What I Bring</h4>
+      <ul class="flex justify-between items-center mt-2 w-full gap-2 text-center">
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="empathyIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">User Empathy</figcaption>
+          <img :src="impactIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">Impact-Driven Design</figcaption>
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="systemsIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">Systems Thinking</figcaption>
+          <img :src="balanceIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">Logic + Creativity</figcaption>
         </figure>
         <figure class="flex justify-center items-center flex-col gap-2">
-          <img :src="problemIcon" alt="" class="h-10" />
-          <figcaption class="text-sm">Problem Solving</figcaption>
+          <img :src="purposeIcon" alt="" class="h-10" />
+          <figcaption class="text-sm">Purpose Driven Career</figcaption>
         </figure>
       </ul>
       <ArrowTransition
