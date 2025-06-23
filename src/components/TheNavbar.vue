@@ -56,11 +56,9 @@ watch(isDarkMode, (val) => {
 
       <div class="flex flex-col gap-2 items-center lg:flex-row">
         <li>
-          <router-link to="/contact"
-            ><button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
-              Contact
-            </button></router-link
-          >
+          <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+            Contact
+          </button>
         </li>
         <li>
           <button

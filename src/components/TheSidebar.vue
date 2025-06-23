@@ -75,10 +75,7 @@ watch(isDarkMode, (val) => {
           </li>
           <div class="flex-col-center gap-2">
             <li>
-              <button
-                class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer"
-                @click="navigateAndClose('/contact')"
-              >
+              <button class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer">
                 Contact
               </button>
             </li>
