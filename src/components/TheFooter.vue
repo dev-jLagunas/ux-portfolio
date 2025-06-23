@@ -1,5 +1,11 @@
 <script setup>
 import skaterIcon from '@/assets/svgs/skateboarding-icon.svg'
+import { showContactModal } from '@/composables/useContactModal'
+
+// Methods
+function openContactModal() {
+  showContactModal.value = true
+}
 </script>
 
 <template>
@@ -12,10 +18,10 @@ import skaterIcon from '@/assets/svgs/skateboarding-icon.svg'
     </p>
 
     <ul class="flex flex-wrap gap-4 justify-around mt-8">
-      <li><a href="/about" class="hover:underline">About</a></li>
-      <li><a href="/work" class="hover:underline">Work</a></li>
-      <li><a href="/personal" class="hover:underline">Personal</a></li>
-      <li><a href="/contact" class="hover:underline">Contact</a></li>
+      <router-link to="/about"><li class="hover:underline">About</li></router-link>
+      <router-link to="/work"><li class="hover:underline">Work</li></router-link>
+      <router-link to="/personal"><li class="hover:underline">Personal</li></router-link>
+      <li><button class="hover:cursor-pointer" @click="openContactModal()">Contact</button></li>
     </ul>
     <div class="flex justify-between mt-8 pb-1 text-sm text-center">
       <p class="">

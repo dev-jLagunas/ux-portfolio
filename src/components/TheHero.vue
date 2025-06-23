@@ -1,4 +1,6 @@
 <script setup>
+import { showContactModal } from '@/composables/useContactModal'
+
 import artistImg from '@/assets/images/hero-artist.png'
 import builderImg from '@/assets/images/hero-builder.png'
 import designerImg from '@/assets/images/hero-designer.png'
@@ -7,6 +9,11 @@ import dreamerImg from '@/assets/images/hero-dreamer.png'
 import photographerImg from '@/assets/images/hero-photographer.png'
 // import arrowDark from '@/assets/svgs/arrow-dark.svg'
 // import arrowLight from '@/assets/svgs/arrow-light.svg'
+
+// Methods
+function openContactModal() {
+  showContactModal.value = true
+}
 </script>
 
 <template>
@@ -22,7 +29,10 @@ import photographerImg from '@/assets/images/hero-photographer.png'
         <span class="font-bold text-blue">meaningful experiences.</span>
       </p>
       <div class="hidden md:flex md:justify-around md:mt-8">
-        <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+        <button
+          class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
+          @click="openContactModal()"
+        >
           Contact Me
         </button>
         <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative">

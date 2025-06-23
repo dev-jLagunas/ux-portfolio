@@ -116,10 +116,10 @@ import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
         development.
       </p>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <DisplayCard title="Anko and Moe" :content="cafeUi" bgColor="bg-pink" />
-        <DisplayCard title="Tres Leches Cake" :content="galleryUi" bgColor="bg-blue" />
-        <DisplayCard title="Chai Mix" :content="tiktokUi" bgColor="bg-pink" />
-        <DisplayCard title="Cookie Marketing" :content="chicanoUi" bgColor="bg-blue" />
+        <DisplayCard title="Cafe Triangle" :content="cafeUi" bgColor="bg-pink" />
+        <DisplayCard title="Scroll Gallery" :content="galleryUi" bgColor="bg-blue" />
+        <DisplayCard title="Neon TicTacToe" :content="tiktokUi" bgColor="bg-pink" />
+        <DisplayCard title="Code Chicano" :content="chicanoUi" bgColor="bg-blue" />
       </div>
     </article>
   </section>
