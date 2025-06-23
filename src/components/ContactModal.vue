@@ -16,7 +16,7 @@ function closeModal() {
     <div class="bg-white p-4 rounded-xl shadow-xl max-w-lg text-black w-4/5">
       <ul class="flex justify-center items-center flex-col gap-2">
         <li class="text-center flex flex-col justify-center items-center">
-          <img :src="emailIcon" alt="" class="h-10" />juan.lagunas.ux@gmail.com
+          <img :src="emailIcon" alt="" class="h-10 animate-bounce" />juan.lagunas.ux@gmail.com
         </li>
         <li class="text-center flex flex-col justify-center items-center">
           <img :src="locationIcon" alt="" class="h-10" />United States
