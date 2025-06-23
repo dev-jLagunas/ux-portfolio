@@ -2,6 +2,7 @@
 import TheNavbar from './components/TheNavbar.vue'
 import TheSidebar from './components/TheSidebar.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import ContactModal from '@/components/ContactModal.vue'
 </script>
 
 <template>
@@ -13,6 +14,8 @@ import TheFooter from '@/components/TheFooter.vue'
     </transition>
   </router-view>
   <TheFooter />
+
+  <ContactModal />
 </template>
 
 <style scoped>

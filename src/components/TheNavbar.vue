@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
+import { showContactModal } from '@/composables/useContactModal'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'
@@ -23,6 +24,11 @@ watch(isDarkMode, (val) => {
   const root = document.documentElement
   val ? root.classList.add('dark') : root.classList.remove('dark')
 })
+
+// Methods
+function openModal() {
+  showContactModal.value = true
+}
 </script>
 
 <template>
@@ -56,7 +62,10 @@ watch(isDarkMode, (val) => {
 
       <div class="flex flex-col gap-2 items-center lg:flex-row">
         <li>
-          <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+          <button
+            class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
+            @click="openModal"
+          >
             Contact
           </button>
         </li>
