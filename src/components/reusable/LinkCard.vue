@@ -22,11 +22,13 @@ defineProps({
   >
     <h2 class="font-bold text-center">{{ title }}</h2>
     <img :src="icon" alt="" class="h-20 pb-2" />
-    <button
-      class="text-sm border-2 border-pink p-2 rounded-sm tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer"
+    <a :href="url" target="_blank" rel="noopener noreferrer">
+      <button
+        class="text-sm border-2 border-pink p-2 rounded-sm tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer"
+      >
+        See Now
+      </button></a
     >
-      See Now
-    </button>
   </article>
 </template>
 

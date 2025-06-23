@@ -17,12 +17,34 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
       </h1>
     </div>
     <section class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-      <LinkCard title="My Instagram" :icon="instagramIcon" />
-      <LinkCard title="My Dev Portfolio" :icon="portfolioIcon" />
-      <LinkCard title="My Frontend Masters" :icon="frontendIcon" />
+      <LinkCard
+        title="My Instagram"
+        :icon="instagramIcon"
+        :url="'https://www.instagram.com/j.lag_works/'"
+      />
+      <LinkCard
+        title="My Dev Portfolio"
+        :icon="portfolioIcon"
+        :url="'https://juan-lagunas.com/#/'"
+      />
+      <LinkCard
+        title="My Frontend Mentor"
+        :icon="frontendIcon"
+        :url="'https://www.frontendmentor.io/profile/dev-jLagunas'"
+      />
       <LinkCard title="My Resume" :icon="resumeIcon" />
-      <LinkCard title="My LinkedIn" :icon="linkedInIcon" class="lg:col-span-2" />
-      <LinkCard title="My Github" :icon="githubIcon" class="lg:col-span-2" />
+      <LinkCard
+        title="My LinkedIn"
+        :icon="linkedInIcon"
+        class="lg:col-span-2"
+        :url="'https://www.linkedin.com/in/juan-lagunas/'"
+      />
+      <LinkCard
+        title="My Github"
+        :icon="githubIcon"
+        class="lg:col-span-2"
+        :url="'https://github.com/dev-jLagunas'"
+      />
     </section>
   </footer>
 </template>
