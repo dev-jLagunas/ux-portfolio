@@ -45,7 +45,7 @@ function openModal() {
 
 <template>
   <div class="mt-4 md:hidden font-headings">
-    <div class="flex-row-center">
+    <div class="flex-row-center gap-2">
       <img :src="nameLogo" alt="designer logo" class="h-20" />
       <router-link to="/" class="flex gap-1 text-3xl -ml-2">
         <p><span class="text-pink font-bold">J</span>uan</p>

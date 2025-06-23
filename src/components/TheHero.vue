@@ -67,7 +67,10 @@ function openContactModal() {
       </figure>
     </div>
     <div class="flex justify-around mt-4 md:hidden">
-      <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+      <button
+        class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
+        @click="openContactModal()"
+      >
         Contact Me
       </button>
       <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative">

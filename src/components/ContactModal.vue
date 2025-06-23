@@ -13,7 +13,7 @@ function closeModal() {
     v-if="showContactModal"
     class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-headings"
   >
-    <div class="bg-white p-6 rounded-xl shadow-xl w-[90%] max-w-lg text-black">
+    <div class="bg-white p-4 rounded-xl shadow-xl max-w-lg text-black w-4/5">
       <ul class="flex justify-center items-center flex-col gap-2">
         <li class="text-center flex flex-col justify-center items-center">
           <img :src="emailIcon" alt="" class="h-10" />juan.lagunas.ux@gmail.com
@@ -22,7 +22,7 @@ function closeModal() {
           <img :src="locationIcon" alt="" class="h-10" />United States
         </li>
       </ul>
-      <form action="" class="p-8 flex justify-center items-center flex-col">
+      <form action="" class="p-8 flex justify-center items-center flex-col w-full">
         <label for="name">Name</label>
         <input
           type="text"
