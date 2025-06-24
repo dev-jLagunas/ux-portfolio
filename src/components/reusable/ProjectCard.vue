@@ -36,7 +36,8 @@ defineProps({
     <p class="text-sm text-center text-gray-500 mb-4">
       {{ description }}
     </p>
-    <img :src="image" alt="" class="" />
+    <img :src="image" alt="" class="h-1/2 max-h-72" />
+
     <router-link :to="route">
       <button
         class="bg-black text-white px-4 py-2 text-sm rounded hover:cursor-pointer hover:bg-pink duration-300"
@@ -50,9 +51,11 @@ defineProps({
 <style scoped>
 .triangle-top-left {
   clip-path: polygon(0 0, 100% 0, 0 100%);
+  border-top-left-radius: 6px;
 }
 
 .triangle-bottom-right {
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  border-bottom-right-radius: 6px;
 }
 </style>
