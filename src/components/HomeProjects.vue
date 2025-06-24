@@ -20,26 +20,30 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
       <ProjectCard
         title="Cafe Triangle"
         ux-type="Web UX"
-        description="Here will be a quick one sentence description for this case study."
+        description="A multilingual cafe website designed from scratch to clearly showcase the menu and brand while improving usability for both local and international customers."
         :image="cafeTrioPhoto"
+        route="/case-one"
       />
       <ProjectCard
         title="Notion Project Management System"
         ux-type="Systems UX"
-        description="Here will be a quick one sentence description for this case study."
+        description="A fully custm Notion workspace that streamlined project tracking, boosted team accountability, and replaced chaotic email chains with clear systems."
         :image="notionTrioPhoto"
+        route="/case-two"
       />
       <ProjectCard
         title="Department Marketing System"
         ux-type="Design Ops UX"
-        description="Here will be a quick one sentence description for this case study."
+        description="A full redesign of the department's visual standards and workflows, unifying brand identity and imprving clairty across all marketing assets."
         :image="marketingTrioPhoto"
+        route="/case-three"
       />
       <ProjectCard
         title="Email Newsletter Redesign"
         ux-type="Email UX"
-        description="Here will be a quick one sentence description for this case study."
+        description="A data-informed newsletter overhaul focused on hierarchy, engagement, and skimmability to boost click-throughs and student interaction."
         :image="emailTrioPhoto"
+        route="/case-four"
       />
     </div>
   </section>
