@@ -9,7 +9,7 @@ import HomeFooter from '@/components/HomeFooter.vue'
   <TheHero />
   <ArrowTransition customClass="mx-auto md:-rotate-12  lg:mx-60 lg:-mt-24" />
   <HomeProjects />
-  <ArrowTransition customClass="scale-x-[-1] mx-auto my-8 md:rotate-12 md:mr-44 md:-mt-20" />
+  <ArrowTransition customClass="scale-x-[-1] mx-auto my-8 md:rotate-12 " />
   <HomeFooter />
   <ArrowTransition customClass="mx-auto my-8 md:rotate-12 " />
 </template>
