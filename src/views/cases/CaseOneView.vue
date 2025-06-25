@@ -1,9 +1,56 @@
 <script setup>
 // import CaseContent from '@/components/reusable/CaseContent.vue'
+import TabGroup from '@/components/reusable/TabGroup.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import userPersona from '@/assets/images/cases/user-persona.png'
 import journeyMap from '@/assets/images/cases/user-journey.png'
 import empathyMap from '@/assets/images/cases/empathy-map.png'
+// Images
+import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
+import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
+
+// Tab Data
+const beforeTabs = [
+  {
+    title: 'Before – Project Mgmt',
+    image: notionBefore,
+    heading: 'Disorganized System',
+    description: 'Tasks were stored across emails, disconnected Notion pages, and verbal memory.',
+  },
+  {
+    title: 'Before – Ownership',
+    image: notionBefore,
+    heading: 'No Task Ownership',
+    description: 'No one knew who was responsible for what. Things slipped through the cracks.',
+  },
+  {
+    title: 'Before – Collaboration',
+    image: notionBefore,
+    heading: 'Siloed Work',
+    description: 'Only those with prior knowledge could understand or update tasks.',
+  },
+]
+
+const afterTabs = [
+  {
+    title: 'After – Project Management',
+    image: notionAfter,
+    heading: 'Structured Timeline',
+    description: 'Tasks now follow a chronological timeline, with embedded instructions.',
+  },
+  {
+    title: 'After – Ownership',
+    image: notionAfter,
+    heading: 'Clear Ownership',
+    description: 'Each task includes a lead, contact info, and platform links.',
+  },
+  {
+    title: 'After – Collaboration',
+    image: notionAfter,
+    heading: 'Team Transparency',
+    description: 'Anyone can jump in and contribute, regardless of past involvement.',
+  },
+]
 </script>
 
 <template>
@@ -66,6 +113,10 @@ import empathyMap from '@/assets/images/cases/empathy-map.png'
             <figcaption class="text-center">Empathy Map</figcaption>
             <img :src="empathyMap" alt="" />
           </figure>
+          <figure class="mt-4 md:col-span-2">
+            <figcaption class="text-center">Empathy Map</figcaption>
+            <img :src="journeyMap" alt="" />
+          </figure>
         </div>
         <p class="">
           Here will expand upon the or clearly state important takeaways from the visuals above and
@@ -86,35 +137,15 @@ import empathyMap from '@/assets/images/cases/empathy-map.png'
           the images that follow. The images will be explaining the images which will be before and
           after images. The images will be edited and perhaps combined in canva.
         </p>
-        <div>
-          <figure>
-            <figcaption>caption 1</figcaption>
-            <img src="" alt="" />
-          </figure>
-          <figure>
-            <figcaption>caption 1</figcaption>
-            <img src="" alt="" />
-          </figure>
-          <div>
-            <p>
-              text content in between the images of the solutions here. Explaining them a bit more.
-              Maybe highlighting some specific features
-            </p>
-          </div>
-          <figure>
-            <figcaption>caption 1</figcaption>
-            <img src="" alt="" />
-          </figure>
-          <figure>
-            <figcaption>caption 1</figcaption>
-            <img src="" alt="" />
-          </figure>
-        </div>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <TabGroup :tabs="beforeTabs" title="Before" />
+          <TabGroup :tabs="afterTabs" title="After" />
+        </section>
       </article>
     </section>
-    <section id="solution-b">
+    <!-- <section id="solution-b">
       <div class="mt-4 mb-2 flex items-center justify-between w-full">
-        <h3 class="font-bold text-2xl">The Solution - A</h3>
+        <h3 class="font-bold text-2xl">The Solution - B</h3>
         <p class="text-sm">Define - Ideate</p>
       </div>
       <article>
@@ -124,7 +155,7 @@ import empathyMap from '@/assets/images/cases/empathy-map.png'
           after images. The images will be edited and perhaps combined in canva.
         </p>
       </article>
-    </section>
+    </section> -->
   </div>
 </template>
 
