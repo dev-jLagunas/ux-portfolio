@@ -78,24 +78,24 @@ const afterTabs = [
 // Outcome Data & Icons
 const outcomeList = [
   {
-    title: 'Clear Ownership',
+    title: 'Brand & Space Alignment',
     description:
-      'Team members now had well-defined roles, which reduced confusion and task overlap.',
+      'Multiple users commented that the site "felt like us". Which felt like a reflection of our café’s cultural warmth, vibrant personality, and inclusive vibe. This alignment wasn’t accidental; it was the result of dozens of thoughtful design decisions that translated our physical identity into digital form.',
   },
   {
-    title: 'Boosted Morale',
+    title: 'Improved Usability',
     description:
-      'People felt less overwhelmed because systems were easier to use and expectations were clearer.',
+      'Visitors or friends and family we asked to test our site consistently remarked on how intuitive. The information architecture, simplified navigation, and one-touch contact buttons all contributed to a smoother user flow. This was especially important for mobile-first users discovering us on the go.',
   },
   {
-    title: 'Increased Visibility',
+    title: 'Competitive Distinction',
     description:
-      'Stakeholders could now see timelines and task progress without needing direct updates.',
+      'In contrast to other local cafés, our site stood out for its polish, interactivity, and accessibility. This differentiation didn’t just boost credibility, it sparked genuine curiosity. And often lead to new customer visits. It was a quiet, UX-led marketing tool. Also, it was just another way to express our brand.',
   },
   {
-    title: 'Smoother Onboarding',
+    title: 'Organic Promotion',
     description:
-      'New team members could understand the project flow without needing tribal knowledge.',
+      'Because the site was multilingual, beautifully branded and easy to use. Some visitors said they forwarded it to friends or family. A very common word thrown around was "kawaii" which translates to "cute". Without paid ads or SEO strategy, the site began organically spreading. We believe this a direct outcome of designing something people felt worthy of at least sharing.',
   },
 ]
 
@@ -185,8 +185,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"
-      intro="Here I will describe and explain the outcome. These outcomes are largely qualitative due to the nature of the project."
-      context="I’ll highlight 4 key themes that emerged from the changes I implemented."
+      intro="The launch of the redesigned Café Triangle website brought immediate, qualitative improvements. Although we didn’t use formal analytics, feedback from friends, family, and customers painted a clear picture: the site was easier to navigate, more informative, and far more aligned with who we were as a brand. It wasn’t just functional, it felt right to the people who used it."
+      context="These outcomes reflected a shift not only in usability, but in emotional resonance. The site’s design helped people feel more welcomed, more informed, and more connected to our space. Below are four key themes that emerged from this redesign:"
       :outcomes="outcomeList"
       :icons="icons"
     />
