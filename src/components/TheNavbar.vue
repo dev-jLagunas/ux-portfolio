@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
+import { useScrollToSection } from '@/composables/useScrollToSection'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'
@@ -9,6 +10,9 @@ import personalDarkSvg from '@/assets/svgs/dark-artwork.svg'
 import userWhiteSvg from '@/assets/svgs/white-user.svg'
 import workWhiteSvg from '@/assets/svgs/white-design-works.svg'
 import personalWhiteSvg from '@/assets/svgs/white-artwork.svg'
+
+// Composables
+const { goToSection } = useScrollToSection()
 
 // Reactive Properties
 const isDarkMode = ref(false)
@@ -29,6 +33,10 @@ watch(isDarkMode, (val) => {
 function openModal() {
   showContactModal.value = true
 }
+
+function navigateToWork() {
+  goToSection('case-studies')
+}
 </script>
 
 <template>
@@ -41,12 +49,10 @@ function openModal() {
       </router-link>
     </div>
     <ul class="flex-row-center w-full">
-      <router-link to="/work"
-        ><li class="nav-list-styles hover:cursor-pointer">
-          <img :src="workIcon" alt="Monitor design svg" class="h-7" />
-          <p>Work</p>
-        </li></router-link
-      >
+      <li class="nav-list-styles hover:cursor-pointer" @click="navigateToWork">
+        <img :src="workIcon" alt="Monitor design svg" class="h-7" />
+        <p>Work</p>
+      </li>
       <router-link to="/about"
         ><li class="nav-list-styles hover:cursor-pointer">
           <img :src="userIcon" alt="user shaped svg" class="h-7" />

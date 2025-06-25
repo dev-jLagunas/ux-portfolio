@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
+import { useScrollToSection } from '@/composables/useScrollToSection'
 import { useRouter } from 'vue-router'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
@@ -11,6 +12,9 @@ import workSvg from '@/assets/svgs/white-design-works.svg'
 import personalSvg from '@/assets/svgs/white-artwork.svg'
 
 const router = useRouter()
+
+// Composables
+const { goToSection } = useScrollToSection()
 
 // Reactive Properties
 const isOpen = ref(false)
@@ -41,6 +45,11 @@ function openModal() {
   showContactModal.value = true
   isOpen.value = false
 }
+
+function navigateToWork() {
+  goToSection('case-studies')
+  isOpen.value = false
+}
 </script>
 
 <template>
@@ -65,7 +74,7 @@ function openModal() {
     <aside :class="['sidebar', { open: isOpen }]">
       <div class="flex-col-center h-full w-full">
         <ul class="text-white text-xl">
-          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateAndClose('/work')">
+          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateToWork">
             <img :src="workSvg" alt="Monitor design svg" class="h-7" />
             <p>Work</p>
           </li>
