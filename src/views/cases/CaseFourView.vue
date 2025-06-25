@@ -141,6 +141,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
+      workTitle="Email Newsletter Redesign"
       :tags="['UX Research', 'Systems Design', 'Workflow Design']"
       :imgSrc="notionTrioPhoto"
       :paragraphs="[

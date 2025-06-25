@@ -4,6 +4,7 @@ const props = defineProps({
   title: String,
   tags: Array,
   imgSrc: String,
+  workTitle: String,
   paragraphs: Array,
   role: String,
   date: String,
@@ -24,6 +25,7 @@ const props = defineProps({
     <div class="md:flex md:items-center md:gap-4">
       <img :src="imgSrc" alt="" class="w-92 mx-auto mb-4 md:mb-0" />
       <div>
+        <h5 class="font-bold tracking-widest mb-2">{{ workTitle }}</h5>
         <p v-for="(para, index) in paragraphs" :key="index" :class="{ 'mt-2': index > 0 }">
           {{ para }}
         </p>
