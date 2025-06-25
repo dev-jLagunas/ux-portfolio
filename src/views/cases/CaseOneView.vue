@@ -2,6 +2,7 @@
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
 import CaseSolution from '@/components/reusable/CaseSolution.vue'
+import CaseOutcome from '@/components/reusable/CaseOutcome.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import userPersona from '@/assets/images/cases/user-persona.png'
 import journeyMap from '@/assets/images/cases/user-journey.png'
@@ -59,6 +60,33 @@ const afterTabs = [
     description: 'Anyone can jump in and contribute, regardless of past involvement.',
   },
 ]
+
+// Outcome Data
+
+const outcomeList = [
+  {
+    title: 'Clear Ownership',
+    description:
+      'Team members now had well-defined roles, which reduced confusion and task overlap.',
+  },
+  {
+    title: 'Boosted Morale',
+    description:
+      'People felt less overwhelmed because systems were easier to use and expectations were clearer.',
+  },
+  {
+    title: 'Increased Visibility',
+    description:
+      'Stakeholders could now see timelines and task progress without needing direct updates.',
+  },
+  {
+    title: 'Smoother Onboarding',
+    description:
+      'New team members could understand the project flow without needing tribal knowledge.',
+  },
+]
+
+const icons = [smileIcon, thumbsIcon, upwardIcon, medalIcon]
 </script>
 
 <template>
@@ -113,57 +141,12 @@ const afterTabs = [
       afterTitle="TRUTH DATABASE MANAGEMENT After"
     />
     <ArrowTransition customClass="mx-auto" />
-    <section id="outcome-section" class="flex flex-col items-center justify-center">
-      <div class="mt-4 mb-2 flex items-center justify-between w-full">
-        <h3 class="font-bold text-2xl">The Outcome</h3>
-        <p class="text-sm">Protoype - Test</p>
-      </div>
-      <article>
-        <p>
-          Here I will describe and explain the outcome. The outcome in these case studies will need
-          to be somewhat qualitative because for the most part I was not even given the opportunity
-          to shine.
-        </p>
-        <p>
-          I can add a bit more and talk about certain things that I came to see and then I'll follow
-          it up with 4 cards explaining the highlights.
-        </p>
-        <ul class="mt-4 grid grid-cols-2 gap-2">
-          <li class="relative px-2 py-12">
-            <img :src="smileIcon" alt="" class="absolute top-0 left-2 h-10 -rotate-12" />
-            <h5 class="font-semibold">outcome 1</h5>
-            <p>
-              a short explanation about this particular highlight. It will explain why I believe
-              this is a highlight.
-            </p>
-          </li>
-          <li class="relative px-2 py-12">
-            <img :src="thumbsIcon" alt="" class="absolute top-0 left-2 h-10 -rotate-12" />
-            <h5 class="font-semibold">outcome 1</h5>
-            <p>
-              a short explanation about this particular highlight. It will explain why I believe
-              this is a highlight.
-            </p>
-          </li>
-          <li class="relative px-2 py-12">
-            <img :src="upwardIcon" alt="" class="absolute top-0 left-2 h-10 -rotate-12" />
-            <h5 class="font-semibold">outcome 1</h5>
-            <p>
-              a short explanation about this particular highlight. It will explain why I believe
-              this is a highlight.
-            </p>
-          </li>
-          <li class="relative px-2 py-12">
-            <img :src="medalIcon" alt="" class="absolute top-0 left-2 h-10 -rotate-12" />
-            <h5 class="font-semibold">outcome 1</h5>
-            <p>
-              a short explanation about this particular highlight. It will explain why I believe
-              this is a highlight.
-            </p>
-          </li>
-        </ul>
-      </article>
-    </section>
+    <CaseOutcome
+      intro="Here I will describe and explain the outcome. These outcomes are largely qualitative due to the nature of the project."
+      context="I’ll highlight 4 key themes that emerged from the changes I implemented."
+      :outcomes="outcomeList"
+      :icons="icons"
+    />
     <ArrowTransition customClass="mx-auto" />
     <section id="reflections-section">
       <div class="mt-4 mb-2 flex items-center justify-between w-full">
