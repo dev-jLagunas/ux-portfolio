@@ -1,1 +1,0 @@
-import{_ as t,c as r,a as n,F as o,o as s}from"./index-C_08GT6e.js";const a={};function l(c,e){return s(),r(o,null,[e[0]||(e[0]=n("h1",null,"case 1 content here",-1)),e[1]||(e[1]=n("p",null,"more content here",-1))],64)}const m=t(a,[["render",l]]);export{m as default};
