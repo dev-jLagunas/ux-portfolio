@@ -14,7 +14,7 @@ import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import userPersona from '@/assets/images/cases/user-persona.png'
 import journeyMap from '@/assets/images/cases/user-journey.png'
 import empathyMap from '@/assets/images/cases/empathy-map.png'
-import notionTrioPhoto from '@/assets/images/home/notion-systems-home.png'
+import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
 import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
 import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
 
@@ -142,11 +142,11 @@ const uxSubheading = 'How I would approach this UX challenge today'
       id="overview-section"
       title="Project Overview"
       workTitle="Cafe Triangle Redesign"
-      :tags="['UX Research', 'Systems Design', 'Workflow Design']"
-      :imgSrc="notionTrioPhoto"
+      :tags="['UX Research', 'Visual Design', 'Front-End Development']"
+      :imgSrc="cafeTrioPhoto"
       :paragraphs="[
-        'Here I can have some context of this case study. I  need to make sure this length thing is working of why structure is off a bit. ok that looks better. it was just tat the text was too short',
-        'This is going to continue the overview of the project and here is the second text. this will be a continuation of the second text. I am just doing this to see how it looks.',
+        'In the second year of running our culture-driven café in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
+        'Over seven months, I studied every morning before opening shop, eventually launching a fully custom-coded site built with Angular and Tailwind CSS. It was responsive, multilingual, and deeply personal. Designed not just to function, but to feel like an extension of who we were. I didn’t know it then, but I was practicing UX: prioritizing accessibility, clarity, and user-centered design from the very beginning.',
       ]"
       role="UX Designer, UX Researcher"
       date="March – April 2025"
@@ -155,7 +155,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
       id="problem-section"
-      problemStatement="Here I will explain the problem at hand. I need to add more filler text so it looks like the problem statement is well written. I will need to add more content later, but for the time being this is fine. I don't know what else to do but I guess this will work fine for now."
+      problemStatement=" Our original café website, built with Wix, lacked both functionality and personality. It wasn’t responsive, offered no multilingual support, and used static images for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
+      problemStatementB="Beyond usability, the site failed to reflect who we were. Café Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
       :artifacts="[
         { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },

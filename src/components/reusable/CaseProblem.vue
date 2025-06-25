@@ -1,24 +1,32 @@
 <script setup>
-//Props
+import { ref } from 'vue'
+import problemIcon from '@/assets/svgs/problem-icon.svg'
+
+// Props
 const props = defineProps({
-  problemStatement: {
-    type: String,
-    required: true,
-  },
+  problemStatement: { type: String, required: true },
+  problemStatementB: { type: String, required: true },
   artifacts: {
     type: Array,
     required: true,
     validator: (arr) => arr.every((a) => a.caption && a.imageSrc),
   },
-  takeaway: {
-    type: String,
-    required: true,
-  },
-  quote: {
-    type: String,
-    required: true,
-  },
+  takeaway: { type: String, required: true },
+  quote: { type: String, required: true },
 })
+
+// Reactive Properties
+const currentIndex = ref(0)
+const isModalOpen = ref(0)
+
+// Methods
+function nextImage() {
+  currentIndex.value = (currentIndex.value + 1) % props.artifacts.length
+}
+
+function prevImage() {
+  currentIndex.value = (currentIndex.value - 1 + props.artifacts.length) % props.artifacts.length
+}
 </script>
 
 <template>
@@ -28,19 +36,38 @@ const props = defineProps({
       <p class="text-sm">Empathize – Define</p>
     </div>
     <article class="flex flex-col items-center justify-center">
-      <p class="border-pink border-2 p-4 rounded-md my-4">
-        {{ problemStatement }}
-      </p>
-      <div class="md:grid md:grid-cols-2 md:gap-4 md:w-4/5 md:place-items-center">
-        <figure
-          v-for="(artifact, index) in artifacts"
-          :key="index"
-          :class="['mt-4', index === 2 ? 'md:col-span-2' : '', 'md:mt-0']"
-        >
-          <figcaption class="text-center">{{ artifact.caption }}</figcaption>
-          <img :src="artifact.imageSrc" alt="" class="mx-auto" />
-        </figure>
+      <div class="border-pink border-2 p-4 rounded-md my-4">
+        <img :src="problemIcon" alt="" class="mx-auto h-12 mb-2" />
+        <p class="mb-2 indent-4">
+          {{ problemStatement }}
+        </p>
+        <p class="indent-4">{{ problemStatementB }}</p>
       </div>
+
+      <figure class="relative w-full max-w-xl mt-4">
+        <figcaption class="text-sm pl-4 mt-2 tracking-wide md:text-center md:pl-0">
+          {{ props.artifacts[currentIndex].caption }}
+        </figcaption>
+        <img
+          :src="props.artifacts[currentIndex].imageSrc"
+          :alt="props.artifacts[currentIndex].caption"
+          class="rounded-md h-full px-4 object-contain hover:cursor-pointer md:w-92 mx-auto lg:w-3/4"
+          @click="isModalOpen = true"
+        />
+
+        <button
+          @click="prevImage"
+          class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-l hover:cursor-pointer"
+        >
+          ‹
+        </button>
+        <button
+          @click="nextImage"
+          class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-r hover:cursor-pointer"
+        >
+          ›
+        </button>
+      </figure>
       <p class="mt-6">
         {{ takeaway }}
       </p>
@@ -49,6 +76,28 @@ const props = defineProps({
       </p>
     </article>
   </section>
+  <div
+    v-if="isModalOpen"
+    class="fixed inset-0 z-50 bg-black/[var(--bg-opacity)] [--bg-opacity:80%] flex items-center justify-center"
+    @click.self="isModalOpen = false"
+  >
+    <div class="relative w-92 md:w-1/2 lg:w-[600px] px-8">
+      <button
+        @click="isModalOpen = false"
+        class="absolute -top-10 right-8 text-white bg-pink px-3 py-1 rounded hover:bg-pink/80"
+      >
+        X
+      </button>
+      <img
+        :src="props.artifacts[currentIndex].imageSrc"
+        :alt="props.artifacts[currentIndex].caption"
+        class="w-full rounded shadow-lg hover:cursor-pointer"
+      />
+      <p class="text-white font-bold text-sm text-center mt-2">
+        {{ props.artifacts[currentIndex].caption }}
+      </p>
+    </div>
+  </div>
 </template>
 
 <style scoped></style>
