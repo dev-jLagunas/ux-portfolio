@@ -14,13 +14,13 @@ const props = defineProps({
 </script>
 
 <template>
-  <section id="reflections-section" class="flex flex-col items-center justify-center">
+  <section id="reflections-section" class="flex flex-col items-center justify-between">
     <div class="mt-4 mb-2 flex items-center justify-between w-full">
       <h3 class="font-bold text-2xl">My Reflections</h3>
       <p class="text-sm">Prototype – Test</p>
     </div>
 
-    <article>
+    <article class="w-full">
       <p class="mb-6">
         {{ intro }}
       </p>

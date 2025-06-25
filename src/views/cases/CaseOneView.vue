@@ -104,24 +104,28 @@ const icons = [smileIcon, thumbsIcon, upwardIcon, medalIcon]
 // Reflections Data
 const reflections = [
   {
-    title: 'Reflection 1',
+    title: 'Instinct is valuable, but process sharpens it.',
     icon: arrowBlue,
-    description: 'I learned that team-wide tools are only helpful if expectations are aligned.',
+    description:
+      'When I first built this site, I relied entirely on intuition. Now, I know how much stronger that instinct becomes when paired with tools like Figma, user personas, and structured frameworks.',
   },
   {
-    title: 'Reflection 2',
+    title: 'Design is about care, not credentials.',
     icon: arrowPink,
-    description: 'Design systems are most powerful when paired with clear workflows.',
+    description:
+      'This project reminded me that great UX isn’t limited to people with formal titles. It’s about empathy, clarity, and thoughtful execution. Even if you’re teaching yourself from scratch.',
   },
   {
-    title: 'Reflection 3',
+    title: 'Clarity is the most underrated design goal.',
     icon: arrowBlue,
-    description: 'Sometimes the best way to advocate for UX is through quiet consistency.',
+    description:
+      'Whether it was layout, navigation, or color use, every choice that made the site feel “easy” was the result of prioritizing clear, direct communication over cleverness or trends.',
   },
   {
-    title: 'Reflection 4',
+    title: 'Post-launch is where the real UX begins.',
     icon: arrowPink,
-    description: 'Proactive work often goes unnoticed, but it builds credibility over time.',
+    description:
+      'I used to think “done” meant going live. But now I understand that testing, iteration, and user feedback are just as critical as the build. That’s how good becomes great.',
   },
 ]
 
@@ -193,7 +197,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseReflections
       id="reflections-section"
-      intro="Here are a few key lessons I took away from this project — what worked, what didn’t, and how it shaped my UX thinking."
+      intro="This project wasn’t just about building a website — it was the start of a deeper shift in how I think about design, users, and problem-solving. Looking back, it helped shape the foundation of my UX mindset without me even knowing it. Here are a few key lessons I took away. What worked, what didn’t, and how the experience changed the way I approach design today."
       :reflections="reflections"
     />
     <ArrowTransition customClass="mx-auto" />
