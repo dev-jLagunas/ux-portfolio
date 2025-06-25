@@ -1,6 +1,6 @@
 <script setup>
-// import CaseContent from '@/components/reusable/CaseContent.vue'
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
+import CaseProblem from '@/components/reusable/CaseProblem.vue'
 import TabGroup from '@/components/reusable/TabGroup.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import userPersona from '@/assets/images/cases/user-persona.png'
@@ -86,41 +86,18 @@ const afterTabs = [
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
     />
     <ArrowTransition customClass="mx-auto" />
-    <section id="problem-section" class="flex flex-col items-center justify-center">
-      <div class="mt-4 mb-2 flex items-center justify-between w-full">
-        <h3 class="font-bold text-2xl">The Problem</h3>
-        <p class="text-sm">Empathize - Define</p>
-      </div>
-      <article class="flex flex-col items-center justify-center">
-        <p class="border-pink border-2 p-4 rounded-md my-4">
-          Here I will explain the problem at hand. It will need to be short but informative and it
-          will need to help guide the user into what follows which will be certain visual artifacts.
-          This problem statement card will be visually different than the rest of the text so it
-          stands out as it will serve as the visual artifact of a problem statement card.
-        </p>
-        <div class="md:grid md:grid-cols-2 md:gap-4 md:w-4/5 md:place-items-center">
-          <figure class="mt-16 md:mt-0">
-            <figcaption class="text-center">Persona</figcaption>
-            <img :src="userPersona" alt="" class="" />
-          </figure>
-          <figure class="mt-4 md:mt-0">
-            <figcaption class="text-center">Empathy Map</figcaption>
-            <img :src="empathyMap" alt="" />
-          </figure>
-          <figure class="mt-4 md:col-span-2">
-            <figcaption class="text-center">Empathy Map</figcaption>
-            <img :src="journeyMap" alt="" />
-          </figure>
-        </div>
-        <p class="">
-          Here will expand upon the or clearly state important takeaways from the visuals above and
-          again prepare the use for the following section. Always as I am telling a story.
-        </p>
-        <p class="text-2xl mt-4">I will leave this hear as another possible text. Maybe a quote?</p>
-      </article>
-    </section>
+    <CaseProblem
+      problemStatement="Here I will explain the problem at hand. I need to add more filler text so it looks like the problem statement is well written. I will need to add more content later, but for the time being this is fine. I don't know what else to do but I guess this will work fine for now."
+      :artifacts="[
+        { caption: 'Persona', imageSrc: userPersona },
+        { caption: 'Empathy Map', imageSrc: empathyMap },
+        { caption: 'Journey Map', imageSrc: journeyMap },
+      ]"
+      takeaway="Here we'll expand on or clearly state important takeaways from the visuals above..."
+      quote="I will leave this here as another possible text. Maybe a quote?"
+    />
     <ArrowTransition customClass="mx-auto" />
-    <section id="solution-a">
+    <section id="the-solution">
       <div class="mt-4 mb-2 flex items-center justify-between w-full">
         <h3 class="font-bold text-2xl">The Solution - A</h3>
         <p class="text-sm">Ideate - Prototype</p>
@@ -138,7 +115,7 @@ const afterTabs = [
       </article>
     </section>
     <ArrowTransition customClass="mx-auto" />
-    <section id="solution-b">
+    <section id="the-solution-b">
       <div class="mt-4 mb-2 flex items-center justify-between w-full">
         <h3 class="font-bold text-2xl">The Solution - B</h3>
         <p class="text-sm">Ideate - Prototype</p>
