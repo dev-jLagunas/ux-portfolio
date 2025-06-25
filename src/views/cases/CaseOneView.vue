@@ -5,6 +5,8 @@ import CaseProblem from '@/components/reusable/CaseProblem.vue'
 import CaseSolution from '@/components/reusable/CaseSolution.vue'
 import CaseOutcome from '@/components/reusable/CaseOutcome.vue'
 import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
+import CaseNav from '@/components/reusable/CaseNav.vue'
+
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 
@@ -126,17 +128,18 @@ const uxSubheading = 'How I would approach this UX challenge today'
 
 <template>
   <div class="font-headings mb-28">
-    <nav class="mt-16 mb-8">
-      <ul class="flex flex-wrap justify-between items-center">
-        <li>Overview</li>
-        <li>Problem</li>
-        <li>Solution</li>
-        <li>Outcome</li>
-        <li>Reflections</li>
-        <li>UX Lens</li>
-      </ul>
-    </nav>
+    <CaseNav
+      :sections="[
+        { id: 'overview-section', label: 'Overview' },
+        { id: 'problem-section', label: 'Problem' },
+        { id: 'solution-section', label: 'Solution' },
+        { id: 'outcome-section', label: 'Outcome' },
+        { id: 'reflections-section', label: 'Reflections' },
+        { id: 'ux-section', label: 'UX Lens' },
+      ]"
+    />
     <CaseOverview
+      id="overview-section"
       title="Project Overview"
       :tags="['UX Research', 'Systems Design', 'Workflow Design']"
       :imgSrc="notionTrioPhoto"
@@ -150,6 +153,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
+      id="problem-section"
       problemStatement="Here I will explain the problem at hand. I need to add more filler text so it looks like the problem statement is well written. I will need to add more content later, but for the time being this is fine. I don't know what else to do but I guess this will work fine for now."
       :artifacts="[
         { caption: 'Persona', imageSrc: userPersona },
@@ -161,6 +165,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
+      id="solution-section"
       introText="Here I can explain the solution..."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
@@ -168,15 +173,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       afterTitle="Project Management After"
     />
     <ArrowTransition customClass="mx-auto" />
-    <CaseSolution
-      introText="THIS IS FOR SOLUTION B, IT WILL LOOK DIFFERENT LATER ON"
-      :beforeTabs="beforeTabs"
-      :afterTabs="afterTabs"
-      beforeTitle="TRUTH DATABASE Management Before"
-      afterTitle="TRUTH DATABASE MANAGEMENT After"
-    />
-    <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
+      id="outcome-section"
       intro="Here I will describe and explain the outcome. These outcomes are largely qualitative due to the nature of the project."
       context="I’ll highlight 4 key themes that emerged from the changes I implemented."
       :outcomes="outcomeList"
@@ -184,11 +182,12 @@ const uxSubheading = 'How I would approach this UX challenge today'
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseReflections
+      id="reflections-section"
       intro="Here are a few key lessons I took away from this project — what worked, what didn’t, and how it shaped my UX thinking."
       :reflections="reflections"
     />
     <ArrowTransition customClass="mx-auto" />
-    <CaseUxLens :intro="uxIntro" :subheading="uxSubheading">
+    <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
