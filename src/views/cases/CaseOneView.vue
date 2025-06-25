@@ -1,11 +1,13 @@
 <script setup>
 // import CaseContent from '@/components/reusable/CaseContent.vue'
+import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import TabGroup from '@/components/reusable/TabGroup.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import userPersona from '@/assets/images/cases/user-persona.png'
 import journeyMap from '@/assets/images/cases/user-journey.png'
 import empathyMap from '@/assets/images/cases/empathy-map.png'
 // Images
+import notionTrioPhoto from '@/assets/images/home/notion-systems-home.png'
 import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
 import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -62,7 +64,7 @@ const afterTabs = [
 <template>
   <div class="font-headings mb-28">
     <nav class="mt-16 mb-8">
-      <ul class="flex flex-wrap justify-around items-center">
+      <ul class="flex flex-wrap justify-between items-center">
         <li>Overview</li>
         <li>Problem</li>
         <li>Solution</li>
@@ -71,32 +73,18 @@ const afterTabs = [
         <li>UX Lens</li>
       </ul>
     </nav>
-    <header id="project-overview">
-      <h3 class="font-bold text-2xl">Project Overview</h3>
-      <ul
-        class="text-pink font-semibold flex items-start justify-start text-center text-sm gap-2 mb-4 divide-x divide-gray-300"
-      >
-        <li class="pr-2">UX Research</li>
-        <li class="pr-2">Systems Design</li>
-        <li>Workflow Design</li>
-      </ul>
-      <p>
-        Here I can have some context of this case study. There will also be information regarding
-        the case study.
-      </p>
-      <p class="mt-2">
-        This is going to continue the overview of the project. I will likely need a short
-        description, but it will need to be informative enough to make sure it explains the project
-        well.
-      </p>
-      <ul class="my-4 flex flex-col gap-2">
-        <li><span class="underline">My Role:</span> UX Designer, UX Researcher</li>
-        <li><span class="underline">Date:</span> March - April 2025</li>
-        <li>
-          <span class="underline">Toolkit:</span> Figma, Canva, Angular, TailwindCSS, Typescript
-        </li>
-      </ul>
-    </header>
+    <CaseOverview
+      title="Project Overview"
+      :tags="['UX Research', 'Systems Design', 'Workflow Design']"
+      :imgSrc="notionTrioPhoto"
+      :paragraphs="[
+        'Here I can have some context of this case study. I  need to make sure this length thing is working of why structure is off a bit. ok that looks better. it was just tat the text was too short',
+        'This is going to continue the overview of the project and here is the second text. this will be a continuation of the second text. I am just doing this to see how it looks.',
+      ]"
+      role="UX Designer, UX Researcher"
+      date="March – April 2025"
+      toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
+    />
     <ArrowTransition customClass="mx-auto" />
     <section id="problem-section" class="flex flex-col items-center justify-center">
       <div class="mt-4 mb-2 flex items-center justify-between w-full">
