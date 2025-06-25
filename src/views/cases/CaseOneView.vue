@@ -15,8 +15,12 @@ import userPersona from '@/assets/images/cases/user-persona.png'
 import journeyMap from '@/assets/images/cases/user-journey.png'
 import empathyMap from '@/assets/images/cases/empathy-map.png'
 import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
-import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
-import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
+import usableFeat from '@/assets/images/cases/case-one/cafe-accesible-feat.png'
+import boldFeat from '@/assets/images/cases/case-one/cafe-bold-feat.png'
+import languageFeat from '@/assets/images/cases/case-one/cafe-language-feat.png'
+import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.png'
+import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.png'
+import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -30,21 +34,21 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 const beforeTabs = [
   {
     title: 'Multi-lingual Functionality',
-    image: notionBefore,
+    image: languageFeat,
     heading: 'Users Can Browse in 3 Languages',
     description:
       'Many of our customers were Japanese locals or international tourists, yet our original site was only in English. To reduce friction and make the experience inclusive, we introduced a language toggle supporting English, Japanese, and Spanish. This directly reflects the empathy work we did early on, understanding our user base and designing with accessibility and cultural inclusivity in mind.',
   },
   {
     title: 'Responsive Design',
-    image: notionBefore,
+    image: responsiveFeat,
     heading: 'Seamless Experience on Any Device',
     description:
       'The original site was hard to read on mobile and looked clunky on larger screens. By designing mobile-first and leveraging Tailwind CSS breakpoints, we ensured the new site adapts beautifully across devices. This aligns with our ideation and prototyping phase goals which were to prioritize clarity, comfort, and usability in every context.',
   },
   {
     title: 'Interactive Menu',
-    image: notionBefore,
+    image: menuFeat,
     heading: 'Filterable & Image-Based Menu',
     description:
       'We replaced the static PDF menu with a fully interactive layout that lets users filter by food, drinks, or dessert. This improves skimmability and reinforces the playful tone of our brand. It was inspired by direct customer pain points and validated through informal testing and visual consistency analysis during the define phase.',
@@ -54,21 +58,21 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'One-Touch Contact',
-    image: notionAfter,
+    image: touchFeat,
     heading: 'Instant Call & Map Buttons',
     description:
       'Users can now call us or get directions with a single tap. This wasn’t possible on our old site and created unnecessary barriers. Adding these touch-friendly elements addressed real-world needs uncovered during user journey mapping, particularly around mobile use and last-minute decision-making.',
   },
   {
     title: 'Visual Identity',
-    image: notionAfter,
+    image: boldFeat,
     heading: 'Bold, Human-Centered Design',
     description:
       'Rather than copy the minimalist café style common in Japan, we leaned into color, culture, and personality. From the hero images to iconography, every visual reinforces who we are. This was a direct result of ideating around how to reflect our brand’s emotional tone digitally. This was something we knew was missing before.',
   },
   {
     title: 'Accessibility First',
-    image: notionAfter,
+    image: usableFeat,
     heading: ' Designed with Clarity in Mind',
     description:
       'Accessibility wasn’t an afterthought. It was baked into the code and the visuals. We used semantic HTML, optimized contrast, and minimized cognitive load across pages. This decision grew out of our reflection phase, where we evaluated how even unintentional design choices can exclude users and then did our best  to correct that.',
@@ -130,8 +134,9 @@ const reflections = [
 ]
 
 // Ux Lens Data
-const uxIntro = `This project was completed before I started to formally apply the design thinking
-framework but if I were to start it today, here is exactly how I would approach it using a full UX process from the ground up.`
+const uxIntro = `This project was completed before I formally adopted the design thinking framework, but if I were to approach it today, I’d apply the full process from the ground up as I learned in the Google UX Design course. Below is how I would structure this project using each phase of the design thinking framework, combining the intuition I had then with the structure and strategy I’ve developed now.
+
+`
 
 const uxSubheading = 'How I would approach this UX challenge today'
 </script>
@@ -206,13 +211,13 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Empathize</h3>
-        <p class="text-xs tracking-wide uppercase dark:text-gray-600">
-          Users, Context, and Constraints
-        </p>
+        <p class="text-xs tracking-wide uppercase">Users, Context, and Constraints</p>
         <p class="mt-3">
-          I would begin with stakeholder interviews, user surveys, and observational research to
-          understand needs, pain points, and expectations. I’d gather data on current behaviors and
-          system limitations.
+          I’d begin with stakeholder interviews, observational café visits, and digital surveys to
+          better understand user behavior, pain points, and expectations — both online and
+          in-person. I’d also run a competitive audit of local cafés' digital presence to identify
+          opportunities and gaps. This would mirror the initial research process emphasized in the
+          Google course, combining qualitative and quantitative data collection.
         </p>
       </div>
 
@@ -220,11 +225,13 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Define</h3>
-        <p class="text-xs tracking-wide uppercase dark:text-gray-600">Identify Core Problem</p>
+        <p class="text-xs tracking-wide uppercase">Identify Core Problem</p>
         <p class="mt-3">
-          Using affinity diagrams and insights synthesis, I’d define the most pressing user problem.
-          I’d write a clear problem statement and build a lightweight persona to guide design
-          decisions.
+          Using tools like affinity diagrams and insights synthesis, I’d clearly define the primary
+          user challenge,for example, “Multilingual users can’t easily access essential café
+          information.” I’d create user personas and write a focused problem statement, just like we
+          practiced in the course. This step would align my design goals with user needs and ensure
+          I stay grounded in real pain points.
         </p>
       </div>
 
@@ -232,10 +239,12 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Ideate</h3>
-        <p class="text-xs tracking-wide uppercase dark:text-gray-600">Explore Multiple Solutions</p>
+        <p class="text-xs tracking-wide uppercase">Explore Multiple Solutions</p>
         <p class="mt-3">
-          I’d brainstorm multiple directions using mind mapping, task flows, and early sketches. I’d
-          involve stakeholders to validate early ideas before narrowing down.
+          Here, I’d brainstorm ideas using methods like mind mapping, crazy 8s, and task flows. I’d
+          involve collaborators early on. Especially café visitors and my co-founder to help
+          validate ideas and ensure I wasn’t designing in a vacuum. I’d also sketch out low-fidelity
+          screens on paper or in Figma to explore structure before jumping to high-res visuals.
         </p>
       </div>
 
@@ -243,9 +252,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Prototype</h3>
-        <p class="text-xs tracking-wide uppercase dark:text-gray-600">
-          Design Low & High Fidelity Mockups
-        </p>
+        <p class="text-xs tracking-wide uppercase">Design Low & High Fidelity Mockups</p>
         <p class="mt-3">
           Using Figma, I’d design wireframes and interactive prototypes focused on hierarchy,
           usability, and accessibility. I'd share drafts with users and collaborators for early
@@ -257,10 +264,13 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Test</h3>
-        <p class="text-xs tracking-wide uppercase dark:text-gray-600">Validate and Iterate</p>
+        <p class="text-xs tracking-wide uppercase">Validate and Iterate</p>
         <p class="mt-3">
-          I’d conduct usability testing with real users to observe pain points and confusion. Based
-          on feedback, I’d iterate and refine the prototype until it felt intuitive and effective.
+          Finally, I’d conduct usability tests with real users. This would ideally be a mix of
+          Japanese locals, international tourists, and bilingual users. I’d collect feedback using
+          structured protocols like task completion questions and “think aloud” techniques. Based on
+          the feedback, I’d iterate, refine, and test again to ensure the final product was both
+          functional and user-centered.
         </p>
       </div>
 
@@ -268,10 +278,13 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Deliver & Measure</h3>
-        <p class="text-xs tracking-wide uppercase dark:text-gray-600">Launch and Track Behavior</p>
+        <p class="text-xs tracking-wide uppercase">Launch and Track Behavior</p>
         <p class="mt-3">
-          I’d ship the solution with tracking in place, gather metrics (engagement, clicks, NPS),
-          and plan follow-ups to continuously improve the experience based on real-world usage.
+          Once launched, I’d implement analytics tools to monitor user behavior. Tracking
+          engagement, clicks, bounce rates, and task success. I’d also explore lightweight feedback
+          tools like NPS surveys or usability polls to gather real-world insights. From there, I’d
+          build a plan for continuous improvement through data-driven iteration, ensuring the design
+          evolves with user needs.
         </p>
       </div>
     </CaseUxLens>
