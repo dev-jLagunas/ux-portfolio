@@ -29,43 +29,49 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 // Tab Data
 const beforeTabs = [
   {
-    title: 'Before – Project Mgmt',
+    title: 'Multi-lingual Functionality',
     image: notionBefore,
-    heading: 'Disorganized System',
-    description: 'Tasks were stored across emails, disconnected Notion pages, and verbal memory.',
+    heading: 'Users Can Browse in 3 Languages',
+    description:
+      'Many of our customers were Japanese locals or international tourists, yet our original site was only in English. To reduce friction and make the experience inclusive, we introduced a language toggle supporting English, Japanese, and Spanish. This directly reflects the empathy work we did early on, understanding our user base and designing with accessibility and cultural inclusivity in mind.',
   },
   {
-    title: 'Before – Ownership',
+    title: 'Responsive Design',
     image: notionBefore,
-    heading: 'No Task Ownership',
-    description: 'No one knew who was responsible for what. Things slipped through the cracks.',
+    heading: 'Seamless Experience on Any Device',
+    description:
+      'The original site was hard to read on mobile and looked clunky on larger screens. By designing mobile-first and leveraging Tailwind CSS breakpoints, we ensured the new site adapts beautifully across devices. This aligns with our ideation and prototyping phase goals which were to prioritize clarity, comfort, and usability in every context.',
   },
   {
-    title: 'Before – Collaboration',
+    title: 'Interactive Menu',
     image: notionBefore,
-    heading: 'Siloed Work',
-    description: 'Only those with prior knowledge could understand or update tasks.',
+    heading: 'Filterable & Image-Based Menu',
+    description:
+      'We replaced the static PDF menu with a fully interactive layout that lets users filter by food, drinks, or dessert. This improves skimmability and reinforces the playful tone of our brand. It was inspired by direct customer pain points and validated through informal testing and visual consistency analysis during the define phase.',
   },
 ]
 
 const afterTabs = [
   {
-    title: 'After – Project Management',
+    title: 'One-Touch Contact',
     image: notionAfter,
-    heading: 'Structured Timeline',
-    description: 'Tasks now follow a chronological timeline, with embedded instructions.',
+    heading: 'Instant Call & Map Buttons',
+    description:
+      'Users can now call us or get directions with a single tap. This wasn’t possible on our old site and created unnecessary barriers. Adding these touch-friendly elements addressed real-world needs uncovered during user journey mapping, particularly around mobile use and last-minute decision-making.',
   },
   {
-    title: 'After – Ownership',
+    title: 'Visual Identity',
     image: notionAfter,
-    heading: 'Clear Ownership',
-    description: 'Each task includes a lead, contact info, and platform links.',
+    heading: 'Bold, Human-Centered Design',
+    description:
+      'Rather than copy the minimalist café style common in Japan, we leaned into color, culture, and personality. From the hero images to iconography, every visual reinforces who we are. This was a direct result of ideating around how to reflect our brand’s emotional tone digitally. This was something we knew was missing before.',
   },
   {
-    title: 'After – Collaboration',
+    title: 'Accessibility First',
     image: notionAfter,
-    heading: 'Team Transparency',
-    description: 'Anyone can jump in and contribute, regardless of past involvement.',
+    heading: ' Designed with Clarity in Mind',
+    description:
+      'Accessibility wasn’t an afterthought. It was baked into the code and the visuals. We used semantic HTML, optimized contrast, and minimized cognitive load across pages. This decision grew out of our reflection phase, where we evaluated how even unintentional design choices can exclude users and then did our best  to correct that.',
   },
 ]
 
@@ -168,11 +174,13 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="Here I can explain the solution..."
+      introText="To address the limitations of our original site, I redesigned the Café Triangle website from the ground up with a focus on usability, personality, and accessibility. The new site features a fully responsive layout, multilingual support, interactive menu browsing, and one-touch contact tools — all hand-coded with Angular and Tailwind CSS. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our café itself.
+
+"
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="Project Management Before"
-      afterTitle="Project Management After"
+      beforeTitle="Site Features A"
+      afterTitle="Site Features B"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome

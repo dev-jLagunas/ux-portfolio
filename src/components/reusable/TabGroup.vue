@@ -19,19 +19,17 @@ const activeTab = ref(0)
 
 <template>
   <div class="w-full mt-8">
-    <h3 v-if="title" class="text-xl font-semibold mb-4">{{ title }}</h3>
+    <h3 v-if="title" class="text-2xl font-semibold mb-4 text-center">{{ title }}</h3>
 
     <!-- Tab Buttons -->
-    <div class="flex border-b border-gray-300 mb-6 space-x-2">
+    <div class="flex mb-6 space-x-2">
       <button
         v-for="(tab, index) in tabs"
         :key="index"
         @click="activeTab = index"
         :class="[
-          'py-2 px-4 text-sm font-medium focus:outline-none transition-all',
-          activeTab === index
-            ? 'border-b-2 border-blue-500 text-blue-600'
-            : 'text-gray-500 hover:text-blue-600',
+          'py-2 px-4 text-sm focus:outline-none transition-all hover:cursor-pointer',
+          activeTab === index ? 'border-b-4 border-b-pink' : 'text-gray-500 hover:text-pink',
         ]"
       >
         {{ tab.title }}
@@ -39,7 +37,7 @@ const activeTab = ref(0)
     </div>
 
     <!-- Tab Content -->
-    <div v-if="tabs[activeTab]" class="text-center">
+    <div v-if="tabs[activeTab]" class="">
       <img
         :src="tabs[activeTab].image"
         alt=""
