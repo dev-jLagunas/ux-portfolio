@@ -1,7 +1,7 @@
 <script setup>
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
-import TabGroup from '@/components/reusable/TabGroup.vue'
+import CaseSolution from '@/components/reusable/CaseSolution.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import userPersona from '@/assets/images/cases/user-persona.png'
 import journeyMap from '@/assets/images/cases/user-journey.png'
@@ -97,41 +97,21 @@ const afterTabs = [
       quote="I will leave this here as another possible text. Maybe a quote?"
     />
     <ArrowTransition customClass="mx-auto" />
-    <section id="the-solution">
-      <div class="mt-4 mb-2 flex items-center justify-between w-full">
-        <h3 class="font-bold text-2xl">The Solution - A</h3>
-        <p class="text-sm">Ideate - Prototype</p>
-      </div>
-      <article>
-        <p>
-          Here I can explain the solution. I can talk about what I did and I can describe slightly
-          the images that follow. The images will be explaining the images which will be before and
-          after images. The images will be edited and perhaps combined in canva.
-        </p>
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <TabGroup :tabs="beforeTabs" title="Project Management Before" />
-          <TabGroup :tabs="afterTabs" title="Project Management After" />
-        </section>
-      </article>
-    </section>
+    <CaseSolution
+      introText="Here I can explain the solution..."
+      :beforeTabs="beforeTabs"
+      :afterTabs="afterTabs"
+      beforeTitle="Project Management Before"
+      afterTitle="Project Management After"
+    />
     <ArrowTransition customClass="mx-auto" />
-    <section id="the-solution-b">
-      <div class="mt-4 mb-2 flex items-center justify-between w-full">
-        <h3 class="font-bold text-2xl">The Solution - B</h3>
-        <p class="text-sm">Ideate - Prototype</p>
-      </div>
-      <article>
-        <p>
-          Here I can explain the solution. I can talk about what I did and I can describe slightly
-          the images that follow. The images will be explaining the images which will be before and
-          after images. The images will be edited and perhaps combined in canva.
-        </p>
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <TabGroup :tabs="beforeTabs" title="One Source Of Truth Database Breakdown" />
-          <TabGroup :tabs="afterTabs" title="One Source of Truth Database Breakdown" />
-        </section>
-      </article>
-    </section>
+    <CaseSolution
+      introText="THIS IS FOR SOLUTION B, IT WILL LOOK DIFFERENT LATER ON"
+      :beforeTabs="beforeTabs"
+      :afterTabs="afterTabs"
+      beforeTitle="TRUTH DATABASE Management Before"
+      afterTitle="TRUTH DATABASE MANAGEMENT After"
+    />
     <ArrowTransition customClass="mx-auto" />
     <section id="outcome-section" class="flex flex-col items-center justify-center">
       <div class="mt-4 mb-2 flex items-center justify-between w-full">
