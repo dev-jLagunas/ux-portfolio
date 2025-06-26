@@ -18,7 +18,9 @@ export function useScrollToSection() {
     } else {
       await router.push({ name: 'home' })
       await nextTick()
-      requestAnimationFrame(() => scrollToSection(sectionId))
+      requestAnimationFrame(() => {
+        scrollToSection(sectionId)
+      })
     }
   }
 
