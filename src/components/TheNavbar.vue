@@ -1,7 +1,8 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
+import { useThemeStore } from '@/stores/theme'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'
@@ -11,20 +12,14 @@ import userWhiteSvg from '@/assets/svgs/white-user.svg'
 import workWhiteSvg from '@/assets/svgs/white-design-works.svg'
 import personalWhiteSvg from '@/assets/svgs/white-artwork.svg'
 
-// Reactive Properties
-const isDarkMode = ref(false)
+// Store
+const theme = useThemeStore()
 
 // Computed Properties
-const workIcon = computed(() => (isDarkMode.value ? workWhiteSvg : workDarkSvg))
-const userIcon = computed(() => (isDarkMode.value ? userWhiteSvg : userDarkSvg))
-const personalIcon = computed(() => (isDarkMode.value ? personalWhiteSvg : personalDarkSvg))
-const nameLogo = computed(() => (isDarkMode.value ? nameLogoLight : nameLogoDark))
-
-// Watchers
-watch(isDarkMode, (val) => {
-  const root = document.documentElement
-  val ? root.classList.add('dark') : root.classList.remove('dark')
-})
+const workIcon = computed(() => (theme.isDarkMode ? workWhiteSvg : workDarkSvg))
+const userIcon = computed(() => (theme.isDarkMode ? userWhiteSvg : userDarkSvg))
+const personalIcon = computed(() => (theme.isDarkMode ? personalWhiteSvg : personalDarkSvg))
+const nameLogo = computed(() => (theme.isDarkMode ? nameLogoLight : nameLogoDark))
 
 // Methods
 function openModal() {
@@ -78,7 +73,7 @@ function navigateToWork() {
         <li>
           <button
             class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
-            @click="isDarkMode = !isDarkMode"
+            @click="theme.toggleTheme()"
           >
             Lights Off
           </button>

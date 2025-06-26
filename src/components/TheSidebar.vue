@@ -1,7 +1,8 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
+import { useThemeStore } from '@/stores/theme'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import hamburgerDarkIcon from '@/assets/svgs/hamburger-menu-dark.svg'
@@ -18,11 +19,12 @@ function navigateToWork() {
 
 // Reactive Properties
 const isOpen = ref(false)
-const isDarkMode = ref(false)
+
+const theme = useThemeStore()
 
 // Computed Properties
-const hamburgerIcon = computed(() => (isDarkMode.value ? hamburgerLightIcon : hamburgerDarkIcon))
-const nameLogo = computed(() => (isDarkMode.value ? nameLogoLight : nameLogoDark))
+const hamburgerIcon = computed(() => (theme.isDarkMode ? hamburgerLightIcon : hamburgerDarkIcon))
+const nameLogo = computed(() => (theme.isDarkMode ? nameLogoLight : nameLogoDark))
 
 // Methods
 function toggleSidebar() {
@@ -33,12 +35,6 @@ function navigateAndClose(path) {
   isOpen.value = false
   router.push(path)
 }
-
-// Watchers
-watch(isDarkMode, (val) => {
-  const root = document.documentElement
-  val ? root.classList.add('dark') : root.classList.remove('dark')
-})
 
 // Methods
 function openModal() {
@@ -96,7 +92,7 @@ function openModal() {
             <li>
               <button
                 class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer"
-                @click="isDarkMode = !isDarkMode"
+                @click="theme.toggleTheme()"
               >
                 Lights Off
               </button>
