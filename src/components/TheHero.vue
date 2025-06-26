@@ -1,5 +1,6 @@
 <script setup>
 import { showContactModal } from '@/composables/useContactModal'
+import { useRouter } from 'vue-router'
 
 import artistImg from '@/assets/images/hero-artist.png'
 import builderImg from '@/assets/images/hero-builder.png'
@@ -7,9 +8,13 @@ import designerImg from '@/assets/images/hero-designer.png'
 import developerImg from '@/assets/images/hero-developer.png'
 import dreamerImg from '@/assets/images/hero-dreamer.png'
 import photographerImg from '@/assets/images/hero-photographer.png'
-// import arrowDark from '@/assets/svgs/arrow-dark.svg'
-// import arrowLight from '@/assets/svgs/arrow-light.svg'
 
+// Routing
+const router = useRouter()
+
+function navigateToWork() {
+  router.push({ name: 'home', hash: '#case-studies' })
+}
 // Methods
 function openContactModal() {
   showContactModal.value = true
@@ -35,7 +40,10 @@ function openContactModal() {
         >
           Contact Me
         </button>
-        <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative">
+        <button
+          class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative"
+          @click="navigateToWork"
+        >
           See Work
         </button>
       </div>
@@ -73,7 +81,10 @@ function openContactModal() {
       >
         Contact Me
       </button>
-      <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative">
+      <button
+        class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative"
+        @click="navigateToWork"
+      >
         See Work
       </button>
     </div>
