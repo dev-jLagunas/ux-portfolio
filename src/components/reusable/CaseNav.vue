@@ -1,5 +1,9 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { useThemeStore } from '@/stores/theme'
+
+// Store
+const theme = useThemeStore()
 
 const props = defineProps({
   sections: {
@@ -49,7 +53,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="mt-8 mb-8 sticky top-5 z-50 bg-white py-1 rounded-md">
+  <nav class="mt-8 mb-8 sticky top-5 z-50 bg-pink py-3 rounded-sm">
     <ul
       class="grid grid-cols-3 w-full place-items-center gap-4 text-sm font-semibold md:grid-cols-6"
     >
@@ -58,7 +62,7 @@ onBeforeUnmount(() => {
         :key="section.id"
         :class="[
           'cursor-pointer transition-colors duration-300',
-          activeSection === section.id ? 'text-pink' : 'text-blue',
+          activeSection === section.id ? 'text-black' : 'text-white',
         ]"
         @click="scrollToSection(section.id)"
       >

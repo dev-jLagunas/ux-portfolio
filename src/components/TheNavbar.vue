@@ -75,7 +75,7 @@ function navigateToWork() {
             class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
             @click="theme.toggleTheme()"
           >
-            Lights Off
+            {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}
           </button>
         </li>
       </div>

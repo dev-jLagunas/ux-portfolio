@@ -94,7 +94,7 @@ function openModal() {
                 class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer"
                 @click="theme.toggleTheme()"
               >
-                Lights Off
+                {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}
               </button>
             </li>
           </div>
