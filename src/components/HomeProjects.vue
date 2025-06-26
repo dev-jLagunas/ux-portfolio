@@ -4,11 +4,10 @@ import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
 import notionTrioPhoto from '@/assets/images/home/notion-systems-home.png'
 import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.png'
 import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
-defineProps()
 </script>
 
 <template>
-  <section class="font-headings" v-bind="$attrs">
+  <section class="font-headings">
     <header class="px-4">
       <h1 class="font-bold text-3xl text-center md:text-5xl">My UX Work</h1>
       <p class="my-2 text-center">
