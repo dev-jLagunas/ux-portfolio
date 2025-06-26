@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { showContactModal } from '@/composables/useContactModal'
-import { useScrollToSection } from '@/composables/useScrollToSection'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'
@@ -10,9 +10,6 @@ import personalDarkSvg from '@/assets/svgs/dark-artwork.svg'
 import userWhiteSvg from '@/assets/svgs/white-user.svg'
 import workWhiteSvg from '@/assets/svgs/white-design-works.svg'
 import personalWhiteSvg from '@/assets/svgs/white-artwork.svg'
-
-// Composables
-const { goToSection } = useScrollToSection()
 
 // Reactive Properties
 const isDarkMode = ref(false)
@@ -34,8 +31,11 @@ function openModal() {
   showContactModal.value = true
 }
 
+// Routing
+const router = useRouter()
+
 function navigateToWork() {
-  goToSection('case-studies')
+  router.push({ name: 'home', hash: '#case-studies' })
 }
 </script>
 
