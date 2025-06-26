@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useScrollToSection } from '@/composables/useScrollToSection.js'
 import { showContactModal } from '@/composables/useContactModal'
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
@@ -32,10 +32,11 @@ function openModal() {
 }
 
 // Routing
-const router = useRouter()
+
+const { goToSection } = useScrollToSection()
 
 function navigateToWork() {
-  router.push({ name: 'home', hash: '#case-studies' })
+  goToSection('case-studies')
 }
 </script>
 

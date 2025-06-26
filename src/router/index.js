@@ -39,16 +39,6 @@ const router = createRouter({
       component: () => import('@/views/cases/CaseFourView.vue'),
     },
   ],
-  scrollBehavior(to) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-        block: 'start',
-      }
-    }
-    return { top: 0 }
-  },
 })
 
 export default router
