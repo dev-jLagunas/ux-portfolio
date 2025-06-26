@@ -12,6 +12,11 @@ import personalSvg from '@/assets/svgs/white-artwork.svg'
 
 const router = useRouter()
 
+function navigateToWork() {
+  router.push({ name: 'home', hash: '#case-studies' })
+  isOpen.value = false
+}
+
 // Reactive Properties
 const isOpen = ref(false)
 const isDarkMode = ref(false)
