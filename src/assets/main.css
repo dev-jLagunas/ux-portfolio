@@ -5,6 +5,10 @@
 Global Styles
 *****************************************/
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 1200px;
   margin-inline: auto;

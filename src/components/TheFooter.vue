@@ -43,7 +43,7 @@ function openContactModal() {
   }
 }
 
-/* .animate-skate {
+.animate-skate {
   animation: skate 6s linear infinite;
-} */
+}
 </style>

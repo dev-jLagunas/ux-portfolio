@@ -1,10 +1,11 @@
 import { useRoute, useRouter } from 'vue-router'
+import { nextTick } from 'vue'
 
 export function useScrollToSection() {
   const route = useRoute()
   const router = useRouter()
 
-  const scrollToSection = async (sectionId) => {
+  const scrollToSection = (sectionId) => {
     const el = document.getElementById(sectionId)
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
@@ -16,7 +17,8 @@ export function useScrollToSection() {
       scrollToSection(sectionId)
     } else {
       await router.push({ name: 'home' })
-      setTimeout(() => scrollToSection(sectionId), 300)
+      await nextTick()
+      requestAnimationFrame(() => scrollToSection(sectionId))
     }
   }
 
