@@ -11,9 +11,9 @@ import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 
 // Images
-import userPersona from '@/assets/images/cases/user-persona.png'
-import journeyMap from '@/assets/images/cases/user-journey.png'
-import empathyMap from '@/assets/images/cases/empathy-map.png'
+import userPersona from '@/assets/images/cases/case-one/persona-cafe.jpg'
+import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.jpg'
+import empathyMap from '@/assets/images/cases/case-one/empathy-map-cafe.jpg'
 import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
 import usableFeat from '@/assets/images/cases/case-one/cafe-accesible-feat.png'
 import boldFeat from '@/assets/images/cases/case-one/cafe-bold-feat.png'
@@ -177,8 +177,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
         { caption: 'Empathy Map', imageSrc: empathyMap },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
-      takeaway="Here we'll expand on or clearly state important takeaways from the visuals above..."
-      quote="I will leave this here as another possible text. Maybe a quote?"
+      takeaway="Megumi is a thoughtful, community-oriented cafe-goer who values comfort, cultural richness, and clear pet-friendly policies. Her journey reflects a desire not just for good food, but for experiences that feel welcoming, unique, and worth sharing. When cafes clearly communicate their vibe and inclusivity, she becomes a loyal advocate."
+      quote="It's hard to know if a place is truly pet-friendly."
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution

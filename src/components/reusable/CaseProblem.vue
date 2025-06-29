@@ -71,9 +71,7 @@ function prevImage() {
       <p class="mt-6">
         {{ takeaway }}
       </p>
-      <p class="text-2xl mt-4">
-        {{ quote }}
-      </p>
+      <p class="text-2xl mt-4 font-bold text-pink uppercase mb-2 text-center">"{{ quote }}"</p>
     </article>
   </section>
   <div
