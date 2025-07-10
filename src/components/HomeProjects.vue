@@ -18,7 +18,7 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
 
     <div class="px-4 flex flex-col gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
       <ProjectCard
-        title="Cafe Triangle"
+        title="Cafe Triangle Redesign"
         ux-type="Web UX"
         description="A multilingual cafe website designed from scratch to clearly showcase the menu and brand while improving usability for both local and international customers."
         :image="cafeTrioPhoto"
@@ -27,14 +27,14 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
       <ProjectCard
         title="Notion Project Management System"
         ux-type="Systems UX"
-        description="A fully custm Notion workspace that streamlined project tracking, boosted team accountability, and replaced chaotic email chains with clear systems."
+        description="A fully custom Notion workspace that streamlined project management, boosted team accountability, and replaced chaotic email chains with clear systems."
         :image="notionTrioPhoto"
         route="/case-two"
       />
       <ProjectCard
         title="Department Marketing System"
         ux-type="Design Ops UX"
-        description="A full redesign of the department's visual standards and workflows, unifying brand identity and imprving clairty across all marketing assets."
+        description="A full redesign of the department's visual standards and workflows, unifying brand identity and improving clarity across all marketing assets."
         :image="marketingTrioPhoto"
         route="/case-three"
       />

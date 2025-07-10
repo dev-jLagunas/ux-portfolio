@@ -37,7 +37,7 @@ onBeforeUnmount(() => {
   <button
     v-show="showBackToTop"
     @click="scrollToTop"
-    class="fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-white transition opacity-75 hover:opacity-100"
+    class="fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-white transition opacity-75 hover:opacity-100 hover:cursor-pointer"
   >
     Back to Top
   </button>

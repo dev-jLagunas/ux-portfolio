@@ -34,19 +34,19 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
         <span class="font-bold text-pink">M</span>y <span class="font-bold text-blue">B</span>io
       </h3>
       <p class="leading-relaxed">
-        I'm a seasoned pro with over
+        I'm a highly experiened professional with over
         <strong>twenty years of direct customer service experience</strong>, meaning I deeply
         understand how people think and what they need.
       </p>
       <p class="leading-relaxed my-2">
         My unique journey through various jobs and cultures has taught me to
-        <strong>blend smart thinking with creative solutions and a whole lot of empathy,</strong>
+        <strong>blend smart thinking with creative solutions and a whole lot of empathy</strong>,
         driving my genuine love for tackling tricky problems and making experiences easier and more
         enjoyable.
       </p>
       <p class="leading-relaxed">
         My ultimate goal is to turn complicated challenges into
-        <strong>simple, beautiful, and intuitive solutions that just click</strong>, because for me,
+        <strong>simple, beautiful, and intuitive solutions that just click.</strong> This means that
         UX design is the perfect way to bring a lifetime of problem-solving and refining ideas to
         life.
       </p>
@@ -83,17 +83,17 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
           groups of people.</strong
         >
       </p>
+      <p class="leading-relaxed mt-2">
+        My Linguistics degree further shaped my thinking about communication, different
+        perspectives,
+        <strong>and deepened my ability to connect with and understand diverse users.</strong>
+      </p>
       <p class="leading-relaxed my-2">
         Building on this, I spent seven years teaching English to everyone from young children to
         adults, including refugees and international students,
         <strong>which sharpened my communication skills and empathy</strong>
       </p>
 
-      <p class="leading-relaxed">
-        My Linguistics degree further shaped my thinking about communication, different
-        perspectives,
-        <strong>and deepened my ability to connect with and understand diverse users.</strong>
-      </p>
       <h4 class="mt-4 tracking-widest">Skills Acquired</h4>
       <div class="flex justify-between items-center mt-2 w-full px-2 gap-2">
         <figure class="flex justify-center items-center flex-col gap-2">
@@ -158,13 +158,14 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
     <article class="flex flex-col items-center justify-center relative md:mb-8">
       <img :src="sunPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
-        <span class="text-pink font-bold">M</span>y <SPAN class="text-blue font-bold">W</SPAN>ork
+        <span class="text-pink font-bold">M</span>y
+        <SPAN class="text-blue font-bold">R</SPAN>ealization
       </h3>
       <p class="leading-relaxed">
-        My journey truly hit its stride at my recent university job in San Diego;
+        Something clicked at my recent university job in San Diego;
         <strong
           >its chaotic environment, lacking systems and plans, unexpectedly became my launchpad into
-          UX. my career path.</strong
+          my UX career path.</strong
         >
       </p>
       <p class="leading-relaxed my-2">
@@ -173,10 +174,13 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
           >building Notion-based project management systems, crafting a year-long marketing strategy
           with digital assets, and refactoring email newsletters with analytics.</strong
         >
-        It was here that everything clicked, as I realized my daily life had long revolved around
-        iterating, ideating, and problem-solving to make things better—even before I knew the term
-        "UX." This hands-on application, combined with extensive UX reading and completing Google's
-        Coursera UX course, definitively cemented
+        It was here that everything fell into place as
+        <strong
+          >I realized my daily life had long revolved around iterating, ideating, and
+          problem-solving to make things better.</strong
+        >
+        Even before I knew the term "UX." This hands-on application, combined with extensive UX
+        reading and completing Google's Coursera UX course, definitively cemented
       </p>
       <h4 class="mt-4 tracking-widest">Skills Acquired</h4>
       <div class="flex justify-between items-center mt-2 w-full gap-2 text-center">
@@ -207,16 +211,20 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
       <p class="leading-relaxed">
         <strong class="">Right now, my whole focus is on landing my first UX design role.</strong>
         I'm excited to finally pursue a career that truly ignites my passion and aligns with
-        everything I've learned, both formally and through my life's unique experiences. I'm ready
-        to bring my extensive real-world understanding of users, my knack for problem-solving, and
-        my commitment to creating meaningful digital experiences to a team.
+        everything I've learned, both formally and through my life's unique experiences.
+        <strong
+          >I'm ready to bring my extensive real-world understanding of users, my knack for
+          problem-solving, and my commitment to creating meaningful digital experiences to a
+          team.</strong
+        >
       </p>
       <p class="mt-2 leading-relaxed">
+        I believe my diverse background isn't just a story, it's a toolkit for approaching design
+        challenges with empathy, creativity, and a fresh perspective.
         <strong
-          >I believe my diverse background isn't just a story—it's a toolkit for approaching design
-          challenges with empathy, creativity, and a fresh perspective.</strong
+          >I'm eager to jump in, collaborate, and continue learning and growing within the UX
+          field.</strong
         >
-        I'm eager to jump in, collaborate, and continue learning and growing within the UX field.
       </p>
       <h4 class="mt-4 tracking-widest">What I Bring</h4>
       <div class="flex justify-between items-center mt-2 w-full gap-2 text-center">
@@ -260,7 +268,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
           something truly amazing,</strong
         >
         marking this not just as a job, but as the culmination of a lifetime spent observing,
-        solving, and striving to make things better—now clearly defined as UX design.
+        solving, and striving to make things better. Now, finally, clearly defined as UX design.
       </p>
       <h4 class="mt-4 tracking-widest">What I Bring</h4>
       <ul class="flex justify-between items-center mt-2 w-full gap-2 text-center">

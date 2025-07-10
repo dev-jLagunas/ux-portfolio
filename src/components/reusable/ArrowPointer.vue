@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <figure :class="`w-fit flex flex-col justify-center items-center ${customClass}`">
-    <img :src="arrowBlue" alt="" class="-rotate-45" />
+    <img :src="arrowBlue" alt="" class="-rotate-45 h-32" />
     <img :src="arrowPink" alt="" class="rotate-45" />
     <img :src="arrowBlue" alt="" class="-rotate-45" />
   </figure>

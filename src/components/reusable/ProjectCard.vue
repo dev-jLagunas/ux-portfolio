@@ -1,4 +1,9 @@
 <script setup>
+import { useThemeStore } from '@/stores/theme'
+
+// Store
+const theme = useThemeStore()
+
 // Props
 defineProps({
   uxType: {
@@ -31,16 +36,19 @@ defineProps({
     <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
     <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
 
-    <p class="text-center text-pink-400 font-bold mb-2">{{ uxType }}</p>
+    <p class="text-center text-pink font-bold mb-2">{{ uxType }}</p>
     <h3 class="text-xl font-bold mb-2 text-center">{{ title }}</h3>
-    <p class="text-sm text-center text-gray-500 mb-4">
+    <p class="text-sm mb-4">
       {{ description }}
     </p>
     <img :src="image" alt="" class="h-1/2 max-h-72" />
 
     <router-link :to="route">
       <button
-        class="bg-black text-white px-4 py-2 text-sm rounded hover:cursor-pointer hover:bg-pink duration-300"
+        :class="[
+          theme.isDarkMode ? 'bg-white text-black' : 'bg-dark text-white ',
+          'px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 hover:bg-pink',
+        ]"
       >
         View Case Study
       </button>
