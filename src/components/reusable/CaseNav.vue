@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
         :key="section.id"
         :class="[
           'cursor-pointer transition-colors duration-300',
-          activeSection === section.id ? 'text-black' : 'text-white',
+          activeSection === section.id ? 'text-dark' : 'text-white',
         ]"
         @click="scrollToSection(section.id)"
       >

@@ -1,4 +1,5 @@
 <script setup>
+import CaseNav from '@/components/reusable/CaseNav.vue'
 import selfPhoto from '@/assets/images/about/self-red.jpg'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import sunPhoto from '@/assets/images/about/cafe-self-about.jpg'
@@ -27,8 +28,19 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
 </script>
 
 <template>
+  <CaseNav
+    :sections="[
+      { id: 'bio-section', label: 'My Bio' },
+      { id: 'roots-section', label: 'My Roots' },
+      { id: 'journey-section', label: 'My Journey' },
+      { id: 'realization-section', label: 'My Realization' },
+      { id: 'future-section', label: 'My Future' },
+      { id: 'dream-section', label: 'My Dream' },
+    ]"
+    class="md:hidden"
+  />
   <section class="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-8 font-headings">
-    <article class="flex flex-col items-center justify-center relative md:mb-8">
+    <article class="flex flex-col items-center justify-center relative md:mb-8" id="bio-section">
       <img :src="selfPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
         <span class="font-bold text-pink">M</span>y <span class="font-bold text-blue">B</span>io
@@ -69,8 +81,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
         customClass="scale-75 md:absolute md:-rotate-90 md:-right-18 md:-top-14 md:scale-50  lg:scale-40 lg:-right-18 "
       />
     </article>
-
-    <article class="flex flex-col items-center justify-center relative md:mb-8">
+    <article class="flex flex-col items-center justify-center relative md:mb-8" id="roots-section">
       <img :src="familyCafePhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y <SPAN class="text-blue font-bold">R</SPAN>oots
@@ -114,6 +125,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
     </article>
     <article
       class="flex flex-col items-center justify-center relative md:col-start-2 md:row-start-2 lg:col-start-3 lg:row-start-1 md:mb-8"
+      id="journey-section"
     >
       <img :src="selfCounterPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
@@ -155,7 +167,10 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
         customClass="scale-75  md:absolute md:rotate-90 md:-top-14 md:-left-20 lg:-rotate-90 lg:-left-18 md:scale-50 lg:scale-40 "
       />
     </article>
-    <article class="flex flex-col items-center justify-center relative md:mb-8">
+    <article
+      class="flex flex-col items-center justify-center relative md:mb-8"
+      id="realization-section"
+    >
       <img :src="sunPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y
@@ -203,6 +218,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
     </article>
     <article
       class="flex flex-col items-center justify-center relative lg:col-start-2 lg:row-start-2 md:mb-8"
+      id="future-section"
     >
       <img :src="directionPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
@@ -247,6 +263,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
     </article>
     <article
       class="flex flex-col items-center justify-center relative lg:col-start-1 lg:row-start-2 md:mb-8"
+      id="dream-section"
     >
       <img :src="selfBlackPhoto" alt="" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
