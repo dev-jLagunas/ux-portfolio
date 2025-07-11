@@ -171,8 +171,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
         { caption: 'Empathy Map', imageSrc: empathyMap },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
-      takeaway="Here we'll expand on or clearly state important takeaways from the visuals above..."
-      quote="I will leave this here as another possible text. Maybe a quote?"
+      takeaway="The newsletter's problem wasn’t lack of effort—it was lack of intention. Isabella, a motivated and routine-driven student, opens the email weekly but quickly disengages due to visual clutter, repetitive content, and unclear hierarchy. She scrolls only as far as necessary to meet her CRP requirements, then deletes the message. Her experience highlights a disconnect between the newsletter's format and its audience’s expectations: students want concise, relevant, and fresh content that respects their time and feels designed for them. Without visual cues, structured hierarchy, or evolving content, the email becomes noise—easily ignored instead of meaningfully engaged with."
+      quote="I don’t really need fluff. Just useful or relevant content that resonates with me."
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution

@@ -29,93 +29,93 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 // Tab Data
 const beforeTabs = [
   {
-    title: 'Before – Project Mgmt',
+    title: 'Project Management',
     image: notionBefore,
     heading: 'Fragmented Tools',
     description:
-      'Tasks were spread across Notion, Google Drive, email threads, and verbal memory. There was no single place to understand what was happening. This fragmentation violated UX fundamentals like consistency and ease of navigation — users had to jump between platforms and piece together workflows manually.',
+      'Tasks were spread across Notion, Google Drive, email threads, and verbal memory. There was no single place to understand what was happening. This fragmentation violated UX fundamentals like consistency and ease of navigation because it meant users had to jump between platforms and piece together workflows manually.',
   },
   {
-    title: 'Before – Ownership',
+    title: 'Ownership',
     image: notionBefore,
     heading: 'No Defined Roles',
     description:
-      'No tasks had clear owners, deadlines, or context. If someone left the team, their knowledge left with them. The system depended on interpersonal memory rather than accessible documentation — a direct failure in information architecture and knowledge transfer.',
+      'No tasks had clear owners, deadlines, or context. If someone left the team, their knowledge left with them. The system depended on interpersonal memory rather than accessible documentation. A direct failure in information architecture and knowledge transfer.',
   },
   {
-    title: 'Before – Flow',
+    title: 'Task Flow',
     image: notionBefore,
     heading: 'Reactive, Not Proactive',
     description:
-      'Without structure, team members were constantly reacting to problems instead of planning ahead. Tasks lacked prioritization and context. From a design thinking lens, this reflects a system that skipped the “Define” phase — nobody had clearly identified what needed to happen, when, or why.',
+      'Without structure, team members were constantly reacting to problems instead of planning ahead. Tasks lacked prioritization and context. From a design thinking lens, this reflects a system that skipped the “Define” phase because nobody had clearly identified what needed to happen, when, or why.',
   },
 ]
 
 const afterTabs = [
   {
-    title: 'After – Project Management',
+    title: 'Project Management',
     image: notionAfter,
     heading: 'Chronological Timeline',
     description:
-      'The new system organizes tasks by timeline, allowing users to see upcoming actions at a glance. It supports proactive planning and enables asynchronous collaboration — a UX solution grounded in simplicity and flow-state design.',
+      'The new system organizes tasks by timeline, allowing users to see upcoming actions at a glance. It supports proactive planning and enables asynchronous collaboration. I believed this to be a UX solution grounded in simplicity and flow-state design.',
   },
   {
-    title: 'After – Ownership',
+    title: 'Ownership',
     image: notionAfter,
     heading: 'Clear Accountability',
     description:
-      'Every task now includes ownership, due dates, support roles, and relevant documentation. This minimizes ambiguity and empowers team members to work independently. It’s a scalable solution rooted in the “Ideate” and “Prototype” stages — turning fuzzy tasks into reliable building blocks.',
+      'Every task now includes ownership, due dates, support roles, and relevant documentation. This minimizes ambiguity and empowers team members to work independently. It’s a scalable solution rooted in the “Ideate” and “Prototype” stages, turning fuzzy tasks into reliable building blocks. Even better, this now becomes of longterm solution.',
   },
   {
-    title: 'After – Usability',
+    title: 'Usability',
     image: notionAfter,
     heading: 'Consistent Task Templates',
     description:
-      'Each task uses the same internal format — Who, What, When, Where, Why. This reduces cognitive load, supports onboarding, and aligns with UX heuristics like consistency and standards. The system teaches itself as you use it.',
+      'Each task uses the same internal format of who, what, when, where, why. This reduces cognitive load, supports onboarding, and aligns with UX heuristics like consistency and standards. The system teaches itself as you use it.',
   },
 ]
 
 const databaseBeforeTabs = [
   {
-    title: 'Before – Info Access',
+    title: 'Info Access',
     image: notionBefore,
     heading: 'Hidden Knowledge',
     description:
-      'Essential info — like event timelines, vendor contacts, or campaign assets — lived in inboxes or people’s memories. If you didn’t know who to ask, you were out of luck. From a UX perspective, this created a high barrier to entry and failed basic accessibility standards.',
+      'Essential info like event timelines, vendor contacts, or campaign assets lived in inboxes or people’s memories. If you didn’t know who to ask, you were out of luck. From a UX perspective, this created a high barrier to entry and failed basic accessibility standards.',
   },
   {
-    title: 'Before – Team Knowledge',
+    title: 'Team Knowledge',
     image: notionBefore,
     heading: 'No Historical Context',
     description:
-      'Insights from past events — like what went wrong or what worked — weren’t documented anywhere. The team kept repeating mistakes because there was no historical awareness. This reflects a missed opportunity to “Measure” and learn from previous cycles.',
+      'Insights from past events like what went wrong or what worked weren’t documented anywhere. The team kept repeating mistakes because there was no historical awareness. This reflects a missed opportunity to “measure and iterate” to learn from previous cycles.',
   },
   {
-    title: 'Before – Stakeholder',
+    title: 'Stakeholder',
     image: notionBefore,
     heading: 'Constant Follow-Ups',
     description:
-      'If someone needed information, they had to email or DM whoever did it last year — and hope for a response. This created bottlenecks, interrupted workflows, and made project knowledge exclusive rather than shared. It was a textbook case of poor UX for internal users.',
+      'If someone needed information, they had to email or DM whoever did it last year and hope for a response. This created bottlenecks, interrupted workflows, and made project knowledge exclusive rather than shared. It was a textbook case of poor UX for internal users.',
   },
 ]
 
 const databaseAfterTabs = [
   {
-    title: 'After – Info Access',
+    title: 'Info Access',
     image: notionAfter,
     heading: 'Centralized Dashboard',
     description:
-      'The new “One Source of Truth” dashboard organizes everything — from logistics to branding — in one place. It applies UX principles like findability, consistency, and progressive disclosure to internal documentation, making onboarding and collaboration seamless.',
+      'The new “One Source of Truth” dashboard organizes everything, from logistics to branding, in one place. It applies UX principles like findability, consistency, and progressive disclosure to internal documentation, making onboarding and collaboration seamless.',
   },
   {
-    title: 'After – Institutional Memory',
+    title: 'Institutional Memory',
     image: notionAfter,
     heading: 'Captured Insights',
     description:
-      'Pro tips, mistakes, and reflections from past events are now stored and categorized for future use. This builds a feedback loop into the system — a direct reflection of the “Test” and “Reflect” stages of design thinking, allowing future teams to continuously improve.',
+      'Pro tips, mistakes, and reflections from past events are now stored and categorized for future use. This builds a feedback loop into the system. A direct reflection of the “Test” and “Reflect” stages of design thinking, allowing future teams to continuously improve.',
   },
   {
-    title: 'After – Self-Sufficiency',
+    title: 'Self-Sufficiency',
     image: notionAfter,
     heading: 'Reduced Bottlenecks',
     description:
@@ -128,12 +128,12 @@ const outcomeList = [
   {
     title: 'Clear Ownership',
     description:
-      'Team members were no longer guessing who was responsible for what. Each task had a defined lead, relevant contacts, and linked resources — reducing overlap, missed steps, and the need for repeated clarification.',
+      'Team members were no longer guessing who was responsible for what. Each task had a defined lead, relevant contacts, and linked resources which helped reduce overlap, missed steps, and the need for repeated clarification.',
   },
   {
     title: 'Boosted Morale',
     description:
-      'By removing bottlenecks and making workflows intuitive, people felt less overwhelmed. Expectations were clear, and systems no longer required constant hand-holding — creating space for more focused, confident work.',
+      'By removing bottlenecks and making workflows intuitive, people could feel less overwhelmed. Expectations were clear, and systems no longer required constant hand-holding, creating space for more focused, confident work.',
   },
   {
     title: 'Increased Visibility',
@@ -143,7 +143,7 @@ const outcomeList = [
   {
     title: 'Smoother Onboarding',
     description:
-      'New team members no longer had to rely on tribal knowledge or scavenger hunts through old emails. With the dashboard and task system in place, they could understand the full context of a project in one afternoon — and get to work without delay.',
+      'New team members no longer had to rely on tribal knowledge or scavenger hunts through old emails. With the dashboard and task system in place, they could understand the full context of a project in one afternoon and get to work without delay.',
   },
 ]
 
@@ -155,30 +155,30 @@ const reflections = [
     title: 'UX Lives Beyond Interfaces',
     icon: arrowBlue,
     description:
-      'This project helped me see that UX isn’t limited to apps or websites — it’s embedded in team workflows, onboarding, and internal operations. Anywhere people interact with systems, there’s an opportunity to design a better experience.',
+      'This project helped me see that UX isn’t limited to apps or websites. It’s embedded in our daily work lives such as in team workflows, onboarding, and internal operations. Anywhere people interact with systems, there’s an opportunity to design a better experience.',
   },
   {
     title: 'Documentation is Design',
     icon: arrowPink,
     description:
-      'When people can’t find information or don’t know where to start, that’s a UX failure. Creating clear, structured documentation was just as impactful as building a product — because it reduced friction and empowered the team to act independently.',
+      'When people can’t find information or don’t know where to start, that’s a UX failure. Creating clear, structured documentation is just as impactful as building a product because it reduced friction and empowered the team to act independently.',
   },
   {
     title: ' Structure is a Form of Empathy',
     icon: arrowBlue,
     description:
-      'What felt like "just organizing tasks" was actually designing for ease, clarity, and autonomy. Systems that reduce mental load help people focus, feel capable, and do better work — and that’s the core of empathetic UX.',
+      'What felt like "just organizing tasks" was actually designing for ease, clarity, and autonomy. Systems that reduce mental load help people focus, feel capable, and do better work and that’s the core of empathetic UX work, at least to me.',
   },
   {
     title: 'You Don’t Need Permission to Improve Things',
     icon: arrowPink,
     description:
-      'I wasn’t asked to redesign our systems — I did it because the existing ones caused stress, confusion, and inefficiency. This experience reminded me that thoughtful, proactive design speaks for itself — even when it’s invisible.',
+      'I wasn’t asked to redesign our systems. I did it because the existing ones caused stress, confusion, and inefficiency. This experience reminded me that thoughtful, proactive design speaks for itself even when it’s invisible.',
   },
 ]
 
 // Ux Lens Data
-const uxIntro = `This project was completed before I formally adopted the design thinking framework — but if I were to approach it today, I would structure the entire process around the UX methodologies I’ve since learned through the Google UX course. What you’ll see below isn’t just theoretical — it reflects how I now work and think as a designer. I didn’t know the full framework at the time, but I’ve since studied it deeply, practiced it in newer projects, and now use it to guide every UX decision I make.`
+const uxIntro = `At the time I built this system, I hadn’t yet fully committed to becoming a UX designer but looking back, the thinking was already there. This project was driven by instinct, curiosity, and a desire to solve real problems for real people. While I hadn't yet fully internalized UX training, I later completed the Google Coursera UX course, which gave me the language and structure to articulate what I had already been doing intuitively. I now have a much stronger understanding of UX frameworks, methods, and best practices and if I were to approach this project today, I would apply a more formalized, research-driven process from the start. This section outlines how I would refine or expand this work using what I know now as a dedicated UX designer.`
 
 const uxSubheading = 'How I would approach this UX challenge today'
 </script>
@@ -202,29 +202,30 @@ const uxSubheading = 'How I would approach this UX challenge today'
       :tags="['UX Research', 'Systems Design', 'Workflow Design']"
       :imgSrc="notionTrioPhoto"
       :paragraphs="[
-        'Shortly after joining the University of San Diego’s Career Development Center, I was tasked with supporting multiple high-impact events — but instead of a streamlined system, I inherited scattered task lists, disconnected Notion pages, and undocumented knowledge buried in emails and memory. There was no clear structure, ownership, or documentation — only confusion and bottlenecks.',
-        'What began as an effort to make my own job easier became a complete UX-led system overhaul. I built a structured project management system in Notion and designed a scalable, department-wide dashboard to serve as a single source of truth. These tools turned chaos into clarity, making it easy for anyone — new hires, team members, or stakeholders — to understand what needed to be done, when, and how. The result? A transparent, repeatable, and self-sufficient workflow that transformed how our team operates.',
+        'Shortly after joining the University of San Diego’s Career Development Center, I was tasked with supporting multiple high-impact events but instead of a streamlined system, I inherited scattered task lists, disconnected Notion pages, and undocumented knowledge buried in emails and memory. There was no clear structure, ownership, or documentation. As a new team member I found a lot confusion and bottlenecks.',
+        'What began as an effort to make my own job easier became a complete UX-led system overhaul. I built a structured project management system in Notion and designed a scalable, department-wide dashboard to serve as a single source of truth. These tools turned chaos into clarity, making it easy for anyone, including new hires, team members, or stakeholders to understand what needed to be done, when, and how. The result? A transparent, repeatable, and self-sufficient workflow that transformed how our team operates.',
       ]"
       role="UX Designer, UX Researcher"
-      date="March – April 2025"
+      date="Feb – April 2025"
       toolkit="Figma, Notion, Canva"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
       id="problem-section"
-      problemStatement="When I joined the Career Development Center, I wasn’t stepping into a system — I was stepping into chaos. Event logistics, timelines, and institutional knowledge were scattered across outdated Notion pages, disconnected email threads, and verbal memory. There was no shared structure, documentation, or ownership — only a patchwork of personalized to-do lists that broke down the moment someone went on vacation or left the team. This lack of organization led to missed context, constant backtracking, and preventable mistakes. I wasn’t just trying to complete tasks — I was constantly trying to figure out what a task even meant. As a new hire, it made onboarding inefficient and stressful. As a UX thinker, I saw something bigger: a system failure that affected not just me, but every colleague, stakeholder, and future employee trying to do their job in a broken environment."
+      problemStatement="When I joined the Career Development Center, I wasn’t stepping into a system. In fact, it was like stepping into chaos. Event logistics, timelines, and institutional knowledge were scattered across outdated Notion pages, disconnected email threads, and verbal memory. There was no shared structure, documentation, or ownership. It felt like a patchwork of personalized to-do lists that were unusable the moment someone went on vacation or left the team."
+      problemStatementB="This lack of organization led to missed context, constant backtracking, and preventable mistakes. While trying to complete a task, I was also constantly trying to figure out what a task even meant. As a new hire, it made onboarding inefficient and stressful. As a UX thinker, I saw something bigger: a system failure that affected not just me, but every colleague, stakeholder, and future employee trying to do their job in a broken environment."
       :artifacts="[
         { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
-      takeaway="Here we'll expand on or clearly state important takeaways from the visuals above..."
-      quote="I will leave this here as another possible text. Maybe a quote?"
+      takeaway="The visual artifacts make it clear: the true problem was the lack of structure, consistency, and ownership across systems. Julian, a capable and motivated new hire, found himself navigating a maze of outdated pages, vague tasks, and unclear responsibilities. His experience highlights a systemic issue where even simple tasks became complex due to disorganization, leading to anxiety, wasted time, and second-guessing. Despite his confidence and drive, the absence of a reliable system made onboarding difficult and collaboration fragile. Solving this meant more than documenting tasks because what it actually required was building clarity, repeatability, and trust into the way the team worked."
+      quote="I don't mind figuring things out, but there has to be a better way to do this."
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To address the confusion, inefficiency, and lack of transparency in our department’s workflows, I redesigned our internal systems from the ground up. I created a structured project management system in Notion and a companion dashboard to serve as a single source of truth. Together, these tools made our workflows clear, self-sufficient, and easy to follow — reducing bottlenecks, eliminating institutional gatekeeping, and allowing any team member to confidently step in, contribute, and understand exactly what needed to happen and when."
+      introText="To address the confusion, inefficiency, and lack of transparency in our department’s workflows, I redesigned our internal systems from the ground up. I created a structured project management system in Notion and a companion dashboard to serve as a single source of truth. Together, these tools made our workflows clear, self-sufficient, and easy to follow. Processes and systems that worked towards reducing bottlenecks, eliminating institutional gatekeeping, and allowing any team member to confidently step in, contribute, and understand exactly what needed to happen and when."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
       beforeTitle="Project Management Before"
@@ -232,7 +233,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
-      introText="To address the confusion, inefficiency, and lack of transparency in our department’s workflows, I redesigned our internal systems from the ground up. I created a structured project management system in Notion and a companion dashboard to serve as a single source of truth. Together, these tools made our workflows clear, self-sufficient, and easy to follow — reducing bottlenecks, eliminating institutional gatekeeping, and allowing any team member to confidently step in, contribute, and understand exactly what needed to happen and when."
+      introText="While the internal project management system streamlined day-to-day operations for our immediate team, it became clear that knowledge was still siloed across the broader department. To solve this, I created a companion dashboard. A centralized, user-friendly reference hub that anyone in the department could use to understand what was done, why it mattered, and how to replicate it. Designed with clarity, structure, and self-sufficiency in mind, this “One Source of Truth” eliminated the need for back-and-forth emails and verbal memory. It turned hidden institutional knowledge into an accessible, scalable asset. Making onboarding, collaboration, and historical insight dramatically more efficient. Below is a breakdown of how the dashboard improves access, continuity, and team-wide alignment."
       :beforeTabs="databaseBeforeTabs"
       :afterTabs="databaseAfterTabs"
       beforeTitle="Single Database Before"
@@ -241,15 +242,15 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"
-      intro="Redesigning our internal systems led to an immediate and noticeable shift in how our team worked. The project wasn’t just about building tools — it was about reducing friction, increasing transparency, and giving people the clarity they needed to work effectively. While the outcomes were primarily qualitative, the impact was clear: less confusion, faster onboarding, and more confident collaboration across the board."
-      context="By focusing on structure, ownership, and accessibility, I transformed a chaotic patchwork of tasks into a system that supports people, not just processes. What started as a personal fix for my own onboarding challenges quickly became a scalable foundation for the entire department — one that future team members can build on, without starting from scratch."
+      intro="Redesigning our internal systems led to an immediate and noticeable shift in how our team worked. The project waas about building a solid scalable too but also it was about reducing friction, increasing transparency, and giving people the clarity they needed to work effectively. While the outcomes were primarily qualitative, the impact was clear: less confusion, faster onboarding, and more confident collaboration across the board."
+      context="By focusing on structure, ownership, and accessibility, I transformed a chaotic patchwork of tasks into a system that supports people, not just processes. What started as a personal fix for my own onboarding challenges quickly became a scalable foundation for the entire department. One that future team members can build on, without starting from scratch."
       :outcomes="outcomeList"
       :icons="icons"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseReflections
       id="reflections-section"
-      intro="This project was more than just a systems fix — it was a turning point in how I understand and approach UX. It showed me that user experience isn’t limited to customer-facing products, but lives in the tools, processes, and interactions that shape how people work every day. Below are a few key lessons I took away from the experience — insights that not only shaped the outcome of this project, but continue to guide how I design, collaborate, and lead."
+      intro="This project was a turning point in how I understand and approach UX. It showed me that user experience isn’t limited to customer-facing products, but lives in the tools, processes, and interactions that shape how people work every day. Below are a few key lessons I took away from the experience. These are insights that not only shaped the outcome of this project, but continue to guide how I design, collaborate, and lead."
       :reflections="reflections"
     />
     <ArrowTransition customClass="mx-auto" />
@@ -277,8 +278,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <p class="mt-3">
           I’d synthesize the qualitative data into insights using affinity diagrams and define the
           most urgent, recurring user pain points. Then I’d write a clear problem statement and
-          draft a simple persona that captures the needs of a typical internal user — likely a staff
-          member juggling competing priorities while navigating scattered tools.
+          draft a simple persona that captures the needs of a typical internal user which would
+          likely be a staff member juggling competing priorities while navigating scattered tools.
         </p>
       </div>
 
@@ -303,10 +304,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
           Design Low & High Fidelity Mockups
         </p>
         <p class="mt-3">
-          Using Figma, I’d wireframe potential dashboard layouts, task structures, and navigation
-          flows. I’d test for hierarchy, scanability, and information grouping. Once I had a working
-          prototype, I’d share it with users to get feedback — then iterate based on what they
-          needed clarified or simplifie
+          Using Figma or in this case Notion I’d wireframe potential dashboard layouts, task
+          structures, and navigation flows. I’d test for hierarchy, scanability, and information
+          grouping. Once I had a working prototype, I’d share it with users to get feedback then
+          iterate based on what they needed clarified or simplify what was overly complex.
         </p>
       </div>
 
@@ -329,10 +330,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <h3 class="text-xl font-semibold tracking-wide">Deliver & Measure</h3>
         <p class="text-xs tracking-wide uppercase dark:text-gray-600">Launch and Track Behavior</p>
         <p class="mt-3">
-          I’d implement tracking using engagement data (views, clicks, completions), survey tools
-          like NPS, and real user feedback. I’d also build in checkpoints for continuous
-          improvement, ensuring the system evolves alongside the team’s needs. Measuring outcomes
-          helps me stay accountable to the core goal: making people’s work lives easier.
+          I’d implement tracking using engagement data, team member surveys, and real user
+          qualitative feedback. I’d also build in checkpoints for continuous improvement, ensuring
+          the system evolves alongside the team’s needs. Measuring outcomes would help me stay
+          accountable to the core goal: making people’s work lives easier.
         </p>
       </div>
     </CaseUxLens>
