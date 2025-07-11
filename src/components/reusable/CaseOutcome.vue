@@ -26,7 +26,7 @@ const props = defineProps({
   <section id="outcome-section" class="flex flex-col items-center justify-center">
     <div class="mt-4 mb-2 flex items-center justify-between w-full">
       <h3 class="font-bold text-2xl">The Outcome</h3>
-      <p class="text-sm">Prototype – Test</p>
+      <p class="text-sm tracking-wider">Prototype – Test</p>
     </div>
 
     <article>
@@ -44,7 +44,7 @@ const props = defineProps({
       <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <li v-for="(item, index) in outcomes" :key="index" class="relative px-2 py-12">
           <img :src="icons[index]" alt="" class="absolute top-0 left-2 h-10 -rotate-12" />
-          <h5 class="font-semibold">{{ item.title }}</h5>
+          <h5 class="font-semibold my-2">{{ item.title }}</h5>
           <p>{{ item.description }}</p>
         </li>
       </ul>

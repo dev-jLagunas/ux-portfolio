@@ -28,7 +28,7 @@ const props = defineProps({
       <ul class="mt-8 space-y-6">
         <li v-for="(item, index) in reflections" :key="index">
           <div class="flex items-center">
-            <img :src="item.icon" alt="" class="h-8 pr-2 rotate-45" />
+            <img :src="item.icon" alt="" class="h-6 pr-2 rotate-35" />
             <h5 class="font-semibold">{{ item.title }}</h5>
           </div>
           <p class="pl-10">{{ item.description }}</p>

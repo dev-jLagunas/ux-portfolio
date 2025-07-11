@@ -68,7 +68,7 @@ const afterTabs = [
     image: boldFeat,
     heading: 'Bold, Human-Centered Design',
     description:
-      'Rather than copy the minimalist café style common in Japan, we leaned into color, culture, and personality. From the hero images to iconography, every visual reinforces who we are. This was a direct result of ideating around how to reflect our brand’s emotional tone digitally. This was something we knew was missing before.',
+      'Rather than copy the minimalist cafe style common in Japan, we leaned into color, culture, and personality. From the hero images to iconography, every visual reinforces who we are. This was a direct result of ideating around how to reflect our brand’s emotional tone digitally. This was something we knew was missing before.',
   },
   {
     title: 'Accessibility First',
@@ -84,7 +84,7 @@ const outcomeList = [
   {
     title: 'Brand & Space Alignment',
     description:
-      'Multiple users commented that the site "felt like us". Which felt like a reflection of our café’s cultural warmth, vibrant personality, and inclusive vibe. This alignment wasn’t accidental; it was the result of dozens of thoughtful design decisions that translated our physical identity into digital form.',
+      'Multiple users commented that the site "felt like us". Which felt like a reflection of our cafe’s cultural warmth, vibrant personality, and inclusive vibe. This alignment wasn’t accidental; it was the result of dozens of thoughtful design decisions that translated our physical identity into digital form.',
   },
   {
     title: 'Improved Usability',
@@ -111,7 +111,7 @@ const reflections = [
     title: 'Instinct is valuable, but process sharpens it.',
     icon: arrowBlue,
     description:
-      'When I first built this site, I relied entirely on intuition. Now, I know how much stronger that instinct becomes when paired with tools like Figma, user personas, and structured frameworks.',
+      'When I first built this site, I relied entirely on intuition. Now, I know how much stronger that instinct becomes when paired with tools like design frameworks and knowledge about visual design principles.',
   },
   {
     title: 'Design is about care, not credentials.',
@@ -120,10 +120,10 @@ const reflections = [
       'This project reminded me that great UX isn’t limited to people with formal titles. It’s about empathy, clarity, and thoughtful execution. Even if you’re teaching yourself from scratch.',
   },
   {
-    title: 'Clarity is the most underrated design goal.',
+    title: 'Simplicity but vibrant as a design goal.',
     icon: arrowBlue,
     description:
-      'Whether it was layout, navigation, or color use, every choice that made the site feel “easy” was the result of prioritizing clear, direct communication over cleverness or trends.',
+      'The layout, navigation, or color use, all served to keep things simple and user-friendly but make sure we still let the brand personality shine through.',
   },
   {
     title: 'Post-launch is where the real UX begins.',
@@ -160,18 +160,18 @@ const uxSubheading = 'How I would approach this UX challenge today'
       :tags="['UX Research', 'Visual Design', 'Front-End Development']"
       :imgSrc="cafeTrioPhoto"
       :paragraphs="[
-        'In the second year of running our culture-driven café in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
-        'Over seven months, I studied every morning before opening shop, eventually launching a fully custom-coded site built with Angular and Tailwind CSS. It was responsive, multilingual, and deeply personal. Designed not just to function, but to feel like an extension of who we were. I didn’t know it then, but I was practicing UX: prioritizing accessibility, clarity, and user-centered design from the very beginning.',
+        'In the second year of running our culture-driven cafe in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
+        'Over seven months, I studied every morning before opening shop, eventually launching a fully custom-coded site built with Angular and Tailwind CSS. It was responsive, multilingual, and deeply personal. Designed not just to function, but to feel like an extension of who we were. I didn’t know it then, but I was practicing UX: prioritizing usability, accessibility, clarity, and user-centered design from the very beginning.',
       ]"
-      role="UX Designer, UX Researcher"
-      date="March – April 2025"
+      role="UX Designer, UX Researcher, Developer, Owner"
+      date="January – April 2025"
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
       id="problem-section"
-      problemStatement=" Our original café website, built with Wix, lacked both functionality and personality. It wasn’t responsive, offered no multilingual support, and used static images for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
-      problemStatementB="Beyond usability, the site failed to reflect who we were. Café Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
+      problemStatement="Our original cafe website, built with Wix, lacked both functionality and personality. It wasn’t very responsive, offered no multilingual support, and used a static pdf image for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
+      problemStatementB="Beyond usability, the site failed to reflect who we were. Cafe Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
       :artifacts="[
         { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
@@ -183,7 +183,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To address the limitations of our original site, I redesigned the Café Triangle website from the ground up with a focus on usability, personality, and accessibility. The new site features a fully responsive layout, multilingual support, interactive menu browsing, and one-touch contact tools — all hand-coded with Angular and Tailwind CSS. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our café itself.
+      introText="To address the limitations of our original site, I redesigned the Café Triangle website from the ground up with a focus on usability, personality, and accessibility. The new site features a fully responsive layout, multilingual support, interactive menu browsing, and one-touch contact tools which were all coded in Angular and Tailwind CSS. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our café itself.
 
 "
       :beforeTabs="beforeTabs"
@@ -194,7 +194,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"
-      intro="The launch of the redesigned Café Triangle website brought immediate, qualitative improvements. Although we didn’t use formal analytics, feedback from friends, family, and customers painted a clear picture: the site was easier to navigate, more informative, and far more aligned with who we were as a brand. It wasn’t just functional, it felt right to the people who used it."
+      intro="The launch of the redesigned Cafe Triangle website brought immediate, qualitative improvements. Although we didn’t use formal analytics, feedback from friends, family, and customers painted a clear picture: the site was easier to navigate, more informative, and far more aligned with who we were as a brand. It wasn’t just functional, it felt right to the people who used it."
       context="These outcomes reflected a shift not only in usability, but in emotional resonance. The site’s design helped people feel more welcomed, more informed, and more connected to our space. Below are four key themes that emerged from this redesign:"
       :outcomes="outcomeList"
       :icons="icons"
@@ -202,7 +202,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseReflections
       id="reflections-section"
-      intro="This project wasn’t just about building a website — it was the start of a deeper shift in how I think about design, users, and problem-solving. Looking back, it helped shape the foundation of my UX mindset without me even knowing it. Here are a few key lessons I took away. What worked, what didn’t, and how the experience changed the way I approach design today."
+      intro="This project was more than just building a website, it was the start of a deeper shift in how I think about design, users, and problem-solving. Looking back, it helped shape the foundation of my UX mindset without me even knowing it. Here are a few key lessons I took away. What worked, what didn’t, and how the experience changed the way I approach design today."
       :reflections="reflections"
     />
     <ArrowTransition customClass="mx-auto" />
@@ -214,10 +214,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <p class="text-xs tracking-wide uppercase">Users, Context, and Constraints</p>
         <p class="mt-3">
           I’d begin with stakeholder interviews, observational café visits, and digital surveys to
-          better understand user behavior, pain points, and expectations — both online and
-          in-person. I’d also run a competitive audit of local cafés' digital presence to identify
-          opportunities and gaps. This would mirror the initial research process emphasized in the
-          Google course, combining qualitative and quantitative data collection.
+          better understand user behavior, pain points, and expectations. This would be for both
+          online and in-person. I’d also run a competitive audit of local cafés' digital presence to
+          identify opportunities and gaps. This would mirror the initial research process emphasized
+          in the Google course, combining qualitative and quantitative data collection.
         </p>
       </div>
 
@@ -231,7 +231,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
           user challenge,for example, “Multilingual users can’t easily access essential café
           information.” I’d create user personas and write a focused problem statement, just like we
           practiced in the course. This step would align my design goals with user needs and ensure
-          I stay grounded in real pain points.
+          I stay grounded in real pain points. I'd do what is important to ensure I was not working
+          through guesses and assumptions.
         </p>
       </div>
 
@@ -282,8 +283,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <p class="mt-3">
           Once launched, I’d implement analytics tools to monitor user behavior. Tracking
           engagement, clicks, bounce rates, and task success. I’d also explore lightweight feedback
-          tools like NPS surveys or usability polls to gather real-world insights. From there, I’d
-          build a plan for continuous improvement through data-driven iteration, ensuring the design
+          tools like surveys or usability polls to gather real-world insights. From there, I’d build
+          a plan for continuous improvement through data-driven iteration, ensuring the design
           evolves with user needs.
         </p>
       </div>

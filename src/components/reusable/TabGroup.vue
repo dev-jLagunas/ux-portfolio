@@ -44,7 +44,7 @@ const activeTab = ref(0)
         class="mx-auto mb-4 rounded-md max-h-96 object-contain"
       />
       <h5 class="text-lg font-semibold mb-2">{{ tabs[activeTab].heading }}</h5>
-      <p class="text-gray-600 text-sm leading-relaxed max-w-prose mx-auto">
+      <p class="text-sm leading-relaxed max-w-prose mx-auto">
         {{ tabs[activeTab].description }}
       </p>
     </div>

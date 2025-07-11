@@ -33,7 +33,7 @@ function prevImage() {
   <section id="problem-section" class="flex flex-col items-center justify-center">
     <div class="mt-4 mb-2 flex items-center justify-between w-full">
       <h3 class="font-bold text-2xl">The Problem</h3>
-      <p class="text-sm">Empathize – Define</p>
+      <p class="text-sm tracking-wider">Empathize – Define</p>
     </div>
     <article class="flex flex-col items-center justify-center">
       <div class="border-pink border-2 p-4 rounded-md my-4">
@@ -45,7 +45,7 @@ function prevImage() {
       </div>
 
       <figure class="relative w-full max-w-xl mt-4">
-        <figcaption class="text-sm pl-4 mt-2 tracking-wide md:text-center md:pl-0">
+        <figcaption class="pl-4 mt-2 tracking-wide md:text-center md:pl-0">
           {{ props.artifacts[currentIndex].caption }}
         </figcaption>
         <img
@@ -71,7 +71,9 @@ function prevImage() {
       <p class="mt-6">
         {{ takeaway }}
       </p>
-      <p class="text-2xl mt-4 font-bold text-pink uppercase mb-2 text-center">"{{ quote }}"</p>
+      <p class="text-2xl mt-4 font-bold text-pink uppercase mb-2 text-center lg:text-3xl lg:my-8">
+        "{{ quote }}"
+      </p>
     </article>
   </section>
   <div
