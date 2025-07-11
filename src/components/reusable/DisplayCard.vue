@@ -21,10 +21,10 @@ defineProps({
 </script>
 
 <template>
-  <article class="border border-gray-300 p-4 rounded-md mb-8 font-headings">
+  <article class="border border-gray-300 p-4 rounded-md mb-8 font-headings shadow-sm">
     <figure>
       <img :src="content" alt="" class="h-64 w-full object-contain" />
-      <figcaption :class="`${bgColor} text-black text-center rounded-sm py-2 mt-4`">
+      <figcaption :class="`${bgColor} text-dark text-center rounded-sm py-2 mt-4`">
         {{ title }}
       </figcaption>
     </figure>

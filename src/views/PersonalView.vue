@@ -1,5 +1,6 @@
 <script setup>
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
+import CaseNav from '@/components/reusable/CaseNav.vue'
+
 import DisplayCard from '@/components/reusable/DisplayCard.vue'
 import flamingoArt from '@/assets/images/personal/flamingo-art.png'
 import catBoarder from '@/assets/images/personal/cat-boarder-art.png'
@@ -33,20 +34,28 @@ import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
 
 <template>
   <section>
-    <article class="font-headings mt-8">
+    <CaseNav
+      :sections="[
+        { id: 'photo-section', label: 'Photography' },
+        { id: 'art-section', label: 'Digital Art' },
+        { id: 'cafe-section', label: 'Cafe Triangle' },
+        { id: 'design-section', label: 'UI Design' },
+      ]"
+    />
+    <article class="font-headings mt-8" id="photo-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Photography</h2>
       <p class="mb-2 text-sm md:text-base">
-        I bought a Fuji X-A5 when we started the café, and that’s where my love for photography
+        I bought a Fuji X-A5 when we started the cafe, and that’s where my love for photography
         began. I taught myself to use the manual controls and spent a lot of time doing food
-        photography for the café. Experimenting with new techniques, backgrounds, and environments
+        photography for the cafe. Experimenting with new techniques, backgrounds, and environments
         was genuinely exciting.
       </p>
-      <p class="mb-2 text-sm md:text-base">
+      <p class="mb-4 text-sm md:text-base">
         I’m still actively challenging myself with new shots, because capturing life is such a
         beautiful thing. I don’t actually know if I’m any good at it but that matters far less than
         how much I truly enjoy it.
       </p>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <DisplayCard title="Moko the King" :content="catPhoto" bgColor="bg-pink" />
         <DisplayCard title="Kanazawa White Road" :content="naturePhoto" bgColor="bg-blue" />
         <DisplayCard title="Balboa Duck" :content="duckPhoto" bgColor="bg-pink" />
@@ -57,7 +66,7 @@ import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
         <DisplayCard title="Lovely Smile" :content="smilePhoto" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-headings mt-8">
+    <article class="font-headings mt-8" id="art-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Digital Art</h2>
       <p class="mb-2 text-sm md:text-base">
         I’ve always enjoyed sketching and drawing on paper, but it wasn’t until last year that I
@@ -79,10 +88,10 @@ import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
         <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-headings mt-8">
+    <article class="font-headings mt-8" id="cafe-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Cafe Triangle</h2>
       <p class="mb-2 text-sm md:text-base">
-        Café Triangle was the café my wife and I used to own in Japan. It was one of the most
+        Cafe Triangle was the cafe my wife and I used to own in Japan. It was one of the most
         transformative experiences of my life and also one of the most practical. It taught me a
         multitude of skills that align perfectly with UX: empathy, branding, service design,
         problem-solving, and visual communication.
@@ -102,11 +111,11 @@ import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
         <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-headings mt-8">
+    <article class="font-headings mt-8" id="design-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">UI Design</h2>
       <p class="mb-2 text-sm md:text-base">
         I started teaching myself frontend development about two and a half years ago. I began with
-        the foundations — HTML, CSS, and JavaScript — then moved on to frameworks like Angular and
+        the foundations, HTML, CSS, and JavaScript, then moved on to frameworks like Angular and
         Vue.
       </p>
       <p class="mb-2 text-sm md:text-base">
