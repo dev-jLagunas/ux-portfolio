@@ -28,49 +28,49 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 // Tab Data
 const beforeTabs = [
   {
-    title: 'Before – Newsletter',
+    title: 'Before – Hierarchy',
     image: notionBefore,
     heading: 'Lack of Visual Hierarchy',
     description:
-      'The original layout had no clear prioritization of content. All sections were treated equally, forcing readers to hunt for relevant info. This broke basic UX principles of hierarchy and skimmability, making it hard for students to know where to start — a pain point supported by insights from the empathy map and journey map created during the Define phase.',
+      'The original layout had no clear prioritization of content. All sections were treated equally, forcing readers to hunt for relevant info. This broke basic UX principles of hierarchy and skimmability, making it hard for students to know where to start a pain point supported by insights from the empathy map and journey map created during the define phase.',
   },
   {
-    title: 'Before – Newsletter',
+    title: 'Before – Content',
     image: notionBefore,
     heading: 'Cognitive Overload',
     description:
-      'The newsletter attempted to include every possible detail in one go, overwhelming users with dense blocks of text and multiple unrelated CTAs. This violated usability best practices by asking users to process too much at once — contradicting the needs we identified in user interviews, where students emphasized clarity and ease of scanning.',
+      'The newsletter attempted to include every possible detail in one go, overwhelming users with dense blocks of text and multiple unrelated CTAs. This violated usability best practices by asking users to process too much at once.',
   },
   {
-    title: 'Before – Newsletter',
+    title: 'Before – Accesibility',
     image: notionBefore,
     heading: 'Weak CTA Placement',
     description:
-      'Calls to action were buried deep within paragraphs or lacked visual distinction. This led to confusion and low click-through rates, as confirmed by Constant Contact analytics. From a UX lens, this failed the Ideate–Prototype phases, where we aim to make critical user actions obvious and accessible.',
+      'Calls to action were buried deep within paragraphs or lacked visual distinction. This led to confusion and low click-through rates, as confirmed by Constant Contact analytics. From a UX lens, this failed the aim to make critical user actions obvious and accessible.',
   },
 ]
 
 const afterTabs = [
   {
-    title: 'After – Newsletter',
+    title: 'After – Hierarchy',
     image: notionAfter,
-    heading: ' Intentional Visual Hierarchy',
+    heading: 'Intentional Visual Hierarchy',
     description:
       'Content is now structured by relevance, with clear sections and consistent formatting. Headers guide the eye, and layout decisions were made with F-pattern reading behavior in mind. This aligns with the Define and Ideate phases by responding directly to user needs around clarity and content prioritization.',
   },
   {
-    title: 'After – Newsletter',
+    title: 'After – Ownership',
     image: notionAfter,
     heading: 'Clear Ownership',
     description:
       'Each section now has just enough context to inform, but not overwhelm. Language was rewritten for tone and clarity, following UX writing best practices. This reflects empathy for student time and attention, a theme that surfaced strongly in the research phase.',
   },
   {
-    title: 'After – Newsletter',
+    title: 'After – Accesibility',
     image: notionAfter,
     heading: 'Team Transparency',
     description:
-      'CTAs are now consistently styled and positioned for maximum visibility and clickability. They use direct language (e.g., “Book an Appointment”) and visual contrast to draw the eye. This solution was tested with internal stakeholders and optimized through iterations, aligning with the Test phase of the design thinking framework.',
+      'CTAs are now consistently styled and positioned for maximum visibility and clickability. They use direct language (e.g., “Book an Appointment”) and visual contrast to draw the eye. This solution was tested with internal stakeholders and optimized through iterations, aligning with the test phase of the design thinking framework.',
   },
 ]
 
@@ -79,7 +79,7 @@ const outcomeList = [
   {
     title: 'Cleaner Design, Higher Engagement',
     description:
-      'Early stakeholder responses confirmed that the cleaner layout felt easier to navigate. Click-through rates became easier to track post-launch, and the email itself began receiving positive callouts in meetings — something that never happened with the old version.',
+      'Early stakeholder responses confirmed that the cleaner layout felt easier to navigate. Click-through rates became were predicted to increase track post-launch, and the email itself began receiving positive callouts in meetings, something that never happened with the old version.',
   },
   {
     title: 'Internal Alignment',
@@ -106,7 +106,7 @@ const reflections = [
     title: 'Simple isn’t always easy.',
     icon: arrowBlue,
     description:
-      'Creating a clean, skimmable layout took multiple iterations — not just in visuals, but in content hierarchy, team messaging, and technical constraints. Simplicity is hard-earned.',
+      'Creating a clean, skimmable layout took multiple iterations not just in visuals, but in content hierarchy, team messaging, and technical constraints. Simplicity is hard-earned.',
   },
   {
     title: 'Design can shift team culture.',
@@ -155,8 +155,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       :tags="['Email UX', 'Visual System', 'Content Strategy']"
       :imgSrc="emailTrioPhoto"
       :paragraphs="[
-        'As the Career Events & Marketing Coordinator at the University of San Diego, I managed the department’s weekly email newsletter. Initially, my role was executional — updating content, designing flyers, and scheduling through Constant Contact. But after noticing patterns in engagement data and experiencing firsthand how outdated and bloated the format felt, I saw an opportunity to rethink the newsletter through a UX lens.',
-        'Using analytics, student-centered design principles, and branded visual assets, I completely redesigned the structure, flow, and tone of the newsletter. The goal was simple: reduce friction, increase clarity, and create a scalable system that actually speaks to students. The new version prioritizes actionable content, brand cohesion, and ease of use — and is set to launch in Fall 2025.',
+        'As the Career Events & Marketing Coordinator at the University of San Diego, I managed the department’s weekly email newsletter. Initially, my role was only executional so I was in charge of updating content, designing flyers, and scheduling through Constant Contact. But after noticing patterns in engagement data and experiencing firsthand how outdated and bloated the format felt, I saw an opportunity to rethink the newsletter through a UX lens.',
+        'Using analytics, student-centered design principles, and branded visual assets, I completely redesigned the structure, flow, and tone of the newsletter. The goal was simple: reduce friction, increase clarity, and create a scalable system that actually speaks to students. The new version prioritizes actionable content, brand cohesion, and ease of use and is set to launch in Fall 2025.',
       ]"
       role="UX Designer, UX Researcher"
       date="March – April 2025"
@@ -165,19 +165,20 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
       id="problem-section"
-      problemStatement="Students at the University of San Diego were regularly receiving the Career Development Center’s weekly email, but engagement was low. The newsletter was dense, visually inconsistent, and overwhelming to skim — especially on mobile. There was no clear hierarchy, and critical content like event information or job opportunities often got buried beneath less relevant items. Through conversations with students and a review of engagement analytics, I identified a core need: students wanted quick, scannable access to personalized, actionable content that didn’t feel like just another school blast."
+      problemStatement="Students at the University of San Diego were regularly receiving the Career Development Center’s weekly email, but engagement was low. The newsletter was dense, visually inconsistent, and overwhelming to skim mainly because of dense text, especially on mobile. There was no clear hierarchy, and critical content like event information or job opportunities often got buried beneath less relevant items. "
+      problemStatementB="Through conversations with students and a review of engagement analytics, I identified a core need: students wanted quick, scannable access to personalized, actionable content that didn’t feel like just another school blast."
       :artifacts="[
         { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
-      takeaway="The newsletter's problem wasn’t lack of effort—it was lack of intention. Isabella, a motivated and routine-driven student, opens the email weekly but quickly disengages due to visual clutter, repetitive content, and unclear hierarchy. She scrolls only as far as necessary to meet her CRP requirements, then deletes the message. Her experience highlights a disconnect between the newsletter's format and its audience’s expectations: students want concise, relevant, and fresh content that respects their time and feels designed for them. Without visual cues, structured hierarchy, or evolving content, the email becomes noise—easily ignored instead of meaningfully engaged with."
-      quote="I don’t really need fluff. Just useful or relevant content that resonates with me."
+      takeaway="The newsletter's main problem seemed to be a lack of intention. Isabella, a motivated and routine-driven student, opens the email weekly but quickly disengages due to visual clutter, repetitive content, and unclear hierarchy. She scrolls only as far as necessary to meet her CRP requirements, then deletes the message. Her experience highlights a disconnect between the newsletter's format and its audience’s expectations: students want concise, relevant, and fresh content that respects their time and feels designed for them. Without visual cues, structured hierarchy, or evolving content, the email becomes noise which is then easily ignored instead of meaningfully engaged with."
+      quote="I don’t really need fluff. Just useful or relevant content."
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To address the low engagement and usability issues in the original newsletter, I redesigned the Career Development Center’s weekly email with a focus on hierarchy, skimmability, and mobile responsiveness. The new layout prioritized content clarity, stronger visual organization, and clear calls to action — all supported by analytics and student feedback."
+      introText="To address the low engagement and usability issues in the original newsletter, I redesigned the Career Development Center’s weekly email with a focus on hierarchy, skimmability, and mobile responsiveness. The new layout prioritized content clarity, stronger visual organization, and clear calls to action which were all supported by analytics and student feedback."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
       beforeTitle="Newsletter Before"
@@ -186,7 +187,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"
-      intro="While the newsletter redesign didn’t lend itself to traditional metrics like A/B testing or user surveys, we observed strong qualitative signals that the redesign addressed real user needs. These signals came from stakeholder feedback, improved team workflows, and early student reactions shared anecdotally."
+      intro="While the newsletter redesign didn’t lend itself to traditional metrics like A/B testing or user surveys, I observed strong qualitative signals that the redesign addressed real user needs. These signals came from stakeholder feedback, improved team workflows, and early student reactions shared anecdotally."
       context="By prioritizing usability and clarity, we created a more user-centered communication tool. This project also served as a prototype for future digital collateral and sparked department-wide discussions on the role of UX in everyday systems."
       :outcomes="outcomeList"
       :icons="icons"
@@ -194,7 +195,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseReflections
       id="reflections-section"
-      intro="Every project teaches you something new — sometimes about UX, sometimes about people, and sometimes about yourself. This redesign may have looked like a simple formatting fix on the surface, but under the hood, it challenged my communication skills, tested my patience, and solidified my belief in intentional, systems-driven design. These are a few takeaways I’ll carry forward."
+      intro="Every project teaches you something new. Sometimes that new knowledge is about UX, sometimes about people, and sometimes about yourself. This redesign may have looked like a simple formatting fix on the surface, but under the hood, it challenged my communication skills, tested my patience, and solidified my belief in intentional, systems-driven design. These are a few takeaways I’ll carry forward."
       :reflections="reflections"
     />
     <ArrowTransition customClass="mx-auto" />
@@ -211,7 +212,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
           who read the newsletter. I'd supplement that with Constant Contact analytics to identify
           patterns in engagement, and I’d observe how students interact with their inboxes during
           high-volume weeks. These methods would give me insight into user behaviors, needs, and
-          friction points — the foundation for meaningful design decisions.
+          friction points which is of course the foundation for meaningful design decisions.
         </p>
       </div>
 
@@ -223,9 +224,9 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <p class="mt-3">
           After collecting the data, I’d use affinity mapping to synthesize findings into key
           themes. I’d identify the most pressing user problem (e.g., too much content, not enough
-          clarity) and write a clear problem statement grounded in user needs. I’d also build a
-          quick persona — probably based on real student feedback — to ensure I kept the audience
-          top of mind throughout ideation.
+          clarity) and write a clear problem statement grounded in user needs. I’d also build a a
+          user persona based on real student feedback to ensure I kept the audience top of mind
+          throughout ideation.
         </p>
       </div>
 
@@ -237,9 +238,9 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <p class="mt-3">
           With the problem clearly defined, I’d facilitate low-fidelity sketching and brainstorming
           to explore different layouts, tone-of-voice strategies, and content prioritization
-          methods. I'd generate a few divergent ideas before narrowing down with input from
-          stakeholders — ideally including student reps, the director, and my marketing teammate —
-          to find the most promising direction.
+          methods. I'd generate a few ideas before narrowing down with input from stakeholders which
+          would ideally including student reps, the director, and my marketing teammates to find the
+          most promising direction.
         </p>
       </div>
 
@@ -264,10 +265,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
         <h3 class="text-xl font-semibold tracking-wide">Test</h3>
         <p class="text-xs tracking-wide uppercase dark:text-gray-600">Validate and Iterate</p>
         <p class="mt-3">
-          With prototypes in hand, I’d conduct quick usability tests — either in-person or remotely
-          — to observe how students engage with the layout. I’d measure how quickly they identify
-          key CTAs and which sections they prioritize. I’d iterate based on this feedback to ensure
-          the final version was usable, attractive, and truly student-centered.
+          With prototypes in hand, I’d conduct usability tests that could be either in-person or
+          remotely in order to observe how students engage with the layout. I’d measure how quickly
+          they identify key CTAs and which sections they prioritize. I’d iterate based on this
+          feedback to ensure the final version was usable, attractive, and truly student-centered.
         </p>
       </div>
 
