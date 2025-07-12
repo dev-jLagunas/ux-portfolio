@@ -32,7 +32,7 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
         :icon="frontendIcon"
         :url="'https://www.frontendmentor.io/profile/dev-jLagunas'"
       />
-      <LinkCard title="My Resume" :icon="resumeIcon" />
+      <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
         title="My LinkedIn"
         :icon="linkedInIcon"
