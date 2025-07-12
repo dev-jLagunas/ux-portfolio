@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
+// Props
 const props = defineProps({
   tabs: {
     type: Array,
@@ -13,8 +14,24 @@ const props = defineProps({
   },
 })
 
-// Reactive
+// Reactive state
 const activeTab = ref(0)
+const showModal = ref(false)
+const modalImage = ref(null)
+
+// Modal handlers
+function openModal() {
+  const tab = props.tabs[activeTab.value]
+  if (tab) {
+    modalImage.value = tab
+    showModal.value = true
+  }
+}
+
+function closeModal() {
+  showModal.value = false
+  modalImage.value = null
+}
 </script>
 
 <template>
@@ -41,11 +58,38 @@ const activeTab = ref(0)
       <img
         :src="tabs[activeTab].image"
         alt=""
-        class="mx-auto mb-4 rounded-md max-h-96 object-contain"
+        class="mx-auto mb-4 rounded-md max-h-96 object-contain cursor-pointer"
+        @click="openModal"
       />
       <h5 class="text-lg font-semibold mb-2">{{ tabs[activeTab].heading }}</h5>
       <p class="text-sm leading-relaxed max-w-prose mx-auto">
         {{ tabs[activeTab].description }}
+      </p>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div
+    v-if="showModal"
+    class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+    @click.self="closeModal"
+  >
+    <div class="bg-white rounded-lg max-w-4xl w-full mx-4 p-4 relative">
+      <button
+        @click="closeModal"
+        class="absolute top-2 right-2 text-gray-700 hover:text-black text-xl"
+      >
+        &times;
+      </button>
+
+      <img
+        v-if="modalImage?.image"
+        :src="modalImage.image"
+        alt=""
+        class="w-full rounded-md mb-4 object-contain max-h-[70vh]"
+      />
+      <p v-if="modalImage?.description" class="text-sm text-gray-700 text-center">
+        {{ modalImage.description }}
       </p>
     </div>
   </div>
