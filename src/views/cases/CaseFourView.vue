@@ -14,8 +14,12 @@ import userPersona from '@/assets/images/cases/case-four/persona-newsletter.jpg'
 import journeyMap from '@/assets/images/cases/case-four/journey-map-newsletter.jpg'
 import empathyMap from '@/assets/images/cases/case-four/empathy-map-newsletter.jpg'
 import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
-import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
-import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
+import beforeHierarchy from '@/assets/images/cases/case-four/before-hierarchy-collage.png'
+import beforeOverload from '@/assets/images/cases/case-four/before-overload-collage.png'
+import beforeAccess from '@/assets/images/cases/case-four/before-accesibility-collage.png'
+import afterAccess from '@/assets/images/cases/case-four/after-accessibility-collage.png'
+import afterHierarchy from '@/assets/images/cases/case-four/after-hierarchy-collage.png'
+import afterIntention from '@/assets/images/cases/case-four/after-intentionality-collage.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -29,21 +33,21 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 const beforeTabs = [
   {
     title: 'Before – Hierarchy',
-    image: notionBefore,
+    image: beforeHierarchy,
     heading: 'Lack of Visual Hierarchy',
     description:
       'The original layout had no clear prioritization of content. All sections were treated equally, forcing readers to hunt for relevant info. This broke basic UX principles of hierarchy and skimmability, making it hard for students to know where to start a pain point supported by insights from the empathy map and journey map created during the define phase.',
   },
   {
     title: 'Before – Content',
-    image: notionBefore,
+    image: beforeOverload,
     heading: 'Cognitive Overload',
     description:
       'The newsletter attempted to include every possible detail in one go, overwhelming users with dense blocks of text and multiple unrelated CTAs. This violated usability best practices by asking users to process too much at once.',
   },
   {
     title: 'Before – Accesibility',
-    image: notionBefore,
+    image: beforeAccess,
     heading: 'Weak CTA Placement',
     description:
       'Calls to action were buried deep within paragraphs or lacked visual distinction. This led to confusion and low click-through rates, as confirmed by Constant Contact analytics. From a UX lens, this failed the aim to make critical user actions obvious and accessible.',
@@ -53,21 +57,21 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'After – Hierarchy',
-    image: notionAfter,
+    image: afterHierarchy,
     heading: 'Intentional Visual Hierarchy',
     description:
       'Content is now structured by relevance, with clear sections and consistent formatting. Headers guide the eye, and layout decisions were made with F-pattern reading behavior in mind. This aligns with the Define and Ideate phases by responding directly to user needs around clarity and content prioritization.',
   },
   {
     title: 'After – Ownership',
-    image: notionAfter,
+    image: afterIntention,
     heading: 'Clear Ownership',
     description:
       'Each section now has just enough context to inform, but not overwhelm. Language was rewritten for tone and clarity, following UX writing best practices. This reflects empathy for student time and attention, a theme that surfaced strongly in the research phase.',
   },
   {
     title: 'After – Accesibility',
-    image: notionAfter,
+    image: afterAccess,
     heading: 'Team Transparency',
     description:
       'CTAs are now consistently styled and positioned for maximum visibility and clickability. They use direct language (e.g., “Book an Appointment”) and visual contrast to draw the eye. This solution was tested with internal stakeholders and optimized through iterations, aligning with the test phase of the design thinking framework.',

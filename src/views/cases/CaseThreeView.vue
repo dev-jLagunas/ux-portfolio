@@ -15,8 +15,13 @@ import userPersona from '@/assets/images/cases/case-three/persona-marketing.jpg'
 import journeyMap from '@/assets/images/cases/case-three/journey-map-marketing.jpg'
 import empathyMap from '@/assets/images/cases/case-three/empathy-map-marketing.jpg'
 import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.png'
+import beforeVisuals from '@/assets/images/cases/case-three/before-visuals-collage.png'
+import beforeSystem from '@/assets/images/cases/case-three/before-system-collage.png'
+import beforeMessaging from '@/assets/images/cases/case-three/before-messaging-collage.png'
+import afterVisuals from '@/assets/images/cases/case-three/after-visuals-collage.png'
+import afterBranding from '@/assets/images/cases/case-three/after-branding-collage.png'
+import afterSystem from '@/assets/images/cases/case-three/after-system-collage.png'
 
-import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
 import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
 
 // Icons
@@ -31,21 +36,21 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 const beforeTabs = [
   {
     title: 'Before - Visuals',
-    image: notionBefore,
+    image: beforeVisuals,
     heading: 'Inconsistent Visuals',
     description:
       'Each flyer looked and felt different. Different fonts, tones, colors, and layouts, even when promoting the same event. From a UX standpoint, this broke trust and recognition. Without consistent visual language, students couldn’t build familiarity with our brand, and internal users had no cohesive foundation to build from.',
   },
   {
     title: 'Before – System',
-    image: notionBefore,
+    image: beforeSystem,
     heading: 'No System, Just Assets',
     description:
       'There was no campaign structure, just scattered files uploaded ad hoc. Flyers were created from scratch every time, with no timeline, process, or ownership. This reflects a breakdown in the “Define” phase of design thinking, the team hadn’t clearly identified what users needed or how marketing should support them.',
   },
   {
     title: 'Before – Branding',
-    image: notionBefore,
+    image: beforeMessaging,
     heading: 'Off-Brand Messaging',
     description:
       'Many assets failed to align with university branding or departmental tone. Internally, it created confusion and approval delays. Externally, students received communications that felt generic or unpolished. I belived strongly that this weakened the user experience, making it harder to recognize or trust the Career Centers identity.',
@@ -55,21 +60,21 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'After – Visuals',
-    image: notionAfter,
+    image: afterVisuals,
     heading: 'Unified Visual Language',
     description:
       'Every flyer now follows a consistent visual system built from official brand guidelines. The color palette, font hierarchy, spacing, and tone all remained more consistent. This alignment boosts credibility, reduces design debt, and reinforces trust through familiarity. It’s a strong example of intentional UX applied to visual storytelling.',
   },
   {
     title: 'After – System',
-    image: notionAfter,
+    image: afterSystem,
     heading: 'Structured Campaign Rollout',
     description:
       'Each event now would follow a clear, repeatable timeline: announcement, build-up, day-of, and follow-up assets. This supports proactive planning and reduces last-minute stress. Strategically, this reflects the “Ideate” and “Prototype” stages in action. Which in turn transform insights into a tested, scalable framework.',
   },
   {
     title: 'After – Branding',
-    image: notionAfter,
+    image: afterBranding,
     heading: 'Systematized, Editable, Reusable',
     description:
       'All assets are clearly labeled, filed by campaign, and formatted for multi-year reuse. Anyone on the team can now locate, edit, and publish materials without needing guidance. It’s a sustainable solution rooted in UX principles of accessibility, clarity, and self-sufficiency. Plus, students now are presented a compelling story based marketing initiative.',
