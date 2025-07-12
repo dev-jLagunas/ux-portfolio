@@ -40,6 +40,9 @@ function openContactModal() {
         >
           Contact Me
         </button>
+        <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+          <a href="/Juan-Resume.pdf" download>Resume</a>
+        </button>
         <button
           class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative"
           @click="navigateToWork"
@@ -80,6 +83,9 @@ function openContactModal() {
         @click="openContactModal()"
       >
         Contact Me
+      </button>
+      <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+        <a href="/Juan-Resume.pdf" download>Resume</a>
       </button>
       <button
         class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative"

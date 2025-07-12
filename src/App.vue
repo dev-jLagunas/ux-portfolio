@@ -37,7 +37,7 @@ onBeforeUnmount(() => {
   <button
     v-show="showBackToTop"
     @click="scrollToTop"
-    class="fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-white transition opacity-75 hover:opacity-100 hover:cursor-pointer"
+    class="fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-white transition opacity-75 hover:py-2 hover:opacity-100 hover:cursor-pointer duration-300"
   >
     Back to Top
   </button>
@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
 }
 
 .page-enter-from,
