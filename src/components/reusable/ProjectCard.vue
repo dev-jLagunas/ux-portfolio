@@ -31,7 +31,7 @@ defineProps({
 
 <template>
   <div
-    class="relative px-4 py-12 border border-gray-300 rounded-md w-auto font-headings flex flex-col items-center justify-center"
+    class="relative px-4 py-10 border border-gray-300 rounded-md w-[90vw] font-headings flex flex-col items-center justify-center md:w-full md:h-full"
   >
     <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
     <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>

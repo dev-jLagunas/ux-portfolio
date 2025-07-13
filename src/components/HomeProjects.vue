@@ -16,7 +16,9 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
       </p>
     </header>
 
-    <div class="px-4 flex flex-col gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    <div
+      class="px-4 flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3"
+    >
       <ProjectCard
         title="Cafe Triangle Redesign"
         ux-type="Web UX"
