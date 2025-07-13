@@ -20,7 +20,17 @@ import journeyMap from '@/assets/images/cases/case-two/journey-map-notion.jpg'
 import empathyMap from '@/assets/images/cases/case-two/empathy-map-notion.jpg'
 import notionTrioPhoto from '@/assets/images/home/notion-systems-home.png'
 import notionBefore from '@/assets/images/cases/case-one/notion-project-before-1.jpg'
-import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
+import projectBeforeA from '@/assets/images/cases/case-two/notion-project-before-a.png'
+import projectBeforeB from '@/assets/images/cases/case-two/notion-project-before-b.png'
+import projectBeforeC from '@/assets/images/cases/case-two/notion-project-before-c.png'
+import projectAfterA from '@/assets/images/cases/case-two/notion-project-after-a.png'
+import projectAfterB from '@/assets/images/cases/case-two/notion-project-after-b.png'
+import projectAfterC from '@/assets/images/cases/case-two/notion-project-after-c.png'
+import databaseBenefitA from '@/assets/images/cases/case-two/database-benefit-a.jpg'
+import databaseBenefitB from '@/assets/images/cases/case-two/database-benefit-b.jpg'
+import databaseBenefitC from '@/assets/images/cases/case-two/database-benefit-c.jpg'
+import databaseBenefitD from '@/assets/images/cases/case-two/database-benefit-d.jpg'
+import databaseBenefitE from '@/assets/images/cases/case-two/database-benefit-e.jpg'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -34,21 +44,21 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 const beforeTabs = [
   {
     title: 'Project Management',
-    image: notionBefore,
+    image: projectBeforeA,
     heading: 'Fragmented Tools',
     description:
       'Tasks were spread across Notion, Google Drive, email threads, and verbal memory. There was no single place to understand what was happening. This fragmentation violated UX fundamentals like consistency and ease of navigation because it meant users had to jump between platforms and piece together workflows manually.',
   },
   {
     title: 'Ownership',
-    image: notionBefore,
+    image: projectBeforeB,
     heading: 'No Defined Roles',
     description:
       'No tasks had clear owners, deadlines, or context. If someone left the team, their knowledge left with them. The system depended on interpersonal memory rather than accessible documentation. A direct failure in information architecture and knowledge transfer.',
   },
   {
     title: 'Task Flow',
-    image: notionBefore,
+    image: projectBeforeC,
     heading: 'Reactive, Not Proactive',
     description:
       'Without structure, team members were constantly reacting to problems instead of planning ahead. Tasks lacked prioritization and context. From a design thinking lens, this reflects a system that skipped the “Define” phase because nobody had clearly identified what needed to happen, when, or why.',
@@ -58,72 +68,72 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'Project Management',
-    image: notionAfter,
+    image: projectAfterA,
     heading: 'Chronological Timeline',
     description:
       'The new system organizes tasks by timeline, allowing users to see upcoming actions at a glance. It supports proactive planning and enables asynchronous collaboration. I believed this to be a UX solution grounded in simplicity and flow-state design.',
   },
   {
     title: 'Ownership',
-    image: notionAfter,
+    image: projectAfterB,
     heading: 'Clear Accountability',
     description:
       'Every task now includes ownership, due dates, support roles, and relevant documentation. This minimizes ambiguity and empowers team members to work independently. It’s a scalable solution rooted in the “Ideate” and “Prototype” stages, turning fuzzy tasks into reliable building blocks. Even better, this now becomes of longterm solution.',
   },
   {
     title: 'Usability',
-    image: notionAfter,
+    image: projectAfterC,
     heading: 'Consistent Task Templates',
     description:
       'Each task uses the same internal format of who, what, when, where, why. This reduces cognitive load, supports onboarding, and aligns with UX heuristics like consistency and standards. The system teaches itself as you use it.',
   },
 ]
 
-const databaseBeforeTabs = [
+const databaseBenefitsTabsA = [
   {
-    title: 'Info Access',
-    image: notionBefore,
-    heading: 'Hidden Knowledge',
+    title: 'Info Hub',
+    image: databaseBenefitA,
+    heading: 'Clarity From the Start',
     description:
-      'Essential info like event timelines, vendor contacts, or campaign assets lived in inboxes or people’s memories. If you didn’t know who to ask, you were out of luck. From a UX perspective, this created a high barrier to entry and failed basic accessibility standards.',
+      'The Fall Fair Dashboard acts as the single entry point for all key materials which includes marketing plans, vendor contacts, outcomes, and more. It replaces verbal memory and scattered links with an organized, navigable interface. From a UX perspective, it establishes hierarchy and orientation instantly, helping users understand what this system is, what’s inside, and where to go next.',
   },
   {
-    title: 'Team Knowledge',
-    image: notionBefore,
-    heading: 'No Historical Context',
+    title: 'Content Design',
+    image: databaseBenefitB,
+    heading: 'Structured for Growth',
     description:
-      'Insights from past events like what went wrong or what worked weren’t documented anywhere. The team kept repeating mistakes because there was no historical awareness. This reflects a missed opportunity to “measure and iterate” to learn from previous cycles.',
+      'Each section of the dashboard uses a repeatable, clear format. Purpose, Overview, Details, and Contacts. Making it easy to skim, navigate, and update. The more the system is used, the more value it accumulates. This is an example of interaction design that respects user effort and enables long-term scaling.',
   },
   {
-    title: 'Stakeholder',
-    image: notionBefore,
-    heading: 'Constant Follow-Ups',
+    title: 'Information Architecture',
+    image: databaseBenefitC,
+    heading: 'Clear Mental Models',
     description:
-      'If someone needed information, they had to email or DM whoever did it last year and hope for a response. This created bottlenecks, interrupted workflows, and made project knowledge exclusive rather than shared. It was a textbook case of poor UX for internal users.',
+      'The dashboard uses tools like Mermaid.js to visualize complex marketing strategies at a glance. This helps users form clear mental models of how campaigns are structured. By making processes visible and interactive, it enhances scannability and recall which are key principles of good UX. Users can navigate effortlessly across platforms, timeframes, and deliverables without confusion.',
   },
 ]
 
-const databaseAfterTabs = [
+const databaseBenefitsTabsB = [
   {
-    title: 'Info Access',
-    image: notionAfter,
-    heading: 'Centralized Dashboard',
+    title: 'Salability',
+    image: databaseBenefitD,
+    heading: 'Built for Growth',
     description:
-      'The new “One Source of Truth” dashboard organizes everything, from logistics to branding, in one place. It applies UX principles like findability, consistency, and progressive disclosure to internal documentation, making onboarding and collaboration seamless.',
+      'This dashboard is structured to scale across years without becoming overwhelming. Using collapsible toggles and modular formatting, each event cycle can be added without clutter. From a UX standpoint, this achieves progressive disclosure so users see only what’s needed when it’s needed while also enabling long-term system thinking and institutional memory.',
   },
   {
-    title: 'Institutional Memory',
-    image: notionAfter,
+    title: 'Clarity',
+    image: databaseBenefitE,
     heading: 'Captured Insights',
     description:
-      'Pro tips, mistakes, and reflections from past events are now stored and categorized for future use. This builds a feedback loop into the system. A direct reflection of the “Test” and “Reflect” stages of design thinking, allowing future teams to continuously improve.',
+      'The visual breakdown of tasks across timeframes creates an intuitive mental model of what needs to happen, when, and by whom. By mapping logistical steps across a shared timeline, the system reduces ambiguity and helps stakeholders better anticipate needs, prevent delays, and plan with confidence. It’s a simple but powerful UX strategy rooted in visibility and flow.',
   },
   {
-    title: 'Self-Sufficiency',
-    image: notionAfter,
-    heading: 'Reduced Bottlenecks',
+    title: 'Cognitive Ease',
+    image: databaseBenefitA,
+    heading: 'Color-Coded Navigation',
     description:
-      'The dashboard empowers team members to find what they need without asking around. It removes the dependency on individual memory and enables autonomy. From a UX lens, it transforms knowledge into a usable, scalable asset.',
+      'By using color-coded cards and consistent visual styling, the dashboard reduces the cognitive load required to scan and navigate the system. Users intuitively group information by visual cues, which speeds up decision-making and orientation. From a UX lens, this leverages principles of visual hierarchy and chunking to create a seamless internal tool experience.',
   },
 ]
 
@@ -241,10 +251,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       introText="While the internal project management system streamlined day-to-day operations for our immediate team, it became clear that knowledge was still siloed across the broader department. To solve this, I created a companion dashboard. A centralized, user-friendly reference hub that anyone in the department could use to understand what was done, why it mattered, and how to replicate it. Designed with clarity, structure, and self-sufficiency in mind, this “One Source of Truth” eliminated the need for back-and-forth emails and verbal memory. It turned hidden institutional knowledge into an accessible, scalable asset. Making onboarding, collaboration, and historical insight dramatically more efficient. Below is a breakdown of how the dashboard improves access, continuity, and team-wide alignment."
-      :beforeTabs="databaseBeforeTabs"
-      :afterTabs="databaseAfterTabs"
-      beforeTitle="Single Database Before"
-      afterTitle="Single Database After"
+      :beforeTabs="databaseBenefitsTabsA"
+      :afterTabs="databaseBenefitsTabsB"
+      beforeTitle="Single Source of Truth Database Benefits A"
+      afterTitle="Single Source of Truth Database Benefits B"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
@@ -344,6 +354,18 @@ const uxSubheading = 'How I would approach this UX challenge today'
         </p>
       </div>
     </CaseUxLens>
+    <div class="mt-8">
+      <h4 class="text-pink font-bold text-sm">Disclaimer</h4>
+      <p class="text-sm text-gray-500">
+        This case study is based on my work at the University of San Diego. While the content may
+        reference internal systems or materials, all information shown, such as job titles, event
+        descriptions, and task structures, all reflect information that is publicly accessible or
+        common within higher education settings. If any sensitive material is identified, please
+        inform me and I will immediately revise or blur it out upon request. This portfolio is
+        intended solely to showcase my UX process and design thinking, not to disclose confidential
+        information.
+      </p>
+    </div>
     <BackHomeBtn />
   </div>
 </template>

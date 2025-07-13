@@ -11,7 +11,7 @@ function navigateToWork() {
 
 <template>
   <div class="border-t border-slate-400 mt-12 pt-6 text-center">
-    <p class="text-sm text-dark mb-2">Looking for more projects?</p>
+    <p class="text-sm mb-2 tracking-wider">Looking for more projects?</p>
     <button
       @click="navigateToWork"
       class="bg-pink text-white px-5 py-2 rounded-sm text-sm inline-block hover:cursor-pointer hover:shadow-lg transition"

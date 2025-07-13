@@ -39,7 +39,7 @@ function closeModal() {
     <h3 v-if="title" class="text-2xl font-semibold mb-4 text-center">{{ title }}</h3>
 
     <!-- Tab Buttons -->
-    <div class="flex mb-6 space-x-2">
+    <div class="flex justify-around mb-6 space-x-2">
       <button
         v-for="(tab, index) in tabs"
         :key="index"

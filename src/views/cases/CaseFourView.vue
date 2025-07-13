@@ -299,6 +299,18 @@ const uxSubheading = 'How I would approach this UX challenge today'
       </div>
     </CaseUxLens>
     <BackHomeBtn />
+    <div class="mt-8">
+      <h4 class="text-pink font-bold text-sm">Disclaimer</h4>
+      <p class="text-sm text-gray-500">
+        This case study is based on my work at the University of San Diego. While the content may
+        reference internal systems or materials, all information shown, such as job titles, event
+        descriptions, and task structures, all reflect information that is publicly accessible or
+        common within higher education settings. If any sensitive material is identified, please
+        inform me and I will immediately revise or blur it out upon request. This portfolio is
+        intended solely to showcase my UX process and design thinking, not to disclose confidential
+        information.
+      </p>
+    </div>
   </div>
 </template>
 
