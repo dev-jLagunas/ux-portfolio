@@ -13,7 +13,9 @@ function closeModal() {
     v-if="showContactModal"
     class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-headings"
   >
-    <div class="bg-white p-4 rounded-xl shadow-xl w-90vw text-dark md:w-4/5 md:max-w-xl relative">
+    <div
+      class="bg-white w-[90vw] py-4 rounded-xl shadow-xl text-dark md:w-4/5 md:max-w-xl relative"
+    >
       <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
       <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
       <h2 class="text-center text-xl mb-8 underline underline-offset-4">Contact Me</h2>
