@@ -13,7 +13,7 @@ watchEffect(() => {
 <template>
   <div
     :class="[
-      'fixed top-25 left-0 bottom-0 w-full z-90 flex flex-col items-center justify-center',
+      'fixed inset-0 z-90 flex flex-col items-center justify-center',
       theme.isDarkMode ? 'bg-dark text-white' : 'bg-white text-dark',
     ]"
   >
