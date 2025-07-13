@@ -1,11 +1,18 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useRouter } from 'vue-router'
+
 import TheNavbar from './components/TheNavbar.vue'
 import TheSidebar from './components/TheSidebar.vue'
 import TheFooter from '@/components/TheFooter.vue'
 import ContactModal from '@/components/ContactModal.vue'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 
 const showBackToTop = ref(false)
+
+const isAppLoading = ref(true)
+
+const router = useRouter()
 
 const toggleBackToTop = () => {
   showBackToTop.value = window.scrollY > 300
@@ -15,8 +22,12 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-onMounted(() => {
+onMounted(async () => {
   window.addEventListener('scroll', toggleBackToTop, { passive: true })
+
+  // Wait for router to be ready before showing content
+  await router.isReady()
+  isAppLoading.value = false
 })
 
 onBeforeUnmount(() => {
@@ -25,22 +36,30 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <TheNavbar />
-  <TheSidebar />
-  <router-view v-slot="{ Component }">
-    <transition name="page">
-      <component :is="Component" />
-    </transition>
-  </router-view>
-  <TheFooter />
-  <ContactModal />
-  <button
-    v-show="showBackToTop"
-    @click="scrollToTop"
-    class="fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-white transition opacity-75 hover:py-2 hover:opacity-100 hover:cursor-pointer duration-300"
+  <div
+    v-if="isAppLoading"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white"
   >
-    Back to Top
-  </button>
+    <LoadingSpinner />
+  </div>
+  <div v-else>
+    <TheNavbar />
+    <TheSidebar />
+    <router-view v-slot="{ Component }">
+      <transition name="page">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <TheFooter />
+    <ContactModal />
+    <button
+      v-show="showBackToTop"
+      @click="scrollToTop"
+      class="fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-white transition opacity-75 hover:py-2 hover:opacity-100 hover:cursor-pointer duration-300"
+    >
+      Back to Top
+    </button>
+  </div>
 </template>
 
 <style scoped>
