@@ -27,7 +27,11 @@ function closeModal() {
           <img :src="locationIcon" alt="" class="h-10" />United States
         </li>
       </ul>
-      <form action="" class="px-4 flex justify-center items-start flex-col w-full">
+      <form
+        action="https://formspree.io/f/xjkobrre"
+        method="POST"
+        class="px-4 flex justify-center items-start flex-col w-full"
+      >
         <label for="name">Name</label>
         <input
           type="text"
@@ -38,9 +42,9 @@ function closeModal() {
         />
         <label for="email">Email</label>
         <input
-          type="text"
-          name="name"
-          id="name"
+          type="email"
+          name="email"
+          id="email"
           required
           class="border border-gray-500 w-full rounded-sm px-4 mb-3"
         />
