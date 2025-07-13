@@ -71,15 +71,15 @@ function closeModal() {
   <!-- Image Modal -->
   <div
     v-if="showModal"
-    class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+    class="fixed inset-0 bg-black/[var(--bg-opacity)] [--bg-opacity:80%] flex items-center justify-center z-50"
     @click.self="closeModal"
   >
     <div class="bg-white rounded-lg max-w-4xl w-full mx-4 p-4 relative">
       <button
         @click="closeModal"
-        class="absolute top-2 right-2 text-gray-700 hover:text-black text-xl"
+        class="absolute top-5 right-5 text-pink hover:scale-110 hover:font-bold hover:cursor-pointer text-xl"
       >
-        &times;
+        X
       </button>
 
       <img
@@ -88,7 +88,7 @@ function closeModal() {
         alt=""
         class="w-full rounded-md mb-4 object-contain max-h-[70vh]"
       />
-      <p v-if="modalImage?.description" class="text-sm text-gray-700 text-center">
+      <p v-if="modalImage?.description" class="text-sm text-dark">
         {{ modalImage.description }}
       </p>
     </div>

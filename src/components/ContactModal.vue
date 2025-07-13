@@ -13,16 +13,19 @@ function closeModal() {
     v-if="showContactModal"
     class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-headings"
   >
-    <div class="bg-white p-4 rounded-xl shadow-xl max-w-lg text-black w-4/5">
+    <div class="bg-white p-4 rounded-xl shadow-xl w-90vw text-dark md:w-4/5 md:max-w-xl relative">
+      <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
+      <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
+      <h2 class="text-center text-xl mb-8 underline underline-offset-4">Contact Me</h2>
       <ul class="flex justify-center items-center flex-col gap-2">
         <li class="text-center flex flex-col justify-center items-center">
-          <img :src="emailIcon" alt="" class="h-10 animate-bounce" />juan.lagunas.ux@gmail.com
+          <img :src="emailIcon" alt="" class="h-10" />dev.jlagunas@gmail.com
         </li>
         <li class="text-center flex flex-col justify-center items-center">
           <img :src="locationIcon" alt="" class="h-10" />United States
         </li>
       </ul>
-      <form action="" class="p-8 flex justify-center items-center flex-col w-full">
+      <form action="" class="p-8 flex justify-center items-start flex-col w-full">
         <label for="name">Name</label>
         <input
           type="text"
@@ -49,17 +52,32 @@ function closeModal() {
           required
           class="border w-full rounded-sm px-4 border-gray-500"
         ></textarea>
-        <button type="submit" class="mt-2 hover:font-bold hover:cursor-pointer">Send</button>
+        <button
+          type="submit"
+          class="mt-2 rounded-sm bg-pink px-4 py-1 hover:font-bold text-white hover:cursor-pointer"
+        >
+          Send
+        </button>
       </form>
 
       <button
-        class="mx-auto w-full text-pink font-bold text-xl hover:font-light hover:cursor-pointer"
+        class="mx-auto w-full text-pink font-bold text-xl hover:scale-110 hover:cursor-pointer"
         @click="closeModal()"
       >
-        close
+        X
       </button>
     </div>
   </article>
 </template>
 
-<style scoped></style>
+<style scoped>
+.triangle-top-left {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  border-top-left-radius: 6px;
+}
+
+.triangle-bottom-right {
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  border-bottom-right-radius: 6px;
+}
+</style>

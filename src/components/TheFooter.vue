@@ -27,7 +27,9 @@ function openContactModal() {
 
     <ul class="flex flex-wrap gap-12 justify-center mt-8">
       <router-link to="/about"><li class="hover:underline">About</li></router-link>
-      <li><button class="hover:underline hover:cursor" @click="navigateToWork">Work</button></li>
+      <li>
+        <button class="hover:underline hover:cursor-pointer" @click="navigateToWork">Work</button>
+      </li>
       <router-link to="/personal"><li class="hover:underline">Personal</li></router-link>
       <li><button class="hover:cursor-pointer" @click="openContactModal()">Contact</button></li>
     </ul>
