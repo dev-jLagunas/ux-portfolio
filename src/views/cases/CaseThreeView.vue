@@ -171,6 +171,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
       role="UX Designer, Visual Designer, Marketing Coordinator"
       date="March – April 2025"
       toolkit="Figma, Canva, Linearty Curve"
+      pdfFile="case-study-3-branding.pdf"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem

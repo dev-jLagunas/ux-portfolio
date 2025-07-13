@@ -170,6 +170,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
       role="UX Designer, UX Researcher, Developer, Owner"
       date="January – April 2025"
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
+      pdfFile="case-study-1-cafe.pdf"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem

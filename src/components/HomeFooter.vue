@@ -22,6 +22,8 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
         :icon="instagramIcon"
         :url="'https://www.instagram.com/j.lag_works/'"
       />
+      <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
+
       <LinkCard
         title="My Dev Portfolio"
         :icon="portfolioIcon"
@@ -32,7 +34,6 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
         :icon="frontendIcon"
         :url="'https://www.frontendmentor.io/profile/dev-jLagunas'"
       />
-      <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
         title="My LinkedIn"
         :icon="linkedInIcon"

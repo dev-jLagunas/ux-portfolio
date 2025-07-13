@@ -18,7 +18,7 @@ function closeModal() {
     >
       <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
       <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
-      <h2 class="text-center text-xl mb-8 underline underline-offset-4">Contact Me</h2>
+      <h2 class="text-center text-lg mb-8 underline underline-offset-4">Contact Me</h2>
       <ul class="flex justify-center items-center flex-col gap-2">
         <li class="text-center flex flex-col justify-center items-center">
           <img :src="emailIcon" alt="" class="h-10" />dev.jlagunas@gmail.com
@@ -27,7 +27,7 @@ function closeModal() {
           <img :src="locationIcon" alt="" class="h-10" />United States
         </li>
       </ul>
-      <form action="" class="p-8 flex justify-center items-start flex-col w-full">
+      <form action="" class="px-4 flex justify-center items-start flex-col w-full">
         <label for="name">Name</label>
         <input
           type="text"
@@ -49,7 +49,7 @@ function closeModal() {
           name="message"
           id="message"
           cols="30"
-          rows="10"
+          rows="6"
           placeholder="e.g. I'd like to get in touch..."
           required
           class="border w-full rounded-sm px-4 border-gray-500"
@@ -61,9 +61,8 @@ function closeModal() {
           Send
         </button>
       </form>
-
       <button
-        class="mx-auto w-full text-pink font-bold text-xl hover:scale-110 hover:cursor-pointer"
+        class="mx-auto w-full text-pink font-bold text-3xl hover:scale-110 hover:cursor-pointer"
         @click="closeModal()"
       >
         X
@@ -75,11 +74,11 @@ function closeModal() {
 <style scoped>
 .triangle-top-left {
   clip-path: polygon(0 0, 100% 0, 0 100%);
-  border-top-left-radius: 6px;
+  border-top-left-radius: 12px;
 }
 
 .triangle-bottom-right {
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
-  border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 12px;
 }
 </style>

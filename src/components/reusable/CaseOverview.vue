@@ -9,6 +9,7 @@ const props = defineProps({
   role: String,
   date: String,
   toolkit: String,
+  pdfFile: String,
 })
 </script>
 
@@ -25,7 +26,16 @@ const props = defineProps({
     <div class="md:flex md:items-center md:gap-4 md:mt-8">
       <img :src="imgSrc" alt="" class="w-92 mx-auto mb-4 md:mb-0 shadow-md" />
       <div>
-        <h5 class="font-bold tracking-widest mb-2">{{ workTitle }}</h5>
+        <a
+          :href="`/` + pdfFile"
+          download
+          class="bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block"
+          aria-label="Download full case study as PDF"
+        >
+          Full Case Study PDF
+        </a>
+
+        <h5 class="font-bold tracking-widest text-xl">{{ workTitle }}</h5>
         <p v-for="(para, index) in paragraphs" :key="index" :class="{ 'mt-2': index > 0 }">
           {{ para }}
         </p>

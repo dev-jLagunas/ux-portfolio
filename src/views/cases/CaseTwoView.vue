@@ -215,6 +215,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
       role="UX Designer, UX Researcher"
       date="Feb – April 2025"
       toolkit="Figma, Notion, Canva"
+      pdfFile="case-study-2-notion.pdf"
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
