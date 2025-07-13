@@ -29,7 +29,7 @@ const props = defineProps({
         <a
           :href="`/` + pdfFile"
           download
-          class="bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block"
+          class="bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block hover:shadow-lg transition"
           aria-label="Download full case study as PDF"
         >
           Full Case Study PDF
