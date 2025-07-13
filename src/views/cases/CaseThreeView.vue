@@ -9,6 +9,9 @@ import CaseNav from '@/components/reusable/CaseNav.vue'
 
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
+import { usePageLoader } from '@/composables/usePageLoader'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+const { isLoading } = usePageLoader(2000)
 
 // Images
 import userPersona from '@/assets/images/cases/case-three/persona-marketing.jpg'
@@ -21,8 +24,6 @@ import beforeMessaging from '@/assets/images/cases/case-three/before-messaging-c
 import afterVisuals from '@/assets/images/cases/case-three/after-visuals-collage.png'
 import afterBranding from '@/assets/images/cases/case-three/after-branding-collage.png'
 import afterSystem from '@/assets/images/cases/case-three/after-system-collage.png'
-
-import notionAfter from '@/assets/images/cases/case-one/notion-project-after-1.jpg'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -144,6 +145,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
 </script>
 
 <template>
+  <LoadingSpinner v-if="isLoading" />
+
   <div class="font-headings mb-28">
     <CaseNav
       :sections="[

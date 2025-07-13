@@ -1,5 +1,8 @@
 <script setup>
 import CaseNav from '@/components/reusable/CaseNav.vue'
+import { usePageLoader } from '@/composables/usePageLoader'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+const { isLoading } = usePageLoader(2000)
 
 import DisplayCard from '@/components/reusable/DisplayCard.vue'
 import flamingoArt from '@/assets/images/personal/flamingo-art.png'
@@ -33,6 +36,8 @@ import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
 </script>
 
 <template>
+  <LoadingSpinner v-if="isLoading" />
+
   <section>
     <CaseNav
       :sections="[

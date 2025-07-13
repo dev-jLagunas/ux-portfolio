@@ -9,6 +9,11 @@ import CaseNav from '@/components/reusable/CaseNav.vue'
 
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
+import { usePageLoader } from '@/composables/usePageLoader'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+const { isLoading } = usePageLoader(2000)
+
+import StorySection from '@/components/reusable/StorySection.vue'
 
 // Images
 import userPersona from '@/assets/images/cases/case-two/persona-notion.jpg'
@@ -184,6 +189,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
 </script>
 
 <template>
+  <LoadingSpinner v-if="isLoading" />
+
   <div class="font-headings mb-28">
     <CaseNav
       :sections="[
