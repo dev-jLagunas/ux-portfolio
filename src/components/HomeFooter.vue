@@ -27,7 +27,7 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
       <LinkCard
         title="My Dev Portfolio"
         :icon="portfolioIcon"
-        :url="'https://juan-lagunas.com/#/'"
+        :url="'https://dev-jlagunas.github.io/my-portfolio/#/'"
       />
       <LinkCard
         title="My Frontend Mentor"

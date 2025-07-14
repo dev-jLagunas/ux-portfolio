@@ -2,6 +2,14 @@
 import { useThemeStore } from '@/stores/theme'
 import { watchEffect } from 'vue'
 
+// Props
+const props = defineProps({
+  message: {
+    type: String,
+    default: 'Loading...', // Fallback if nothing passed
+  },
+})
+
 // Store
 const theme = useThemeStore()
 
@@ -20,7 +28,7 @@ watchEffect(() => {
     <div
       class="w-32 h-32 rounded-full animate-spin border-y-6 border-dashed border-pink border-t-transparent"
     ></div>
-    <p class="mt-4 tracking-widest">LOADING...</p>
+    <p class="mt-4 tracking-widest">{{ message }}</p>
   </div>
 </template>
 

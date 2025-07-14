@@ -33,10 +33,12 @@ import cafeUi from '@/assets/images/personal/cafe-ui.png'
 import chicanoUi from '@/assets/images/personal/chicano-ui.png'
 import galleryUi from '@/assets/images/personal/gallery-ui.png'
 import tiktokUi from '@/assets/images/personal/tiktok-ui.png'
+
+const spinnerMessage = 'Thanks for Waiting!'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" />
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
   <section>
     <CaseNav

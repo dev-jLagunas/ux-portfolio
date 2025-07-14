@@ -143,10 +143,12 @@ const uxIntro = `This project was completed before I formally adopted the design
 `
 
 const uxSubheading = 'How I would approach this UX challenge today'
+
+const spinnerMessage = 'Coming Right Up!'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" />
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <div class="font-headings mb-28">
     <CaseNav
       :sections="[
@@ -179,8 +181,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       problemStatement="Our original cafe website, built with Wix, lacked both functionality and personality. It wasn’t very responsive, offered no multilingual support, and used a static pdf image for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
       problemStatementB="Beyond usability, the site failed to reflect who we were. Cafe Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
       :artifacts="[
-        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
+        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
       takeaway="Megumi is a thoughtful, community-oriented cafe-goer who values comfort, cultural richness, and clear pet-friendly policies. Her journey reflects a desire not just for good food, but for experiences that feel welcoming, unique, and worth sharing. When cafes clearly communicate their vibe and inclusivity, she becomes a loyal advocate."

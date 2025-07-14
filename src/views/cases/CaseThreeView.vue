@@ -143,10 +143,12 @@ const uxIntro = `This project was completed before I formally adopted the design
 `
 
 const uxSubheading = 'How I would approach this UX challenge today'
+
+const spinnerMessage = 'Working On It...'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" />
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
   <div class="font-headings mb-28">
     <CaseNav
@@ -180,8 +182,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       problemStatement="The department’s marketing process wasn’t a system. It was a disorganized collection of mismatched flyers, inconsistent timelines, and scattered responsibilities. Despite recurring events and a predictable calendar, there were no templates, no scheduling strategy, and no clear ownership. Internally, this created confusion and inefficiency. Externally, students were met with off-brand messaging that lacked clarity, cohesion, and credibility. "
       problemStatementB="What stood out most was the lack of a user-centered mindset. Marketing wasn’t being treated as part of the student experience, it was being handled reactively, without intention or design. This fractured approach diluted our impact and missed an opportunity to build trust, engagement, and brand recognition through thoughtful, UX-driven communication."
       :artifacts="[
-        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
+        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
       takeaway="The artifacts expose a marketing system built on improvisation rather than intention. Todd, a long-standing team member, operates from a place of habit and personal control, relying on outdated folders, vague timelines, and visual guesswork. While his deep institutional knowledge is valuable, it exists in silos, contributing to inconsistencies, reactive decisions, and avoidable confusion. There’s no shared process, branding standard, or release strategy, only scattered assets and last-minute fixes. Even with recurring events, the lack of structure results in inefficiencies and mixed messaging. To build trust and clarity with students, the internal process first had to become organized, coordinated, and user-centered."

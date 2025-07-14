@@ -6,10 +6,12 @@ import HomeFooter from '@/components/HomeFooter.vue'
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
+
+const spinnerMessage = 'One Moment Please...'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" />
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
   <div>
     <TheHero />

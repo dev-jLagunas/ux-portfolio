@@ -62,7 +62,7 @@ function openContactModal() {
       </figure>
       <figure>
         <img :src="builderImg" alt="" />
-        <figcaption class="text-pink text-center font-bold md:text-xl">Builder</figcaption>
+        <figcaption class="text-pink text-center font-bold md:text-xl">Architect</figcaption>
       </figure>
       <figure>
         <img :src="photographerImg" alt="" />
@@ -70,7 +70,7 @@ function openContactModal() {
       </figure>
       <figure>
         <img :src="artistImg" alt="" />
-        <figcaption class="text-pink text-center font-bold md:text-xl">Creater</figcaption>
+        <figcaption class="text-pink text-center font-bold md:text-xl">Artist</figcaption>
       </figure>
       <figure>
         <img :src="dreamerImg" alt="" />

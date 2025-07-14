@@ -195,10 +195,12 @@ const reflections = [
 const uxIntro = `At the time I built this system, I hadn’t yet fully committed to becoming a UX designer but looking back, the thinking was already there. This project was driven by instinct, curiosity, and a desire to solve real problems for real people. While I hadn't yet fully internalized UX training, I later completed the Google Coursera UX course, which gave me the language and structure to articulate what I had already been doing intuitively. I now have a much stronger understanding of UX frameworks, methods, and best practices and if I were to approach this project today, I would apply a more formalized, research-driven process from the start. This section outlines how I would refine or expand this work using what I know now as a dedicated UX designer.`
 
 const uxSubheading = 'How I would approach this UX challenge today'
+
+const spinnerMessage = 'Be Right With You!'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" />
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
   <div class="font-headings mb-28">
     <CaseNav
@@ -232,8 +234,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       problemStatement="When I joined the Career Development Center, I wasn’t stepping into a system. In fact, it was like stepping into chaos. Event logistics, timelines, and institutional knowledge were scattered across outdated Notion pages, disconnected email threads, and verbal memory. There was no shared structure, documentation, or ownership. It felt like a patchwork of personalized to-do lists that were unusable the moment someone went on vacation or left the team."
       problemStatementB="This lack of organization led to missed context, constant backtracking, and preventable mistakes. While trying to complete a task, I was also constantly trying to figure out what a task even meant. As a new hire, it made onboarding inefficient and stressful. As a UX thinker, I saw something bigger: a system failure that affected not just me, but every colleague, stakeholder, and future employee trying to do their job in a broken environment."
       :artifacts="[
-        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
+        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
       takeaway="The visual artifacts make it clear: the true problem was the lack of structure, consistency, and ownership across systems. Julian, a capable and motivated new hire, found himself navigating a maze of outdated pages, vague tasks, and unclear responsibilities. His experience highlights a systemic issue where even simple tasks became complex due to disorganization, leading to anxiety, wasted time, and second-guessing. Despite his confidence and drive, the absence of a reliable system made onboarding difficult and collaboration fragile. Solving this meant more than documenting tasks because what it actually required was building clarity, repeatability, and trust into the way the team worked."

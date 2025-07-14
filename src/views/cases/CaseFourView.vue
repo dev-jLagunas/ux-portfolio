@@ -142,10 +142,12 @@ const uxIntro = `This project was completed before I started to formally apply t
 framework but if I were to start it today, here is exactly how I would approach it using a full UX process from the ground up.`
 
 const uxSubheading = 'How I would approach this UX challenge today'
+
+const spinnerMessage = 'Almost There...'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" />
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
   <div class="font-headings mb-28">
     <CaseNav
@@ -180,8 +182,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       problemStatement="Students at the University of San Diego were regularly receiving the Career Development Center’s weekly email, but engagement was low. The newsletter was dense, visually inconsistent, and overwhelming to skim mainly because of dense text, especially on mobile. There was no clear hierarchy, and critical content like event information or job opportunities often got buried beneath less relevant items. "
       problemStatementB="Through conversations with students and a review of engagement analytics, I identified a core need: students wanted quick, scannable access to personalized, actionable content that didn’t feel like just another school blast."
       :artifacts="[
-        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Empathy Map', imageSrc: empathyMap },
+        { caption: 'Persona', imageSrc: userPersona },
         { caption: 'Journey Map', imageSrc: journeyMap },
       ]"
       takeaway="The newsletter's main problem seemed to be a lack of intention. Isabella, a motivated and routine-driven student, opens the email weekly but quickly disengages due to visual clutter, repetitive content, and unclear hierarchy. She scrolls only as far as necessary to meet her CRP requirements, then deletes the message. Her experience highlights a disconnect between the newsletter's format and its audience’s expectations: students want concise, relevant, and fresh content that respects their time and feels designed for them. Without visual cues, structured hierarchy, or evolving content, the email becomes noise which is then easily ignored instead of meaningfully engaged with."
