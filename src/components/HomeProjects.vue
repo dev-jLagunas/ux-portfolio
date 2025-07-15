@@ -1,9 +1,11 @@
 <script setup>
+// Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
 import notionTrioPhoto from '@/assets/images/home/notion-systems-home.png'
 import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.png'
 import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
+import quickBitesLogo from '@/assets/images/home/quick-bites-logo.png'
 </script>
 
 <template>
@@ -49,6 +51,14 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
         description="A data-informed newsletter overhaul focused on hierarchy, engagement, and skimmability to boost click-throughs and student interaction."
         :image="emailTrioPhoto"
         route="/case-four"
+        loading="lazy"
+      />
+      <ProjectCard
+        title="Restaurant Recommender App"
+        ux-type="In Progress"
+        description="Currently conducting user research for a mood-based restaurant recommender app. This case study will demonstrate the full UX process from start to finish, real interviews, journey maps, ideation, testing, and low and high-fidelity prototypes."
+        :image="quickBitesLogo"
+        route="/case-five"
         loading="lazy"
       />
     </div>
