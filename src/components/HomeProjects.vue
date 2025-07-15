@@ -54,7 +54,7 @@ import quickBitesLogo from '@/assets/images/home/quick-bites-logo.png'
         loading="lazy"
       />
       <ProjectCard
-        title="Restaurant Recommender App"
+        title="Coming Soon"
         ux-type="In Progress"
         description="Currently conducting user research for a mood-based restaurant recommender app. This case study will demonstrate the full UX process from start to finish, real interviews, journey maps, ideation, testing, and low and high-fidelity prototypes."
         :image="quickBitesLogo"

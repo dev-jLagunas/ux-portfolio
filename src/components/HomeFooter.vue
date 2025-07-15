@@ -1,11 +1,14 @@
 <script setup>
 import LinkCard from '@/components/reusable/LinkCard.vue'
+
+// Svg Icons
 import instagramIcon from '@/assets/svgs/instagram-icon.svg'
 import frontendIcon from '@/assets/svgs/frontend-icon.svg'
 import portfolioIcon from '@/assets/svgs/portfolio-icon.svg'
 import resumeIcon from '@/assets/svgs/resume-icon.svg'
 import githubIcon from '@/assets/svgs/github-icon.svg'
 import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
+import behanceIcon from '@/assets/svgs/behance-icon.svg'
 </script>
 
 <template>
@@ -17,18 +20,24 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
       </h1>
     </div>
     <section class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
         title="My Instagram"
         :icon="instagramIcon"
         :url="'https://www.instagram.com/j.lag_works/'"
         loading="lazy"
       />
-      <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
 
       <LinkCard
         title="My Dev Portfolio"
         :icon="portfolioIcon"
         :url="'https://dev-jlagunas.github.io/my-portfolio/#/'"
+        loading="lazy"
+      />
+      <LinkCard
+        title="My Behance"
+        :icon="behanceIcon"
+        :url="'https://www.behance.net/juanlagunas87'"
         loading="lazy"
       />
       <LinkCard
@@ -47,7 +56,7 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
       <LinkCard
         title="My Github"
         :icon="githubIcon"
-        class="lg:col-span-2"
+        class="col-span-2 md:col-span-3 lg:col-span-1"
         :url="'https://github.com/dev-jLagunas'"
         loading="lazy"
       />

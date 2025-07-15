@@ -38,6 +38,11 @@ const router = createRouter({
       name: 'case four',
       component: () => import('@/views/cases/CaseFourView.vue'),
     },
+    {
+      path: '/case-five',
+      name: 'case five',
+      component: () => import('@/views/cases/CaseFiveView.vue'),
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition
