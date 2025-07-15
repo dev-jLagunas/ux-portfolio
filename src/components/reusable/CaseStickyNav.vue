@@ -1,10 +1,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
-import { useThemeStore } from '@/stores/theme'
 
-// Store
-const theme = useThemeStore()
-
+// Props
 const props = defineProps({
   sections: {
     type: Array,
@@ -12,12 +9,14 @@ const props = defineProps({
   },
 })
 
+// Reactive Properties
 const activeSection = ref(null)
 
+// Methods
 const scrollToSection = (id) => {
   const element = document.getElementById(id)
   if (element) {
-    const yOffset = -80 // Adjust based on navbar height
+    const yOffset = -80
     const y = element.getBoundingClientRect().top + window.scrollY + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
@@ -31,7 +30,7 @@ const updateActiveSection = () => {
     const el = document.getElementById(section.id)
     if (el) {
       const rect = el.getBoundingClientRect()
-      const distance = Math.abs(rect.top - 80) // offset matches yOffset above
+      const distance = Math.abs(rect.top - 80)
       if (distance < closestDistance) {
         closest = section.id
         closestDistance = distance
@@ -42,6 +41,7 @@ const updateActiveSection = () => {
   activeSection.value = closest
 }
 
+// Lifecycle Hooks
 onMounted(() => {
   window.addEventListener('scroll', updateActiveSection, { passive: true })
   updateActiveSection()

@@ -40,10 +40,8 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    // 1. Restore scroll on back/forward
     if (savedPosition) return savedPosition
 
-    // 2. Scroll to anchor/hash if defined (e.g., #case-studies)
     if (to.hash) {
       return {
         el: to.hash,
@@ -51,7 +49,6 @@ const router = createRouter({
       }
     }
 
-    // 3. Default: always scroll to top
     return { top: 0 }
   },
 })

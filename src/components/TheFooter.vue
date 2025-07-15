@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import skaterIcon from '@/assets/svgs/skateboarding-icon.svg'
 import { showContactModal } from '@/composables/useContactModal'
+import skaterIcon from '@/assets/svgs/skateboarding-icon.svg'
 
 // Routing
 const router = useRouter()

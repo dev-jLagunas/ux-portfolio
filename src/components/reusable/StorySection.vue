@@ -1,5 +1,7 @@
 <script setup>
-import CaseNav from '@/components/reusable/CaseNav.vue'
+import CaseNav from '@/components/reusable/CaseStickyNav.vue'
+
+// Photos
 import selfPhoto from '@/assets/images/about/self-red.jpg'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import sunPhoto from '@/assets/images/about/cafe-self-about.jpg'
@@ -7,6 +9,7 @@ import familyCafePhoto from '@/assets/images/about/family-cafe-about.jpg'
 import directionPhoto from '@/assets/images/about/direction-about.jpg'
 import selfCounterPhoto from '@/assets/images/about/self-counter-about.jpg'
 import selfBlackPhoto from '@/assets/images/about/self-black.jpg'
+// Svg Icons
 import empathyIcon from '@/assets/svgs/skills/empathy-skill.svg'
 import globalIcon from '@/assets/svgs/skills/global-skill.svg'
 import listeningIcon from '@/assets/svgs/skills/listen-skill.svg'
@@ -41,7 +44,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
   />
   <section class="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-8 font-headings">
     <article class="flex flex-col items-center justify-center relative md:mb-8" id="bio-section">
-      <img :src="selfPhoto" alt="" class="h-60 rounded-md" />
+      <img :src="selfPhoto" alt="self image of Juan Lagunas" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
         <span class="font-bold text-pink">M</span>y <span class="font-bold text-blue">B</span>io
       </h3>
@@ -78,11 +81,11 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
         </figure>
       </div>
       <ArrowTransition
-        customClass="scale-75 md:absolute md:-rotate-90 md:-right-18 md:-top-14 md:scale-50  lg:scale-40 lg:-right-18 "
+        customClass="scale-75 md:absolute md:-rotate-90 md:-right-24 md:-top-14 md:scale-50  lg:scale-40 lg:-right-18 "
       />
     </article>
     <article class="flex flex-col items-center justify-center relative md:mb-8" id="roots-section">
-      <img :src="familyCafePhoto" alt="" class="h-60 rounded-md" />
+      <img :src="familyCafePhoto" alt="Family of 2 with their cat" class="h-60 rounded-md" />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y <SPAN class="text-blue font-bold">R</SPAN>oots
       </h3>
@@ -127,7 +130,12 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
       class="flex flex-col items-center justify-center relative md:col-start-2 md:row-start-2 lg:col-start-3 lg:row-start-1 md:mb-8"
       id="journey-section"
     >
-      <img :src="selfCounterPhoto" alt="" class="h-60 rounded-md" />
+      <img
+        :src="selfCounterPhoto"
+        alt="photo of Juan Lagunas in behind cafe counter"
+        class="h-60 rounded-md"
+        loading="lazy"
+      />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y <SPAN class="text-blue font-bold">J</SPAN>ourney
       </h3>
@@ -164,14 +172,19 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
         </figure>
       </div>
       <ArrowTransition
-        customClass="scale-75  md:absolute md:rotate-90 md:-top-14 md:-left-20 lg:-rotate-90 lg:-left-18 md:scale-50 lg:scale-40 "
+        customClass="scale-75  md:absolute md:rotate-90 md:-top-14 md:-left-24 lg:-rotate-90 lg:-left-18 md:scale-50 lg:scale-40 "
       />
     </article>
     <article
       class="flex flex-col items-center justify-center relative md:mb-8"
       id="realization-section"
     >
-      <img :src="sunPhoto" alt="" class="h-60 rounded-md" />
+      <img
+        :src="sunPhoto"
+        alt="photo of Juan Lagunas in front of wall mural"
+        class="h-60 rounded-md"
+        loading="lazy"
+      />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y
         <SPAN class="text-blue font-bold">R</SPAN>ealization
@@ -220,7 +233,7 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
       class="flex flex-col items-center justify-center relative lg:col-start-2 lg:row-start-2 md:mb-8"
       id="future-section"
     >
-      <img :src="directionPhoto" alt="" class="h-60 rounded-md" />
+      <img :src="directionPhoto" alt="photo of wind arrow" class="h-60 rounded-md" loading="lazy" />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y <SPAN class="text-blue font-bold">F</SPAN>uture
       </h3>
@@ -258,14 +271,19 @@ import purposeIcon from '@/assets/svgs/skills/purpose-skill.svg'
         </figure>
       </div>
       <ArrowTransition
-        customClass="scale-75 md:scale-50 md:absolute md:-rotate-90 md:-right-14 md:-top-14 lg:rotate-90 lg:scale-40 lg:hidden"
+        customClass="scale-75 md:scale-50 md:absolute md:-rotate-90 md:-right-24 md:-top-14 lg:rotate-90 lg:scale-40 lg:hidden"
       />
     </article>
     <article
       class="flex flex-col items-center justify-center relative lg:col-start-1 lg:row-start-2 md:mb-8"
       id="dream-section"
     >
-      <img :src="selfBlackPhoto" alt="" class="h-60 rounded-md" />
+      <img
+        :src="selfBlackPhoto"
+        alt="black and white self portrait of Juan Lagunas"
+        class="h-60 rounded-md"
+        loading="lazy"
+      />
       <h3 class="text-4xl my-2">
         <span class="text-pink font-bold">M</span>y <SPAN class="text-blue font-bold">D</SPAN>ream
       </h3>

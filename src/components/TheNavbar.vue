@@ -3,6 +3,8 @@ import { computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
 import { useThemeStore } from '@/stores/theme'
+
+// Svg Icons
 import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'

@@ -37,7 +37,7 @@ function prevImage() {
     </div>
     <article class="flex flex-col items-center justify-center">
       <div class="border-pink border-2 p-4 rounded-md my-4">
-        <img :src="problemIcon" alt="" class="mx-auto h-12 mb-2" />
+        <img :src="problemIcon" alt="troubled face svg icon" class="mx-auto h-12 mb-2" />
         <p class="mb-2 indent-4">
           {{ problemStatement }}
         </p>
@@ -53,6 +53,7 @@ function prevImage() {
           :alt="props.artifacts[currentIndex].caption"
           class="rounded-md h-full px-4 object-contain hover:cursor-pointer md:w-92 mx-auto lg:w-3/4"
           @click="isModalOpen = true"
+          loading="lazy"
         />
 
         <button
@@ -81,7 +82,7 @@ function prevImage() {
     class="fixed inset-0 z-50 bg-black/[var(--bg-opacity)] [--bg-opacity:80%] flex items-center justify-center"
     @click.self="isModalOpen = false"
   >
-    <div class="relative w-92 md:w-1/2 lg:w-[600px] px-8">
+    <div class="relative w-full md:w-1/2 lg:w-[600px] px-8">
       <button
         @click="isModalOpen = false"
         class="absolute -top-10 right-8 text-white bg-pink px-3 py-1 rounded hover:bg-pink/80"
@@ -92,6 +93,7 @@ function prevImage() {
         :src="props.artifacts[currentIndex].imageSrc"
         :alt="props.artifacts[currentIndex].caption"
         class="w-full rounded shadow-lg hover:cursor-pointer"
+        loading="lazy"
       />
       <p class="text-white font-bold text-sm text-center mt-2">
         {{ props.artifacts[currentIndex].caption }}

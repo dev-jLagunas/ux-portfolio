@@ -1,21 +1,16 @@
 <script setup>
 import { useThemeStore } from '@/stores/theme'
-import { watchEffect } from 'vue'
 
 // Props
 const props = defineProps({
   message: {
     type: String,
-    default: 'Loading...', // Fallback if nothing passed
+    default: 'Loading...',
   },
 })
 
 // Store
 const theme = useThemeStore()
-
-watchEffect(() => {
-  console.log('Dark mode?', theme.isDark)
-})
 </script>
 
 <template>

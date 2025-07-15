@@ -43,7 +43,11 @@ const props = defineProps({
       <!-- Outcome Cards -->
       <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         <li v-for="(item, index) in outcomes" :key="index" class="relative px-2 py-12">
-          <img :src="icons[index]" alt="" class="absolute top-0 left-2 h-10 -rotate-12" />
+          <img
+            :src="icons[index]"
+            alt="icons representing outcome"
+            class="absolute top-0 left-2 h-10 -rotate-12"
+          />
           <h5 class="font-semibold my-2">{{ item.title }}</h5>
           <p>{{ item.description }}</p>
         </li>

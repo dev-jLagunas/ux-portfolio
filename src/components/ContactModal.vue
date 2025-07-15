@@ -21,10 +21,10 @@ function closeModal() {
       <h2 class="text-center text-lg mb-8 underline underline-offset-4">Contact Me</h2>
       <ul class="flex justify-center items-center flex-col gap-2">
         <li class="text-center flex flex-col justify-center items-center">
-          <img :src="emailIcon" alt="" class="h-10" />dev.jlagunas@gmail.com
+          <img :src="emailIcon" alt="email svg icon" class="h-10" />dev.jlagunas@gmail.com
         </li>
         <li class="text-center flex flex-col justify-center items-center">
-          <img :src="locationIcon" alt="" class="h-10" />United States
+          <img :src="locationIcon" alt="location svg icon" class="h-10" />United States
         </li>
       </ul>
       <form

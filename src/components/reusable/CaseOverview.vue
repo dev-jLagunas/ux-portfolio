@@ -24,7 +24,12 @@ const props = defineProps({
     </ul>
 
     <div class="md:flex md:items-center md:gap-4 md:mt-8">
-      <img :src="imgSrc" alt="" class="w-92 mx-auto mb-4 md:mb-0 shadow-md" />
+      <img
+        :src="imgSrc"
+        alt="trio image of case study screenshots"
+        class="w-92 mx-auto mb-4 md:mb-0 shadow-md"
+        loading="lazy"
+      />
       <div>
         <a
           :href="`/` + pdfFile"

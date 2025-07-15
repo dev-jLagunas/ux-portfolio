@@ -41,7 +41,12 @@ defineProps({
     <p class="text-sm mb-4">
       {{ description }}
     </p>
-    <img :src="image" alt="" class="h-1/2 max-h-72" />
+    <img
+      :src="image"
+      alt="trio image of project screenshots"
+      class="h-1/2 max-h-72"
+      loading="lazy"
+    />
 
     <router-link :to="route">
       <button

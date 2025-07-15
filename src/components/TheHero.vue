@@ -2,6 +2,7 @@
 import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
 
+// Hero Images
 import artistImg from '@/assets/images/hero-artist.png'
 import builderImg from '@/assets/images/hero-builder.png'
 import designerImg from '@/assets/images/hero-designer.png'
@@ -15,6 +16,7 @@ const router = useRouter()
 function navigateToWork() {
   router.push({ name: 'home', hash: '#case-studies' })
 }
+
 // Methods
 function openContactModal() {
   showContactModal.value = true

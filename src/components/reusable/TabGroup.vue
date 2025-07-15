@@ -57,7 +57,7 @@ function closeModal() {
     <div v-if="tabs[activeTab]" class="">
       <img
         :src="tabs[activeTab].image"
-        alt=""
+        alt="screenshot of project"
         class="mx-auto mb-4 rounded-md max-h-96 object-contain cursor-pointer"
         @click="openModal"
       />
@@ -85,8 +85,9 @@ function closeModal() {
       <img
         v-if="modalImage?.image"
         :src="modalImage.image"
-        alt=""
+        alt="enlarged image of project screenshot"
         class="w-full rounded-md mb-4 object-contain max-h-[70vh]"
+        loading="lazy"
       />
       <p v-if="modalImage?.description" class="text-sm text-dark">
         {{ modalImage.description }}

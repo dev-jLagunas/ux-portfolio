@@ -1,5 +1,5 @@
 <script setup>
-import CaseNav from '@/components/reusable/CaseNav.vue'
+import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)

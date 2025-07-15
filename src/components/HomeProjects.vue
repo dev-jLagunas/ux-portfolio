@@ -25,6 +25,7 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
         description="A multilingual cafe website designed from scratch to clearly showcase the menu and brand while improving usability for both local and international customers."
         :image="cafeTrioPhoto"
         route="/case-one"
+        loading="lazy"
       />
       <ProjectCard
         title="Notion Project Management System"
@@ -32,6 +33,7 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
         description="A fully custom Notion workspace that streamlined project management, boosted team accountability, and replaced chaotic email chains with clear systems."
         :image="notionTrioPhoto"
         route="/case-two"
+        loading="lazy"
       />
       <ProjectCard
         title="Department Marketing System"
@@ -39,6 +41,7 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
         description="A full redesign of the department's visual standards and workflows, unifying brand identity and improving clarity across all marketing assets."
         :image="marketingTrioPhoto"
         route="/case-three"
+        loading="lazy"
       />
       <ProjectCard
         title="Email Newsletter Redesign"
@@ -46,6 +49,7 @@ import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
         description="A data-informed newsletter overhaul focused on hierarchy, engagement, and skimmability to boost click-throughs and student interaction."
         :image="emailTrioPhoto"
         route="/case-four"
+        loading="lazy"
       />
     </div>
   </section>

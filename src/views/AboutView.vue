@@ -1,10 +1,10 @@
 <script setup>
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
-const { isLoading } = usePageLoader(2000)
-
 import StorySection from '@/components/reusable/StorySection.vue'
 
+// Spinner Logic
+const { isLoading } = usePageLoader(2000)
 const spinnerMessage = 'Hang tight!'
 </script>
 
