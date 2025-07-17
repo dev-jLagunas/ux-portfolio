@@ -1,14 +1,13 @@
 <script setup>
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'
-
-// Photos
-import selfPhoto from '@/assets/images/about/self-red.jpg'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
-import sunPhoto from '@/assets/images/about/cafe-self-about.jpg'
-import familyCafePhoto from '@/assets/images/about/family-cafe-about.jpg'
-import directionPhoto from '@/assets/images/about/direction-about.jpg'
-import selfCounterPhoto from '@/assets/images/about/self-counter-about.jpg'
-import selfBlackPhoto from '@/assets/images/about/self-black.jpg'
+// Photos
+import selfPhoto from '@/assets/images/about/self-red.webp'
+import sunPhoto from '@/assets/images/about/cafe-self-about.webp'
+import familyCafePhoto from '@/assets/images/about/family-cafe-about.webp'
+import directionPhoto from '@/assets/images/about/direction-about.webp'
+import selfCounterPhoto from '@/assets/images/about/self-counter-about.webp'
+import selfBlackPhoto from '@/assets/images/about/self-black.webp'
 // Svg Icons
 import empathyIcon from '@/assets/svgs/skills/empathy-skill.svg'
 import globalIcon from '@/assets/svgs/skills/global-skill.svg'

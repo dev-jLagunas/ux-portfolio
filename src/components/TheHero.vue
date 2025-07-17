@@ -3,12 +3,12 @@ import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
 
 // Hero Images
-import artistImg from '@/assets/images/hero-artist.png'
-import builderImg from '@/assets/images/hero-builder.png'
-import designerImg from '@/assets/images/hero-designer.png'
-import developerImg from '@/assets/images/hero-developer.png'
-import dreamerImg from '@/assets/images/hero-dreamer.png'
-import photographerImg from '@/assets/images/hero-photographer.png'
+import artistImg from '@/assets/images/hero-artist.webp'
+import builderImg from '@/assets/images/hero-builder.webp'
+import designerImg from '@/assets/images/hero-designer.webp'
+import developerImg from '@/assets/images/hero-developer.webp'
+import dreamerImg from '@/assets/images/hero-dreamer.webp'
+import photographerImg from '@/assets/images/hero-photographer.webp'
 
 // Routing
 const router = useRouter()
