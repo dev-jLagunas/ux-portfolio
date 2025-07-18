@@ -1,10 +1,10 @@
 <script setup>
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
-import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
-import notionTrioPhoto from '@/assets/images/home/notion-systems-home.png'
-import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.png'
-import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
+import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.webp'
+import notionTrioPhoto from '@/assets/images/home/notion-systems-home.webp'
+import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.webp'
+import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.webp'
 import quickBitesLogo from '@/assets/images/home/quick-bites-logo.png'
 </script>
 

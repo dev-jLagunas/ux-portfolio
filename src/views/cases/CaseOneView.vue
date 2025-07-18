@@ -17,16 +17,16 @@ const { isLoading } = usePageLoader(2000)
 const spinnerMessage = 'Coming Right Up!'
 
 // Images
-import userPersona from '@/assets/images/cases/case-one/persona-cafe.jpg'
-import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.jpg'
-import empathyMap from '@/assets/images/cases/case-one/empathy-map-cafe.jpg'
-import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.png'
-import usableFeat from '@/assets/images/cases/case-one/cafe-accesible-feat.png'
-import boldFeat from '@/assets/images/cases/case-one/cafe-bold-feat.png'
-import languageFeat from '@/assets/images/cases/case-one/cafe-language-feat.png'
-import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.png'
-import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.png'
-import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.png'
+import userPersona from '@/assets/images/cases/case-one/persona-cafe.webp'
+import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.webp'
+import empathyMap from '@/assets/images/cases/case-one/empathy-map-cafe.webp'
+import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.webp'
+import usableFeat from '@/assets/images/cases/case-one/cafe-accesible-feat.webp'
+import boldFeat from '@/assets/images/cases/case-one/cafe-bold-feat.webp'
+import languageFeat from '@/assets/images/cases/case-one/cafe-language-feat.webp'
+import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.webp'
+import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.webp'
+import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'

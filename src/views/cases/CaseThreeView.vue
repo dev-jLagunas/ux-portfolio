@@ -15,16 +15,16 @@ import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
 
 // Images
-import userPersona from '@/assets/images/cases/case-three/persona-marketing.jpg'
-import journeyMap from '@/assets/images/cases/case-three/journey-map-marketing.jpg'
-import empathyMap from '@/assets/images/cases/case-three/empathy-map-marketing.jpg'
-import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.png'
-import beforeVisuals from '@/assets/images/cases/case-three/before-visuals-collage.png'
-import beforeSystem from '@/assets/images/cases/case-three/before-system-collage.png'
-import beforeMessaging from '@/assets/images/cases/case-three/before-messaging-collage.png'
-import afterVisuals from '@/assets/images/cases/case-three/after-visuals-collage.png'
-import afterBranding from '@/assets/images/cases/case-three/after-branding-collage.png'
-import afterSystem from '@/assets/images/cases/case-three/after-system-collage.png'
+import userPersona from '@/assets/images/cases/case-three/persona-marketing.webp'
+import journeyMap from '@/assets/images/cases/case-three/journey-map-marketing.webp'
+import empathyMap from '@/assets/images/cases/case-three/empathy-map-marketing.webp'
+import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.webp'
+import beforeVisuals from '@/assets/images/cases/case-three/before-visuals-collage.webp'
+import beforeSystem from '@/assets/images/cases/case-three/before-system-collage.webp'
+import beforeMessaging from '@/assets/images/cases/case-three/before-messaging-collage.webp'
+import afterVisuals from '@/assets/images/cases/case-three/after-visuals-collage.webp'
+import afterBranding from '@/assets/images/cases/case-three/after-branding-collage.webp'
+import afterSystem from '@/assets/images/cases/case-three/after-system-collage.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'

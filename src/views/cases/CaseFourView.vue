@@ -15,16 +15,16 @@ import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
 
 // Images
-import userPersona from '@/assets/images/cases/case-four/persona-newsletter.jpg'
-import journeyMap from '@/assets/images/cases/case-four/journey-map-newsletter.jpg'
-import empathyMap from '@/assets/images/cases/case-four/empathy-map-newsletter.jpg'
-import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.png'
-import beforeHierarchy from '@/assets/images/cases/case-four/before-hierarchy-collage.png'
-import beforeOverload from '@/assets/images/cases/case-four/before-overload-collage.png'
-import beforeAccess from '@/assets/images/cases/case-four/before-accesibility-collage.png'
-import afterAccess from '@/assets/images/cases/case-four/after-accessibility-collage.png'
-import afterHierarchy from '@/assets/images/cases/case-four/after-hierarchy-collage.png'
-import afterIntention from '@/assets/images/cases/case-four/after-intentionality-collage.png'
+import userPersona from '@/assets/images/cases/case-four/persona-newsletter.webp'
+import journeyMap from '@/assets/images/cases/case-four/journey-map-newsletter.webp'
+import empathyMap from '@/assets/images/cases/case-four/empathy-map-newsletter.webp'
+import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.webp'
+import beforeHierarchy from '@/assets/images/cases/case-four/before-hierarchy-collage.webp'
+import beforeOverload from '@/assets/images/cases/case-four/before-overload-collage.webp'
+import beforeAccess from '@/assets/images/cases/case-four/before-accesibility-collage.webp'
+import afterAccess from '@/assets/images/cases/case-four/after-accessibility-collage.webp'
+import afterHierarchy from '@/assets/images/cases/case-four/after-hierarchy-collage.webp'
+import afterIntention from '@/assets/images/cases/case-four/after-intentionality-collage.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
