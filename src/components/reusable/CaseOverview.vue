@@ -18,7 +18,7 @@ const props = defineProps({
     <h3 class="text-2xl text-center md:text-3xl">{{ title }}</h3>
 
     <ul
-      class="text-pink font-semibold flex items-start justify-center text-center text-sm gap-2 mt-2 mb-4 divide-x divide-gray-300"
+      class="text-pink font-semibold flex items-start justify-center flex-wrap text-center text-sm gap-2 mt-2 mb-4 divide-x divide-gray-300"
     >
       <li v-for="(tag, index) in tags" :key="index" class="pr-2">{{ tag }}</li>
     </ul>
@@ -27,7 +27,7 @@ const props = defineProps({
       <img
         :src="imgSrc"
         alt="trio image of case study screenshots"
-        class="w-92 mx-auto mb-4 md:mb-0 shadow-md"
+        class="w-full max-w-[500px] mx-auto mb-4 md:mb-0 shadow-md"
         loading="lazy"
       />
       <div>

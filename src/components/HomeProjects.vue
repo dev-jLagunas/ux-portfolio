@@ -5,7 +5,7 @@ import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.webp'
 import notionTrioPhoto from '@/assets/images/home/notion-systems-home.webp'
 import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.webp'
 import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.webp'
-import quickBitesLogo from '@/assets/images/home/quick-bites-logo.png'
+import caseFiveTrio from '@/assets/images/cases/case-five/case_five_tri_mockup.png'
 </script>
 
 <template>
@@ -21,6 +21,22 @@ import quickBitesLogo from '@/assets/images/home/quick-bites-logo.png'
     <div
       class="px-4 flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3"
     >
+      <div class="relative md:col-span-2">
+        <h2
+          class="font-bold bg-blue text-white tracking-wider rounded-sm mx-auto mb-2 w-fit px-4 py-1 md:-top-3 md:z-10 md:absolute md:left-1/2 md:-translate-x-1/2"
+        >
+          FEATURED
+        </h2>
+        <ProjectCard
+          title="Bean And Beast Chocolates"
+          ux-type="E-commerce UX"
+          description="A full-scope UX capstone project built from scratch using the design thinking framework, combining research, branding, and front-end development into a polished gifting experience."
+          :image="caseFiveTrio"
+          route="/case-five"
+          loading="lazy"
+        />
+      </div>
+
       <ProjectCard
         title="Cafe Triangle Redesign"
         ux-type="Web UX"
@@ -51,14 +67,6 @@ import quickBitesLogo from '@/assets/images/home/quick-bites-logo.png'
         description="A data-informed newsletter overhaul focused on hierarchy, engagement, and skimmability to boost click-throughs and student interaction."
         :image="emailTrioPhoto"
         route="/case-four"
-        loading="lazy"
-      />
-      <ProjectCard
-        title="Coming Soon"
-        ux-type="In Progress"
-        description="Currently conducting user research for a mood-based restaurant recommender app. This case study will demonstrate the full UX process from start to finish, real interviews, journey maps, ideation, testing, and low and high-fidelity prototypes."
-        :image="quickBitesLogo"
-        route="/case-five"
         loading="lazy"
       />
     </div>
