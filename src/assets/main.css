@@ -15,26 +15,33 @@ body {
   padding-inline: 1rem;
 }
 
+@media (width >= 768px) {
+  body {
+    padding-inline: 2rem;
+  }
+}
+
 /***************************************
 Tailwind Variables
 *****************************************/
 
 @theme {
   /* Fonts */
-  --font-headings: 'Montserrat', sans-serif;
-  --font-body: 'Monda', sans-serif;
+  --font-main: 'Space Grotesk', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
 
   /* Colors */
-  --color-pink: #fe6567;
+  --color-pink: #e9404f;
   --color-blue: #1ca9e6;
   --color-dark: #0f0f0f;
+  --color-light: #f7f7f7;
 }
 
 /***************************************
 Tailwind Custom Classes
 *****************************************/
 body {
-  @apply bg-white text-black transition-colors;
+  @apply bg-light text-black transition-colors;
 }
 
 .dark body {
@@ -54,5 +61,7 @@ body {
 }
 
 .nav-btn-styles {
-  @apply border p-1 rounded-sm;
+  @apply border px-3 py-1 rounded-sm;
 }
+
+/* ************** The Sidebar *************** */

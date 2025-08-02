@@ -24,18 +24,18 @@ function openContactModal() {
 </script>
 
 <template>
-  <section class="font-headings mt-8 md:grid md:grid-cols-2 md:gap-4">
-    <div class="place-content-center text-center">
-      <h2 class="font-bold text-4xl mb-4 md:text-5xl lg:text-6xl">Hello, I'm Juan</h2>
-      <p class="mb-2">
-        I'm a <span class="font-bold text-pink">UX Designer</span> who also wears many other hats
-        all focused on creating better user experiences.
+  <section class="font-main mt-8 md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
+    <div class="place-content-center">
+      <h2 class="font-black text-5xl mb-4 md:text-5xl lg:text-6xl">Hello, I'm Juan</h2>
+      <p class="mb-2 sm:text-xl">
+        I'm a <span class="font-bold text-pink">UX / UI Designer</span> who also wears many other
+        hats all focused on creating better user experiences.
       </p>
-      <p>
+      <p class="sm:text-xl">
         I strive to merge UX design, development, and visual story telling to create
         <span class="font-bold text-blue">meaningful experiences.</span>
       </p>
-      <div class="hidden md:flex md:justify-around md:mt-8">
+      <div class="hidden md:flex md:justify-between md:mt-8 lg:w-[400px]">
         <button
           class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
           @click="openContactModal()"

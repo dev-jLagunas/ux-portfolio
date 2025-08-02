@@ -37,7 +37,7 @@ function navigateToWork() {
 </script>
 
 <template>
-  <nav class="hidden font-headings px-2 md:flex md:mt-4 md:gap-8">
+  <nav class="hidden font-main px-2 md:flex md:mt-4 md:gap-8 lg:px-0">
     <div class="flex items-center mr-8">
       <img :src="nameLogo" alt="designer logo" class="h-20" />
       <router-link class="flex items-start gap-1 text-2xl ml-2 lg:text-3xl" to="/">

@@ -31,22 +31,24 @@ defineProps({
 
 <template>
   <div
-    class="relative px-4 py-10 border border-gray-300 rounded-md w-[90vw] font-headings flex flex-col items-center justify-center md:w-full md:h-full"
+    class="relative px-4 py-10 border border-gray-300 rounded-md w-[90vw] font-main flex flex-col items-center justify-center md:w-full md:h-full"
   >
     <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
     <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
 
     <p class="text-center text-pink font-bold mb-2">{{ uxType }}</p>
-    <h3 class="text-xl font-bold mb-2 text-center">{{ title }}</h3>
-    <p class="text-sm mb-4">
+    <h3 class="text-xl font-bold mb-2 text-center md:text-2xl">{{ title }}</h3>
+    <p class="mb-4 md:text-lg">
       {{ description }}
     </p>
-    <img
-      :src="image"
-      alt="trio image of project screenshots"
-      class="h-1/2 max-h-72"
-      loading="lazy"
-    />
+    <figure class="w-full">
+      <img
+        :src="image"
+        alt="trio image of project screenshots"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </figure>
 
     <router-link :to="route">
       <button

@@ -47,10 +47,10 @@ function openModal() {
 </script>
 
 <template>
-  <div class="mt-4 md:hidden font-headings">
+  <div class="mt-4 md:hidden font-main">
     <div class="flex-row-center gap-2">
-      <img :src="nameLogo" alt="designer logo" class="h-20" />
-      <router-link to="/" class="flex gap-1 text-3xl -ml-2">
+      <img :src="nameLogo" alt="designer logo" class="h-15 sm:h-20" />
+      <router-link to="/" class="flex gap-1 text-3xl -ml-2 sm:text-4xl">
         <p><span class="text-pink font-bold">J</span>uan</p>
         <p><span class="text-blue font-bold">L</span>agunas</p>
       </router-link>
@@ -59,7 +59,7 @@ function openModal() {
           <img :src="hamburgerIcon" alt="hamburger icon" class="h-12" />
         </button>
         <span
-          class="absolute -translate-x-1/2 top-full text-sm bg-pink text-white p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50"
+          class="absolute -translate-x-1/2 top-full text-sm bg-pink text-light p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50"
         >
           See menu
         </span>
@@ -67,7 +67,7 @@ function openModal() {
     </div>
     <aside :class="['sidebar', { open: isOpen }]">
       <div class="flex-col-center h-full w-full">
-        <ul class="text-white text-xl">
+        <ul class="text-light text-xl">
           <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateToWork">
             <img :src="workSvg" alt="Monitor design svg" class="h-7" />
             <p>Work</p>
@@ -120,7 +120,7 @@ function openModal() {
   left: 0;
   width: 80vw;
   height: 100vh;
-  background-color: #fe6567;
+  background-color: #e9404f;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   z-index: 100;
