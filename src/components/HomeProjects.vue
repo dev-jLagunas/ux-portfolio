@@ -2,9 +2,9 @@
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeMockUp from '@/assets/images/home/cafe-mockup.png'
-import notionTrioPhoto from '@/assets/images/home/notion-systems-home.webp'
-import marketingTrioPhoto from '@/assets/images/home/marketing-system-home.webp'
-import emailTrioPhoto from '@/assets/images/home/newsletter-system-home.webp'
+import notionMockup from '@/assets/images/home/notion-mockup.png'
+import marketingMockup from '@/assets/images/home/flyer-mockup.png'
+import emailMockup from '@/assets/images/home/newsletter-mockup.png'
 import beanMockUp from '@/assets/images/home/bean-mockup.png'
 </script>
 
@@ -49,7 +49,7 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
         title="Notion Project Management System"
         ux-type="Systems UX"
         description="A fully custom Notion workspace that streamlined project management, boosted team accountability, and replaced chaotic email chains with clear systems."
-        :image="notionTrioPhoto"
+        :image="notionMockup"
         route="/case-two"
         loading="lazy"
       />
@@ -57,7 +57,7 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
         title="Department Marketing System"
         ux-type="Design Ops UX"
         description="A full redesign of the department's visual standards and workflows, unifying brand identity and improving clarity across all marketing assets."
-        :image="marketingTrioPhoto"
+        :image="marketingMockup"
         route="/case-three"
         loading="lazy"
       />
@@ -65,7 +65,7 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
         title="Email Newsletter Redesign"
         ux-type="Email UX"
         description="A data-informed newsletter overhaul focused on hierarchy, engagement, and skimmability to boost click-throughs and student interaction."
-        :image="emailTrioPhoto"
+        :image="emailMockup"
         route="/case-four"
         loading="lazy"
       />
