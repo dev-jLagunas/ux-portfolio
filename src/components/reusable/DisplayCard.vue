@@ -21,7 +21,7 @@ defineProps({
 </script>
 
 <template>
-  <article class="border border-gray-300 p-4 rounded-md mb-8 font-headings shadow-sm">
+  <article class="border border-gray-300 p-4 rounded-md mb-8 font-main shadow-sm">
     <figure>
       <img
         :src="content"
@@ -29,7 +29,7 @@ defineProps({
         class="h-64 w-full object-contain"
         loading="lazy"
       />
-      <figcaption :class="`${bgColor} text-dark text-center rounded-sm py-2 mt-4`">
+      <figcaption :class="`${bgColor} text-light font-semibold text-center rounded-sm py-2 mt-4`">
         {{ title }}
       </figcaption>
     </figure>

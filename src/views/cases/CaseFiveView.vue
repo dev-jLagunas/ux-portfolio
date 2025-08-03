@@ -10,7 +10,6 @@ import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
 
 // Images
-import caseFiveTrio from '@/assets/images/cases/case-five/case_five_tri_mockup.png'
 import identifyFeat from '@/assets/images/cases/case-five/visual-identity.webp'
 import paperFeat from '@/assets/images/cases/case-five/paper-wireframes.webp'
 import loFiFeat from '@/assets/images/cases/case-five/wireframes.webp'
@@ -23,6 +22,7 @@ import personaLisa from '@/assets/images/cases/case-five/lisa-user-persona.webp'
 import personaKevin from '@/assets/images/cases/case-five/kevin-user-persona.webp'
 import journeyLisa from '@/assets/images/cases/case-five/lisa-user-journey.webp'
 import journeyKevin from '@/assets/images/cases/case-five/kevin-journey-map.webp'
+import beanMockUp from '@/assets/images/home/bean-mockup.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -88,7 +88,6 @@ const afterTabs = [
 ]
 
 // Outcome Data
-// Outcome Data & Icons
 const outcomeList = [
   {
     title: 'Brand & Space Alignment',
@@ -141,11 +140,16 @@ const reflections = [
       'End to end, this was my most complete UX process. It tested everything I’ve learned so far and showed me I can design and build with purpose, clarity, and impact. I’m proud of what came out of it.',
   },
 ]
+
+// UX Lens Data
+const uxIntro = `This was the first project where I intentionally applied the full design thinking framework from start to finish. Following each phase—from empathizing with users to testing real prototypes—not only gave my work structure, it brought clarity and depth to every decision. Instead of relying purely on intuition, I designed with evidence, empathy, and purpose. The result was a brand and product experience that felt both emotionally resonant and strategically sound.`
+
+const uxSubheading = 'How the design thinking framework elevated my process'
 </script>
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-  <div class="font-headings mb-28">
+  <div class="font-main mb-28">
     <CaseNav
       :sections="[
         { id: 'overview-section', label: 'Overview' },
@@ -161,7 +165,7 @@ const reflections = [
       title="Project Overview"
       workTitle="Bean & Beast – UX Capstone Project"
       :tags="['UX Research', 'UI Design', 'Product Design', 'Branding', 'Front-End Development']"
-      :imgSrc="caseFiveTrio"
+      :imgSrc="beanMockUp"
       :paragraphs="[
         'Bean & Beast is a fictional premium chocolate brand born from a personal art series. What started as a collection of black-and-white animal silhouettes evolved into a UX-driven ecommerce experience built entirely from scratch. I used this capstone project to practice the full design thinking process—from early research to hi-fi prototype to fully coded Vue.js site.',
         'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. Everything was created by me: the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build. This project proves I’m ready to deliver professional UX—from empathy to execution.',

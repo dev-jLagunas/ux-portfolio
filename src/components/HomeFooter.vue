@@ -13,7 +13,7 @@ import behanceIcon from '@/assets/svgs/behance-icon.svg'
 
 <template>
   <footer>
-    <div class="font-headings text-center">
+    <div class="font-main text-center">
       <h1 class="text-8xl font-bold tracking-tight">
         <span class="font-bold text-pink">L</span>et's <span class="text-blue">G</span>et
         <span class="text-pink">T</span>o <span class="text-blue">W</span>ork!

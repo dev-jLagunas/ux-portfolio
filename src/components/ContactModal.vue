@@ -11,7 +11,7 @@ function closeModal() {
 <template>
   <article
     v-if="showContactModal"
-    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-headings"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-main"
   >
     <div
       class="bg-white w-[90vw] py-4 rounded-xl shadow-xl text-dark md:w-4/5 md:max-w-xl relative"

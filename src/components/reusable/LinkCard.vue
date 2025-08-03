@@ -18,7 +18,7 @@ defineProps({
 
 <template>
   <article
-    class="rounded-md p-4 font-headings flex flex-col justify-center items-center w-full mt-8 border border-gray-200 h-60"
+    class="rounded-md p-4 font-main flex flex-col justify-center items-center w-full mt-8 border border-gray-200 h-60"
   >
     <h2 class="font-bold text-center">{{ title }}</h2>
     <img :src="icon" :alt="title" class="h-20 pb-2" loading="lazy" />

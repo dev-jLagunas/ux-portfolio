@@ -149,7 +149,7 @@ const spinnerMessage = 'Almost There...'
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
-  <div class="font-headings mb-28">
+  <div class="font-main mb-28">
     <CaseNav
       :sections="[
         { id: 'overview-section', label: 'Overview' },

@@ -53,7 +53,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="mt-8 mb-8 sticky top-5 z-50 bg-pink py-3 rounded-sm">
+  <nav class="mt-8 mb-8 sticky top-5 z-50 bg-pink py-3 rounded-sm font-main">
     <ul
       class="grid grid-cols-3 w-full place-items-center gap-4 text-sm font-semibold md:grid-cols-6"
     >

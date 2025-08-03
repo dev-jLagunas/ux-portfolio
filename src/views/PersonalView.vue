@@ -50,7 +50,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         { id: 'design-section', label: 'UI Design' },
       ]"
     />
-    <article class="font-headings mt-8" id="photo-section">
+    <article class="font-main mt-8" id="photo-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Photography</h2>
       <p class="mb-2 text-sm md:text-base">
         I bought a Fuji X-A5 when we started the cafe, and that’s where my love for photography
@@ -74,7 +74,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         <DisplayCard title="Lovely Smile" :content="smilePhoto" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-headings mt-8" id="art-section">
+    <article class="font-main mt-8" id="art-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Digital Art</h2>
       <p class="mb-2 text-sm md:text-base">
         I’ve always enjoyed sketching and drawing on paper, but it wasn’t until last year that I
@@ -96,7 +96,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-headings mt-8" id="cafe-section">
+    <article class="font-main mt-8" id="cafe-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Cafe Triangle</h2>
       <p class="mb-2 text-sm md:text-base">
         Cafe Triangle was the cafe my wife and I used to own in Japan. It was one of the most
@@ -119,7 +119,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-headings mt-8" id="design-section">
+    <article class="font-main mt-8" id="design-section">
       <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">UI Design</h2>
       <p class="mb-2 text-sm md:text-base">
         I started teaching myself frontend development about two and a half years ago. I began with

@@ -65,7 +65,10 @@ function openModal() {
         </span>
       </div>
     </div>
-    <aside :class="['sidebar', { open: isOpen }]">
+    <aside
+      :class="['sidebar', { open: isOpen }]"
+      class="shadow-[0px_4px_30px_0px_rgba(31,_38,_135,_0.15)]"
+    >
       <div class="flex-col-center h-full w-full">
         <ul class="text-light text-xl">
           <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateToWork">
