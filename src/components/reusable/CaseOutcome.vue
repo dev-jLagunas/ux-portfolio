@@ -26,7 +26,7 @@ const props = defineProps({
   <section id="outcome-section" class="flex flex-col items-center justify-center">
     <div class="mt-4 mb-2 flex items-center justify-between w-full">
       <h3 class="font-bold text-2xl">The Outcome</h3>
-      <p class="text-sm tracking-wider">Prototype – Test</p>
+      <p class="text-blue font-semibold md:pr-4 tracking-wider">Prototype – Test</p>
     </div>
 
     <article>

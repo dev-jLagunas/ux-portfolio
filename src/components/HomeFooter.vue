@@ -22,18 +22,18 @@ import behanceIcon from '@/assets/svgs/behance-icon.svg'
     <section class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
       <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
+        title="My Dev Portfolio"
+        :icon="portfolioIcon"
+        :url="'https://dev-jlagunas.github.io/my-portfolio/#/'"
+        loading="lazy"
+      />
+      <LinkCard
         title="My Instagram"
         :icon="instagramIcon"
         :url="'https://www.instagram.com/j.lag_works/'"
         loading="lazy"
       />
 
-      <LinkCard
-        title="My Dev Portfolio"
-        :icon="portfolioIcon"
-        :url="'https://dev-jlagunas.github.io/my-portfolio/#/'"
-        loading="lazy"
-      />
       <LinkCard
         title="My Behance"
         :icon="behanceIcon"

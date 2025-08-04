@@ -10,6 +10,7 @@ const props = defineProps({
   date: String,
   toolkit: String,
   pdfFile: String,
+  url: String,
 })
 </script>
 
@@ -23,23 +24,27 @@ const props = defineProps({
       <li v-for="(tag, index) in tags" :key="index" class="pr-2">{{ tag }}</li>
     </ul>
 
-    <div class="md:flex md:items-center md:gap-4 md:mt-8">
+    <div class="md:mt-8 lg:grid lg:grid-cols-2 lg:place-items-center">
       <img
         :src="imgSrc"
         alt="trio image of case study screenshots"
-        class="w-full max-w-[500px] mx-auto mb-4 md:mb-0 shadow-md"
+        class="w-full max-w-[500px] mx-auto mb-4 md:mb-0"
         loading="lazy"
       />
       <div>
-        <a
-          :href="`/` + pdfFile"
-          download
-          class="bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block hover:shadow-lg transition"
-          aria-label="Download full case study as PDF"
-        >
-          Full Case Study PDF
-        </a>
-
+        <div class="flex justify-between items-center">
+          <a
+            :href="`/` + pdfFile"
+            download
+            class="bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block hover:shadow-lg transition"
+            aria-label="Download full case study as PDF"
+          >
+            Full Case Study PDF
+          </a>
+          <p v-if="url">
+            <a :href="url" target="_blank" class="underline text-blue pr-8">View live site</a>
+          </p>
+        </div>
         <h5 class="font-bold tracking-widest text-xl">{{ workTitle }}</h5>
         <p v-for="(para, index) in paragraphs" :key="index" :class="{ 'mt-2': index > 0 }">
           {{ para }}

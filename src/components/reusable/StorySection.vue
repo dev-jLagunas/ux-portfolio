@@ -239,7 +239,7 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
         </li>
       </ul>
 
-      <h4 class="mt-4 tracking-widest font-bold bg-pink text-light px-3 py-1 rounded-sm mb-4">
+      <h4 class="mt-4 tracking-widest font-bold bg-blue text-light px-3 py-1 rounded-sm mb-4">
         What I Bring
       </h4>
 
@@ -287,7 +287,7 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
         </li>
       </ul>
 
-      <h4 class="mt-4 tracking-widest font-bold bg-pink text-light px-3 py-1 rounded-sm mb-4">
+      <h4 class="mt-4 tracking-widest font-bold bg-blue text-light px-3 py-1 rounded-sm mb-4">
         What I Bring
       </h4>
 

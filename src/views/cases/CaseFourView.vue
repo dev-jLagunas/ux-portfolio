@@ -300,8 +300,7 @@ const spinnerMessage = 'Almost There...'
         </p>
       </div>
     </CaseUxLens>
-    <BackHomeBtn />
-    <div class="mt-8">
+    <div class="mt-8 -mb-20">
       <h4 class="text-pink font-bold text-sm">Disclaimer</h4>
       <p class="text-sm text-gray-500">
         This case study is based on my work at the University of San Diego. While the content may
@@ -314,6 +313,7 @@ const spinnerMessage = 'Almost There...'
       </p>
     </div>
   </div>
+  <BackHomeBtn />
 </template>
 
 <style scoped></style>

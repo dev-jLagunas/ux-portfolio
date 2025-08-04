@@ -8,6 +8,7 @@ import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import CaseOutcome from '@/components/reusable/CaseOutcome.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
+import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 // Images
 import identifyFeat from '@/assets/images/cases/case-five/visual-identity.webp'
@@ -163,6 +164,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
+      url="https://dev-jlagunas.github.io/bean-and-beast/#/"
       workTitle="Bean And Beast – UX Capstone Project"
       :tags="['UX Research', 'UI Design', 'Product Design', 'Branding', 'Front-End Development']"
       :imgSrc="beanMockUp"
@@ -180,13 +182,44 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       id="problem-section"
       problemStatement="Buying chocolate should feel joyful but instead, it’s often overwhelming. Too many options, unclear labels, forgettable packaging, and little emotional connection make it hard for users to find something truly special. Whether shopping for themselves or a gift, users end up choosing the safe option not the best one."
       problemStatementB="I wanted to create a chocolate experience that goes beyond flavor. A digital-first brand that captures curiosity, delivers clarity, and centers the emotional impact of design. From the first click to the last bite, the goal was to build a gifting experience that's bold, memorable, and rooted in story."
+      userResearchIntro="To better understand the emotional and practical needs behind chocolate gifting, I began by mapping real user motivations, frustrations, and behaviors. The following visual artifacts helped me define the problem with clarity and keep users at the center of every design decision."
       :artifacts="[
-        { caption: 'Empathy Map – Lisa', imageSrc: empathyMapLisa },
-        { caption: 'Empathy Map – Kevin', imageSrc: empathyMapKevin },
-        { caption: 'Persona – Lisa', imageSrc: personaLisa },
-        { caption: 'Persona – Kevin', imageSrc: personaKevin },
-        { caption: 'Journey Map – Lisa', imageSrc: journeyLisa },
-        { caption: 'Journey Map – Kevin', imageSrc: journeyKevin },
+        {
+          caption: 'Empathy Map – Lisa',
+          blurb:
+            'This empathy map revealed how much emotional value Lisa places on discovery, gifting, and visual storytelling. Her behaviors and thoughts helped shape a design that treats chocolate not just as food, but as a meaningful, shareable experience.',
+          imageSrc: empathyMapLisa,
+        },
+        {
+          caption: 'Empathy Map – Kevin',
+          blurb:
+            'Kevin’s empathy map highlighted the importance of visual impact and product-story alignment. His skepticism toward flashy packaging without substance pushed us to design something that looked premium but delivered meaning beneath the surface.',
+          imageSrc: empathyMapKevin,
+        },
+        {
+          caption: 'Persona – Lisa',
+          blurb:
+            'Lisa’s persona showed a strong desire for culturally engaging, giftable treats that felt personal and delightful. Her motivations around exploration and storytelling helped shape a brand that prioritized discovery, charm, and emotional resonance.',
+          imageSrc: personaLisa,
+        },
+        {
+          caption: 'Persona – Kevin',
+          blurb:
+            'Kevin’s persona highlighted the importance of visual storytelling, quality, and intention, especially when it comes to gifting. His frustrations with commercialized aesthetics drove the need for a brand that looked and felt like something truly worth giving.',
+          imageSrc: personaKevin,
+        },
+        {
+          caption: 'Journey Map – Lisa',
+          blurb:
+            'This journey map follows the emotional and behavioral process of a user shopping for a meaningful, gift-worthy chocolate experience. Starting from browsing then moving on to settling on a purchase. It highlights key pain points like packaging doubts and emotional detachment, while revealing opportunities to elevate impact through design, storytelling, and presentation.',
+          imageSrc: journeyLisa,
+        },
+        {
+          caption: 'Journey Map – Kevin',
+          blurb:
+            'This map captures the gifting journey of a visually driven user seeking chocolate that reflects quality and personal taste. It surfaces design-conscious pain points like lackluster packaging, generic aesthetics, and poor customization. These being key moments where storytelling and intentional branding could have shifted the outcome.',
+          imageSrc: journeyKevin,
+        },
       ]"
       takeaway="Both Lisa and Kevin wanted clarity, confidence, and connection but traditional chocolate sites left them feeling unsure, uninspired, or emotionally detached. By centering user goals, emotional needs, and storytelling, I set out to reimagine what premium chocolate could look and feel like in a digital space."
       quote="Buying chocolate shouldn’t feel like a gamble or a chore."
@@ -304,6 +337,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       </div>
     </CaseUxLens>
   </div>
+  <BackHomeBtn />
 </template>
 
 <style scoped></style>

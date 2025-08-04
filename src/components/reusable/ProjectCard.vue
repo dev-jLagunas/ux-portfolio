@@ -41,7 +41,7 @@ defineProps({
     <p class="mb-4 md:text-lg">
       {{ description }}
     </p>
-    <figure class="w-full">
+    <figure class="w-full mb-4">
       <img
         :src="image"
         alt="trio image of project screenshots"

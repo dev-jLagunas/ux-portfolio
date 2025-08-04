@@ -20,14 +20,13 @@ const spinnerMessage = 'Coming Right Up!'
 import userPersona from '@/assets/images/cases/case-one/persona-cafe.webp'
 import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.webp'
 import empathyMap from '@/assets/images/cases/case-one/empathy-map-cafe.webp'
-import cafeTrioPhoto from '@/assets/images/home/cafe-triangle-home.webp'
 import usableFeat from '@/assets/images/cases/case-one/cafe-accesible-feat.webp'
 import boldFeat from '@/assets/images/cases/case-one/cafe-bold-feat.webp'
 import languageFeat from '@/assets/images/cases/case-one/cafe-language-feat.webp'
 import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.webp'
 import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.webp'
 import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.webp'
-
+import cafeMockup from '@/assets/images/home/cafe-mockup.png'
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
 import medalIcon from '@/assets/svgs/highlights/medal-icon.svg'
@@ -163,9 +162,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
+      url="https://cafe-triangle.com/"
       workTitle="Cafe Triangle Redesign"
       :tags="['UX Research', 'Visual Design', 'Front-End Development']"
-      :imgSrc="cafeTrioPhoto"
+      :imgSrc="cafeMockup"
       :paragraphs="[
         'In the second year of running our culture-driven cafe in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
         'Over seven months, I studied every morning before opening shop, eventually launching a fully custom-coded site built with Angular and Tailwind CSS. It was responsive, multilingual, and deeply personal. Designed not just to function, but to feel like an extension of who we were. I didn’t know it then, but I was practicing UX: prioritizing usability, accessibility, clarity, and user-centered design from the very beginning.',

@@ -16,7 +16,7 @@ const props = defineProps({
   <section id="ux-timeline-section">
     <div class="mt-4 mb-2 flex items-center justify-between w-full">
       <h3 class="font-bold text-2xl">From a UX lens</h3>
-      <p class="text-sm tracking-wider">Full Framework</p>
+      <p class="text-blue font-semibold md:pr-4 tracking-wider">Full Framework</p>
     </div>
 
     <article>

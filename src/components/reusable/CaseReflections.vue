@@ -17,7 +17,7 @@ const props = defineProps({
   <section id="reflections-section" class="flex flex-col items-center justify-between">
     <div class="mt-4 mb-2 flex items-center justify-between w-full">
       <h3 class="font-bold text-2xl">My Reflections</h3>
-      <p class="text-sm">Prototype – Test</p>
+      <p class="text-blue font-semibold tracking-wider md:pr-4">Prototype – Test</p>
     </div>
 
     <article class="w-full">
