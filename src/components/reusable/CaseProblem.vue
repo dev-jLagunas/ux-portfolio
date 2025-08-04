@@ -45,10 +45,10 @@ function prevImage() {
       </div>
 
       <figure class="relative w-full max-w-xl mt-4">
-        <p>
+        <!-- <p>
           This project began with real user research, synthesized into empathy maps, personas, and
           journey maps—each informing the problem definition below.
-        </p>
+        </p> -->
         <figcaption class="pl-4 mt-2 tracking-wide md:text-center md:pl-0">
           {{ props.artifacts[currentIndex].caption }}
         </figcaption>

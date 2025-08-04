@@ -83,7 +83,7 @@ const afterTabs = [
     image: shopFeat,
     heading: 'Cart Logic and Custom Modals',
     description:
-      'To simulate a functioning shop, I implemented a global cart modal, product customization logic, and item tracking — all stored reactively. Though not a real store, these features demonstrate full UX thinking across interface, logic, and interaction design.',
+      'To simulate a functioning shop, I implemented a global cart modal, product customization logic, and item tracking which were all stored reactively. Though not a real store, these features demonstrate full UX thinking across interface, logic, and interaction design.',
   },
 ]
 
@@ -92,22 +92,22 @@ const outcomeList = [
   {
     title: 'Brand & Space Alignment',
     description:
-      'Multiple users commented that the site “felt like us.” It captured the essence of Bean & Beast — bold, thoughtful, playful, and emotionally rich. This alignment wasn’t accidental; it was the result of deliberate design choices across tone, color, imagery, and interaction.',
+      'Multiple users commented that the site “felt directed.” It captured the essence of Bean And Beast is trying to be. Bold, thoughtful, playful, and emotionally rich. This alignment wasn’t accidental; it was the result of deliberate design choices across tone, color, imagery, and interaction.',
   },
   {
     title: 'Improved Usability',
     description:
-      'Even without formal analytics, informal testers and friends consistently praised the site’s clarity and ease of use. The responsive layout, clear CTAs, and consistent structure made it simple to browse, shop, and learn — particularly for mobile users on the go.',
+      'Even without formal analytics, informal testers and friends consistently praised the site’s clarity and ease of use. The responsive layout, clear CTAs, and consistent structure made it simple to browse, shop, and learn, particularly for mobile users on the go.',
   },
   {
     title: 'Distinct Visual Identity',
     description:
-      'Compared to typical e-commerce sites or minimalist chocolatier brands, Bean & Beast stood out with its animal characters, bold layouts, and emotional storytelling. This helped create not just a product site, but an experience users felt was unique and worth exploring.',
+      'Compared to typical e-commerce sites or minimalist chocolatier brands, Bean And Beast stood out with its animal characters, bold layouts, and emotional storytelling. This helped create not just a product site, but an experience users felt was unique and worth exploring.',
   },
   {
     title: 'Organic Curiosity & Sharing',
     description:
-      'Without SEO, ads, or real marketing, people still shared the site — especially those drawn to the art or branding. Terms like “adorable” or “cool design” popped up in messages. The visual intrigue of the site sparked conversations and shares, which was exactly what we hoped for.',
+      'Without SEO, ads, or real marketing, people still shared the site, especially those drawn to the art or branding. Terms like “adorable” or “cool design” popped up in messages. The visual intrigue of the site sparked conversations and shares, which was exactly what I hoped for.',
   },
 ]
 
@@ -131,7 +131,7 @@ const reflections = [
     title: 'More visuals means more complexity.',
     icon: arrowBlue,
     description:
-      'Managing multiple wireframe versions, visual assets, and storytelling elements pushed me to stay organized and intentional. Not everything needs to be shown — but everything needs a reason.',
+      'Managing multiple wireframe versions, visual assets, and storytelling elements pushed me to stay organized and intentional. Not everything needs to be shown but everything needs a reason.',
   },
   {
     title: 'This was the project that proved I’m ready.',
@@ -142,7 +142,7 @@ const reflections = [
 ]
 
 // UX Lens Data
-const uxIntro = `This was the first project where I intentionally applied the full design thinking framework from start to finish. Following each phase—from empathizing with users to testing real prototypes—not only gave my work structure, it brought clarity and depth to every decision. Instead of relying purely on intuition, I designed with evidence, empathy, and purpose. The result was a brand and product experience that felt both emotionally resonant and strategically sound.`
+const uxIntro = `This was the first project where I intentionally applied the full design thinking framework from start to finish. Following each phase of the process was what I needed. Starting from empathizing with users then moving on to testing real prototypes, not only gave my work structure, it brought clarity and depth to every decision. Instead of relying purely on intuition, I designed with evidence, empathy, and purpose. The result was a brand and product experience that felt both emotionally resonant and strategically sound.`
 
 const uxSubheading = 'How the design thinking framework elevated my process'
 </script>
@@ -163,12 +163,12 @@ const uxSubheading = 'How the design thinking framework elevated my process'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
-      workTitle="Bean & Beast – UX Capstone Project"
+      workTitle="Bean And Beast – UX Capstone Project"
       :tags="['UX Research', 'UI Design', 'Product Design', 'Branding', 'Front-End Development']"
       :imgSrc="beanMockUp"
       :paragraphs="[
-        'Bean & Beast is a fictional premium chocolate brand born from a personal art series. What started as a collection of black-and-white animal silhouettes evolved into a UX-driven ecommerce experience built entirely from scratch. I used this capstone project to practice the full design thinking process—from early research to hi-fi prototype to fully coded Vue.js site.',
-        'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. Everything was created by me: the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build. This project proves I’m ready to deliver professional UX—from empathy to execution.',
+        'Bean And Beast is a fictional premium chocolate brand born from a personal art series. What started as a collection of black-and-white animal silhouettes evolved into a UX-driven ecommerce experience built entirely from scratch. I used this capstone project to practice the full design thinking process, from early research to hi-fi prototype to fully coded Vue.js site.',
+        'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. Everything was created by me: the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build. This project proves I’m ready to deliver professional UX and that all of this is really fun!',
       ]"
       role="UX Designer, UI Designer, Front-End Developer, Brand Strategist"
       date="March – July 2025"
@@ -178,7 +178,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
     <ArrowTransition customClass="mx-auto" />
     <CaseProblem
       id="problem-section"
-      problemStatement="Buying chocolate should feel joyful—but instead, it’s often overwhelming. Too many options, unclear labels, forgettable packaging, and little emotional connection make it hard for users to find something truly special. Whether shopping for themselves or a gift, users end up choosing the safe option—not the best one."
+      problemStatement="Buying chocolate should feel joyful but instead, it’s often overwhelming. Too many options, unclear labels, forgettable packaging, and little emotional connection make it hard for users to find something truly special. Whether shopping for themselves or a gift, users end up choosing the safe option not the best one."
       problemStatementB="I wanted to create a chocolate experience that goes beyond flavor. A digital-first brand that captures curiosity, delivers clarity, and centers the emotional impact of design. From the first click to the last bite, the goal was to build a gifting experience that's bold, memorable, and rooted in story."
       :artifacts="[
         { caption: 'Empathy Map – Lisa', imageSrc: empathyMapLisa },
@@ -188,8 +188,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
         { caption: 'Journey Map – Lisa', imageSrc: journeyLisa },
         { caption: 'Journey Map – Kevin', imageSrc: journeyKevin },
       ]"
-      takeaway="Both Lisa and Kevin wanted clarity, confidence, and connection—but traditional chocolate sites left them feeling unsure, uninspired, or emotionally detached. By centering user goals, emotional needs, and storytelling, I set out to reimagine what premium chocolate could look and feel like in a digital space."
-      quote="Buying chocolate shouldn’t feel like a gamble—or a chore."
+      takeaway="Both Lisa and Kevin wanted clarity, confidence, and connection but traditional chocolate sites left them feeling unsure, uninspired, or emotionally detached. By centering user goals, emotional needs, and storytelling, I set out to reimagine what premium chocolate could look and feel like in a digital space."
+      quote="Buying chocolate shouldn’t feel like a gamble or a chore."
     />
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
@@ -204,8 +204,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"
-      intro="Launching Bean & Beast was the culmination of a full design thinking process—from research to implementation. While it’s a fictional chocolate brand, the feedback from peers, mentors, and fellow designers confirmed its real-world impact: a visually striking, emotionally resonant brand that felt intentional, polished, and ready for the market."
-      context="The project didn’t just meet functional UX goals—it built a story-driven experience that made users smile, explore, and share. Below are four key takeaways that emerged from this capstone effort:"
+      intro="Launching Bean And Beast was the culmination of a full design thinking process. This mean starting from research then implementation. While it’s a fictional chocolate brand, the feedback from peers, mentors, and fellow designers confirmed its real-world impact: a visually striking, emotionally resonant brand that felt intentional, polished, and ready for the market."
+      context="The project didn’t just meet functional UX goals, it also built a story-driven experience that made users smile, explore, and share. Below are four key takeaways that emerged from this capstone effort:"
       :outcomes="outcomeList"
       :icons="icons"
     />
@@ -213,7 +213,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
     <ArrowTransition customClass="mx-auto" />
     <CaseReflections
       id="reflections-section"
-      intro="Bean & Beast was more than a design project—it was proof that I could lead a UX process from start to finish. It challenged me to think holistically: from empathizing with users to crafting visuals, building structure, and telling a brand story that resonated. This capstone taught me what it really means to design with purpose, and how process transforms intuition into impact."
+      intro="Bean And Beast was more than a design project to me. It was proof that I could lead a UX process from start to finish. It challenged me to think holistically: from empathizing with users to crafting visuals, building structure, and telling a brand story that resonated. This capstone taught me what it really means to design with purpose, and how process transforms intuition into impact."
       :reflections="reflections"
     />
     <ArrowTransition customClass="mx-auto" />
@@ -269,9 +269,9 @@ const uxSubheading = 'How the design thinking framework elevated my process'
         <p class="mt-3">
           I built low-fidelity wireframes in Figma to test layout logic and content hierarchy,
           followed by high-fidelity mockups that fully captured the bold aesthetic and emotional
-          tone of the brand. Every detail—from ribbon color options to character-themed
-          packaging—was intentional. I designed a quiz to guide indecisive users and integrated a
-          customizable gifting flow with optional messages and visual feedback.
+          tone of the brand. Every detail—from ribbon color options to character-themed packaging
+          was intentional. I designed a quiz to guide indecisive users and integrated a customizable
+          gifting flow with optional messages and visual feedback.
         </p>
       </div>
 
@@ -298,7 +298,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           While this project isn’t live, I treated it like it was. I structured the code for scale,
           built reusable components in Vue, and organized data through a central Pinia store. I
           wrote this case study to reflect not only the UX process, but how much I learned and loved
-          doing it. It’s proof to myself—and to future teams—that I’m serious about this work and
+          doing it. It’s proof to myself and to future teams that I’m serious about this work and
           excited to grow.
         </p>
       </div>
