@@ -232,10 +232,26 @@ const spinnerMessage = 'Be Right With You!'
       id="problem-section"
       problemStatement="When I joined the Career Development Center, I wasn’t stepping into a system. In fact, it was like stepping into chaos. Event logistics, timelines, and institutional knowledge were scattered across outdated Notion pages, disconnected email threads, and verbal memory. There was no shared structure, documentation, or ownership. It felt like a patchwork of personalized to-do lists that were unusable the moment someone went on vacation or left the team."
       problemStatementB="This lack of organization led to missed context, constant backtracking, and preventable mistakes. While trying to complete a task, I was also constantly trying to figure out what a task even meant. As a new hire, it made onboarding inefficient and stressful. As a UX thinker, I saw something bigger: a system failure that affected not just me, but every colleague, stakeholder, and future employee trying to do their job in a broken environment."
+      userResearchIntro="Even without running formal user interviews, I had direct access to the problem by living it daily. The following visual assets helped capture that firsthand experience and translate it into design decisions rooted in empathy, clarity, and shared understanding."
       :artifacts="[
-        { caption: 'Empathy Map', imageSrc: empathyMap },
-        { caption: 'Persona', imageSrc: userPersona },
-        { caption: 'Journey Map', imageSrc: journeyMap },
+        {
+          caption: 'Empathy Map',
+          blurb:
+            'Julian’s empathy map highlights the emotional cost of poor documentation. Feelings like frustration, wasted time, and constant second-guessing. His experience as a new hire informed my core design principle: eliminate ambiguity by creating systems that are clear, self-explanatory, and easy to trust.',
+          imageSrc: empathyMap,
+        },
+        {
+          caption: 'Persona',
+          blurb:
+            'Julian’s persona represents the motivated but overwhelmed new hire. Eager to contribute, yet blocked by scattered information and vague processes. His goals and frustrations directly shaped my approach to designing systems that prioritize clarity, reduce redundancy, and empower users from day one.',
+          imageSrc: userPersona,
+        },
+        {
+          caption: 'Journey Map',
+          blurb:
+            'This journey map outlines the mental load of planning recurring events without reliable systems, from confusion and frustration to uncertainty and burnout. Each stage reveals a clear UX failure, and these pain points directly informed the structure, clarity, and consistency of the new project management flow.',
+          imageSrc: journeyMap,
+        },
       ]"
       takeaway="The visual artifacts make it clear: the true problem was the lack of structure, consistency, and ownership across systems. Julian, a capable and motivated new hire, found himself navigating a maze of outdated pages, vague tasks, and unclear responsibilities. His experience highlights a systemic issue where even simple tasks became complex due to disorganization, leading to anxiety, wasted time, and second-guessing. Despite his confidence and drive, the absence of a reliable system made onboarding difficult and collaboration fragile. Solving this meant more than documenting tasks because what it actually required was building clarity, repeatability, and trust into the way the team worked."
       quote="I don't mind figuring things out, but there has to be a better way to do this."

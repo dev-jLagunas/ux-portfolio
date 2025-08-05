@@ -181,10 +181,27 @@ const spinnerMessage = 'Almost There...'
       id="problem-section"
       problemStatement="Students at the University of San Diego were regularly receiving the Career Development Center’s weekly email, but engagement was low. The newsletter was dense, visually inconsistent, and overwhelming to skim mainly because of dense text, especially on mobile. There was no clear hierarchy, and critical content like event information or job opportunities often got buried beneath less relevant items. "
       problemStatementB="Through conversations with students and a review of engagement analytics, I identified a core need: students wanted quick, scannable access to personalized, actionable content that didn’t feel like just another school blast."
+      userResearchIntro="By combining direct student feedback with Constant Contact analytics, I was able to map out clear behavior patterns and content drop-off points. These visual assets helped me turn that data into focused design improvements that prioritized clarity, relevance, and real student value.
+"
       :artifacts="[
-        { caption: 'Empathy Map', imageSrc: empathyMap },
-        { caption: 'Persona', imageSrc: userPersona },
-        { caption: 'Journey Map', imageSrc: journeyMap },
+        {
+          caption: 'Empathy Map',
+          blurb:
+            'Isabella’s empathy map revealed how quickly students disengage from content that feels outdated, cluttered, or repetitive. Her behavior and reactions made it clear that the newsletter needed a visual and structural overhaul focused on clarity, credibility, and real student value.',
+          imageSrc: empathyMap,
+        },
+        {
+          caption: 'Persona',
+          blurb:
+            'Isabella’s persona highlighted a common behavior pattern: students scan for value and disengage quickly if content doesn’t feel relevant or modern. Her feedback shaped the redesign toward a layout that is visually clean, quickly scannable, and more reflective of real student needs.',
+          imageSrc: userPersona,
+        },
+        {
+          caption: 'Journey Map',
+          blurb:
+            'This journey map shows how students like Isabella interact with the weekly newsletter—quickly, selectively, and often with disinterest. Her behavior revealed key opportunities to reduce noise, modernize design, and lead with student-driven content that actually earns attention.',
+          imageSrc: journeyMap,
+        },
       ]"
       takeaway="The newsletter's main problem seemed to be a lack of intention. Isabella, a motivated and routine-driven student, opens the email weekly but quickly disengages due to visual clutter, repetitive content, and unclear hierarchy. She scrolls only as far as necessary to meet her CRP requirements, then deletes the message. Her experience highlights a disconnect between the newsletter's format and its audience’s expectations: students want concise, relevant, and fresh content that respects their time and feels designed for them. Without visual cues, structured hierarchy, or evolving content, the email becomes noise which is then easily ignored instead of meaningfully engaged with."
       quote="I don’t really need fluff. Just useful or relevant content."

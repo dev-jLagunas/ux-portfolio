@@ -180,10 +180,26 @@ const uxSubheading = 'How I would approach this UX challenge today'
       id="problem-section"
       problemStatement="Our original cafe website, built with Wix, lacked both functionality and personality. It wasn’t very responsive, offered no multilingual support, and used a static pdf image for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
       problemStatementB="Beyond usability, the site failed to reflect who we were. Cafe Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
+      userResearchIntro="Even without formal UX training, I approached the redesign with a user-first mindset which were grounded in real observations, customer feedback, and daily interactions at the cafe. These visual assets helped me make sense of that instinctive research and turn it into clear, actionable insights."
       :artifacts="[
-        { caption: 'Empathy Map', imageSrc: empathyMap },
-        { caption: 'Persona', imageSrc: userPersona },
-        { caption: 'Journey Map', imageSrc: journeyMap },
+        {
+          caption: 'Empathy Map',
+          blurb:
+            'This empathy map helped uncover the emotional core of our ideal user: someone who values cultural variety, pet inclusivity, and visual storytelling. Insights like “valued as a pet owner” and “I wish more cafés had this kind of casual vibe” directly influenced the site’s tone, content, and structure to make users like Megumi feel seen, welcomed, and excited to share.',
+          imageSrc: empathyMap,
+        },
+        {
+          caption: 'Persona',
+          blurb:
+            'Megumi’s persona captured the exact audience we aimed to serve: culturally curious, pet-loving, and hungry for something different. Her frustrations with generic menus and unclear pet policies guided key UX decisions, from showcasing unique desserts to clearly signaling our dog-friendly atmosphere.',
+          imageSrc: userPersona,
+        },
+        {
+          caption: 'Journey Map',
+          blurb:
+            'This journey map traces Megumi’s experience from discovery to recommendation, revealing key emotions and friction points across six stages. While curiosity and connection define her final impression, early steps show confusion and skepticism. Such insights that drove design choices like a clear digital menu, pet-friendly cues, and a welcoming tone across all touchpoints.',
+          imageSrc: journeyMap,
+        },
       ]"
       takeaway="Megumi is a thoughtful, community-oriented cafe-goer who values comfort, cultural richness, and clear pet-friendly policies. Her journey reflects a desire not just for good food, but for experiences that feel welcoming, unique, and worth sharing. When cafes clearly communicate their vibe and inclusivity, she becomes a loyal advocate."
       quote="It's hard to know if a place is truly pet-friendly."

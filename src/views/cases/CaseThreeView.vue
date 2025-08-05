@@ -181,10 +181,26 @@ const spinnerMessage = 'Working On It...'
       id="problem-section"
       problemStatement="The department’s marketing process wasn’t a system. It was a disorganized collection of mismatched flyers, inconsistent timelines, and scattered responsibilities. Despite recurring events and a predictable calendar, there were no templates, no scheduling strategy, and no clear ownership. Internally, this created confusion and inefficiency. Externally, students were met with off-brand messaging that lacked clarity, cohesion, and credibility. "
       problemStatementB="What stood out most was the lack of a user-centered mindset. Marketing wasn’t being treated as part of the student experience, it was being handled reactively, without intention or design. This fractured approach diluted our impact and missed an opportunity to build trust, engagement, and brand recognition through thoughtful, UX-driven communication."
+      userResearchIntro="Because the issues were so deeply embedded in daily operations, I didn’t need formal research to see the problem, I lived it. These visual assets helped organize what I observed firsthand and translate everyday friction into user-centered design solutions."
       :artifacts="[
-        { caption: 'Empathy Map', imageSrc: empathyMap },
-        { caption: 'Persona', imageSrc: userPersona },
-        { caption: 'Journey Map', imageSrc: journeyMap },
+        {
+          caption: 'Empathy Map',
+          blurb:
+            'Todd’s empathy map revealed the hidden resistance that often comes with process change, especially in environments built on habit and verbal handoffs. His reluctance to adopt new systems reinforced the need for assets that were not only well-designed but also easy to access, understand, and use without formal training.',
+          imageSrc: empathyMap,
+        },
+        {
+          caption: 'Persona',
+          blurb:
+            'Todd’s persona captured a common challenge in organizational UX: legacy habits and informal ownership. While resistant to structured change, his goals aligned perfectly with the redesign, proving that even reluctant users benefit from systems that reduce chaos, support consistency, and make quality the default.',
+          imageSrc: userPersona,
+        },
+        {
+          caption: 'Journey Map',
+          blurb:
+            'This journey map illustrates the confusion, guesswork, and emotional drain caused by a lack of structure in the marketing process. It exposed the need for clearly labeled folders, version control, and a defined rollout schedule that could replace last-minute scrambles with confident, consistent action.',
+          imageSrc: journeyMap,
+        },
       ]"
       takeaway="The artifacts expose a marketing system built on improvisation rather than intention. Todd, a long-standing team member, operates from a place of habit and personal control, relying on outdated folders, vague timelines, and visual guesswork. While his deep institutional knowledge is valuable, it exists in silos, contributing to inconsistencies, reactive decisions, and avoidable confusion. There’s no shared process, branding standard, or release strategy, only scattered assets and last-minute fixes. Even with recurring events, the lack of structure results in inefficiencies and mixed messaging. To build trust and clarity with students, the internal process first had to become organized, coordinated, and user-centered."
       quote="I make the marketing assets as needed. It just feels right."
