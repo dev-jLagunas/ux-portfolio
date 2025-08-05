@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import './fonts/fonts.css';
 
 /***************************************
 Global Styles
@@ -35,13 +34,14 @@ Tailwind Variables
   --color-blue: #1ca9e6;
   --color-dark: #0f0f0f;
   --color-light: #f7f7f7;
+  --color-copy: #333333;
 }
 
 /***************************************
 Tailwind Custom Classes
 *****************************************/
 body {
-  @apply bg-light text-black transition-colors;
+  @apply bg-light text-copy transition-colors;
 }
 
 .dark body {

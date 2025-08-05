@@ -11,7 +11,8 @@ import hamburgerDarkIcon from '@/assets/svgs/hamburger-menu-dark.svg'
 import hamburgerLightIcon from '@/assets/svgs/hamburger-menu-white.svg'
 import userSvg from '@/assets/svgs/white-user.svg'
 import workSvg from '@/assets/svgs/white-design-works.svg'
-import personalSvg from '@/assets/svgs/white-artwork.svg'
+import personalSvg from '@/assets/svgs/personal-white.svg'
+import blogWhiteSvg from '@/assets/svgs/blog-white.svg'
 
 // Routing
 const router = useRouter()
@@ -85,6 +86,10 @@ function openModal() {
           >
             <img :src="personalSvg" alt="Mona lisa svg" class="h-7" />
             <p>Personal</p>
+          </li>
+          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateAndClose('/blog')">
+            <img :src="blogWhiteSvg" alt="cool smile face svg" class="h-7" />
+            <p>Blog</p>
           </li>
           <div class="flex-col-center gap-2">
             <li>

@@ -19,6 +19,11 @@ const router = createRouter({
       component: () => import('@/views/PersonalView.vue'),
     },
     {
+      path: '/blog',
+      name: 'blog',
+      component: () => import('@/views/BlogView.vue'),
+    },
+    {
       path: '/case-one',
       name: 'case one',
       component: () => import('@/views/cases/CaseOneView.vue'),

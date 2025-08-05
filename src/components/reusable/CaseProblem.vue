@@ -37,7 +37,7 @@ function prevImage() {
       <p class="tracking-wider text-blue font-semibold md:pr-4">Empathize – Define</p>
     </div>
     <article class="flex flex-col items-center justify-center">
-      <div class="border-pink border-2 p-4 rounded-md my-4">
+      <div class="border-pink border-2 p-4 rounded-md mt-4 mb-20">
         <img :src="problemIcon" alt="troubled face svg icon" class="mx-auto h-12 mb-2" />
         <p class="mb-2 indent-4">
           {{ problemStatement }}
@@ -49,10 +49,10 @@ function prevImage() {
       <figure class="relative w-full mt-4">
         <div class="md:grid md:grid-cols-7 md:place-items-center">
           <div class="md:col-span-3 md:pl-10">
-            <p class="mt-2 font-semibold tracking-wide">
+            <p class="mt-2 font-semibold tracking-wide mb-2">
               {{ props.artifacts[currentIndex].caption }}
             </p>
-            <p class="">{{ props.artifacts[currentIndex].blurb }}</p>
+            <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
           </div>
           <img
             :src="props.artifacts[currentIndex].imageSrc"
@@ -64,13 +64,13 @@ function prevImage() {
         </div>
         <button
           @click="prevImage"
-          class="absolute top-1/2 -left-2 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-l hover:cursor-pointer"
+          class="absolute top-2/3 -left-4 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-l hover:cursor-pointer"
         >
           ‹
         </button>
         <button
           @click="nextImage"
-          class="absolute -right-2 top-1/2 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-r hover:cursor-pointer"
+          class="absolute -right-4 top-2/3 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-r hover:cursor-pointer"
         >
           ›
         </button>

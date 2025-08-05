@@ -9,10 +9,12 @@ import nameLogoDark from '@/assets/images/name_logo_sm.png'
 import nameLogoLight from '@/assets/images/name-logo-light.png'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'
 import workDarkSvg from '@/assets/svgs/dark-design-works.svg'
-import personalDarkSvg from '@/assets/svgs/dark-artwork.svg'
+import personalDarkSvg from '@/assets/svgs/personal-dark.svg'
 import userWhiteSvg from '@/assets/svgs/white-user.svg'
 import workWhiteSvg from '@/assets/svgs/white-design-works.svg'
-import personalWhiteSvg from '@/assets/svgs/white-artwork.svg'
+import personalWhiteSvg from '@/assets/svgs/personal-white.svg'
+import blogWhiteSvg from '@/assets/svgs/blog-white.svg'
+import blogDarkSvg from '@/assets/svgs/blog-dark.svg'
 
 // Store
 const theme = useThemeStore()
@@ -22,7 +24,7 @@ const workIcon = computed(() => (theme.isDarkMode ? workWhiteSvg : workDarkSvg))
 const userIcon = computed(() => (theme.isDarkMode ? userWhiteSvg : userDarkSvg))
 const personalIcon = computed(() => (theme.isDarkMode ? personalWhiteSvg : personalDarkSvg))
 const nameLogo = computed(() => (theme.isDarkMode ? nameLogoLight : nameLogoDark))
-
+const blogIcon = computed(() => (theme.isDarkMode ? blogWhiteSvg : blogDarkSvg))
 // Methods
 function openModal() {
   showContactModal.value = true
@@ -47,19 +49,25 @@ function navigateToWork() {
     </div>
     <ul class="flex-row-center w-full">
       <li class="nav-list-styles hover:cursor-pointer" @click="navigateToWork">
-        <img :src="workIcon" alt="Monitor design svg" class="h-7" />
+        <img :src="workIcon" alt="Monitor design svg" class="h-6" />
         <p>Work</p>
       </li>
       <router-link to="/about"
         ><li class="nav-list-styles hover:cursor-pointer">
-          <img :src="userIcon" alt="user shaped svg" class="h-7" />
+          <img :src="userIcon" alt="user shaped svg" class="h-6" />
           <p>About</p>
         </li></router-link
       >
       <router-link to="/personal">
         <li class="nav-list-styles hover:cursor-pointer">
-          <img :src="personalIcon" alt="Mona lisa svg" class="h-7" />
+          <img :src="personalIcon" alt="Mona lisa svg" class="h-6" />
           <p>Personal</p>
+        </li></router-link
+      >
+      <router-link to="/blog">
+        <li class="nav-list-styles hover:cursor-pointer">
+          <img :src="blogIcon" alt="Mona lisa svg" class="h-6" />
+          <p>Blog</p>
         </li></router-link
       >
 
