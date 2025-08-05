@@ -54,6 +54,11 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
           Developed a passion for
           <strong>simplifying complex systems into intuitive solutions</strong>.
         </li>
+        <li>
+          Added Japanese as a third language through immersion, and now
+          <strong>continue growing in French</strong>. Language learning keeps my mind sharp and
+          empathetic.
+        </li>
       </ul>
       <h4 class="mt-4 tracking-widest font-bold bg-pink text-light px-3 py-1 rounded-sm mb-4">
         Skills Acquired
@@ -140,7 +145,7 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
           solid portfolio from scratch.
         </li>
         <li>
-          Stumbled across the term "<strong>UX</strong>"—and instantly realized it described what
+          Stumbled across the term "<strong>UX</strong>" and instantly realized it described what
           I’d been doing all along.
         </li>
       </ul>
@@ -282,7 +287,7 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
           exceptional.
         </li>
         <li>
-          This isn't just a job—it’s the
+          This isn't just a job. It’s the
           <strong>culmination of a lifetime of observing and improving</strong>.
         </li>
       </ul>
@@ -294,7 +299,7 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
       <ul class="flex divide-x-2 divide-pink w-full mt-2 text-sm text-center">
         <li class="flex-1">Design <br />Driven</li>
         <li class="flex-1">Logic &<br />Creativity</li>
-        <li class="flex-1">Purpose <br />Drivien</li>
+        <li class="flex-1">Purpose <br />Driven</li>
       </ul>
       <ArrowTransition
         customClass="scale-75 hidden lg:block lg:absolute lg:scale-40 lg:rotate-90 lg:-right-26 lg:-top-14"
