@@ -12,7 +12,7 @@ const post = blogStore.getPostBySlug(slug)
 </script>
 
 <template>
-  <section class="mx-auto px-4 font-main">
+  <section class="mx-auto mt-16 px-4 font-main">
     <div v-if="post">
       <!-- Cover Image -->
       <img
@@ -51,17 +51,20 @@ const post = blogStore.getPostBySlug(slug)
       <div class="prose prose-lg max-w-none" v-html="post.content" />
 
       <!-- Optional UX-style sections -->
-      <div v-if="post.problem || post.solution || post.outcome" class="mt-10 border-t pt-8">
-        <div v-if="post.problem" class="mb-6">
-          <h2 class="text-xl font-semibold mb-2">Problem</h2>
+      <div
+        v-if="post.problem || post.solution || post.outcome"
+        class="mt-10 border-t border-t-gray-500 pt-8"
+      >
+        <div v-if="post.problem" class="mb-4">
+          <h2 class="text-xl font-semibold">Problem</h2>
           <p class="">{{ post.problem }}</p>
         </div>
-        <div v-if="post.solution" class="mb-6">
-          <h2 class="text-xl font-semibold mb-2">Solution</h2>
+        <div v-if="post.solution" class="mb-4">
+          <h2 class="text-xl font-semibold">Solution</h2>
           <p class="">{{ post.solution }}</p>
         </div>
         <div v-if="post.outcome">
-          <h2 class="text-xl font-semibold mb-2">Outcome</h2>
+          <h2 class="text-xl font-semibold">Outcome</h2>
           <p class="">{{ post.outcome }}</p>
         </div>
       </div>
