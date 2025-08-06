@@ -37,9 +37,6 @@ Tailwind Variables
   --color-copy: #333333;
 }
 
-/***************************************
-Tailwind Custom Classes
-*****************************************/
 body {
   @apply bg-light text-copy transition-colors;
 }
@@ -64,4 +61,9 @@ body {
   @apply border px-3 py-1 rounded-sm;
 }
 
-/* ************** The Sidebar *************** */
+/***************************************
+Tailwind Custom Classes - Blog
+*****************************************/
+.blog-title {
+  @apply text-3xl font-bold font-main mb-4;
+}
