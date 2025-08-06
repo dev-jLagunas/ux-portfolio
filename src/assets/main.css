@@ -67,3 +67,7 @@ Tailwind Custom Classes - Blog
 .blog-title {
   @apply text-3xl font-bold font-main mb-4;
 }
+
+.blog-paragraphs {
+  @apply indent-4 mb-2;
+}

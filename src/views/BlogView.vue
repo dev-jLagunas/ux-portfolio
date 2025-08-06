@@ -11,9 +11,8 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 </script>
 
 <template>
-  <section class="mx-auto py-10 font-main">
+  <section class="mx-auto mt-16 font-main">
     <h1 class="text-3xl font-bold mb-8">Blog</h1>
-
     <div class="grid gap-6">
       <router-link
         v-for="post in posts"
@@ -33,7 +32,7 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
             <p class="">{{ post.summary }}</p>
           </div>
           <figure class="max-w-[225px] mx-auto mt-4 md:mt-0">
-            <img :src="post.coverImage" alt="cover-image" class="h-full w-full object-contain" />
+            <img :src="post.thumbnail" alt="cover-image" class="h-full w-full object-contain" />
           </figure>
         </article>
       </router-link>
