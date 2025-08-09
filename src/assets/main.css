@@ -71,3 +71,7 @@ Tailwind Custom Classes - Blog
 .blog-paragraphs {
   @apply indent-4 mb-2;
 }
+
+.blog-sect-title {
+  @apply font-bold underline;
+}

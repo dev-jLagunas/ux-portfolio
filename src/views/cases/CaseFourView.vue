@@ -182,7 +182,7 @@ const spinnerMessage = 'Almost There...'
       problemStatement="Students at the University of San Diego were regularly receiving the Career Development Center’s weekly email, but engagement was low. The newsletter was dense, visually inconsistent, and overwhelming to skim mainly because of dense text, especially on mobile. There was no clear hierarchy, and critical content like event information or job opportunities often got buried beneath less relevant items. "
       problemStatementB="Through conversations with students and a review of engagement analytics, I identified a core need: students wanted quick, scannable access to personalized, actionable content that didn’t feel like just another school blast."
       userResearchIntro="By combining direct student feedback with Constant Contact analytics, I was able to map out clear behavior patterns and content drop-off points. These visual assets helped me turn that data into focused design improvements that prioritized clarity, relevance, and real student value.
-"
+here ar"
       :artifacts="[
         {
           caption: 'Empathy Map',
