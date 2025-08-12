@@ -1,6 +1,14 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { useBlogStore } from '@/stores/blogStore'
+import { usePageLoader } from '@/composables/usePageLoader'
+
+// Components
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+
+// Spinner Logic
+const { isLoading } = usePageLoader(2000)
+const spinnerMessage = 'Hang tight!'
 
 // Route
 const route = useRoute()
@@ -12,6 +20,8 @@ const post = blogStore.getPostBySlug(slug)
 </script>
 
 <template>
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
+
   <section class="mx-auto mt-16 px-4 font-main">
     <div v-if="post">
       <!-- Cover Image -->
