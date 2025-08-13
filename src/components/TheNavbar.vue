@@ -25,6 +25,7 @@ const userIcon = computed(() => (theme.isDarkMode ? userWhiteSvg : userDarkSvg))
 const personalIcon = computed(() => (theme.isDarkMode ? personalWhiteSvg : personalDarkSvg))
 const nameLogo = computed(() => (theme.isDarkMode ? nameLogoLight : nameLogoDark))
 const blogIcon = computed(() => (theme.isDarkMode ? blogWhiteSvg : blogDarkSvg))
+
 // Methods
 function openModal() {
   showContactModal.value = true
@@ -39,42 +40,42 @@ function navigateToWork() {
 </script>
 
 <template>
-  <nav class="hidden font-main px-2 md:flex md:mt-4 md:gap-8 lg:px-0">
+  <nav class="nav-container-styles">
     <div class="flex items-center mr-8">
-      <img :src="nameLogo" alt="designer logo" class="h-20" />
-      <router-link class="flex items-start gap-1 text-2xl ml-2 lg:text-3xl" to="/">
-        <p><span class="text-pink font-bold">J</span>uan</p>
-        <p><span class="text-blue font-bold">L</span>agunas</p>
+      <img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-20" />
+      <router-link class="flex items-start nav-name-wrapper" to="/">
+        <p><span class="pink-bold-letter">J</span>uan</p>
+        <p><span class="blue-bold-letter">L</span>agunas</p>
       </router-link>
     </div>
     <ul class="flex-row-center w-full">
       <li class="nav-list-styles hover:cursor-pointer" @click="navigateToWork">
-        <img :src="workIcon" alt="Monitor design svg" class="h-6" />
+        <img :src="workIcon" alt="svg of a briefcase" class="h-6" />
         <p>Work</p>
       </li>
       <router-link to="/about"
         ><li class="nav-list-styles hover:cursor-pointer">
-          <img :src="userIcon" alt="user shaped svg" class="h-6" />
+          <img :src="userIcon" alt="svg of a name card" class="h-6" />
           <p>About</p>
         </li></router-link
       >
       <router-link to="/personal">
         <li class="nav-list-styles hover:cursor-pointer">
-          <img :src="personalIcon" alt="Mona lisa svg" class="h-6" />
+          <img :src="personalIcon" alt="svg of smiley face" class="h-6" />
           <p>Personal</p>
         </li></router-link
       >
       <router-link to="/blog">
         <li class="nav-list-styles hover:cursor-pointer">
-          <img :src="blogIcon" alt="Mona lisa svg" class="h-6" />
+          <img :src="blogIcon" alt="Blog svg icon" class="h-6" />
           <p>Blog</p>
         </li></router-link
       >
 
-      <div class="flex flex-col gap-2 items-center lg:flex-row">
+      <div class="nav-btn-wrapper">
         <li>
           <button
-            class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
+            class="nav-btn-styles hover:bg-pink hover:text-light duration-100 transition-all ease-linear"
             @click="openModal"
           >
             Contact
@@ -82,7 +83,7 @@ function navigateToWork() {
         </li>
         <li>
           <button
-            class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
+            class="nav-btn-styles hover:bg-pink hover:text-light duration-100 transition-all ease-linear"
             @click="theme.toggleTheme()"
           >
             {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}

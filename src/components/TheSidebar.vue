@@ -50,20 +50,16 @@ function openModal() {
 <template>
   <div class="mt-4 md:hidden font-main">
     <div class="flex-row-center gap-2">
-      <img :src="nameLogo" alt="designer logo" class="h-15 sm:h-20" />
+      <img :src="nameLogo" alt="designer logo of Juan Lagunas" class="h-15 sm:h-20" />
       <router-link to="/" class="flex gap-1 text-3xl -ml-2 sm:text-4xl">
-        <p><span class="text-pink font-bold">J</span>uan</p>
-        <p><span class="text-blue font-bold">L</span>agunas</p>
+        <p><span class="pink-bold-letter">J</span>uan</p>
+        <p><span class="blue-bold-letter">L</span>agunas</p>
       </router-link>
       <div class="relative group">
         <button @click="toggleSidebar" class="hover:cursor-pointer">
           <img :src="hamburgerIcon" alt="hamburger icon" class="h-12" />
         </button>
-        <span
-          class="absolute -translate-x-1/2 top-full text-sm bg-pink text-light p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50"
-        >
-          See menu
-        </span>
+        <span class="menu-hover"> See menu </span>
       </div>
     </div>
     <aside
@@ -72,29 +68,26 @@ function openModal() {
     >
       <div class="flex-col-center h-full w-full">
         <ul class="text-light text-xl">
-          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateToWork">
+          <li class="nav-list-styles side-items" @click="navigateToWork">
             <img :src="workSvg" alt="Monitor design svg" class="h-7" />
             <p>Work</p>
           </li>
-          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateAndClose('/about')">
+          <li class="nav-list-styles side-items" @click="navigateAndClose('/about')">
             <img :src="userSvg" alt="user shaped svg" class="h-7" />
             <p>About</p>
           </li>
-          <li
-            class="nav-list-styles mb-4 hover:cursor-pointer"
-            @click="navigateAndClose('/personal')"
-          >
+          <li class="nav-list-styles side-items" @click="navigateAndClose('/personal')">
             <img :src="personalSvg" alt="Mona lisa svg" class="h-7" />
             <p>Personal</p>
           </li>
-          <li class="nav-list-styles mb-4 hover:cursor-pointer" @click="navigateAndClose('/blog')">
+          <li class="nav-list-styles side-items" @click="navigateAndClose('/blog')">
             <img :src="blogWhiteSvg" alt="cool smile face svg" class="h-7" />
             <p>Blog</p>
           </li>
           <div class="flex-col-center gap-2">
             <li>
               <button
-                class="nav-btn-styles hover:bg-white hover:text-pink hover:cursor-pointer"
+                class="nav-btn-styles hover:text-pink hover:bg-light hover:cursor-pointer"
                 @click="openModal"
               >
                 Contact
@@ -109,12 +102,7 @@ function openModal() {
               </button>
             </li>
           </div>
-          <button
-            class="mt-4 text-4xl w-full hover:rotate-180 transition-all duration-300 hover:cursor-pointer"
-            @click="toggleSidebar"
-          >
-            X
-          </button>
+          <button class="side-close-btn" @click="toggleSidebar">X</button>
         </ul>
       </div>
     </aside>

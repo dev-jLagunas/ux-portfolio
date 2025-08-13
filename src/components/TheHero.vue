@@ -24,75 +24,63 @@ function openContactModal() {
 </script>
 
 <template>
-  <section class="font-main mt-8 md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
+  <section class="hero-container">
     <div class="place-content-center">
-      <h2 class="font-black text-5xl mb-4 md:text-5xl lg:text-6xl">Hello, I'm Juan</h2>
+      <h2 class="hero-title">Hello, I'm Juan</h2>
       <p class="mb-2 sm:text-xl">
-        I'm a <span class="font-bold text-pink">UX / UI Designer</span> who also wears many other
-        hats all focused on creating better user experiences.
+        I'm a <span class="pink-bold-letter">UX / UI Designer</span> who also wears many other hats
+        all focused on creating better user experiences.
       </p>
       <p class="sm:text-xl">
         I strive to merge UX design, development, and visual story telling to create
-        <span class="font-bold text-blue">meaningful experiences.</span>
+        <span class="blue-bold-letter">meaningful experiences.</span>
       </p>
-      <div class="hidden md:flex md:justify-between md:mt-8 lg:w-[400px]">
-        <button
-          class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
-          @click="openContactModal()"
-        >
+      <div class="hero-btn-wrapper-md">
+        <button class="nav-btn-styles hover-btn-styles" @click="openContactModal()">
           Contact Me
         </button>
-        <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+        <button class="nav-btn-styles hover-btn-styles">
           <a href="/Juan-Resume.pdf" download>Resume</a>
         </button>
-        <button
-          class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative"
-          @click="navigateToWork"
-        >
+        <button class="nav-btn-styles hover-btn-styles relative" @click="navigateToWork">
           See Work
         </button>
       </div>
     </div>
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-3 gap-2">
       <figure>
         <img :src="designerImg" alt="" />
-        <figcaption class="text-pink text-center font-bold md:text-xl">Designer</figcaption>
+        <figcaption class="img-caption-pink">Designer</figcaption>
       </figure>
       <figure>
         <img :src="developerImg" alt="" />
-        <figcaption class="text-blue text-center font-bold md:text-xl">Developer</figcaption>
+        <figcaption class="img-caption-blue">Developer</figcaption>
       </figure>
       <figure>
         <img :src="builderImg" alt="" />
-        <figcaption class="text-pink text-center font-bold md:text-xl">Architect</figcaption>
+        <figcaption class="img-caption-pink">Architect</figcaption>
       </figure>
       <figure>
         <img :src="photographerImg" alt="" />
-        <figcaption class="text-blue text-center font-bold md:text-xl">Photographer</figcaption>
+        <figcaption class="img-caption-blue">Photographer</figcaption>
       </figure>
       <figure>
         <img :src="artistImg" alt="" />
-        <figcaption class="text-pink text-center font-bold md:text-xl">Artist</figcaption>
+        <figcaption class="img-caption-pink">Artist</figcaption>
       </figure>
       <figure>
         <img :src="dreamerImg" alt="" />
-        <figcaption class="text-blue text-center font-bold md:text-xl">Dreamer</figcaption>
+        <figcaption class="img-caption-blue">Dreamer</figcaption>
       </figure>
     </div>
     <div class="flex justify-around mt-4 md:hidden">
-      <button
-        class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer"
-        @click="openContactModal()"
-      >
+      <button class="nav-btn-styles hover-btn-styles" @click="openContactModal()">
         Contact Me
       </button>
-      <button class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer">
+      <button class="nav-btn-styles hover-btn-styles">
         <a href="/Juan-Resume.pdf" download>Resume</a>
       </button>
-      <button
-        class="nav-btn-styles hover:bg-pink hover:text-white hover:cursor-pointer relative"
-        @click="navigateToWork"
-      >
+      <button class="nav-btn-styles hover-btn-styles relative" @click="navigateToWork">
         See Work
       </button>
     </div>

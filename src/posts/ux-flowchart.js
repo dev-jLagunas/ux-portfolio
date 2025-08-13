@@ -4,7 +4,7 @@ import flow1 from '@/assets/images/blogPosts/post4/framework-map-1.png'
 import flow2 from '@/assets/images/blogPosts/post4/framework-map-2.png'
 
 export default {
-  id: 3,
+  id: 4,
   title: 'My UX Framework Flowchart',
   slug: 'my-custom-ux-framework-flowchart',
   date: '2025-08-12',

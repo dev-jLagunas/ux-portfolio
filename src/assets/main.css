@@ -37,6 +37,10 @@ Tailwind Variables
   --color-copy: #333333;
 }
 
+/***************************************
+Reusable Custom Classes
+*****************************************/
+
 body {
   @apply bg-light text-copy transition-colors;
 }
@@ -58,7 +62,72 @@ body {
 }
 
 .nav-btn-styles {
-  @apply border px-3 py-1 rounded-sm;
+  @apply border px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300;
+}
+
+.pink-bold-letter {
+  @apply text-pink font-bold;
+}
+
+.blue-bold-letter {
+  @apply text-blue font-bold;
+}
+
+/***************************************
+Navbar Styles
+*****************************************/
+.nav-container-styles {
+  @apply hidden font-main px-2 md:flex md:mt-4 md:gap-8 lg:px-0;
+}
+
+.nav-name-wrapper {
+  @apply gap-1 text-2xl ml-2 lg:text-3xl;
+}
+
+.nav-btn-wrapper {
+  @apply flex flex-col gap-2 items-center lg:flex-row;
+}
+
+/***************************************
+Sidebar Styles
+*****************************************/
+.menu-hover {
+  @apply absolute -translate-x-1/2 top-full text-sm bg-pink text-light p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50;
+}
+
+.side-items {
+  @apply mb-4 hover:cursor-pointer hover:scale-125 transition-all duration-200 ease-linear;
+}
+
+.side-close-btn {
+  @apply mt-8 text-4xl w-full hover:rotate-180 transition-all duration-300 hover:cursor-pointer;
+}
+
+/***************************************
+Hero Styles
+*****************************************/
+.hero-container {
+  @apply font-main mt-8 md:grid md:grid-cols-2 md:gap-4 lg:gap-8;
+}
+
+.hero-title {
+  @apply font-black text-5xl mb-4 md:text-5xl lg:text-6xl;
+}
+
+.hero-btn-wrapper-md {
+  @apply hidden md:flex md:justify-between md:mt-8 lg:w-[400px];
+}
+
+.hover-btn-styles {
+  @apply hover:bg-pink hover:text-white hover:cursor-pointer;
+}
+
+.img-caption-pink {
+  @apply text-pink  rounded-sm mt-2 text-center font-bold md:text-xl;
+}
+
+.img-caption-blue {
+  @apply text-blue text-center mt-2 rounded-sm font-bold md:text-xl;
 }
 
 /***************************************
