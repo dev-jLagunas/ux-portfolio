@@ -14,8 +14,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <section id="reflections-section" class="flex flex-col items-center justify-between">
-    <div class="mt-4 mb-2 flex items-center justify-between w-full">
+  <section id="reflections-section" class="flex-col-center">
+    <div class="section-header-wrapper">
       <h3 class="font-bold text-2xl">My Reflections</h3>
       <p class="text-blue font-semibold tracking-wider md:pr-4">Prototype – Test</p>
     </div>

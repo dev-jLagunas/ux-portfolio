@@ -16,8 +16,8 @@ const theme = useThemeStore()
 <template>
   <div
     :class="[
-      'fixed inset-0 z-90 flex flex-col items-center justify-center',
-      theme.isDarkMode ? 'bg-dark text-white' : 'bg-white text-dark',
+      'fixed inset-0 z-90 flex-col-center',
+      theme.isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark',
     ]"
   >
     <div

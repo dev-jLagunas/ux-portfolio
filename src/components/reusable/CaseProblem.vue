@@ -31,13 +31,13 @@ function prevImage() {
 </script>
 
 <template>
-  <section id="problem-section" class="flex flex-col items-center justify-center">
-    <div class="mt-4 mb-2 flex items-center justify-between w-full">
+  <section id="problem-section" class="flex-col-center">
+    <div class="section-header-wrapper">
       <h3 class="font-bold text-2xl">The Problem</h3>
       <p class="tracking-wider text-blue font-semibold md:pr-4">Empathize – Define</p>
     </div>
-    <article class="flex flex-col items-center justify-center">
-      <div class="border-pink border-2 p-4 rounded-md mt-4 mb-20">
+    <article class="flex-col-center">
+      <div class="problem-header-wrapper">
         <img :src="problemIcon" alt="troubled face svg icon" class="mx-auto h-12 mb-2" />
         <p class="mb-2 indent-4">
           {{ problemStatement }}
@@ -62,40 +62,19 @@ function prevImage() {
             loading="lazy"
           />
         </div>
-        <button
-          @click="prevImage"
-          class="absolute top-2/3 -left-4 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-l hover:cursor-pointer"
-        >
-          ‹
-        </button>
-        <button
-          @click="nextImage"
-          class="absolute -right-4 top-2/3 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-r hover:cursor-pointer"
-        >
-          ›
-        </button>
+        <button @click="prevImage" class="problem-left-btn">‹</button>
+        <button @click="nextImage" class="problem-right-btn">›</button>
       </figure>
       <h3 class="w-full font-semibold text-2xl mt-12">Takeway</h3>
       <p class="">
         {{ takeaway }}
       </p>
-      <p class="text-2xl my-12 font-bold text-pink uppercase mb-2 text-center lg:text-3xl lg:my-24">
-        "{{ quote }}"
-      </p>
+      <p class="problem-quote">"{{ quote }}"</p>
     </article>
   </section>
-  <div
-    v-if="isModalOpen"
-    class="fixed inset-0 z-50 bg-black/[var(--bg-opacity)] [--bg-opacity:95%] flex items-center justify-center"
-    @click.self="isModalOpen = false"
-  >
+  <div v-if="isModalOpen" class="problem-img-modal" @click.self="isModalOpen = false">
     <div class="relative w-full md:w-1/2 lg:w-[800px] px-8">
-      <button
-        @click="isModalOpen = false"
-        class="absolute -top-10 right-8 text-white bg-pink px-3 py-1 rounded hover:bg-pink/80"
-      >
-        X
-      </button>
+      <button @click="isModalOpen = false" class="problem-modal-close-btn">X</button>
       <img
         :src="props.artifacts[currentIndex].imageSrc"
         :alt="props.artifacts[currentIndex].caption"

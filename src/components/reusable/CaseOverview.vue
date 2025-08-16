@@ -16,19 +16,17 @@ const props = defineProps({
 
 <template>
   <header id="project-overview">
-    <h3 class="text-2xl text-center md:text-3xl">{{ title }}</h3>
+    <h3 class="overview-title">{{ title }}</h3>
 
-    <ul
-      class="text-pink font-semibold flex items-start justify-center flex-wrap text-center text-sm gap-2 mt-2 mb-4 divide-x divide-gray-300"
-    >
+    <ul class="overview-content-wrapper">
       <li v-for="(tag, index) in tags" :key="index" class="pr-2">{{ tag }}</li>
     </ul>
 
-    <div class="md:mt-8 lg:grid lg:grid-cols-2 lg:place-items-center">
+    <div class="overview-info">
       <img
         :src="imgSrc"
         alt="trio image of case study screenshots"
-        class="w-full max-w-[500px] mx-auto mb-4 md:mb-0"
+        class="overview-img"
         loading="lazy"
       />
       <div>
@@ -36,7 +34,7 @@ const props = defineProps({
           <a
             :href="`/` + pdfFile"
             download
-            class="bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block hover:shadow-lg transition"
+            class="case-study-btn"
             aria-label="Download full case study as PDF"
           >
             Full Case Study PDF

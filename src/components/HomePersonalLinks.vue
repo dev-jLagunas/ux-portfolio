@@ -15,11 +15,11 @@ import behanceIcon from '@/assets/svgs/behance-icon.svg'
   <footer>
     <div class="font-main text-center">
       <h1 class="text-8xl font-bold tracking-tight">
-        <span class="font-bold text-pink">L</span>et's <span class="text-blue">G</span>et
-        <span class="text-pink">T</span>o <span class="text-blue">W</span>ork!
+        <span class="pink-bold-letter">L</span>et's <span class="blue-bold-letter">G</span>et
+        <span class="pink-bold-letter">T</span>o <span class="blue-bold-letter">W</span>ork!
       </h1>
     </div>
-    <section class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+    <section class="link-card-wrapper">
       <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
         title="My Dev Portfolio"

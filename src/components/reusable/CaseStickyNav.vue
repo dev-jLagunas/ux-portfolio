@@ -53,10 +53,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="mt-8 mb-8 sticky top-5 z-50 bg-pink py-3 rounded-sm font-main">
-    <ul
-      class="grid grid-cols-3 w-full place-items-center gap-4 text-sm font-semibold md:grid-cols-6"
-    >
+  <nav class="sticky-nav-container">
+    <ul class="sticky-content-wrapper">
       <li
         v-for="section in sections"
         :key="section.id"

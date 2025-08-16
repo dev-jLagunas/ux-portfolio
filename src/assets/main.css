@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  max-width: 1110px;
+  max-width: 1200px;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -73,6 +73,10 @@ body {
   @apply text-blue font-bold;
 }
 
+.section-header-wrapper {
+  @apply mt-4 mb-2 flex items-center justify-between w-full;
+}
+
 /***************************************
 Navbar Styles
 *****************************************/
@@ -128,6 +132,195 @@ Hero Styles
 
 .img-caption-blue {
   @apply text-blue text-center mt-2 rounded-sm font-bold md:text-xl;
+}
+
+/***************************************
+Home Projects Styles
+*****************************************/
+.home-projects-container {
+  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3;
+}
+
+.featured-title {
+  @apply font-bold bg-blue text-white tracking-wider rounded-sm mx-auto mb-2 w-fit px-4 py-1 md:-top-3 md:z-10 md:absolute md:left-1/2 md:-translate-x-1/2;
+}
+
+/***************************************
+Home Footer Styles
+*****************************************/
+.link-card-wrapper {
+  @apply grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4;
+}
+
+/***************************************
+Contact Modal Styles
+*****************************************/
+.contact-modal-container {
+  @apply fixed inset-0 z-50 flex justify-center items-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-main;
+}
+
+.contact-form-wrapper {
+  @apply bg-light w-[90vw] py-4 rounded-xl shadow-xl text-dark md:w-4/5 md:max-w-xl relative;
+}
+
+.contact-modal-title {
+  @apply text-center text-2xl mb-4;
+}
+
+.contact-info-wrapper {
+  @apply flex justify-center items-center flex-col gap-2;
+}
+
+.contact-info-item {
+  @apply text-center flex flex-col justify-center items-center;
+}
+
+.form-wrapper {
+  @apply px-4 flex justify-center items-start flex-col w-full;
+}
+
+.form-input {
+  @apply border border-gray-500 w-full rounded-sm px-4 mb-3;
+}
+
+.form-send-btn {
+  @apply mt-2 rounded-sm bg-pink px-4 py-1 hover:font-bold text-light hover:cursor-pointer;
+}
+
+.form-close-btn {
+  @apply mx-auto w-full text-pink font-bold text-3xl hover:scale-110 hover:cursor-pointer;
+}
+
+/***************************************
+Personal View Styles
+*****************************************/
+.personal-sect-title {
+  @apply text-4xl mb-2 text-center md:text-start font-bold md:text-5xl;
+}
+
+.personal-copy {
+  @apply mb-2 text-sm md:text-base;
+}
+
+.personal-img-wrapper {
+  @apply grid grid-cols-2 gap-4 md:grid-cols-4;
+}
+
+/***************************************
+Back Home Button Styles
+*****************************************/
+.component-wrapper {
+  @apply border-t border-slate-400 mt-12 pt-6 text-center;
+}
+
+.back-home-btn {
+  @apply bg-pink text-white px-5 py-2 rounded-sm text-sm inline-block hover:cursor-pointer hover:shadow-lg transition;
+}
+
+/***************************************
+Case Outcome Styles
+*****************************************/
+
+.outcome-card-wrapper {
+  @apply mt-4 grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+/***************************************
+Case Overview Styles
+*****************************************/
+.overview-title {
+  @apply text-2xl text-center md:text-3xl;
+}
+
+.overview-content-wrapper {
+  @apply text-pink font-semibold flex items-start justify-center flex-wrap text-center text-sm gap-2 mt-2 mb-4 divide-x divide-gray-300;
+}
+
+.overview-info {
+  @apply md:mt-8 lg:grid lg:grid-cols-2 lg:place-items-center;
+}
+
+.overview-img {
+  @apply w-full max-w-[500px] mx-auto mb-4 md:mb-0;
+}
+
+.case-study-btn {
+  @apply bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block hover:shadow-lg transition;
+}
+
+/***************************************
+Case Problem Styles
+*****************************************/
+.problem-header-wrapper {
+  @apply border-pink border-2 p-4 rounded-md mt-4 mb-20;
+}
+
+.problem-left-btn {
+  @apply absolute top-2/3 -left-4 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-l hover:cursor-pointer;
+}
+
+.problem-right-btn {
+  @apply absolute -right-4 top-2/3 transform -translate-y-1/2 bg-pink text-white px-3 py-1 rounded-r hover:cursor-pointer;
+}
+
+.problem-quote {
+  @apply text-2xl my-12 font-bold text-pink uppercase mb-2 text-center lg:text-3xl lg:my-24;
+}
+
+.problem-img-modal {
+  @apply fixed inset-0 z-50 bg-black/[var(--bg-opacity)] [--bg-opacity:95%] flex items-center justify-center;
+}
+
+.problem-modal-close-btn {
+  @apply absolute -top-10 right-8 text-white bg-pink px-3 py-1 rounded hover:bg-pink/80;
+}
+
+/***************************************
+Sticky Nav Styles
+*****************************************/
+.sticky-nav-container {
+  @apply mt-8 mb-8 sticky top-5 z-50 bg-pink py-3 rounded-sm font-main;
+}
+
+.sticky-content-wrapper {
+  @apply grid grid-cols-3 w-full place-items-center gap-4 text-sm font-semibold md:grid-cols-6;
+}
+
+/***************************************
+Ux Lens Styles
+*****************************************/
+.ux-header-wrapper {
+  @apply text-center sm:text-left mb-4 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:dark:bg-pink;
+}
+
+.ux-slot-wrapper {
+  @apply col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:dark:bg-gray-300;
+}
+
+/***************************************
+Link Card Styles
+*****************************************/
+.link-card-container {
+  @apply rounded-md p-4 font-main flex flex-col justify-center items-center w-full mt-8 border border-gray-200 h-60;
+}
+
+.link-card-btn {
+  @apply text-sm border-2 border-pink p-2 rounded-sm tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer;
+}
+
+/***************************************
+Project Card Styles
+*****************************************/
+.project-card-container {
+  @apply relative px-4 py-10 border border-gray-300 rounded-md w-[90vw] font-main flex flex-col items-center justify-center md:w-full md:h-full;
+}
+
+.project-type {
+  @apply text-center text-pink font-bold mb-2;
+}
+
+.project-title {
+  @apply text-xl font-bold mb-2 text-center md:text-2xl;
 }
 
 /***************************************

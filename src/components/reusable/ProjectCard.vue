@@ -30,14 +30,13 @@ defineProps({
 </script>
 
 <template>
-  <div
-    class="relative px-4 py-10 border border-gray-300 rounded-md w-[90vw] font-main flex flex-col items-center justify-center md:w-full md:h-full"
-  >
+  <div class="project-card-container">
+    <!-- Decorational triangles -->
     <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
     <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
 
-    <p class="text-center text-pink font-bold mb-2">{{ uxType }}</p>
-    <h3 class="text-xl font-bold mb-2 text-center md:text-2xl">{{ title }}</h3>
+    <p class="project-type">{{ uxType }}</p>
+    <h3 class="project-title">{{ title }}</h3>
     <p class="mb-4 md:text-lg">
       {{ description }}
     </p>
@@ -53,7 +52,7 @@ defineProps({
     <router-link :to="route">
       <button
         :class="[
-          theme.isDarkMode ? 'bg-white text-black' : 'bg-dark text-white ',
+          theme.isDarkMode ? 'bg-white text-dark' : 'bg-dark text-light ',
           'px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 hover:bg-pink',
         ]"
       >

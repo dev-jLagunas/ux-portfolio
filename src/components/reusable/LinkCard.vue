@@ -17,17 +17,11 @@ defineProps({
 </script>
 
 <template>
-  <article
-    class="rounded-md p-4 font-main flex flex-col justify-center items-center w-full mt-8 border border-gray-200 h-60"
-  >
+  <article class="link-card-container">
     <h2 class="font-bold text-center">{{ title }}</h2>
     <img :src="icon" :alt="title" class="h-20 pb-2" loading="lazy" />
     <a :href="url" target="_blank" rel="noopener noreferrer">
-      <button
-        class="text-sm border-2 border-pink p-2 rounded-sm tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer"
-      >
-        See Now
-      </button></a
+      <button class="link-card-btn">See Now</button></a
     >
   </article>
 </template>

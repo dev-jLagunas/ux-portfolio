@@ -23,8 +23,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <section id="outcome-section" class="flex flex-col items-center justify-center">
-    <div class="mt-4 mb-2 flex items-center justify-between w-full">
+  <section id="outcome-section" class="flex-col-center">
+    <div class="section-header-wrapper">
       <h3 class="font-bold text-2xl">The Outcome</h3>
       <p class="text-blue font-semibold md:pr-4 tracking-wider">Prototype – Test</p>
     </div>
@@ -41,7 +41,7 @@ const props = defineProps({
       </p>
 
       <!-- Outcome Cards -->
-      <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ul class="outcome-card-wrapper">
         <li v-for="(item, index) in outcomes" :key="index" class="relative px-2 py-12">
           <img
             :src="icons[index]"

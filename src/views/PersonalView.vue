@@ -1,11 +1,13 @@
 <script setup>
-import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
-import DisplayCard from '@/components/reusable/DisplayCard.vue'
 
-//images
+// Components
+import DisplayCard from '@/components/reusable/DisplayCard.vue'
+import GuideNav from '@/components/reusable/CaseStickyNav.vue'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+
+// Images
 import flamingoArt from '@/assets/images/personal/flamingo-art.webp'
 import catBoarder from '@/assets/images/personal/cat-boarder-art.webp'
 import goingVroom from '@/assets/images/personal/going-vroom.webp'
@@ -35,6 +37,7 @@ import chicanoUi from '@/assets/images/personal/chicano-ui.webp'
 import galleryUi from '@/assets/images/personal/gallery-ui.webp'
 import tiktokUi from '@/assets/images/personal/tiktok-ui.webp'
 
+// Spinner message
 const spinnerMessage = 'Thanks for Waiting!'
 </script>
 
@@ -42,7 +45,7 @@ const spinnerMessage = 'Thanks for Waiting!'
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
   <section>
-    <CaseNav
+    <GuideNav
       :sections="[
         { id: 'photo-section', label: 'Photography' },
         { id: 'art-section', label: 'Digital Art' },
@@ -51,8 +54,8 @@ const spinnerMessage = 'Thanks for Waiting!'
       ]"
     />
     <article class="font-main mt-8" id="photo-section">
-      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Photography</h2>
-      <p class="mb-2 text-sm md:text-base">
+      <h2 class="personal-sect-title">Photography</h2>
+      <p class="personal-copy">
         I bought a Fuji X-A5 when we started the cafe, and that’s where my love for photography
         began. I taught myself to use the manual controls and spent a lot of time doing food
         photography for the cafe. Experimenting with new techniques, backgrounds, and environments
@@ -75,8 +78,8 @@ const spinnerMessage = 'Thanks for Waiting!'
       </div>
     </article>
     <article class="font-main mt-8" id="art-section">
-      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Digital Art</h2>
-      <p class="mb-2 text-sm md:text-base">
+      <h2 class="personal-sect-title">Digital Art</h2>
+      <p class="personal-copy">
         I’ve always enjoyed sketching and drawing on paper, but it wasn’t until last year that I
         started exploring digital art. I use Linearity Curve on my iPad to create, and I
         occasionally use other apps to add text and experiment with graphic design.
@@ -85,7 +88,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         I’m drawn to color and simplicity, which I think comes through not only in my art, but also
         in my photography and UI design.
       </p>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div class="personal-img-wrapper">
         <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
         <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
         <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
@@ -97,18 +100,18 @@ const spinnerMessage = 'Thanks for Waiting!'
       </div>
     </article>
     <article class="font-main mt-8" id="cafe-section">
-      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">Cafe Triangle</h2>
-      <p class="mb-2 text-sm md:text-base">
+      <h2 class="personal-sect-title">Cafe Triangle</h2>
+      <p class="personal-copy">
         Cafe Triangle was the cafe my wife and I used to own in Japan. It was one of the most
         transformative experiences of my life and also one of the most practical. It taught me a
         multitude of skills that align perfectly with UX: empathy, branding, service design,
         problem-solving, and visual communication.
       </p>
-      <p class="mb-2 text-sm md:text-base">
+      <p class="personal-copy">
         Our days were filled with delicious pastries, lovely guests, wonderful animal friends, and
         the joy of being next to my wife all day, every day.
       </p>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div class="personal-img-wrapper">
         <DisplayCard title="Anko and Moe" :content="ankoPhoto" bgColor="bg-pink" />
         <DisplayCard title="Tres Leches Cake" :content="cakePhoto" bgColor="bg-blue" />
         <DisplayCard title="Chai Mix" :content="chaiPhoto" bgColor="bg-pink" />
@@ -120,19 +123,19 @@ const spinnerMessage = 'Thanks for Waiting!'
       </div>
     </article>
     <article class="font-main mt-8" id="design-section">
-      <h2 class="text-4xl mb-2 text-center md:text-start font-bold md:text-5xl">UI Design</h2>
-      <p class="mb-2 text-sm md:text-base">
+      <h2 class="personal-sect-title">UI Design</h2>
+      <p class="personal-copy">
         I started teaching myself frontend development about two and a half years ago. I began with
         the foundations, HTML, CSS, and JavaScript, then moved on to frameworks like Angular and
         Vue.
       </p>
-      <p class="mb-2 text-sm md:text-base">
+      <p class="personal-copy">
         While I’m not as active with development as I once was, I still continue learning. These
         days, my focus has shifted more toward full-stack. I’m currently working through the
         Boot.dev course to learn Python, TypeScript, Go, and deepen my understanding of backend
         development.
       </p>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div class="personal-img-wrapper">
         <DisplayCard title="Cafe Triangle" :content="cafeUi" bgColor="bg-pink" />
         <DisplayCard title="Scroll Gallery" :content="galleryUi" bgColor="bg-blue" />
         <DisplayCard title="Neon TicTacToe" :content="tiktokUi" bgColor="bg-pink" />

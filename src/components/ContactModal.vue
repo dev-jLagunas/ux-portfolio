@@ -9,45 +9,27 @@ function closeModal() {
 </script>
 
 <template>
-  <article
-    v-if="showContactModal"
-    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/[var(--bg-opacity)] [--bg-opacity:80%] font-main"
-  >
-    <div
-      class="bg-white w-[90vw] py-4 rounded-xl shadow-xl text-dark md:w-4/5 md:max-w-xl relative"
-    >
+  <article v-if="showContactModal" class="contact-modal-container">
+    <div class="contact-form-wrapper">
+      <!-- Decorational Triangles -->
       <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
       <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
-      <h2 class="text-center text-lg mb-8 underline underline-offset-4">Contact Me</h2>
-      <ul class="flex justify-center items-center flex-col gap-2">
-        <li class="text-center flex flex-col justify-center items-center">
-          <img :src="emailIcon" alt="email svg icon" class="h-10" />dev.jlagunas@gmail.com
+
+      <!-- Form Wrapper -->
+      <h2 class="contact-modal-title">Contact Me</h2>
+      <ul class="contact-info-wrapper">
+        <li class="contact-info-item">
+          <img :src="emailIcon" alt="email svg icon" class="h-6" />dev.jlagunas@gmail.com
         </li>
-        <li class="text-center flex flex-col justify-center items-center">
-          <img :src="locationIcon" alt="location svg icon" class="h-10" />United States
+        <li class="contact-info-item">
+          <img :src="locationIcon" alt="location svg icon" class="h-7" />United States
         </li>
       </ul>
-      <form
-        action="https://formspree.io/f/xjkobrre"
-        method="POST"
-        class="px-4 flex justify-center items-start flex-col w-full"
-      >
+      <form action="https://formspree.io/f/xjkobrre" method="POST" class="form-wrapper">
         <label for="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          required
-          class="border border-gray-500 w-full rounded-sm px-4 mb-3"
-        />
+        <input type="text" name="name" id="name" required class="form-input" />
         <label for="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          required
-          class="border border-gray-500 w-full rounded-sm px-4 mb-3"
-        />
+        <input type="email" name="email" id="email" required class="form-input" />
         <label for="message" class="">Message</label>
         <textarea
           name="message"
@@ -58,19 +40,9 @@ function closeModal() {
           required
           class="border w-full rounded-sm px-4 border-gray-500"
         ></textarea>
-        <button
-          type="submit"
-          class="mt-2 rounded-sm bg-pink px-4 py-1 hover:font-bold text-white hover:cursor-pointer"
-        >
-          Send
-        </button>
+        <button type="submit" class="form-send-btn">Send</button>
       </form>
-      <button
-        class="mx-auto w-full text-pink font-bold text-3xl hover:scale-110 hover:cursor-pointer"
-        @click="closeModal()"
-      >
-        X
-      </button>
+      <button class="form-close-btn" @click="closeModal()">X</button>
     </div>
   </article>
 </template>

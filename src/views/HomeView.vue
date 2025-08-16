@@ -2,7 +2,7 @@
 import TheHero from '@/components/TheHero.vue'
 import HomeProjects from '@/components/HomeProjects.vue'
 import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
-import HomeFooter from '@/components/HomeFooter.vue'
+import HomeFooter from '@/components/HomePersonalLinks.vue'
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)

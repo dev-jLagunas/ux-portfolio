@@ -18,15 +18,9 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
       </p>
     </header>
 
-    <div
-      class="flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3"
-    >
+    <div class="home-projects-container">
       <div class="relative md:col-span-2">
-        <h2
-          class="font-bold bg-blue text-white tracking-wider rounded-sm mx-auto mb-2 w-fit px-4 py-1 md:-top-3 md:z-10 md:absolute md:left-1/2 md:-translate-x-1/2"
-        >
-          FEATURED
-        </h2>
+        <h2 class="featured-title">FEATURED</h2>
         <ProjectCard
           title="Bean And Beast Chocolates"
           ux-type="E-commerce UX"
