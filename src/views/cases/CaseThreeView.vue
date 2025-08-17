@@ -185,18 +185,27 @@ const spinnerMessage = 'Working On It...'
       :artifacts="[
         {
           caption: 'Empathy Map',
+          statement: 'Problem',
+          statementDetails:
+            'The Career Development Center lacked a cohesive visual identity across its student-facing materials, leading to confusion, low engagement, and a disjointed user experience for job-seeking students.',
           blurb:
             'Todd’s empathy map revealed the hidden resistance that often comes with process change, especially in environments built on habit and verbal handoffs. His reluctance to adopt new systems reinforced the need for assets that were not only well-designed but also easy to access, understand, and use without formal training.',
           imageSrc: empathyMap,
         },
         {
           caption: 'Persona',
+          statement: 'Goal',
+          statementDetails:
+            'Redesign the Career Center’s digital and physical marketing materials to align with university branding and improve clarity, hierarchy, and visual consistency.',
           blurb:
             'Todd’s persona captured a common challenge in organizational UX: legacy habits and informal ownership. While resistant to structured change, his goals aligned perfectly with the redesign, proving that even reluctant users benefit from systems that reduce chaos, support consistency, and make quality the default.',
           imageSrc: userPersona,
         },
         {
           caption: 'Journey Map',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If I apply a consistent visual system with clear CTAs, brand-compliant color schemes, and skimmable layouts, then students will be more likely to engage with career resources and attend events.',
           blurb:
             'This journey map illustrates the confusion, guesswork, and emotional drain caused by a lack of structure in the marketing process. It exposed the need for clearly labeled folders, version control, and a defined rollout schedule that could replace last-minute scrambles with confident, consistent action.',
           imageSrc: journeyMap,

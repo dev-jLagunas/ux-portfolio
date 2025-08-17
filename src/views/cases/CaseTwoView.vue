@@ -236,18 +236,27 @@ const spinnerMessage = 'Be Right With You!'
       :artifacts="[
         {
           caption: 'Empathy Map',
+          statement: 'Problem',
+          statementDetails:
+            'The Career Development Center’s internal resources were disorganized, outdated, and scattered across multiple tools. This made it difficult for team members to find, update, or share information, causing inefficiencies and onboarding challenges.',
           blurb:
             'Julian’s empathy map highlights the emotional cost of poor documentation. Feelings like frustration, wasted time, and constant second-guessing. His experience as a new hire informed my core design principle: eliminate ambiguity by creating systems that are clear, self-explanatory, and easy to trust.',
           imageSrc: empathyMap,
         },
         {
           caption: 'Persona',
+          statement: 'Goal Statement',
+          statementDetails:
+            'Refactor the internal documentation system using Notion to create a centralized, clean, and well-structured hub for resources, guides, and shared knowledge.',
           blurb:
             'Julian’s persona represents the motivated but overwhelmed new hire. Eager to contribute, yet blocked by scattered information and vague processes. His goals and frustrations directly shaped my approach to designing systems that prioritize clarity, reduce redundancy, and empower users from day one.',
           imageSrc: userPersona,
         },
         {
           caption: 'Journey Map',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If I create a visually structured, logically organized Notion system with consistent formatting and intuitive navigation, then team productivity and onboarding experience will improve significantly.',
           blurb:
             'This journey map outlines the mental load of planning recurring events without reliable systems, from confusion and frustration to uncertainty and burnout. Each stage reveals a clear UX failure, and these pain points directly informed the structure, clarity, and consistency of the new project management flow.',
           imageSrc: journeyMap,

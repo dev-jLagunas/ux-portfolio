@@ -186,18 +186,27 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       :artifacts="[
         {
           caption: 'Empathy Map – Lisa',
+          statement: 'Problem',
+          statementDetails:
+            'Design-conscious millennials often struggle to find premium gifting options that feel both playful and elegant. Most chocolate brands lack strong character-driven storytelling and visual distinctiveness.',
           blurb:
             'This empathy map revealed how much emotional value Lisa places on discovery, gifting, and visual storytelling. Her behaviors and thoughts helped shape a design that treats chocolate not just as food, but as a meaningful, shareable experience.',
           imageSrc: empathyMapLisa,
         },
         {
           caption: 'Empathy Map – Kevin',
+          statement: 'Goal',
+          statementDetails:
+            'Create a fictional chocolate brand with strong UX foundations, emotional storytelling, and a unique visual identity. Then design and build an e-commerce site that supports exploration and conversion.',
           blurb:
             'Kevin’s empathy map highlighted the importance of visual impact and product-story alignment. His skepticism toward flashy packaging without substance pushed us to design something that looked premium but delivered meaning beneath the surface.',
           imageSrc: empathyMapKevin,
         },
         {
           caption: 'Persona – Lisa',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If I combine bold visual branding with an intuitive product discovery experience and gift-centered messaging, then users will feel more emotionally connected and be more likely to purchase or recommend the product.',
           blurb:
             'Lisa’s persona showed a strong desire for culturally engaging, giftable treats that felt personal and delightful. Her motivations around exploration and storytelling helped shape a brand that prioritized discovery, charm, and emotional resonance.',
           imageSrc: personaLisa,

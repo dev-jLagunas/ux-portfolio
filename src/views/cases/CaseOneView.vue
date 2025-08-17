@@ -184,18 +184,27 @@ const uxSubheading = 'How I would approach this UX challenge today'
       :artifacts="[
         {
           caption: 'Empathy Map',
+          statement: 'Problem',
+          statementDetails:
+            'Local Kanazawa customers, especially working professionals and casual weekend cafe-goers, struggled to find clear, up-to-date information about Cafe Triangle online. The lack of a professional web presence made it difficult to communicate the cafes story, menu, and values, leading to missed opportunities for growth.',
           blurb:
             'This empathy map helped uncover the emotional core of our ideal user: someone who values cultural variety, pet inclusivity, and visual storytelling. Insights like “valued as a pet owner” and “I wish more cafés had this kind of casual vibe” directly influenced the site’s tone, content, and structure to make users like Megumi feel seen, welcomed, and excited to share.',
           imageSrc: empathyMap,
         },
         {
           caption: 'Persona',
+          statement: 'Goal',
+          statementDetails:
+            'Design and build a simple, bilingual website that reflects the cafe’s brand and values, provides essential information like menu and hours, and improves discoverability for both locals and tourists.',
           blurb:
             'Megumi’s persona captured the exact audience we aimed to serve: culturally curious, pet-loving, and hungry for something different. Her frustrations with generic menus and unclear pet policies guided key UX decisions, from showcasing unique desserts to clearly signaling our dog-friendly atmosphere.',
           imageSrc: userPersona,
         },
         {
           caption: 'Journey Map',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If I design a clear, visually appealing, bilingual website with easy access to core info, then customers will better understand the cafe’s offerings and story which will lead to increased foot traffic and stronger community engagement.',
           blurb:
             'This journey map traces Megumi’s experience from discovery to recommendation, revealing key emotions and friction points across six stages. While curiosity and connection define her final impression, early steps show confusion and skepticism. Such insights that drove design choices like a clear digital menu, pet-friendly cues, and a welcoming tone across all touchpoints.',
           imageSrc: journeyMap,

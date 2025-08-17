@@ -186,18 +186,27 @@ here ar"
       :artifacts="[
         {
           caption: 'Empathy Map',
+          statement: 'Problem',
+          statementDetails:
+            'The original student newsletter was poorly formatted, text-heavy, and lacked hierarchy. It was hard to skim and didn’t prioritize the student experience.',
           blurb:
             'Isabella’s empathy map revealed how quickly students disengage from content that feels outdated, cluttered, or repetitive. Her behavior and reactions made it clear that the newsletter needed a visual and structural overhaul focused on clarity, credibility, and real student value.',
           imageSrc: empathyMap,
         },
         {
           caption: 'Persona',
+          statement: 'Goal',
+          statementDetails:
+            'To redesign the weekly newsletter in a way that prioritizes the student reader, improves scannability, and boosts engagement.',
           blurb:
             'Isabella’s persona highlighted a common behavior pattern: students scan for value and disengage quickly if content doesn’t feel relevant or modern. Her feedback shaped the redesign toward a layout that is visually clean, quickly scannable, and more reflective of real student needs.',
           imageSrc: userPersona,
         },
         {
           caption: 'Journey Map',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If we restructure the layout and content of the newsletter with students’ needs in mind, then students will find it easier to read and more likely to engage with.',
           blurb:
             'This journey map shows how students like Isabella interact with the weekly newsletter—quickly, selectively, and often with disinterest. Her behavior revealed key opportunities to reduce noise, modernize design, and lead with student-driven content that actually earns attention.',
           imageSrc: journeyMap,

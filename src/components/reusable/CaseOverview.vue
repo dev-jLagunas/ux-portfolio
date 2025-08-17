@@ -48,10 +48,10 @@ const props = defineProps({
           {{ para }}
         </p>
 
-        <ul class="my-4 flex flex-col gap-2 text-sm">
-          <li><span class="border-b border-b-pink">My Role:</span> {{ role }}</li>
-          <li><span class="border-b border-b-pink">Date:</span> {{ date }}</li>
-          <li><span class="border-b border-b-pink">Toolkit:</span> {{ toolkit }}</li>
+        <ul class="my-4 flex flex-col gap-1 text-base">
+          <li><span class="font-bold">My Role:</span> {{ role }}</li>
+          <li><span class="font-bold">Date:</span> {{ date }}</li>
+          <li><span class="font-bold">Toolkit:</span> {{ toolkit }}</li>
         </ul>
       </div>
     </div>

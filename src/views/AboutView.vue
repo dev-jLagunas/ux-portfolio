@@ -10,8 +10,8 @@ const spinnerMessage = 'Hang tight!'
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-  <div class="my-16">
-    <h2 class="text-center mt-8 mb-20 font-bold text-5xl font-main">Who am I?</h2>
+  <div class="">
+    <h2 class="text-center mt-8 font-bold text-5xl font-main mb-8">Who am I?</h2>
     <StorySection />
   </div>
 </template>

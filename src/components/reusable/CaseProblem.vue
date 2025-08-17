@@ -14,6 +14,8 @@ const props = defineProps({
   },
   takeaway: { type: String, required: true },
   quote: { type: String, required: true },
+  statement: { type: String, required: true },
+  statementDetails: { type: String, requird: true },
 })
 
 // Reactive Properties
@@ -49,9 +51,15 @@ function prevImage() {
       <figure class="relative w-full mt-4">
         <div class="md:grid md:grid-cols-7 md:place-items-center">
           <div class="md:col-span-3 md:pl-10">
-            <p class="mt-2 font-semibold tracking-wide mb-2">
-              {{ props.artifacts[currentIndex].caption }}
+            <h3 class="font-semibold tracking-wide border-b border-pink w-fit mb-2">
+              {{ props.artifacts[currentIndex].statement }} Statement
+            </h3>
+            <p>
+              {{ props.artifacts[currentIndex].statementDetails }}
             </p>
+            <h3 class="mt-8 font-semibold tracking-wide border-b border-pink w-fit mb-2">
+              {{ props.artifacts[currentIndex].caption }}
+            </h3>
             <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
           </div>
           <img
