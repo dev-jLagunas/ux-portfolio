@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
+
 import problemIcon from '@/assets/svgs/problem-icon.svg'
 
 // Props
@@ -16,6 +18,18 @@ const props = defineProps({
   quote: { type: String, required: true },
   statement: { type: String, required: true },
   statementDetails: { type: String, requird: true },
+})
+
+let intervalId
+
+onMounted(() => {
+  intervalId = setInterval(() => {
+    nextImage()
+  }, 5000)
+})
+
+onUnmounted(() => {
+  clearInterval(intervalId)
 })
 
 // Reactive Properties
@@ -65,7 +79,7 @@ function prevImage() {
           <img
             :src="props.artifacts[currentIndex].imageSrc"
             :alt="props.artifacts[currentIndex].caption"
-            class="rounded-md w-full px-4 hover:cursor-pointer md:col-span-4"
+            class="rounded-md w-full px-8 hover:cursor-pointer md:col-span-4"
             @click="isModalOpen = true"
             loading="lazy"
           />

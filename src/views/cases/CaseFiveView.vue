@@ -188,43 +188,52 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           caption: 'Empathy Map – Lisa',
           statement: 'Problem',
           statementDetails:
-            'Design-conscious millennials often struggle to find premium gifting options that feel both playful and elegant. Most chocolate brands lack strong character-driven storytelling and visual distinctiveness.',
+            'Design-conscious millennials like Lisa often struggle to find premium gifting options that feel both playful and elegant. Most chocolate brands lack strong character-driven storytelling and visual distinctiveness.',
           blurb:
             'This empathy map revealed how much emotional value Lisa places on discovery, gifting, and visual storytelling. Her behaviors and thoughts helped shape a design that treats chocolate not just as food, but as a meaningful, shareable experience.',
           imageSrc: empathyMapLisa,
         },
         {
           caption: 'Empathy Map – Kevin',
-          statement: 'Goal',
+          statement: 'Problem',
           statementDetails:
-            'Create a fictional chocolate brand with strong UX foundations, emotional storytelling, and a unique visual identity. Then design and build an e-commerce site that supports exploration and conversion.',
+            'Kevin struggles to find premium chocolate that balances bold aesthetics with meaningful storytelling. While he’s intrigued by elegant packaging, he’s often disappointed by brands that look good but lack depth, leaving him unsure whether the product is truly worth gifting.',
           blurb:
             'Kevin’s empathy map highlighted the importance of visual impact and product-story alignment. His skepticism toward flashy packaging without substance pushed us to design something that looked premium but delivered meaning beneath the surface.',
           imageSrc: empathyMapKevin,
         },
         {
           caption: 'Persona – Lisa',
-          statement: 'Hypothesis',
+          statement: 'Goal',
           statementDetails:
-            'If I combine bold visual branding with an intuitive product discovery experience and gift-centered messaging, then users will feel more emotionally connected and be more likely to purchase or recommend the product.',
+            'Create a fictional chocolate brand with strong UX foundations, emotional storytelling, and a unique visual identity, then design and build an e-commerce site that supports exploration and conversion.',
           blurb:
             'Lisa’s persona showed a strong desire for culturally engaging, giftable treats that felt personal and delightful. Her motivations around exploration and storytelling helped shape a brand that prioritized discovery, charm, and emotional resonance.',
           imageSrc: personaLisa,
         },
         {
           caption: 'Persona – Kevin',
+          statement: 'Goal',
+          statementDetails:
+            'Kevin wants to discover beautifully designed chocolate gifts that reflect his design sensibilities and personal values. His ideal brand feels intentional, tells a story, and delivers a sense of pride when giving it to others.',
           blurb:
             'Kevin’s persona highlighted the importance of visual storytelling, quality, and intention, especially when it comes to gifting. His frustrations with commercialized aesthetics drove the need for a brand that looked and felt like something truly worth giving.',
           imageSrc: personaKevin,
         },
         {
           caption: 'Journey Map – Lisa',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If I combine bold visual branding with an intuitive product discovery experience and gift-centered messaging, then users like Lisa will feel more emotionally connected and be more likely to purchase or recommend the product.',
           blurb:
             'This journey map follows the emotional and behavioral process of a user shopping for a meaningful, gift-worthy chocolate experience. Starting from browsing then moving on to settling on a purchase. It highlights key pain points like packaging doubts and emotional detachment, while revealing opportunities to elevate impact through design, storytelling, and presentation.',
           imageSrc: journeyLisa,
         },
         {
           caption: 'Journey Map – Kevin',
+          statement: 'Hypothesis',
+          statementDetails:
+            'If we design a chocolate brand that combines striking, memorable packaging with clear storytelling and thoughtful gifting options, then Kevin will feel more confident in his purchases and more emotionally connected to the brand experience.',
           blurb:
             'This map captures the gifting journey of a visually driven user seeking chocolate that reflects quality and personal taste. It surfaces design-conscious pain points like lackluster packaging, generic aesthetics, and poor customization. These being key moments where storytelling and intentional branding could have shifted the outcome.',
           imageSrc: journeyKevin,
