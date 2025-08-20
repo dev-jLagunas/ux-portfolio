@@ -87,11 +87,11 @@ function prevImage() {
         <button @click="prevImage" class="problem-left-btn">‹</button>
         <button @click="nextImage" class="problem-right-btn">›</button>
       </figure>
+      <p class="problem-quote">"{{ quote }}"</p>
       <h3 class="w-full font-semibold text-2xl mt-12">Takeway</h3>
       <p class="">
         {{ takeaway }}
       </p>
-      <p class="problem-quote">"{{ quote }}"</p>
     </article>
   </section>
   <div v-if="isModalOpen" class="problem-img-modal" @click.self="isModalOpen = false">

@@ -164,7 +164,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
       title="Project Overview"
       url="https://cafe-triangle.com/"
       workTitle="Cafe Triangle Redesign"
-      :tags="['UX Research', 'Visual Design', 'Front-End Development']"
+      :tags="['UX Research', 'Visual Design', 'Front-End Development', 'Branding', 'Accessibility']"
       :imgSrc="cafeMockup"
       :paragraphs="[
         'In the second year of running our culture-driven cafe in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',

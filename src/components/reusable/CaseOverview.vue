@@ -37,7 +37,7 @@ const props = defineProps({
             class="case-study-btn"
             aria-label="Download full case study as PDF"
           >
-            Full Case Study PDF
+            Download Full Case Study PDF
           </a>
           <p v-if="url">
             <a :href="url" target="_blank" class="underline text-blue pr-8">View live site</a>

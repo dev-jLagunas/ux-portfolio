@@ -72,17 +72,21 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
         <!-- Dates -->
         <div>
           <label class="block text-sm mb-1">From date</label>
-          <input type="date" v-model="dateFrom" class="w-full border px-3 py-2 rounded-sm" />
+          <input
+            type="date"
+            v-model="dateFrom"
+            class="w-fit border px-3 py-2 rounded-sm md:w-full"
+          />
         </div>
         <div>
           <label class="block text-sm mb-1">To date</label>
-          <input type="date" v-model="dateTo" class="w-full border px-3 py-2 rounded-sm" />
+          <input type="date" v-model="dateTo" class="w-fit border px-3 py-2 rounded-sm md:w-full" />
         </div>
 
         <!-- Category -->
         <div>
           <label class="block text-sm mb-1">Category</label>
-          <select v-model="category" class="w-full border px-3 py-2 rounded-sm">
+          <select v-model="category" class="w-fit border px-3 py-2 rounded-sm md:w-full">
             <option value="">All</option>
             <option class="" v-for="c in categories" :key="c" :value="c">{{ c }}</option>
           </select>
