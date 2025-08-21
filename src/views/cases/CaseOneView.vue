@@ -27,6 +27,10 @@ import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.webp'
 import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.webp'
 import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.webp'
 import cafeMockup from '@/assets/images/home/cafe-mockup.png'
+import analysisImg from '@/assets/svgs/research/analysis-research.svg'
+import storeImg from '@/assets/svgs/research/store-research.svg'
+import userImg from '@/assets/svgs/research/user-research.svg'
+
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
 import medalIcon from '@/assets/svgs/highlights/medal-icon.svg'
@@ -181,6 +185,26 @@ const uxSubheading = 'How I would approach this UX challenge today'
       problemStatement="Our original cafe website, built with Wix, lacked both functionality and personality. It wasn’t very responsive, offered no multilingual support, and used a static pdf image for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
       problemStatementB="Beyond usability, the site failed to reflect who we were. Cafe Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
       userResearchIntro="Even without formal UX training, I approached the redesign with a user-first mindset which were grounded in real observations, customer feedback, and daily interactions at the cafe. These visual assets helped me make sense of that instinctive research and turn it into clear, actionable insights."
+      :research-methods="[
+        {
+          caption: 'Competitive Analysis',
+          imageSrc: analysisImg,
+          description:
+            'Reviewed 10+ cafe websites to benchmark user flow and compare online presence vs in person.',
+        },
+        {
+          caption: 'Field Research',
+          imageSrc: storeImg,
+          description:
+            'Visited 10 local cafes in person to observe space atmosphere and customer touchpoints.',
+        },
+        {
+          caption: 'Contextual Inquiry',
+          imageSrc: userImg,
+          description:
+            'Studied local market and cultural habits to shape design tone and features.',
+        },
+      ]"
       :artifacts="[
         {
           caption: 'Empathy Map',

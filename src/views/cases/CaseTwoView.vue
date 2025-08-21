@@ -30,6 +30,9 @@ import databaseBenefitB from '@/assets/images/cases/case-two/database-benefit-b.
 import databaseBenefitC from '@/assets/images/cases/case-two/database-benefit-c.webp'
 import databaseBenefitD from '@/assets/images/cases/case-two/database-benefit-d.webp'
 import databaseBenefitE from '@/assets/images/cases/case-two/database-benefit-e.webp'
+import interviewImg from '@/assets/svgs/research/interview-research.svg'
+import observeImg from '@/assets/svgs/research/observe-research.svg'
+import flowImg from '@/assets/svgs/research/flow-research.svg'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -233,6 +236,26 @@ const spinnerMessage = 'Be Right With You!'
       problemStatement="When I joined the Career Development Center, I wasn’t stepping into a system. In fact, it was like stepping into chaos. Event logistics, timelines, and institutional knowledge were scattered across outdated Notion pages, disconnected email threads, and verbal memory. There was no shared structure, documentation, or ownership. It felt like a patchwork of personalized to-do lists that were unusable the moment someone went on vacation or left the team."
       problemStatementB="This lack of organization led to missed context, constant backtracking, and preventable mistakes. While trying to complete a task, I was also constantly trying to figure out what a task even meant. As a new hire, it made onboarding inefficient and stressful. As a UX thinker, I saw something bigger: a system failure that affected not just me, but every colleague, stakeholder, and future employee trying to do their job in a broken environment."
       userResearchIntro="Even without running formal user interviews, I had direct access to the problem by living it daily. The following visual assets helped capture that firsthand experience and translate it into design decisions rooted in empathy, clarity, and shared understanding."
+      :research-methods="[
+        {
+          caption: 'Stakeholder Interviews',
+          imageSrc: interviewImg,
+          description:
+            'Conducted one-hour in-person interviews with all 16 team members to uncover pain points, workflows and institutional knowledge gaps.',
+        },
+        {
+          caption: 'Contextual Inquiry',
+          imageSrc: observeImg,
+          description:
+            'Observed how colleagues relied on scattered systems (Notion, email, Google Drive) to coordinate events and identified recurring inefficiencies.',
+        },
+        {
+          caption: 'Process Mapping',
+          imageSrc: flowImg,
+          description:
+            'Mapped event planning workflows across platforms to reveal bottlenecks, handoff issues, and lack of documentation.',
+        },
+      ]"
       :artifacts="[
         {
           caption: 'Empathy Map',

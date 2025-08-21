@@ -9,6 +9,11 @@ const props = defineProps({
   problemStatement: { type: String, required: true },
   problemStatementB: { type: String, required: true },
   userResearchIntro: { type: String, required: true },
+  researchMethods: {
+    type: Array,
+    required: true,
+    validator: (arr) => arr.every((m) => m.caption && m.imageSrc && m.description),
+  },
   artifacts: {
     type: Array,
     required: true,
@@ -17,7 +22,7 @@ const props = defineProps({
   takeaway: { type: String, required: true },
   quote: { type: String, required: true },
   statement: { type: String, required: true },
-  statementDetails: { type: String, requird: true },
+  statementDetails: { type: String, required: true },
 })
 
 let intervalId
@@ -61,7 +66,17 @@ function prevImage() {
         <p class="indent-4 mb-2">{{ problemStatementB }}</p>
         <p class="indent-4">{{ userResearchIntro }}</p>
       </div>
-
+      <h4 class="w-full text-center font-semibold mb-4 text-2xl mt-8">How I gathered insights?</h4>
+      <article
+        v-if="researchMethods && researchMethods.length"
+        class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4"
+      >
+        <figure v-for="(method, idx) in researchMethods" :key="idx">
+          <img :src="method.imageSrc" alt="research technique icon" class="h-22" />
+          <figcaption class="font-semibold">{{ method.caption }}</figcaption>
+          <p>{{ method.description }}</p>
+        </figure>
+      </article>
       <figure class="relative w-full mt-4">
         <div class="md:grid md:grid-cols-7 md:place-items-center">
           <div class="md:col-span-3 md:pl-10">

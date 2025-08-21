@@ -252,7 +252,7 @@ Case Overview Styles
 Case Problem Styles
 *****************************************/
 .problem-header-wrapper {
-  @apply border-pink border-2 p-4 rounded-md mt-4 mb-20;
+  @apply border-pink border-2 p-4 rounded-md mt-4 mb-8;
 }
 
 .problem-left-btn {

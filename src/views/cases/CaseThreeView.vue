@@ -25,6 +25,9 @@ import beforeMessaging from '@/assets/images/cases/case-three/before-messaging-c
 import afterVisuals from '@/assets/images/cases/case-three/after-visuals-collage.webp'
 import afterBranding from '@/assets/images/cases/case-three/after-branding-collage.webp'
 import afterSystem from '@/assets/images/cases/case-three/after-system-collage.webp'
+import interviewImg from '@/assets/svgs/research/interview-research.svg'
+import heuristicsImg from '@/assets/svgs/research/heuristic-research.svg'
+import officialImg from '@/assets/svgs/research/official-research.svg'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -182,6 +185,26 @@ const spinnerMessage = 'Working On It...'
       problemStatement="The department’s marketing process wasn’t a system. It was a disorganized collection of mismatched flyers, inconsistent timelines, and scattered responsibilities. Despite recurring events and a predictable calendar, there were no templates, no scheduling strategy, and no clear ownership. Internally, this created confusion and inefficiency. Externally, students were met with off-brand messaging that lacked clarity, cohesion, and credibility. "
       problemStatementB="What stood out most was the lack of a user-centered mindset. Marketing wasn’t being treated as part of the student experience, it was being handled reactively, without intention or design. This fractured approach diluted our impact and missed an opportunity to build trust, engagement, and brand recognition through thoughtful, UX-driven communication."
       userResearchIntro="Because the issues were so deeply embedded in daily operations, I didn’t need formal research to see the problem, I lived it. These visual assets helped organize what I observed firsthand and translate everyday friction into user-centered design solutions."
+      :research-methods="[
+        {
+          caption: 'Stakeholder Interviews',
+          imageSrc: interviewImg,
+          description:
+            'Spoke with colleagues to understand current marketing workflows and uncover frustrations around ownership, timelines, and content consistency.',
+        },
+        {
+          caption: 'Heuristics Evaluation',
+          imageSrc: heuristicsImg,
+          description:
+            'Audited existing Canva and Drive assets to identify gaps in consistency, branding, and accessibility across event marketing.',
+        },
+        {
+          caption: 'Official Guidelines',
+          imageSrc: officialImg,
+          description:
+            'Studied USD’s official brand guidelines and read UX/marketing books to design within institutional standards while introducing clarity and cohesion',
+        },
+      ]"
       :artifacts="[
         {
           caption: 'Empathy Map',

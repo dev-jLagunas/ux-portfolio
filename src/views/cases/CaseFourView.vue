@@ -25,6 +25,9 @@ import beforeAccess from '@/assets/images/cases/case-four/before-accesibility-co
 import afterAccess from '@/assets/images/cases/case-four/after-accessibility-collage.webp'
 import afterHierarchy from '@/assets/images/cases/case-four/after-hierarchy-collage.webp'
 import afterIntention from '@/assets/images/cases/case-four/after-intentionality-collage.webp'
+import interviewImg from '@/assets/svgs/research/interview-research.svg'
+import analysisImg from '@/assets/svgs/research/analysis-research.svg'
+import bestPracticeImg from '@/assets/svgs/research/best-practice.svg'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -183,6 +186,26 @@ const spinnerMessage = 'Almost There...'
       problemStatementB="Through conversations with students and a review of engagement analytics, I identified a core need: students wanted quick, scannable access to personalized, actionable content that didn’t feel like just another school blast."
       userResearchIntro="By combining direct student feedback with Constant Contact analytics, I was able to map out clear behavior patterns and content drop-off points. These visual assets helped me turn that data into focused design improvements that prioritized clarity, relevance, and real student value.
 here ar"
+      :research-methods="[
+        {
+          caption: 'Stakeholder Interviews',
+          imageSrc: interviewImg,
+          description:
+            'Held one-on-one conversations with colleagues to understand content goals, internal processes, and recurring challenges with the newsletter.',
+        },
+        {
+          caption: 'Analytics Review',
+          imageSrc: analysisImg,
+          description:
+            'Analyzed Constant Contact metrics including open rates, click-throughs, and scroll heatmaps to identify drop-off points and engagement patterns.',
+        },
+        {
+          caption: 'Secondary Research',
+          imageSrc: bestPracticeImg,
+          description:
+            'Researched best practices in email design and student-centered content strategy to guide layout, hierarchy, and visual consistency.',
+        },
+      ]"
       :artifacts="[
         {
           caption: 'Empathy Map',

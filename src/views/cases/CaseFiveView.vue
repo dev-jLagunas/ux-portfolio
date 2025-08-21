@@ -24,6 +24,9 @@ import personaKevin from '@/assets/images/cases/case-five/kevin-user-persona.web
 import journeyLisa from '@/assets/images/cases/case-five/lisa-user-journey.webp'
 import journeyKevin from '@/assets/images/cases/case-five/kevin-journey-map.webp'
 import beanMockUp from '@/assets/images/home/bean-mockup.png'
+import interviewImg from '@/assets/svgs/research/interview-research.svg'
+import competitionImg from '@/assets/svgs/research/official-research.svg'
+import ideaImg from '@/assets/svgs/research/best-practice.svg'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -183,6 +186,26 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       problemStatement="Buying chocolate should feel joyful but instead, it’s often overwhelming. Too many options, unclear labels, forgettable packaging, and little emotional connection make it hard for users to find something truly special. Whether shopping for themselves or a gift, users end up choosing the safe option not the best one."
       problemStatementB="I wanted to create a chocolate experience that goes beyond flavor. A digital-first brand that captures curiosity, delivers clarity, and centers the emotional impact of design. From the first click to the last bite, the goal was to build a gifting experience that's bold, memorable, and rooted in story."
       userResearchIntro="To better understand the emotional and practical needs behind chocolate gifting, I began by mapping real user motivations, frustrations, and behaviors. The following visual artifacts helped me define the problem with clarity and keep users at the center of every design decision."
+      :research-methods="[
+        {
+          caption: 'Stakeholder Interviews',
+          imageSrc: interviewImg,
+          description:
+            'Conducted one-on-one interviews with five millennial users to understand chocolate habits, gifting behaviors, and emotional drivers.',
+        },
+        {
+          caption: 'Competitive Analysis',
+          imageSrc: competitionImg,
+          description:
+            'Researched existing chocolate brands and packaging to benchmark tone, storytelling, and UX gaps in the market.',
+        },
+        {
+          caption: 'Sketching and Ideation',
+          imageSrc: ideaImg,
+          description:
+            'Ran multiple Crazy 8s sketching sessions based on “How Might We” questions to generate feature ideas like gift flows, lore cards, and a flavor quiz.',
+        },
+      ]"
       :artifacts="[
         {
           caption: 'Empathy Map – Lisa',
