@@ -66,7 +66,9 @@ function prevImage() {
         <p class="indent-4 mb-2">{{ problemStatementB }}</p>
         <p class="indent-4">{{ userResearchIntro }}</p>
       </div>
-      <h4 class="w-full text-center font-semibold mb-4 text-2xl mt-8">How I gathered insights?</h4>
+      <h4 class="w-full text-center font-semibold mb-4 text-2xl mt-8 md:mb-16">
+        How I gathered insights?
+      </h4>
       <article
         v-if="researchMethods && researchMethods.length"
         class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4"
@@ -77,6 +79,9 @@ function prevImage() {
           <p>{{ method.description }}</p>
         </figure>
       </article>
+      <h4 class="w-full text-center font-semibold mb-4 text-2xl mt-8 md:mb-16">
+        Visualizing the research.
+      </h4>
       <figure class="relative w-full mt-4">
         <div class="md:grid md:grid-cols-7 md:place-items-center">
           <div class="md:col-span-3 md:pl-10">
