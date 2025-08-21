@@ -240,9 +240,27 @@ const uxSubheading = 'How I would approach this UX challenge today'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To address the limitations of our original site, I redesigned the Café Triangle website from the ground up with a focus on usability, personality, and accessibility. The new site features a fully responsive layout, multilingual support, interactive menu browsing, and one-touch contact tools which were all coded in Angular and Tailwind CSS. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our café itself.
-
-"
+      introText="To address the limitations of our original site, I redesigned Cafe Triangle’s website from the ground up with a focus on usability, personality, and accessibility. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our cafe itself."
+      introText2="Rather than list features at random, I organized my solutions around a few guiding ‘How Might We’ questions. These questions helped me translate real user frustrations into clear design opportunities: making essential information accessible on mobile, reducing language barriers, and expressing our cafe’s personality online. Even though I wasn’t yet using formal ideation tools, this approach kept my work structured and intentional."
+      introText3="The solutions below are presented in two sets. The first set highlights the core usability upgrades (language, responsiveness, interactive menu), while the second set focuses on refinements that deepened the user experience (one-touch contact, bold visual identity, accessibility-first design). Together, they show how each design choice was rooted in user needs and our cafe’s brand story."
+      hmwTitle="How Might We"
+      hmwIntro="I wasn’t yet using formal ideation tools, but I did frame the work around a few guiding questions. These map directly to the solutions below."
+      :hmwItems="[
+        {
+          question:
+            'HMW make essential info instantly accessible on mobile for first-time visitors?',
+          response: 'One-Touch Contact + Responsive Design',
+        },
+        {
+          question: 'HMW welcome locals and tourists equally and reduce language friction?',
+          response: 'Multi-lingual Functionality',
+        },
+        {
+          question:
+            'HMW reflect our warm, pet-friendly, culture-forward vibe so users feel it’s worth a visit?',
+          response: 'Visual Identity + Interactive Menu + pet-friendly cues',
+        },
+      ]"
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
       beforeTitle="Site Features A"

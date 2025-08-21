@@ -291,12 +291,34 @@ const spinnerMessage = 'Be Right With You!'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To address the confusion, inefficiency, and lack of transparency in our department’s workflows, I redesigned our internal systems from the ground up. I created a structured project management system in Notion and a companion dashboard to serve as a single source of truth. Together, these tools made our workflows clear, self-sufficient, and easy to follow. Processes and systems that worked towards reducing bottlenecks, eliminating institutional gatekeeping, and allowing any team member to confidently step in, contribute, and understand exactly what needed to happen and when."
+      introText="When I joined the department, I inherited a scattered, inefficient collection of to-do lists and undocumented processes. I realized the problem wasn’t just my onboarding pain, it was a systemic UX failure that affected the entire team. My solution was to build structured systems in Notion, designed not just for myself, but for anyone who would step into these roles in the future."
+      introText2="Rather than frame these solutions as isolated fixes, I organized them around a set of guiding ‘How Might We’ questions. This helped me translate disorganization and lost knowledge into clear design opportunities: creating structure where there was none, opening access to critical information, and eliminating the culture of institutional gatekeeping. Even though I wasn’t using formal ideation tools at the time, this approach kept my work focused and user-centered."
+      introText3="The solutions below are presented in two parts. The first is a structured Project Management System built inside Notion, timelines, templates, ownership, and embedded documentation. The second is a One Source of Truth Dashboard, a scalable hub for events that captures knowledge and makes it accessible to the entire department. Together, they represent a shift from fragmented personal memory to a transparent, repeatable, and UX-driven infrastructure."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="Project Management Before"
-      afterTitle="Project Management After"
+      beforeTitle="Project Management System"
+      afterTitle="One Source of Truth Dashboard"
+      hmwTitle="How Might We"
+      hmwIntro="I shaped my approach around a few core ‘How Might We’ questions that turned frustration into opportunity. These guided the design of both systems below."
+      :hmwItems="[
+        {
+          question:
+            'HMW replace scattered personal task lists with a system that anyone can understand and use instantly?',
+          response: 'Chronological timelines + standardized task templates + clear ownership',
+        },
+        {
+          question:
+            'HMW eliminate reliance on institutional memory and make event knowledge accessible to everyone?',
+          response: 'One Source of Truth Dashboard with six structured sections',
+        },
+        {
+          question:
+            'HMW design tools that reduce bottlenecks and allow team members to work proactively instead of reactively?',
+          response: 'Built-in documentation, flexible filters, and centralized resources',
+        },
+      ]"
     />
+
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       introText="While the internal project management system streamlined day-to-day operations for our immediate team, it became clear that knowledge was still siloed across the broader department. To solve this, I created a companion dashboard. A centralized, user-friendly reference hub that anyone in the department could use to understand what was done, why it mattered, and how to replicate it. Designed with clarity, structure, and self-sufficiency in mind, this “One Source of Truth” eliminated the need for back-and-forth emails and verbal memory. It turned hidden institutional knowledge into an accessible, scalable asset. Making onboarding, collaboration, and historical insight dramatically more efficient. Below is a breakdown of how the dashboard improves access, continuity, and team-wide alignment."

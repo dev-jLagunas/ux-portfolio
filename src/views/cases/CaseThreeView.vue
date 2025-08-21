@@ -240,7 +240,28 @@ const spinnerMessage = 'Working On It...'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To fix the confusion, inefficiency, and off-brand messaging in our event marketing, I created a two-part solution: a cohesive visual design system and a repeatable campaign structure. Together, they transformed how our department communicates. Which gave internal teams a scalable, easy-to-use system and delivered students a consistent, engaging experience across every platform and event."
+      introText="When I audited our marketing, I found no system. Assets varied by style, timing, and quality, which confused students and slowed the team. I reframed this as a UX problem and built a repeatable, student-first solution that any teammate could use without hand-holding."
+      introText2="To avoid a random list of fixes, I organized my solutions around a few guiding How Might We questions. These turned scattered work into clear opportunities: make the brand consistent, make production fast, and make the rollout predictable. I was not using formal ideation tools yet, but this framing kept decisions focused on users and outcomes."
+      introText3="The solutions below come in two parts. First, a Visual Design System grounded in the university’s brand guidelines to create a recognizable Career Center identity across formats. Second, a Scalable Marketing Structure with a simple calendar, reusable assets, and clear file naming so campaigns can be executed quickly and reused across years."
+      hmwTitle="How Might We"
+      hmwIntro="These questions guided the design choices and directly map to the solutions below."
+      :hmwItems="[
+        {
+          question:
+            'HMW create a consistent, on-brand visual language students recognize across platforms?',
+          response: 'Unified color, typography, layout, and tone aligned to USD guidelines',
+        },
+        {
+          question: 'HMW reduce reactive work and make campaigns reusable year after year?',
+          response: 'Plug-and-play collateral library with pre-sized assets and clear templates',
+        },
+        {
+          question:
+            'HMW make execution predictable so any teammate can ship on time without guesswork?',
+          response:
+            'Simple rollout timeline — 1 month, 1 week story series, day before, day of, day after — with organized Canva folders and Drive naming',
+        },
+      ]"
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
       beforeTitle="Marketing & Branding Before"

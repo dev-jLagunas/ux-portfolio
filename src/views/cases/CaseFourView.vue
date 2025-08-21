@@ -241,12 +241,35 @@ here ar"
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="To address the low engagement and usability issues in the original newsletter, I redesigned the Career Development Center’s weekly email with a focus on hierarchy, skimmability, and mobile responsiveness. The new layout prioritized content clarity, stronger visual organization, and clear calls to action which were all supported by analytics and student feedback."
+      introText="Students were opening the weekly newsletter but not engaging. It was long, cluttered, and hard to scan on mobile. I reframed this as a UX problem and redesigned the email around hierarchy, skimmability, and clear actions, grounded in Constant Contact data and student-centered best practices."
+      introText2="To guide the work, I organized solutions around a few How Might We questions. This kept decisions focused on what students need in the first 10 seconds: timely opportunities at the top, clear next steps, and a calmer layout that reduces friction. Even without formal ideation tools, this framing kept the redesign intentional and user focused."
+      introText3="The solutions below are presented in two parts. First, Structure for Flow and Clarity, which reorganizes the newsletter by relevance, merges related content, trims static sections, and improves mobile scanning. Second, Visual Consistency and Human Centered Design, which aligns colors, type, and components to USD branding, adds white space, improves buttons, and introduces Student Voices and Our Team to build trust."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
       beforeTitle="Newsletter Before"
       afterTitle="Newsletter After"
+      hmwTitle="How Might We"
+      hmwIntro="These questions turned analytics and constraints into clear opportunities and map to the solutions below."
+      :hmwItems="[
+        {
+          question: 'HMW help students find timely actions fast, especially on mobile?',
+          response:
+            'Reordered hierarchy with events and Treks at the top, merged event blocks, trimmed static sections, mobile-first spacing',
+        },
+        {
+          question: 'HMW reduce cognitive load and make a long email feel shorter?',
+          response:
+            'Removed noisy backgrounds, simplified layout, consistent headers, concise copy, clearer grouping and scanning',
+        },
+        {
+          question:
+            'HMW build trust and recognition across channels while keeping CTAs meaningful?',
+          response:
+            'USD brand alignment, improved button patterns, Student Voices for authenticity, Our Team for human connection',
+        },
+      ]"
     />
+
     <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"

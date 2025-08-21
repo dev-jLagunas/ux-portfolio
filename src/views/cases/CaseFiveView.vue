@@ -168,7 +168,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       id="overview-section"
       title="Project Overview"
       url="https://dev-jlagunas.github.io/bean-and-beast/#/"
-      workTitle="Bean And Beast – UX Capstone Project"
+      workTitle="Bean And Beast Luxury Chocolates"
       :tags="['UX Research', 'UI Design', 'Product Design', 'Branding', 'Front-End Development']"
       :imgSrc="beanMockUp"
       :paragraphs="[
@@ -268,11 +268,29 @@ const uxSubheading = 'How the design thinking framework elevated my process'
     <ArrowTransition customClass="mx-auto" />
     <CaseSolution
       id="solution-section"
-      introText="This was my first project built from the ground up using the full UX design thinking framework. From early user interviews to wireframes, visual identity, and front-end development, every phase was intentionally applied. The final product is a bold, character-driven chocolate brand and e-commerce experience built to delight, inform, and emotionally connect with design-conscious gift buyers."
+      introText="Bean And Beast was my first project built entirely from the ground up using the full UX design thinking framework. Unlike my earlier retroactive case studies, this one followed each phase deliberately, from empathy research to coded implementation. My goal was not only to design a product, but to prove I could create a bold, emotionally resonant brand and e-commerce experience with structure and intent at every step."
+      introText2="To stay grounded, I framed my ideation around a set of guiding How Might We questions. These questions helped me transform user insights into concrete opportunities: making chocolate giftable and personal, turning the act of purchase into discovery, and helping users choose with confidence. The answers to these questions directly shaped features such as the product quiz, lore system, reusable components, and gift flows."
+      introText3="The solutions are grouped into two sets. The first highlights user informed features, empathy driven outputs like personas, Crazy 8s, and system logic that shaped the site’s flows and interactivity. The second focuses on visual and experiential impact. The character branding, emotional storytelling, packaging mockups, and responsive Vue build that brought the concept to life. Together, they reflect the most complete expression of my UX process to date."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="User-Informed Features"
+      beforeTitle="User Informed Features"
       afterTitle="Visual & Experiential Impact"
+      hmwTitle="How Might We"
+      hmwIntro="These questions anchored my ideation process and map directly to the features and brand elements shown below."
+      :hmwItems="[
+        {
+          question: 'HMW make chocolate feel more personal and gift worthy at first glance?',
+          response: 'Character driven packaging, gift box options, and personalization flows',
+        },
+        {
+          question: 'HMW turn buying chocolate into a small, delightful discovery?',
+          response: 'Interactive lore system, surprise me button, product quiz, hover reveals',
+        },
+        {
+          question: 'HMW help users choose the right chocolate for a mood, moment, or recipient?',
+          response: 'Mood filters, gifting tags, and clear product categories tied to personas',
+        },
+      ]"
     />
 
     <ArrowTransition customClass="mx-auto" />

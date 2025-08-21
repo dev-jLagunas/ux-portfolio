@@ -1,8 +1,6 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Autoplay, A11y, Keyboard } from 'swiper/modules'
-import CaseNav from '@/components/reusable/CaseStickyNav.vue'
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import SlideArticle from './SliderArticle.vue'
 // Photos
 import selfPhoto from '@/assets/images/about/self-red.webp'
@@ -20,7 +18,7 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
       :slides-per-view="1"
       :space-between="5"
       :loop="true"
-      :autoplay="{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }"
+      :autoplay="{ delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true }"
       :keyboard="{ enabled: true }"
       a11y
       navigation

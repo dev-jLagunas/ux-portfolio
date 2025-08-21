@@ -30,17 +30,17 @@ const props = defineProps({
         loading="lazy"
       />
       <div>
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center mt-4 mb-2">
           <a
             :href="`/` + pdfFile"
             download
-            class="case-study-btn"
+            class="case-study-btn w-fit"
             aria-label="Download full case study as PDF"
           >
             Download Full Case Study PDF
           </a>
           <p v-if="url">
-            <a :href="url" target="_blank" class="underline text-blue pr-8">View live site</a>
+            <a :href="url" target="_blank" class="underline text-blue">View live site</a>
           </p>
         </div>
         <h5 class="font-bold tracking-widest text-xl">{{ workTitle }}</h5>
