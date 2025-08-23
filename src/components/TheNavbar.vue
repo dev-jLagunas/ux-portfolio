@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useThemeStore } from '@/stores/theme'
 
 // Svg Icons
@@ -33,6 +33,7 @@ function openModal() {
 
 // Routing
 const router = useRouter()
+const route = useRoute()
 
 function navigateToWork() {
   router.push({ name: 'home', hash: '#case-studies' })
@@ -49,23 +50,27 @@ function navigateToWork() {
       </router-link>
     </div>
     <ul class="flex-row-center w-full">
-      <li class="nav-list-styles hover:cursor-pointer" @click="navigateToWork">
+      <li
+        class="nav-list-styles hover:cursor-pointer"
+        @click="navigateToWork"
+        :class="{ underline: route.path === '/' }"
+      >
         <img :src="workIcon" alt="svg of a briefcase" class="h-6" />
         <p>Work</p>
       </li>
-      <router-link to="/about"
+      <router-link to="/about" active-class="underline"
         ><li class="nav-list-styles hover:cursor-pointer">
           <img :src="userIcon" alt="svg of a name card" class="h-6" />
           <p>About</p>
         </li></router-link
       >
-      <router-link to="/personal">
+      <router-link to="/personal" active-class="underline">
         <li class="nav-list-styles hover:cursor-pointer">
           <img :src="personalIcon" alt="svg of smiley face" class="h-6" />
           <p>Personal</p>
         </li></router-link
       >
-      <router-link to="/blog">
+      <router-link to="/blog" active-class="underline">
         <li class="nav-list-styles hover:cursor-pointer">
           <img :src="blogIcon" alt="Blog svg icon" class="h-6" />
           <p>Blog</p>

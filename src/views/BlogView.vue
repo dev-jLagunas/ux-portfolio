@@ -1,6 +1,12 @@
 <script setup>
 import { useBlogStore } from '@/stores/blogStore'
 import { computed, ref } from 'vue'
+import { usePageLoader } from '@/composables/usePageLoader'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+
+// Spinner Logic
+const { isLoading } = usePageLoader(2000)
+const spinnerMessage = 'Cooking up something good!'
 
 // Store
 const blogStore = useBlogStore()
@@ -65,6 +71,7 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 </script>
 
 <template>
+  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <section class="mx-auto mt-16 font-main">
     <!-- Filter Bar -->
     <div class="mb-8 p-4 border rounded-sm">

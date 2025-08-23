@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useThemeStore } from '@/stores/theme'
 
 // Svg Icons
@@ -16,6 +16,7 @@ import blogWhiteSvg from '@/assets/svgs/blog-white.svg'
 
 // Routing
 const router = useRouter()
+const route = useRoute()
 
 function navigateToWork() {
   router.push({ name: 'home', hash: '#case-studies' })
@@ -68,19 +69,35 @@ function openModal() {
     >
       <div class="flex-col-center h-full w-full">
         <ul class="text-light text-xl">
-          <li class="nav-list-styles side-items" @click="navigateToWork">
+          <li
+            class="nav-list-styles side-items"
+            @click="navigateToWork"
+            :class="{ underline: route.path === '/' }"
+          >
             <img :src="workSvg" alt="Monitor design svg" class="h-7" />
             <p>Work</p>
           </li>
-          <li class="nav-list-styles side-items" @click="navigateAndClose('/about')">
+          <li
+            class="nav-list-styles side-items"
+            @click="navigateAndClose('/about')"
+            :class="{ underline: route.path === '/about' }"
+          >
             <img :src="userSvg" alt="user shaped svg" class="h-7" />
             <p>About</p>
           </li>
-          <li class="nav-list-styles side-items" @click="navigateAndClose('/personal')">
+          <li
+            class="nav-list-styles side-items"
+            @click="navigateAndClose('/personal')"
+            :class="{ underline: route.path === '/personal' }"
+          >
             <img :src="personalSvg" alt="Mona lisa svg" class="h-7" />
             <p>Personal</p>
           </li>
-          <li class="nav-list-styles side-items" @click="navigateAndClose('/blog')">
+          <li
+            class="nav-list-styles side-items"
+            @click="navigateAndClose('/blog')"
+            :class="{ underline: route.path === '/blog' }"
+          >
             <img :src="blogWhiteSvg" alt="cool smile face svg" class="h-7" />
             <p>Blog</p>
           </li>
