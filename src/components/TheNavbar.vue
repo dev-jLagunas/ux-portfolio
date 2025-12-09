@@ -80,7 +80,7 @@ function navigateToWork() {
       <div class="nav-btn-wrapper">
         <li>
           <button
-            class="nav-btn-styles hover:bg-pink hover:text-light duration-100 transition-all ease-linear"
+            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:border hover:bg-light hover:text-dark"
             @click="openModal"
           >
             Contact
@@ -88,7 +88,7 @@ function navigateToWork() {
         </li>
         <li>
           <button
-            class="nav-btn-styles hover:bg-pink hover:text-light duration-100 transition-all ease-linear"
+            class="nav-btn-styles hover:bg-blue hover:text-light hover:border-0 duration-100 transition-all ease-linear"
             @click="theme.toggleTheme()"
           >
             {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}

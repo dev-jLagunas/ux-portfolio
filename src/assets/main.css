@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  max-width: 1200px;
+  max-width: 1500px;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -26,8 +26,8 @@ Tailwind Variables
 
 @theme {
   /* Fonts */
-  --font-main: 'Space Grotesk', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
+  --font-main: 'Work Sans', serif;
+  --font-special: 'Rammetto One', serif;
 
   /* Colors */
   --color-pink: #e9404f;
@@ -111,11 +111,11 @@ Sidebar Styles
 Hero Styles
 *****************************************/
 .hero-container {
-  @apply font-main mt-8 md:grid md:grid-cols-2 md:gap-4 lg:gap-8;
+  @apply font-main mt-8;
 }
 
 .hero-title {
-  @apply font-black text-5xl mb-4 md:text-5xl lg:text-6xl;
+  @apply font-special font-black text-2xl sm:text-4xl lg:text-5xl lg:mb-2 2xl:text-6xl;
 }
 
 .hero-btn-wrapper-md {
@@ -195,7 +195,7 @@ Contact Modal Styles
 Personal View Styles
 *****************************************/
 .personal-sect-title {
-  @apply text-4xl mb-2 text-center md:text-start font-bold md:text-5xl;
+  @apply text-4xl mb-2 text-center md:text-start font-bold  font-special;
 }
 
 .personal-copy {
@@ -279,7 +279,7 @@ Case Problem Styles
 Sticky Nav Styles
 *****************************************/
 .sticky-nav-container {
-  @apply mt-8 mb-8 sticky top-5 z-50 bg-pink py-3 rounded-sm font-main;
+  @apply mt-8 mb-8 sticky top-1 z-50 bg-pink py-3 rounded-sm font-main;
 }
 
 .sticky-content-wrapper {

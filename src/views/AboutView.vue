@@ -11,11 +11,11 @@ const spinnerMessage = 'Hang tight!'
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <div class="font-main">
-    <h2 class="text-center mt-12 font-bold text-5xl font-main mb-8">Who am I?</h2>
+    <h2 class="text-center mt-12 font-bold text-5xl mb-8 font-special">Who am I?</h2>
     <StorySection />
     <!-- New Skills Section -->
     <section class="mt-8">
-      <h2 class="text-center font-bold text-4xl font-main mb-8">Skills</h2>
+      <h2 class="text-center font-bold text-4xl font-special mb-8">Skills</h2>
 
       <!-- Skills list -->
       <div class="grid grid-cols-1 md:grid-cols-2 md:place-items-center gap-8">

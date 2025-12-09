@@ -11,7 +11,7 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
 <template>
   <section class="font-main">
     <header class="">
-      <h1 class="font-bold text-3xl md:text-5xl">My UX Work</h1>
+      <h1 class="font-bold text-3xl md:text-4xl font-special">My UX Work</h1>
       <p class="my-2 sm:text-xl">
         A selection of real-world work that highlight my process, versatility, and impact ranging
         from internal systems to full product design.
