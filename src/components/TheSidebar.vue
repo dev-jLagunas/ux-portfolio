@@ -132,7 +132,7 @@ function openModal() {
   top: 0;
   left: 0;
   width: 80vw;
-  height: 100vh;
+  height: 110vh;
   background-color: #e9404f;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;

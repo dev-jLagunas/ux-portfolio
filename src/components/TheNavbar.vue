@@ -51,26 +51,26 @@ function navigateToWork() {
     </div>
     <ul class="flex-row-center w-full">
       <li
-        class="nav-list-styles hover:cursor-pointer"
+        class="nav-list-styles hover:cursor-pointer underline-offset-4"
         @click="navigateToWork"
         :class="{ underline: route.path === '/' }"
       >
         <img :src="workIcon" alt="svg of a briefcase" class="h-6" />
         <p>Work</p>
       </li>
-      <router-link to="/about" active-class="underline"
+      <router-link to="/about" active-class="underline  underline-offset-4"
         ><li class="nav-list-styles hover:cursor-pointer">
           <img :src="userIcon" alt="svg of a name card" class="h-6" />
           <p>About</p>
         </li></router-link
       >
-      <router-link to="/personal" active-class="underline">
+      <router-link to="/personal" active-class="underline underline-offset-4">
         <li class="nav-list-styles hover:cursor-pointer">
           <img :src="personalIcon" alt="svg of smiley face" class="h-6" />
           <p>Personal</p>
         </li></router-link
       >
-      <router-link to="/blog" active-class="underline">
+      <router-link to="/blog" active-class="underline  underline-offset-4">
         <li class="nav-list-styles hover:cursor-pointer">
           <img :src="blogIcon" alt="Blog svg icon" class="h-6" />
           <p>Blog</p>
@@ -80,7 +80,7 @@ function navigateToWork() {
       <div class="nav-btn-wrapper">
         <li>
           <button
-            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:border hover:bg-light hover:text-dark"
+            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:brightness-90"
             @click="openModal"
           >
             Contact
@@ -88,7 +88,7 @@ function navigateToWork() {
         </li>
         <li>
           <button
-            class="nav-btn-styles hover:bg-blue hover:text-light hover:border-0 duration-100 transition-all ease-linear"
+            class="border px-3 py-1 rounded-sm hover:bg-blue hover:text-light duration-300 transition-all ease-linear hover:cursor-pointer"
             @click="theme.toggleTheme()"
           >
             {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}

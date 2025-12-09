@@ -2,7 +2,7 @@
 import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
 
-import heroMainImg from '@/assets/images/hero-main-img.png'
+import heroMainImg from '@/assets/images/hero-main-img-2.png'
 
 // Routing
 const router = useRouter()
@@ -25,7 +25,7 @@ function openContactModal() {
         <h2 class="hero-title text-pink">Hola, Soy Juan</h2>
         <h2 class="hero-title text-blue">ハロー、フアンです。</h2>
 
-        <p class="my-2 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl">
+        <p class="my-4 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl">
           <span class="pink-bold-letter">UX</span> &
           <span class="blue-bold-letter">UI</span> designer crafting experiences that feel as good
           as they look.
@@ -36,35 +36,45 @@ function openContactModal() {
         </p>
         <div class="hero-btn-wrapper-md">
           <button
-            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:border hover:bg-light hover:text-dark"
+            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:brightness-90"
             @click="openContactModal()"
           >
             Contact Me
           </button>
-          <button class="nav-btn-styles hover-btn-styles">
+          <button
+            class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear"
+          >
             <a href="/Juan-Resume.pdf" download>Resume</a>
           </button>
-          <button class="nav-btn-styles hover-btn-styles relative" @click="navigateToWork">
+          <button
+            class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
+            @click="navigateToWork"
+          >
             See Work
           </button>
         </div>
       </div>
     </div>
-    <figure class="w-full">
-      <img :src="heroMainImg" alt="img of Juan Lagunas" class="" />
+    <figure class="">
+      <img :src="heroMainImg" alt="img of Juan Lagunas" class="w-full h-full object-cover" />
     </figure>
 
     <div class="flex justify-around gap-2 md:hidden">
       <button
-        class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:border hover:bg-light hover:text-dark"
+        class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:brightness-90"
         @click="openContactModal()"
       >
         Contact Me
       </button>
-      <button class="nav-btn-styles hover-btn-styles">
+      <button
+        class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
+      >
         <a href="/Juan-Resume.pdf" download>Resume</a>
       </button>
-      <button class="nav-btn-styles hover-btn-styles relative" @click="navigateToWork">
+      <button
+        class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
+        @click="navigateToWork"
+      >
         See Work
       </button>
     </div>
