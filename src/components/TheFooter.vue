@@ -18,14 +18,14 @@ function openContactModal() {
 
 <template>
   <footer class="bg-pink px-4 pt-4 font-main rounded-t-md text-white relative mt-36">
-    <p class="mb-4 w-max p-2 mx-auto underline underline-offset-2">
+    <p class="mb-4 w-max p-2 mx-auto">
       <a href="mailto:dev.jlagunas@gmail.com" class="">dev.jlagunas@gmail.com</a>
     </p>
     <img :src="skaterIcon" alt="" class="h-14 absolute -top-12 animate-skate" />
     <h3 class="font-bold text-center text-3xl md:text-5xl mt-4 font-special">
       Thanks for stopping by!
     </h3>
-    <p class="text-center text-lg tracking-wider font-light">Let's build cool stuff together!</p>
+    <p class="text-center text-lg tracking-wider">Let's build cool stuff together!</p>
 
     <ul class="flex flex-wrap gap-6 justify-center mt-8">
       <router-link to="/about"><li class="hover:underline">About</li></router-link>
@@ -35,7 +35,7 @@ function openContactModal() {
       <router-link to="/personal"><li class="hover:underline">Personal</li></router-link>
       <li><button class="hover:cursor-pointer" @click="openContactModal()">Contact</button></li>
     </ul>
-    <div class="flex justify-between mt-8 pb-1 text-xs text-center">
+    <div class="flex justify-between mt-8 pb-1 text-xs text-center opacity-50">
       <p class="">
         Built with Vue & Tailwind · Icons from
         <a href="https://www.svgrepo.com/" class="underline">SVGRepo</a>

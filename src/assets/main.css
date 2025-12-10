@@ -138,11 +138,11 @@ Hero Styles
 Home Projects Styles
 *****************************************/
 .home-projects-container {
-  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3;
+  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 xl:grid-cols-3;
 }
 
 .featured-title {
-  @apply font-bold bg-blue text-white tracking-wider rounded-sm mx-auto mb-2 w-fit px-4 py-1 md:-top-3 md:z-10 md:absolute md:left-1/2 md:-translate-x-1/2;
+  @apply font-bold  tracking-wider rounded-sm mx-auto mb-2 w-fit px-4 py-1 md:-top-3 md:z-10 md:absolute md:left-1/2 md:-translate-x-1/2;
 }
 
 /***************************************
@@ -312,15 +312,15 @@ Link Card Styles
 Project Card Styles
 *****************************************/
 .project-card-container {
-  @apply relative px-4 py-10 border border-gray-300 rounded-md w-[90vw] font-main flex flex-col items-center justify-center md:w-full md:h-full;
+  @apply relative px-4 py-4 border border-gray-300 rounded-md;
 }
 
 .project-type {
-  @apply text-center text-pink font-bold mb-2;
+  @apply text-pink font-bold;
 }
 
 .project-title {
-  @apply text-xl font-bold mb-2 text-center md:text-2xl;
+  @apply font-bold text-2xl;
 }
 
 /***************************************

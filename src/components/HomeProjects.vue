@@ -9,22 +9,22 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
 </script>
 
 <template>
-  <section class="font-main">
+  <section class="font-main mx-auto">
     <header class="">
       <h1 class="font-bold text-3xl md:text-4xl font-special">My UX Work</h1>
-      <p class="my-2 sm:text-xl">
+      <p class="my-2 sm:text-xl lg:w-3/4">
         A selection of real-world work that highlight my process, versatility, and impact ranging
         from internal systems to full product design.
       </p>
     </header>
 
     <div class="home-projects-container">
-      <div class="relative md:col-span-2">
-        <h2 class="featured-title">FEATURED</h2>
+      <div class="relative">
+        <!-- <h2 class="featured-title">FEATURED</h2> -->
         <ProjectCard
           title="Bean And Beast Chocolates"
           ux-type="E-commerce UX"
-          description="Bean And Beast is a luxury chocolate brand focused on telling a story with their flavors. Each flavor is based on a black and white animal contrasted against vibrant colors and flavors. The animals represent different aspects within each of us."
+          description="Bean And Beast is a luxury chocolate brand focused on telling a story with their flavors. Each flavor is based on a black and white animal contrasted against vibrant colors and flavors."
           :image="beanMockUp"
           route="/case-five"
           loading="lazy"

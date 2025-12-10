@@ -9,7 +9,6 @@ import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
@@ -28,6 +27,7 @@ import afterSystem from '@/assets/images/cases/case-three/after-system-collage.w
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import heuristicsImg from '@/assets/svgs/research/heuristic-research.svg'
 import officialImg from '@/assets/svgs/research/official-research.svg'
+import divider from '@/assets/images/divider-img.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -179,7 +179,7 @@ const spinnerMessage = 'Working On It...'
       toolkit="Figma, Canva, Linearty Curve"
       pdfFile="case-study-3-branding.pdf"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"
       problemStatement="The department’s marketing process wasn’t a system. It was a disorganized collection of mismatched flyers, inconsistent timelines, and scattered responsibilities. Despite recurring events and a predictable calendar, there were no templates, no scheduling strategy, and no clear ownership. Internally, this created confusion and inefficiency. Externally, students were met with off-brand messaging that lacked clarity, cohesion, and credibility. "
@@ -237,7 +237,7 @@ const spinnerMessage = 'Working On It...'
       takeaway="The artifacts expose a marketing system built on improvisation rather than intention. Todd, a long-standing team member, operates from a place of habit and personal control, relying on outdated folders, vague timelines, and visual guesswork. While his deep institutional knowledge is valuable, it exists in silos, contributing to inconsistencies, reactive decisions, and avoidable confusion. There’s no shared process, branding standard, or release strategy, only scattered assets and last-minute fixes. Even with recurring events, the lack of structure results in inefficiencies and mixed messaging. To build trust and clarity with students, the internal process first had to become organized, coordinated, and user-centered."
       quote="I make the marketing assets as needed. It just feels right."
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
       introText="When I audited our marketing, I found no system. Assets varied by style, timing, and quality, which confused students and slowed the team. I reframed this as a UX problem and built a repeatable, student-first solution that any teammate could use without hand-holding."
@@ -267,7 +267,7 @@ const spinnerMessage = 'Working On It...'
       beforeTitle="Marketing & Branding Before"
       afterTitle="Marketing & Branding After"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseOutcome
       id="outcome-section"
       intro="This project was about building a system that improves how people work, communicate, and connect with students all through visually appealing digital assets. While the outcomes are largely qualitative, the impact is undeniable: a more consistent visual identity, a smoother internal workflow, and a marketing system that supports users on both sides. The creators which are all staff members and the audience which are the students."
@@ -275,13 +275,13 @@ const spinnerMessage = 'Working On It...'
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseReflections
       id="reflections-section"
       intro="This project taught me that UX isn’t always flashy or high-tech. Sometimes it looks like folders, timelines, and well-organized assets. But those small, behind-the-scenes decisions can have an enormous impact. By applying a user-centered mindset to internal processes and communication, I was able to design something that not only improved efficiency, but reshaped how our department presents itself. Below are a few takeaways that continue to shape how I approach design and collaboration."
       :reflections="reflections"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"

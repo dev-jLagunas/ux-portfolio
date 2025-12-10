@@ -16,7 +16,7 @@ const props = defineProps({
 
 <template>
   <header id="project-overview">
-    <h3 class="overview-title">{{ title }}</h3>
+    <h3 class="overview-title font-special">{{ title }}</h3>
 
     <ul class="overview-content-wrapper">
       <li v-for="(tag, index) in tags" :key="index" class="pr-2">{{ tag }}</li>

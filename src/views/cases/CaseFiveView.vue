@@ -4,7 +4,6 @@ import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
 import CaseSolution from '@/components/reusable/CaseSolution.vue'
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import CaseOutcome from '@/components/reusable/CaseOutcome.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
@@ -27,6 +26,7 @@ import beanMockUp from '@/assets/images/home/bean-mockup.png'
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import competitionImg from '@/assets/svgs/research/official-research.svg'
 import ideaImg from '@/assets/svgs/research/best-practice.svg'
+import divider from '@/assets/images/divider-img.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -180,7 +180,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       toolkit="Figma, Canva, Vue.js, Tailwind CSS, Pinia"
       pdfFile="case-study-5-bean-and-beast.pdf"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"
       problemStatement="Buying chocolate should feel joyful but instead, it’s often overwhelming. Too many options, unclear labels, forgettable packaging, and little emotional connection make it hard for users to find something truly special. Whether shopping for themselves or a gift, users end up choosing the safe option not the best one."
@@ -265,7 +265,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       takeaway="Both Lisa and Kevin wanted clarity, confidence, and connection but traditional chocolate sites left them feeling unsure, uninspired, or emotionally detached. By centering user goals, emotional needs, and storytelling, I set out to reimagine what premium chocolate could look and feel like in a digital space."
       quote="Buying chocolate shouldn’t feel like a gamble or a chore."
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseSolution
       id="solution-section"
       introText="Bean And Beast was my first project built entirely from the ground up using the full UX design thinking framework. Unlike my earlier retroactive case studies, this one followed each phase deliberately, from empathy research to coded implementation. My goal was not only to design a product, but to prove I could create a bold, emotionally resonant brand and e-commerce experience with structure and intent at every step."
@@ -292,8 +293,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
         },
       ]"
     />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
-    <ArrowTransition customClass="mx-auto" />
     <CaseOutcome
       id="outcome-section"
       intro="Launching Bean And Beast was the culmination of a full design thinking process. This mean starting from research then implementation. While it’s a fictional chocolate brand, the feedback from peers, mentors, and fellow designers confirmed its real-world impact: a visually striking, emotionally resonant brand that felt intentional, polished, and ready for the market."
@@ -301,14 +302,15 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       :outcomes="outcomeList"
       :icons="icons"
     />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
-    <ArrowTransition customClass="mx-auto" />
     <CaseReflections
       id="reflections-section"
       intro="Bean And Beast was more than a design project to me. It was proof that I could lead a UX process from start to finish. It challenged me to think holistically: from empathizing with users to crafting visuals, building structure, and telling a brand story that resonated. This capstone taught me what it really means to design with purpose, and how process transforms intuition into impact."
       :reflections="reflections"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"

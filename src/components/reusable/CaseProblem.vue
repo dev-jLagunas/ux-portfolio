@@ -54,7 +54,7 @@ function prevImage() {
 <template>
   <section id="problem-section" class="flex-col-center">
     <div class="section-header-wrapper">
-      <h3 class="font-bold text-2xl">The Problem</h3>
+      <h3 class="font-bold text-3xl">The Problem</h3>
       <p class="tracking-wider text-blue font-semibold md:pr-4">Empathize – Define</p>
     </div>
     <article class="flex-col-center">
@@ -74,7 +74,7 @@ function prevImage() {
         class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4"
       >
         <figure v-for="(method, idx) in researchMethods" :key="idx">
-          <img :src="method.imageSrc" alt="research technique icon" class="h-22" />
+          <img :src="method.imageSrc" alt="research technique icon" class="h-22 mb-2" />
           <figcaption class="font-semibold">{{ method.caption }}</figcaption>
           <p>{{ method.description }}</p>
         </figure>

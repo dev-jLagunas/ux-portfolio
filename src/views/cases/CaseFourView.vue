@@ -7,7 +7,7 @@ import CaseOutcome from '@/components/reusable/CaseOutcome.vue'
 import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
+import divider from '@/assets/images/divider-img.png'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 import { usePageLoader } from '@/composables/usePageLoader'
@@ -179,7 +179,8 @@ const spinnerMessage = 'Almost There...'
       toolkit="Constant Contact, Canva, Linearty Curve"
       pdfFile="case-study-4-email.pdf"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseProblem
       id="problem-section"
       problemStatement="Students at the University of San Diego were regularly receiving the Career Development Center’s weekly email, but engagement was low. The newsletter was dense, visually inconsistent, and overwhelming to skim mainly because of dense text, especially on mobile. There was no clear hierarchy, and critical content like event information or job opportunities often got buried beneath less relevant items. "
@@ -238,7 +239,8 @@ here ar"
       takeaway="The newsletter's main problem seemed to be a lack of intention. Isabella, a motivated and routine-driven student, opens the email weekly but quickly disengages due to visual clutter, repetitive content, and unclear hierarchy. She scrolls only as far as necessary to meet her CRP requirements, then deletes the message. Her experience highlights a disconnect between the newsletter's format and its audience’s expectations: students want concise, relevant, and fresh content that respects their time and feels designed for them. Without visual cues, structured hierarchy, or evolving content, the email becomes noise which is then easily ignored instead of meaningfully engaged with."
       quote="I don’t really need fluff. Just useful or relevant content."
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseSolution
       id="solution-section"
       introText="Students were opening the weekly newsletter but not engaging. It was long, cluttered, and hard to scan on mobile. I reframed this as a UX problem and redesigned the email around hierarchy, skimmability, and clear actions, grounded in Constant Contact data and student-centered best practices."
@@ -270,7 +272,8 @@ here ar"
       ]"
     />
 
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseOutcome
       id="outcome-section"
       intro="While the newsletter redesign didn’t lend itself to traditional metrics like A/B testing or user surveys, I observed strong qualitative signals that the redesign addressed real user needs. These signals came from stakeholder feedback, improved team workflows, and early student reactions shared anecdotally."
@@ -278,13 +281,15 @@ here ar"
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseReflections
       id="reflections-section"
       intro="Every project teaches you something new. Sometimes that new knowledge is about UX, sometimes about people, and sometimes about yourself. This redesign may have looked like a simple formatting fix on the surface, but under the hood, it challenged my communication skills, tested my patience, and solidified my belief in intentional, systems-driven design. These are a few takeaways I’ll carry forward."
       :reflections="reflections"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"

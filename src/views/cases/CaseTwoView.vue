@@ -9,7 +9,6 @@ import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
@@ -33,6 +32,7 @@ import databaseBenefitE from '@/assets/images/cases/case-two/database-benefit-e.
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import observeImg from '@/assets/svgs/research/observe-research.svg'
 import flowImg from '@/assets/svgs/research/flow-research.svg'
+import divider from '@/assets/images/divider-img.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -230,7 +230,7 @@ const spinnerMessage = 'Be Right With You!'
       toolkit="Figma, Notion, Canva"
       pdfFile="case-study-2-notion.pdf"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"
       problemStatement="When I joined the Career Development Center, I wasn’t stepping into a system. In fact, it was like stepping into chaos. Event logistics, timelines, and institutional knowledge were scattered across outdated Notion pages, disconnected email threads, and verbal memory. There was no shared structure, documentation, or ownership. It felt like a patchwork of personalized to-do lists that were unusable the moment someone went on vacation or left the team."
@@ -288,7 +288,7 @@ const spinnerMessage = 'Be Right With You!'
       takeaway="The visual artifacts make it clear: the true problem was the lack of structure, consistency, and ownership across systems. Julian, a capable and motivated new hire, found himself navigating a maze of outdated pages, vague tasks, and unclear responsibilities. His experience highlights a systemic issue where even simple tasks became complex due to disorganization, leading to anxiety, wasted time, and second-guessing. Despite his confidence and drive, the absence of a reliable system made onboarding difficult and collaboration fragile. Solving this meant more than documenting tasks because what it actually required was building clarity, repeatability, and trust into the way the team worked."
       quote="I don't mind figuring things out, but there has to be a better way to do this."
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
       introText="When I joined the department, I inherited a scattered, inefficient collection of to-do lists and undocumented processes. I realized the problem wasn’t just my onboarding pain, it was a systemic UX failure that affected the entire team. My solution was to build structured systems in Notion, designed not just for myself, but for anyone who would step into these roles in the future."
@@ -318,8 +318,7 @@ const spinnerMessage = 'Be Right With You!'
         },
       ]"
     />
-
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       introText="While the internal project management system streamlined day-to-day operations for our immediate team, it became clear that knowledge was still siloed across the broader department. To solve this, I created a companion dashboard. A centralized, user-friendly reference hub that anyone in the department could use to understand what was done, why it mattered, and how to replicate it. Designed with clarity, structure, and self-sufficiency in mind, this “One Source of Truth” eliminated the need for back-and-forth emails and verbal memory. It turned hidden institutional knowledge into an accessible, scalable asset. Making onboarding, collaboration, and historical insight dramatically more efficient. Below is a breakdown of how the dashboard improves access, continuity, and team-wide alignment."
       :beforeTabs="databaseBenefitsTabsA"
@@ -327,7 +326,7 @@ const spinnerMessage = 'Be Right With You!'
       beforeTitle="Single Source of Truth Database Benefits A"
       afterTitle="Single Source of Truth Database Benefits B"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseOutcome
       id="outcome-section"
       intro="Redesigning our internal systems led to an immediate and noticeable shift in how our team worked. The project waas about building a solid scalable too but also it was about reducing friction, increasing transparency, and giving people the clarity they needed to work effectively. While the outcomes were primarily qualitative, the impact was clear: less confusion, faster onboarding, and more confident collaboration across the board."
@@ -335,13 +334,13 @@ const spinnerMessage = 'Be Right With You!'
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseReflections
       id="reflections-section"
       intro="This project was a turning point in how I understand and approach UX. It showed me that user experience isn’t limited to customer-facing products, but lives in the tools, processes, and interactions that shape how people work every day. Below are a few key lessons I took away from the experience. These are insights that not only shaped the outcome of this project, but continue to guide how I design, collaborate, and lead."
       :reflections="reflections"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"

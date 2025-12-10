@@ -30,17 +30,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="project-card-container">
-    <!-- Decorational triangles -->
-    <div class="absolute top-0 left-0 w-24 h-24 bg-pink triangle-top-left"></div>
-    <div class="absolute bottom-0 right-0 w-24 h-24 bg-blue triangle-bottom-right"></div>
-
-    <p class="project-type">{{ uxType }}</p>
-    <h3 class="project-title">{{ title }}</h3>
-    <p class="mb-4 md:text-lg">
-      {{ description }}
-    </p>
-    <figure class="w-full mb-4">
+  <div class="project-card-container md:h-full md:w-full md:max-w-[450px] shadow-sm">
+    <figure class="w-full mb-4 rounded-md bg-blue/30">
       <img
         :src="image"
         alt="trio image of project screenshots"
@@ -48,6 +39,12 @@ defineProps({
         loading="lazy"
       />
     </figure>
+
+    <p class="project-type">{{ uxType }}</p>
+    <h3 class="project-title leading-6 mb-2">{{ title }}</h3>
+    <p class="mb-4 md:text-lg leading-5">
+      {{ description }}
+    </p>
 
     <router-link :to="route">
       <button
@@ -62,14 +59,4 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
-.triangle-top-left {
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  border-top-left-radius: 6px;
-}
-
-.triangle-bottom-right {
-  clip-path: polygon(100% 100%, 0 100%, 100% 0);
-  border-bottom-right-radius: 6px;
-}
-</style>
+<style scoped></style>

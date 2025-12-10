@@ -8,7 +8,6 @@ import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
-import ArrowTransition from '@/components/reusable/ArrowPointer.vue'
 
 // Spinner Logic
 import { usePageLoader } from '@/composables/usePageLoader'
@@ -30,6 +29,7 @@ import cafeMockup from '@/assets/images/home/cafe-mockup.png'
 import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
+import divider from '@/assets/images/divider-img.png'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -179,7 +179,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
       pdfFile="case-study-1-cafe.pdf"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseProblem
       id="problem-section"
       problemStatement="Our original cafe website, built with Wix, lacked both functionality and personality. It wasn’t very responsive, offered no multilingual support, and used a static pdf image for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
@@ -237,7 +238,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       takeaway="Megumi is a thoughtful, community-oriented cafe-goer who values comfort, cultural richness, and clear pet-friendly policies. Her journey reflects a desire not just for good food, but for experiences that feel welcoming, unique, and worth sharing. When cafes clearly communicate their vibe and inclusivity, she becomes a loyal advocate."
       quote="It's hard to know if a place is truly pet-friendly."
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseSolution
       id="solution-section"
       introText="To address the limitations of our original site, I redesigned Cafe Triangle’s website from the ground up with a focus on usability, personality, and accessibility. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our cafe itself."
@@ -266,7 +268,8 @@ const uxSubheading = 'How I would approach this UX challenge today'
       beforeTitle="Site Features A"
       afterTitle="Site Features B"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseOutcome
       id="outcome-section"
       intro="The launch of the redesigned Cafe Triangle website brought immediate, qualitative improvements. Although we didn’t use formal analytics, feedback from friends, family, and customers painted a clear picture: the site was easier to navigate, more informative, and far more aligned with who we were as a brand. It wasn’t just functional, it felt right to the people who used it."
@@ -274,13 +277,15 @@ const uxSubheading = 'How I would approach this UX challenge today'
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseReflections
       id="reflections-section"
       intro="This project was more than just building a website, it was the start of a deeper shift in how I think about design, users, and problem-solving. Looking back, it helped shape the foundation of my UX mindset without me even knowing it. Here are a few key lessons I took away. What worked, what didn’t, and how the experience changed the way I approach design today."
       :reflections="reflections"
     />
-    <ArrowTransition customClass="mx-auto" />
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"

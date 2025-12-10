@@ -55,9 +55,9 @@ onBeforeUnmount(() => {
     <button
       v-show="showBackToTop"
       @click="scrollToTop"
-      class="font-main fixed bottom-10 right-6 px-3 rounded-md z-50 bg-blue text-light transition opacity-75 hover:py-2 hover:opacity-100 hover:cursor-pointer duration-300"
+      class="font-special fixed bottom-10 right-6 px-3 py-1 rounded-md z-50 border border-dotted transition opacity-75 hover:bg-gray-300/10 hover:opacity-100 hover:cursor-pointer duration-300 text-3xl"
     >
-      Back to Top
+      &#8593;
     </button>
   </div>
 </template>
