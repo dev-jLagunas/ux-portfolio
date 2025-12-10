@@ -1,9 +1,9 @@
 <script setup>
-const props = defineProps({
+defineProps({
   sectionId: { type: String, required: true },
   imageSrc: { type: String, required: true },
   imageAlt: { type: String, default: '' },
-  title: { type: String, default: '' }, // fallback if no slot provided
+  title: { type: String, default: '' },
   intro: { type: String, required: true },
   bullets: { type: Array, default: () => [] },
   tagLabel: { type: String, default: '' },
@@ -22,43 +22,40 @@ function restWords(s) {
 
 <template>
   <article
-    class="font-main mx-auto lg:grid lg:grid-cols-2 lg:gap-4 md:px-8 md:place-items-center"
+    class="font-main mx-auto lg:grid lg:grid-cols-2 md:place-items-center lg:max-w-[1200px]"
     :id="sectionId"
   >
-    <figure>
+    <figure class="">
       <img
         :src="imageSrc"
         :alt="imageAlt"
-        class="h-96 mx-auto rounded-sm lg:h-full custom-shadow"
+        class="h-96 mx-auto lg:h-full custom-shadow rounded-md"
         loading="lazy"
       />
     </figure>
     <div>
-      <h3 class="text-4xl mt-4 mb-8 text-center">
-        <!-- Title slot so you can pass custom markup like colored letters -->
+      <h3 class="text-4xl mb-2 mt-4 text-center">
         <slot name="title">{{ title }}</slot>
       </h3>
-      <p class="leading-relaxed text-xl mb-2 lg:text-2xl">
+      <p class="leading-6 text-xl mb-2 lg:text-2xl">
         {{ intro }}
       </p>
 
-      <ul class="pl-5 list-disc text-left leading-relaxed space-y-2 mt-4 mb-8">
+      <ul class="pl-5 list-disc text-left leading-5 space-y-2 mt-4 mb-8">
         <li v-for="(b, i) in bullets" :key="i">
           {{ b }}
         </li>
       </ul>
 
-      <h4
-        class="mt-4 tracking-widest w-1/2 mx-auto font-bold bg-pink text-center text-light px-3 py-1 rounded-sm mb-4"
-      >
+      <h4 class="mt-4 tracking-widest w-1/2 mx-auto font-bold text-center px-3 py-1 mb-4">
         {{ tagLabel }}
       </h4>
 
-      <ul class="flex justify-between items-center divide-x-2 divide-pink w-full mt-8 text-center">
+      <ul class="flex justify-between items-center divide-x-2 divide-pink w-full text-center">
         <li v-for="(t, i) in tagItems" :key="i" class="flex-1">
           <!-- Split on first space to get a two-line look without HTML in data -->
           <span class="block">{{ firstWord(t) }}</span>
-          <span class="block">{{ restWords(t) }}</span>
+          <span class="block -mt-1">{{ restWords(t) }}</span>
         </li>
       </ul>
     </div>

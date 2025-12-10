@@ -4,11 +4,9 @@ import { Navigation, Autoplay, A11y, Keyboard } from 'swiper/modules'
 import SlideArticle from './SliderArticle.vue'
 // Photos
 import selfPhoto from '@/assets/images/about/self-red.webp'
-import sunPhoto from '@/assets/images/about/cafe-self-about.webp'
 import familyCafePhoto from '@/assets/images/about/family-cafe-about.webp'
 import directionPhoto from '@/assets/images/about/direction-about.webp'
 import selfCounterPhoto from '@/assets/images/about/self-counter-about.webp'
-import selfBlackPhoto from '@/assets/images/about/self-black.webp'
 </script>
 
 <template>
@@ -28,134 +26,89 @@ import selfBlackPhoto from '@/assets/images/about/self-black.webp'
           section-id="bio"
           :image-src="selfPhoto"
           image-alt="self image of Juan Lagunas"
-          title="My Bio"
-          intro="I'm a UX designer with over 20 years of customer-facing experience, from fast food to education to hospitality."
+          title="Who I Am"
+          intro="I'm a UX designer who combines product thinking, visual design, and front-end execution to create clear, intuitive, and meaningful digital experiences."
           :bullets="[
-            'Learned to understand users deeply by listening and solving problems in real time.',
-            'Blended creative thinking with empathy across a variety of roles and cultures.',
-            'Developed a passion for simplifying complex systems into intuitive solutions.',
-            'Added Japanese as a third language through immersion, and now continue growing in French.',
+            'I design end-to-end: from research, flows, and wireframes to polished UI and front-end implementation.',
+            'I bring 20+ years of real-world, people-focused experience that strengthens my user empathy and problem-solving.',
+            'I approach UX with a blend of logic, creativity, and systems thinking shaped by work across cultures and industries.',
+            'I’m multilingual and internationally experienced, which helps me design for diverse users and global audiences.',
           ]"
-          tag-label="Skills Acquired"
-          :tag-items="['User Empathy', 'Systems Thinking', 'Problem Solving']"
+          tag-label="Core Strengths"
+          :tag-items="['Product Thinking', 'User Empathy', 'Visual & Interaction Design']"
         >
           <template #title>
-            <span class="font-bold text-pink">A</span>
-            <span class="font-bold text-blue"> Q</span>uick
-            <span class="font-bold text-pink">S</span>napshot
+            <span class="font-bold text-pink">W</span>ho
+            <span class="font-bold text-blue"> A</span>m
+            <span class="font-bold text-pink">I</span>
           </template>
         </SlideArticle>
       </SwiperSlide>
       <SwiperSlide>
         <SlideArticle
-          section-id="roots"
+          section-id="foundations"
           :image-src="familyCafePhoto"
           image-alt="Family of 2 with their cat"
-          title="My Roots"
-          intro="My early career combined hospitality and education, giving me a strong foundation in communication and service."
+          title="My UX Foundations"
+          intro="Long before I knew the term UX, I was already practicing it through service design, systems thinking, and real-world problem solving."
           :bullets="[
-            'Managed teams at KFC and worked in hospitality at Viejas Casino, gaining hands-on experience in customer service and operations.',
-            'Studied Linguistics, which deepened my understanding of communication styles and diverse perspectives.',
-            'Taught English for 7 years across age groups and backgrounds, building empathy and adaptability through real human connection.',
+            'Hospitality and education taught me how to read people, remove friction, and design experiences that feel natural and intuitive.',
+            'Running our cafe in Japan required full experience design: branding, workflows, touchpoints, visual identity, and service blueprints.',
+            'Teaching and linguistics strengthened my ability to communicate clearly, adapt to different users, and design for diverse mental models.',
+            'Photography, branding, and storytelling refined my visual instincts and helped me think in composition, hierarchy, and emotion.',
           ]"
-          tag-label="Skills Acquired"
-          :tag-items="['Cross Cultural', 'Operational Management', 'User Advocacy']"
+          tag-label="Foundational Skills"
+          :tag-items="['Service Design', 'Experience Mapping', 'Communication Design']"
         >
           <template #title>
-            <span class="text-pink font-bold">W</span>here
-            <span class="text-blue font-bold">I</span>t
-            <span class="text-pink font-bold">S</span>tarted
+            <span class="font-bold text-pink">M</span>y <span class="font-bold text-blue"> U</span>X
+            <span class="font-bold text-pink">F</span>oundations
           </template>
         </SlideArticle>
       </SwiperSlide>
       <SwiperSlide>
         <SlideArticle
-          section-id="journey"
+          section-id="practice"
           :image-src="selfCounterPhoto"
           image-alt="photo of Juan Lagunas behind café counter"
-          title="My Journey"
-          intro="My time in Japan shaped both my creativity and career direction in unexpected ways."
+          title="How I Practice UX Today"
+          intro="Today I work as a UX designer end-to-end, creating products and systems that combine research, strategy, visual clarity, and front-end execution."
           :bullets="[
-            'Co-founded Cafe Triangle with my wife, managing all aspects of the business from the ground up.',
-            'Discovered a passion for photography and creative storytelling while running the café.',
-            'Taught myself front-end development after the cafe closed, building a solid portfolio from scratch.',
-            'Stumbled across the term UX and instantly realized it described what I’d been doing all along.',
+            'I run full UX cycles independently: research, user flows, wireframes, prototypes, UI design, and testing.',
+            'I build real products like Cafe Triangle and Tanaka Denki, handling both the UX process and the coded implementation.',
+            'I collaborate with stakeholders, clients, and users to align goals, clarify requirements, and translate insights into structured solutions.',
+            'I create systems where none exist. Information architecture, content workflows, marketing pipelines, and operational tools.',
           ]"
-          tag-label="Skills Acquired"
-          :tag-items="['Web Design', 'Strategic Pivoting', 'Creative Execution']"
+          tag-label="Current Capabilities"
+          :tag-items="['End-to-End Design', 'UI & Front-End', 'Stakeholder Collaboration']"
         >
           <template #title>
-            <span class="text-pink font-bold">T</span>he
-            <span class="text-blue font-bold">J</span>apan
-            <span class="text-pink font-bold">C</span>hapter
+            <span class="font-bold text-ppink">U</span>X <span class="font-bold text-blue">U</span>I
+            <span class="font-bold text-pink">W</span>ork
           </template>
         </SlideArticle>
       </SwiperSlide>
+
       <SwiperSlide>
         <SlideArticle
-          section-id="realization"
-          :image-src="sunPhoto"
-          image-alt="photo of Juan Lagunas in front of wall mural"
-          title="My Realization"
-          intro="My last job at a university unexpectedly launched me into UX."
-          :bullets="[
-            'Worked in a chaotic environment lacking structure, which pushed me to create my own systems.',
-            'Built Notion-based project tools, overhauled email campaigns using analytics, and created full marketing systems.',
-            'Realized I had been practicing UX thinking long before I had a name for it.',
-            'Cemented my path by completing the Google UX Design certificate and diving deep into UX literature.',
-          ]"
-          tag-label="Skills Acquired"
-          :tag-items="['User Empathy', 'Marketing Strategy', 'Analytics & Optimization']"
-        >
-          <template #title>
-            <span class="text-pink font-bold">W</span>here
-            <span class="text-blue font-bold"> U</span>X
-            <span class="text-pink font-bold">C</span>licked
-          </template>
-        </SlideArticle>
-      </SwiperSlide>
-      <SwiperSlide>
-        <SlideArticle
-          section-id="future"
+          section-id="team"
           :image-src="directionPhoto"
           image-alt="photo of wind arrow"
-          title="My Future"
-          intro="I’m now fully focused on launching my UX design career."
+          title="What I Bring to a Team"
+          intro="I’m a designer who thrives in both independent and collaborative environments, bringing clarity, structure, and a user-centered mindset wherever I work."
           :bullets="[
-            'Ready to bring real-world insight, empathy, and problem-solving to a team environment.',
-            'Excited to apply everything I’ve learned through both formal training and lived experience.',
-            'View my background not as a story, but as a toolkit for creative, human-centered design.',
-            'Eager to collaborate, grow, and contribute in a UX role where I can make real impact.',
+            'I can own entire UX cycles myself or plug into a team and support research, strategy, UI, or implementation as needed.',
+            'I communicate clearly across cultures and disciplines, helping teams align and move forward with confidence.',
+            'I bring strong systems thinking designing not just screens, but the workflows, operations, and logic behind them.',
+            'I care deeply about creating meaningful experiences, and I iterate until the work truly meets user needs and business goals.',
           ]"
-          tag-label="What I Bring"
-          :tag-items="['User Centered', 'Systems Thinking', 'Continuous Learner']"
+          tag-label="Team Value"
+          :tag-items="['Collaboration', 'Versatility', 'User-Centered Approach']"
         >
           <template #title>
-            <span class="text-pink font-bold">R</span>eady
-            <span class="text-blue font-bold">T</span>o <span class="text-pink font-bold">G</span>o
-          </template>
-        </SlideArticle>
-      </SwiperSlide>
-      <SwiperSlide>
-        <SlideArticle
-          section-id="dream"
-          :image-src="selfBlackPhoto"
-          image-alt="black and white self portrait of Juan Lagunas"
-          title="My Dream"
-          intro="My dream is to build a UX career that’s both meaningful and creatively fulfilling."
-          :bullets="[
-            'I want to craft digital experiences that solve real problems and improve lives.',
-            'I see UX as the intersection of thoughtful logic and human-centered creativity.',
-            'Success means iterating and refining until we create something truly exceptional.',
-            'This isn’t just a job. It’s the culmination of a lifetime of observing and improving.',
-          ]"
-          tag-label="What I Bring"
-          :tag-items="['Design Driven', 'Logic & Creativity', 'Purpose Driven']"
-        >
-          <template #title>
-            <span class="text-pink font-bold">T</span>he
-            <span class="text-blue font-bold">B</span>ig
-            <span class="text-pink font-bold">G</span>oal
+            <span class="font-bold text-pink">W</span>hat
+            <span class="font-bold text-blue">I</span>
+            <span class="font-bold text-pink"> B</span>ring
           </template>
         </SlideArticle>
       </SwiperSlide>
