@@ -66,40 +66,40 @@ function prevImage() {
         <p class="indent-4 mb-2">{{ problemStatementB }}</p>
         <p class="indent-4">{{ userResearchIntro }}</p>
       </div>
-      <h4 class="w-full text-center font-semibold mb-4 text-2xl mt-8 md:mb-16">
-        How I gathered insights?
-      </h4>
+      <h4 class="w-full font-semibold mb-4 text-2xl mt-8">How I gathered insights?</h4>
       <article
         v-if="researchMethods && researchMethods.length"
         class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4"
       >
         <figure v-for="(method, idx) in researchMethods" :key="idx">
-          <img :src="method.imageSrc" alt="research technique icon" class="h-22 mb-2" />
+          <img :src="method.imageSrc" alt="research technique icon" class="h-16 mb-2" />
           <figcaption class="font-semibold">{{ method.caption }}</figcaption>
           <p>{{ method.description }}</p>
         </figure>
       </article>
-      <h4 class="w-full text-center font-semibold mb-4 text-2xl mt-8 md:mb-16">
-        Visualizing the research.
-      </h4>
+      <h4 class="w-full font-semibold text-2xl">Visualizing the research.</h4>
       <figure class="relative w-full mt-4">
-        <div class="md:grid md:grid-cols-7 md:place-items-center">
-          <div class="md:col-span-3 md:pl-10">
-            <h3 class="font-semibold tracking-wide border-b border-pink w-fit mb-2">
-              {{ props.artifacts[currentIndex].statement }} Statement
-            </h3>
-            <p>
-              {{ props.artifacts[currentIndex].statementDetails }}
-            </p>
-            <h3 class="mt-8 font-semibold tracking-wide border-b border-pink w-fit mb-2">
-              {{ props.artifacts[currentIndex].caption }}
-            </h3>
-            <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
+        <div class="md:place-items-center">
+          <div class="lg:grid lg:grid-cols-2 lg:gap-4">
+            <div>
+              <h3 class="font-semibold tracking-wide">
+                {{ props.artifacts[currentIndex].statement }} Statement
+              </h3>
+              <p>
+                {{ props.artifacts[currentIndex].statementDetails }}
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold tracking-wide">
+                {{ props.artifacts[currentIndex].caption }}
+              </h3>
+              <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
+            </div>
           </div>
           <img
             :src="props.artifacts[currentIndex].imageSrc"
             :alt="props.artifacts[currentIndex].caption"
-            class="rounded-md w-full px-8 hover:cursor-pointer md:col-span-4"
+            class="rounded-md w-full shadow-sm hover:cursor-pointer max-w-[700px]"
             @click="isModalOpen = true"
             loading="lazy"
           />
@@ -115,7 +115,7 @@ function prevImage() {
     </article>
   </section>
   <div v-if="isModalOpen" class="problem-img-modal" @click.self="isModalOpen = false">
-    <div class="relative w-full md:w-1/2 lg:w-[800px] px-8">
+    <div class="relative w-full lg:w-[800px] px-8">
       <button @click="isModalOpen = false" class="problem-modal-close-btn">X</button>
       <img
         :src="props.artifacts[currentIndex].imageSrc"

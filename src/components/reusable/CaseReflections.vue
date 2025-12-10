@@ -1,6 +1,6 @@
 <script setup>
 // Props
-const props = defineProps({
+defineProps({
   intro: {
     type: String,
     required: true,
@@ -16,7 +16,7 @@ const props = defineProps({
 <template>
   <section id="reflections-section" class="flex-col-center">
     <div class="section-header-wrapper">
-      <h3 class="font-bold text-2xl">My Reflections</h3>
+      <h3 class="font-bold text-3xl">My Reflections</h3>
       <p class="text-blue font-semibold tracking-wider md:pr-4">Prototype – Test</p>
     </div>
 

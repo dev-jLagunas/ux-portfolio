@@ -1,6 +1,6 @@
 <script setup>
 // Props
-const props = defineProps({
+defineProps({
   intro: {
     type: String,
     required: true,
@@ -15,7 +15,7 @@ const props = defineProps({
 <template>
   <section id="ux-timeline-section">
     <div class="section-header-wrapper">
-      <h3 class="font-bold text-2xl">From a UX lens</h3>
+      <h3 class="font-bold text-3xl">From a UX lens</h3>
       <p class="text-blue font-semibold md:pr-4 tracking-wider">Full Framework</p>
     </div>
 

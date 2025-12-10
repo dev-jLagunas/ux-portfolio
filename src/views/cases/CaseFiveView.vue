@@ -173,7 +173,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       :imgSrc="beanMockUp"
       :paragraphs="[
         'Bean And Beast is a fictional premium chocolate brand born from a personal art series. What started as a collection of black-and-white animal silhouettes evolved into a UX-driven ecommerce experience built entirely from scratch. I used this capstone project to practice the full design thinking process, from early research to hi-fi prototype to fully coded Vue.js site.',
-        'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. Everything was created by me: the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build. This project proves I’m ready to deliver professional UX and that all of this is really fun!',
+        'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. I created the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build.',
       ]"
       role="UX Designer, UI Designer, Front-End Developer, Brand Strategist"
       date="March – July 2025"

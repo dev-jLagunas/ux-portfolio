@@ -2,7 +2,7 @@
 import TabGroup from '@/components/reusable/TabGroup.vue'
 
 //Props
-const props = defineProps({
+defineProps({
   introText: {
     type: String,
     required: true,
@@ -41,15 +41,17 @@ const props = defineProps({
 
 <template>
   <section id="the-solution">
-    <div class="mt-4 mb-2 flex items-center justify-between w-full">
-      <h3 class="font-bold text-2xl">The Solution</h3>
+    <div class="section-header-wrapper">
+      <h3 class="font-bold text-3xl">The Solution</h3>
       <p class="tracking-wider text-blue font-semibold md:pr-4">Ideate – Prototype</p>
     </div>
-    <article>
-      <p class="mb-2">{{ introText }}</p>
-      <p class="mb-2">{{ introText2 }}</p>
-      <p class="mb-6">{{ introText3 }}</p>
-      <section v-if="hmwItems.length" id="hmw-section" class="">
+    <article class="">
+      <div class="">
+        <p class="mb-2 indent-4">{{ introText }}</p>
+        <p class="mb-2 indent-4">{{ introText2 }}</p>
+        <p class="mb-6 indent-4">{{ introText3 }}</p>
+      </div>
+      <section v-if="hmwItems.length" id="hmw-section" class="mt-8">
         <h3 class="text-xl font-semibold tracking-wide">{{ hmwTitle }}</h3>
         <p v-if="hmwIntro" class="mt-2">
           {{ hmwIntro }}

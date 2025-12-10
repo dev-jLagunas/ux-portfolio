@@ -61,14 +61,14 @@ const spinnerMessage = 'Thanks for Waiting!'
         photography for the cafe. Experimenting with new techniques, backgrounds, and environments
         was genuinely exciting.
       </p>
-      <p class="mb-4 text-sm md:text-base">
+      <p class="mb-4 personal-copy">
         I’m still actively challenging myself with new shots, because capturing life is such a
         beautiful thing. I don’t actually know if I’m any good at it but that matters far less than
         how much I truly enjoy it.
       </p>
-      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div class="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
         <DisplayCard title="Moko the King" :content="catPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Kanazawa White Road" :content="naturePhoto" bgColor="bg-blue" />
+        <DisplayCard title="White Road" :content="naturePhoto" bgColor="bg-blue" />
         <DisplayCard title="Balboa Duck" :content="duckPhoto" bgColor="bg-pink" />
         <DisplayCard title="Cherry Blossoms" :content="sakuraPhoto" bgColor="bg-blue" />
         <DisplayCard title="Bar Selfie" :content="selfiePhoto" bgColor="bg-pink" />

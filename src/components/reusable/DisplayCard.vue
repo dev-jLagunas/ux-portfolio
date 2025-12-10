@@ -29,7 +29,7 @@ defineProps({
         class="h-64 w-full object-contain"
         loading="lazy"
       />
-      <figcaption :class="`${bgColor} text-light font-semibold text-center rounded-sm py-2 mt-4`">
+      <figcaption :class="`${bgColor} text-white text-center rounded-sm py-2 mt-4`">
         {{ title }}
       </figcaption>
     </figure>

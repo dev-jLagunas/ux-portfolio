@@ -1,6 +1,6 @@
 <script setup>
 //Props
-const props = defineProps({
+defineProps({
   title: String,
   tags: Array,
   imgSrc: String,
@@ -27,10 +27,10 @@ const props = defineProps({
         :src="imgSrc"
         alt="trio image of case study screenshots"
         class="overview-img"
-        loading="lazy"
+        loading="lazy w-full border-8"
       />
       <div>
-        <div class="flex justify-between items-center mt-4 mb-2">
+        <div class="flex flex-col mt-4 mb-2 md:flex-row md:justify-between md:items-center">
           <a
             :href="`/` + pdfFile"
             download
@@ -40,10 +40,10 @@ const props = defineProps({
             Download Full Case Study PDF
           </a>
           <p v-if="url">
-            <a :href="url" target="_blank" class="underline text-blue">View live site</a>
+            <a :href="url" target="_blank" class="underline text-blue md:pr-4">View live site</a>
           </p>
         </div>
-        <h5 class="font-bold tracking-widest text-xl">{{ workTitle }}</h5>
+        <h5 class="font-bold tracking-widest text-xl leading-5 mb-2">{{ workTitle }}</h5>
         <p v-for="(para, index) in paragraphs" :key="index" :class="{ 'mt-2': index > 0 }">
           {{ para }}
         </p>

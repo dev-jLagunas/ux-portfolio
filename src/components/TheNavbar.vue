@@ -49,7 +49,7 @@ function navigateToWork() {
         <p><span class="blue-bold-letter">L</span>agunas</p>
       </router-link>
     </div>
-    <ul class="flex items-center justify-between w-[70%]">
+    <ul class="flex items-center justify-between w-[65%]">
       <li
         class="nav-list-styles hover:cursor-pointer underline-offset-4"
         @click="navigateToWork"
