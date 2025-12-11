@@ -23,12 +23,7 @@ defineProps({
     </ul>
 
     <div class="overview-info">
-      <img
-        :src="imgSrc"
-        alt="trio image of case study screenshots"
-        class="overview-img"
-        loading="lazy w-full border-8"
-      />
+      <img :src="imgSrc" alt="overview image of project" class="overview-img" loading="lazy" />
       <div>
         <div class="flex flex-col mt-4 mb-2 md:flex-row md:justify-between md:items-center">
           <a

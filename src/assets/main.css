@@ -237,11 +237,11 @@ Case Overview Styles
 }
 
 .overview-info {
-  @apply md:mt-8 lg:grid lg:grid-cols-2 lg:place-items-center;
+  @apply md:mt-8 md:gap-4 lg:gap-8 lg:grid lg:grid-cols-2 lg:place-items-center;
 }
 
 .overview-img {
-  @apply w-full max-w-[500px] mx-auto mb-4 md:mb-0;
+  @apply w-full max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-full lg:w-full shadow-sm;
 }
 
 .case-study-btn {

@@ -22,7 +22,7 @@ import personaLisa from '@/assets/images/cases/case-five/lisa-user-persona.webp'
 import personaKevin from '@/assets/images/cases/case-five/kevin-user-persona.webp'
 import journeyLisa from '@/assets/images/cases/case-five/lisa-user-journey.webp'
 import journeyKevin from '@/assets/images/cases/case-five/kevin-journey-map.webp'
-import beanMockUp from '@/assets/images/home/bean-mockup.png'
+import coverImg from '@/assets/images/cases/case-five/case-cover-img.png'
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import competitionImg from '@/assets/svgs/research/official-research.svg'
 import ideaImg from '@/assets/svgs/research/best-practice.svg'
@@ -170,7 +170,7 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
       url="https://dev-jlagunas.github.io/bean-and-beast/#/"
       workTitle="Bean And Beast Luxury Chocolates"
       :tags="['UX Research', 'UI Design', 'Product Design', 'Branding', 'Front-End Development']"
-      :imgSrc="beanMockUp"
+      :imgSrc="coverImg"
       :paragraphs="[
         'Bean And Beast is a fictional premium chocolate brand born from a personal art series. What started as a collection of black-and-white animal silhouettes evolved into a UX-driven ecommerce experience built entirely from scratch. I used this capstone project to practice the full design thinking process, from early research to hi-fi prototype to fully coded Vue.js site.',
         'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. I created the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build.',
