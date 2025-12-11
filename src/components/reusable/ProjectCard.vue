@@ -31,14 +31,15 @@ defineProps({
 
 <template>
   <div class="project-card-container md:h-full md:w-full md:max-w-[450px] shadow-sm">
-    <figure class="w-full mb-4 rounded-md bg-blue/30">
-      <img
-        :src="image"
-        alt="trio image of project screenshots"
-        class="w-full h-full object-cover"
-        loading="lazy"
-      />
-    </figure>
+    <router-link :to="route">
+      <figure class="w-full mb-4 rounded-md bg-blue/30 hover:rotate-1">
+        <img
+          :src="image"
+          alt="trio image of project screenshots"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        /></figure
+    ></router-link>
 
     <p class="project-type">{{ uxType }}</p>
     <h3 class="project-title leading-6 mb-2">{{ title }}</h3>
