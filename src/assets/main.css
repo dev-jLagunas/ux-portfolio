@@ -241,7 +241,7 @@ Case Overview Styles
 }
 
 .overview-img {
-  @apply w-full max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-full lg:w-full shadow-sm;
+  @apply w-full max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-[600px] lg:w-full shadow-sm;
 }
 
 .case-study-btn {
@@ -279,7 +279,7 @@ Case Problem Styles
 Sticky Nav Styles
 *****************************************/
 .sticky-nav-container {
-  @apply mt-8 mb-8 sticky top-1 z-50 bg-pink py-3 rounded-sm font-main;
+  @apply mt-8 mb-8 sticky top-3 z-50 bg-pink py-3 rounded-sm font-main;
 }
 
 .sticky-content-wrapper {

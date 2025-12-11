@@ -13,11 +13,8 @@ const spinnerMessage = 'Hang tight!'
   <div class="font-main">
     <h2 class="text-center mt-12 font-bold text-5xl mb-8 font-special">Who am I?</h2>
     <StorySection />
-    <!-- New Skills Section -->
-    <section class="mt-8">
+    <!-- <section class="mt-8">
       <h2 class="text-center font-bold text-4xl font-special mb-8">Skills</h2>
-
-      <!-- Skills list -->
       <div class="grid grid-cols-1 md:grid-cols-2 md:place-items-center gap-8">
         <div>
           <h3 class="text-2xl font-semibold mb-4">Core Strengths</h3>
@@ -43,7 +40,7 @@ const spinnerMessage = 'Hang tight!'
           </ul>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
