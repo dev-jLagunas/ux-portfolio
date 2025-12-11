@@ -1,4 +1,12 @@
 <script setup>
+import { computed } from 'vue'
+import { useThemeStore } from '@/stores/theme'
+
+// Store
+const theme = useThemeStore()
+
+// Computed Properties
+const cafeVideo = computed(() => (theme.isDarkMode ? cafeVideoDark : cafeVideoLight))
 //Components
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
@@ -31,6 +39,10 @@ import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
 import divider from '@/assets/images/divider-img.png'
+
+// Videos
+import cafeVideoLight from '@/assets/images/cases/case-one/cafe-video-light.mp4'
+import cafeVideoDark from '@/assets/images/cases/case-one/cafe-video-dark.mp4'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -180,6 +192,21 @@ const uxSubheading = 'How I would approach this UX challenge today'
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
       pdfFile="case-study-1-cafe.pdf"
     />
+    <video
+      :key="theme.isDarkMode"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      width="700"
+      height="600"
+      class="mx-auto mt-16 w-full max-w-[800px]"
+    >
+      <source :src="cafeVideo" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
     <CaseProblem

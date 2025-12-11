@@ -1,4 +1,13 @@
 <script setup>
+import { computed } from 'vue'
+import { useThemeStore } from '@/stores/theme'
+
+// Store
+const theme = useThemeStore()
+
+// Computed Properties
+const beanVideo = computed(() => (theme.isDarkMode ? beanVideoDark : beanVideoLight))
+
 // Components
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
@@ -28,6 +37,9 @@ import competitionImg from '@/assets/svgs/research/official-research.svg'
 import ideaImg from '@/assets/svgs/research/best-practice.svg'
 import divider from '@/assets/images/divider-img.png'
 
+// Videos
+import beanVideoLight from '@/assets/images/cases/case-five/bnb-video-light.mp4'
+import beanVideoDark from '@/assets/images/cases/case-five/bnb-video-dark.mp4'
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
 import medalIcon from '@/assets/svgs/highlights/medal-icon.svg'
@@ -180,6 +192,20 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
       toolkit="Figma, Canva, Vue.js, Tailwind CSS, Pinia"
       pdfFile="case-study-5-bean-and-beast.pdf"
     />
+    <video
+      :key="theme.isDarkMode"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      width="700"
+      height="600"
+      class="mx-auto mt-16 w-full max-w-[800px]"
+    >
+      <source :src="beanVideo" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"
