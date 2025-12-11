@@ -256,11 +256,11 @@ Case Problem Styles
 }
 
 .problem-left-btn {
-  @apply text-4xl absolute top-2/3 -left-4 transform -translate-y-1/2  ml-3  opacity-25 transition-all duration-300 md:text-8xl hover:scale-150 hover:opacity-100 hover:cursor-pointer;
+  @apply text-4xl absolute top-2/3 -left-4 transform -translate-y-1/2  ml-3  opacity-25 transition-all duration-300 md:text-6xl hover:scale-150 hover:opacity-100 hover:cursor-pointer;
 }
 
 .problem-right-btn {
-  @apply text-4xl absolute -right-4 top-2/3 transform -translate-y-1/2  mr-3 opacity-25 hover:scale-150 transition-all duration-300 md:text-8xl hover:opacity-100 hover:cursor-pointer;
+  @apply text-4xl absolute -right-4 top-2/3 transform -translate-y-1/2  mr-3 opacity-25 hover:scale-150 transition-all duration-300 md:text-6xl hover:opacity-100 hover:cursor-pointer;
 }
 
 .problem-quote {
@@ -268,11 +268,11 @@ Case Problem Styles
 }
 
 .problem-img-modal {
-  @apply fixed inset-0 z-50 bg-black/[var(--bg-opacity)] [--bg-opacity:100%] flex items-center justify-center;
+  @apply fixed inset-0 z-50 bg-dark/95 flex items-center justify-center;
 }
 
 .problem-modal-close-btn {
-  @apply absolute -top-10 right-8 text-white bg-pink px-3 py-1 rounded hover:bg-pink/80;
+  @apply absolute top-0 right-24 text-white bg-pink px-3 py-1 rounded hover:bg-pink/80 hover:cursor-pointer;
 }
 
 /***************************************

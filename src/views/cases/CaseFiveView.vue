@@ -148,7 +148,7 @@ const reflections = [
 // UX Lens Data
 const uxIntro = `This was the first project where I intentionally applied the full design thinking framework from start to finish. Following each phase of the process was what I needed. Starting from empathizing with users then moving on to testing real prototypes, not only gave my work structure, it brought clarity and depth to every decision. Instead of relying purely on intuition, I designed with evidence, empathy, and purpose. The result was a brand and product experience that felt both emotionally resonant and strategically sound.`
 
-const uxSubheading = 'How the design thinking framework elevated my process'
+const uxSubheading = 'Quick overview of the full process used in this project.'
 </script>
 
 <template>
@@ -208,8 +208,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       ]"
       :artifacts="[
         {
-          caption: 'Empathy Map – Lisa',
-          statement: 'Problem',
+          caption: 'Lisa - Empathy Map',
+          statement: 'Lisa - Problem',
           statementDetails:
             'Design-conscious millennials like Lisa often struggle to find premium gifting options that feel both playful and elegant. Most chocolate brands lack strong character-driven storytelling and visual distinctiveness.',
           blurb:
@@ -217,8 +217,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           imageSrc: empathyMapLisa,
         },
         {
-          caption: 'Empathy Map – Kevin',
-          statement: 'Problem',
+          caption: 'Kevin - Empathy Map',
+          statement: 'Kevin - Problem',
           statementDetails:
             'Kevin struggles to find premium chocolate that balances bold aesthetics with meaningful storytelling. While he’s intrigued by elegant packaging, he’s often disappointed by brands that look good but lack depth, leaving him unsure whether the product is truly worth gifting.',
           blurb:
@@ -226,8 +226,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           imageSrc: empathyMapKevin,
         },
         {
-          caption: 'Persona – Lisa',
-          statement: 'Goal',
+          caption: 'Lisa - Persona',
+          statement: 'Lisa - Goal',
           statementDetails:
             'Create a fictional chocolate brand with strong UX foundations, emotional storytelling, and a unique visual identity, then design and build an e-commerce site that supports exploration and conversion.',
           blurb:
@@ -235,8 +235,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           imageSrc: personaLisa,
         },
         {
-          caption: 'Persona – Kevin',
-          statement: 'Goal',
+          caption: 'Kevin - Persona',
+          statement: 'Kevin - Goal',
           statementDetails:
             'Kevin wants to discover beautifully designed chocolate gifts that reflect his design sensibilities and personal values. His ideal brand feels intentional, tells a story, and delivers a sense of pride when giving it to others.',
           blurb:
@@ -244,8 +244,8 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           imageSrc: personaKevin,
         },
         {
-          caption: 'Journey Map – Lisa',
-          statement: 'Hypothesis',
+          caption: 'Lisa - Journey Map',
+          statement: 'Lisa - Hypothesis',
           statementDetails:
             'If I combine bold visual branding with an intuitive product discovery experience and gift-centered messaging, then users like Lisa will feel more emotionally connected and be more likely to purchase or recommend the product.',
           blurb:
@@ -253,7 +253,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
           imageSrc: journeyLisa,
         },
         {
-          caption: 'Journey Map – Kevin',
+          caption: 'Kevin - Journey Map',
           statement: 'Hypothesis',
           statementDetails:
             'If we design a chocolate brand that combines striking, memorable packaging with clear storytelling and thoughtful gifting options, then Kevin will feel more confident in his purchases and more emotionally connected to the brand experience.',
@@ -277,7 +277,7 @@ const uxSubheading = 'How the design thinking framework elevated my process'
       beforeTitle="User Informed Features"
       afterTitle="Visual & Experiential Impact"
       hmwTitle="How Might We"
-      hmwIntro="These questions anchored my ideation process and map directly to the features and brand elements shown below."
+      hmwIntro="These questions anchored my ideation process and map directly to solution features."
       :hmwItems="[
         {
           question: 'HMW make chocolate feel more personal and gift worthy at first glance?',

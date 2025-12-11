@@ -16,7 +16,7 @@ defineProps({
   <section id="ux-timeline-section">
     <div class="section-header-wrapper">
       <h3 class="font-bold text-3xl">From a UX lens</h3>
-      <p class="text-blue font-semibold md:pr-4 tracking-wider">Full Framework</p>
+      <p class="text-blue/90 font-semibold md:pr-4 tracking-wider">Full Framework</p>
     </div>
 
     <article>
@@ -30,7 +30,7 @@ defineProps({
             <div class="col-span-12 md:col-span-3">
               <div class="ux-header-wrapper">
                 <h3 class="text-3xl font-semibold">Design Framework</h3>
-                <span class="text-sm font-bold tracking-wider text-gray-500">
+                <span class="text-sm tracking-wide">
                   {{ subheading }}
                 </span>
               </div>

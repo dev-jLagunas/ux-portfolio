@@ -26,7 +26,7 @@ defineProps({
   <section id="outcome-section" class="flex-col-center">
     <div class="section-header-wrapper">
       <h3 class="font-bold text-3xl">The Outcome</h3>
-      <p class="text-blue font-semibold md:pr-4 tracking-wider">Prototype – Test</p>
+      <p class="text-blue/90 font-semibold md:pr-4 tracking-wider">Prototype – Test</p>
     </div>
 
     <article>

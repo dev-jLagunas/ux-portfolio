@@ -17,7 +17,7 @@ defineProps({
   <section id="reflections-section" class="flex-col-center">
     <div class="section-header-wrapper">
       <h3 class="font-bold text-3xl">My Reflections</h3>
-      <p class="text-blue font-semibold tracking-wider md:pr-4">Prototype – Test</p>
+      <p class="text-blue/90 font-semibold tracking-wider md:pr-4">Prototype – Test</p>
     </div>
 
     <article class="w-full">

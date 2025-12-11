@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { onMounted, onUnmounted } from 'vue'
 
 import problemIcon from '@/assets/svgs/problem-icon.svg'
 
@@ -25,18 +24,6 @@ const props = defineProps({
   statementDetails: { type: String, required: true },
 })
 
-let intervalId
-
-onMounted(() => {
-  intervalId = setInterval(() => {
-    nextImage()
-  }, 9000)
-})
-
-onUnmounted(() => {
-  clearInterval(intervalId)
-})
-
 // Reactive Properties
 const currentIndex = ref(0)
 const isModalOpen = ref(0)
@@ -55,7 +42,7 @@ function prevImage() {
   <section id="problem-section" class="flex-col-center">
     <div class="section-header-wrapper">
       <h3 class="font-bold text-3xl">The Problem</h3>
-      <p class="tracking-wider text-blue font-semibold md:pr-4">Empathize – Define</p>
+      <p class="tracking-wider text-blue/90 font-semibold md:pr-4">Empathize – Define</p>
     </div>
     <article class="flex-col-center">
       <div class="problem-header-wrapper">
@@ -69,7 +56,7 @@ function prevImage() {
       <h4 class="w-full font-semibold mb-4 text-2xl mt-8">How I gathered insights?</h4>
       <article
         v-if="researchMethods && researchMethods.length"
-        class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4"
+        class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4 md:gap-8 lg:gap-16"
       >
         <figure v-for="(method, idx) in researchMethods" :key="idx">
           <img :src="method.imageSrc" alt="research technique icon" class="h-16 mb-2" />
@@ -81,19 +68,19 @@ function prevImage() {
       <figure class="relative w-full mt-4">
         <div class="md:place-items-center">
           <div class="lg:grid lg:grid-cols-2 lg:gap-4">
+            <div class="mt-2 md:mt-0">
+              <h3 class="font-semibold tracking-wide border-b w-fit border-b-pink mb-2">
+                {{ props.artifacts[currentIndex].caption }}
+              </h3>
+              <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
+            </div>
             <div>
-              <h3 class="font-semibold tracking-wide">
+              <h3 class="font-semibold tracking-wide border-b w-fit border-b-pink mb-2">
                 {{ props.artifacts[currentIndex].statement }} Statement
               </h3>
               <p>
                 {{ props.artifacts[currentIndex].statementDetails }}
               </p>
-            </div>
-            <div>
-              <h3 class="font-semibold tracking-wide">
-                {{ props.artifacts[currentIndex].caption }}
-              </h3>
-              <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
             </div>
           </div>
           <img
@@ -123,10 +110,10 @@ function prevImage() {
         class="w-full rounded shadow-lg hover:cursor-pointer"
         loading="lazy"
       />
-      <p class="text-white font-bold text-sm text-center mt-2">
+      <p class="text-light font-bold text-2xl text-center mt-2">
         {{ props.artifacts[currentIndex].caption }}
       </p>
-      <p class="text-light text-center mt-2">{{ props.artifacts[currentIndex].blurb }}</p>
+      <p class="text-light text-center mt-2 leading-5">{{ props.artifacts[currentIndex].blurb }}</p>
     </div>
   </div>
 </template>

@@ -54,15 +54,15 @@ function closeModal() {
     </div>
 
     <!-- Tab Content -->
-    <div v-if="tabs[activeTab]" class="">
+    <div v-if="tabs[activeTab]">
       <img
         :src="tabs[activeTab].image"
         alt="screenshot of project"
-        class="mx-auto mb-4 rounded-md max-h-96 object-contain cursor-pointer"
+        class="mx-auto mb-4 rounded-md object-contain cursor-pointer"
         @click="openModal"
       />
       <h5 class="text-lg font-semibold mb-2">{{ tabs[activeTab].heading }}</h5>
-      <p class="text-sm leading-relaxed max-w-prose mx-auto">
+      <p class="mx-auto">
         {{ tabs[activeTab].description }}
       </p>
     </div>
