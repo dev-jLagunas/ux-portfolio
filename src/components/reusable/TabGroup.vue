@@ -58,7 +58,7 @@ function closeModal() {
       <img
         :src="tabs[activeTab].image"
         alt="screenshot of project"
-        class="mx-auto mb-4 rounded-md object-contain cursor-pointer"
+        class="mx-auto mb-4 rounded-md object-contain cursor-pointer bg-blue/30"
         @click="openModal"
       />
       <h5 class="text-lg font-semibold mb-2">{{ tabs[activeTab].heading }}</h5>
@@ -89,7 +89,7 @@ function closeModal() {
         class="w-full rounded-md mb-4 object-contain max-h-[70vh]"
         loading="lazy"
       />
-      <p v-if="modalImage?.description" class="text-sm text-dark">
+      <p v-if="modalImage?.description" class="text-dark">
         {{ modalImage.description }}
       </p>
     </div>

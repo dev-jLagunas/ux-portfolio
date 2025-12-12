@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
         v-for="section in sections"
         :key="section.id"
         :class="[
-          'cursor-pointer transition-colors duration-300',
+          'cursor-pointer transition-colors duration-300 tracking-wider',
           activeSection === section.id ? 'text-dark' : 'text-white',
         ]"
         @click="scrollToSection(section.id)"

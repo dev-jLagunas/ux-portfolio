@@ -86,7 +86,7 @@ function prevImage() {
           <img
             :src="props.artifacts[currentIndex].imageSrc"
             :alt="props.artifacts[currentIndex].caption"
-            class="rounded-md mt-16 w-full shadow-sm hover:cursor-pointer max-w-[700px] lg:mt-4"
+            class="rounded-md mt-16 w-full shadow-sm hover:cursor-pointer mx-auto max-w-[600px] lg:mt-4"
             @click="isModalOpen = true"
             loading="lazy"
           />
@@ -107,7 +107,7 @@ function prevImage() {
       <img
         :src="props.artifacts[currentIndex].imageSrc"
         :alt="props.artifacts[currentIndex].caption"
-        class="w-full rounded shadow-lg hover:cursor-pointer"
+        class="w-full rounded shadow-lg hover:cursor-pointer max-w-[600px] mx-auto"
         loading="lazy"
       />
       <p class="text-light font-bold text-2xl text-center mt-2">

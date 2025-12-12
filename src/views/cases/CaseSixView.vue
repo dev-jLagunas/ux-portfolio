@@ -7,6 +7,7 @@ const theme = useThemeStore()
 
 // Computed Properties
 const denkiVideo = computed(() => (theme.isDarkMode ? denkiVideoDark : denkiVideoLight))
+
 //Components
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
@@ -16,9 +17,9 @@ import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
-import divider from '@/assets/images/divider-img.png'
 
 // Images
+import divider from '@/assets/images/divider-img.png'
 import coverImg from '@/assets/images/cases/case-six/case-cover-img-denki.png'
 import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.png'
 import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.png'
@@ -32,32 +33,33 @@ import tdBeforeNav from '@/assets/images/cases/case-six/denki-navigation-before.
 import tdAfterBranding from '@/assets/images/cases/case-six/denki-branding-after.png'
 import tdAfterTrust from '@/assets/images/cases/case-six/denki-trust-after.png'
 import tdAfterNav from '@/assets/images/cases/case-six/denki-navigation-after.png'
-// Videos
 
-import denkiVideoLight from '@/assets/images/cases/case-six/denki-video-light.mp4'
-import denkiVideoDark from '@/assets/images/cases/case-six/denki-video-dark.mp4'
-// Spinner Logic
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Almost Ready!'
-
+// Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
 import medalIcon from '@/assets/svgs/highlights/medal-icon.svg'
 import thumbsIcon from '@/assets/svgs/highlights/thumbs-icon.svg'
 import upwardIcon from '@/assets/svgs/highlights/upward-icon.svg'
 import arrowBlue from '@/assets/svgs/right-arrow-blue.svg'
 import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
-
-const uxIntro = `A quick breakdown of how this project came together from strategy to launch. This TLDR highlights the key steps I took, the decisions that shaped the final experience, and how the redesign supported Tanaka Denki’s business goals.`
-
-const uxSubheading = 'Project Workflow at a Glance'
-
 import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
 
+// Videos
+import denkiVideoLight from '@/assets/images/cases/case-six/denki-video-light.mp4'
+import denkiVideoDark from '@/assets/images/cases/case-six/denki-video-dark.mp4'
+
+// Spinner Logic
+import { usePageLoader } from '@/composables/usePageLoader'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+const { isLoading } = usePageLoader(2000)
+const spinnerMessage = 'Almost Ready!'
+
+const uxIntro = `A quick breakdown of how this project came together from strategy to launch. This TLDR highlights the key steps I took, the decisions that shaped the final experience, and how the redesign supported Tanaka Denki’s business goals.`
+const uxSubheading = 'Project Workflow at a Glance'
+
 const icons = [smileIcon, thumbsIcon, upwardIcon, medalIcon]
+
 // Outcome Data & Icons
 const outcomeList = [
   {
@@ -82,6 +84,7 @@ const outcomeList = [
   },
 ]
 
+// Solution Tabs Data
 const beforeTabs = [
   {
     title: 'Navigation',
@@ -130,6 +133,7 @@ const afterTabs = [
   },
 ]
 
+// Reflections Data
 const reflections = [
   {
     title: 'Freelance work demands clarity.',
@@ -180,7 +184,7 @@ const reflections = [
         { id: 'solution-section', label: 'Solution' },
         { id: 'outcome-section', label: 'Outcome' },
         { id: 'reflections-section', label: 'Reflections' },
-        { id: 'ux-section', label: 'UX Lens' },
+        { id: 'ux-section', label: 'TLDR' },
       ]"
     />
     <CaseOverview
@@ -219,6 +223,7 @@ const reflections = [
       <source :src="denkiVideo" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"

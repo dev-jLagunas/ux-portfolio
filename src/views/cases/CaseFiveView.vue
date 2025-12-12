@@ -158,9 +158,10 @@ const reflections = [
 ]
 
 // UX Lens Data
-const uxIntro = `This was the first project where I intentionally applied the full design thinking framework from start to finish. Following each phase of the process was what I needed. Starting from empathizing with users then moving on to testing real prototypes, not only gave my work structure, it brought clarity and depth to every decision. Instead of relying purely on intuition, I designed with evidence, empathy, and purpose. The result was a brand and product experience that felt both emotionally resonant and strategically sound.`
+const uxIntro =
+  'A high-level summary of the design process, focusing on the decisions that had the greatest impact on usability, clarity, and outcomes.'
 
-const uxSubheading = 'Quick overview of the full process used in this project.'
+const uxSubheading = 'Design Process at a Glance'
 </script>
 
 <template>
@@ -173,7 +174,7 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
         { id: 'solution-section', label: 'Solution' },
         { id: 'outcome-section', label: 'Outcome' },
         { id: 'reflections-section', label: 'Reflections' },
-        { id: 'ux-section', label: 'UX Lens' },
+        { id: 'ux-section', label: 'TLDR' },
       ]"
     />
     <CaseOverview
@@ -300,8 +301,8 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
       introText3="The solutions are grouped into two sets. The first highlights user informed features, empathy driven outputs like personas, Crazy 8s, and system logic that shaped the site’s flows and interactivity. The second focuses on visual and experiential impact. The character branding, emotional storytelling, packaging mockups, and responsive Vue build that brought the concept to life. Together, they reflect the most complete expression of my UX process to date."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="User Informed Features"
-      afterTitle="Visual & Experiential Impact"
+      beforeTitle="Solution Features"
+      afterTitle="Solution Features"
       hmwTitle="How Might We"
       hmwIntro="These questions anchored my ideation process and map directly to solution features."
       :hmwItems="[
@@ -342,13 +343,11 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Empathize</h3>
-        <p class="text-xs tracking-wide uppercase">Understand the User Experience of Gifting</p>
+        <p class="text-xs tracking-wide uppercase">Understand Gifting Behavior</p>
         <p class="mt-3">
-          I began with 5 one-on-one interviews to understand how people approach buying chocolate,
-          particularly when it's meant as a gift. I wanted to know their thought process, what
-          excites them, and what often frustrates them. This helped me uncover pain points like
-          decision fatigue, unclear product differences, and the lack of emotional connection in
-          many existing options. These interviews formed the emotional core of this project.
+          I interviewed five users to understand how people choose chocolate as a gift, what creates
+          confidence, and where hesitation appears. This surfaced patterns like decision fatigue,
+          weak differentiation, and a lack of emotional payoff in existing brands.
         </p>
       </div>
 
@@ -356,14 +355,11 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Define</h3>
-        <p class="text-xs tracking-wide uppercase">Clarify the Problem</p>
+        <p class="text-xs tracking-wide uppercase">Frame the Core Problem</p>
         <p class="mt-3">
-          Synthesizing the interview data into affinity groups revealed that users felt overwhelmed
-          by choices and uninspired by presentation. I created two user personas to represent
-          distinct motivations: Lisa, the curious taster, and Kevin, the thoughtful gift-giver. From
-          there, I crafted journey maps for each to highlight friction and emotional context. The
-          core problem: most online chocolate shops fail to connect emotionally or guide the user
-          effectively through a decision.
+          Research showed that most chocolate e-commerce experiences fail to guide users or create
+          emotional connection. I defined two personas with distinct motivations and mapped their
+          journeys to pinpoint friction in browsing, selection, and gifting confidence.
         </p>
       </div>
 
@@ -371,13 +367,11 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Ideate</h3>
-        <p class="text-xs tracking-wide uppercase">Turn Pain Points Into Possibilities</p>
+        <p class="text-xs tracking-wide uppercase">Design for Guidance and Story</p>
         <p class="mt-3">
-          I explored possible solutions through Crazy 8s sketching, paper wireframes, and user flows
-          that aligned with Kevin’s and Lisa’s journeys. I also designed a site map based on natural
-          browsing expectations. This helped me organize content around exploration,
-          personalization, and storytelling. I wanted users to feel guided but not restricted, and
-          to emotionally connect with both the characters and the chocolate.
+          I explored layouts, flows, and content structures that balanced exploration with
+          direction. Ideas focused on storytelling, character-driven branding, and reducing choice
+          overload while preserving discovery.
         </p>
       </div>
 
@@ -385,13 +379,11 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Prototype</h3>
-        <p class="text-xs tracking-wide uppercase">Visualize the Experience</p>
+        <p class="text-xs tracking-wide uppercase">Design the Experience</p>
         <p class="mt-3">
-          I built low-fidelity wireframes in Figma to test layout logic and content hierarchy,
-          followed by high-fidelity mockups that fully captured the bold aesthetic and emotional
-          tone of the brand. Every detail—from ribbon color options to character-themed packaging
-          was intentional. I designed a quiz to guide indecisive users and integrated a customizable
-          gifting flow with optional messages and visual feedback.
+          I built lo-fi and hi-fi prototypes in Figma to refine hierarchy, pacing, and emotional
+          tone. Features like guided quizzes, customizable gifting, and visual feedback were
+          designed to increase confidence and reduce friction at checkout.
         </p>
       </div>
 
@@ -399,27 +391,23 @@ const uxSubheading = 'Quick overview of the full process used in this project.'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Test</h3>
-        <p class="text-xs tracking-wide uppercase">Validate with Real Users</p>
+        <p class="text-xs tracking-wide uppercase">Refine with Feedback</p>
         <p class="mt-3">
-          I shared both lo-fi and hi-fi prototypes with friends and colleagues who resembled my
-          personas. Their feedback reinforced that the site felt easy to navigate and special to
-          explore. A few shared their confusion when seeing too many options at once, so I refined
-          key screens to improve hierarchy and microcopy. This step helped me transform a concept
-          into a UX-guided experience.
+          I tested prototypes with users similar to the personas and iterated based on clarity and
+          flow. Feedback highlighted where visual density caused hesitation, leading to improved
+          spacing, hierarchy, and microcopy.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Deliver & Reflect</h3>
-        <p class="text-xs tracking-wide uppercase">Launch with Intention, Grow with Curiosity</p>
+        <h3 class="text-xl font-semibold tracking-wide">Deliver & Measure</h3>
+        <p class="text-xs tracking-wide uppercase">Build for Scale</p>
         <p class="mt-3">
-          While this project isn’t live, I treated it like it was. I structured the code for scale,
-          built reusable components in Vue, and organized data through a central Pinia store. I
-          wrote this case study to reflect not only the UX process, but how much I learned and loved
-          doing it. It’s proof to myself and to future teams that I’m serious about this work and
-          excited to grow.
+          I implemented the experience using Vue with reusable components and centralized state
+          management. The system was designed to scale, support iteration, and translate UX
+          decisions cleanly into production-ready code.
         </p>
       </div>
     </CaseUxLens>

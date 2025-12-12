@@ -7,6 +7,7 @@ const theme = useThemeStore()
 
 // Computed Properties
 const cafeVideo = computed(() => (theme.isDarkMode ? cafeVideoDark : cafeVideoLight))
+
 //Components
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
@@ -55,25 +56,25 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 // Tab Data
 const beforeTabs = [
   {
-    title: 'Multi-lingual Functionality',
+    title: 'Multilingual Support',
     image: languageFeat,
-    heading: 'Users Can Browse in 3 Languages',
+    heading: 'Browse in Three Languages',
     description:
-      'Many of our customers were Japanese locals or international tourists, yet our original site was only in English. To reduce friction and make the experience inclusive, we introduced a language toggle supporting English, Japanese, and Spanish. This directly reflects the empathy work we did early on, understanding our user base and designing with accessibility and cultural inclusivity in mind.',
+      'The original site supported only English. Adding English, Japanese, and Spanish reduced friction and made the experience inclusive and culturally aligned.',
   },
   {
     title: 'Responsive Design',
     image: responsiveFeat,
-    heading: 'Seamless Experience on Any Device',
+    heading: 'Optimized for Any Screen',
     description:
-      'The original site was hard to read on mobile and looked clunky on larger screens. By designing mobile-first and leveraging Tailwind CSS breakpoints, we ensured the new site adapts beautifully across devices. This aligns with our ideation and prototyping phase goals which were to prioritize clarity, comfort, and usability in every context.',
+      'The old site broke down on mobile. A mobile-first rebuild ensured clarity and consistency across all devices.',
   },
   {
     title: 'Interactive Menu',
     image: menuFeat,
-    heading: 'Filterable & Image-Based Menu',
+    heading: 'Scannable, Visual Menu',
     description:
-      'We replaced the static PDF menu with a fully interactive layout that lets users filter by food, drinks, or dessert. This improves skimmability and reinforces the playful tone of our brand. It was inspired by direct customer pain points and validated through informal testing and visual consistency analysis during the define phase.',
+      'We replaced a static PDF with a filterable, image-based menu to improve readability and reinforce brand tone.',
   },
 ]
 
@@ -81,47 +82,47 @@ const afterTabs = [
   {
     title: 'One-Touch Contact',
     image: touchFeat,
-    heading: 'Instant Call & Map Buttons',
+    heading: 'Call or Navigate Instantly',
     description:
-      'Users can now call us or get directions with a single tap. This wasn’t possible on our old site and created unnecessary barriers. Adding these touch-friendly elements addressed real-world needs uncovered during user journey mapping, particularly around mobile use and last-minute decision-making.',
+      'Tap-to-call and map buttons removed friction for mobile users making quick decisions.',
   },
   {
     title: 'Visual Identity',
     image: boldFeat,
-    heading: 'Bold, Human-Centered Design',
+    heading: 'Human, Culture-Driven Design',
     description:
-      'Rather than copy the minimalist cafe style common in Japan, we leaned into color, culture, and personality. From the hero images to iconography, every visual reinforces who we are. This was a direct result of ideating around how to reflect our brand’s emotional tone digitally. This was something we knew was missing before.',
+      'Color, imagery, and layout were used intentionally to express warmth, culture, and personality.',
   },
   {
-    title: 'Accessibility First',
+    title: 'Clear Information Architecture',
     image: usableFeat,
-    heading: ' Designed with Clarity in Mind',
+    heading: 'Easy to Scan, Easy to Find',
     description:
-      'Accessibility wasn’t an afterthought. It was baked into the code and the visuals. We used semantic HTML, optimized contrast, and minimized cognitive load across pages. This decision grew out of our reflection phase, where we evaluated how even unintentional design choices can exclude users and then did our best  to correct that.',
+      'Content was reorganized around how people actually look for information, with clear sections for menu, hours, location, and contact to reduce confusion and speed up decision-making.',
   },
 ]
 
 // Outcome Data & Icons
 const outcomeList = [
   {
-    title: 'Brand & Space Alignment',
+    title: 'Brand Alignment',
     description:
-      'Multiple users commented that the site "felt like us". Which felt like a reflection of our cafe’s cultural warmth, vibrant personality, and inclusive vibe. This alignment wasn’t accidental; it was the result of dozens of thoughtful design decisions that translated our physical identity into digital form.',
+      'Users consistently said the site felt like the cafe, warm, vibrant, and inclusive.',
   },
   {
-    title: 'Improved Usability',
+    title: 'Clearer Usability',
     description:
-      'Visitors or friends and family we asked to test our site consistently remarked on how intuitive. The information architecture, simplified navigation, and one-touch contact buttons all contributed to a smoother user flow. This was especially important for mobile-first users discovering us on the go.',
+      'Navigation, layout, and content structure made key information faster to find, especially on mobile.',
   },
   {
-    title: 'Competitive Distinction',
+    title: 'Stronger Differentiation',
     description:
-      'In contrast to other local cafés, our site stood out for its polish, interactivity, and accessibility. This differentiation didn’t just boost credibility, it sparked genuine curiosity. And often lead to new customer visits. It was a quiet, UX-led marketing tool. Also, it was just another way to express our brand.',
+      'Compared to local competitors, the site felt more polished and intentional, increasing credibility.',
   },
   {
-    title: 'Organic Promotion',
+    title: 'Organic Sharing',
     description:
-      'Because the site was multilingual, beautifully branded and easy to use. Some visitors said they forwarded it to friends or family. A very common word thrown around was "kawaii" which translates to "cute". Without paid ads or SEO strategy, the site began organically spreading. We believe this a direct outcome of designing something people felt worthy of at least sharing.',
+      'The multilingual, playful design encouraged visitors to share the site with others.',
   },
 ]
 
@@ -156,11 +157,10 @@ const reflections = [
 ]
 
 // Ux Lens Data
-const uxIntro = `This project was completed before I formally adopted the design thinking framework, but if I were to approach it today, I’d apply the full process from the ground up as I learned in the Google UX Design course. Below is how I would structure this project using each phase of the design thinking framework, combining the intuition I had then with the structure and strategy I’ve developed now.
+const uxIntro =
+  'A quick snapshot of how this project moved from real-world observation to a fully built, user-centered website.'
 
-`
-
-const uxSubheading = 'How I would approach this UX challenge today'
+const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
 </script>
 
 <template>
@@ -173,7 +173,7 @@ const uxSubheading = 'How I would approach this UX challenge today'
         { id: 'solution-section', label: 'Solution' },
         { id: 'outcome-section', label: 'Outcome' },
         { id: 'reflections-section', label: 'Reflections' },
-        { id: 'ux-section', label: 'UX Lens' },
+        { id: 'ux-section', label: 'TLDR' },
       ]"
     />
     <CaseOverview
@@ -211,27 +211,25 @@ const uxSubheading = 'How I would approach this UX challenge today'
 
     <CaseProblem
       id="problem-section"
-      problemStatement="Our original cafe website, built with Wix, lacked both functionality and personality. It wasn’t very responsive, offered no multilingual support, and used a static pdf image for our menu. Making it inaccessible to many users, especially Japanese and Spanish speakers. Customers struggled to find basic information like operating hours or contact details, particularly on mobile devices."
-      problemStatementB="Beyond usability, the site failed to reflect who we were. Cafe Triangle was warm, vibrant, and inclusive, but the digital experience felt generic and lifeless. This disconnect became our quiet challenge: to design a website that was not only accessible and user-friendly, but also an honest digital extension of our space and values."
-      userResearchIntro="Even without formal UX training, I approached the redesign with a user-first mindset which were grounded in real observations, customer feedback, and daily interactions at the cafe. These visual assets helped me make sense of that instinctive research and turn it into clear, actionable insights."
+      problemStatement="The original Cafe Triangle website lacked responsiveness, multilingual support, and clear access to basic information. Key details like hours, menu, and contact info were difficult to find, especially on mobile."
+      problemStatementB="The site also failed to reflect the cafe’s warmth and personality. While the physical space felt welcoming and inclusive, the digital experience felt generic and disconnected from the brand."
+      userResearchIntro="I approached the redesign with a user-first mindset grounded in daily customer interactions, direct feedback, and real-world observation. These artifacts helped translate intuition into actionable UX insights."
       :research-methods="[
         {
           caption: 'Competitive Analysis',
           imageSrc: analysisImg,
-          description:
-            'Reviewed 10+ cafe websites to benchmark user flow and compare online presence vs in person.',
+          description: 'Reviewed 10+ cafe websites to benchmark structure, flow, and clarity.',
         },
         {
           caption: 'Field Research',
           imageSrc: storeImg,
           description:
-            'Visited 10 local cafes in person to observe space atmosphere and customer touchpoints.',
+            'Visited 10 local cafes to observe atmosphere, layout, and customer touchpoints.',
         },
         {
           caption: 'Contextual Inquiry',
           imageSrc: userImg,
-          description:
-            'Studied local market and cultural habits to shape design tone and features.',
+          description: 'Studied local habits and cultural expectations to guide tone and features.',
         },
       ]"
       :artifacts="[
@@ -239,69 +237,67 @@ const uxSubheading = 'How I would approach this UX challenge today'
           caption: 'Empathy Map',
           statement: 'Problem',
           statementDetails:
-            'Local Kanazawa customers, especially working professionals and casual weekend cafe-goers, struggled to find clear, up-to-date information about Cafe Triangle online. The lack of a professional web presence made it difficult to communicate the cafes story, menu, and values, leading to missed opportunities for growth.',
+            'Local customers struggled to find clear, up-to-date information online. The lack of a polished web presence weakened trust and limited growth.',
           blurb:
-            'This empathy map helped uncover the emotional core of our ideal user: someone who values cultural variety, pet inclusivity, and visual storytelling. Insights like “valued as a pet owner” and “I wish more cafés had this kind of casual vibe” directly influenced the site’s tone, content, and structure to make users like Megumi feel seen, welcomed, and excited to share.',
+            'This empathy map surfaced emotional needs around inclusivity, clarity, and vibe. Insights directly shaped content structure and tone.',
           imageSrc: empathyMap,
         },
         {
           caption: 'Persona',
           statement: 'Goal',
           statementDetails:
-            'Design and build a simple, bilingual website that reflects the cafe’s brand and values, provides essential information like menu and hours, and improves discoverability for both locals and tourists.',
+            'Create a bilingual website that reflects the cafe’s values while clearly communicating menu, hours, and policies.',
           blurb:
-            'Megumi’s persona captured the exact audience we aimed to serve: culturally curious, pet-loving, and hungry for something different. Her frustrations with generic menus and unclear pet policies guided key UX decisions, from showcasing unique desserts to clearly signaling our dog-friendly atmosphere.',
+            'Megumi represents culturally curious, pet-friendly customers. Her needs guided decisions around messaging, hierarchy, and visual storytelling.',
           imageSrc: userPersona,
         },
         {
           caption: 'Journey Map',
           statement: 'Hypothesis',
           statementDetails:
-            'If I design a clear, visually appealing, bilingual website with easy access to core info, then customers will better understand the cafe’s offerings and story which will lead to increased foot traffic and stronger community engagement.',
+            'If the site is clear, bilingual, and visually welcoming, customers will better understand the cafe and be more likely to visit or share it.',
           blurb:
-            'This journey map traces Megumi’s experience from discovery to recommendation, revealing key emotions and friction points across six stages. While curiosity and connection define her final impression, early steps show confusion and skepticism. Such insights that drove design choices like a clear digital menu, pet-friendly cues, and a welcoming tone across all touchpoints.',
+            'The journey map revealed early friction and late-stage delight, informing choices like a clear menu, pet cues, and a warmer tone.',
           imageSrc: journeyMap,
         },
       ]"
-      takeaway="Megumi is a thoughtful, community-oriented cafe-goer who values comfort, cultural richness, and clear pet-friendly policies. Her journey reflects a desire not just for good food, but for experiences that feel welcoming, unique, and worth sharing. When cafes clearly communicate their vibe and inclusivity, she becomes a loyal advocate."
+      takeaway="Megumi values clarity, inclusivity, and atmosphere. When a cafe communicates these well online, she becomes a repeat visitor and advocate."
       quote="It's hard to know if a place is truly pet-friendly."
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
+    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
-      introText="To address the limitations of our original site, I redesigned Cafe Triangle’s website from the ground up with a focus on usability, personality, and accessibility. Every design decision was guided by a single goal: to create a digital experience that felt as welcoming and vibrant as our cafe itself."
-      introText2="Rather than list features at random, I organized my solutions around a few guiding ‘How Might We’ questions. These questions helped me translate real user frustrations into clear design opportunities: making essential information accessible on mobile, reducing language barriers, and expressing our cafe’s personality online. Even though I wasn’t yet using formal ideation tools, this approach kept my work structured and intentional."
-      introText3="The solutions below are presented in two sets. The first set highlights the core usability upgrades (language, responsiveness, interactive menu), while the second set focuses on refinements that deepened the user experience (one-touch contact, bold visual identity, accessibility-first design). Together, they show how each design choice was rooted in user needs and our cafe’s brand story."
+      introText="I redesigned Cafe Triangle’s website from the ground up with a clear focus on usability, accessibility, and brand expression. The goal was simple: make the digital experience feel as welcoming and intuitive as the cafe itself."
+      introText2="I framed solutions around a small set of guiding questions. These helped translate real user friction into focused design decisions, from mobile access to language support and brand expression."
+      introText3="The solutions are grouped into two areas. Core usability improvements address access and clarity. Experience refinements reinforce personality, accessibility, and ease of use. Together, they form a cohesive, user-centered system."
       hmwTitle="How Might We"
-      hmwIntro="I wasn’t yet using formal ideation tools, but I did frame the work around a few guiding questions. These map directly to the solutions below."
+      hmwIntro="A few guiding questions shaped every design decision below."
       :hmwItems="[
         {
-          question:
-            'HMW make essential info instantly accessible on mobile for first-time visitors?',
+          question: 'HMW make essential info instantly accessible on mobile?',
           response: 'One-Touch Contact + Responsive Design',
         },
         {
-          question: 'HMW welcome locals and tourists equally and reduce language friction?',
-          response: 'Multi-lingual Functionality',
+          question: 'HMW reduce language barriers for locals and tourists?',
+          response: 'Multilingual Support',
         },
         {
-          question:
-            'HMW reflect our warm, pet-friendly, culture-forward vibe so users feel it’s worth a visit?',
-          response: 'Visual Identity + Interactive Menu + pet-friendly cues',
+          question: 'HMW reflect our warm, pet-friendly identity online?',
+          response: 'Visual Identity + Interactive Menu',
         },
       ]"
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="Site Features A"
-      afterTitle="Site Features B"
+      beforeTitle="Design Features"
+      afterTitle="Design Features"
     />
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
     <CaseOutcome
       id="outcome-section"
-      intro="The launch of the redesigned Cafe Triangle website brought immediate, qualitative improvements. Although we didn’t use formal analytics, feedback from friends, family, and customers painted a clear picture: the site was easier to navigate, more informative, and far more aligned with who we were as a brand. It wasn’t just functional, it felt right to the people who used it."
-      context="These outcomes reflected a shift not only in usability, but in emotional resonance. The site’s design helped people feel more welcomed, more informed, and more connected to our space. Below are four key themes that emerged from this redesign:"
+      intro="The redesigned Cafe Triangle site immediately improved clarity, navigation, and brand alignment. Informal testing and customer feedback confirmed it felt easier to use and more representative of the cafe."
+      context="The redesign improved both usability and emotional connection. Four outcomes stood out:"
       :outcomes="outcomeList"
       :icons="icons"
     />
@@ -319,13 +315,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Empathize</h3>
-        <p class="text-xs tracking-wide uppercase">Users, Context, and Constraints</p>
+        <p class="text-xs tracking-wide uppercase">Real Users, Real Context</p>
         <p class="mt-3">
-          I’d begin with stakeholder interviews, observational café visits, and digital surveys to
-          better understand user behavior, pain points, and expectations. This would be for both
-          online and in-person. I’d also run a competitive audit of local cafés' digital presence to
-          identify opportunities and gaps. This would mirror the initial research process emphasized
-          in the Google course, combining qualitative and quantitative data collection.
+          I studied local cafe websites, observed in-store behavior, and gathered daily customer
+          feedback. This revealed gaps in accessibility, mobile usability, and language support.
         </p>
       </div>
 
@@ -333,14 +326,10 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Define</h3>
-        <p class="text-xs tracking-wide uppercase">Identify Core Problem</p>
+        <p class="text-xs tracking-wide uppercase">Clarify the Core Problem</p>
         <p class="mt-3">
-          Using tools like affinity diagrams and insights synthesis, I’d clearly define the primary
-          user challenge,for example, “Multilingual users can’t easily access essential café
-          information.” I’d create user personas and write a focused problem statement, just like we
-          practiced in the course. This step would align my design goals with user needs and ensure
-          I stay grounded in real pain points. I'd do what is important to ensure I was not working
-          through guesses and assumptions.
+          The site was hard to use, English-only, and failed to reflect the cafe’s identity. Users
+          struggled to find basic info and understand what made us different.
         </p>
       </div>
 
@@ -348,24 +337,21 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Ideate</h3>
-        <p class="text-xs tracking-wide uppercase">Explore Multiple Solutions</p>
+        <p class="text-xs tracking-wide uppercase">Design for Inclusion and Clarity</p>
         <p class="mt-3">
-          Here, I’d brainstorm ideas using methods like mind mapping, crazy 8s, and task flows. I’d
-          involve collaborators early on. Especially café visitors and my co-founder to help
-          validate ideas and ensure I wasn’t designing in a vacuum. I’d also sketch out low-fidelity
-          screens on paper or in Figma to explore structure before jumping to high-res visuals.
+          I focused on multilingual access, mobile-first layouts, and clear content hierarchy. Every
+          idea supported discoverability and emotional connection.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Prototype</h3>
-        <p class="text-xs tracking-wide uppercase">Design Low & High Fidelity Mockups</p>
+        <h3 class="text-xl font-semibold tracking-wide">Build</h3>
+        <p class="text-xs tracking-wide uppercase">Code as Iteration</p>
         <p class="mt-3">
-          Using Figma, I’d design wireframes and interactive prototypes focused on hierarchy,
-          usability, and accessibility. I'd share drafts with users and collaborators for early
-          feedback.
+          I built the site from scratch using Angular and Tailwind, iterating directly in code.
+          Features were refined through trial, feedback, and constant usability checks.
         </p>
       </div>
 
@@ -373,30 +359,25 @@ const uxSubheading = 'How I would approach this UX challenge today'
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
         <h3 class="text-xl font-semibold tracking-wide">Test</h3>
-        <p class="text-xs tracking-wide uppercase">Validate and Iterate</p>
+        <p class="text-xs tracking-wide uppercase">Refine with Feedback</p>
         <p class="mt-3">
-          Finally, I’d conduct usability tests with real users. This would ideally be a mix of
-          Japanese locals, international tourists, and bilingual users. I’d collect feedback using
-          structured protocols like task completion questions and “think aloud” techniques. Based on
-          the feedback, I’d iterate, refine, and test again to ensure the final product was both
-          functional and user-centered.
+          Friends, family, and customers tested the site across devices. I adjusted spacing,
+          navigation, and readability based on their input.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Deliver & Measure</h3>
-        <p class="text-xs tracking-wide uppercase">Launch and Track Behavior</p>
+        <h3 class="text-xl font-semibold tracking-wide">Deliver</h3>
+        <p class="text-xs tracking-wide uppercase">Launch and Learn</p>
         <p class="mt-3">
-          Once launched, I’d implement analytics tools to monitor user behavior. Tracking
-          engagement, clicks, bounce rates, and task success. I’d also explore lightweight feedback
-          tools like surveys or usability polls to gather real-world insights. From there, I’d build
-          a plan for continuous improvement through data-driven iteration, ensuring the design
-          evolves with user needs.
+          The site launched as a fast, responsive, multilingual experience. While analytics came
+          later, qualitative feedback confirmed strong usability and brand alignment.
         </p>
       </div>
     </CaseUxLens>
+
     <BackHomeBtn />
   </div>
 </template>
