@@ -241,7 +241,7 @@ Case Overview Styles
 }
 
 .overview-img {
-  @apply w-full max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-[600px] lg:w-full shadow-sm;
+  @apply w-full max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-[600px] lg:w-full shadow-xl;
 }
 
 .case-study-btn {
@@ -256,11 +256,11 @@ Case Problem Styles
 }
 
 .problem-left-btn {
-  @apply text-4xl absolute top-2/3 -left-4 transform -translate-y-1/2  ml-3  opacity-25 transition-all duration-300 md:text-6xl hover:scale-150 hover:opacity-100 hover:cursor-pointer;
+  @apply text-5xl absolute top-2/3 -left-4 transform -translate-y-1/2  ml-3  opacity-25 transition-all duration-300 md:text-6xl hover:scale-150 hover:opacity-100 hover:cursor-pointer;
 }
 
 .problem-right-btn {
-  @apply text-4xl absolute -right-4 top-2/3 transform -translate-y-1/2  mr-3 opacity-25 hover:scale-150 transition-all duration-300 md:text-6xl hover:opacity-100 hover:cursor-pointer;
+  @apply text-5xl absolute -right-4 top-2/3 transform -translate-y-1/2  mr-3 opacity-25 hover:scale-150 transition-all duration-300 md:text-6xl hover:opacity-100 hover:cursor-pointer;
 }
 
 .problem-quote {

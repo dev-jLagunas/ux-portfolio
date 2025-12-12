@@ -22,7 +22,7 @@ import behanceIcon from '@/assets/svgs/behance-icon.svg'
     <section class="link-card-wrapper">
       <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
-        title="My Dev Portfolio"
+        title="My Code Projects"
         :icon="portfolioIcon"
         :url="'https://dev-jlagunas.github.io/my-portfolio/#/'"
         loading="lazy"
