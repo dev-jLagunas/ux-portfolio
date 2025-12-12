@@ -35,21 +35,6 @@ const router = createRouter({
       component: () => import('@/views/cases/CaseOneView.vue'),
     },
     {
-      path: '/case-two',
-      name: 'case two',
-      component: () => import('@/views/cases/CaseTwoView.vue'),
-    },
-    {
-      path: '/case-three',
-      name: 'case three',
-      component: () => import('@/views/cases/CaseThreeView.vue'),
-    },
-    {
-      path: '/case-four',
-      name: 'case four',
-      component: () => import('@/views/cases/CaseFourView.vue'),
-    },
-    {
       path: '/case-five',
       name: 'case five',
       component: () => import('@/views/cases/CaseFiveView.vue'),

@@ -2,9 +2,6 @@
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeMockUp from '@/assets/images/home/cafe-mockup.png'
-import notionMockup from '@/assets/images/home/notion-mockup.png'
-import marketingMockup from '@/assets/images/home/flyer-mockup.png'
-import emailMockup from '@/assets/images/home/newsletter-mockup.png'
 import beanMockUp from '@/assets/images/home/bean-mockup.png'
 import denkiMockUp from '@/assets/images/home/denki-mockup.png'
 </script>
@@ -45,30 +42,6 @@ import denkiMockUp from '@/assets/images/home/denki-mockup.png'
         description="A multilingual cafe website designed from scratch to clearly showcase the menu and brand while improving usability for both local and international customers."
         :image="cafeMockUp"
         route="/case-one"
-        loading="lazy"
-      />
-      <ProjectCard
-        title="Notion Project Management System"
-        ux-type="Systems UX"
-        description="A fully custom Notion workspace that streamlined project management, boosted team accountability, and replaced chaotic email chains with clear systems."
-        :image="notionMockup"
-        route="/case-two"
-        loading="lazy"
-      />
-      <ProjectCard
-        title="Department Marketing System"
-        ux-type="Design Ops UX"
-        description="A full redesign of the department's visual standards and workflows, unifying brand identity and improving clarity across all marketing assets."
-        :image="marketingMockup"
-        route="/case-three"
-        loading="lazy"
-      />
-      <ProjectCard
-        title="Email Newsletter Redesign"
-        ux-type="Email UX"
-        description="A data-informed newsletter overhaul focused on hierarchy, engagement, and skimmability to boost click-throughs and student interaction."
-        :image="emailMockup"
-        route="/case-four"
         loading="lazy"
       />
     </div>
