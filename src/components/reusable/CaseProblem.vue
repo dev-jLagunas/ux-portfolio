@@ -86,7 +86,7 @@ function prevImage() {
           <img
             :src="props.artifacts[currentIndex].imageSrc"
             :alt="props.artifacts[currentIndex].caption"
-            class="rounded-md w-full shadow-sm hover:cursor-pointer max-w-[700px]"
+            class="rounded-md mt-16 w-full shadow-sm hover:cursor-pointer max-w-[700px] lg:mt-4"
             @click="isModalOpen = true"
             loading="lazy"
           />

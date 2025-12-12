@@ -20,7 +20,18 @@ import divider from '@/assets/images/divider-img.png'
 
 // Images
 import coverImg from '@/assets/images/cases/case-six/case-cover-img-denki.png'
-
+import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.png'
+import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.png'
+import personaNakamura from '@/assets/images/cases/case-six/persona-denki-nakamura.png'
+import personaTanabe from '@/assets/images/cases/case-six/persona-denki-tanabe.png'
+import journeyNakamura from '@/assets/images/cases/case-six/journey-denki-nakamura.png'
+import journeyTanabe from '@/assets/images/cases/case-six/journey-denki-tanabe.png'
+import tdBeforeBranding from '@/assets/images/cases/case-six/denki-branding-before.png'
+import tdBeforeTrust from '@/assets/images/cases/case-six/denki-trust-before.png'
+import tdBeforeNav from '@/assets/images/cases/case-six/denki-navigation-before.png'
+import tdAfterBranding from '@/assets/images/cases/case-six/denki-branding-after.png'
+import tdAfterTrust from '@/assets/images/cases/case-six/denki-trust-after.png'
+import tdAfterNav from '@/assets/images/cases/case-six/denki-navigation-after.png'
 // Videos
 
 import denkiVideoLight from '@/assets/images/cases/case-six/denki-video-light.mp4'
@@ -74,21 +85,21 @@ const outcomeList = [
 const beforeTabs = [
   {
     title: 'Navigation',
-    // image: tdBeforeA,
+    image: tdBeforeNav,
     heading: 'Unstructured Layout',
     description:
       'Pages were long, dense, and inconsistent. Key information like services, certifications, and past work was buried. Users had to scroll and guess where things were. This slowed evaluation and hurt credibility.',
   },
   {
     title: 'Branding',
-    // image: tdBeforeB,
+    image: tdBeforeBranding,
     heading: 'Outdated Visuals',
     description:
       'The old site relied on mismatched colors, unbalanced spacing, and non-branded components. To B2B users, this created doubt about professionalism. The digital impression did not match the quality of the real company.',
   },
   {
     title: 'Trust Signals',
-    // image: tdBeforeC,
+    image: tdBeforeTrust,
     heading: 'Low Transparency',
     description:
       'Certifications, project history, and safety compliance were missing or hard to find. For municipal and industrial clients, these signals are essential for risk reduction. Without them, the company looked less reliable than it actually is.',
@@ -98,21 +109,21 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'Navigation',
-    // image: tdAfterA,
+    image: tdAfterNav,
     heading: 'Clear Information Architecture',
     description:
       'I reorganized the site into simple, predictable sections: Services, Projects, Company Info, Certifications, and Contact. Users now find what they need in seconds. This directly supports faster vendor evaluation and fewer drop-offs.',
   },
   {
     title: 'Branding',
-    // image: tdAfterB,
+    image: tdAfterBranding,
     heading: 'Modern and Consistent UI',
     description:
       'I introduced a fully unified design system: spacing rules, typography, color usage, layout patterns, and component styling. The brand now communicates stability and expertise, increasing perceived trust at first glance.',
   },
   {
     title: 'Trust Signals',
-    // image: tdAfterC,
+    image: tdAfterTrust,
     heading: 'Proof of Expertise',
     description:
       'Certifications, past projects, safety information, and company credentials are now front and center. These updates directly reduce user hesitation and give decision-makers the confidence to follow through with inquiries.',
