@@ -42,7 +42,7 @@ defineProps({
     ></router-link>
 
     <p class="project-type">{{ uxType }}</p>
-    <h3 class="project-title leading-6 mb-2">{{ title }}</h3>
+    <h3 class="project-title leading-6 my-2">{{ title }}</h3>
     <p class="mb-4 md:text-lg leading-5">
       {{ description }}
     </p>

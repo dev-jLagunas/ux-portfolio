@@ -9,10 +9,10 @@ import denkiMockUp from '@/assets/images/home/denki-mockup.png'
 <template>
   <section class="font-main mx-auto">
     <header class="">
-      <h1 class="font-bold text-3xl md:text-4xl font-special">My UX Work</h1>
-      <p class="my-2 sm:text-xl lg:w-3/4">
-        A selection of real-world work that highlight my process, versatility, and impact ranging
-        from internal systems to full product design.
+      <h1 class="font-bold text-3xl md:text-4xl font-special">My Work</h1>
+      <p class="my-2 sm:text-xl">
+        End-to-end product and UX work, designed and built from concept to production for real
+        businesses and users.
       </p>
     </header>
 
@@ -20,28 +20,29 @@ import denkiMockUp from '@/assets/images/home/denki-mockup.png'
       <div class="relative">
         <!-- <h2 class="featured-title">FEATURED</h2> -->
         <ProjectCard
-          title="Tanaka Denki Service"
-          ux-type="Website Redesign"
-          description="A complete redesign of a Japanese solar maintenance website, improving communication, trust, and usability for business and government clients."
+          title="Strengthened Trust and Service Clarity for a Japanese Solar Maintenance Business"
+          ux-type="B2B Website UX · Information Architecture"
+          description="Redesigned and rebuilt a live solar maintenance website to improve credibility, service clarity, and usability for business and government clients in Japan."
           :image="denkiMockUp"
           route="/case-six"
           loading="lazy"
         />
       </div>
       <ProjectCard
-        title="Bean And Beast Chocolates"
-        ux-type="E-commerce UX"
-        description="Bean And Beast is a luxury chocolate brand focused on telling a story. Each flavor is based on a black and white animal contrasted against vibrant colors and flavors."
+        title="Designed a Character-Driven E-Commerce Experience from Scratch"
+        ux-type="Product Design · UX Strategy"
+        description="A fully self-directed, research-driven product design project defining the brand, UX strategy, visual system, and front-end implementation for a production-ready e-commerce experience."
         :image="beanMockUp"
         route="/case-five"
         loading="lazy"
       />
+
       <ProjectCard
-        title="Cafe Triangle Redesign"
-        ux-type="Web UX"
-        description="A multilingual cafe website designed from scratch to clearly showcase the menu and brand while improving usability for both local and international customers."
+        title="Improved Clarity for a Multilingual Cafe Website in Japan"
+        ux-type="Website UX · Multilingual Design"
+        description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
         :image="cafeMockUp"
-        route="/case-one"
+        route="/case-four"
         loading="lazy"
       />
     </div>

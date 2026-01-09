@@ -1,5 +1,4 @@
 <script setup>
-import { showContactModal } from '@/composables/useContactModal'
 import { useRouter } from 'vue-router'
 
 import heroMainImg from '@/assets/images/hero-main-img-2.png'
@@ -10,44 +9,33 @@ const router = useRouter()
 function navigateToWork() {
   router.push({ name: 'home', hash: '#case-studies' })
 }
-
-// Methods
-function openContactModal() {
-  showContactModal.value = true
-}
 </script>
 
 <template>
   <section class="hero-container md:grid md:grid-cols-2">
-    <div class="transition-all duration-500 ease-in-out md:place-content-center">
-      <div class="">
+    <div class="transition-all duration-500 ease-in-out place-items-center md:place-content-center">
+      <div class="xs:w-4/5 md:w-full">
         <h2 class="hero-title">Hello, I'm Juan</h2>
         <h2 class="hero-title text-pink">Hola, Soy Juan</h2>
         <h2 class="hero-title text-blue">ハロー、フアンです。</h2>
 
-        <p class="my-4 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl">
-          <span class="pink-bold-letter">UX</span> &
-          <span class="blue-bold-letter">UI</span> designer crafting experiences that feel as good
-          as they look.
+        <p
+          class="mt-4 mb-2 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl font-bold"
+        >
+          Product Designer · UX · UI · Front-End · 3+ Years
         </p>
         <p class="leading-5 text-lg sm:text-xl lg:leading-7 2xl:text-2xl">
-          I merge thoughtful product design with clean, engaging visual systems for international
+          I merge thoughtful product design with clean, engaging visual systems for diverse
           audiences.
+          <span class="block mt-2">
+            My work includes live, production products built for real businesses and multilingual
+            users.
+          </span>
         </p>
-        <div class="hero-btn-wrapper-md">
+
+        <div class="mt-8 hidden md:block">
           <button
-            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:brightness-90"
-            @click="openContactModal()"
-          >
-            Contact Me
-          </button>
-          <button
-            class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear"
-          >
-            <a href="/Juan-Resume.pdf" download>Resume</a>
-          </button>
-          <button
-            class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
+            class="nav-btn-styles hover:bg-blue hover:text-light duration-100 transition-all ease-linear relative"
             @click="navigateToWork"
           >
             See Work
@@ -55,22 +43,11 @@ function openContactModal() {
         </div>
       </div>
     </div>
-    <figure class="">
+    <figure class="max-w-92 mx-auto md:max-w-125 lg:max-w-150">
       <img :src="heroMainImg" alt="img of Juan Lagunas" class="w-full h-full object-cover" />
     </figure>
 
-    <div class="flex justify-around gap-2 md:hidden">
-      <button
-        class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:brightness-90"
-        @click="openContactModal()"
-      >
-        Contact Me
-      </button>
-      <button
-        class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
-      >
-        <a href="/Juan-Resume.pdf" download>Resume</a>
-      </button>
+    <div class="md:hidden w-fit mx-auto">
       <button
         class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
         @click="navigateToWork"

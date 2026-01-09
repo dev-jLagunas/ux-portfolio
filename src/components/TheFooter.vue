@@ -18,9 +18,6 @@ function openContactModal() {
 
 <template>
   <footer class="bg-pink px-4 pt-4 font-main rounded-t-md text-white relative mt-36">
-    <p class="mb-4 w-max p-2 mx-auto">
-      <a href="mailto:dev.jlagunas@gmail.com" class="">dev.jlagunas@gmail.com</a>
-    </p>
     <img :src="skaterIcon" alt="" class="h-14 absolute -top-12 animate-skate" />
     <h3 class="font-bold text-center text-3xl md:text-5xl mt-4 font-special">
       Thanks for stopping by!

@@ -35,6 +35,8 @@ Tailwind Variables
   --color-dark: #0f0f0f;
   --color-light: #f7f7f7;
   --color-copy: #333333;
+
+  --breakpoint-xs: 425px;
 }
 
 /***************************************
@@ -279,7 +281,7 @@ Case Problem Styles
 Sticky Nav Styles
 *****************************************/
 .sticky-nav-container {
-  @apply mt-8 mb-8 sticky top-3 z-50 bg-pink py-3 rounded-sm font-main;
+  @apply mt-8 mb-8 sticky top-3 z-50 bg-pink py-2 rounded-sm font-main;
 }
 
 .sticky-content-wrapper {

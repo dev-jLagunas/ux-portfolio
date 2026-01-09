@@ -42,7 +42,7 @@ function navigateToWork() {
 
 <template>
   <nav class="nav-container-styles">
-    <div class="flex items-center mr-8">
+    <div class="flex items-center justify-between mr-8">
       <img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-20" />
       <router-link class="flex items-start nav-name-wrapper" to="/">
         <p><span class="pink-bold-letter">J</span>uan</p>
