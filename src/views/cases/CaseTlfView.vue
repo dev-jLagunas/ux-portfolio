@@ -108,7 +108,7 @@ const outcomeList = [
   {
     title: 'Launch-Ready Product Ecosystem',
     description:
-      'In 45 days, I designed and built a complete, cohesive system: five finished children’s books, a bilingual website, supporting assets, and a clear launch pipeline. The project is fully prepared for release across Amazon, the website, and social channels.',
+      'I designed and built a complete, cohesive system: five finished children’s books, a bilingual website, supporting assets, and a clear launch pipeline. The project is fully prepared for release across Amazon, the website, and social channels.',
   },
   {
     title: 'Clear Pedagogical Foundation',
@@ -306,7 +306,7 @@ const uxSubheading = 'Quick breakdown of process.'
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseOutcome
       id="outcome-section"
-      intro="The Language Friends is approaching launch, not a retrospective success story. In 45 days, I built a complete, real product from zero: five finished books, a bilingual website, a clear pedagogy, and the systems needed to ship and grow. While analytics and sales data will come post-launch, the product itself is finished, coherent, and ready to be tested in the real world."
+      intro="The Language Friends is approaching launch, not a retrospective success story. I built a complete, real product from zero: five finished books, a bilingual website, a clear pedagogy, and the systems needed to ship and grow. While analytics and sales data will come post-launch, the product itself is finished, coherent, and ready to be tested in the real world."
       context="Rather than measuring outcomes by metrics that don’t yet exist, this section focuses on what has already been achieved: a launch-ready system, validated learning principles, and a foundation designed to scale. These outcomes reflect execution, judgment, and readiness, not hypothetical impact."
       :outcomes="outcomeList"
       :icons="icons"

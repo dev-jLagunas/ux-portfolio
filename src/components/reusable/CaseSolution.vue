@@ -51,7 +51,7 @@ defineProps({
         <p class="mb-2">{{ introText2 }}</p>
         <p class="mb-6">{{ introText3 }}</p>
       </div>
-      <section v-if="hmwItems.length" id="hmw-section" class="my-16 mx-auto w-fit">
+      <section v-if="hmwItems.length" id="hmw-section" class="my-4 mx-auto w-fit">
         <h3 class="text-2xl font-semibold">{{ hmwTitle }}</h3>
         <p v-if="hmwIntro" class="mt-2">
           {{ hmwIntro }}

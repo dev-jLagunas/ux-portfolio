@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 
 import heroMainImg from '@/assets/images/hero-main-img-2.png'
+import arrow from '@/assets/images/curved-arrow.png'
 
 // Routing
 const router = useRouter()
@@ -19,27 +20,25 @@ function navigateToWork() {
         <h2 class="hero-title text-pink">Hola, Soy Juan</h2>
         <h2 class="hero-title text-blue">ハロー、フアンです。</h2>
 
-        <p
-          class="mt-4 mb-2 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl font-bold"
-        >
+        <p class="mt-4 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl font-bold">
           Product Designer · UX · UI · Front-End · 3+ Years
         </p>
         <p class="leading-5 text-lg sm:text-xl lg:leading-7 2xl:text-2xl">
-          I merge thoughtful product design with clean, engaging visual systems for diverse
-          audiences.
-          <span class="block mt-2">
-            My work includes live, production products built for real businesses and multilingual
-            users.
-          </span>
+          Vue 3 · Nuxt · Tailwind CSS · Front-End Systems
+        </p>
+        <p class="leading-5 text-lg sm:text-xl lg:leading-7 2xl:text-2xl mt-2">
+          I merge thoughtful product design with clean, engaging visual systems for international
+          audiences, designing and building real products end to end.
         </p>
 
-        <div class="mt-8 hidden md:block">
+        <div class="mt-8 hidden md:block md:relative">
           <button
             class="nav-btn-styles hover:bg-blue hover:text-light duration-100 transition-all ease-linear relative"
             @click="navigateToWork"
           >
             See Work
           </button>
+          <img :src="arrow" alt="" class="h-24 absolute top-4 left-24 rotate-15" />
         </div>
       </div>
     </div>
@@ -47,13 +46,14 @@ function navigateToWork() {
       <img :src="heroMainImg" alt="img of Juan Lagunas" class="w-full h-full object-cover" />
     </figure>
 
-    <div class="md:hidden w-fit mx-auto">
+    <div class="md:hidden w-fit mx-auto relative">
       <button
         class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
         @click="navigateToWork"
       >
         See Work
       </button>
+      <img :src="arrow" alt="" class="h-24 absolute top-4 left-24 rotate-15" />
     </div>
   </section>
 </template>
