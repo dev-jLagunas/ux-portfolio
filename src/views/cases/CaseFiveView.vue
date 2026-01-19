@@ -1,6 +1,11 @@
 <script setup>
 import { computed } from 'vue'
 import { useThemeStore } from '@/stores/theme'
+import { usePageLoader } from '@/composables/usePageLoader'
+import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+
+const { isLoading } = usePageLoader(2000)
+const spinnerMessage = 'Coming Right Up!'
 
 // Store
 const theme = useThemeStore()
@@ -40,6 +45,7 @@ import divider from '@/assets/images/divider-img.png'
 // Videos
 import beanVideoLight from '@/assets/images/cases/case-five/bnb-video-light.mp4'
 import beanVideoDark from '@/assets/images/cases/case-five/bnb-video-dark.mp4'
+
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
 import medalIcon from '@/assets/svgs/highlights/medal-icon.svg'
@@ -47,12 +53,6 @@ import thumbsIcon from '@/assets/svgs/highlights/thumbs-icon.svg'
 import upwardIcon from '@/assets/svgs/highlights/upward-icon.svg'
 import arrowBlue from '@/assets/svgs/right-arrow-blue.svg'
 import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
-
-// Spinner Logic
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Coming Right Up!'
 
 // Tab Data
 const beforeTabs = [
@@ -293,7 +293,6 @@ const uxSubheading = 'Design Process at a Glance'
       quote="Buying chocolate shouldn’t feel like a gamble or a chore."
     />
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
-
     <CaseSolution
       id="solution-section"
       introText="Bean And Beast was my first project built entirely from the ground up using the full UX design thinking framework. Unlike my earlier retroactive case studies, this one followed each phase deliberately, from empathy research to coded implementation. My goal was not only to design a product, but to prove I could create a bold, emotionally resonant brand and e-commerce experience with structure and intent at every step."
@@ -330,7 +329,6 @@ const uxSubheading = 'Design Process at a Glance'
       :icons="icons"
     />
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
-
     <CaseReflections
       id="reflections-section"
       intro="Bean And Beast was more than a design project to me. It was proof that I could lead a UX process from start to finish. It challenged me to think holistically: from empathizing with users to crafting visuals, building structure, and telling a brand story that resonated. This capstone taught me what it really means to design with purpose, and how process transforms intuition into impact."

@@ -30,13 +30,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="project-card-container md:h-full md:w-full md:max-w-[450px] shadow-sm">
+  <div class="project-card-container md:h-full md:w-full shadow-sm">
     <router-link :to="route">
       <figure class="w-full mb-4 rounded-md bg-blue/30 hover:rotate-1">
         <img
           :src="image"
           alt="trio image of project screenshots"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover max-w-100 mx-auto"
           loading="lazy"
         /></figure
     ></router-link>

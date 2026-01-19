@@ -4,6 +4,7 @@ import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeMockUp from '@/assets/images/home/cafe-mockup.png'
 import beanMockUp from '@/assets/images/home/bean-mockup.png'
 import denkiMockUp from '@/assets/images/home/denki-mockup.png'
+import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.png'
 </script>
 
 <template>
@@ -17,6 +18,15 @@ import denkiMockUp from '@/assets/images/home/denki-mockup.png'
     </header>
 
     <div class="home-projects-container">
+      <ProjectCard
+        title="Built a Confidence-First Bilingual Learning Product for Young Children in Japan"
+        ux-type="Product Design · UX Strategy · Multilingual UX"
+        description="An end-to-end, self-initiated product combining pedagogy, UX strategy, visual systems, and front-end development to launch a character-driven English learning platform for Japanese families."
+        :image="tlfMockUp"
+        route="/case-tlf"
+        loading="lazy"
+      />
+
       <div class="relative">
         <!-- <h2 class="featured-title">FEATURED</h2> -->
         <ProjectCard
