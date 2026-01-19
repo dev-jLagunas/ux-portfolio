@@ -1,10 +1,10 @@
 <script setup>
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
-import cafeMockUp from '@/assets/images/home/cafe-mockup.png'
-import beanMockUp from '@/assets/images/home/bean-mockup.png'
-import denkiMockUp from '@/assets/images/home/denki-mockup.png'
-import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.png'
+import cafeMockUp from '@/assets/images/home/cafe-mockup.webp'
+import beanMockUp from '@/assets/images/home/bean-mockup.webp'
+import denkiMockUp from '@/assets/images/home/denki-mockup.webp'
+import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
 </script>
 
 <template>
@@ -52,7 +52,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.png'
         ux-type="Website UX · Multilingual Design"
         description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
         :image="cafeMockUp"
-        route="/case-four"
+        route="/case-one"
         loading="lazy"
       />
     </div>

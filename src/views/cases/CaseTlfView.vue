@@ -27,17 +27,17 @@ import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
 
 // Images
-import tlfCoverImg from '@/assets/images/cases/case-tlf/case-cover-img-tlf.png'
-import divider from '@/assets/images/divider-img.png'
-import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.png'
-import empathyMap from '@/assets/images/cases/case-tlf/tlf-empathy-1.png'
-import journeyMap from '@/assets/images/cases/case-tlf/tlf-journey-1.png'
-import trustFeat from '@/assets/images/cases/case-tlf/solution-trust.png'
-import tourFeat from '@/assets/images/cases/case-tlf/solution-tour.png'
-import characterFeat from '@/assets/images/cases/case-tlf/solution-characters.png'
-import pedagogyFeat from '@/assets/images/cases/case-tlf/solution-pedagogy.png'
-import typeFeat from '@/assets/images/cases/case-tlf/solution-multilingual.png'
-import navFeat from '@/assets/images/cases/case-tlf/solution-nav.png'
+import tlfCoverImg from '@/assets/images/cases/case-tlf/case-cover-img-tlf.webp'
+import divider from '@/assets/images/divider-img.webp'
+import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.webp'
+import empathyMap from '@/assets/images/cases/case-tlf/tlf-empathy-1.webp'
+import journeyMap from '@/assets/images/cases/case-tlf/tlf-journey-1.webp'
+import trustFeat from '@/assets/images/cases/case-tlf/solution-trust.webp'
+import tourFeat from '@/assets/images/cases/case-tlf/solution-tour.webp'
+import characterFeat from '@/assets/images/cases/case-tlf/solution-characters.webp'
+import pedagogyFeat from '@/assets/images/cases/case-tlf/solution-pedagogy.webp'
+import typeFeat from '@/assets/images/cases/case-tlf/solution-multilingual.webp'
+import navFeat from '@/assets/images/cases/case-tlf/solution-nav.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -212,6 +212,11 @@ const uxSubheading = 'Quick breakdown of process.'
       <source :src="tlfVideo" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <p class="text-center">
+      <a href="https://language-friends.netlify.app/en" target="_blank" class="underline text-blue"
+        >View live site</a
+      >
+    </p>
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"

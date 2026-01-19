@@ -19,20 +19,20 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 
 // Images
-import divider from '@/assets/images/divider-img.png'
-import coverImg from '@/assets/images/cases/case-six/case-cover-img-denki.png'
-import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.png'
-import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.png'
-import personaNakamura from '@/assets/images/cases/case-six/persona-denki-nakamura.png'
-import personaTanabe from '@/assets/images/cases/case-six/persona-denki-tanabe.png'
-import journeyNakamura from '@/assets/images/cases/case-six/journey-denki-nakamura.png'
-import journeyTanabe from '@/assets/images/cases/case-six/journey-denki-tanabe.png'
-import tdBeforeBranding from '@/assets/images/cases/case-six/denki-branding-before.png'
-import tdBeforeTrust from '@/assets/images/cases/case-six/denki-trust-before.png'
-import tdBeforeNav from '@/assets/images/cases/case-six/denki-navigation-before.png'
-import tdAfterBranding from '@/assets/images/cases/case-six/denki-branding-after.png'
-import tdAfterTrust from '@/assets/images/cases/case-six/denki-trust-after.png'
-import tdAfterNav from '@/assets/images/cases/case-six/denki-navigation-after.png'
+import divider from '@/assets/images/divider-img.webp'
+import coverImg from '@/assets/images/cases/case-six/case-cover-img-denki.webp'
+import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.webp'
+import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.webp'
+import personaNakamura from '@/assets/images/cases/case-six/persona-denki-nakamura.webp'
+import personaTanabe from '@/assets/images/cases/case-six/persona-denki-tanabe.webp'
+import journeyNakamura from '@/assets/images/cases/case-six/journey-denki-nakamura.webp'
+import journeyTanabe from '@/assets/images/cases/case-six/journey-denki-tanabe.webp'
+import tdBeforeBranding from '@/assets/images/cases/case-six/denki-branding-before.webp'
+import tdBeforeTrust from '@/assets/images/cases/case-six/denki-trust-before.webp'
+import tdBeforeNav from '@/assets/images/cases/case-six/denki-navigation-before.webp'
+import tdAfterBranding from '@/assets/images/cases/case-six/denki-branding-after.webp'
+import tdAfterTrust from '@/assets/images/cases/case-six/denki-trust-after.webp'
+import tdAfterNav from '@/assets/images/cases/case-six/denki-navigation-after.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -223,7 +223,9 @@ const reflections = [
       <source :src="denkiVideo" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
+    <p class="text-center">
+      <a href="https://tdss.co.jp" target="_blank" class="underline text-blue">View live site</a>
+    </p>
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"

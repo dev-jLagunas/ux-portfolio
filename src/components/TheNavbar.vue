@@ -5,8 +5,8 @@ import { useRouter, useRoute } from 'vue-router'
 import { useThemeStore } from '@/stores/theme'
 
 // Svg Icons
-import nameLogoDark from '@/assets/images/name_logo_sm.png'
-import nameLogoLight from '@/assets/images/name-logo-light.png'
+import nameLogoDark from '@/assets/images/name_logo_sm.webp'
+import nameLogoLight from '@/assets/images/name-logo-light.webp'
 import userDarkSvg from '@/assets/svgs/dark-user.svg'
 import workDarkSvg from '@/assets/svgs/dark-design-works.svg'
 import personalDarkSvg from '@/assets/svgs/personal-dark.svg'

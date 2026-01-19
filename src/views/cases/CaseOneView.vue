@@ -39,7 +39,7 @@ import coverImg from '@/assets/images/cases/case-one/case-cover-img-cafe.png'
 import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
-import divider from '@/assets/images/divider-img.png'
+import divider from '@/assets/images/divider-img.webp'
 
 // Videos
 import cafeVideoLight from '@/assets/images/cases/case-one/cafe-video-light.mp4'
@@ -206,9 +206,15 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       <source :src="cafeVideo" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
+    <p class="text-center">
+      <a
+        href="https://cafetriangle-refresh.netlify.app/"
+        target="_blank"
+        class="underline text-blue"
+        >View live site</a
+      >
+    </p>
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
-
     <CaseProblem
       id="problem-section"
       problemStatement="The original Cafe Triangle website lacked responsiveness, multilingual support, and clear access to basic information. Key details like hours, menu, and contact info were difficult to find, especially on mobile."

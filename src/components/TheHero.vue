@@ -1,8 +1,8 @@
 <script setup>
 import { useRouter } from 'vue-router'
 
-import heroMainImg from '@/assets/images/hero-main-img-2.png'
-import arrow from '@/assets/images/curved-arrow.png'
+import heroMainImg from '@/assets/images/hero-main-img-2.webp'
+import arrow from '@/assets/images/curved-arrow.webp'
 
 // Routing
 const router = useRouter()

@@ -40,7 +40,7 @@ import coverImg from '@/assets/images/cases/case-five/case-cover-img.png'
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import competitionImg from '@/assets/svgs/research/official-research.svg'
 import ideaImg from '@/assets/svgs/research/best-practice.svg'
-import divider from '@/assets/images/divider-img.png'
+import divider from '@/assets/images/divider-img.webp'
 
 // Videos
 import beanVideoLight from '@/assets/images/cases/case-five/bnb-video-light.mp4'
@@ -207,6 +207,14 @@ const uxSubheading = 'Design Process at a Glance'
       <source :src="beanVideo" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    <p class="text-center">
+      <a
+        href="https://dev-jlagunas.github.io/bean-and-beast/#/"
+        target="_blank"
+        class="underline text-blue"
+        >View live site</a
+      >
+    </p>
     <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"

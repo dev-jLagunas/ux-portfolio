@@ -2,7 +2,7 @@
 import { showContactModal } from '@/composables/useContactModal'
 
 // Images
-import nameLogoDark from '@/assets/images/name_logo_sm.png'
+import nameLogoDark from '@/assets/images/name_logo_sm.webp'
 
 // Methods
 function closeModal() {
