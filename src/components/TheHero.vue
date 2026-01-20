@@ -38,7 +38,7 @@ function navigateToWork() {
           >
             See Work
           </button>
-          <img :src="arrow" alt="" class="h-24 absolute top-4 left-24 rotate-15" />
+          <img :src="arrow" alt="" class="h-24 absolute top-4 left-24 rotate-15 md:left-32" />
         </div>
       </div>
     </div>

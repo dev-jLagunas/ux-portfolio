@@ -140,7 +140,7 @@ Hero Styles
 Home Projects Styles
 *****************************************/
 .home-projects-container {
-  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2;
+  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 lg:gap-16;
 }
 
 .featured-title {
