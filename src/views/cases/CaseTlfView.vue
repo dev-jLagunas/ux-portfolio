@@ -164,7 +164,7 @@ const uxSubheading = 'Quick breakdown of process.'
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-  <div class="font-main mb-28">
+  <div class="font-main pb-24 md:pb-0">
     <CaseNav
       :sections="[
         { id: 'overview-section', label: 'Overview' },
@@ -180,14 +180,7 @@ const uxSubheading = 'Quick breakdown of process.'
       title="Project Overview"
       url="https://language-friends.netlify.app/"
       workTitle="The Language Friends — Bilingual Children’s Book Series"
-      :tags="[
-        'Product Design',
-        'UX Strategy',
-        'Multilingual UX',
-        'Pedagogy-Driven Design',
-        'Branding',
-        'Front-End Development',
-      ]"
+      :tags="['Product Design', 'UX Strategy', 'Multilingual UX', 'Pedagogy-Driven Design']"
       :imgSrc="tlfCoverImg"
       :paragraphs="[
         'The Language Friends began with a simple question: why does early English learning in Japan so often feel stressful, academic, and confidence-damaging for both parents and children? Having spent years teaching English across all ages in Japan, I wanted to explore what early exposure could look like if it focused less on correctness and more on comfort, familiarity, and emotional safety.',
@@ -397,6 +390,6 @@ const uxSubheading = 'Quick breakdown of process.'
         </p>
       </div>
     </CaseUxLens>
+    <BackHomeBtn />
   </div>
-  <BackHomeBtn />
 </template>

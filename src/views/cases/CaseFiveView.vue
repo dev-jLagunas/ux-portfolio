@@ -417,8 +417,8 @@ const uxSubheading = 'Design Process at a Glance'
         </p>
       </div>
     </CaseUxLens>
+    <BackHomeBtn />
   </div>
-  <BackHomeBtn />
 </template>
 
 <style scoped></style>

@@ -383,7 +383,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
         </p>
       </div>
     </CaseUxLens>
-
     <BackHomeBtn />
   </div>
 </template>

@@ -3,10 +3,10 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 
 import TheNavbar from './components/TheNavbar.vue'
-import TheSidebar from './components/TheSidebar.vue'
-import TheFooter from '@/components/TheFooter.vue'
+import TheFooter from './components/TheFooter.vue'
 import ContactModal from '@/components/ContactModal.vue'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+import MobileFooter from './components/MobileFooter.vue'
 
 const showBackToTop = ref(false)
 
@@ -44,18 +44,18 @@ onBeforeUnmount(() => {
   </div>
   <div v-else>
     <TheNavbar />
-    <TheSidebar />
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component }" class="">
       <transition name="page">
         <component :is="Component" />
       </transition>
     </router-view>
-    <TheFooter />
+    <MobileFooter />
+    <TheFooter class="hidden md:block" />
     <ContactModal />
     <button
       v-show="showBackToTop"
       @click="scrollToTop"
-      class="font-special fixed bottom-10 right-6 px-3 py-1 rounded-md z-50 border border-dotted transition opacity-75 hover:bg-gray-300/10 hover:opacity-100 hover:cursor-pointer duration-300 text-3xl"
+      class="font-special fixed bottom-24 md:bottom-10 right-6 md:right-10 px-3 py-1 rounded-md z-50 border border-dotted transition opacity-50 hover:bg-gray-300/10 hover:opacity-100 hover:cursor-pointer duration-300 text-3xl"
     >
       &#8593;
     </button>

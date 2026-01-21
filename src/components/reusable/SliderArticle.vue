@@ -22,36 +22,38 @@ function restWords(s) {
 
 <template>
   <article
-    class="font-main mx-auto lg:grid lg:grid-cols-2 md:place-items-center lg:max-w-[1200px]"
+    class="font-main mx-auto md:grid md:grid-cols-2 md:gap-8 lg:gap-0 md:place-items-center"
     :id="sectionId"
   >
-    <figure class="">
+    <figure class="lg:h-3/4 lg:ml-16 xl:ml-24">
       <img
         :src="imageSrc"
         :alt="imageAlt"
-        class="h-96 mx-auto lg:h-full custom-shadow rounded-md"
+        class="h-96 mx-auto md:h-full custom-shadow rounded-md"
         loading="lazy"
       />
     </figure>
-    <div>
-      <h3 class="text-4xl mb-2 mt-4 text-center">
+    <div class="lg:mr-16 xl:mr-24">
+      <h3 class="text-4xl mt-4 mb-2 text-center">
         <slot name="title">{{ title }}</slot>
       </h3>
       <p class="leading-6 text-xl mb-2 lg:text-2xl">
         {{ intro }}
       </p>
 
-      <ul class="pl-5 list-disc text-left leading-5 space-y-2 mt-4 mb-8">
+      <ul class="pl-5 list-disc text-left leading-5 space-y-2 mt-4 mb-4">
         <li v-for="(b, i) in bullets" :key="i">
           {{ b }}
         </li>
       </ul>
 
-      <h4 class="mt-4 tracking-widest w-1/2 mx-auto font-bold text-center px-3 py-1 mb-4">
+      <h4 class="tracking-widest mx-auto font-bold text-center px-3 py-1">
         {{ tagLabel }}
       </h4>
 
-      <ul class="flex justify-between items-center divide-x-2 divide-pink w-full text-center">
+      <ul
+        class="flex justify-between items-center divide-x-2 divide-pink w-full text-center text-sm"
+      >
         <li v-for="(t, i) in tagItems" :key="i" class="flex-1">
           <!-- Split on first space to get a two-line look without HTML in data -->
           <span class="block">{{ firstWord(t) }}</span>

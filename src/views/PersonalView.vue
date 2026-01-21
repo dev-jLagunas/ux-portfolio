@@ -53,7 +53,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         { id: 'design-section', label: 'UI Design' },
       ]"
     />
-    <article class="font-main mt-8" id="photo-section">
+    <article class="font-main" id="photo-section">
       <h2 class="personal-sect-title">Photography</h2>
       <p class="personal-copy">
         I bought a Fuji X-A5 when we started the cafe, and that’s where my love for photography
@@ -122,7 +122,7 @@ const spinnerMessage = 'Thanks for Waiting!'
         <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
       </div>
     </article>
-    <article class="font-main mt-8" id="design-section">
+    <article class="font-main mt-8 pb-24 md:pb-0" id="design-section">
       <h2 class="personal-sect-title">UI Design</h2>
       <p class="personal-copy">
         I started teaching myself frontend development about two and a half years ago. I began with

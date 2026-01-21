@@ -122,21 +122,19 @@ import selfCounterPhoto from '@/assets/images/about/self-counter-about.webp'
 }
 
 .about-swiper {
-  --swiper-navigation-size: 20px; /* arrow icon size */
-  --swiper-navigation-color: #333; /* arrow color (Tailwind gray-900) */
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-color: #333;
 }
 
-/* Hide arrows on <768px */
 .about-swiper :deep(.swiper-button-prev),
 .about-swiper :deep(.swiper-button-next) {
-  display: none;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+  transform: translateY(-50px);
 }
 
-/* Show arrows at ≥768px (md) */
-@media (min-width: 768px) {
-  .about-swiper :deep(.swiper-button-prev),
-  .about-swiper :deep(.swiper-button-next) {
-    display: flex; /* or block; both work */
-  }
+.about-swiper :deep(.swiper-button-prev:hover),
+.about-swiper :deep(.swiper-button-next:hover) {
+  opacity: 0.8;
 }
 </style>
