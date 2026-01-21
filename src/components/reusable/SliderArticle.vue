@@ -22,19 +22,17 @@ function restWords(s) {
 
 <template>
   <article
-    class="font-main mx-auto md:grid md:grid-cols-2 md:gap-8 lg:gap-0 md:place-items-center"
+    class="font-main px-4 mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:gap-0 md:place-items-center"
     :id="sectionId"
   >
-    <figure class="lg:h-3/4 lg:ml-16 xl:ml-24">
-      <img
-        :src="imageSrc"
-        :alt="imageAlt"
-        class="h-96 object-cover mx-auto md:h-full custom-shadow rounded-md"
-        loading="lazy"
-      />
-    </figure>
-    <div class="lg:mr-16 xl:mr-24 px-4">
-      <h3 class="text-4xl mt-4 mb-2 text-center">
+    <img
+      :src="imageSrc"
+      :alt="imageAlt"
+      class="custom-shadow rounded-md w-3/4 mx-auto xs:w-1/2 md:w-full md:max-w-96"
+      loading="lazy"
+    />
+    <section class="lg:mr-16 xl:mr-24">
+      <h3 class="text-3xl mt-4 mb-2 text-center">
         <slot name="title">{{ title }}</slot>
       </h3>
       <p class="leading-6 text-xl mb-2 lg:text-2xl">
@@ -60,7 +58,7 @@ function restWords(s) {
           <span class="block -mt-1">{{ restWords(t) }}</span>
         </li>
       </ul>
-    </div>
+    </section>
   </article>
 </template>
 

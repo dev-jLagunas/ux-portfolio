@@ -2,6 +2,8 @@
 import TheHero from '@/components/TheHero.vue'
 import HomeProjects from '@/components/HomeProjects.vue'
 import HomeFooter from '@/components/HomePersonalLinks.vue'
+
+// Load Spinner
 import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
@@ -14,7 +16,7 @@ const spinnerMessage = 'One Moment Please...'
 
   <div>
     <TheHero />
-    <section id="case-studies" class="my-24">
+    <section id="case-studies" class="mt-8">
       <HomeProjects />
     </section>
     <HomeFooter class="my-32" />

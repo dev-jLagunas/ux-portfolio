@@ -41,8 +41,8 @@ function navigateToWork() {
 </script>
 
 <template>
-  <nav class="nav-container-styles mx-auto">
-    <router-link class="flex items-start nav-name-wrapper" to="/"
+  <nav class="nav-container-styles mx-auto max-w-7xl">
+    <router-link class="" to="/"
       ><img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-20 lg:h-24" />
     </router-link>
     <ul class="flex items-center justify-between w-[80%] lg:w-[70%] xl:w-[60%]">

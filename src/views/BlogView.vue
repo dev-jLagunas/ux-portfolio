@@ -72,7 +72,7 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-  <section class="mx-auto mt-8 font-main">
+  <section class="mx-auto mt-8 font-main max-w-7xl">
     <!-- Filter Bar -->
     <div class="mb-8 p-4 border rounded-sm hidden">
       <div class="grid md:grid-cols-4 gap-4 items-end">

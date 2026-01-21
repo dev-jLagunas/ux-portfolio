@@ -12,33 +12,29 @@ function navigateToWork() {
 </script>
 
 <template>
-  <section class="hero-container md:grid md:grid-cols-2 hero-width mx-auto">
-    <div class="transition-all duration-500 ease-in-out place-items-center md:place-content-center">
-      <div class="md:w-full lg:ml-16 xl:ml-24">
+  <header class="mt-8 max-w-7xl mx-auto">
+    <section class="grid grid-cols-1 items-center place-items-center md:grid-cols-2">
+      <article>
         <h2 class="hero-title">Hello, I'm Juan.</h2>
-        <h2 class="hero-title text-pink">Hola, Soy Juan.</h2>
-        <h2 class="hero-title text-blue">ハロー、フアンです。</h2>
-
-        <p class="mt-4 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl font-bold">
-          Product Designer · UX · UI · Front-End · 3+ Years
-        </p>
-        <!-- <p class="leading-5 lg:leading-7">Vue 3 · Nuxt · Tailwind CSS · Front-End Systems</p> -->
+        <h2 class="hero-title text-pink lg:-mt-2">Hola, Soy Juan.</h2>
+        <h2 class="hero-title text-blue lg:-mt-2">ハロー、フアンです。</h2>
         <p
-          class="leading-5 xs:w-4/5 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl mt-2 xl:pr-16"
+          class="mt-4 leading-5 text-lg sm:text-xl lg:w-full lg:leading-7 2xl:text-2xl xs:w-3/4 font-bold"
+        >
+          Product Designer · UX/UI · Front-End · 3+ Years
+        </p>
+        <p
+          class="leading-5 xs:w-3/4 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl"
         >
           I merge thoughtful product design with clean, engaging visual systems for international
           audiences, designing and building real products end to end.
         </p>
-
         <div class="mt-8 hidden md:block md:relative">
           <button class="hero-cta-btn" @click="navigateToWork">See Work</button>
         </div>
-      </div>
-    </div>
-    <figure class="max-w-115 mx-auto md:max-w-150">
-      <img :src="heroMainImg" alt="img of Juan Lagunas" class="w-full h-full object-cover" />
-    </figure>
-
+      </article>
+      <img :src="heroMainImg" alt="img of Juan Lagunas" class="sm:w-110 lg:w-full" />
+    </section>
     <div class="md:hidden mt-4 w-fit mx-auto relative">
       <button
         class="bg-pink tracking-wider px-6 py-2 rounded-lg hover:cursor-pointer text-light duration-100 transition-all ease-linear hover:rounded-2xl relative"
@@ -47,7 +43,7 @@ function navigateToWork() {
         See Work
       </button>
     </div>
-  </section>
+  </header>
 </template>
 
 <style scoped>
@@ -69,9 +65,5 @@ img:hover {
   -webkit-mask-position: 120%;
   mask-position: 120%;
   opacity: 1;
-}
-
-.hero-width {
-  max-width: 1500px;
 }
 </style>

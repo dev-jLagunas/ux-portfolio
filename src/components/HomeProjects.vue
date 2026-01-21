@@ -8,7 +8,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
 </script>
 
 <template>
-  <section class="font-main mx-auto">
+  <section class="font-main mx-auto max-w-7xl">
     <header class="">
       <h1 class="font-bold text-3xl md:text-4xl font-special">My Work</h1>
       <p class="my-2 sm:text-xl">

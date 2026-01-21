@@ -44,7 +44,7 @@ const spinnerMessage = 'Thanks for Waiting!'
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
-  <section>
+  <section class="max-w-7xl mx-auto">
     <GuideNav
       :sections="[
         { id: 'photo-section', label: 'Photography' },
@@ -144,5 +144,3 @@ const spinnerMessage = 'Thanks for Waiting!'
     </article>
   </section>
 </template>
-
-<style scoped></style>

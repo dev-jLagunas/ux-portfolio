@@ -9,7 +9,6 @@ import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 import MobileFooter from './components/MobileFooter.vue'
 
 const showBackToTop = ref(false)
-
 const isAppLoading = ref(true)
 
 const router = useRouter()
@@ -24,8 +23,6 @@ const scrollToTop = () => {
 
 onMounted(async () => {
   window.addEventListener('scroll', toggleBackToTop, { passive: true })
-
-  // Wait for router to be ready before showing content
   await router.isReady()
   isAppLoading.value = false
 })
@@ -36,40 +33,34 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    v-if="isAppLoading"
-    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white"
-  >
+  <div v-if="isAppLoading" class="fixed inset-0 z-50 flex flex-col items-center justify-center">
     <LoadingSpinner />
   </div>
+
   <div v-else>
     <TheNavbar />
-    <router-view v-slot="{ Component }" class="">
-      <transition name="page">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+
+    <RouterView v-slot="{ Component }">
+      <Transition name="page" mode="out-in">
+        <div v-if="Component" class="page-wrapper">
+          <component :is="Component" />
+        </div>
+      </Transition>
+    </RouterView>
+
     <MobileFooter />
     <TheFooter class="hidden md:block" />
     <ContactModal />
+
     <button
       v-show="showBackToTop"
       @click="scrollToTop"
-      class="font-special fixed bottom-24 md:bottom-10 right-6 md:right-10 px-3 py-1 rounded-md z-50 border border-dotted transition opacity-50 hover:bg-gray-300/10 hover:opacity-100 hover:cursor-pointer duration-300 text-3xl"
+      class="back-top-btn"
+      aria-label="Back to top"
     >
-      &#8593;
+      ↑
     </button>
   </div>
 </template>
 
-<style scoped>
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
-</style>
+<style scoped></style>
