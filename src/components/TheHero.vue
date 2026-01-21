@@ -2,7 +2,6 @@
 import { useRouter } from 'vue-router'
 
 import heroMainImg from '@/assets/images/hero-new-image.png'
-import arrow from '@/assets/images/curved-arrow.webp'
 
 // Routing
 const router = useRouter()
@@ -23,7 +22,7 @@ function navigateToWork() {
         <p class="mt-4 leading-5 text-lg sm:text-xl text-wrap lg:leading-7 2xl:text-2xl font-bold">
           Product Designer · UX · UI · Front-End · 3+ Years
         </p>
-        <p class="leading-5 lg:leading-7">Vue 3 · Nuxt · Tailwind CSS · Front-End Systems</p>
+        <!-- <p class="leading-5 lg:leading-7">Vue 3 · Nuxt · Tailwind CSS · Front-End Systems</p> -->
         <p
           class="leading-5 xs:w-4/5 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl mt-2 xl:pr-16"
         >
@@ -32,13 +31,7 @@ function navigateToWork() {
         </p>
 
         <div class="mt-8 hidden md:block md:relative">
-          <button
-            class="nav-btn-styles hover:bg-blue hover:text-light duration-100 transition-all ease-linear relative"
-            @click="navigateToWork"
-          >
-            See Work
-          </button>
-          <img :src="arrow" alt="" class="h-24 absolute top-4 left-24 rotate-15 md:left-24" />
+          <button class="hero-cta-btn" @click="navigateToWork">See Work</button>
         </div>
       </div>
     </div>
@@ -48,12 +41,11 @@ function navigateToWork() {
 
     <div class="md:hidden mt-4 w-fit mx-auto relative">
       <button
-        class="nav-btn-styles hover:bg-blue hover:text-light duration-300 transition-all ease-linear relative"
+        class="bg-pink tracking-wider px-6 py-2 rounded-lg hover:cursor-pointer text-light duration-100 transition-all ease-linear hover:rounded-2xl relative"
         @click="navigateToWork"
       >
         See Work
       </button>
-      <img :src="arrow" alt="" class="h-24 absolute top-4 left-24 rotate-15" />
     </div>
   </section>
 </template>

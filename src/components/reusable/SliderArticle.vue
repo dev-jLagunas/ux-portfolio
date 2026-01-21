@@ -29,11 +29,11 @@ function restWords(s) {
       <img
         :src="imageSrc"
         :alt="imageAlt"
-        class="h-96 mx-auto md:h-full custom-shadow rounded-md"
+        class="h-96 object-cover mx-auto md:h-full custom-shadow rounded-md"
         loading="lazy"
       />
     </figure>
-    <div class="lg:mr-16 xl:mr-24">
+    <div class="lg:mr-16 xl:mr-24 px-4">
       <h3 class="text-4xl mt-4 mb-2 text-center">
         <slot name="title">{{ title }}</slot>
       </h3>

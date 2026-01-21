@@ -41,15 +41,11 @@ function navigateToWork() {
 </script>
 
 <template>
-  <nav class="nav-container-styles">
-    <div class="flex items-center justify-between mr-8">
-      <img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-20" />
-      <router-link class="flex items-start nav-name-wrapper" to="/">
-        <p><span class="pink-bold-letter">J</span>uan</p>
-        <p><span class="blue-bold-letter">L</span>agunas</p>
-      </router-link>
-    </div>
-    <ul class="flex items-center justify-between w-[65%]">
+  <nav class="nav-container-styles mx-auto">
+    <router-link class="flex items-start nav-name-wrapper" to="/"
+      ><img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-20 lg:h-24" />
+    </router-link>
+    <ul class="flex items-center justify-between w-[80%] lg:w-[70%] xl:w-[60%]">
       <li
         class="nav-list-styles hover:cursor-pointer underline-offset-4"
         @click="navigateToWork"
@@ -76,25 +72,46 @@ function navigateToWork() {
           <p>Blog</p>
         </li></router-link
       >
+      <li>
+        <ul class="flex gap-2">
+          <li class="relative group">
+            <button
+              class="border px-3 py-1 rounded-sm hover:bg-blue hover:text-light duration-300 transition-all ease-linear hover:cursor-pointer"
+              @click="openModal"
+              aria-label="Contact"
+            >
+              <i class="fa-solid fa-envelope text-lg"></i>
+            </button>
 
-      <div class="nav-btn-wrapper">
-        <li>
-          <button
-            class="bg-pink text-light px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300 hover:brightness-90"
-            @click="openModal"
-          >
-            Contact
-          </button>
-        </li>
-        <li>
-          <button
-            class="border px-3 py-1 rounded-sm hover:bg-blue hover:text-light duration-300 transition-all ease-linear hover:cursor-pointer"
-            @click="theme.toggleTheme()"
-          >
-            {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}
-          </button>
-        </li>
-      </div>
+            <!-- Tooltip -->
+            <span
+              class="absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-light text-xs px-2 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap"
+            >
+              Contact
+            </span>
+          </li>
+
+          <li class="relative group">
+            <button
+              class="border px-3 py-1 rounded-sm hover:bg-blue hover:text-light duration-300 transition-all ease-linear hover:cursor-pointer"
+              @click="theme.toggleTheme()"
+              aria-label="Toggle theme"
+            >
+              <i
+                :class="theme.isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"
+                class="text-lg"
+              ></i>
+            </button>
+
+            <!-- Tooltip -->
+            <span
+              class="absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-light text-xs px-2 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap"
+            >
+              Toggle theme
+            </span>
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </template>

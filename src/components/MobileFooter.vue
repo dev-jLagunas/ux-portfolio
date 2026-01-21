@@ -84,6 +84,14 @@ const isActive = (path) => route.path === path
     class="shadow-[0px_4px_30px_0px_rgba(31,_38,_135,_0.15)]"
   >
     <div class="flex-col-center h-full w-full">
+      <button
+        class="mb-16 duration-300 transition-all ease-linear hover:cursor-pointer"
+        @click="theme.toggleTheme()"
+        aria-label="Toggle theme"
+      >
+        <i :class="theme.isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" class="text-lg"></i>
+      </button>
+
       <ul class="text-light text-xl gap-2 flex flex-col">
         <li
           class="nav-list-styles side-items"
@@ -109,15 +117,6 @@ const isActive = (path) => route.path === path
         >
           <img :src="blogWhiteSvg" alt="" class="h-7" />
           <p>Blog</p>
-        </li>
-
-        <li>
-          <button
-            class="nav-btn-styles hover:bg-white hover:text-pink"
-            @click="theme.toggleTheme()"
-          >
-            {{ theme.isDarkMode ? 'Lights On' : 'Lights Off' }}
-          </button>
         </li>
 
         <button class="side-close-btn" @click="toggleSidebar">X</button>
