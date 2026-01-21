@@ -45,30 +45,30 @@ function navigateToWork() {
     <router-link class="" to="/"
       ><img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-20 lg:h-24" />
     </router-link>
-    <ul class="flex items-center justify-between w-[80%] lg:w-[70%] xl:w-[60%]">
+    <ul class="flex items-center justify-between w-[80%] lg:w-[80%]">
       <li
         class="nav-list-styles hover:cursor-pointer underline-offset-4"
         @click="navigateToWork"
         :class="{ underline: route.path === '/' }"
       >
-        <img :src="workIcon" alt="svg of a briefcase" class="h-6" />
+        <img :src="workIcon" alt="svg of a briefcase" class="h-6 lg:h-8 lg:mb-2" />
         <p>Work</p>
       </li>
       <router-link to="/about" active-class="underline  underline-offset-4"
         ><li class="nav-list-styles hover:cursor-pointer">
-          <img :src="userIcon" alt="svg of a name card" class="h-6" />
+          <img :src="userIcon" alt="svg of a name card" class="h-6 lg:h-8 lg:mb-2" />
           <p>About</p>
         </li></router-link
       >
       <router-link to="/personal" active-class="underline underline-offset-4">
         <li class="nav-list-styles hover:cursor-pointer">
-          <img :src="personalIcon" alt="svg of smiley face" class="h-6" />
+          <img :src="personalIcon" alt="svg of smiley face" class="h-6 lg:h-8 lg:mb-2" />
           <p>Personal</p>
         </li></router-link
       >
       <router-link to="/blog" active-class="underline  underline-offset-4">
         <li class="nav-list-styles hover:cursor-pointer">
-          <img :src="blogIcon" alt="Blog svg icon" class="h-6" />
+          <img :src="blogIcon" alt="Blog svg icon" class="h-6 lg:h-8 lg:mb-2" />
           <p>Blog</p>
         </li></router-link
       >
@@ -80,7 +80,7 @@ function navigateToWork() {
               @click="openModal"
               aria-label="Contact"
             >
-              <i class="fa-solid fa-envelope text-lg"></i>
+              <i class="fa-solid fa-envelope text-lg lg:text-2xl"></i>
             </button>
 
             <!-- Tooltip -->
@@ -99,7 +99,7 @@ function navigateToWork() {
             >
               <i
                 :class="theme.isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"
-                class="text-lg"
+                class="text-lg lg:text-2xl"
               ></i>
             </button>
 
