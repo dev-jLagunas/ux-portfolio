@@ -183,8 +183,8 @@ const uxSubheading = 'Quick breakdown of process.'
       :tags="['Product Design', 'UX Strategy', 'Multilingual UX', 'Pedagogy-Driven Design']"
       :imgSrc="tlfCoverImg"
       :paragraphs="[
-        'The Language Friends began with a simple question: why does early English learning in Japan so often feel stressful, academic, and confidence-damaging for both parents and children? Having spent years teaching English across all ages in Japan, I wanted to explore what early exposure could look like if it focused less on correctness and more on comfort, familiarity, and emotional safety.',
-        'What started as an idea for a small set of children’s books gradually grew into a full product ecosystem. I designed a character-driven learning system, built a consistent visual and pedagogical structure, and created a bilingual website to explain the approach to parents clearly and calmly. Rather than separating design and implementation, I iterated directly in code, shaping the experience one component at a time while balancing real constraints like multilingual typography, early childhood learning, and launching a digital-first product.',
+        'The Language Friends began with a simple question: why does early English learning in Japan so often feel stressful and confidence-damaging for children and parents? Drawing on years of teaching English in Japan, I wanted to explore an approach centered on comfort, familiarity, and emotional safety rather than correctness.',
+        'What began as a small book concept evolved into a full product ecosystem. I designed a character-driven learning system, defined its visual and pedagogical structure, and built a bilingual website to communicate the approach clearly to parents, iterating directly in code while balancing multilingual typography, early childhood learning, and real product constraints.',
       ]"
       role="Product Designer, UX Designer, UI Designer, Front-End Developer, Brand Strategist"
       date="December 2025 – January 2026"

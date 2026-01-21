@@ -58,7 +58,7 @@ function closeModal() {
       <img
         :src="tabs[activeTab].image"
         alt="screenshot of project"
-        class="mx-auto mb-4 rounded-md object-contain cursor-pointer bg-blue/30"
+        class="mx-auto mb-4 rounded-md object-contain cursor-pointer bg-blue/30 lg:w-4/5"
         @click="openModal"
       />
       <h5 class="text-lg font-semibold mb-2">{{ tabs[activeTab].heading }}</h5>

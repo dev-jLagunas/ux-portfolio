@@ -86,7 +86,7 @@ function prevImage() {
           <img
             :src="props.artifacts[currentIndex].imageSrc"
             :alt="props.artifacts[currentIndex].caption"
-            class="rounded-md mt-16 w-[90%] shadow-sm hover:cursor-pointer mx-auto max-w-[600px] lg:mt-4"
+            class="rounded-md mt-16 w-[90%] shadow-sm hover:cursor-pointer mx-auto max-w-[350px] lg:mt-4"
             @click="isModalOpen = true"
             loading="lazy"
           />
@@ -95,10 +95,6 @@ function prevImage() {
         <button @click="nextImage" class="problem-right-btn">›</button>
       </figure>
       <p class="problem-quote">"{{ quote }}"</p>
-      <h3 class="w-full font-semibold text-2xl mt-12">Takeway</h3>
-      <p class="">
-        {{ takeaway }}
-      </p>
     </article>
   </section>
   <div v-if="isModalOpen" class="problem-img-modal" @click.self="isModalOpen = false">

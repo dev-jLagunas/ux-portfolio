@@ -25,7 +25,9 @@ defineProps({
     <div class="overview-info">
       <img :src="imgSrc" alt="overview image of project" class="overview-img" loading="lazy" />
       <div>
-        <div class="flex flex-col mt-4 mb-2 md:flex-row md:justify-between md:items-center">
+        <div
+          class="flex flex-col mt-8 mb-2 xs:flex-row xs:justify-evenly xs:items-center md:justify-between"
+        >
           <a
             :href="`/` + pdfFile"
             download

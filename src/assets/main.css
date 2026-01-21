@@ -6,6 +6,7 @@ Global Styles
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light dark;
 }
 
 body {
@@ -17,6 +18,18 @@ body {
 @media (width >= 768px) {
   body {
     padding-inline: 2rem;
+  }
+}
+
+@media (width >= 1024px) {
+  body {
+    padding-inline: 5rem;
+  }
+}
+
+@media (forced-colors: active) {
+  * {
+    forced-color-adjust: none;
   }
 }
 
@@ -252,7 +265,7 @@ Case Overview Styles
 }
 
 .overview-img {
-  @apply w-full max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-[600px] lg:w-full shadow-xl;
+  @apply w-3/4 sm:w-1/2 max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-[450px] lg:w-full shadow-xl;
 }
 
 .case-study-btn {
@@ -275,7 +288,7 @@ Case Problem Styles
 }
 
 .problem-quote {
-  @apply text-3xl my-16 font-bold text-pink font-special uppercase mb-2 text-center lg:text-4xl lg:my-24;
+  @apply text-xl my-16 font-bold text-pink font-special uppercase mb-2 text-center lg:text-2xl lg:my-24;
 }
 
 .problem-img-modal {

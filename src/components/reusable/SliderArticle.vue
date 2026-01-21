@@ -22,20 +22,20 @@ function restWords(s) {
 
 <template>
   <article
-    class="font-main px-4 mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:gap-0 md:place-items-center"
+    class="font-main px-4 mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:gap-0 md:place-items-center max-w-5xl"
     :id="sectionId"
   >
     <img
       :src="imageSrc"
       :alt="imageAlt"
-      class="custom-shadow rounded-md w-3/4 mx-auto xs:w-1/2 md:w-full md:max-w-96"
+      class="custom-shadow rounded-md w-3/4 mx-auto xs:w-1/2 md:w-full md:max-w-75"
       loading="lazy"
     />
-    <section class="lg:mr-16 xl:mr-24">
+    <section class="">
       <h3 class="text-3xl mt-4 mb-2 text-center">
         <slot name="title">{{ title }}</slot>
       </h3>
-      <p class="leading-6 text-xl mb-2 lg:text-2xl">
+      <p class="leading-6 text-xl mb-4 lg:text-2xl">
         {{ intro }}
       </p>
 
