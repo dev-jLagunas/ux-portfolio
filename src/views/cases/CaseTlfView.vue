@@ -189,7 +189,7 @@ const uxSubheading = 'Quick breakdown of process.'
       role="Product Designer, UX Designer, UI Designer, Front-End Developer, Brand Strategist"
       date="December 2025 – January 2026"
       toolkit="Nuxt 4, Vue 3, Tailwind CSS, GSAP, Canva Pro, Google Gemini, Netlify"
-      pdfFile="case-study-7-the-language-friends.pdf"
+      pdfFile="case-study-tlf.pdf"
     />
     <video
       :key="theme.isDarkMode"

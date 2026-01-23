@@ -207,7 +207,7 @@ const reflections = [
       role="UX Designer, UX Researcher, Developer"
       date="November – December 2025"
       toolkit="Figma, Nuxt 4, Tailwind CSS, Contentful, Netlify"
-      pdfFile="case-study-6-tanaka.pdf"
+      pdfFile="case-study-denki.pdf"
     />
     <video
       :key="theme.isDarkMode"

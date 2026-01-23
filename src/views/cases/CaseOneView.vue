@@ -179,7 +179,7 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
-      url="https://cafe-triangle.com/"
+      url="https://cafetriangle-refresh.netlify.app/"
       workTitle="Cafe Triangle Redesign"
       :tags="['UX Research', 'Visual Design', 'Front-End Development', 'Branding', 'Accessibility']"
       :imgSrc="coverImg"
