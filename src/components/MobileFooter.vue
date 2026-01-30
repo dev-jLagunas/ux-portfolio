@@ -72,7 +72,11 @@ const isActive = (path) => route.path === path
 
       <!-- More -->
       <li class="flex flex-col items-center gap-1 cursor-pointer" @click="toggleSidebar">
-        <i class="fa-solid fa-bars text-xl"></i>
+        <div class="burger" :class="{ open: isOpen }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <span class="text-xs hover:text-blue">More</span>
       </li>
     </ul>
@@ -119,7 +123,9 @@ const isActive = (path) => route.path === path
           <p>Blog</p>
         </li>
 
-        <button class="side-close-btn" @click="toggleSidebar">X</button>
+        <button class="side-close-btn" @click="toggleSidebar" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </ul>
     </div>
   </aside>
@@ -140,5 +146,53 @@ const isActive = (path) => route.path === path
 
 .sidebar.open {
   transform: translateX(0);
+}
+
+.burger {
+  position: relative;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.burger.open {
+  color: #e9404f;
+}
+
+.burger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 6px;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-child(1) {
+  top: 0;
+}
+
+.burger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger span:nth-child(3) {
+  bottom: 0;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 50%;
 }
 </style>

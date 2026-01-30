@@ -127,7 +127,7 @@ Sidebar Styles
 }
 
 .side-close-btn {
-  @apply mt-8 text-4xl w-full hover:rotate-180 transition-all duration-300 hover:cursor-pointer;
+  @apply mt-8 text-2xl w-full hover:rotate-180 transition-all duration-300 hover:cursor-pointer;
 }
 
 /***************************************
@@ -307,7 +307,7 @@ Sticky Nav Styles
 }
 
 .sticky-content-wrapper {
-  @apply grid grid-cols-3 w-full place-items-center gap-4 text-sm font-semibold md:grid-cols-6;
+  @apply flex flex-wrap items-center justify-around gap-4;
 }
 
 /***************************************

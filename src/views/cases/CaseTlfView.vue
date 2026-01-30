@@ -178,7 +178,7 @@ const uxSubheading = 'Quick breakdown of process.'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
-      url="https://language-friends.netlify.app/"
+      url="https://the-language-friends.com/"
       workTitle="The Language Friends — Bilingual Children’s Book Series"
       :tags="['Product Design', 'UX Strategy', 'Multilingual UX', 'Pedagogy-Driven Design']"
       :imgSrc="tlfCoverImg"
@@ -206,7 +206,7 @@ const uxSubheading = 'Quick breakdown of process.'
       Your browser does not support the video tag.
     </video>
     <p class="text-center">
-      <a href="https://language-friends.netlify.app/en" target="_blank" class="underline text-blue"
+      <a href="https://the-language-friends.com/" target="_blank" class="underline text-blue"
         >View live site</a
       >
     </p>

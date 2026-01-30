@@ -5,6 +5,7 @@ import problemIcon from '@/assets/svgs/problem-icon.svg'
 
 // Props
 const props = defineProps({
+  id: String,
   problemStatement: { type: String, required: true },
   problemStatementB: { type: String, required: true },
   userResearchIntro: { type: String, required: true },
@@ -20,8 +21,8 @@ const props = defineProps({
   },
   takeaway: { type: String, required: true },
   quote: { type: String, required: true },
-  statement: { type: String, required: true },
-  statementDetails: { type: String, required: true },
+  statement: { type: String, required: false },
+  statementDetails: { type: String, required: false },
 })
 
 // Reactive Properties

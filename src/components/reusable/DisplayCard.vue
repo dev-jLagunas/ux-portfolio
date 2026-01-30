@@ -9,14 +9,6 @@ defineProps({
     type: String,
     required: true,
   },
-  icon: {
-    type: String,
-    required: true,
-  },
-  bgColor: {
-    type: String,
-    required: true,
-  },
 })
 </script>
 

@@ -2,7 +2,7 @@
 import { useThemeStore } from '@/stores/theme'
 
 // Props
-const props = defineProps({
+defineProps({
   message: {
     type: String,
     default: 'Loading...',
@@ -23,7 +23,7 @@ const theme = useThemeStore()
     <div
       class="w-32 h-32 rounded-full animate-spin border-y-6 border-dashed border-pink border-t-transparent"
     ></div>
-    <p class="mt-4 tracking-widest">{{ message }}</p>
+    <p class="mt-8 tracking-widest text-center font-work text-2xl">{{ message }}</p>
   </div>
 </template>
 
