@@ -23,17 +23,18 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
         ux-type="Product Design · UX Strategy · Multilingual UX"
         description="An end-to-end, self-initiated product combining pedagogy, UX strategy, visual systems, and front-end development to launch a character-driven English learning platform for Japanese families."
         :image="tlfMockUp"
+        url="https://the-language-friends.com/"
         route="/case-tlf"
         loading="lazy"
       />
 
       <div class="relative">
-        <!-- <h2 class="featured-title">FEATURED</h2> -->
         <ProjectCard
           title="Strengthened Trust and Service Clarity for a Japanese Solar Maintenance Business"
           ux-type="B2B Website UX · Information Architecture"
           description="Redesigned and rebuilt a live solar maintenance website to improve credibility, service clarity, and usability for business and government clients in Japan."
           :image="denkiMockUp"
+          url="https://tdss.co.jp/"
           route="/case-six"
           loading="lazy"
         />
@@ -43,6 +44,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
         ux-type="Product Design · UX Strategy"
         description="A fully self-directed, research-driven product design project defining the brand, UX strategy, visual system, and front-end implementation for a production-ready e-commerce experience."
         :image="beanMockUp"
+        url="https://dev-jlagunas.github.io/bean-and-beast/#/"
         route="/case-five"
         loading="lazy"
       />
@@ -52,6 +54,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
         ux-type="Website UX · Multilingual Design"
         description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
         :image="cafeMockUp"
+        url="https://cafetriangle-refresh.netlify.app/#home"
         route="/case-one"
         loading="lazy"
       />

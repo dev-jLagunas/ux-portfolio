@@ -26,6 +26,10 @@ defineProps({
     type: String,
     required: true,
   },
+  url: {
+    type: String,
+    required: true,
+  },
 })
 </script>
 
@@ -47,16 +51,21 @@ defineProps({
       {{ description }}
     </p>
 
-    <router-link :to="route">
-      <button
-        :class="[
-          theme.isDarkMode ? 'bg-white text-dark' : 'bg-dark text-light ',
-          'px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 hover:bg-pink',
-        ]"
+    <div class="flex justify-between items-center">
+      <router-link :to="route">
+        <button
+          :class="[
+            theme.isDarkMode ? 'bg-white text-dark' : 'bg-dark text-light ',
+            'px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 hover:bg-pink',
+          ]"
+        >
+          View Case Study
+        </button>
+      </router-link>
+      <a :href="url" target="_blank" rel="noopener noreferrer" class="text-blue xs:pr-4"
+        >Live Site</a
       >
-        View Case Study
-      </button>
-    </router-link>
+    </div>
   </div>
 </template>
 
