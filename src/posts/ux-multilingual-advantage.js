@@ -2,7 +2,7 @@ import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
 import coverImg from '@/assets/images/blogPosts/post8/blog-8-cover-img.png'
 
 export default {
-  id: 3,
+  id: 8,
   title: 'Why Multilingual UX Is a Real Design Advantage',
   slug: 'why-multilingual-ux-is-a-real-design-advantage',
   date: '2026-02-03',
