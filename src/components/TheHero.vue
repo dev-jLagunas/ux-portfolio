@@ -21,8 +21,9 @@ function navigateToWork() {
         <p
           class="mt-4 leading-5 text-lg sm:text-xl lg:w-full lg:leading-7 2xl:text-2xl xs:w-3/4 font-bold"
         >
-          Product Designer · UX/UI · Front-End · 3+ Years
+          Product Designer · UX/UI <span class="hidden lg:inline">· Front-End · 3+ Years</span>
         </p>
+        <p class="mb-2 leading-5 text-lg sm:text-xl font-bold lg:hidden">Front-End · 3+ Years</p>
         <p
           class="leading-5 xs:w-3/4 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl"
         >

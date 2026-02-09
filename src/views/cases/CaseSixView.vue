@@ -460,6 +460,52 @@ const reflections = [
         </p>
       </div>
     </CaseUxLens>
+    <section class="mt-12 border-t border-slate-100 pt-10">
+      <h2 class="text-2xl font-semibold tracking-wide mb-6">From the customer</h2>
+
+      <div class="rounded-sm border border-slate-300 bg-white p-6 shadow-sm">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-lg font-semibold text-dark">Akira Tanaka</p>
+            <p class="text-sm text-slate-600">President of Tanaka Denki System Services</p>
+          </div>
+
+          <div class="flex items-center gap-1 text-yellow-500">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <span class="sr-only">5 out of 5 stars</span>
+          </div>
+        </div>
+
+        <p class="mt-6 text-base leading-7 text-slate-800">
+          This website was created with great care, beginning with a thorough understanding of our
+          needs and continuing seamlessly through design, structure, and development. We are
+          extremely satisfied with the clear, user-focused navigation and the refined, professional
+          design. Even when our requests were abstract, he responded flexibly and provided accurate,
+          thoughtful proposals. Throughout multiple rounds of revisions and additions, every
+          improvement was clearly explained, which gave us confidence and satisfaction. After
+          launch, customer feedback has been very positive, and the project has contributed to an
+          improved company image. He is an exceptionally reliable designer and developer to whom we
+          could confidently entrust the entire project. We would gladly work with him again for
+          future updates.
+        </p>
+        <div class="mt-6 border-t border-slate-200 pt-4">
+          <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Original text</p>
+          <p class="text-sm leading-6 text-slate-600">
+            "本サイトは、当社の要望を丁寧にヒアリングしたうえで、デザイン・構成・開発まで一貫して制作していただきました。
+            利用者の視点を重視した分かりやすい導線設計と、洗練されたデザインに非常に満足しています。
+            こちらの抽象的な要望にも柔軟に対応し、的確な提案をしていただきました。
+            何度も修正追加の要望に対しても、より改善点をきちんと説明を頂き満足しています。
+            公開後はお客様からの反応も良く、企業イメージの向上にもつながっています。
+            信頼してプロジェクトを任せられる、非常に優れたデザイナー兼開発者です。今後も更新があった場合は依頼させていただきたいです."
+          </p>
+        </div>
+      </div>
+    </section>
+
     <BackHomeBtn />
   </div>
 </template>
