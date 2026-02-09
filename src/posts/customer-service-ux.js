@@ -2,7 +2,7 @@ import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
 import coverImg from '@/assets/images/blogPosts/post9/post-9-cover-img.png'
 
 export default {
-  id: 4,
+  id: 9,
   title: 'Why Customer Service and Teaching Shaped How I Think About UX',
   slug: 'why-customer-service-and-teaching-shaped-how-i-think-about-ux',
   date: '2026-02-09',
