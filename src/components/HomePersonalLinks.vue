@@ -4,11 +4,12 @@ import LinkCard from '@/components/reusable/LinkCard.vue'
 // Svg Icons
 import instagramIcon from '@/assets/svgs/instagram-icon.svg'
 import frontendIcon from '@/assets/svgs/frontend-icon.svg'
-import portfolioIcon from '@/assets/svgs/portfolio-icon.svg'
-import resumeIcon from '@/assets/svgs/resume-icon.svg'
+import resumeIcon from '@/assets/svgs/cv-icon.svg'
 import githubIcon from '@/assets/svgs/github-icon.svg'
 import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
 import behanceIcon from '@/assets/svgs/behance-icon.svg'
+import youtubeIcon from '@/assets/svgs/youtube-icon.svg'
+import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
 </script>
 
 <template>
@@ -20,44 +21,51 @@ import behanceIcon from '@/assets/svgs/behance-icon.svg'
       </h1>
     </div>
     <section class="link-card-wrapper">
-      <LinkCard title="My Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
+      <LinkCard title="Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
-        title="My Code Projects"
-        :icon="portfolioIcon"
-        :url="'https://dev-jlagunas.github.io/my-portfolio/#/'"
+        title="LinkedIn"
+        :icon="linkedInIcon"
+        class=""
+        :url="'https://www.linkedin.com/in/juan-lagunas/'"
         loading="lazy"
       />
       <LinkCard
-        title="My Instagram"
+        title="YouTube"
+        :icon="youtubeIcon"
+        :url="'https://www.youtube.com/@LanguageSwitch-JM'"
+        loading="lazy"
+      />
+      <LinkCard
+        title="Instagram"
         :icon="instagramIcon"
         :url="'https://www.instagram.com/j.lag_works/'"
         loading="lazy"
       />
 
       <LinkCard
-        title="My Behance"
+        title="Behance"
         :icon="behanceIcon"
         :url="'https://www.behance.net/juanlagunas87'"
         loading="lazy"
       />
       <LinkCard
-        title="My Frontend Mentor"
+        title="Frontend Mentor"
         :icon="frontendIcon"
         :url="'https://www.frontendmentor.io/profile/dev-jLagunas'"
         loading="lazy"
       />
       <LinkCard
-        title="My LinkedIn"
-        :icon="linkedInIcon"
-        class="lg:col-span-2"
-        :url="'https://www.linkedin.com/in/juan-lagunas/'"
+        title="Github"
+        :icon="githubIcon"
+        class=""
+        :url="'https://github.com/dev-jLagunas'"
         loading="lazy"
       />
       <LinkCard
-        title="My Github"
-        :icon="githubIcon"
-        class="col-span-2 md:col-span-3 lg:col-span-1"
-        :url="'https://github.com/dev-jLagunas'"
+        title="Unsplash"
+        :icon="unsplashIcon"
+        class="md:col-span-2 lg:col-span-1"
+        :url="'https://unsplash.com/@jlag_photos'"
         loading="lazy"
       />
     </section>
