@@ -1,15 +1,52 @@
 <script setup>
+import { onMounted, ref, nextTick } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeMockUp from '@/assets/images/home/cafe-mockup.webp'
 import beanMockUp from '@/assets/images/home/bean-mockup.webp'
 import denkiMockUp from '@/assets/images/home/denki-mockup.webp'
 import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const container = ref(null)
+
+onMounted(async () => {
+  await nextTick()
+
+  const cards = container.value.querySelectorAll('.project-card-animate')
+
+  ScrollTrigger.getAll().forEach((t) => t.kill())
+
+  gsap.fromTo(
+    cards,
+    {
+      y: 50,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: container.value,
+        start: 'top 85%',
+
+        toggleActions: 'play reverse play reverse',
+      },
+    },
+  )
+})
 </script>
 
 <template>
   <section class="font-main mx-auto max-w-7xl">
-    <header class="">
+    <header>
       <h1 class="font-bold text-3xl md:text-4xl font-special">My Work</h1>
       <p class="my-2 sm:text-xl">
         End-to-end product and UX work, designed and built from concept to production for real
@@ -17,8 +54,9 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
       </p>
     </header>
 
-    <div class="home-projects-container">
+    <div ref="container" class="home-projects-container">
       <ProjectCard
+        class="project-card-animate"
         title="Built a Confidence-First Bilingual Learning Product for Young Children in Japan"
         ux-type="Product Design · UX Strategy · Multilingual UX"
         description="An end-to-end, self-initiated product combining pedagogy, UX strategy, visual systems, and front-end development to launch a character-driven English learning platform for Japanese families."
@@ -28,7 +66,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
         loading="lazy"
       />
 
-      <div class="relative">
+      <div class="relative project-card-animate">
         <ProjectCard
           title="Strengthened Trust and Service Clarity for a Japanese Solar Maintenance Business"
           ux-type="B2B Website UX · Information Architecture"
@@ -39,7 +77,9 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
           loading="lazy"
         />
       </div>
+
       <ProjectCard
+        class="project-card-animate"
         title="Designed a Character-Driven E-Commerce Experience from Scratch"
         ux-type="Product Design · UX Strategy"
         description="A fully self-directed, research-driven product design project defining the brand, UX strategy, visual system, and front-end implementation for a production-ready e-commerce experience."
@@ -50,6 +90,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
       />
 
       <ProjectCard
+        class="project-card-animate"
         title="Improved Clarity for a Multilingual Cafe Website in Japan"
         ux-type="Website UX · Multilingual Design"
         description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
@@ -62,4 +103,11 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Remove the opacity: 0 from here.
+   GSAP's fromTo will handle the initial state automatically.
+   This prevents cards from being "permanently" invisible if the JS fails. */
+.project-card-animate {
+  will-change: transform, opacity;
+}
+</style>

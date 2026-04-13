@@ -1,4 +1,7 @@
 <script setup>
+import { onMounted, ref, nextTick } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LinkCard from '@/components/reusable/LinkCard.vue'
 
 // Svg Icons
@@ -10,6 +13,38 @@ import linkedInIcon from '@/assets/svgs/linkedin-icon.svg'
 import behanceIcon from '@/assets/svgs/behance-icon.svg'
 import youtubeIcon from '@/assets/svgs/youtube-icon.svg'
 import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const linkWrapper = ref(null)
+
+onMounted(async () => {
+  await nextTick()
+
+  // Delay execution to account for the HomeView LoadingSpinner
+  setTimeout(() => {
+    // Select all LinkCard components within the wrapper
+    const cards = linkWrapper.value.children
+
+    gsap.from(cards, {
+      scrollTrigger: {
+        trigger: linkWrapper.value,
+        start: 'top 85%',
+        toggleActions: 'play reverse play reverse',
+      },
+      scale: 0.7,
+      y: 40,
+      rotation: -3,
+      duration: 0.6,
+      stagger: {
+        amount: 0.5,
+        grid: 'auto',
+        from: 'start',
+      },
+      ease: 'back.out(1.7)', // Adds the "overshoot" bounce effect
+    })
+  }, 2100)
+})
 </script>
 
 <template>
@@ -20,12 +55,12 @@ import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
         <span class="pink-bold-letter">T</span>o <span class="blue-bold-letter">W</span>ork!
       </h1>
     </div>
-    <section class="link-card-wrapper">
+
+    <section ref="linkWrapper" class="link-card-wrapper">
       <LinkCard title="Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
         title="LinkedIn"
         :icon="linkedInIcon"
-        class=""
         :url="'https://www.linkedin.com/in/juan-lagunas/'"
         loading="lazy"
       />
@@ -41,7 +76,6 @@ import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
         :url="'https://www.instagram.com/j.lag_works/'"
         loading="lazy"
       />
-
       <LinkCard
         title="Behance"
         :icon="behanceIcon"
@@ -57,7 +91,6 @@ import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
       <LinkCard
         title="Github"
         :icon="githubIcon"
-        class=""
         :url="'https://github.com/dev-jLagunas'"
         loading="lazy"
       />
@@ -72,4 +105,8 @@ import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.link-card-wrapper > * {
+  will-change: transform;
+}
+</style>
