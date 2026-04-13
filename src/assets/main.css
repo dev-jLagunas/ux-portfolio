@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  max-width: 1500px;
+  max-width: 1600px;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -135,7 +135,7 @@ Hero Styles
 *****************************************/
 
 .hero-title {
-  @apply font-special font-black text-3xl text-nowrap  sm:text-4xl lg:text-5xl lg:mb-2 2xl:text-6xl;
+  @apply font-special font-black text-3xl text-nowrap  sm:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl;
 }
 
 .hero-btn-wrapper-md {

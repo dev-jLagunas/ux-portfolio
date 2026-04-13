@@ -38,7 +38,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header ref="heroContainer" class="mt-8 max-w-7xl mx-auto overflow-hidden">
+  <header ref="heroContainer" class="mt-8 mx-auto overflow-hidden">
     <section class="grid grid-cols-1 items-center place-items-center md:grid-cols-2">
       <article>
         <h2 class="hero-title">Hello, I'm Juan.</h2>
