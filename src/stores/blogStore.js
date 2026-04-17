@@ -8,10 +8,11 @@ import post6 from '@/posts/portfolio-update.js'
 import post7 from '@/posts/tlf-blog-entry.js'
 import post8 from '@/posts/ux-multilingual-advantage.js'
 import post9 from '@/posts/customer-service-ux.js'
+import post10 from '@/posts/language-portfolio.js'
 
 export const useBlogStore = defineStore('blog', {
   state: () => ({
-    posts: [post9, post8, post7, post6, post5, post4, post3, post2, post1],
+    posts: [post10, post9, post8, post7, post6, post5, post4, post3, post2, post1],
   }),
   getters: {
     getPostBySlug: (state) => (slug) => state.posts.find((p) => p.slug === slug),

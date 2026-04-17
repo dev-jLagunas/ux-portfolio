@@ -1,47 +1,10 @@
 <script setup>
-import { onMounted, ref, nextTick } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeMockUp from '@/assets/images/home/cafe-mockup.webp'
 import beanMockUp from '@/assets/images/home/bean-mockup.webp'
 import denkiMockUp from '@/assets/images/home/denki-mockup.webp'
 import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
-
-gsap.registerPlugin(ScrollTrigger)
-
-const container = ref(null)
-
-onMounted(async () => {
-  await nextTick()
-
-  const cards = container.value.querySelectorAll('.project-card-animate')
-
-  ScrollTrigger.getAll().forEach((t) => t.kill())
-
-  gsap.fromTo(
-    cards,
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: container.value,
-        start: 'top 85%',
-
-        toggleActions: 'play reverse play reverse',
-      },
-    },
-  )
-})
 </script>
 
 <template>
