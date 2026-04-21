@@ -4,8 +4,22 @@ import gsap from 'gsap'
 import { useRouter } from 'vue-router'
 import heroMainImg from '@/assets/images/hero-new-image.png'
 
+// Sound Import
+import moneySound from '@/assets/sounds/money-counting.mp3'
+
 const router = useRouter()
 const heroContainer = ref(null)
+
+// Initialize Audio object
+const playCountingSound = () => {
+  const audio = new Audio(moneySound)
+  audio.volume = 0.4 // Adjust volume as needed
+  audio.play().catch(() => {
+    // Browsers sometimes block audio until the user interacts with the page.
+    // This catch prevents console errors if autoplay is blocked.
+    console.warn('Audio playback blocked by browser until user interaction.')
+  })
+}
 
 function navigateToWork() {
   router.push({ name: 'home', hash: '#case-studies' })
@@ -16,9 +30,9 @@ onMounted(async () => {
 
   // Match the 2000ms global loading delay
   setTimeout(() => {
+    if (!heroContainer.value) return
     const titles = heroContainer.value.querySelectorAll('.hero-title')
 
-    // Simple bounce animation for titles only
     gsap.fromTo(
       titles,
       {
@@ -29,8 +43,14 @@ onMounted(async () => {
         y: 0,
         opacity: 1,
         duration: 1.2,
-        stagger: 0.15,
         ease: 'bounce.out',
+        stagger: {
+          each: 0.15,
+          onStart: function () {
+            // Triggers for each individual element in the stagger
+            playCountingSound()
+          },
+        },
       },
     )
   }, 2100)
@@ -38,24 +58,20 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header ref="heroContainer" class="mt-8 mx-auto overflow-hidden">
-    <section class="grid grid-cols-1 items-center place-items-center md:grid-cols-2">
+  <header ref="heroContainer" class="mt-8 mx-auto overflow-hidden px-6 lg:px-8">
+    <section class="grid grid-cols-1 items-center md:grid-cols-2 gap-8 lg:gap-12">
       <article>
         <h2 class="hero-title">Hello, I'm Juan.</h2>
         <h2 class="hero-title text-pink lg:-mt-2">Hola, Soy Juan.</h2>
         <h2 class="hero-title text-blue lg:-mt-2">ハロー、フアンです。</h2>
 
-        <p
-          class="mt-4 leading-5 text-lg sm:text-xl lg:w-full lg:leading-7 2xl:text-2xl xs:w-3/4 font-bold"
-        >
+        <p class="mt-4 leading-5 text-lg sm:text-xl lg:w-full lg:leading-7 2xl:text-2xl font-bold">
           Product Designer · UX/UI <span class="hidden lg:inline">· Front-End · 3+ Years</span>
         </p>
 
         <p class="mb-2 leading-5 text-lg sm:text-xl font-bold lg:hidden">Front-End · 3+ Years</p>
 
-        <p
-          class="leading-5 xs:w-3/4 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl"
-        >
+        <p class="leading-5 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl">
           I merge thoughtful product design with clean, engaging visual systems for international
           audiences, designing and building real products end to end.
         </p>
@@ -65,17 +81,22 @@ onMounted(async () => {
         </div>
       </article>
 
-      <img :src="heroMainImg" alt="img of Juan Lagunas" class="sm:w-110 lg:w-full" />
+      <div class="flex justify-center md:justify-end">
+        <img
+          :src="heroMainImg"
+          alt="img of Juan Lagunas"
+          class="w-full max-w-[500px] lg:max-w-full"
+        />
+      </div>
     </section>
 
-    <div class="md:hidden mt-4 w-fit mx-auto relative">
+    <div class="md:hidden mt-8 w-fit mx-auto relative pb-8">
       <button class="hero-cta-btn" @click="navigateToWork">See Work</button>
     </div>
   </header>
 </template>
 
 <style scoped>
-/* Only the titles start hidden to support the bounce effect */
 .hero-title {
   opacity: 0;
   will-change: transform, opacity;

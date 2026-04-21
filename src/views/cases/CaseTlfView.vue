@@ -12,7 +12,7 @@ const tlfVideo = computed(() => (theme.isDarkMode ? tlfDarkVid : tlfLightVid))
 
 // Spinner Logic
 const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Thanks for your patience!'
+const spinnerMessage = 'Loading!'
 
 // Components
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'

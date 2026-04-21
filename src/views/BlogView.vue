@@ -6,7 +6,7 @@ import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 
 // Spinner Logic
 const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Cooking up something good!'
+const spinnerMessage = 'Coming Up!'
 
 // Store
 const blogStore = useBlogStore()

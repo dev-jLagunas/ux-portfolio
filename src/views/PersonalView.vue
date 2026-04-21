@@ -38,7 +38,7 @@ import galleryUi from '@/assets/images/personal/gallery-ui.webp'
 import tiktokUi from '@/assets/images/personal/tiktok-ui.webp'
 
 // Spinner message
-const spinnerMessage = 'Thanks for Waiting!'
+const spinnerMessage = 'Here you go'
 </script>
 
 <template>

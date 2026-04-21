@@ -14,7 +14,7 @@ import { IconHeartHandshake, IconEye, IconRocket, IconMail } from '@tabler/icons
 gsap.registerPlugin(ScrollTrigger)
 
 const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Curating the gallery...'
+const spinnerMessage = 'Stand By'
 
 // Photos
 import selfPhoto from '@/assets/images/about/self-red.webp'
