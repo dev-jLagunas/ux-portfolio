@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { IconPlus } from '@tabler/icons-vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -14,10 +15,6 @@ const openModal = (idx) => {
   isModalOpen.value = true
   currentIndex.value = idx
 }
-
-// const skipToSolution = () => {
-//   document.getElementById('the-solution')?.scrollIntoView({ behavior: 'smooth' })
-// }
 
 onMounted(async () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -48,10 +45,9 @@ onMounted(async () => {
     })
   }, scrollContainer.value)
 
-  // THE FIX: Force GSAP to recalculate measurements after Nuxt page transitions and images settle
   setTimeout(() => {
     ScrollTrigger.refresh()
-  }, 250) // 250ms is usually the sweet spot. Increase to 500 if the page is extremely image-heavy.
+  }, 250)
 })
 
 onUnmounted(() => {
@@ -174,7 +170,6 @@ const props = defineProps({
 
       <div class="horizontal-header">
         <h4 class="research-header">Visualizing the research.</h4>
-        <!-- <button @click="skipToSolution" class="skip-btn">Skip to Solution ↓</button> -->
       </div>
 
       <div ref="scrollContainer" class="horizontal-wrapper">
@@ -188,12 +183,18 @@ const props = defineProps({
                 <h3 class="slide-title">{{ artifact.caption }}</h3>
 
                 <div class="editorial-wrapper">
-                  <img
-                    :src="artifact.imageSrc"
-                    :alt="artifact.caption"
-                    class="editorial-img"
-                    @click="openModal(idx)"
-                  />
+                  <div class="editorial-img-wrapper" @click="openModal(idx)">
+                    <img
+                      :src="artifact.imageSrc"
+                      :alt="artifact.caption"
+                      class="w-full rounded-md shadow-lg object-contain"
+                    />
+                    <div
+                      class="absolute bottom-2 right-2 bg-pink text-white rounded-sm p-1.5 shadow-md pointer-events-none"
+                    >
+                      <IconPlus size="20" />
+                    </div>
+                  </div>
                   <p class="slide-blurb">{{ artifact.blurb }}</p>
                 </div>
 
@@ -217,19 +218,32 @@ const props = defineProps({
     </article>
   </section>
 
-  <div v-if="isModalOpen" class="problem-img-modal" @click.self="isModalOpen = false">
-    <div class="relative w-full lg:w-[800px] px-8">
-      <button @click="isModalOpen = false" class="problem-modal-close-btn">X</button>
+  <div
+    v-if="isModalOpen"
+    class="fixed inset-0 bg-dark/99 flex items-center justify-center z-50 p-4"
+    @click.self="isModalOpen = false"
+  >
+    <div class="relative w-full max-w-4xl bg-transparent rounded-lg">
+      <button
+        @click="isModalOpen = false"
+        class="absolute -top-10 right-0 text-pink hover:scale-110 hover:font-bold hover:cursor-pointer text-2xl z-10 transition-transform"
+      >
+        X
+      </button>
       <img
         :src="props.artifacts[currentIndex].imageSrc"
         :alt="props.artifacts[currentIndex].caption"
-        class="w-full rounded shadow-lg hover:cursor-pointer max-w-[600px] mx-auto"
+        class="w-full rounded-md shadow-2xl object-contain max-h-[50vh] mx-auto"
         loading="lazy"
       />
-      <p class="text-light font-bold text-2xl text-center mt-2">
-        {{ props.artifacts[currentIndex].caption }}
-      </p>
-      <p class="text-light text-center mt-2 leading-5">{{ props.artifacts[currentIndex].blurb }}</p>
+      <div class="mt-4 text-center">
+        <p class="text-white font-bold text-2xl mb-1">
+          {{ props.artifacts[currentIndex].caption }}
+        </p>
+        <p class="text-gray-200 leading-relaxed max-w-2xl mx-auto">
+          {{ props.artifacts[currentIndex].blurb }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -364,28 +378,27 @@ const props = defineProps({
   clear: both;
 }
 
-.editorial-img {
+/* Updated Wrapper for the plus icon */
+.editorial-img-wrapper {
   float: right;
+  position: relative;
   width: 40%;
   min-width: 120px;
   max-width: 200px;
   margin: 0.5rem 0 1rem 1.5rem;
-  object-fit: contain;
-  border-radius: 0.25rem;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease-out;
   cursor: pointer;
 }
 
 @media (min-width: 768px) {
-  .editorial-img {
+  .editorial-img-wrapper {
     width: 45%;
     max-width: 350px;
     margin: 0.5rem 0 1.5rem 2.5rem;
   }
 }
 
-.editorial-img:hover {
+.editorial-img-wrapper:hover {
   transform: scale(1.05);
 }
 
@@ -403,7 +416,7 @@ const props = defineProps({
 
 .slide-statement-grid {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  clear: both; /* Ensures grid stays below the floated image if text is short */
+  clear: both;
 }
 
 .statement-label {
