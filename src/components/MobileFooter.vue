@@ -41,7 +41,7 @@ const isActive = (path) => route.path === path
 <template>
   <!-- Mobile Bottom Nav -->
   <nav
-    class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-dark border-t-2 border-t-pink font-main"
+    class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-dark border-t-2 border-t-pink font-main"
   >
     <ul class="flex justify-around items-center py-4 text-light">
       <!-- Work -->

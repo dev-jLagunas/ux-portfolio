@@ -176,17 +176,17 @@ const reflections = [
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
+  <CaseNav
+    :sections="[
+      { id: 'overview-section', label: 'Overview' },
+      { id: 'problem-section', label: 'Problem' },
+      { id: 'solution-section', label: 'Solution' },
+      { id: 'outcome-section', label: 'Outcome' },
+      { id: 'reflections-section', label: 'Reflections' },
+      { id: 'ux-section', label: 'TLDR' },
+    ]"
+  />
   <div class="font-main mb-28">
-    <CaseNav
-      :sections="[
-        { id: 'overview-section', label: 'Overview' },
-        { id: 'problem-section', label: 'Problem' },
-        { id: 'solution-section', label: 'Solution' },
-        { id: 'outcome-section', label: 'Outcome' },
-        { id: 'reflections-section', label: 'Reflections' },
-        { id: 'ux-section', label: 'TLDR' },
-      ]"
-    />
     <CaseOverview
       id="overview-section"
       title="Project Overview"
@@ -199,7 +199,7 @@ const reflections = [
         'Front-End Development',
         'CMS Integration',
       ]"
-      :imgSrc="coverImg"
+      :videoSrc="denkiVideo"
       :paragraphs="[
         'Tanaka Denki Service is a solar maintenance company based in Ishikawa, Japan. Their existing WordPress site had not been updated in years and no longer reflected the professionalism or reliability of their business. The content was difficult to scan, visually outdated, and overwhelming for internal staff to maintain.',
         'I partnered with the company to redesign the entire website using Nuxt 4, Tailwind CSS, and a streamlined Contentful CMS. My focus was improving clarity, communication, and trust for their core audience, which includes universities, public institutions, and medium-sized businesses across the region. The result is a modern, mobile-first, and easy-to-maintain website that supports stronger communication and long-term business growth.',
@@ -209,24 +209,11 @@ const reflections = [
       toolkit="Figma, Nuxt 4, Tailwind CSS, Contentful, Netlify"
       pdfFile="case-study-denki.pdf"
     />
-    <video
-      :key="theme.isDarkMode"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="none"
-      width="700"
-      height="600"
-      class="mx-auto mt-16 w-full max-w-[800px]"
-    >
-      <source :src="denkiVideo" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p class="text-center">
+
+    <!-- <p class="text-center">
       <a href="https://tdss.co.jp" target="_blank" class="underline text-blue">View live site</a>
-    </p>
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+    </p> -->
+    <!-- <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" /> -->
     <CaseProblem
       id="problem-section"
       problemStatement="Tanaka Denki’s original website lacked clarity, structure, and credibility. Key services were buried, contact information was inconsistent, and the visual design did not reflect the professionalism of a licensed electrical safety contractor. For a company whose work focuses on compliance, inspections, and long-term maintenance, the site failed to communicate reliability or expertise."

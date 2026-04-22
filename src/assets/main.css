@@ -104,7 +104,7 @@ Navbar Styles
 Navbar Styles
 *****************************************/
 .nav-container-styles {
-  @apply hidden font-main  md:flex md:justify-between md:items-center  md:mt-4;
+  @apply hidden font-main  lg:flex lg:justify-between lg:items-center  lg:mt-4;
 }
 
 .nav-name-wrapper {
@@ -135,7 +135,7 @@ Hero Styles
 *****************************************/
 
 .hero-title {
-  @apply font-special font-black text-3xl text-nowrap  sm:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl;
+  @apply font-special font-black text-3xl text-nowrap sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl;
 }
 
 .hero-btn-wrapper-md {
@@ -250,26 +250,68 @@ Case Outcome Styles
 }
 
 /***************************************
-Case Overview Styles
+Case Overview Styles (Full-Sized Refactor)
 *****************************************/
+
+/* Scale the title significantly on larger screens */
 .overview-title {
-  @apply text-2xl text-center md:text-3xl;
+  @apply text-5xl  md:text-6xl xl:text-7xl w-full font-black uppercase my-2;
 }
 
-.overview-content-wrapper {
-  @apply text-pink font-semibold flex items-start justify-center flex-wrap text-center text-sm gap-2 mt-2 mb-4 divide-x divide-gray-300;
+.tag-slot-machine-wrapper {
+  @apply flex justify-center items-center h-8 overflow-hidden;
 }
 
-.overview-info {
-  @apply md:mt-8 md:gap-4 lg:gap-8 lg:grid lg:grid-cols-2 lg:place-items-center;
+.overview-tag-list {
+  @apply relative h-full w-full flex justify-center items-center;
+  @apply text-sm md:text-base font-bold uppercase tracking-widest opacity-70;
 }
 
-.overview-img {
-  @apply w-3/4 sm:w-1/2 max-w-xl mx-auto mb-4 md:mb-0 md:rounded-md lg:max-w-[450px] lg:w-full shadow-xl;
+.tag-item {
+  @apply absolute list-none whitespace-nowrap;
+  /* Ensure they are stacked on top of each other for the animation logic */
+  transform: translateY(0);
 }
 
-.case-study-btn {
-  @apply bg-pink text-white pr-4 pl-2 py-1 rounded-sm mb-2 text-sm inline-block hover:shadow-lg transition;
+/* Metadata Container */
+.header-metadata {
+  @apply mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-5xl mx-auto px-4;
+}
+
+/* Individual Card Styling */
+.metadata-card {
+  @apply flex items-center gap-2;
+  @apply transition-colors duration-300;
+}
+
+/* Text Wrapper for better alignment */
+.metadata-text {
+  @apply flex flex-col items-start text-left overflow-hidden;
+}
+
+.metadata-label {
+  @apply text-[10px] uppercase tracking-widest font-black opacity-50 mb-0.5;
+}
+
+.metadata-value {
+  @apply text-sm font-bold w-full;
+}
+
+/* High-impact Video Container */
+.video-container-full {
+  @apply w-full max-w-[1200px] mx-auto px-4;
+}
+
+.hero-video {
+  @apply w-full h-auto rounded-sm;
+}
+
+.work-title {
+  @apply text-3xl md:text-4xl font-black mb-4 border-l-8 border-pink pl-4;
+}
+
+.live-site-link {
+  @apply flex items-center gap-2  text-blue hover:text-pink transition-colors underline underline-offset-8 decoration-2 text-base;
 }
 
 /***************************************
@@ -300,16 +342,83 @@ Case Problem Styles
 }
 
 /***************************************
-Sticky Nav Styles
+Case Sticky Nav (Visibility Fix)
 *****************************************/
-.sticky-nav-container {
-  @apply mt-8 mb-8 sticky top-3 z-50 bg-pink py-2 rounded-sm font-main;
+
+/* Wrapper for mobile logic */
+.mobile-nav-wrapper {
+  @apply fixed top-2 right-6  flex flex-col items-end gap-2;
 }
 
-.sticky-content-wrapper {
-  @apply flex flex-wrap items-center justify-around gap-4;
+/* Hard override for desktop visibility */
+@media (min-width: 1024px) {
+  .mobile-nav-wrapper {
+    display: none !important;
+  }
 }
 
+.mobile-nav-toggle {
+  @apply flex items-center gap-2 bg-pink text-white px-4 py-2
+         rounded-sm shadow-sm transition-all duration-500 hover:cursor-pointer;
+}
+
+.mobile-nav-toggle.is-faded {
+  @apply opacity-20 hover:opacity-100;
+}
+
+.mobile-nav-card {
+  @apply p-6
+         shadow-xl rounded-sm w-max max-w-[80vw] bg-pink;
+}
+
+.mobile-modal-list {
+  @apply flex flex-col gap-5 items-end bg-pink;
+}
+
+.mobile-modal-item {
+  @apply flex items-center gap-4 transition-all duration-300 text-dark opacity-50;
+}
+
+.mobile-modal-item.is-active {
+  @apply opacity-100 text-white;
+}
+
+/* Shared Components */
+.item-content,
+.sidebar-content {
+  @apply flex flex-col items-end;
+}
+.item-num,
+.sidebar-num {
+  @apply text-[10px] font-black leading-none mb-1;
+}
+.item-label,
+.sidebar-label {
+  @apply text-base font-bold tracking-tight text-right 2xl:text-lg;
+}
+.item-indicator,
+.sidebar-indicator {
+  @apply w-1 h-5  transition-all duration-300;
+}
+.is-active .item-indicator,
+.sidebar-item.is-active .sidebar-indicator {
+  @apply bg-white h-7 w-1 lg:bg-pink;
+}
+
+/* Desktop Sidebar */
+.desktop-sidebar {
+  @apply fixed right-8 top-1/2 -translate-y-1/2 xl:right-16 2xl:right-24;
+}
+
+.sidebar-list {
+  @apply flex flex-col gap-6 items-end;
+}
+.sidebar-item {
+  @apply flex items-center gap-2 transition-all duration-300 opacity-30 hover:opacity-100;
+}
+.sidebar-item.is-active {
+  @apply opacity-100 scale-105;
+}
 /***************************************
 Ux Lens Styles
 *****************************************/
