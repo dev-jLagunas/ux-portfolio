@@ -20,7 +20,6 @@ import CaseReflections from '@/components/reusable/CaseReflections.vue'
 
 // Images
 import divider from '@/assets/images/divider-img.webp'
-import coverImg from '@/assets/images/cases/case-six/case-cover-img-denki.webp'
 import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.webp'
 import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.webp'
 import personaNakamura from '@/assets/images/cases/case-six/persona-denki-nakamura.webp'
@@ -209,11 +208,6 @@ const reflections = [
       toolkit="Figma, Nuxt 4, Tailwind CSS, Contentful, Netlify"
       pdfFile="case-study-denki.pdf"
     />
-
-    <!-- <p class="text-center">
-      <a href="https://tdss.co.jp" target="_blank" class="underline text-blue">View live site</a>
-    </p> -->
-    <!-- <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" /> -->
     <CaseProblem
       id="problem-section"
       problemStatement="Tanaka Denki’s original website lacked clarity, structure, and credibility. Key services were buried, contact information was inconsistent, and the visual design did not reflect the professionalism of a licensed electrical safety contractor. For a company whose work focuses on compliance, inspections, and long-term maintenance, the site failed to communicate reliability or expertise."

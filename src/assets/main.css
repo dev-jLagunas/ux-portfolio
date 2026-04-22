@@ -89,9 +89,16 @@ body {
 }
 
 .section-header-wrapper {
-  @apply mt-4 mb-2 flex flex-col w-full md:flex-row md:justify-between md:items-center;
+  @apply w-full mt-32 mb-8 gap-4 items-start;
 }
 
+.section-title {
+  @apply text-6xl md:text-[6rem] font-black font-special  uppercase leading-[0.8] tracking-tighter;
+}
+
+.section-phase {
+  @apply bg-pink text-white px-5 py-2 text-[10px] md:text-xs font-black w-fit  uppercase tracking-[0.4em] leading-none;
+}
 /***************************************
 Navbar Styles
 *****************************************/
@@ -259,7 +266,7 @@ Case Overview Styles (Full-Sized Refactor)
 }
 
 .tag-slot-machine-wrapper {
-  @apply flex justify-center items-center h-8 overflow-hidden;
+  @apply flex justify-center items-center h-8 overflow-hidden mb-4;
 }
 
 .overview-tag-list {
@@ -317,8 +324,60 @@ Case Overview Styles (Full-Sized Refactor)
 /***************************************
 Case Problem Styles
 *****************************************/
-.problem-header-wrapper {
-  @apply border-pink border-2 p-4 rounded-md mt-4 mb-8;
+.problem-cards-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-4;
+}
+
+.problem-card {
+  @apply flex flex-col gap-4 mb-4;
+}
+
+.problem-card-wide {
+  @apply md:col-span-2 xl:col-span-1;
+}
+
+.problem-card-icon {
+  @apply w-12 h-12 flex items-center justify-center rounded-lg bg-pink/10 text-pink;
+}
+
+.problem-card-icon svg {
+  @apply w-6 h-6;
+}
+
+.problem-card-text {
+  @apply text-lg;
+}
+
+.research-header {
+  @apply w-full font-black uppercase tracking-widest mt-8;
+}
+
+.research-insights-container {
+  @apply w-full  mb-8;
+}
+
+.research-row {
+  @apply flex items-center gap-6 p-4;
+}
+
+.research-row-icon {
+  @apply flex-shrink-0;
+}
+
+.research-row-icon img {
+  @apply h-12 w-12 object-contain;
+}
+
+.research-row-content {
+  @apply flex flex-col gap-1;
+}
+
+.research-row-title {
+  @apply font-bold text-lg;
+}
+
+.research-row-desc {
+  @apply text-lg;
 }
 
 .problem-left-btn {
@@ -394,7 +453,7 @@ Case Sticky Nav (Visibility Fix)
 }
 .item-label,
 .sidebar-label {
-  @apply text-base font-bold tracking-tight text-right 2xl:text-lg;
+  @apply text-xs font-bold tracking-tight text-right 2xl:text-lg;
 }
 .item-indicator,
 .sidebar-indicator {

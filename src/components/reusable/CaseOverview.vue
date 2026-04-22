@@ -85,7 +85,7 @@ onMounted(() => {
           </li>
         </ul>
       </div>
-      <h3 class="overview-title font-special">{{ title }}</h3>
+      <h3 class="section-title">{{ title }}</h3>
       <ul class="header-metadata font-main">
         <li class="metadata-card">
           <IconUser class="text-pink shrink-0" :size="24" />
@@ -128,7 +128,7 @@ onMounted(() => {
       </video>
     </div>
 
-    <div class="content-section max-w-6xl mx-auto px-6">
+    <div class="content-section max-w-6xl">
       <h4 class="work-title font-main">{{ workTitle }}</h4>
 
       <div class="description-wrapper">

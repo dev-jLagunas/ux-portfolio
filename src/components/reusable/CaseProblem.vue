@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 
-import problemIcon from '@/assets/svgs/problem-icon.svg'
-
 // Props
 const props = defineProps({
   id: String,
@@ -40,30 +38,95 @@ function prevImage() {
 </script>
 
 <template>
-  <section id="problem-section" class="flex-col-center">
+  <section id="problem-section" class="max-w-7xl mt-10">
     <div class="section-header-wrapper">
-      <h3 class="font-bold text-3xl">The Problem</h3>
-      <p class="tracking-wider text-blue/90 font-semibold md:pr-4">Empathize – Define</p>
+      <h3 class="section-title">The Problem</h3>
+      <div class="section-phase">Empathize – Define</div>
     </div>
     <article class="flex-col-center">
-      <div class="problem-header-wrapper">
-        <img :src="problemIcon" alt="troubled face svg icon" class="mx-auto h-12 mb-2" />
-        <p class="mb-2 indent-4">
-          {{ problemStatement }}
-        </p>
-        <p class="indent-4 mb-2">{{ problemStatementB }}</p>
-        <p class="indent-4">{{ userResearchIntro }}</p>
+      <div class="problem-cards-grid">
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m15 9-6 6" />
+              <path d="m9 9 6 6" />
+            </svg>
+          </div>
+          <p class="problem-card-text">
+            {{ problemStatement }}
+          </p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m7.5 4.27 9 5.15" />
+              <path
+                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+              />
+              <path d="m3.3 7 8.7 5 8.7-5" />
+              <path d="M12 22V12" />
+            </svg>
+          </div>
+          <p class="problem-card-text">
+            {{ problemStatementB }}
+          </p>
+        </div>
+
+        <div class="problem-card problem-card-wide">
+          <div class="problem-card-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h9z" />
+            </svg>
+          </div>
+          <p class="problem-card-text">
+            {{ userResearchIntro }}
+          </p>
+        </div>
       </div>
-      <h4 class="w-full font-semibold mb-4 text-2xl mt-8">How I gathered insights?</h4>
-      <article
-        v-if="researchMethods && researchMethods.length"
-        class="w-full grid grid-cols-1 gap-4 mb-16 sm:grid-cols-3 sm:px-4 md:gap-8 lg:gap-16"
-      >
-        <figure v-for="(method, idx) in researchMethods" :key="idx">
-          <img :src="method.imageSrc" alt="research technique icon" class="h-16 mb-2" />
-          <figcaption class="font-semibold">{{ method.caption }}</figcaption>
-          <p>{{ method.description }}</p>
-        </figure>
+      <h4 class="research-header">How I gathered insights?</h4>
+      <article v-if="researchMethods && researchMethods.length" class="research-insights-container">
+        <div v-for="(method, idx) in researchMethods" :key="idx" class="research-row">
+          <div class="research-row-icon">
+            <img :src="method.imageSrc" alt="research technique icon" />
+          </div>
+          <div class="research-row-content">
+            <h5 class="research-row-title">{{ method.caption }}</h5>
+            <p class="research-row-desc">{{ method.description }}</p>
+          </div>
+        </div>
       </article>
       <h4 class="w-full font-semibold text-2xl">Visualizing the research.</h4>
       <figure class="relative w-full mt-4">
