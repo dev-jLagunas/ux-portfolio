@@ -51,8 +51,12 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) return savedPosition
+    // If the user clicks 'back', take them to where they were
+    if (savedPosition) {
+      return savedPosition
+    }
 
+    // If the URL has a #hash (like #overview-section), jump to it
     if (to.hash) {
       return {
         el: to.hash,
@@ -60,11 +64,20 @@ const router = createRouter({
       }
     }
 
-    return { top: 0 }
+    // Default: Always scroll to the absolute top of the page
+    return { top: 0, left: 0 }
   },
 })
 
 router.afterEach((to) => {
+  if (to.name?.startsWith('case') || to.path.includes('/case-')) {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    })
+  }
+
   if (window.gtag) {
     window.gtag('event', 'page_view', {
       page_title: document.title,

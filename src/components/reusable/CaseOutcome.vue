@@ -1,4 +1,7 @@
 <script setup>
+import { IconCircleCheck, IconTrendingUp, IconUsers, IconAward } from '@tabler/icons-vue'
+
+const iconComponents = [IconCircleCheck, IconTrendingUp, IconUsers, IconAward]
 //Props
 defineProps({
   intro: {
@@ -23,33 +26,30 @@ defineProps({
 </script>
 
 <template>
-  <section id="outcome-section" class="flex-col-center">
+  <section id="outcome-section" class="w-full mt-20">
     <div class="section-header-wrapper">
-      <h3 class="font-bold text-3xl">The Outcome</h3>
-      <p class="text-blue/90 font-semibold md:pr-4 tracking-wider">Prototype – Test</p>
+      <h3 class="section-title">The Outcome</h3>
+      <div class="section-phase">Prototype - Test</div>
     </div>
 
-    <article>
-      <!-- Intro Paragraph -->
-      <p class="mb-4">
+    <article class="max-w-6xl">
+      <p class="mb-4 leading-normal text-lg">
         {{ intro }}
       </p>
 
-      <!-- Second Paragraph -->
-      <p class="mb-6">
+      <p class="mb-10 leading-normal text-lg">
         {{ context }}
       </p>
 
-      <!-- Outcome Cards -->
-      <ul class="outcome-card-wrapper">
-        <li v-for="(item, index) in outcomes" :key="index" class="relative px-2 py-12">
-          <img
-            :src="icons[index]"
-            alt="icons representing outcome"
-            class="absolute top-0 left-2 h-10 -rotate-12"
-          />
-          <h5 class="font-semibold my-2">{{ item.title }}</h5>
-          <p>{{ item.description }}</p>
+      <ul class="outcome-card-grid">
+        <li v-for="(item, index) in outcomes" :key="index" class="outcome-card">
+          <div class="outcome-icon-box">
+            <component :is="iconComponents[index % iconComponents.length]" class="outcome-icon" />
+          </div>
+          <div class="outcome-content">
+            <h5 class="outcome-card-title">{{ item.title }}</h5>
+            <p class="outcome-card-desc">{{ item.description }}</p>
+          </div>
         </li>
       </ul>
     </article>

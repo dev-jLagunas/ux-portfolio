@@ -252,8 +252,72 @@ Back Home Button Styles
 Case Outcome Styles
 *****************************************/
 
-.outcome-card-wrapper {
-  @apply mt-4 grid grid-cols-1 md:grid-cols-2 gap-4;
+.outcome-card-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 mt-8;
+}
+
+.outcome-card {
+  @apply flex flex-col gap-4  rounded-sm;
+}
+
+.outcome-icon-box {
+  @apply w-10 h-10 flex items-center justify-center bg-pink/10 rounded-lg border border-pink/20;
+}
+
+.outcome-icon {
+  @apply w-5 h-5 text-pink;
+}
+
+.outcome-content {
+  @apply flex flex-col gap-1;
+}
+
+.outcome-card-title {
+  @apply font-bold text-lg uppercase tracking-tight;
+}
+
+.outcome-card-desc {
+  @apply leading-normal text-lg;
+}
+
+/***************************************
+Case Reflections Styles
+*****************************************/
+
+.reflections-container {
+  @apply mt-20 w-full max-w-6xl;
+}
+
+.reflections-intro {
+  @apply mb-10 leading-normal text-base md:text-lg;
+}
+
+.reflections-list {
+  @apply space-y-6;
+}
+
+.reflection-item {
+  @apply flex flex-col;
+}
+
+.reflection-header {
+  @apply flex items-center gap-2;
+}
+
+.reflection-icon-box {
+  @apply w-10 h-10 flex items-center justify-center bg-pink/10 rounded-lg border border-pink/20 shrink-0;
+}
+
+.reflection-icon {
+  @apply w-5 h-5 text-pink;
+}
+
+.reflection-title {
+  @apply font-bold text-lg md:text-xl uppercase tracking-tight;
+}
+
+.reflection-desc {
+  @apply pl-12 leading-normal text-base md:text-lg opacity-80;
 }
 
 /***************************************
@@ -271,7 +335,7 @@ Case Overview Styles (Full-Sized Refactor)
 
 .overview-tag-list {
   @apply relative h-full w-full flex justify-center items-center;
-  @apply text-sm md:text-base font-bold uppercase tracking-widest opacity-70;
+  @apply text-sm md:text-base font-bold uppercase tracking-widest text-pink;
 }
 
 .tag-item {
@@ -301,12 +365,12 @@ Case Overview Styles (Full-Sized Refactor)
 }
 
 .metadata-value {
-  @apply text-sm font-bold w-full;
+  @apply text-sm font-bold w-full xl:text-base;
 }
 
 /* High-impact Video Container */
 .video-container-full {
-  @apply w-full max-w-[1200px] mx-auto px-4;
+  @apply w-full max-w-[1100px] mx-auto px-4;
 }
 
 .hero-video {
@@ -458,6 +522,38 @@ Case Sticky Nav (Visibility Fix)
 .sidebar-item.is-active {
   @apply opacity-100 scale-105;
 }
+/***************************************
+Case Solution
+*****************************************/
+
+.solution-intro-grid {
+  @apply flex flex-col w-full mt-8 mb-4 space-y-4 max-w-6xl;
+}
+
+.solution-block {
+  @apply flex flex-col md:flex-row gap-2 md:gap-4 items-start;
+}
+
+.solution-icon-wrapper {
+  @apply shrink-0 p-4 bg-pink/5 rounded-xl border border-pink/10;
+}
+
+.solution-icon {
+  @apply w-8 h-8 md:w-10 md:h-10 text-pink;
+}
+
+.solution-content {
+  @apply flex flex-col;
+}
+
+.solution-block-title {
+  @apply text-xl md:text-2xl font-black uppercase tracking-tight;
+}
+
+.solution-text {
+  @apply text-base md:text-lg leading-normal;
+}
+
 /***************************************
 Ux Lens Styles
 *****************************************/

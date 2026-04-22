@@ -36,11 +36,9 @@ import personaLisa from '@/assets/images/cases/case-five/lisa-user-persona.webp'
 import personaKevin from '@/assets/images/cases/case-five/kevin-user-persona.webp'
 import journeyLisa from '@/assets/images/cases/case-five/lisa-user-journey.webp'
 import journeyKevin from '@/assets/images/cases/case-five/kevin-journey-map.webp'
-import coverImg from '@/assets/images/cases/case-five/case-cover-img.png'
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import competitionImg from '@/assets/svgs/research/official-research.svg'
 import ideaImg from '@/assets/svgs/research/best-practice.svg'
-import divider from '@/assets/images/divider-img.webp'
 
 // Videos
 import beanVideoLight from '@/assets/images/cases/case-five/bnb-video-light.mp4'
@@ -183,7 +181,7 @@ const uxSubheading = 'Design Process at a Glance'
       url="https://dev-jlagunas.github.io/bean-and-beast/#/"
       workTitle="Bean And Beast Luxury Chocolates"
       :tags="['UX Research', 'UI Design', 'Product Design', 'Branding', 'Front-End Development']"
-      :imgSrc="coverImg"
+      :videoSrc="beanVideo"
       :paragraphs="[
         'Bean And Beast is a fictional premium chocolate brand born from a personal art series. What started as a collection of black-and-white animal silhouettes evolved into a UX-driven ecommerce experience built entirely from scratch. I used this capstone project to practice the full design thinking process, from early research to hi-fi prototype to fully coded Vue.js site.',
         'Centered on emotionally rich storytelling, intuitive UI, and a playful but elegant aesthetic, the brand guides users through discovery, personalization, and gift-giving. I created the visual identity, packaging mockups, user research, wireframes, usability testing, and front-end build.',
@@ -193,29 +191,6 @@ const uxSubheading = 'Design Process at a Glance'
       toolkit="Figma, Canva, Vue.js, Tailwind CSS, Pinia"
       pdfFile="case-study-5-bean-and-beast.pdf"
     />
-    <video
-      :key="theme.isDarkMode"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="none"
-      width="700"
-      height="600"
-      class="mx-auto mt-16 w-full max-w-[800px]"
-    >
-      <source :src="beanVideo" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p class="text-center">
-      <a
-        href="https://dev-jlagunas.github.io/bean-and-beast/#/"
-        target="_blank"
-        class="underline text-blue"
-        >View live site</a
-      >
-    </p>
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseProblem
       id="problem-section"
       problemStatement="Buying chocolate should feel joyful but instead, it’s often overwhelming. Too many options, unclear labels, forgettable packaging, and little emotional connection make it hard for users to find something truly special. Whether shopping for themselves or a gift, users end up choosing the safe option not the best one."
@@ -300,7 +275,6 @@ const uxSubheading = 'Design Process at a Glance'
       takeaway="Both Lisa and Kevin wanted clarity, confidence, and connection but traditional chocolate sites left them feeling unsure, uninspired, or emotionally detached. By centering user goals, emotional needs, and storytelling, I set out to reimagine what premium chocolate could look and feel like in a digital space."
       quote="Buying chocolate shouldn’t feel like a gamble or a chore."
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
       introText="Bean And Beast was my first project built entirely from the ground up using the full UX design thinking framework. Unlike my earlier retroactive case studies, this one followed each phase deliberately, from empathy research to coded implementation. My goal was not only to design a product, but to prove I could create a bold, emotionally resonant brand and e-commerce experience with structure and intent at every step."
@@ -327,8 +301,6 @@ const uxSubheading = 'Design Process at a Glance'
         },
       ]"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
-
     <CaseOutcome
       id="outcome-section"
       intro="Launching Bean And Beast was the culmination of a full design thinking process. This mean starting from research then implementation. While it’s a fictional chocolate brand, the feedback from peers, mentors, and fellow designers confirmed its real-world impact: a visually striking, emotionally resonant brand that felt intentional, polished, and ready for the market."
@@ -336,14 +308,11 @@ const uxSubheading = 'Design Process at a Glance'
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseReflections
       id="reflections-section"
       intro="Bean And Beast was more than a design project to me. It was proof that I could lead a UX process from start to finish. It challenged me to think holistically: from empathizing with users to crafting visuals, building structure, and telling a brand story that resonated. This capstone taught me what it really means to design with purpose, and how process transforms intuition into impact."
       :reflections="reflections"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
-
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"

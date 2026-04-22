@@ -15,9 +15,9 @@ const openModal = (idx) => {
   currentIndex.value = idx
 }
 
-const skipToSolution = () => {
-  document.getElementById('the-solution')?.scrollIntoView({ behavior: 'smooth' })
-}
+// const skipToSolution = () => {
+//   document.getElementById('the-solution')?.scrollIntoView({ behavior: 'smooth' })
+// }
 
 onMounted(async () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -174,7 +174,7 @@ const props = defineProps({
 
       <div class="horizontal-header">
         <h4 class="research-header">Visualizing the research.</h4>
-        <button @click="skipToSolution" class="skip-btn">Skip to Solution ↓</button>
+        <!-- <button @click="skipToSolution" class="skip-btn">Skip to Solution ↓</button> -->
       </div>
 
       <div ref="scrollContainer" class="horizontal-wrapper">
@@ -182,7 +182,9 @@ const props = defineProps({
           <template v-for="(artifact, idx) in props.artifacts" :key="idx">
             <div class="artifact-slide combined-box">
               <div class="slide-inner">
-                <span class="slide-number">Artifact 0{{ idx + 1 }}</span>
+                <span class="slide-number bg-pink text-white py-1 px-2 rounded-xs w-fit"
+                  >Artifact 0{{ idx + 1 }}</span
+                >
                 <h3 class="slide-title">{{ artifact.caption }}</h3>
 
                 <div class="editorial-wrapper">
@@ -208,7 +210,7 @@ const props = defineProps({
       </div>
 
       <p
-        class="text-6xl md:text-[6rem] font-black font-special uppercase leading-[.9] tracking-tighter text-pink"
+        class="text-6xl xl:text-8xl mt-48 font-black font-special uppercase leading-[1.3] tracking-tighter text-pink"
       >
         "{{ quote }}"
       </p>
@@ -245,7 +247,6 @@ const props = defineProps({
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: #ff007a;
   margin-bottom: 2rem;
   cursor: pointer;
   transition: opacity 0.3s;
@@ -330,7 +331,6 @@ const props = defineProps({
 
 .slide-number {
   display: block;
-  color: #ff007a;
   font-weight: 900;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
@@ -344,7 +344,6 @@ const props = defineProps({
   text-transform: uppercase;
   line-height: 0.9;
   margin-bottom: 2rem;
-  color: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -392,9 +391,8 @@ const props = defineProps({
 
 .slide-blurb {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.6);
   line-height: 1.625;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -404,14 +402,12 @@ const props = defineProps({
 }
 
 .slide-statement-grid {
-  padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   clear: both; /* Ensures grid stays below the floated image if text is short */
 }
 
 .statement-label {
   font-weight: 700;
-  color: #ff007a;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -419,7 +415,6 @@ const props = defineProps({
 }
 
 .statement-text {
-  color: rgba(255, 255, 255, 0.8);
   line-height: 1.5;
 }
 </style>

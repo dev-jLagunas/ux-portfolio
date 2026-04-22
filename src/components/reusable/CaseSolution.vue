@@ -1,5 +1,6 @@
 <script setup>
 import TabGroup from '@/components/reusable/TabGroup.vue'
+import { IconTarget, IconRoute, IconStack2 } from '@tabler/icons-vue'
 
 //Props
 defineProps({
@@ -42,34 +43,41 @@ defineProps({
 <template>
   <section id="the-solution">
     <div class="section-header-wrapper">
-      <h3 class="font-bold text-3xl">The Solution</h3>
-      <p class="tracking-wider text-blue/90 font-semibold md:pr-4">Ideate – Prototype</p>
+      <h3 class="section-title">The Solution</h3>
+      <div class="section-phase">Ideate – Prototype</div>
     </div>
     <article class="">
-      <div class="">
-        <p class="mb-2">{{ introText }}</p>
-        <p class="mb-2">{{ introText2 }}</p>
-        <p class="mb-6">{{ introText3 }}</p>
-      </div>
-      <section v-if="hmwItems.length" id="hmw-section" class="my-4 mx-8 w-fit md:mx-16 xl:mx-32">
-        <h3 class="text-2xl font-semibold">{{ hmwTitle }}</h3>
-        <p v-if="hmwIntro" class="mt-2">
-          {{ hmwIntro }}
-        </p>
+      <div class="solution-intro-grid">
+        <div class="solution-block">
+          <div class="solution-icon-wrapper">
+            <IconTarget class="solution-icon" />
+          </div>
+          <div class="solution-content">
+            <h4 class="solution-block-title">The Vision</h4>
+            <p class="solution-text">{{ introText }}</p>
+          </div>
+        </div>
 
-        <ul class="mt-2 space-y-3">
-          <li v-for="(item, i) in hmwItems" :key="i" class="flex gap-3">
-            <img v-if="item.icon" :src="item.icon" alt="" class="h-5 w-5 mt-0.5" />
-            <div>
-              <p class="font-bold">{{ item.question }}</p>
-              <p v-if="item.response">
-                <span class="text-pink pr-2 font-special text-xl">→</span>
-                <span>{{ item.response }}</span>
-              </p>
-            </div>
-          </li>
-        </ul>
-      </section>
+        <div class="solution-block">
+          <div class="solution-icon-wrapper">
+            <IconRoute class="solution-icon" />
+          </div>
+          <div class="solution-content">
+            <h4 class="solution-block-title">The Strategy</h4>
+            <p class="solution-text">{{ introText2 }}</p>
+          </div>
+        </div>
+
+        <div class="solution-block">
+          <div class="solution-icon-wrapper">
+            <IconStack2 class="solution-icon" />
+          </div>
+          <div class="solution-content">
+            <h4 class="solution-block-title">The Blueprint</h4>
+            <p class="solution-text">{{ introText3 }}</p>
+          </div>
+        </div>
+      </div>
 
       <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <TabGroup :tabs="beforeTabs" :title="beforeTitle" />

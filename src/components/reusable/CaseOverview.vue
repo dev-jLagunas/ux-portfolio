@@ -88,7 +88,7 @@ onMounted(() => {
       <h3 class="section-title">{{ title }}</h3>
       <ul class="header-metadata font-main">
         <li class="metadata-card">
-          <IconUser class="text-pink shrink-0" :size="24" />
+          <IconUser class="text-pink shrink-0" :size="32" />
           <div class="metadata-text">
             <span class="metadata-label">Role</span>
             <span class="metadata-value">{{ role }}</span>
@@ -96,7 +96,7 @@ onMounted(() => {
         </li>
 
         <li class="metadata-card">
-          <IconCalendar class="text-pink shrink-0" :size="24" />
+          <IconCalendar class="text-pink shrink-0" :size="32" />
           <div class="metadata-text">
             <span class="metadata-label">Date</span>
             <span class="metadata-value">{{ date }}</span>
@@ -104,7 +104,7 @@ onMounted(() => {
         </li>
 
         <li class="metadata-card">
-          <IconTools class="text-pink shrink-0" :size="24" />
+          <IconTools class="text-pink shrink-0" :size="32" />
           <div class="metadata-text">
             <span class="metadata-label">Toolkit</span>
             <span class="metadata-value">{{ toolkit }}</span>
@@ -113,7 +113,7 @@ onMounted(() => {
       </ul>
     </div>
 
-    <div class="video-container-full -mt-12">
+    <div class="video-container-full -mt-8">
       <video
         :key="theme.isDarkMode"
         autoplay
@@ -145,4 +145,8 @@ onMounted(() => {
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+.hero-video {
+  object-view-box: inset(80px 0 0 0);
+}
+</style>

@@ -39,7 +39,6 @@ import coverImg from '@/assets/images/cases/case-one/case-cover-img-cafe.png'
 import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
-import divider from '@/assets/images/divider-img.webp'
 
 // Videos
 import cafeVideoLight from '@/assets/images/cases/case-one/cafe-video-light.mp4'
@@ -183,6 +182,7 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       workTitle="Cafe Triangle Redesign"
       :tags="['UX Research', 'Visual Design', 'Front-End Development', 'Branding', 'Accessibility']"
       :imgSrc="coverImg"
+      :videoSrc="cafeVideo"
       :paragraphs="[
         'In the second year of running our culture-driven cafe in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
         'Over seven months, I studied every morning before opening shop, eventually launching a fully custom-coded site built with Angular and Tailwind CSS. It was responsive, multilingual, and deeply personal. Designed not just to function, but to feel like an extension of who we were. I didn’t know it then, but I was practicing UX: prioritizing usability, accessibility, clarity, and user-centered design from the very beginning.',
@@ -192,29 +192,7 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
       pdfFile="case-study-1-cafe.pdf"
     />
-    <video
-      :key="theme.isDarkMode"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="none"
-      width="700"
-      height="600"
-      class="mx-auto mt-16 w-full max-w-[800px]"
-    >
-      <source :src="cafeVideo" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p class="text-center">
-      <a
-        href="https://cafetriangle-refresh.netlify.app/"
-        target="_blank"
-        class="underline text-blue"
-        >View live site</a
-      >
-    </p>
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseProblem
       id="problem-section"
       problemStatement="The original Cafe Triangle website lacked responsiveness, multilingual support, and clear access to basic information. Key details like hours, menu, and contact info were difficult to find, especially on mobile."
@@ -271,7 +249,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       quote="It's hard to know if a place is truly pet-friendly."
     />
 
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
       introText="I redesigned Cafe Triangle’s website from the ground up with a clear focus on usability, accessibility, and brand expression. The goal was simple: make the digital experience feel as welcoming and intuitive as the cafe itself."
@@ -298,7 +275,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       beforeTitle="Design Features"
       afterTitle="Design Features"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
     <CaseOutcome
       id="outcome-section"
@@ -307,14 +283,12 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
     <CaseReflections
       id="reflections-section"
       intro="This project was more than just building a website, it was the start of a deeper shift in how I think about design, users, and problem-solving. Looking back, it helped shape the foundation of my UX mindset without me even knowing it. Here are a few key lessons I took away. What worked, what didn’t, and how the experience changed the way I approach design today."
       :reflections="reflections"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
 
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div

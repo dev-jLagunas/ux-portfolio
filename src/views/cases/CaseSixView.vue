@@ -19,7 +19,6 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 
 // Images
-import divider from '@/assets/images/divider-img.webp'
 import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.webp'
 import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.webp'
 import personaNakamura from '@/assets/images/cases/case-six/persona-denki-nakamura.webp'
@@ -320,7 +319,6 @@ const reflections = [
         },
       ]"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseOutcome
       id="outcome-section"
       intro="The redesigned site gave Tanaka Denki a clearer, more credible digital presence. Even in the first months after launch, early analytics showed stronger engagement, better navigation behavior, and higher intent to contact. The new IA, modern UI, and mobile-first layout made the site faster to understand and easier to act on."
@@ -328,13 +326,11 @@ const reflections = [
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseReflections
       id="reflections-section"
       intro="This project sharpened my ability to design for international clients, manage cultural constraints, and deliver a product that balances brand identity with the expectations of Japan’s B2B solar market. It pushed me to think beyond visuals and consider how trust, clarity, and communication work differently across cultures."
       :reflections="reflections"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <!-- Step 1 -->
       <div
@@ -342,7 +338,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Understand the Business</h3>
         <p class="text-xs tracking-wide uppercase">Goals, Audience, Constraints</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I met with stakeholders to clarify goals, understand service offerings, and identify the
           core audiences. This step grounded the redesign in real needs, not assumptions, and
           revealed the importance of clear communication for B2B clients.
@@ -355,7 +351,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Analyze the Current Experience</h3>
         <p class="text-xs tracking-wide uppercase">Pain Points and Risks</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I reviewed the old WordPress site and mapped its UX issues like unclear hierarchy,
           outdated visuals, inconsistent branding, and friction in essential tasks like contacting
           the company. This clarified where the redesign needed to deliver immediate value.
@@ -368,7 +364,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Research the Market</h3>
         <p class="text-xs tracking-wide uppercase">Industry Patterns and Expectations</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I reviewed competitor sites and studied patterns across Japan’s solar maintenance
           industry. This helped me design an interface that felt modern but still aligned with the
           information-heavy expectations of Japanese B2B customers.
@@ -381,7 +377,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Define the Structure</h3>
         <p class="text-xs tracking-wide uppercase">Navigation and Information Architecture</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I reorganized the site into a simple, predictable structure with clear paths to Services,
           Company Info, and Contact. The goal was to reduce decision friction and highlight
           high-value information quickly.
@@ -394,7 +390,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Design the Interface</h3>
         <p class="text-xs tracking-wide uppercase">UI, Branding, and Trust Signals</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           Using a new visual system, I built layouts that increased clarity, consistency, and trust.
           Colors, spacing, typography, and imagery all reinforced a professional, reliable brand
           without losing the company's approachable tone.
@@ -407,7 +403,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Build the System</h3>
         <p class="text-xs tracking-wide uppercase">Nuxt, Tailwind, CMS, Forms</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I built the site with Nuxt 4, Tailwind CSS, and Contentful. Each choice supported speed,
           consistency, and long-term scalability. Netlify Forms handled submissions, while Supabase
           prepared the project for admin access later.
@@ -420,7 +416,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Test and Refine</h3>
         <p class="text-xs tracking-wide uppercase">Feedback and Adjustments</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I tested layouts with stakeholders, confirmed copy accuracy, and resolved issues like form
           parsing, rich text rendering, and asset handling. Every round made the experience smoother
           and more reliable.
@@ -433,7 +429,7 @@ const reflections = [
       >
         <h3 class="text-xl font-semibold tracking-wide">Launch and Measure</h3>
         <p class="text-xs tracking-wide uppercase">Analytics and Continuous Insight</p>
-        <p class="mt-3">
+        <p class="mt-3 md:text-lg leading-normal">
           I implemented Google Analytics at launch so I can track engagement, contact intent, and
           scroll behavior over time. This ensures future improvements are guided by real user data,
           not assumptions.

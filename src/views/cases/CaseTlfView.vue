@@ -28,7 +28,6 @@ import userImg from '@/assets/svgs/research/user-research.svg'
 
 // Images
 import tlfCoverImg from '@/assets/images/cases/case-tlf/case-cover-img-tlf.webp'
-import divider from '@/assets/images/divider-img.webp'
 import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.webp'
 import empathyMap from '@/assets/images/cases/case-tlf/tlf-empathy-1.webp'
 import journeyMap from '@/assets/images/cases/case-tlf/tlf-journey-1.webp'
@@ -182,6 +181,7 @@ const uxSubheading = 'Quick breakdown of process.'
       workTitle="The Language Friends — Bilingual Children’s Book Series"
       :tags="['Product Design', 'UX Strategy', 'Multilingual UX', 'Pedagogy-Driven Design']"
       :imgSrc="tlfCoverImg"
+      :videoSrc="tlfVideo"
       :paragraphs="[
         'The Language Friends began with a simple question: why does early English learning in Japan so often feel stressful and confidence-damaging for children and parents? Drawing on years of teaching English in Japan, I wanted to explore an approach centered on comfort, familiarity, and emotional safety rather than correctness.',
         'What began as a small book concept evolved into a full product ecosystem. I designed a character-driven learning system, defined its visual and pedagogical structure, and built a bilingual website to communicate the approach clearly to parents, iterating directly in code while balancing multilingual typography, early childhood learning, and real product constraints.',
@@ -191,26 +191,7 @@ const uxSubheading = 'Quick breakdown of process.'
       toolkit="Nuxt 4, Vue 3, Tailwind CSS, GSAP, Canva Pro, Google Gemini, Netlify"
       pdfFile="case-study-tlf.pdf"
     />
-    <video
-      :key="theme.isDarkMode"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="none"
-      width="700"
-      height="600"
-      class="mx-auto mt-16 w-full max-w-[800px]"
-    >
-      <source :src="tlfVideo" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <p class="text-center">
-      <a href="https://the-language-friends.com/" target="_blank" class="underline text-blue"
-        >View live site</a
-      >
-    </p>
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
+
     <CaseProblem
       id="problem-section"
       problemStatement="Many parents want to introduce English to their young children, but the experience often feels confusing, intimidating, or too academic. English books are either overloaded with explanations, focused on memorization, or assume parents need to actively teach a language they may not feel confident using themselves. Instead of feeling natural and enjoyable, early English exposure becomes something families postpone or avoid."
@@ -268,7 +249,6 @@ const uxSubheading = 'Quick breakdown of process.'
       takeaway="Parents need English learning tools that feel safe, simple, and confidence-building. When the experience respects both the child’s natural learning process and the parent’s comfort level, engagement becomes consistent and meaningful."
       quote="I don’t need to teach perfectly. I just want to share English with my child in a way that feels natural."
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
       introText="The solution was designed to balance trust-building with long-term business viability. In a category where parents are cautious and credibility matters, the website needed to explain the value of the books before asking for a purchase."
@@ -301,7 +281,6 @@ const uxSubheading = 'Quick breakdown of process.'
         },
       ]"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseOutcome
       id="outcome-section"
       intro="The Language Friends is approaching launch, not a retrospective success story. I built a complete, real product from zero: five finished books, a bilingual website, a clear pedagogy, and the systems needed to ship and grow. While analytics and sales data will come post-launch, the product itself is finished, coherent, and ready to be tested in the real world."
@@ -309,13 +288,11 @@ const uxSubheading = 'Quick breakdown of process.'
       :outcomes="outcomeList"
       :icons="icons"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseReflections
       id="reflections-section"
       intro="The Language Friends is still days away from launch, but taking it from nothing to a complete, real product in 45 days reshaped how I think about design. Building five books, a bilingual website, and the systems behind them forced me to make hard tradeoffs, trust my judgment, and design under real constraints. This project wasn’t about polish or perfection; it was about execution, clarity, and building something that can exist in the world and grow."
       :reflections="reflections"
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
