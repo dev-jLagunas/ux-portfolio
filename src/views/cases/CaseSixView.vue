@@ -292,7 +292,6 @@ const reflections = [
       takeaway="B2B clients depend on clarity, speed, and professionalism when choosing a maintenance partner. By understanding their decision flow and expectations, the redesign positioned Tanaka Denki as a reliable, compliant, and easy-to-contact vendor that supports business continuity."
       quote="I need to confirm your services quickly and know I can trust you."
     />
-    <img :src="divider" alt="divider image" class="mx-auto -scale-40 opacity-75" />
     <CaseSolution
       id="solution-section"
       introText="The original site made it difficult for potential clients to understand what Tanaka Denki offered, why they should trust the company, and how to contact them quickly. My goal was to create a modern, structured, and credible digital presence that supported real business outcomes."

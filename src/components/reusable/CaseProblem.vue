@@ -1,7 +1,63 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-// Props
+const scrollContainer = ref(null)
+const scrollContent = ref(null)
+const isModalOpen = ref(false)
+const currentIndex = ref(0)
+
+let ctx
+
+const openModal = (idx) => {
+  isModalOpen.value = true
+  currentIndex.value = idx
+}
+
+const skipToSolution = () => {
+  document.getElementById('the-solution')?.scrollIntoView({ behavior: 'smooth' })
+}
+
+onMounted(async () => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  await nextTick()
+
+  ctx = gsap.context(() => {
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 768px)', () => {
+      const content = scrollContent.value
+      const wrapper = scrollContainer.value
+
+      gsap.to(content, {
+        x: () => -(content.scrollWidth - wrapper.offsetWidth),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: wrapper,
+          pin: true,
+          pinSpacing: true,
+          scrub: 1,
+          start: 'top 10%',
+          end: () => `+=${content.scrollWidth - wrapper.offsetWidth}`,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      })
+    })
+  }, scrollContainer.value)
+
+  // THE FIX: Force GSAP to recalculate measurements after Nuxt page transitions and images settle
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 250) // 250ms is usually the sweet spot. Increase to 500 if the page is extremely image-heavy.
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+})
+
 const props = defineProps({
   id: String,
   problemStatement: { type: String, required: true },
@@ -22,19 +78,6 @@ const props = defineProps({
   statement: { type: String, required: false },
   statementDetails: { type: String, required: false },
 })
-
-// Reactive Properties
-const currentIndex = ref(0)
-const isModalOpen = ref(0)
-
-// Methods
-function nextImage() {
-  currentIndex.value = (currentIndex.value + 1) % props.artifacts.length
-}
-
-function prevImage() {
-  currentIndex.value = (currentIndex.value - 1 + props.artifacts.length) % props.artifacts.length
-}
 </script>
 
 <template>
@@ -128,39 +171,50 @@ function prevImage() {
           </div>
         </div>
       </article>
-      <h4 class="w-full font-semibold text-2xl">Visualizing the research.</h4>
-      <figure class="relative w-full mt-4">
-        <div class="md:place-items-center">
-          <div class="lg:grid lg:grid-cols-2 lg:gap-4">
-            <div class="mt-2 md:mt-0">
-              <h3 class="font-semibold tracking-wide border-b w-fit border-b-pink mb-2">
-                {{ props.artifacts[currentIndex].caption }}
-              </h3>
-              <p class="mb-8">{{ props.artifacts[currentIndex].blurb }}</p>
+
+      <div class="horizontal-header">
+        <h4 class="research-header">Visualizing the research.</h4>
+        <button @click="skipToSolution" class="skip-btn">Skip to Solution ↓</button>
+      </div>
+
+      <div ref="scrollContainer" class="horizontal-wrapper">
+        <div ref="scrollContent" class="horizontal-scroller">
+          <template v-for="(artifact, idx) in props.artifacts" :key="idx">
+            <div class="artifact-slide combined-box">
+              <div class="slide-inner">
+                <span class="slide-number">Artifact 0{{ idx + 1 }}</span>
+                <h3 class="slide-title">{{ artifact.caption }}</h3>
+
+                <div class="editorial-wrapper">
+                  <img
+                    :src="artifact.imageSrc"
+                    :alt="artifact.caption"
+                    class="editorial-img"
+                    @click="openModal(idx)"
+                  />
+                  <p class="slide-blurb">{{ artifact.blurb }}</p>
+                </div>
+
+                <div class="slide-statement-grid">
+                  <div class="statement-item">
+                    <h4 class="statement-label">{{ artifact.statement }}</h4>
+                    <p class="statement-text">{{ artifact.statementDetails }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 class="font-semibold tracking-wide border-b w-fit border-b-pink mb-2">
-                {{ props.artifacts[currentIndex].statement }} Statement
-              </h3>
-              <p>
-                {{ props.artifacts[currentIndex].statementDetails }}
-              </p>
-            </div>
-          </div>
-          <img
-            :src="props.artifacts[currentIndex].imageSrc"
-            :alt="props.artifacts[currentIndex].caption"
-            class="rounded-md mt-16 w-[90%] shadow-sm hover:cursor-pointer mx-auto max-w-[350px] lg:mt-4"
-            @click="isModalOpen = true"
-            loading="lazy"
-          />
+          </template>
         </div>
-        <button @click="prevImage" class="problem-left-btn">‹</button>
-        <button @click="nextImage" class="problem-right-btn">›</button>
-      </figure>
-      <p class="problem-quote">"{{ quote }}"</p>
+      </div>
+
+      <p
+        class="text-6xl md:text-[6rem] font-black font-special uppercase leading-[.9] tracking-tighter text-pink"
+      >
+        "{{ quote }}"
+      </p>
     </article>
   </section>
+
   <div v-if="isModalOpen" class="problem-img-modal" @click.self="isModalOpen = false">
     <div class="relative w-full lg:w-[800px] px-8">
       <button @click="isModalOpen = false" class="problem-modal-close-btn">X</button>
@@ -178,4 +232,194 @@ function prevImage() {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.horizontal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.skip-btn {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #ff007a;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.skip-btn:hover {
+  opacity: 0.7;
+}
+
+.horizontal-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.horizontal-scroller {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .horizontal-scroller {
+    flex-direction: row;
+    width: max-content;
+    flex-wrap: nowrap;
+  }
+}
+
+.artifact-slide {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  flex-shrink: 0;
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .artifact-slide {
+    width: 100vw;
+    height: 70vh;
+    padding: 2rem 5rem;
+  }
+}
+
+.combined-box {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+  .combined-box {
+    border-bottom: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (min-width: 1024px) {
+  .artifact-slide {
+    width: 80vw;
+    height: 70vh;
+    padding: 2rem 5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .artifact-slide {
+    width: 52vw;
+    height: 70vh;
+    padding: 2rem 5rem;
+  }
+}
+
+.slide-inner {
+  max-width: 42rem;
+  width: 100%;
+}
+
+.slide-number {
+  display: block;
+  color: #ff007a;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.slide-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .slide-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* Editorial Layout CSS */
+.editorial-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.editorial-wrapper::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.editorial-img {
+  float: right;
+  width: 40%;
+  min-width: 120px;
+  max-width: 200px;
+  margin: 0.5rem 0 1rem 1.5rem;
+  object-fit: contain;
+  border-radius: 0.25rem;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .editorial-img {
+    width: 45%;
+    max-width: 350px;
+    margin: 0.5rem 0 1.5rem 2.5rem;
+  }
+}
+
+.editorial-img:hover {
+  transform: scale(1.05);
+}
+
+.slide-blurb {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.625;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .slide-blurb {
+    font-size: 1.25rem;
+  }
+}
+
+.slide-statement-grid {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  clear: both; /* Ensures grid stays below the floated image if text is short */
+}
+
+.statement-label {
+  font-weight: 700;
+  color: #ff007a;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.statement-text {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+</style>
