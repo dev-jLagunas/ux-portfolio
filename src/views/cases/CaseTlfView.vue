@@ -28,7 +28,7 @@ import userImg from '@/assets/svgs/research/user-research.svg'
 
 // Images
 import tlfCoverImg from '@/assets/images/cases/case-tlf/case-cover-img-tlf.webp'
-import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.png'
+import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.webp'
 import empathyMap from '@/assets/images/cases/case-tlf/tlf-empathy-1.webp'
 import journeyMap from '@/assets/images/cases/case-tlf/tlf-journey-1.webp'
 import trustFeat from '@/assets/images/cases/case-tlf/solution-trust.webp'
@@ -219,15 +219,6 @@ const uxSubheading = 'Quick breakdown of process.'
       ]"
       :artifacts="[
         {
-          caption: 'Empathy Map',
-          statement: 'Insight',
-          statementDetails:
-            'Japanese parents want to support their child’s English learning, but feel unsure where to start and wary of resources that feel overly academic, overwhelming, or pressure-driven.',
-          blurb:
-            'This empathy map helped me step into a parent’s mindset and emotional state. It clarified the importance of trust, gentleness, and clarity, shaping everything from visual tone to how learning concepts are introduced.',
-          imageSrc: empathyMap,
-        },
-        {
           caption: 'Persona',
           statement: 'Focus',
           statementDetails:
@@ -237,7 +228,17 @@ const uxSubheading = 'Quick breakdown of process.'
           imageSrc: userPersona,
         },
         {
-          caption: 'Journey Map',
+          caption: 'Empathy',
+          statement: 'Insight',
+          statementDetails:
+            'Japanese parents want to support their child’s English learning, but feel unsure where to start and wary of resources that feel overly academic, overwhelming, or pressure-driven.',
+          blurb:
+            'This empathy map helped me step into a parent’s mindset and emotional state. It clarified the importance of trust, gentleness, and clarity, shaping everything from visual tone to how learning concepts are introduced.',
+          imageSrc: empathyMap,
+        },
+
+        {
+          caption: 'Journey',
           statement: 'Opportunity',
           statementDetails:
             'Parents often struggle to find age-appropriate English materials that feel approachable, effective, and aligned with how young children actually learn.',

@@ -151,15 +151,17 @@ onUnmounted(() => {
         <div ref="scrollContainer" class="horizontal-wrapper">
           <div ref="scrollContent" class="horizontal-scroller">
             <template v-for="(card, idx) in allCards" :key="idx">
-              <div
-                class="solution-slide combined-box border-b border-gray-300 dark:border-gray-800 md:border-b-0 md:border-r"
-              >
+              <div class="solution-slide combined-box">
                 <div class="slide-inner">
                   <span class="slide-number bg-pink text-white py-1 px-2 rounded-xs w-fit">
                     {{ card.phaseTitle }}
                   </span>
                   <h3 class="slide-title">{{ card.heading }}</h3>
-
+                  <div class="slide-statement-grid pt-4 mt-4">
+                    <div class="statement-item">
+                      <h4 class="statement-label text-pink">{{ card.title }}</h4>
+                    </div>
+                  </div>
                   <div class="editorial-wrapper">
                     <img
                       :src="card.image"
@@ -168,14 +170,6 @@ onUnmounted(() => {
                       @click="openModal(card)"
                     />
                     <p class="slide-blurb">{{ card.description }}</p>
-                  </div>
-
-                  <div
-                    class="slide-statement-grid pt-4 mt-4 border-t border-gray-300 dark:border-gray-800"
-                  >
-                    <div class="statement-item">
-                      <h4 class="statement-label text-pink">{{ card.title }}</h4>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -245,7 +239,6 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0;
   flex-shrink: 0;
   background-color: transparent;
 }
@@ -253,8 +246,7 @@ onUnmounted(() => {
 @media (min-width: 768px) {
   .solution-slide {
     width: 100vw;
-    height: 70vh;
-    padding: 2rem 5rem;
+    height: 75vh;
   }
 }
 
@@ -262,15 +254,13 @@ onUnmounted(() => {
   .solution-slide {
     width: 80vw;
     height: 70vh;
-    padding: 2rem 5rem;
   }
 }
 
 @media (min-width: 1400px) {
   .solution-slide {
-    width: 52vw;
+    width: 45vw;
     height: 70vh;
-    padding: 2rem 5rem;
   }
 }
 
@@ -341,7 +331,6 @@ onUnmounted(() => {
 
 .slide-blurb {
   font-size: 1.125rem;
-  line-height: 1.625;
   margin-bottom: 1rem;
 }
 

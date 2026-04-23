@@ -26,7 +26,7 @@ defineProps({
 </script>
 
 <template>
-  <section id="outcome-section" class="w-full mt-20">
+  <section id="outcome-section" class="w-full my-32">
     <div class="section-header-wrapper">
       <h3 class="section-title">The Outcome</h3>
       <div class="section-phase">Prototype - Test</div>

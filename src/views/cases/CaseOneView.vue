@@ -35,7 +35,6 @@ import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.webp'
 import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.webp'
 import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.webp'
 
-import coverImg from '@/assets/images/cases/case-one/case-cover-img-cafe.png'
 import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
@@ -218,15 +217,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       ]"
       :artifacts="[
         {
-          caption: 'Empathy Map',
-          statement: 'Problem',
-          statementDetails:
-            'Local customers struggled to find clear, up-to-date information online. The lack of a polished web presence weakened trust and limited growth.',
-          blurb:
-            'This empathy map surfaced emotional needs around inclusivity, clarity, and vibe. Insights directly shaped content structure and tone.',
-          imageSrc: empathyMap,
-        },
-        {
           caption: 'Persona',
           statement: 'Goal',
           statementDetails:
@@ -234,6 +224,15 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
           blurb:
             'Megumi represents culturally curious, pet-friendly customers. Her needs guided decisions around messaging, hierarchy, and visual storytelling.',
           imageSrc: userPersona,
+        },
+        {
+          caption: 'Empathy Map',
+          statement: 'Problem',
+          statementDetails:
+            'Local customers struggled to find clear, up-to-date information online. The lack of a polished web presence weakened trust and limited growth.',
+          blurb:
+            'This empathy map surfaced emotional needs around inclusivity, clarity, and vibe. Insights directly shaped content structure and tone.',
+          imageSrc: empathyMap,
         },
         {
           caption: 'Journey Map',

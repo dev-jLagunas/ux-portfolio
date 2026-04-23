@@ -234,57 +234,57 @@ const reflections = [
       ]"
       :artifacts="[
         {
-          caption: 'Mr. Nakamura – Empathy Map',
-          statement: 'Mr. Nakamura – Problem',
+          caption: 'Persona',
+          statement: 'Goal',
           statementDetails:
-            'Public-sector facility managers like Mr. Nakamura need immediate clarity when evaluating vendors. Overly cluttered or outdated websites slow decision-making and create uncertainty about service scope, compliance, and reliability.',
+            'Communicate safety and reliability at a glance while providing municipal staff with a friction-free path to verify services and initiate contact.',
           blurb:
-            'His empathy map emphasized how critical trust, clarity, and professional presentation are when managing municipal infrastructure. Insights such as frustration with cluttered layouts and a preference for phone-first communication directly influenced the redesigned hierarchy and CTA placement.',
-          imageSrc: empathyMapNakamura,
-        },
-        {
-          caption: 'Ms. Tanabe – Empathy Map',
-          statement: 'Ms. Tanabe – Problem',
-          statementDetails:
-            'Operations managers like Ms. Tanabe need quick confirmation of services, maintenance plans, and contact options. Sites with unclear structure or outdated content create friction that slows vendor comparison and disrupts workflow.',
-          blurb:
-            'Her empathy map highlighted the need for efficient scanning, predictable organization, and clear maintenance-related information. These insights led to stronger service segmentation, prominent CTAs, and a more business-focused layout.',
-          imageSrc: empathyMapTanabe,
-        },
-        {
-          caption: 'Mr. Nakamura – Persona',
-          statement: 'Mr. Nakamura – Goal',
-          statementDetails:
-            'Design a professional site that communicates safety, compliance, and reliability at first glance, while making it easy for municipal staff to confirm services and quickly initiate contact.',
-          blurb:
-            'Mr. Nakamura’s persona showed how vital credibility and trust signals are in public-sector decision-making. His need for clear service explanations and reassurance shaped the structured hierarchy, certifications section, and straightforward contact paths.',
+            'Mr. Nakamura’s profile highlighted the weight of trust signals in public-sector decision-making. This led to a structured hierarchy focused on certifications and direct, transparent contact paths.',
           imageSrc: personaNakamura,
         },
         {
-          caption: 'Ms. Tanabe – Persona',
+          caption: 'Persona',
           statement: 'Ms. Tanabe – Goal',
           statementDetails:
-            'Create a streamlined website that lets busy operations managers understand offerings quickly, compare vendor value, and share information internally without confusion.',
+            'Enable busy operations managers to quickly evaluate service value and share clear, concise vendor information with internal leadership.',
           blurb:
-            'Her persona emphasized efficiency, clarity, and responsiveness. This informed the redesign’s clean layout, simplified service categories, and consistent messaging intended to reduce evaluation time and improve conversion likelihood.',
+            'Driven by efficiency, this persona informed a clean, high-speed layout with simplified service categories and messaging designed to reduce evaluation time and boost conversion.',
           imageSrc: personaTanabe,
         },
         {
-          caption: 'Mr. Nakamura – Journey Map',
-          statement: 'Mr. Nakamura – Hypothesis',
+          caption: 'Empathy',
+          statement: 'Problem',
           statementDetails:
-            'If the site presents a clean hierarchy, strong compliance signals, and fast access to contact information, then municipal users like Mr. Nakamura will feel confident reaching out for inspections or maintenance support.',
+            'Cluttered or outdated vendor sites create uncertainty for municipal managers, slowing critical decisions regarding service scope and regulatory compliance.',
           blurb:
-            'His journey map follows a typical workflow: receiving a recommendation, visiting the site, scanning for service fit, confirming compliance, and initiating contact. Pain points included cluttered layouts and unclear service details. Opportunities centered around credibility, clarity, and reducing cognitive load.',
+            'Mapping his frustrations revealed a deep need for professional presentation. This directly influenced our decision to prioritize trust signals and phone-first communication in the global CTA strategy.',
+          imageSrc: empathyMapNakamura,
+        },
+        {
+          caption: 'Map',
+          statement: 'Problem',
+          statementDetails:
+            'Unclear structures and dense content hinder operations managers from quickly confirming maintenance plans, creating friction during vendor comparisons.',
+          blurb:
+            'Insights into her scanning behavior led to a more business-focused layout. We prioritized predictable organization and prominent CTAs to support a faster, more effective internal vetting process.',
+          imageSrc: empathyMapTanabe,
+        },
+        {
+          caption: 'Journey Map',
+          statement: 'Hypothesis',
+          statementDetails:
+            'A clean hierarchy paired with visible compliance signals will give municipal users the confidence to move from site-scanning to requesting formal inspections.',
+          blurb:
+            'Tracing his workflow identified major pain points in cognitive load. We addressed these by streamlining the path from service discovery to credibility verification and final contact.',
           imageSrc: journeyNakamura,
         },
         {
-          caption: 'Ms. Tanabe – Journey Map',
-          statement: 'Ms. Tanabe – Hypothesis',
+          caption: 'Journey Map',
+          statement: 'Hypothesis',
           statementDetails:
-            'If the site clearly separates services, highlights maintenance options, and shows social proof, then operations managers like Ms. Tanabe will be more likely to compare positively and move forward with an inquiry.',
+            'Distinct service segmentation and visible social proof will encourage operations managers to move forward with inquiries and positive internal recommendations.',
           blurb:
-            'Her journey map reflects a fast-paced evaluation process: researching vendors, comparing options, reviewing case studies, and passing links to supervisors. Pain points centered on dense content and unclear value. Opportunities focused on scannability, visual hierarchy, and CTA prominence.',
+            'Her map revealed a high-speed evaluation cycle. By increasing scannability and visual hierarchy, we optimized the experience for quick comparison and easy information sharing with supervisors.',
           imageSrc: journeyTanabe,
         },
       ]"

@@ -113,7 +113,7 @@ onMounted(() => {
       </ul>
     </div>
 
-    <div class="video-container-full -mt-8">
+    <div class="video-container-full -mt-4">
       <video
         :key="theme.isDarkMode"
         autoplay
