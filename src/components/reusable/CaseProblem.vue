@@ -74,6 +74,15 @@ const props = defineProps({
   statement: { type: String, required: false },
   statementDetails: { type: String, required: false },
 })
+
+const loadedCount = ref(0)
+const onImageLoad = () => {
+  loadedCount.value++
+  if (loadedCount.value >= props.artifacts.length) {
+    // All images are in, now the width is 100% accurate
+    ScrollTrigger.refresh()
+  }
+}
 </script>
 
 <template>
@@ -193,6 +202,7 @@ const props = defineProps({
                   <img
                     :src="artifact.imageSrc"
                     :alt="artifact.caption"
+                    @load="onImageLoad"
                     class="artifact-image-file"
                   />
                   <div

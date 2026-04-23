@@ -33,7 +33,7 @@ const theme = useThemeStore()
 <style scoped>
 @font-face {
   font-family: 'BreatheFont';
-  src: url('@/assets/fonts/TFMixVF.woff2') format('woff2');
+  src: url('/fonts/TFMixVF.woff2') format('woff2');
   font-display: block;
 }
 
