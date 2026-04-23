@@ -20,7 +20,7 @@ const theme = useThemeStore()
       theme.isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark',
     ]"
   >
-    <div class="breathe-wrapper">
+    <div class="flex items-center justify-center w-full">
       <span class="breathe-text">
         {{ message.toUpperCase() }}
       </span>
@@ -31,31 +31,23 @@ const theme = useThemeStore()
 </template>
 
 <style scoped>
-/* 1. Define the Variable Font */
 @font-face {
   font-family: 'BreatheFont';
-  src: url('https://garet.typeforward.com/assets/fonts/shared/TFMixVF.woff2') format('woff2');
-  font-display: swap;
-}
-
-.breathe-wrapper {
-  @apply flex items-center justify-center w-full;
+  src: url('@/assets/fonts/TFMixVF.woff2') format('woff2');
+  font-display: block;
 }
 
 .breathe-text {
   font-family: 'BreatheFont', sans-serif;
-  /* Scalable size: fits screen width but caps at half screen height */
   font-size: clamp(2rem, 8vw, 15vh);
   text-align: center;
   line-height: 1;
   letter-spacing: -0.05em;
 
-  /* Animation Logic */
   animation: breathe-weight 3s ease-in-out infinite;
   will-change: font-variation-settings;
 }
 
-/* 2. The Morphing Keyframes */
 @keyframes breathe-weight {
   0%,
   100% {
