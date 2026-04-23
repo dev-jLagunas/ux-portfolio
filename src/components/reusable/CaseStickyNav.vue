@@ -87,9 +87,9 @@ watch(isMenuOpen, (isOpen) => {
         @click="toggleMenu"
         :class="['mobile-nav-toggle', { 'is-faded': !isButtonActive && !isMenuOpen }]"
       >
-        <span class="font-bold text-xs">Scroll to</span>
-        <IconChevronDown v-if="!isMenuOpen" :size="18" />
-        <IconX v-else :size="18" />
+        <span class="font-bold uppercase">Scroll to</span>
+        <IconChevronDown v-if="!isMenuOpen" :size="32" />
+        <IconX v-else :size="32" />
       </button>
 
       <Transition name="pop">

@@ -1,13 +1,12 @@
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { IconPlus } from '@tabler/icons-vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const scrollContainer = ref(null)
-const scrollContent = ref(null)
 const isModalOpen = ref(false)
 const currentIndex = ref(0)
+const artifactsContainer = ref(null)
 
 let ctx
 
@@ -16,49 +15,52 @@ const openModal = (idx) => {
   currentIndex.value = idx
 }
 
-let observer
-
-onMounted(async () => {
+onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
-  await nextTick()
-
   ctx = gsap.context(() => {
+    // Only run the alternating animation on desktop so mobile doesn't feel erratic
     const mm = gsap.matchMedia()
 
     mm.add('(min-width: 768px)', () => {
-      const content = scrollContent.value
-      const wrapper = scrollContainer.value
+      const cards = gsap.utils.toArray('.artifact-slide')
 
-      gsap.to(content, {
-        x: () => -(content.scrollWidth - wrapper.offsetWidth),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: wrapper,
-          pin: true,
-          pinSpacing: true,
-          scrub: 1,
-          start: 'top 10%',
-          end: () => `+=${content.scrollWidth - wrapper.offsetWidth}`,
-          invalidateOnRefresh: true,
-          anticipatePin: 1,
-        },
+      cards.forEach((card, index) => {
+        // Even indices come from the left (-100), odd from the right (100)
+        const xOffset = index % 2 === 0 ? -100 : 100
+
+        gsap.from(card, {
+          x: xOffset,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        })
       })
     })
-  }, scrollContainer.value)
 
-  observer = new ResizeObserver(() => {
-    ScrollTrigger.refresh()
-  })
-
-  if (scrollContent.value) {
-    observer.observe(scrollContent.value)
-  }
-})
-
-onUnmounted(() => {
-  if (ctx) ctx.revert()
-  if (observer) observer.disconnect()
+    // Mobile fallback: simple fade in up
+    mm.add('(max-width: 767px)', () => {
+      const cards = gsap.utils.toArray('.artifact-slide')
+      cards.forEach((card) => {
+        gsap.from(card, {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            toggleActions: 'play none none reverse',
+          },
+        })
+      })
+    })
+  }, artifactsContainer.value)
 })
 
 onUnmounted(() => {
@@ -85,23 +87,15 @@ const props = defineProps({
   statement: { type: String, required: false },
   statementDetails: { type: String, required: false },
 })
-
-const loadedCount = ref(0)
-const onImageLoad = () => {
-  loadedCount.value++
-  if (loadedCount.value >= props.artifacts.length) {
-    // All images are in, now the width is 100% accurate
-    ScrollTrigger.refresh()
-  }
-}
 </script>
 
 <template>
-  <section id="problem-section" class="max-w-7xl mt-10">
+  <section id="problem-section" class="my-72">
     <div class="section-header-wrapper">
       <h3 class="section-title">The Problem</h3>
       <div class="section-phase">Empathize – Define</div>
     </div>
+
     <article class="flex-col-center">
       <div class="problem-cards-grid">
         <div class="problem-card">
@@ -183,53 +177,62 @@ const onImageLoad = () => {
         </div>
       </article>
 
-      <div class="horizontal-header mb-4">
+      <div class="mb-8 md:mb-16 w-full">
         <h4 class="research-header">Visualizing the research.</h4>
       </div>
 
-      <div ref="scrollContainer" class="horizontal-wrapper">
-        <div ref="scrollContent" class="horizontal-scroller">
-          <template v-for="(artifact, idx) in props.artifacts" :key="idx">
-            <div class="artifact-slide combined-box">
-              <div class="slide-inner md:border-r md:border-dotted md:border-gray-300 md:pr-16">
-                <div class="slide-text-content">
-                  <span class="slide-number bg-pink text-white py-1 px-2 rounded-xs w-fit">
-                    Artifact 0{{ idx + 1 }}
-                  </span>
-                  <h3 class="slide-title">{{ artifact.caption }}</h3>
-                  <p class="slide-blurb">{{ artifact.blurb }}</p>
+      <div ref="artifactsContainer" class="w-full flex flex-col gap-16 md:gap-32">
+        <template v-for="(artifact, idx) in props.artifacts" :key="idx">
+          <div class="artifact-slide w-full bg-transparent flex justify-center">
+            <div
+              class="slide-inner w-full max-w-[90rem] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16"
+              :class="idx % 2 !== 0 ? 'md:flex-row-reverse' : ''"
+            >
+              <div class="slide-text-content w-full md:w-[55%] flex flex-col">
+                <span
+                  class="slide-number bg-pink border py-1 px-2 rounded-xs w-fit block font-black tracking-widest text-xs uppercase mb-4"
+                >
+                  Artifact 0{{ idx + 1 }}
+                </span>
+                <h3 class="slide-title text-4xl md:text-5xl font-black uppercase leading-none mb-6">
+                  {{ artifact.caption }}
+                </h3>
+                <p class="slide-blurb text-lg leading-relaxed mb-8">{{ artifact.blurb }}</p>
 
-                  <div
-                    class="slide-statement-grid bg-pink text-white rounded-sm px-4 py-2 md:text-lg shadow-sm"
-                  >
-                    <div class="statement-item">
-                      <h4 class="statement-label text-light">{{ artifact.statement }}</h4>
-                      <p class="statement-text">{{ artifact.statementDetails }}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="editorial-img-wrapper" @click="openModal(idx)">
-                  <img
-                    :src="artifact.imageSrc"
-                    :alt="artifact.caption"
-                    @load="onImageLoad"
-                    class="artifact-image-file"
-                  />
-                  <div
-                    class="absolute bottom-2 right-2 bg-pink text-white rounded-sm p-1.5 shadow-md pointer-events-none"
-                  >
-                    <IconPlus size="20" />
+                <div
+                  class="slide-statement-grid bg-pink border rounded-sm px-4 py-2 md:text-lg shadow-sm"
+                >
+                  <div class="statement-item">
+                    <h4 class="statement-label font-bold text-xs uppercase tracking-wider mb-1">
+                      {{ artifact.statement }}
+                    </h4>
+                    <p class="statement-text leading-snug">{{ artifact.statementDetails }}</p>
                   </div>
                 </div>
               </div>
+
+              <div
+                class="editorial-img-wrapper relative w-full md:w-[40%] cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
+                @click="openModal(idx)"
+              >
+                <img
+                  :src="artifact.imageSrc"
+                  :alt="artifact.caption"
+                  class="artifact-image-file w-full h-auto object-contain rounded shadow-xl"
+                />
+                <div
+                  class="absolute bottom-2 right-2 bg-pink text-white rounded-sm p-1.5 shadow-md pointer-events-none"
+                >
+                  <IconPlus size="20" />
+                </div>
+              </div>
             </div>
-          </template>
-        </div>
+          </div>
+        </template>
       </div>
 
       <p
-        class="text-6xl xl:text-7xl mt-12 font-black font-special uppercase leading-[1.3] tracking-tighter text-pink"
+        class="text-5xl xl:text-6xl text-left mt-24 md:mt-32 font-black font-special uppercase leading-[1.3] tracking-tighter text-pink"
       >
         "{{ quote }}"
       </p>
@@ -251,7 +254,7 @@ const onImageLoad = () => {
       <img
         :src="props.artifacts[currentIndex].imageSrc"
         :alt="props.artifacts[currentIndex].caption"
-        class="w-full rounded-md shadow-2xl object-contain max-h-[60vh] mx-auto"
+        class="w-full rounded-md shadow-2xl object-contain max-h-[70vh] mx-auto"
         loading="lazy"
       />
       <div class="mt-4 text-center">
@@ -266,165 +269,4 @@ const onImageLoad = () => {
   </div>
 </template>
 
-<style scoped>
-.horizontal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-}
-
-.horizontal-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  z-index: 10;
-  background-color: transparent;
-}
-
-.horizontal-scroller {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .horizontal-scroller {
-    flex-direction: row;
-    width: max-content;
-    flex-wrap: nowrap;
-  }
-}
-
-.artifact-slide {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  flex-shrink: 0;
-  background-color: transparent;
-}
-
-@media (min-width: 768px) {
-  .artifact-slide {
-    width: 100vw;
-    height: 80vh; /* Increased slightly for better vertical mockup display */
-    padding: 2rem 5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .artifact-slide {
-    width: 85vw; /* Adjusted for the new 2-column layout width */
-  }
-}
-
-@media (min-width: 1400px) {
-  .artifact-slide {
-    width: 65vw;
-  }
-}
-
-.slide-inner {
-  width: 100%;
-  max-width: 65rem; /* Increased max-width to accommodate side-by-side layout */
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .slide-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.slide-text-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .slide-text-content {
-    width: 55%;
-  }
-}
-
-.slide-number {
-  display: block;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.slide-title {
-  font-size: 2.25rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 0.9;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .slide-title {
-    font-size: 3.5rem;
-  }
-}
-
-.slide-blurb {
-  font-size: 1.125rem;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-}
-
-/* Vertical Image Column */
-.editorial-img-wrapper {
-  position: relative;
-  width: 100%;
-  cursor: pointer;
-  transition: transform 0.3s ease-out;
-}
-
-@media (min-width: 768px) {
-  .editorial-img-wrapper {
-    width: 40%; /* Keeps the image large but allows space for text */
-    max-height: 65vh;
-  }
-}
-
-.artifact-image-file {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 0.25rem;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.editorial-img-wrapper:hover {
-  transform: scale(1.03);
-}
-
-.slide-statement-grid {
-  width: 100%;
-}
-
-.statement-label {
-  font-weight: 700;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
-}
-
-.statement-text {
-  line-height: 1.4;
-  font-size: 0.95rem;
-}
-</style>
+<style scoped></style>

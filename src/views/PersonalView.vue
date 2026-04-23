@@ -1,5 +1,12 @@
 <script setup>
+import { onMounted, onUnmounted } from 'vue'
 import { usePageLoader } from '@/composables/usePageLoader'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Icons
+import { IconCamera, IconPalette, IconCoffee, IconDeviceDesktopCode } from '@tabler/icons-vue'
+
 const { isLoading } = usePageLoader(2000)
 
 // Components
@@ -37,14 +44,54 @@ import chicanoUi from '@/assets/images/personal/chicano-ui.webp'
 import galleryUi from '@/assets/images/personal/gallery-ui.webp'
 import tiktokUi from '@/assets/images/personal/tiktok-ui.webp'
 
-// Spinner message
 const spinnerMessage = 'Here you go'
+let ctx
+
+onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  ctx = gsap.context(() => {
+    gsap.utils.toArray('.personal-intro').forEach((intro) => {
+      gsap.from(intro.children, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: intro,
+          start: 'top 85%',
+        },
+      })
+    })
+
+    gsap.utils.toArray('.personal-grid').forEach((grid) => {
+      const cards = grid.querySelectorAll('.display-card-wrapper')
+      gsap.from(cards, {
+        y: 60,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'back.out(1.2)',
+        scrollTrigger: {
+          trigger: grid,
+          start: 'top 85%',
+        },
+      })
+    })
+  })
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+})
 </script>
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
-  <section class="max-w-7xl mx-auto">
+  <section class="max-w-7xl mx-auto px-4 md:px-8 pb-32">
     <GuideNav
       :sections="[
         { id: 'photo-section', label: 'Photography' },
@@ -53,94 +100,196 @@ const spinnerMessage = 'Here you go'
         { id: 'design-section', label: 'UI Design' },
       ]"
     />
-    <article class="font-main" id="photo-section">
-      <h2 class="personal-sect-title">Photography</h2>
-      <p class="personal-copy">
-        I bought a Fuji X-A5 when we started the cafe, and that’s where my love for photography
-        began. I taught myself to use the manual controls and spent a lot of time doing food
-        photography for the cafe. Experimenting with new techniques, backgrounds, and environments
-        was genuinely exciting.
-      </p>
-      <p class="mb-4 personal-copy">
-        I’m still actively challenging myself with new shots, because capturing life is such a
-        beautiful thing. I don’t actually know if I’m any good at it but that matters far less than
-        how much I truly enjoy it.
-      </p>
-      <div class="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <DisplayCard title="Moko the King" :content="catPhoto" bgColor="bg-pink" />
-        <DisplayCard title="White Road" :content="naturePhoto" bgColor="bg-blue" />
-        <DisplayCard title="Balboa Duck" :content="duckPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Cherry Blossoms" :content="sakuraPhoto" bgColor="bg-blue" />
-        <DisplayCard title="Bar Selfie" :content="selfiePhoto" bgColor="bg-pink" />
-        <DisplayCard title="Classic Pong" :content="pongPhoto" bgColor="bg-blue" />
-        <DisplayCard title="Neon Ghost" :content="ghostPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Lovely Smile" :content="smilePhoto" bgColor="bg-blue" />
+
+    <article class="font-main pt-24 md:pt-32" id="photo-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <div class="sticky top-32 personal-intro">
+            <IconCamera class="text-pink mb-4" size="48" />
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Photos</h2>
+            <p class="text-lg leading-relaxed mb-4 opacity-80">
+              I bought a Fuji X-A5 when we started the cafe, and that’s where my love for
+              photography began. I taught myself to use the manual controls and spent a lot of time
+              doing food photography for the cafe.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              Capturing life is such a beautiful thing. I don’t actually know if I’m any good at it,
+              but that matters far less than how much I truly enjoy it.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 personal-grid">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="display-card-wrapper">
+              <DisplayCard title="Moko the King" :content="catPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="White Road" :content="naturePhoto" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Balboa Duck" :content="duckPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Cherry Blossoms" :content="sakuraPhoto" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Bar Selfie" :content="selfiePhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Classic Pong" :content="pongPhoto" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Neon Ghost" :content="ghostPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Lovely Smile" :content="smilePhoto" bgColor="bg-blue" />
+            </div>
+          </div>
+        </div>
       </div>
     </article>
-    <article class="font-main mt-8" id="art-section">
-      <h2 class="personal-sect-title">Digital Art</h2>
-      <p class="personal-copy">
-        I’ve always enjoyed sketching and drawing on paper, but it wasn’t until last year that I
-        started exploring digital art. I use Linearity Curve on my iPad to create, and I
-        occasionally use other apps to add text and experiment with graphic design.
-      </p>
-      <p class="mb-4 text-sm md:text-base">
-        I’m drawn to color and simplicity, which I think comes through not only in my art, but also
-        in my photography and UI design.
-      </p>
-      <div class="personal-img-wrapper">
-        <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
-        <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
-        <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
-        <DisplayCard title="Walking Fido" :content="walkingFido" bgColor="bg-blue" />
-        <DisplayCard title="Christmas Mummies" :content="christmasArt" bgColor="bg-pink" />
-        <DisplayCard title="Introspective Cat" :content="catArt" bgColor="bg-blue" />
-        <DisplayCard title="Mind Crimes" :content="mindArt" bgColor="bg-pink" />
-        <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
+
+    <article class="font-main pt-24 md:pt-32" id="art-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-8 personal-grid order-2 lg:order-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="display-card-wrapper">
+              <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Walking Fido" :content="walkingFido" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Christmas Mummies" :content="christmasArt" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Introspective Cat" :content="catArt" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Mind Crimes" :content="mindArt" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 order-1 lg:order-2">
+          <div class="sticky top-32 personal-intro">
+            <IconPalette class="text-blue mb-4" size="48" />
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">
+              Digital Art
+            </h2>
+            <p class="text-lg leading-relaxed mb-4 opacity-80">
+              I’ve always enjoyed sketching on paper, but it wasn’t until last year that I started
+              exploring digital art. I use Linearity Curve on my iPad to create.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              I’m drawn to color and simplicity, which comes through not only in my art, but also in
+              my photography and UI design.
+            </p>
+          </div>
+        </div>
       </div>
     </article>
-    <article class="font-main mt-8" id="cafe-section">
-      <h2 class="personal-sect-title">Cafe Triangle</h2>
-      <p class="personal-copy">
-        Cafe Triangle was the cafe my wife and I used to own in Japan. It was one of the most
-        transformative experiences of my life and also one of the most practical. It taught me a
-        multitude of skills that align perfectly with UX: empathy, branding, service design,
-        problem-solving, and visual communication.
-      </p>
-      <p class="personal-copy">
-        Our days were filled with delicious pastries, lovely guests, wonderful animal friends, and
-        the joy of being next to my wife all day, every day.
-      </p>
-      <div class="personal-img-wrapper">
-        <DisplayCard title="Anko and Moe" :content="ankoPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Tres Leches Cake" :content="cakePhoto" bgColor="bg-blue" />
-        <DisplayCard title="Chai Mix" :content="chaiPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Cookie Marketing" :content="cookiesPhoto" bgColor="bg-blue" />
-        <DisplayCard title="Flan Design" :content="flanPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Pico De Gallo" :content="picoPhoto" bgColor="bg-blue" />
-        <DisplayCard title="Lunch Items" :content="lunchPhoto" bgColor="bg-pink" />
-        <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
+
+    <article class="font-main pt-24 md:pt-32" id="cafe-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <div class="sticky top-32 personal-intro">
+            <IconCoffee class="text-pink mb-4" size="48" />
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">
+              Cafe Triangle
+            </h2>
+            <p class="text-lg leading-relaxed mb-4 opacity-80">
+              Cafe Triangle was the cafe my wife and I owned in Japan. It taught me a multitude of
+              skills that align perfectly with UX: empathy, branding, and service design.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              Our days were filled with pastries, lovely guests, animal friends, and the joy of
+              being next to my wife all day.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 personal-grid">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="display-card-wrapper">
+              <DisplayCard title="Anko and Moe" :content="ankoPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Tres Leches Cake" :content="cakePhoto" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Chai Mix" :content="chaiPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Cookie Marketing" :content="cookiesPhoto" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Flan Design" :content="flanPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Pico De Gallo" :content="picoPhoto" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Lunch Items" :content="lunchPhoto" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
+            </div>
+          </div>
+        </div>
       </div>
     </article>
-    <article class="font-main mt-8 pb-24 md:pb-0" id="design-section">
-      <h2 class="personal-sect-title">UI Design</h2>
-      <p class="personal-copy">
-        I started teaching myself frontend development about two and a half years ago. I began with
-        the foundations, HTML, CSS, and JavaScript, then moved on to frameworks like Angular and
-        Vue.
-      </p>
-      <p class="personal-copy">
-        While I’m not as active with development as I once was, I still continue learning. These
-        days, my focus has shifted more toward full-stack. I’m currently working through the
-        Boot.dev course to learn Python, TypeScript, Go, and deepen my understanding of backend
-        development.
-      </p>
-      <div class="personal-img-wrapper">
-        <DisplayCard title="Cafe Triangle" :content="cafeUi" bgColor="bg-pink" />
-        <DisplayCard title="Scroll Gallery" :content="galleryUi" bgColor="bg-blue" />
-        <DisplayCard title="Neon TicTacToe" :content="tiktokUi" bgColor="bg-pink" />
-        <DisplayCard title="Code Chicano" :content="chicanoUi" bgColor="bg-blue" />
+
+    <article class="font-main pt-24 md:pt-32" id="design-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-8 personal-grid order-2 lg:order-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="display-card-wrapper">
+              <DisplayCard title="Cafe Triangle" :content="cafeUi" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Scroll Gallery" :content="galleryUi" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Neon TicTacToe" :content="tiktokUi" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Code Chicano" :content="chicanoUi" bgColor="bg-blue" />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 order-1 lg:order-2">
+          <div class="sticky top-32 personal-intro">
+            <IconDeviceDesktopCode class="text-blue mb-4" size="48" />
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">UI Design</h2>
+            <p class="text-lg leading-relaxed mb-4 opacity-80">
+              I started teaching myself frontend development two and a half years ago. I began with
+              HTML, CSS, and JS, then moved to Vue.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              My focus has shifted toward full-stack. I’m currently working through Boot.dev to
+              deepen my understanding of backend development.
+            </p>
+          </div>
+        </div>
       </div>
     </article>
   </section>
 </template>
+
+<style scoped>
+.display-card-wrapper {
+  will-change: transform, opacity;
+}
+</style>
