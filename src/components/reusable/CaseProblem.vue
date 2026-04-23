@@ -196,12 +196,13 @@ const props = defineProps({
                     </div>
                   </div>
                   <p class="slide-blurb">{{ artifact.blurb }}</p>
-                </div>
-
-                <div class="slide-statement-grid">
-                  <div class="statement-item">
-                    <h4 class="statement-label">{{ artifact.statement }}</h4>
-                    <p class="statement-text">{{ artifact.statementDetails }}</p>
+                  <div
+                    class="slide-statement-grid bg-pink text-white rounded-sm px-4 py-2 md:text-lg"
+                  >
+                    <div class="statement-item">
+                      <h4 class="statement-label text-dark">{{ artifact.statement }}</h4>
+                      <p class="statement-text">{{ artifact.statementDetails }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -392,7 +393,7 @@ const props = defineProps({
 
 @media (min-width: 768px) {
   .editorial-img-wrapper {
-    width: 45%;
+    width: 40%;
     max-width: 350px;
     margin: 0.5rem 0 1.5rem 2.5rem;
   }
@@ -415,7 +416,6 @@ const props = defineProps({
 }
 
 .slide-statement-grid {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   clear: both;
 }
 

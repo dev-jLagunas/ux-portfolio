@@ -28,7 +28,7 @@ import userImg from '@/assets/svgs/research/user-research.svg'
 
 // Images
 import tlfCoverImg from '@/assets/images/cases/case-tlf/case-cover-img-tlf.webp'
-import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.webp'
+import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.png'
 import empathyMap from '@/assets/images/cases/case-tlf/tlf-empathy-1.webp'
 import journeyMap from '@/assets/images/cases/case-tlf/tlf-journey-1.webp'
 import trustFeat from '@/assets/images/cases/case-tlf/solution-trust.webp'
