@@ -8,7 +8,7 @@ import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 const { isLoading } = usePageLoader(2000)
 
-const spinnerMessage = 'Preparing...'
+const spinnerMessage = 'Loading...'
 </script>
 
 <template>

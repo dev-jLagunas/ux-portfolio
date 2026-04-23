@@ -16,6 +16,8 @@ const openModal = (idx) => {
   currentIndex.value = idx
 }
 
+let observer
+
 onMounted(async () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -45,9 +47,18 @@ onMounted(async () => {
     })
   }, scrollContainer.value)
 
-  setTimeout(() => {
+  observer = new ResizeObserver(() => {
     ScrollTrigger.refresh()
-  }, 250)
+  })
+
+  if (scrollContent.value) {
+    observer.observe(scrollContent.value)
+  }
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+  if (observer) observer.disconnect()
 })
 
 onUnmounted(() => {

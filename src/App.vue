@@ -2,6 +2,12 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+const onPageTransitionComplete = () => {
+  ScrollTrigger.refresh()
+}
+
 import TheNavbar from './components/TheNavbar.vue'
 import TheFooter from './components/TheFooter.vue'
 import ContactModal from '@/components/ContactModal.vue'
@@ -41,7 +47,7 @@ onBeforeUnmount(() => {
     <TheNavbar />
 
     <RouterView v-slot="{ Component }">
-      <Transition name="page" mode="out-in">
+      <Transition name="page" mode="out-in" @after-enter="onPageTransitionComplete">
         <div v-if="Component" class="page-wrapper">
           <component :is="Component" />
         </div>
