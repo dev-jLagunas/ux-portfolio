@@ -1,4 +1,4 @@
-import{_ as B,r as f,o as E,E as S,G as N,a,c as i,b as s,i as h,j as g,e as y,h as O,w as V,F as k,l as w,t as d,k as z,T as D}from"./index-C5ubxPxr.js";import{g as L}from"./index-C8pce-KX.js";import{c as C}from"./createVueComponent-CUcKdeSk.js";/**
+import{_ as B,r as f,o as E,E as S,G as N,a,c as i,b as s,i as h,j as g,e as y,h as O,w as V,F as k,l as w,t as d,k as z,T as D}from"./index-DrqBYsFt.js";import{g as L}from"./index-C8pce-KX.js";import{c as C}from"./createVueComponent-DlqJWGB8.js";/**
  * @license @tabler/icons-vue v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
