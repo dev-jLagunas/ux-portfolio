@@ -10,7 +10,7 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
 <template>
   <section class="font-main mx-auto">
     <header>
-      <h1 class="font-bold text-3xl md:text-4xl font-special">My Work</h1>
+      <h1 class="section-title">My Work</h1>
       <p class="my-2 sm:text-xl">
         End-to-end product and UX work, designed and built from concept to production for real
         businesses and users.

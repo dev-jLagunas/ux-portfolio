@@ -106,7 +106,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4">
           <div class="sticky top-32 personal-intro">
             <IconCamera class="text-pink mb-4" size="48" />
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Photos</h2>
+            <h2 class="section-title mb-4">Photos</h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               I bought a Fuji X-A5 when we started the cafe, and that’s where my love for
               photography began. I taught myself to use the manual controls and spent a lot of time
@@ -184,9 +184,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4 order-1 lg:order-2">
           <div class="sticky top-32 personal-intro">
             <IconPalette class="text-blue mb-4" size="48" />
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">
-              Digital Art
-            </h2>
+            <h2 class="section-title mb-4">Digi Art</h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               I’ve always enjoyed sketching on paper, but it wasn’t until last year that I started
               exploring digital art. I use Linearity Curve on my iPad to create.
@@ -205,9 +203,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4">
           <div class="sticky top-32 personal-intro">
             <IconCoffee class="text-pink mb-4" size="48" />
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">
-              Cafe Triangle
-            </h2>
+            <h2 class="section-title mb-4">Our Cafe</h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               Cafe Triangle was the cafe my wife and I owned in Japan. It taught me a multitude of
               skills that align perfectly with UX: empathy, branding, and service design.
@@ -272,7 +268,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4 order-1 lg:order-2">
           <div class="sticky top-32 personal-intro">
             <IconDeviceDesktopCode class="text-blue mb-4" size="48" />
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">UI Design</h2>
+            <h2 class="section-title mb-4">UI Design</h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               I started teaching myself frontend development two and a half years ago. I began with
               HTML, CSS, and JS, then moved to Vue.

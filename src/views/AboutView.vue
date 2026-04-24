@@ -101,7 +101,7 @@ onMounted(async () => {
 
   <section ref="aboutSection" class="font-main py-12 md:py-16 max-w-7xl mx-auto px-6 lg:px-8">
     <header class="mb-12 text-left">
-      <h2 class="animate-text text-4xl md:text-5xl font-special tracking-tighter">About Me</h2>
+      <h2 class="animate-text section-title">About Me</h2>
       <div class="animate-text mt-2">
         <a
           href="/Juan-Resume.pdf"

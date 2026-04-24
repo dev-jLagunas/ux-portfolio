@@ -49,8 +49,8 @@ onMounted(async () => {
 
 <template>
   <section class="mx-auto">
-    <div class="font-main text-center">
-      <h1 class="text-6xl font-bold tracking-tight font-special">
+    <div class="">
+      <h1 class="section-title">
         <span class="pink-bold-letter">L</span>et's <span class="blue-bold-letter">G</span>et
         <span class="pink-bold-letter">T</span>o <span class="blue-bold-letter">W</span>ork!
       </h1>

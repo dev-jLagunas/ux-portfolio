@@ -142,7 +142,7 @@ Hero Styles
 *****************************************/
 
 .hero-title {
-  @apply font-special font-black text-3xl text-nowrap sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl;
+  @apply font-special font-black text-3xl text-nowrap sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl uppercase  tracking-tighter;
 }
 
 .hero-btn-wrapper-md {

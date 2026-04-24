@@ -1,9 +1,4 @@
 <script setup>
-import { useThemeStore } from '@/stores/theme'
-
-// Store
-const theme = useThemeStore()
-
 // Props
 defineProps({
   uxType: {
@@ -54,10 +49,7 @@ defineProps({
     <div class="flex justify-between items-center">
       <router-link :to="route">
         <button
-          :class="[
-            theme.isDarkMode ? 'bg-white text-dark' : 'bg-dark text-light ',
-            'px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 hover:bg-pink',
-          ]"
+          class="px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 bg-pink uppercase font-bold border"
         >
           View Case Study
         </button>

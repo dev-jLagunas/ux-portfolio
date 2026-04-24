@@ -129,7 +129,7 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
         </button>
       </div>
     </div>
-    <h1 class="text-5xl font-bold mb-8">Blog</h1>
+    <h1 class="section-title mt-16 mb-4">Blog</h1>
     <div class="grid gap-6">
       <router-link
         v-for="post in visiblePosts"
