@@ -1,6 +1,6 @@
-import beanThumbnail from '@/assets/images/blogPosts/post2/bean-beast-thumbnail.png'
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
-import beanCover from '@/assets/images/blogPosts/post2/bean-beast-cover.png'
+import beanThumbnail from '@/assets/images/blogPosts/post2/bean-beast-thumbnail.webp'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
+import beanCover from '@/assets/images/blogPosts/post2/bean-beast-cover.webp'
 
 export default {
   id: 2,

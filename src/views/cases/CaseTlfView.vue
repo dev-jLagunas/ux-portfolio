@@ -27,16 +27,18 @@ import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
 
 // Images
-import tlfCoverImg from '@/assets/images/cases/case-tlf/case-cover-img-tlf.webp'
 import userPersona from '@/assets/images/cases/case-tlf/tlf-persona-1.webp'
 import empathyMap from '@/assets/images/cases/case-tlf/tlf-empathy-1.webp'
 import journeyMap from '@/assets/images/cases/case-tlf/tlf-journey-1.webp'
-import trustFeat from '@/assets/images/cases/case-tlf/solution-trust.webp'
-import tourFeat from '@/assets/images/cases/case-tlf/solution-tour.webp'
-import characterFeat from '@/assets/images/cases/case-tlf/solution-characters.webp'
-import pedagogyFeat from '@/assets/images/cases/case-tlf/solution-pedagogy.webp'
-import typeFeat from '@/assets/images/cases/case-tlf/solution-multilingual.webp'
-import navFeat from '@/assets/images/cases/case-tlf/solution-nav.webp'
+import solution1 from '@/assets/images/cases/case-tlf/tlf-solution-1.webp'
+import solution2 from '@/assets/images/cases/case-tlf/tlf-solution-2.webp'
+import solution3 from '@/assets/images/cases/case-tlf/tlf-solution-3.webp'
+import solution4 from '@/assets/images/cases/case-tlf/tlf-solution-4.webp'
+import solution5 from '@/assets/images/cases/case-tlf/tlf-solution-5.webp'
+import solution6 from '@/assets/images/cases/case-tlf/tlf-solution-6.webp'
+import solution7 from '@/assets/images/cases/case-tlf/tlf-solution-7.webp'
+import solution8 from '@/assets/images/cases/case-tlf/tlf-solution-8.webp'
+import solution9 from '@/assets/images/cases/case-tlf/tlf-solution-9.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -56,31 +58,40 @@ import tlfDarkVid from '@/assets/images/cases/case-tlf/tlf-video-dark.mp4'
 const solutionA = [
   {
     title: 'Trust-First UX Strategy',
-    image: trustFeat,
+    image: solution1,
     heading: 'Designed to Earn Confidence, Not Rush Sales',
     description:
       'From the very beginning, the site was intentionally designed to explain before selling. Every decision, from the absence of a Buy Now CTA to the emphasis on pedagogy and characters, reflects a clear strategy: earn parental trust first, then invite commitment once confidence is established.',
   },
   {
     title: 'Guided Learning Flow',
-    image: tourFeat,
+    image: solution2,
     heading: 'A Landing Page That Teaches Like the Books',
     description:
       'The landing page functions as a guided learning experience, using a numbered scroll tour to introduce ideas one at a time. This mirrors how the books teach language, reinforcing clarity, reducing overwhelm, and helping parents understand the system intuitively.',
   },
   {
     title: 'Character-Driven System Design',
-    image: characterFeat,
+    image: solution3,
     heading: 'Characters as UX Anchors',
     description:
       'Moko, Niko, and Okja are not decorative mascots but core UX elements. Their consistent use across the site and books creates familiarity, emotional safety, and continuity, helping both parents and children quickly understand what the product is and how it works.',
+  },
+  {
+    image: solution7,
+  },
+  {
+    image: solution8,
+  },
+  {
+    image: solution9,
   },
 ]
 
 const solutionB = [
   {
     title: 'Pedagogy Embedded in UX',
-    image: pedagogyFeat,
+    image: solution4,
     heading: 'Teaching Principles Reflected in the Interface',
     description:
       'The website mirrors the learning philosophy of the books through clear structure, repetition, visual consistency, and progressive disclosure, helping parents understand how the system works without requiring dense explanations.',
@@ -88,14 +99,14 @@ const solutionB = [
 
   {
     title: 'Multilingual-First Execution',
-    image: typeFeat,
+    image: solution5,
     heading: 'Built for Real Japanese and English Use',
     description:
       'The site was designed directly in code to properly handle the realities of bilingual typography. Spacing, hierarchy, and rhythm were refined with real language switching, prioritizing readability and usability over artificial design perfection.',
   },
   {
     title: 'Flexible, User-Controlled Navigation',
-    image: navFeat,
+    image: solution6,
     heading: 'Guidance Without Restriction',
     description:
       'A sticky navigation and clickable progress indicator allow users to follow the guided experience or freely explore. New visitors receive structure, while returning users retain full control, respecting different intent levels without forcing a single path.',
@@ -180,7 +191,6 @@ const uxSubheading = 'Quick breakdown of process.'
       url="https://the-language-friends.com/"
       workTitle="The Language Friends — Bilingual Children’s Book Series"
       :tags="['Product Design', 'UX Strategy', 'Multilingual UX', 'Pedagogy-Driven Design']"
-      :imgSrc="tlfCoverImg"
       :videoSrc="tlfVideo"
       :paragraphs="[
         'The Language Friends began with a simple question: why does early English learning in Japan so often feel stressful and confidence-damaging for children and parents? Drawing on years of teaching English in Japan, I wanted to explore an approach centered on comfort, familiarity, and emotional safety rather than correctness.',

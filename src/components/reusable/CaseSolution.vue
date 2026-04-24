@@ -39,9 +39,6 @@ const props = defineProps({
     type: String,
     default: 'After',
   },
-  hmwTitle: { type: String, default: 'How Might We' },
-  hmwIntro: { type: String, default: '' },
-  hmwItems: { type: Array, default: () => [] },
 })
 
 // Combined Data
@@ -196,7 +193,7 @@ onUnmounted(() => {
                   <img
                     :src="card.image"
                     :alt="`Gallery image ${idx + 1}`"
-                    class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    class="w-full h-full object-contain bg-blue/30 transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
@@ -236,6 +233,7 @@ onUnmounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <template v-for="(card, idx) in allCards" :key="`text-${idx}`">
             <div
+              v-if="card.heading"
               class="flex flex-col p-6 md:p-8 rounded-xl shadow-sm border border-gray-300 h-full"
             >
               <span
@@ -268,13 +266,13 @@ onUnmounted(() => {
 
     <div
       v-if="isModalOpen"
-      class="fixed inset-0 flex items-center justify-center z-50 p-4 backdrop-blur-xl"
+      class="fixed inset-0 flex items-center justify-center z-50 p-4 bg-dark/99"
       @click.self="closeModal"
     >
       <div class="relative w-full max-w-5xl flex flex-col items-center">
         <button
           @click="closeModal"
-          class="absolute -top-12 right-0 hover:scale-110 font-bold hover:cursor-pointer text-4xl z-10 transition-all"
+          class="absolute text-pink text-6xl right-0 hover:scale-110 font-bold hover:cursor-pointer z-10 transition-all"
         >
           &times;
         </button>

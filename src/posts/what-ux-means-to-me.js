@@ -1,6 +1,6 @@
-import uxImg from '@/assets/images/blogPosts/post1/post-1-thumbnail.png'
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
-import uxImg2 from '@/assets/images/blogPosts/post1/post-1-cover.png'
+import uxImg from '@/assets/images/blogPosts/post1/post-1-thumbnail.webp'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
+import uxImg2 from '@/assets/images/blogPosts/post1/post-1-cover.webp'
 
 export default {
   id: 1,

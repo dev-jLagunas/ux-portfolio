@@ -1,8 +1,8 @@
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
-import behance1 from '@/assets/images/blogPosts/post10/language-behance-1.png'
-import behance2 from '@/assets/images/blogPosts/post10/language-behance-2.png'
-import behance3 from '@/assets/images/blogPosts/post10/language-behance-3.png'
-import coverImg from '@/assets/images/blogPosts/post10/lang-port-img.png'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
+import behance1 from '@/assets/images/blogPosts/post10/language-behance-1.webp'
+import behance2 from '@/assets/images/blogPosts/post10/language-behance-2.webp'
+import behance3 from '@/assets/images/blogPosts/post10/language-behance-3.webp'
+import coverImg from '@/assets/images/blogPosts/post10/lang-port-img.webp'
 
 export default {
   id: 10,

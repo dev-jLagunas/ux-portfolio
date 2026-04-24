@@ -20,8 +20,8 @@ This portfolio was built to showcase my work as a UX designer in a way that refl
 ### Desktop
 
 <p float="left">
-  <img src="src/assets/images/screenshots/main-screenshot.png" width="auto" alt="Desktop screenshot">
-  <img src="src/assets/images/screenshots/mobile-screenshot.png" width="300px" alt="Mobile screenshot">
+  <img src="src/assets/images/screenshots/main-screenshot.webp" width="auto" alt="Desktop screenshot">
+  <img src="src/assets/images/screenshots/mobile-screenshot.webp" width="300px" alt="Mobile screenshot">
 </p>
 
 ## Recommended IDE Setup

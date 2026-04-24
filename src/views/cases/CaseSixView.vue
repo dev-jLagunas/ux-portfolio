@@ -20,17 +20,17 @@ import CaseReflections from '@/components/reusable/CaseReflections.vue'
 
 // Images
 import empathyMapNakamura from '@/assets/images/cases/case-six/empathy-denki-nakamura.webp'
-import empathyMapTanabe from '@/assets/images/cases/case-six/empathy-denki-tanabe.webp'
 import personaNakamura from '@/assets/images/cases/case-six/persona-denki-nakamura.webp'
-import personaTanabe from '@/assets/images/cases/case-six/persona-denki-tanabe.webp'
 import journeyNakamura from '@/assets/images/cases/case-six/journey-denki-nakamura.webp'
-import journeyTanabe from '@/assets/images/cases/case-six/journey-denki-tanabe.webp'
-import tdBeforeBranding from '@/assets/images/cases/case-six/denki-branding-before.webp'
-import tdBeforeTrust from '@/assets/images/cases/case-six/denki-trust-before.webp'
-import tdBeforeNav from '@/assets/images/cases/case-six/denki-navigation-before.webp'
-import tdAfterBranding from '@/assets/images/cases/case-six/denki-branding-after.webp'
-import tdAfterTrust from '@/assets/images/cases/case-six/denki-trust-after.webp'
-import tdAfterNav from '@/assets/images/cases/case-six/denki-navigation-after.webp'
+import solution1 from '@/assets/images/cases/case-six/denki-solution-1.webp'
+import solution2 from '@/assets/images/cases/case-six/denki-solution-2.webp'
+import solution3 from '@/assets/images/cases/case-six/denki-solution-3.webp'
+import solution4 from '@/assets/images/cases/case-six/denki-solution-4.webp'
+import solution5 from '@/assets/images/cases/case-six/denki-solution-5.webp'
+import solution6 from '@/assets/images/cases/case-six/denki-solution-6.webp'
+import solution7 from '@/assets/images/cases/case-six/denki-solution-7.webp'
+import solution8 from '@/assets/images/cases/case-six/denki-solution-8.webp'
+import solution9 from '@/assets/images/cases/case-six/denki-solution-9.webp'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -86,21 +86,21 @@ const outcomeList = [
 const beforeTabs = [
   {
     title: 'Navigation',
-    image: tdBeforeNav,
+    image: solution1,
     heading: 'Unstructured Layout',
     description:
       'Pages were long, dense, and inconsistent. Key information like services, certifications, and past work was buried. Users had to scroll and guess where things were. This slowed evaluation and hurt credibility.',
   },
   {
     title: 'Branding',
-    image: tdBeforeBranding,
+    image: solution2,
     heading: 'Outdated Visuals',
     description:
       'The old site relied on mismatched colors, unbalanced spacing, and non-branded components. To B2B users, this created doubt about professionalism. The digital impression did not match the quality of the real company.',
   },
   {
     title: 'Trust Signals',
-    image: tdBeforeTrust,
+    image: solution3,
     heading: 'Low Transparency',
     description:
       'Certifications, project history, and safety compliance were missing or hard to find. For municipal and industrial clients, these signals are essential for risk reduction. Without them, the company looked less reliable than it actually is.',
@@ -110,24 +110,33 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'Navigation',
-    image: tdAfterNav,
+    image: solution4,
     heading: 'Clear Information Architecture',
     description:
       'I reorganized the site into simple, predictable sections: Services, Projects, Company Info, Certifications, and Contact. Users now find what they need in seconds. This directly supports faster vendor evaluation and fewer drop-offs.',
   },
   {
     title: 'Branding',
-    image: tdAfterBranding,
+    image: solution5,
     heading: 'Modern and Consistent UI',
     description:
       'I introduced a fully unified design system: spacing rules, typography, color usage, layout patterns, and component styling. The brand now communicates stability and expertise, increasing perceived trust at first glance.',
   },
   {
     title: 'Trust Signals',
-    image: tdAfterTrust,
+    image: solution6,
     heading: 'Proof of Expertise',
     description:
       'Certifications, past projects, safety information, and company credentials are now front and center. These updates directly reduce user hesitation and give decision-makers the confidence to follow through with inquiries.',
+  },
+  {
+    image: solution7,
+  },
+  {
+    image: solution8,
+  },
+  {
+    image: solution9,
   },
 ]
 
@@ -243,15 +252,6 @@ const reflections = [
           imageSrc: personaNakamura,
         },
         {
-          caption: 'Persona',
-          statement: 'Ms. Tanabe – Goal',
-          statementDetails:
-            'Enable busy operations managers to quickly evaluate service value and share clear, concise vendor information with internal leadership.',
-          blurb:
-            'Driven by efficiency, this persona informed a clean, high-speed layout with simplified service categories and messaging designed to reduce evaluation time and boost conversion.',
-          imageSrc: personaTanabe,
-        },
-        {
           caption: 'Empathy',
           statement: 'Problem',
           statementDetails:
@@ -260,15 +260,7 @@ const reflections = [
             'Mapping his frustrations revealed a deep need for professional presentation. This directly influenced our decision to prioritize trust signals and phone-first communication in the global CTA strategy.',
           imageSrc: empathyMapNakamura,
         },
-        {
-          caption: 'Map',
-          statement: 'Problem',
-          statementDetails:
-            'Unclear structures and dense content hinder operations managers from quickly confirming maintenance plans, creating friction during vendor comparisons.',
-          blurb:
-            'Insights into her scanning behavior led to a more business-focused layout. We prioritized predictable organization and prominent CTAs to support a faster, more effective internal vetting process.',
-          imageSrc: empathyMapTanabe,
-        },
+
         {
           caption: 'Journey Map',
           statement: 'Hypothesis',
@@ -277,15 +269,6 @@ const reflections = [
           blurb:
             'Tracing his workflow identified major pain points in cognitive load. We addressed these by streamlining the path from service discovery to credibility verification and final contact.',
           imageSrc: journeyNakamura,
-        },
-        {
-          caption: 'Journey Map',
-          statement: 'Hypothesis',
-          statementDetails:
-            'Distinct service segmentation and visible social proof will encourage operations managers to move forward with inquiries and positive internal recommendations.',
-          blurb:
-            'Her map revealed a high-speed evaluation cycle. By increasing scannability and visual hierarchy, we optimized the experience for quick comparison and easy information sharing with supervisors.',
-          imageSrc: journeyTanabe,
         },
       ]"
       takeaway="B2B clients depend on clarity, speed, and professionalism when choosing a maintenance partner. By understanding their decision flow and expectations, the redesign positioned Tanaka Denki as a reliable, compliant, and easy-to-contact vendor that supports business continuity."

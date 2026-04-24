@@ -91,7 +91,7 @@ onUnmounted(() => {
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
-  <section class="max-w-7xl mx-auto px-4 md:px-8 pb-32">
+  <section class="mx-auto px-4 md:px-8 pb-32">
     <GuideNav
       :sections="[
         { id: 'photo-section', label: 'Photography' },

@@ -2,7 +2,9 @@
 import { onMounted, ref, nextTick } from 'vue'
 import gsap from 'gsap'
 import { useRouter } from 'vue-router'
-import heroMainImg from '@/assets/images/hero-new-image.png'
+
+// images
+import heroMainImg from '@/assets/images/hero-new-image.webp'
 
 // Sound Import
 import moneySound from '@/assets/sounds/money-counting.mp3'
@@ -66,7 +68,7 @@ onMounted(async () => {
         <h2 class="hero-title text-blue lg:-mt-2">ハロー、フアンです。</h2>
 
         <p class="mt-4 leading-5 text-lg sm:text-xl lg:w-full lg:leading-7 2xl:text-2xl font-bold">
-          Product Designer · UX/UI <span class="hidden lg:inline">· Front-End · 3+ Years</span>
+          Product Designer · UX/UI <span class="hidden lg:inline">· Front-End · 4+ Years</span>
         </p>
 
         <p class="mb-2 leading-5 text-lg sm:text-xl font-bold lg:hidden">Front-End · 3+ Years</p>

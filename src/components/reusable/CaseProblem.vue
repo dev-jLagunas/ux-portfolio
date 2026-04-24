@@ -90,7 +90,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section id="problem-section" class="my-72">
+  <section id="problem-section" class="my-24">
     <div class="section-header-wrapper">
       <h3 class="section-title">The Problem</h3>
       <div class="section-phase">Empathize – Define</div>

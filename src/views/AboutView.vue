@@ -117,7 +117,7 @@ onMounted(async () => {
       <article class="lg:col-span-5 space-y-10">
         <div class="animate-text space-y-4 leading-snug">
           <p class="text-xl font-bold border-l-4 border-blue pl-4">
-            I’m Juan, a UX designer who builds clean, functional digital systems.
+            I’m Juan, a product designer who builds clean, functional digital systems.
           </p>
           <p class="text-sm md:text-base">
             I spent my early career working in service and education. Running my own business taught

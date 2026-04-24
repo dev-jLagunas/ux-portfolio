@@ -5,7 +5,7 @@ import { usePageLoader } from '@/composables/usePageLoader'
 import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 
 const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Coming Right Up!'
+const spinnerMessage = 'Coming Up!'
 
 // Store
 const theme = useThemeStore()
@@ -24,21 +24,21 @@ import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 // Images
-import identifyFeat from '@/assets/images/cases/case-five/visual-identity.webp'
-import paperFeat from '@/assets/images/cases/case-five/paper-wireframes.webp'
-import loFiFeat from '@/assets/images/cases/case-five/wireframes.webp'
-import hiFiFeat from '@/assets/images/cases/case-five/hifi-frames.webp'
-import siteMap from '@/assets/images/cases/case-five/site-map.webp'
-import shopFeat from '@/assets/images/cases/case-five/cart-functionality.webp'
 import empathyMapLisa from '@/assets/images/cases/case-five/lisa-empathy-map.webp'
-import empathyMapKevin from '@/assets/images/cases/case-five/kevin-empathy-map.webp'
 import personaLisa from '@/assets/images/cases/case-five/lisa-user-persona.webp'
-import personaKevin from '@/assets/images/cases/case-five/kevin-user-persona.webp'
 import journeyLisa from '@/assets/images/cases/case-five/lisa-user-journey.webp'
-import journeyKevin from '@/assets/images/cases/case-five/kevin-journey-map.webp'
 import interviewImg from '@/assets/svgs/research/interview-research.svg'
 import competitionImg from '@/assets/svgs/research/official-research.svg'
 import ideaImg from '@/assets/svgs/research/best-practice.svg'
+import solution1 from '@/assets/images/cases/case-five/bean-solution-1.webp'
+import solution2 from '@/assets/images/cases/case-five/bean-solution-2.webp'
+import solution3 from '@/assets/images/cases/case-five/bean-solution-3.webp'
+import solution4 from '@/assets/images/cases/case-five/bean-solution-4.webp'
+import solution5 from '@/assets/images/cases/case-five/bean-solution-5.webp'
+import solution6 from '@/assets/images/cases/case-five/bean-solution-6.webp'
+import solution7 from '@/assets/images/cases/case-five/bean-solution-7.webp'
+import solution8 from '@/assets/images/cases/case-five/bean-solution-8.webp'
+import solution9 from '@/assets/images/cases/case-five/bean-solution-9.webp'
 
 // Videos
 import beanVideoLight from '@/assets/images/cases/case-five/bnb-video-light.mp4'
@@ -56,21 +56,21 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 const beforeTabs = [
   {
     title: 'Visual Identity System',
-    image: identifyFeat,
+    image: solution1,
     heading: 'A Brand That Tells a Story',
     description:
       'I crafted a bold visual identity from scratch using black-and-white animal silhouettes contrasted against vibrant backgrounds. This storytelling-driven design invites curiosity and reflects the emotional, premium feel of the brand. Built during the Ideate phase, it set the foundation for every touchpoint.',
   },
   {
     title: 'Paper Wireframes',
-    image: paperFeat,
+    image: solution2,
     heading: 'Quick Iteration by Hand',
     description:
       'Before touching Figma, I sketched layout ideas on paper using the Crazy 8s method. This helped me explore multiple layout patterns quickly and narrowed my direction based on user personas and brand tone. These sketches served as the starting point for digital prototyping.',
   },
   {
     title: 'Lo-Fi Wireframes',
-    image: loFiFeat,
+    image: solution3,
     heading: 'Structure First, Style Later',
     description:
       'I translated paper sketches into grayscale wireframes in Figma, focusing on layout, hierarchy, and CTA placement. This stage allowed me to test user flows without distractions from visual styling, helping me validate usability assumptions before adding polish.',
@@ -80,24 +80,33 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'Hi-Fi Prototypes',
-    image: hiFiFeat,
+    image: solution4,
     heading: 'Branded, Functional, and Test-Ready',
     description:
       'Once structure was locked in, I applied final colors, typography, and imagery in Figma to build high-fidelity mockups of the site. These matched the visual identity and were used in informal testing to gather early feedback on usability and tone.',
   },
   {
     title: 'Component-Based Coding',
-    image: siteMap,
+    image: solution5,
     heading: 'Smart Structure Using Vue + Tailwind',
     description:
       'I built the site from scratch using Vue.js and Tailwind CSS, creating reusable components and a clean data store using Pinia. This approach ensured scalability, modularity, and consistent styling across the site.',
   },
   {
     title: 'Real E-Commerce Features',
-    image: shopFeat,
+    image: solution6,
     heading: 'Cart Logic and Custom Modals',
     description:
       'To simulate a functioning shop, I implemented a global cart modal, product customization logic, and item tracking which were all stored reactively. Though not a real store, these features demonstrate full UX thinking across interface, logic, and interaction design.',
+  },
+  {
+    image: solution7,
+  },
+  {
+    image: solution8,
+  },
+  {
+    image: solution9,
   },
 ]
 
@@ -227,15 +236,6 @@ const uxSubheading = 'Design Process at a Glance'
           imageSrc: personaLisa,
         },
         {
-          caption: 'Persona',
-          statement: 'Kevin – Goal',
-          statementDetails:
-            'Discover high-end chocolate gifts that align with specific design sensibilities and values, delivering a sense of pride through intentional storytelling.',
-          blurb:
-            'Focused on quality and intention, Kevin’s persona pushed the brand away from commercialized aesthetics toward a visual narrative truly worth giving.',
-          imageSrc: personaKevin,
-        },
-        {
           caption: 'Empathy',
           statement: 'Problem',
           statementDetails:
@@ -244,15 +244,7 @@ const uxSubheading = 'Design Process at a Glance'
             'This map highlighted Lisa’s emphasis on the joy of discovery. We transitioned the design from a food product to a meaningful, shareable experience through bold visual storytelling.',
           imageSrc: empathyMapLisa,
         },
-        {
-          caption: 'Empathy Map',
-          statement: 'Problem',
-          statementDetails:
-            'Users like Kevin are often skeptical of flashy packaging that lacks substance, leaving them unsure if a product is worth the premium price tag.',
-          blurb:
-            'Kevin’s skepticism drove us to ensure the branding wasn’t just premium on the surface, but delivered depth and meaning through an aligned product-story narrative.',
-          imageSrc: empathyMapKevin,
-        },
+
         {
           caption: 'Journey',
           statement: 'Hypothesis',
@@ -261,15 +253,6 @@ const uxSubheading = 'Design Process at a Glance'
           blurb:
             'By tracing Lisa’s path from browsing to purchase, we identified critical moments to resolve detachment through curated presentation and expressive design.',
           imageSrc: journeyLisa,
-        },
-        {
-          caption: 'Journey',
-          statement: 'Hypothesis',
-          statementDetails:
-            'If we pair memorable packaging with clear storytelling and customization, design-driven users will feel more confident and connected to the brand.',
-          blurb:
-            'Tracing the gifting journey highlighted where generic aesthetics fail. We leveraged these gaps to implement intentional branding that transforms a simple purchase into a personal statement.',
-          imageSrc: journeyKevin,
         },
       ]"
       takeaway="Both Lisa and Kevin wanted clarity, confidence, and connection but traditional chocolate sites left them feeling unsure, uninspired, or emotionally detached. By centering user goals, emotional needs, and storytelling, I set out to reimagine what premium chocolate could look and feel like in a digital space."

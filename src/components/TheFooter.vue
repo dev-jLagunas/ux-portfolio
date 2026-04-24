@@ -28,7 +28,7 @@ const externalPlatforms = [
 
 <template>
   <footer class="mt-32 border-t border-gray-200 pt-16 pb-8 font-main px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
+    <div class="mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
         <div class="md:col-span-5 space-y-6">
           <h2 class="font-special text-4xl tracking-tighter uppercase leading-none">

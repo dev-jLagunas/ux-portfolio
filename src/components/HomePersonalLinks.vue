@@ -48,7 +48,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="max-w-7xl mx-auto">
+  <section class="mx-auto">
     <div class="font-main text-center">
       <h1 class="text-6xl font-bold tracking-tight font-special">
         <span class="pink-bold-letter">L</span>et's <span class="blue-bold-letter">G</span>et

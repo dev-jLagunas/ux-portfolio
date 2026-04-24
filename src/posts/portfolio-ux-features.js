@@ -1,9 +1,9 @@
-import uxImg from '@/assets/images/blogPosts/post5/ux-features.png'
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
-import uxImg1 from '@/assets/images/blogPosts/post5/post-5-img-1.png'
-import uxImg2 from '@/assets/images/blogPosts/post5/post-5-img-2.png'
-import uxImg3 from '@/assets/images/blogPosts/post5/post-5-img-3.png'
-import nameLogo from '@/assets/images/blogPosts/post5/name_logo.png'
+import uxImg from '@/assets/images/blogPosts/post5/ux-features.webp'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
+import uxImg1 from '@/assets/images/blogPosts/post5/post-5-img-1.webp'
+import uxImg2 from '@/assets/images/blogPosts/post5/post-5-img-2.webp'
+import uxImg3 from '@/assets/images/blogPosts/post5/post-5-img-3.webp'
+import nameLogo from '@/assets/images/blogPosts/post5/name_logo.webp'
 
 export default {
   id: 5,

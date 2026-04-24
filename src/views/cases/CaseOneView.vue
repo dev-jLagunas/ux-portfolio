@@ -28,16 +28,17 @@ const spinnerMessage = 'Coming Right Up!'
 import userPersona from '@/assets/images/cases/case-one/persona-cafe.webp'
 import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.webp'
 import empathyMap from '@/assets/images/cases/case-one/empathy-map-cafe.webp'
-import usableFeat from '@/assets/images/cases/case-one/cafe-accesible-feat.webp'
-import boldFeat from '@/assets/images/cases/case-one/cafe-bold-feat.webp'
-import languageFeat from '@/assets/images/cases/case-one/cafe-language-feat.webp'
-import menuFeat from '@/assets/images/cases/case-one/cafe-menu-feat.webp'
-import responsiveFeat from '@/assets/images/cases/case-one/cafe-responsive-feat.webp'
-import touchFeat from '@/assets/images/cases/case-one/cafe-touch-feat.webp'
-
 import analysisImg from '@/assets/svgs/research/analysis-research.svg'
 import storeImg from '@/assets/svgs/research/store-research.svg'
 import userImg from '@/assets/svgs/research/user-research.svg'
+import solution1 from '@/assets/images/cases/case-one/cafe-solution-1.webp'
+import solution2 from '@/assets/images/cases/case-one/cafe-solution-2.webp'
+import solution3 from '@/assets/images/cases/case-one/cafe-solution-3.webp'
+import solution4 from '@/assets/images/cases/case-one/cafe-solution-4.webp'
+import solution5 from '@/assets/images/cases/case-one/cafe-solution-5.webp'
+import solution6 from '@/assets/images/cases/case-one/cafe-solution-6.webp'
+import solution7 from '@/assets/images/cases/case-one/cafe-solution-7.webp'
+import solution8 from '@/assets/images/cases/case-one/cafe-solution-8.webp'
 
 // Videos
 import cafeVideoLight from '@/assets/images/cases/case-one/cafe-video-light.mp4'
@@ -55,21 +56,21 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 const beforeTabs = [
   {
     title: 'Multilingual Support',
-    image: languageFeat,
+    image: solution1,
     heading: 'Browse in Three Languages',
     description:
       'The original site supported only English. Adding English, Japanese, and Spanish reduced friction and made the experience inclusive and culturally aligned.',
   },
   {
     title: 'Responsive Design',
-    image: responsiveFeat,
+    image: solution2,
     heading: 'Optimized for Any Screen',
     description:
       'The old site broke down on mobile. A mobile-first rebuild ensured clarity and consistency across all devices.',
   },
   {
     title: 'Interactive Menu',
-    image: menuFeat,
+    image: solution3,
     heading: 'Scannable, Visual Menu',
     description:
       'We replaced a static PDF with a filterable, image-based menu to improve readability and reinforce brand tone.',
@@ -79,24 +80,30 @@ const beforeTabs = [
 const afterTabs = [
   {
     title: 'One-Touch Contact',
-    image: touchFeat,
+    image: solution4,
     heading: 'Call or Navigate Instantly',
     description:
       'Tap-to-call and map buttons removed friction for mobile users making quick decisions.',
   },
   {
     title: 'Visual Identity',
-    image: boldFeat,
+    image: solution5,
     heading: 'Human, Culture-Driven Design',
     description:
       'Color, imagery, and layout were used intentionally to express warmth, culture, and personality.',
   },
   {
     title: 'Clear Information Architecture',
-    image: usableFeat,
+    image: solution6,
     heading: 'Easy to Scan, Easy to Find',
     description:
       'Content was reorganized around how people actually look for information, with clear sections for menu, hours, location, and contact to reduce confusion and speed up decision-making.',
+  },
+  {
+    image: solution7,
+  },
+  {
+    image: solution8,
   },
 ]
 
@@ -180,7 +187,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       url="https://cafetriangle-refresh.netlify.app/"
       workTitle="Cafe Triangle Redesign"
       :tags="['UX Research', 'Visual Design', 'Front-End Development', 'Branding', 'Accessibility']"
-      :imgSrc="coverImg"
       :videoSrc="cafeVideo"
       :paragraphs="[
         'In the second year of running our culture-driven cafe in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
@@ -189,7 +195,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
       role="UX Designer, UX Researcher, Developer, Owner"
       date="January – April 2025"
       toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
-      pdfFile="case-study-1-cafe.pdf"
     />
 
     <CaseProblem

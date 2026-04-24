@@ -1,8 +1,8 @@
-import coverImg from '@/assets/images/blogPosts/post6/portfolio-iteration-cover.png'
-import heroBeforeAfter from '@/assets/images/blogPosts/post6/hero-before-after.png'
-import workSectionImg from '@/assets/images/blogPosts/post6/work-section.png'
-import caseStudyImg from '@/assets/images/blogPosts/post6/case-study-cleanup.png'
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
+import coverImg from '@/assets/images/blogPosts/post6/portfolio-iteration-cover.webp'
+import heroBeforeAfter from '@/assets/images/blogPosts/post6/hero-before-after.webp'
+import workSectionImg from '@/assets/images/blogPosts/post6/work-section.webp'
+import caseStudyImg from '@/assets/images/blogPosts/post6/case-study-cleanup.webp'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
 
 export default {
   id: 6,

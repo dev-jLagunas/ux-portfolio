@@ -1,6 +1,6 @@
-import coverImg from '@/assets/images/blogPosts/post7/tlf-blog-mockup.png'
-import contentImg from '@/assets/images/blogPosts/post7/portfolio-blog-img.png'
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
+import coverImg from '@/assets/images/blogPosts/post7/tlf-blog-mockup.webp'
+import contentImg from '@/assets/images/blogPosts/post7/portfolio-blog-img.webp'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
 
 export default {
   id: 7,

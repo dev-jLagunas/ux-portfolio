@@ -1,5 +1,5 @@
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
-import frameworksImg from '@/assets/images/blogPosts/post3/post-3-img.png'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
+import frameworksImg from '@/assets/images/blogPosts/post3/post-3-img.webp'
 
 export default {
   id: 3,

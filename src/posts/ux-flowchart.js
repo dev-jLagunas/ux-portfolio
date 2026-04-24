@@ -1,7 +1,7 @@
-import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.png'
-import uxFlowCover from '@/assets/images/blogPosts/post4/ux-flowchart.png'
-import flow1 from '@/assets/images/blogPosts/post4/framework-map-1.png'
-import flow2 from '@/assets/images/blogPosts/post4/framework-map-2.png'
+import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
+import uxFlowCover from '@/assets/images/blogPosts/post4/ux-flowchart.webp'
+import flow1 from '@/assets/images/blogPosts/post4/framework-map-1.webp'
+import flow2 from '@/assets/images/blogPosts/post4/framework-map-2.webp'
 
 export default {
   id: 4,
