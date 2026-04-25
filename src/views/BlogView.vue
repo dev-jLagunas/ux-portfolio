@@ -72,7 +72,7 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 <template>
   <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-  <section class="mx-auto mt-8 font-main">
+  <section class="mx-auto font-main">
     <!-- Filter Bar -->
     <div class="mb-8 p-4 border rounded-sm hidden">
       <div class="grid md:grid-cols-4 gap-4 items-end">
@@ -135,7 +135,7 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
         v-for="post in visiblePosts"
         :key="post.id"
         :to="`/blog/${post.slug}`"
-        class="block p-4 border rounded-sm hover:rounded-tl-3xl hover:rounded-br-4xl transition-all ease-linear duration-200"
+        class="block mt-8 p-4 border rounded-sm hover:rounded-tl-3xl hover:rounded-br-4xl transition-all ease-linear duration-200"
       >
         <article class="grid md:grid-cols-4 relative md:place-items-center">
           <p

@@ -13,7 +13,7 @@ function closeModal() {
 <template>
   <article v-if="showContactModal" class="contact-modal-container">
     <div class="">
-      <h2 class="contact-modal-title">Contact Me</h2>
+      <h2 class="section-title text-light mb-4">Contact Me</h2>
     </div>
     <div class="contact-form-wrapper relative">
       <button class="form-close-btn" @click="closeModal()">X</button>

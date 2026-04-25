@@ -5,6 +5,8 @@ import cafeMockUp from '@/assets/images/home/cafe-mockup.webp'
 import beanMockUp from '@/assets/images/home/bean-mockup.webp'
 import denkiMockUp from '@/assets/images/home/denki-mockup.webp'
 import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
+import langMockUp from '@/assets/images/home/language-mockup.webp'
+import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
 </script>
 
 <template>
@@ -60,6 +62,28 @@ import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
         :image="cafeMockUp"
         url="https://cafetriangle-refresh.netlify.app/#home"
         route="/case-one"
+        loading="lazy"
+      />
+      <div>
+        <ProjectCard
+          class="project-card-animate"
+          marker="Bonus"
+          title="Engineering a Designer Identity: The Meta Case Study"
+          ux-type="Product Design · Design Systems · Nuxt 4"
+          description="A technical and visual breakdown of my portfolio's evolution. This project explores building a recognizable brand through scalable systems, custom architecture, and purposeful interaction."
+          :image="portMockUp"
+          route="/blog/ux-portfolio-meta-case-study"
+          loading="lazy"
+        />
+      </div>
+      <ProjectCard
+        class="project-card-animate"
+        marker="Bonus"
+        title="Engineering a High-Conversion English Coaching Platform"
+        ux-type="Linguistics-led UX · Brutalist Design · i18n Architecture"
+        description="An 8-iteration build from scratch using Nuxt 4 and Vanilla CSS. This project solves standing out through a custom brutalist aesthetic, color-coded language states, and a live professional timeline designed to filter and convert high-intent adult students."
+        :image="langMockUp"
+        route="/blog/designing-a-high-conversion-landing-page-for-english-coaching"
         loading="lazy"
       />
     </div>

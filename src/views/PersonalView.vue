@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Icons
-import { IconCamera, IconPalette, IconCoffee, IconDeviceDesktopCode } from '@tabler/icons-vue'
+import { IconCamera, IconPalette, IconCoffee } from '@tabler/icons-vue'
 
 const { isLoading } = usePageLoader(2000)
 
@@ -39,10 +39,12 @@ import christmasArt from '@/assets/images/personal/christmas-art.webp'
 import catArt from '@/assets/images/personal/cat-art.webp'
 import mindArt from '@/assets/images/personal/mind-art.webp'
 import newYearsArt from '@/assets/images/personal/newyears-art.webp'
-import cafeUi from '@/assets/images/personal/cafe-ui.webp'
-import chicanoUi from '@/assets/images/personal/chicano-ui.webp'
-import galleryUi from '@/assets/images/personal/gallery-ui.webp'
-import tiktokUi from '@/assets/images/personal/tiktok-ui.webp'
+import graphic1 from '@/assets/images/personal/graphic-1.webp'
+import graphic2 from '@/assets/images/personal/graphic-2.webp'
+import graphic3 from '@/assets/images/personal/graphic-3.webp'
+import graphic4 from '@/assets/images/personal/graphic-4.webp'
+import graphic5 from '@/assets/images/personal/graphic-5.webp'
+import graphic6 from '@/assets/images/personal/graphic-6.webp'
 
 const spinnerMessage = 'Here you go'
 let ctx
@@ -94,19 +96,113 @@ onUnmounted(() => {
   <section class="mx-auto px-4 md:px-8 pb-32">
     <GuideNav
       :sections="[
-        { id: 'photo-section', label: 'Photography' },
+        { id: 'graphic-section', label: 'Graphic Design' },
         { id: 'art-section', label: 'Digital Art' },
+        { id: 'photo-section', label: 'Photography' },
         { id: 'cafe-section', label: 'Cafe Triangle' },
-        { id: 'design-section', label: 'UI Design' },
       ]"
     />
+    <article class="font-main pt-24 md:pt-32" id="graphic-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <div class="sticky top-32 personal-intro">
+            <IconCamera class="text-pink mb-4" size="48" />
+            <h2 class="section-title mb-4">
+              Gra<br />
+              phic
+            </h2>
+            <p class="text-lg leading-relaxed mb-4 opacity-80">
+              I’ve never officially worked as a Graphic Designer, but I love the work and find that
+              its fundamentals made me a better designer.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              Product design and graphic design are deeply intertwined, as both rely on the same
+              core principles of visual communication and user psychology to solve problems.
+              Creating designs is also really fun.
+            </p>
+          </div>
+        </div>
 
+        <div class="lg:col-span-8 personal-grid">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="display-card-wrapper">
+              <DisplayCard title="Protest Poster" :content="graphic2" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Bauhaus Style" :content="graphic3" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Brutalism Style" :content="graphic4" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Recycling Poster" :content="graphic5" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Music Festival Poster" :content="graphic6" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Minimalism Style" :content="graphic1" bgColor="bg-pink" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="font-main pt-24 md:pt-32" id="art-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-8 personal-grid order-2 lg:order-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="display-card-wrapper">
+              <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Walking Fido" :content="walkingFido" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Christmas Mummies" :content="christmasArt" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Introspective Cat" :content="catArt" bgColor="bg-blue" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Mind Crimes" :content="mindArt" bgColor="bg-pink" />
+            </div>
+            <div class="display-card-wrapper">
+              <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 order-1">
+          <div class="sticky top-32 personal-intro">
+            <IconPalette class="text-blue mb-4" size="48" />
+            <h2 class="section-title mb-4">Digi Art</h2>
+            <p class="text-lg leading-relaxed mb-4 opacity-80">
+              I’ve always enjoyed sketching on paper, but it wasn’t until last year that I started
+              exploring digital art. I use Linearity Curve on my iPad to create.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              I’m drawn to color and simplicity, which comes through not only in my art, but also in
+              my photography and UI design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
     <article class="font-main pt-24 md:pt-32" id="photo-section">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         <div class="lg:col-span-4">
           <div class="sticky top-32 personal-intro">
             <IconCamera class="text-pink mb-4" size="48" />
-            <h2 class="section-title mb-4">Photos</h2>
+            <h2 class="section-title mb-4">
+              Pho<br />
+              tos
+            </h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               I bought a Fuji X-A5 when we started the cafe, and that’s where my love for
               photography began. I taught myself to use the manual controls and spent a lot of time
@@ -150,57 +246,9 @@ onUnmounted(() => {
       </div>
     </article>
 
-    <article class="font-main pt-24 md:pt-32" id="art-section">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        <div class="lg:col-span-8 personal-grid order-2 lg:order-1">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="display-card-wrapper">
-              <DisplayCard title="Riding Cool" :content="flamingoArt" bgColor="bg-pink" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Ride or Die" :content="catBoarder" bgColor="bg-blue" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Going Vrooom" :content="goingVroom" bgColor="bg-pink" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Walking Fido" :content="walkingFido" bgColor="bg-blue" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Christmas Mummies" :content="christmasArt" bgColor="bg-pink" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Introspective Cat" :content="catArt" bgColor="bg-blue" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Mind Crimes" :content="mindArt" bgColor="bg-pink" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Happy New Year" :content="newYearsArt" bgColor="bg-blue" />
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4 order-1 lg:order-2">
-          <div class="sticky top-32 personal-intro">
-            <IconPalette class="text-blue mb-4" size="48" />
-            <h2 class="section-title mb-4">Digi Art</h2>
-            <p class="text-lg leading-relaxed mb-4 opacity-80">
-              I’ve always enjoyed sketching on paper, but it wasn’t until last year that I started
-              exploring digital art. I use Linearity Curve on my iPad to create.
-            </p>
-            <p class="text-lg leading-relaxed opacity-80">
-              I’m drawn to color and simplicity, which comes through not only in my art, but also in
-              my photography and UI design.
-            </p>
-          </div>
-        </div>
-      </div>
-    </article>
-
     <article class="font-main pt-24 md:pt-32" id="cafe-section">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        <div class="lg:col-span-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4 lg:order-last">
           <div class="sticky top-32 personal-intro">
             <IconCoffee class="text-pink mb-4" size="48" />
             <h2 class="section-title mb-4">Our Cafe</h2>
@@ -215,7 +263,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <div class="lg:col-span-8 personal-grid">
+        <div class="lg:col-span-8 lg:order-first personal-grid">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="display-card-wrapper">
               <DisplayCard title="Anko and Moe" :content="ankoPhoto" bgColor="bg-pink" />
@@ -241,42 +289,6 @@ onUnmounted(() => {
             <div class="display-card-wrapper">
               <DisplayCard title="Moko Marketing" :content="mokoPhoto" bgColor="bg-blue" />
             </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="font-main pt-24 md:pt-32" id="design-section">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        <div class="lg:col-span-8 personal-grid order-2 lg:order-1">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="display-card-wrapper">
-              <DisplayCard title="Cafe Triangle" :content="cafeUi" bgColor="bg-pink" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Scroll Gallery" :content="galleryUi" bgColor="bg-blue" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Neon TicTacToe" :content="tiktokUi" bgColor="bg-pink" />
-            </div>
-            <div class="display-card-wrapper">
-              <DisplayCard title="Code Chicano" :content="chicanoUi" bgColor="bg-blue" />
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4 order-1 lg:order-2">
-          <div class="sticky top-32 personal-intro">
-            <IconDeviceDesktopCode class="text-blue mb-4" size="48" />
-            <h2 class="section-title mb-4">UI Design</h2>
-            <p class="text-lg leading-relaxed mb-4 opacity-80">
-              I started teaching myself frontend development two and a half years ago. I began with
-              HTML, CSS, and JS, then moved to Vue.
-            </p>
-            <p class="text-lg leading-relaxed opacity-80">
-              My focus has shifted toward full-stack. I’m currently working through Boot.dev to
-              deepen my understanding of backend development.
-            </p>
           </div>
         </div>
       </div>

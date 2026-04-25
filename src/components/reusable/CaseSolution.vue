@@ -230,7 +230,7 @@ onUnmounted(() => {
       <div class="w-full mb-16">
         <h4 class="text-2xl md:text-3xl font-black uppercase mb-8">The Details</h4>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           <template v-for="(card, idx) in allCards" :key="`text-${idx}`">
             <div
               v-if="card.heading"

@@ -93,7 +93,7 @@ body {
 }
 
 .section-title {
-  @apply text-6xl md:text-[6rem] font-black font-special  uppercase leading-[0.8] tracking-tighter;
+  @apply text-4xl xs:text-6xl md:text-[6rem] font-black font-special  uppercase leading-[0.8] tracking-tighter;
 }
 
 .section-phase {
@@ -169,7 +169,7 @@ Hero Styles
 Home Projects Styles
 *****************************************/
 .home-projects-container {
-  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 lg:gap-16;
+  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 lg:gap-12;
 }
 
 .featured-title {

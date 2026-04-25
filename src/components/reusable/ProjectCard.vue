@@ -23,22 +23,36 @@ defineProps({
   },
   url: {
     type: String,
-    required: true,
+    required: false,
+    default: '',
+  },
+  marker: {
+    type: String,
+    required: false, // Optional marker text (e.g., "Bonus" or "Featured")
+    default: '',
   },
 })
 </script>
 
 <template>
-  <div class="project-card-container md:h-full md:w-full shadow-sm">
+  <div class="project-card-container relative md:h-full md:w-full shadow-sm">
+    <div
+      v-if="marker"
+      class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-dark text-light px-4 py-1 rounded text-sm font-black uppercase tracking-widest shadow-sm"
+    >
+      {{ marker }}
+    </div>
+
     <router-link :to="route">
       <figure class="w-full mb-4 rounded-md bg-blue/30 hover:rotate-1">
         <img
           :src="image"
-          alt="trio image of project screenshots"
+          alt="project preview"
           class="w-full h-full object-cover max-w-100 mx-auto"
           loading="lazy"
-        /></figure
-    ></router-link>
+        />
+      </figure>
+    </router-link>
 
     <p class="project-type">{{ uxType }}</p>
     <h3 class="project-title leading-6 my-2">{{ title }}</h3>
@@ -54,11 +68,17 @@ defineProps({
           View Case Study
         </button>
       </router-link>
-      <a :href="url" target="_blank" rel="noopener noreferrer" class="text-blue xs:pr-4"
-        >Live Site</a
-      >
+
+      <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer" class="text-blue xs:pr-4">
+        Live Site
+      </a>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Ensure the container is relative so the marker pins correctly */
+.project-card-container {
+  position: relative;
+}
+</style>
