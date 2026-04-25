@@ -21,6 +21,11 @@ defineProps({
     type: String,
     required: true,
   },
+  visualRoute: {
+    type: String,
+    required: false, // Optional link to the visual-style case study
+    default: '',
+  },
   url: {
     type: String,
     required: false,
@@ -28,7 +33,7 @@ defineProps({
   },
   marker: {
     type: String,
-    required: false, // Optional marker text (e.g., "Bonus" or "Featured")
+    required: false,
     default: '',
   },
 })
@@ -38,13 +43,25 @@ defineProps({
   <div class="project-card-container relative md:h-full md:w-full shadow-sm">
     <div
       v-if="marker"
-      class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-dark text-light px-4 py-1 rounded text-sm font-black uppercase tracking-widest shadow-sm"
+      class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-dark text-light px-4 py-1 rounded text-sm tracking-widest shadow-sm"
     >
       {{ marker }}
     </div>
 
+    <a
+      v-else-if="url"
+      :href="url"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-blue bg-light px-4 py-1 rounded text-sm tracking-widest shadow-sm hover:scale-105 hover:underline transition-all duration-300"
+    >
+      Live Site
+    </a>
+
     <router-link :to="route">
-      <figure class="w-full mb-4 rounded-md bg-blue/30 hover:rotate-1">
+      <figure
+        class="w-full mb-4 rounded-md bg-blue/30 hover:rotate-1 duration-300 transition-transform"
+      >
         <img
           :src="image"
           alt="project preview"
@@ -60,24 +77,27 @@ defineProps({
       {{ description }}
     </p>
 
-    <div class="flex justify-between items-center">
+    <div class="flex flex-wrap gap-3 items-center justify-between">
       <router-link :to="route">
         <button
-          class="px-4 py-2 text-sm rounded hover:cursor-pointer duration-300 bg-pink uppercase font-bold border"
+          class="px-4 py-2 text-sm rounded hover:cursor-pointer bg-pink uppercase font-bold border duration-300 transition-all hover:bg-pink/75 hover:rounded-lg"
         >
-          View Case Study
+          Full Case Study
         </button>
       </router-link>
 
-      <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer" class="text-blue xs:pr-4">
-        Live Site
-      </a>
+      <router-link v-if="visualRoute" :to="visualRoute">
+        <button
+          class="px-4 py-2 text-sm rounded hover:cursor-pointer border border-dark/20 uppercase font-bold hover:rounded-lg duration-300 transition-all"
+        >
+          Visual Case Study
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Ensure the container is relative so the marker pins correctly */
 .project-card-container {
   position: relative;
 }

@@ -26,7 +26,7 @@ const post = blogStore.getPostBySlug(props.slug)
   <div :data-slug="slug">
     <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
 
-    <section class="mx-auto mt-16 px-4 font-main">
+    <section class="mx-auto mt-16 px-4 font-main max-w-7xl">
       <div v-if="post">
         <!-- Cover Image -->
         <img

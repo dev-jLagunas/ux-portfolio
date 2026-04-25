@@ -13,7 +13,7 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
   <section class="font-main mx-auto">
     <header>
       <h1 class="section-title">My Work</h1>
-      <p class="my-2 sm:text-xl">
+      <p class="mt-4 mb-12 sm:text-xl">
         End-to-end product and UX work, designed and built from concept to production for real
         businesses and users.
       </p>
@@ -26,6 +26,7 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
         ux-type="Product Design · UX Strategy · Multilingual UX"
         description="An end-to-end, self-initiated product combining pedagogy, UX strategy, visual systems, and front-end development to launch a character-driven English learning platform for Japanese families."
         :image="tlfMockUp"
+        visualRoute="/blog/bean-and-beast-visual-case-study"
         url="https://the-language-friends.com/"
         route="/case-tlf"
         loading="lazy"
@@ -37,6 +38,7 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
           ux-type="B2B Website UX · Information Architecture"
           description="Redesigned and rebuilt a live solar maintenance website to improve credibility, service clarity, and usability for business and government clients in Japan."
           :image="denkiMockUp"
+          visualRoute="/blog/bean-and-beast-visual-case-study"
           url="https://tdss.co.jp/"
           route="/case-six"
           loading="lazy"
@@ -49,6 +51,7 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
         ux-type="Product Design · UX Strategy"
         description="A fully self-directed, research-driven product design project defining the brand, UX strategy, visual system, and front-end implementation for a production-ready e-commerce experience."
         :image="beanMockUp"
+        visualRoute="/blog/bean-and-beast-visual-case-study"
         url="https://dev-jlagunas.github.io/bean-and-beast/#/"
         route="/case-five"
         loading="lazy"
@@ -60,6 +63,7 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
         ux-type="Website UX · Multilingual Design"
         description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
         :image="cafeMockUp"
+        visualRoute="/blog/bean-and-beast-visual-case-study"
         url="https://cafetriangle-refresh.netlify.app/#home"
         route="/case-one"
         loading="lazy"
@@ -79,10 +83,11 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
       <ProjectCard
         class="project-card-animate"
         marker="Bonus"
-        title="Engineering a High-Conversion English Coaching Platform"
+        title="Creating a High-Conversion English Coaching Platform"
         ux-type="Linguistics-led UX · Brutalist Design · i18n Architecture"
         description="An 8-iteration build from scratch using Nuxt 4 and Vanilla CSS. This project solves standing out through a custom brutalist aesthetic, color-coded language states, and a live professional timeline designed to filter and convert high-intent adult students."
         :image="langMockUp"
+        url="https://jlag-english.netlify.app/"
         route="/blog/designing-a-high-conversion-landing-page-for-english-coaching"
         loading="lazy"
       />
