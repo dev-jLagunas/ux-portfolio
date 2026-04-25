@@ -3,6 +3,8 @@ import case1 from '@/assets/images/blogPosts/post12/bnb-visual-1.webp'
 import case2 from '@/assets/images/blogPosts/post12/bnb-visual-2.webp'
 import case3 from '@/assets/images/blogPosts/post12/bnb-visual-3.webp'
 import case4 from '@/assets/images/blogPosts/post12/bnb-visual-4.webp'
+import case5 from '@/assets/images/blogPosts/post12/bnb-visual-5.webp'
+
 import coverImg from '@/assets/images/blogPosts/post12/bnb-cover-img.webp'
 
 export default {
@@ -21,6 +23,8 @@ export default {
       <img src="${case2}" alt="Research Insights and Visual Packaging Mockups" class="w-full rounded-sm border border-gray-200 dark:border-gray-800" />
       <img src="${case3}" alt="Rapid Ideation and Interactive Flavor Quiz" class="w-full rounded-sm border border-gray-200 dark:border-gray-800" />
       <img src="${case4}" alt="Character Lore and Modular Engineering Structure" class="w-full rounded-sm border border-gray-200 dark:border-gray-800" />
+      <img src="${case5}" alt="Character Lore and Modular Engineering Structure" class="w-full rounded-sm border border-gray-200 dark:border-gray-800" />
+
     </div>
   `,
 
