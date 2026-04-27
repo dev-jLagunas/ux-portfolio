@@ -38,7 +38,7 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
           ux-type="B2B Website UX · Information Architecture"
           description="Redesigned and rebuilt a live solar maintenance website to improve credibility, service clarity, and usability for business and government clients in Japan."
           :image="denkiMockUp"
-          visualRoute="/blog/bean-and-beast-visual-case-study"
+          visualRoute="/blog/denki-case-study"
           url="https://tdss.co.jp/"
           route="/case-six"
           loading="lazy"
