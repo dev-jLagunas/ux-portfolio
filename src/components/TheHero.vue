@@ -73,7 +73,7 @@ onMounted(async () => {
 
         <p class="mb-2 leading-5 text-lg sm:text-xl font-bold lg:hidden">Front-End · 3+ Years</p>
 
-        <p class="leading-5 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-2xl">
+        <p class="leading-5 md:w-full text-lg sm:text-xl lg:leading-6 xl:leading-7 2xl:text-3xl">
           I merge thoughtful product design with clean, engaging visual systems for international
           audiences, designing and building real products end to end.
         </p>

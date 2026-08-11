@@ -1,4 +1,8 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
 // Images
 import ProjectCard from '@/components/reusable/ProjectCard.vue'
 import cafeMockUp from '@/assets/images/home/cafe-mockup.webp'
@@ -7,16 +11,56 @@ import denkiMockUp from '@/assets/images/home/denki-mockup.webp'
 import tlfMockUp from '@/assets/images/cases/case-tlf/tlf-mockup.webp'
 import langMockUp from '@/assets/images/home/language-mockup.webp'
 import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const container = ref(null)
+let mm
+
+onMounted(() => {
+  mm = gsap.matchMedia()
+
+  // Only run animations on screens 768px and wider
+  mm.add('(min-width: 768px)', () => {
+    if (!container.value) return
+
+    const cards = container.value.querySelectorAll('.project-card-animate')
+
+    cards.forEach((card, index) => {
+      const isLeftColumn = index % 2 === 0
+      const startX = isLeftColumn ? -60 : 60
+
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          x: startX,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        },
+      )
+    })
+  })
+})
+
+onUnmounted(() => {
+  if (mm) mm.revert()
+})
 </script>
 
 <template>
-  <section class="font-main mx-auto">
-    <header>
-      <h1 class="section-title">My Work</h1>
-      <p class="mt-4 mb-12 sm:text-xl">
-        End-to-end product and UX work, designed and built from concept to production for real
-        businesses and users.
-      </p>
+  <section class="font-main mx-auto overflow-x-hidden">
+    <header class="mb-16">
+      <h1 class="section-title mt-4">My Work</h1>
     </header>
 
     <div ref="container" class="home-projects-container">
@@ -67,9 +111,18 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
         route="/case-one"
         loading="lazy"
       />
-      <div>
+      <ProjectCard
+        class="project-card-animate"
+        title="Creating a High-Conversion English Coaching Platform"
+        ux-type="Linguistics-led UX · Brutalist Design · i18n Architecture"
+        description="An 8-iteration build from scratch using Nuxt 4 and Vanilla CSS. This project solves standing out through a custom brutalist aesthetic, color-coded language states, and a live professional timeline designed to filter and convert high-intent adult students."
+        :image="langMockUp"
+        url="https://jlag-english.netlify.app/"
+        route="/blog/designing-a-high-conversion-landing-page-for-english-coaching"
+        loading="lazy"
+      />
+      <div class="project-card-animate">
         <ProjectCard
-          class="project-card-animate"
           marker="Bonus"
           title="Engineering a Designer Identity: The Meta Case Study"
           ux-type="Product Design · Design Systems · Nuxt 4"
@@ -79,26 +132,8 @@ import portMockUp from '@/assets/images/home/ux-port-mockup.webp'
           loading="lazy"
         />
       </div>
-      <ProjectCard
-        class="project-card-animate"
-        marker="Bonus"
-        title="Creating a High-Conversion English Coaching Platform"
-        ux-type="Linguistics-led UX · Brutalist Design · i18n Architecture"
-        description="An 8-iteration build from scratch using Nuxt 4 and Vanilla CSS. This project solves standing out through a custom brutalist aesthetic, color-coded language states, and a live professional timeline designed to filter and convert high-intent adult students."
-        :image="langMockUp"
-        url="https://jlag-english.netlify.app/"
-        route="/blog/designing-a-high-conversion-landing-page-for-english-coaching"
-        loading="lazy"
-      />
     </div>
   </section>
 </template>
 
-<style scoped>
-/* Remove the opacity: 0 from here.
-   GSAP's fromTo will handle the initial state automatically.
-   This prevents cards from being "permanently" invisible if the JS fails. */
-.project-card-animate {
-  will-change: transform, opacity;
-}
-</style>
+<style scoped></style>

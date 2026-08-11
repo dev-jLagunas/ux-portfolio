@@ -20,7 +20,7 @@ const socialLinks = [
 ]
 
 const externalPlatforms = [
-  { name: 'YouTube', url: 'https://www.youtube.com/@LanguageSwitch-JM' },
+  { name: 'YouTube', url: 'https://www.youtube.com/@JuanTriesJapanese' },
   { name: 'Frontend Mentor', url: 'https://www.frontendmentor.io/profile/dev-jLagunas' },
   { name: 'Unsplash', url: 'https://unsplash.com/@jlag_photos' },
 ]

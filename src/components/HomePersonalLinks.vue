@@ -67,7 +67,7 @@ onMounted(async () => {
       <LinkCard
         title="YouTube"
         :icon="youtubeIcon"
-        :url="'https://www.youtube.com/@LanguageSwitch-JM'"
+        :url="'https://www.youtube.com/@JuanTriesJapanese'"
         loading="lazy"
       />
       <LinkCard

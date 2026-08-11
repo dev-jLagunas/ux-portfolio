@@ -53,7 +53,7 @@ defineProps({
       :href="url"
       target="_blank"
       rel="noopener noreferrer"
-      class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-blue bg-light px-4 py-1 rounded text-sm tracking-widest shadow-sm hover:scale-105 hover:underline transition-all duration-300"
+      class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-blue bg-light px-4 py-1 rounded text-reg tracking-widest shadow-sm hover:scale-105 hover:underline transition-all duration-300"
     >
       Live Site
     </a>
@@ -80,7 +80,7 @@ defineProps({
     <div class="flex flex-wrap gap-3 items-center justify-between">
       <router-link :to="route">
         <button
-          class="px-4 py-2 text-sm rounded hover:cursor-pointer bg-pink uppercase font-bold border duration-300 transition-all hover:bg-pink/75 hover:rounded-lg"
+          class="hero-cta-btn px-4 py-2 text-sm rounded bg-pink uppercase font-bold border duration-300 transition-all"
         >
           Full Case Study
         </button>
