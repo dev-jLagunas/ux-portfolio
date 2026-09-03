@@ -13,10 +13,12 @@ import post11 from '@/posts/ux-case-study.js'
 import post12 from '@/posts/bean-case-study.js'
 import post13 from '@/posts/denki-case-study.js'
 import post14 from '@/posts/tlf-case-study.js'
+import post15 from '@/posts/youtube-channel.js'
 
 export const useBlogStore = defineStore('blog', {
   state: () => ({
     posts: [
+      post15,
       post14,
       post13,
       post12,
