@@ -74,7 +74,7 @@ defineProps({
       :href="url"
       target="_blank"
       rel="noopener noreferrer"
-      class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-copy font-medium bg-light px-4 py-1 rounded-2xl text-reg tracking-widest shadow-sm hover:scale-105 hover:underline transition-all duration-300"
+      class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-blue font-medium bg-light px-4 py-1 rounded-2xl text-reg tracking-widest shadow-sm hover:scale-105 hover:underline transition-all duration-300"
     >
       Live Site
     </a>

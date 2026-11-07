@@ -2,6 +2,7 @@
 import TheHero from '@/components/TheHero.vue'
 import HomeProjects from '@/components/HomeProjects.vue'
 import HomeFooter from '@/components/HomePersonalLinks.vue'
+import ProjectPromoToast from '@/components/reusable/ProjectPromoToast.vue'
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import HomeFooter from '@/components/HomePersonalLinks.vue'
       <HomeProjects />
     </section>
     <HomeFooter class="my-32" />
+    <ProjectPromoToast />
   </div>
 </template>
 
