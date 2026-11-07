@@ -1,4 +1,4 @@
-import{I as r}from"./index-Bg6rg1GF.js";/**
+import{I as r}from"./index-CivydsMF.js";/**
  * @license @tabler/icons-vue v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
