@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  max-width: 1650px;
+  max-width: 1700px;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -57,7 +57,7 @@ Reusable Custom Classes
 *****************************************/
 
 body {
-  @apply bg-light text-copy transition-colors;
+  @apply bg-light text-copy transition-colors font-main;
 }
 
 .dark body {
@@ -77,7 +77,9 @@ body {
 }
 
 .nav-btn-styles {
-  @apply border px-3 py-1 rounded-sm hover:cursor-pointer transition-all duration-300;
+  @apply flex items-center justify-center w-20 h-12 rounded-3xl border border-black/25
+         hover:bg-pink/90 hover:text-light  hover:shadow-sm
+         hover:cursor-pointer transition-all duration-200 ease-out;
 }
 
 .pink-bold-letter {
@@ -93,7 +95,7 @@ body {
 }
 
 .section-title {
-  @apply text-4xl xs:text-6xl md:text-[6rem] font-black font-special  uppercase leading-[0.8] tracking-tighter;
+  @apply text-3xl md:text-5xl text-center font-black font-special uppercase tracking-tighter;
 }
 
 .section-phase {
@@ -111,11 +113,7 @@ Navbar Styles
 Navbar Styles
 *****************************************/
 .nav-container-styles {
-  @apply hidden font-main  lg:flex lg:justify-between lg:items-center  lg:mt-4;
-}
-
-.nav-name-wrapper {
-  @apply gap-1 text-2xl ml-2  lg:text-3xl;
+  @apply hidden font-main shadow/5 md:flex md:justify-between md:items-center border border-black/5 px-10 rounded-full md:mt-4 max-w-6xl;
 }
 
 .nav-btn-wrapper {
@@ -142,7 +140,8 @@ Hero Styles
 *****************************************/
 
 .hero-title {
-  @apply font-special font-black text-3xl text-nowrap sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl uppercase  tracking-tighter;
+  @apply font-special text-center font-black text-3xl  text-nowrap sm:text-3xl sm:text-left
+   lg:text-4xl xl:text-5xl lg:mb-2 2xl:text-6xl uppercase tracking-tighter;
 }
 
 .hero-btn-wrapper-md {
@@ -150,7 +149,13 @@ Hero Styles
 }
 
 .hero-cta-btn {
-  @apply bg-pink tracking-wider px-6 py-2 rounded-lg hover:cursor-pointer border uppercase font-bold duration-100 transition-all ease-linear hover:rounded-2xl relative;
+  @apply relative inline-flex items-center justify-center
+         bg-pink text-light tracking-wider px-6 py-2.5
+         rounded-2xl border border-dark/10 uppercase font-bold text-sm
+         shadow-sm hover:shadow-md
+         hover:text-white hover:bg-pink hover:-translate-y-0.5 hover:rounded-bl-sm
+         active:translate-y-0 active:shadow-xs active:brightness-95
+         transition-all duration-200 ease-out cursor-pointer select-none;
 }
 
 .hover-btn-styles {
@@ -169,7 +174,7 @@ Hero Styles
 Home Projects Styles
 *****************************************/
 .home-projects-container {
-  @apply flex flex-col items-center justify-center gap-6 mt-8 md:grid md:grid-cols-2 lg:gap-16;
+  @apply flex flex-col items-center justify-center gap-6 mt-8 md:gap-16;
 }
 
 .featured-title {
@@ -569,26 +574,26 @@ Ux Lens Styles
 Link Card Styles
 *****************************************/
 .link-card-container {
-  @apply rounded-md p-4 font-main flex flex-col justify-center items-center w-full mt-8 border border-gray-200 h-60;
+  @apply rounded-3xl p-4 font-main flex flex-col justify-center items-center w-full mt-8 border border-gray-200 h-60 shadow-sm;
 }
 
 .link-card-btn {
-  @apply text-sm border-2 border-pink p-2 rounded-sm tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer;
+  @apply text-sm border-2 border-dark/10 py-2 px-4 rounded-2xl tracking-widest hover:bg-pink hover:text-white hover:cursor-pointer transition-all duration-200;
 }
 
 /***************************************
 Project Card Styles
 *****************************************/
 .project-card-container {
-  @apply relative px-4 py-4 border border-gray-300 rounded-md;
+  @apply relative px-4 py-4 border border-gray-300 rounded-3xl lg:px-16 hover:border-gray-400/50 hover:shadow-md;
 }
 
 .project-type {
-  @apply text-pink font-bold;
+  @apply text-pink uppercase text-sm font-bold;
 }
 
 .project-title {
-  @apply font-bold text-2xl;
+  @apply font-bold text-xl lg:text-2xl;
 }
 
 /***************************************

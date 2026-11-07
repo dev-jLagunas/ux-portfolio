@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-
+import CursorConfetti from '@/components/reusable/CursorConfetti.vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const onPageTransitionComplete = () => {
@@ -45,7 +45,7 @@ onBeforeUnmount(() => {
 
   <div v-else>
     <TheNavbar />
-
+    <CursorConfetti />
     <RouterView v-slot="{ Component }">
       <Transition name="page" mode="out-in" @after-enter="onPageTransitionComplete">
         <div v-if="Component" class="page-wrapper">

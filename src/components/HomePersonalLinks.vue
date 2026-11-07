@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, nextTick } from 'vue'
+import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LinkCard from '@/components/reusable/LinkCard.vue'
@@ -16,46 +16,119 @@ import unsplashIcon from '@/assets/svgs/unsplash-icon.svg'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const titleRef = ref(null)
 const linkWrapper = ref(null)
+const quoteRef = ref(null)
+
+let stInstances = []
 
 onMounted(async () => {
   await nextTick()
 
-  // Delay execution to account for the HomeView LoadingSpinner
   setTimeout(() => {
-    // Select all LinkCard components within the wrapper
-    const cards = linkWrapper.value.children
+    // 1. Title slide-in + bounce animation
+    if (titleRef.value) {
+      const titleAnim = gsap.fromTo(
+        titleRef.value,
+        { x: -120 },
+        {
+          x: 0,
+          duration: 1.1,
+          ease: 'bounce.out',
+          paused: true,
+        },
+      )
 
-    gsap.from(cards, {
-      scrollTrigger: {
+      const stTitle = ScrollTrigger.create({
+        trigger: titleRef.value,
+        start: 'top 85%',
+        toggleActions: 'play none none reset',
+        onEnter: () => titleAnim.play(),
+        onEnterBack: () => titleAnim.play(),
+      })
+
+      stInstances.push(stTitle)
+    }
+
+    // 2. Link cards grid animation
+    if (linkWrapper.value) {
+      const cards = linkWrapper.value.children
+
+      const cardsAnim = gsap.fromTo(
+        cards,
+        {
+          scale: 0.7,
+          y: 40,
+          rotation: -3,
+        },
+        {
+          scale: 1,
+          y: 0,
+          rotation: 0,
+          duration: 0.6,
+          stagger: {
+            amount: 0.5,
+            grid: 'auto',
+            from: 'start',
+          },
+          ease: 'back.out(1.7)',
+          paused: true,
+        },
+      )
+
+      const stCards = ScrollTrigger.create({
         trigger: linkWrapper.value,
         start: 'top 85%',
-        toggleActions: 'play reverse play reverse',
-      },
-      scale: 0.7,
-      y: 40,
-      rotation: -3,
-      duration: 0.6,
-      stagger: {
-        amount: 0.5,
-        grid: 'auto',
-        from: 'start',
-      },
-      ease: 'back.out(1.7)', // Adds the "overshoot" bounce effect
-    })
+        toggleActions: 'play none none reset',
+        onEnter: () => cardsAnim.play(),
+        onEnterBack: () => cardsAnim.play(),
+      })
+
+      stInstances.push(stCards)
+    }
+
+    // 3. Bottom quote animation
+    if (quoteRef.value) {
+      const quoteAnim = gsap.fromTo(
+        quoteRef.value,
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          paused: true,
+        },
+      )
+
+      const stQuote = ScrollTrigger.create({
+        trigger: quoteRef.value,
+        start: 'top 90%',
+        toggleActions: 'play none none reset',
+        onEnter: () => quoteAnim.play(),
+        onEnterBack: () => quoteAnim.play(),
+      })
+
+      stInstances.push(stQuote)
+    }
   }, 2100)
+})
+
+onBeforeUnmount(() => {
+  stInstances.forEach((st) => st.kill())
 })
 </script>
 
 <template>
-  <section class="mx-auto">
-    <div class="">
-      <h1 class="section-title">
-        <span class="pink-bold-letter">L</span>et's <span class="blue-bold-letter">G</span>et
-        <span class="pink-bold-letter">T</span>o <span class="blue-bold-letter">W</span>ork!
-      </h1>
+  <section class="mx-auto overflow-x-hidden">
+    <div>
+      <h1 ref="titleRef" class="section-title">Let's Get To Work!</h1>
     </div>
 
+    <!-- Clean grid kept 100% intact -->
     <section ref="linkWrapper" class="link-card-wrapper">
       <LinkCard title="Resume" :icon="resumeIcon" url="/Juan-Resume.pdf" />
       <LinkCard
@@ -102,6 +175,20 @@ onMounted(async () => {
         loading="lazy"
       />
     </section>
+
+    <!-- Bottom Quote Placed Outside Grid -->
+    <div
+      ref="quoteRef"
+      class="mt-28 mb-8 text-center flex flex-col items-center justify-center select-none"
+    >
+      <span class="text-pink text-3xl font-display leading-none">“</span>
+      <p class="text-pink font-bold text-lg md:text-xl lg:text-3xl tracking-wide -mt-2">
+        Thanks for stopping by. I am always looking to connect with others.
+      </p>
+      <span class="text-base uppercase tracking-widest text-copy/60 mt-2 font-medium">
+        Looking forward to connecting
+      </span>
+    </div>
   </section>
 </template>
 
