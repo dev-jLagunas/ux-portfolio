@@ -23,51 +23,47 @@ function navigateToWork() {
 onMounted(async () => {
   await nextTick()
 
-  // Match global loading delay (2100ms)
-  setTimeout(() => {
-    if (!heroContainer.value) return
+  if (!heroContainer.value) return
 
-    const tl = gsap.timeline({ paused: true })
+  const tl = gsap.timeline({ paused: true })
 
-    // Hero pops open from scale 0.85 with a clean overshoot bounce
-    tl.fromTo(
-      heroContainer.value,
-      {
-        scale: 0.88,
-        opacity: 0,
-        transformOrigin: 'center center',
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1.1,
-        ease: 'back.out(1.5)',
-      },
-      0,
+  // Hero pops open with overshoot bounce immediately
+  tl.fromTo(
+    heroContainer.value,
+    {
+      scale: 0.9,
+      opacity: 0,
+      transformOrigin: 'center center',
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 0.9,
+      ease: 'back.out(1.5)',
+    },
+    0,
+  )
+    .fromTo(
+      textCol.value,
+      { x: -30, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.7, ease: 'power2.out' },
+      0.15,
     )
-      // Content reveals inside as it expands
-      .fromTo(
-        textCol.value,
-        { x: -30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
-        0.2,
-      )
-      .fromTo(
-        imageCol.value,
-        { x: 30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
-        0.2,
-      )
+    .fromTo(
+      imageCol.value,
+      { x: 30, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.7, ease: 'power2.out' },
+      0.15,
+    )
 
-    stInstance = ScrollTrigger.create({
-      trigger: heroContainer.value,
-      start: 'top 85%',
-      onEnter: () => tl.play(),
-      onEnterBack: () => tl.play(),
-    })
+  stInstance = ScrollTrigger.create({
+    trigger: heroContainer.value,
+    start: 'top 90%',
+    onEnter: () => tl.play(),
+    onEnterBack: () => tl.play(),
+  })
 
-    tl.play()
-  }, 2100)
+  tl.play()
 })
 
 onBeforeUnmount(() => {
@@ -78,7 +74,7 @@ onBeforeUnmount(() => {
 <template>
   <header
     ref="heroContainer"
-    class="hero-texture-wrap mt-4 mx-auto lg:mt-0 overflow-hidden rounded-2xl relative will-change-transform"
+    class="hero-texture-wrap mt-4 mx-auto lg:mt-6 overflow-hidden rounded-2xl relative will-change-transform"
   >
     <section
       class="grid grid-cols-1 items-center md:grid-cols-2 gap-8 lg:gap-12 relative z-10 p-2 sm:p-4"
@@ -122,10 +118,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.hero-texture-wrap {
-  opacity: 0;
-}
-
 .hero-texture-wrap::before {
   content: '';
   position: absolute;
@@ -137,7 +129,6 @@ onBeforeUnmount(() => {
 }
 
 .hero-col {
-  opacity: 0;
   will-change: transform, opacity;
   position: relative;
   z-index: 10;

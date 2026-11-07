@@ -15,7 +15,10 @@ import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 import MobileFooter from './components/MobileFooter.vue'
 
 const showBackToTop = ref(false)
-const isAppLoading = ref(true)
+
+// Check session storage immediately so subsequent visits have zero flash
+const hasVisited = typeof window !== 'undefined' && sessionStorage.getItem('has_visited_portfolio')
+const isAppLoading = ref(!hasVisited)
 
 const router = useRouter()
 
@@ -30,7 +33,17 @@ const scrollToTop = () => {
 onMounted(async () => {
   window.addEventListener('scroll', toggleBackToTop, { passive: true })
   await router.isReady()
-  isAppLoading.value = false
+
+  if (isAppLoading.value) {
+    // Show spinner once for initial entry only
+    setTimeout(() => {
+      isAppLoading.value = false
+      sessionStorage.setItem('has_visited_portfolio', 'true')
+      ScrollTrigger.refresh()
+    }, 2000)
+  } else {
+    ScrollTrigger.refresh()
+  }
 })
 
 onBeforeUnmount(() => {
@@ -40,10 +53,10 @@ onBeforeUnmount(() => {
 
 <template>
   <div v-if="isAppLoading" class="fixed inset-0 z-50 flex flex-col items-center justify-center">
-    <LoadingSpinner />
+    <LoadingSpinner message="Stand By" />
   </div>
 
-  <div v-else>
+  <template v-else>
     <TheNavbar />
     <CursorConfetti />
     <RouterView v-slot="{ Component }">
@@ -66,7 +79,7 @@ onBeforeUnmount(() => {
     >
       ↑
     </button>
-  </div>
+  </template>
 </template>
 
 <style scoped></style>

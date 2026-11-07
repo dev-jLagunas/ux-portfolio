@@ -47,12 +47,6 @@ import userImg from '@/assets/svgs/research/user-research.svg'
 import denkiVideoLight from '@/assets/images/cases/case-six/denki-video-light.mp4'
 import denkiVideoDark from '@/assets/images/cases/case-six/denki-video-dark.mp4'
 
-// Spinner Logic
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Almost Ready!'
-
 const uxIntro = `A quick breakdown of how this project came together from strategy to launch. This TLDR highlights the key steps I took, the decisions that shaped the final experience, and how the redesign supported Tanaka Denki’s business goals.`
 const uxSubheading = 'Project Workflow at a Glance'
 
@@ -182,7 +176,6 @@ const reflections = [
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <CaseNav
     :sections="[
       { id: 'overview-section', label: 'Overview' },

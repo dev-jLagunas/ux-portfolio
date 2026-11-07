@@ -2,15 +2,13 @@
 import { ref } from 'vue'
 import { showContactModal } from '@/composables/useContactModal'
 import { useRouter, useRoute } from 'vue-router'
-import { useThemeStore } from '@/stores/theme'
 
 import personalSvg from '@/assets/svgs/personal-white.svg'
 import blogWhiteSvg from '@/assets/svgs/blog-white.svg'
 
-// Router / Store
+// Router
 const router = useRouter()
 const route = useRoute()
-const theme = useThemeStore()
 
 // State
 const isOpen = ref(false)
@@ -20,30 +18,44 @@ function toggleSidebar() {
   isOpen.value = !isOpen.value
 }
 
+function closeSidebar() {
+  isOpen.value = false
+}
+
 function navigate(path) {
   router.push(path)
-  isOpen.value = false
+  closeSidebar()
 }
 
 function navigateToWork() {
   router.push({ name: 'home', hash: '#case-studies' })
-  isOpen.value = false
+  closeSidebar()
 }
 
 function openModal() {
   showContactModal.value = true
-  isOpen.value = false
+  closeSidebar()
 }
 
 const isActive = (path) => route.path === path
 </script>
 
 <template>
+  <!-- Screen Backdrop / Blur -->
+  <Transition name="backdrop">
+    <div
+      v-if="isOpen"
+      class="fixed inset-0 z-50 bg-dark/40 backdrop-blur-sm lg:hidden transition-all duration-300"
+      @click="closeSidebar"
+      aria-hidden="true"
+    ></div>
+  </Transition>
+
   <!-- Mobile Bottom Nav -->
   <nav
-    class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-dark border-t-2 border-t-pink font-main"
+    class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-light border-t-2 border-dark/20 font-main shadow-sm"
   >
-    <ul class="flex justify-around items-center py-4 text-light">
+    <ul class="flex justify-around items-center py-4 text-copy">
       <!-- Work -->
       <li
         class="flex flex-col items-center gap-1 cursor-pointer"
@@ -88,14 +100,6 @@ const isActive = (path) => route.path === path
     class="shadow-[0px_4px_30px_0px_rgba(31,_38,_135,_0.15)]"
   >
     <div class="flex-col-center h-full w-full">
-      <button
-        class="mb-16 duration-300 transition-all ease-linear hover:cursor-pointer"
-        @click="theme.toggleTheme()"
-        aria-label="Toggle theme"
-      >
-        <i :class="theme.isDarkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" class="text-lg"></i>
-      </button>
-
       <ul class="text-light text-xl gap-2 flex flex-col">
         <li
           class="nav-list-styles side-items"
@@ -123,7 +127,7 @@ const isActive = (path) => route.path === path
           <p>Blog</p>
         </li>
 
-        <button class="side-close-btn" @click="toggleSidebar" aria-label="Close menu">
+        <button class="side-close-btn" @click="closeSidebar" aria-label="Close menu">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </ul>
@@ -146,6 +150,16 @@ const isActive = (path) => route.path === path
 
 .sidebar.open {
   transform: translateX(0);
+}
+
+.backdrop-enter-active,
+.backdrop-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.backdrop-enter-from,
+.backdrop-leave-to {
+  opacity: 0;
 }
 
 .burger {

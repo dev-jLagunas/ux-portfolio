@@ -41,7 +41,7 @@ function navigateToWork() {
 </script>
 
 <template>
-  <nav class="nav-container-styles mx-auto py-2 font-main">
+  <nav class="nav-container-styles mx-auto py-1 font-main">
     <!-- Brand / Logo -->
     <router-link to="/" class="transition-opacity hover:opacity-80">
       <img :src="nameLogo" alt="Name logo of Juan Lagunas" class="h-16 lg:h-20 object-contain" />

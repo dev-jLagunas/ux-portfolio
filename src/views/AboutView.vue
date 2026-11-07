@@ -1,20 +1,13 @@
 <script setup>
-import { onMounted, ref, watch, nextTick } from 'vue'
+import { onMounted, onUnmounted, ref, nextTick } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 
 // Modal Logic
 import { showContactModal } from '@/composables/useContactModal'
 
 // Tabler Icons
 import { IconHeartHandshake, IconEye, IconRocket, IconMail } from '@tabler/icons-vue'
-
-gsap.registerPlugin(ScrollTrigger)
-
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Stand By'
 
 // Photos
 import selfPhoto from '@/assets/images/about/self-red.webp'
@@ -26,7 +19,10 @@ import okjaOrange from '@/assets/images/about/okja-orange.webp'
 import selfBlueBar from '@/assets/images/about/self-blue-bar.webp'
 import familyCatsNew from '@/assets/images/about/family-cats-new.webp'
 
+gsap.registerPlugin(ScrollTrigger)
+
 const aboutSection = ref(null)
+let ctx
 
 const techStack = [
   'VUE 3',
@@ -69,53 +65,56 @@ function openModal() {
   showContactModal.value = true
 }
 
-function initAnimations() {
-  if (!aboutSection.value) return
-
-  // Set initial states instantly so there's zero flash before trigger
-  gsap.set('.animate-text', { y: 20, opacity: 0 })
-  gsap.set('.masonry-item', { scale: 0.8, opacity: 0 })
-  gsap.set('.tech-pill', { opacity: 0 })
-
-  ScrollTrigger.refresh()
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: aboutSection.value,
-      start: 'top 85%',
-      toggleActions: 'play none none none',
-    },
-  })
-
-  tl.to('.animate-text', { y: 0, opacity: 1, stagger: 0.1, duration: 0.6 })
-    .to(
-      '.masonry-item',
-      { scale: 1, opacity: 1, stagger: 0.05, duration: 0.5, ease: 'back.out(1.2)' },
-      '-=0.4',
-    )
-    .to('.tech-pill', { opacity: 1, stagger: 0.05, duration: 0.4 }, '-=0.2')
-}
-
-// Trigger animation as soon as the page loader finishes
-watch(isLoading, async (loading) => {
-  if (!loading) {
-    await nextTick()
-    initAnimations()
-  }
-})
-
 onMounted(async () => {
   await nextTick()
-  // If page loader isn't active or already finished on mount
-  if (!isLoading.value) {
-    initAnimations()
-  }
+
+  ctx = gsap.context(() => {
+    // Initial states set cleanly inside context
+    gsap.set('.animate-text', { y: 20, opacity: 0 })
+    gsap.set('.masonry-item', { scale: 0.85, opacity: 0 })
+    gsap.set('.tech-pill', { opacity: 0, y: 6 })
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'power2.out' },
+    })
+
+    // Immediate on-load sequence with no artificial delay
+    tl.to('.animate-text', {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.08,
+    })
+      .to(
+        '.masonry-item',
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.04,
+          ease: 'back.out(1.3)',
+        },
+        '-=0.4',
+      )
+      .to(
+        '.tech-pill',
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.35,
+          stagger: 0.03,
+        },
+        '-=0.3',
+      )
+  }, aboutSection.value)
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
 })
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-
   <section ref="aboutSection" class="font-main py-12 md:py-16 mx-auto px-6">
     <header class="mb-12 text-left lg:mt-8">
       <h2 class="animate-text section-title">About Me</h2>
@@ -189,7 +188,7 @@ onMounted(async () => {
           <div
             v-for="(img, index) in gallery"
             :key="index"
-            :class="['masonry-item overflow-hidden rounded-2xl  bg-gray-50', img.span]"
+            :class="['masonry-item overflow-hidden rounded-2xl bg-gray-50', img.span]"
           >
             <img :src="img.src" class="w-full h-full object-cover" />
           </div>

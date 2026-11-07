@@ -46,7 +46,6 @@ const startTagRotation = () => {
       },
     })
 
-    // Animate current word out (Up)
     tl.to(currentWord, {
       y: -20,
       opacity: 0,
@@ -54,7 +53,6 @@ const startTagRotation = () => {
       ease: 'power2.in',
     })
 
-    // Animate next word in (From Below) with a bounce
     tl.fromTo(
       nextWord,
       { y: 20, opacity: 0 },
@@ -81,59 +79,52 @@ onMounted(async () => {
 
   await nextTick()
 
-  // Match the global page loader delay (2000ms - 2100ms)
-  setTimeout(() => {
-    if (!overviewContainer.value) return
+  if (!overviewContainer.value) return
 
-    const tl = gsap.timeline({ paused: true })
+  const tl = gsap.timeline({ paused: true })
 
-    // Card pops open from scale 0.88 with overshoot bounce
-    tl.fromTo(
-      overviewContainer.value,
-      {
-        scale: 0.88,
-        opacity: 0,
-        transformOrigin: 'top center',
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1.1,
-        ease: 'back.out(1.5)',
-      },
-      0,
+  tl.fromTo(
+    overviewContainer.value,
+    {
+      scale: 0.92,
+      opacity: 0,
+      transformOrigin: 'top center',
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'back.out(1.4)',
+    },
+    0,
+  )
+    .fromTo(
+      headerMeta.value,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' },
+      0.1,
     )
-      // Header and metadata slide up smoothly
-      .fromTo(
-        headerMeta.value,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out' },
-        0.2,
-      )
-      // Video preview surfaces into view
-      .fromTo(
-        videoWrap.value,
-        { scale: 0.94, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8, ease: 'power2.out' },
-        0.3,
-      )
-      // Content body smoothly reveals
-      .fromTo(
-        contentWrap.value,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
-        0.4,
-      )
+    .fromTo(
+      videoWrap.value,
+      { scale: 0.96, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.7, ease: 'power2.out' },
+      0.2,
+    )
+    .fromTo(
+      contentWrap.value,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out' },
+      0.3,
+    )
 
-    stInstance = ScrollTrigger.create({
-      trigger: overviewContainer.value,
-      start: 'top 85%',
-      onEnter: () => tl.play(),
-      onEnterBack: () => tl.play(),
-    })
+  stInstance = ScrollTrigger.create({
+    trigger: overviewContainer.value,
+    start: 'top 90%',
+    onEnter: () => tl.play(),
+    onEnterBack: () => tl.play(),
+  })
 
-    tl.play()
-  }, 2050)
+  tl.play()
 })
 
 onBeforeUnmount(() => {
@@ -216,10 +207,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.case-overview-wrap {
-  opacity: 0;
-}
-
 .hero-video {
   object-view-box: inset(80px 0 0 0);
 }

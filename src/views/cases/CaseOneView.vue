@@ -18,12 +18,6 @@ import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
 
-// Spinner Logic
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Coming Right Up!'
-
 // Images
 import userPersona from '@/assets/images/cases/case-one/persona-cafe.webp'
 import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.webp'
@@ -169,7 +163,6 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <div class="font-main mb-28">
     <CaseNav
       :sections="[

@@ -1,12 +1,10 @@
 <script setup>
+import { computed, ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useBlogStore } from '@/stores/blogStore'
-import { computed, ref } from 'vue'
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-// Spinner Logic
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Coming Up!'
+gsap.registerPlugin(ScrollTrigger)
 
 // Store
 const blogStore = useBlogStore()
@@ -66,13 +64,61 @@ const visiblePosts = computed(() => {
   })
 })
 
+// GSAP Animations
+const blogSection = ref(null)
+let ctx
+
+function initAnimations() {
+  if (ctx) ctx.revert()
+
+  ctx = gsap.context(() => {
+    // 1. Header fade & lift
+    gsap.from('.blog-header', {
+      y: 25,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power2.out',
+    })
+
+    // 2. Blog cards: staggered on load or triggered on scroll below the fold
+    const cards = gsap.utils.toArray('.blog-card-link')
+    cards.forEach((card) => {
+      gsap.from(card, {
+        y: 40,
+        opacity: 0,
+        duration: 0.65,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none reverse',
+        },
+      })
+    })
+  }, blogSection.value)
+}
+
+onMounted(async () => {
+  await nextTick()
+  initAnimations()
+})
+
+// Re-run animation if user adjusts any filters
+watch(visiblePosts, async () => {
+  await nextTick()
+  initAnimations()
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+})
+
 // Components
 import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-  <section class="mx-auto font-main">
+  <section ref="blogSection" class="mx-auto font-main">
     <!-- Filter Bar -->
     <div class="mb-8 p-4 border rounded-sm hidden">
       <div class="grid md:grid-cols-4 gap-4 items-end">
@@ -129,13 +175,15 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
         </button>
       </div>
     </div>
-    <h1 class="section-title mt-16 mb-4">Blog</h1>
+
+    <h1 class="blog-header section-title mt-16 mb-4">Blog</h1>
+
     <div class="grid gap-6">
       <router-link
         v-for="post in visiblePosts"
         :key="post.id"
         :to="`/blog/${post.slug}`"
-        class="block mt-8 p-4 border rounded-sm hover:rounded-tl-3xl hover:rounded-br-4xl transition-all ease-linear duration-200"
+        class="blog-card-link block mt-8 p-4 border rounded-sm hover:rounded-tl-3xl hover:rounded-br-4xl transition-all ease-linear duration-200"
       >
         <article class="grid md:grid-cols-4 relative md:place-items-center">
           <p
@@ -158,4 +206,9 @@ import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
   <BackHomeBtn />
 </template>
 
-<style scoped></style>
+<style scoped>
+.blog-card-link,
+.blog-header {
+  will-change: transform, opacity;
+}
+</style>

@@ -1,18 +1,14 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
-import { usePageLoader } from '@/composables/usePageLoader'
+import { onMounted, onUnmounted, nextTick } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Icons
 import { IconCamera, IconPalette, IconCoffee } from '@tabler/icons-vue'
 
-const { isLoading } = usePageLoader(2000)
-
 // Components
 import DisplayCard from '@/components/reusable/DisplayCard.vue'
 import GuideNav from '@/components/reusable/CaseStickyNav.vue'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 
 // Images
 import flamingoArt from '@/assets/images/personal/flamingo-art.webp'
@@ -46,13 +42,15 @@ import graphic4 from '@/assets/images/personal/graphic-4.webp'
 import graphic5 from '@/assets/images/personal/graphic-5.webp'
 import graphic6 from '@/assets/images/personal/graphic-6.webp'
 
-const spinnerMessage = 'Here you go'
 let ctx
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick()
   gsap.registerPlugin(ScrollTrigger)
 
   ctx = gsap.context(() => {
+    ScrollTrigger.refresh()
+
     gsap.utils.toArray('.personal-intro').forEach((intro) => {
       gsap.from(intro.children, {
         y: 40,
@@ -91,8 +89,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-
   <section class="mx-auto px-4 md:px-8 pb-32">
     <GuideNav
       :sections="[

@@ -1,18 +1,12 @@
 <script setup>
 import { computed } from 'vue'
 import { useThemeStore } from '@/stores/theme'
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
 
 // Store
 const theme = useThemeStore()
 
 // Computed Properties
 const tlfVideo = computed(() => (theme.isDarkMode ? tlfDarkVid : tlfLightVid))
-
-// Spinner Logic
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Loading!'
 
 // Components
 import CaseNav from '@/components/reusable/CaseStickyNav.vue'
@@ -173,7 +167,6 @@ const uxSubheading = 'Quick breakdown of process.'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <div class="font-main pb-24 md:pb-0">
     <CaseNav
       :sections="[

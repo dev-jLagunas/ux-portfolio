@@ -1,11 +1,6 @@
 <script setup>
 import { computed } from 'vue'
 import { useThemeStore } from '@/stores/theme'
-import { usePageLoader } from '@/composables/usePageLoader'
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
-
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Coming Up!'
 
 // Store
 const theme = useThemeStore()
@@ -172,7 +167,6 @@ const uxSubheading = 'Design Process at a Glance'
 </script>
 
 <template>
-  <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
   <div class="font-main mb-28">
     <CaseNav
       :sections="[

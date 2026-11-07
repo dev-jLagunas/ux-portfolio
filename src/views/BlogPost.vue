@@ -1,9 +1,7 @@
 <script setup>
+import { onMounted, onUnmounted, ref, nextTick } from 'vue'
 import { useBlogStore } from '@/stores/blogStore'
-import { usePageLoader } from '@/composables/usePageLoader'
-
-// Components
-import LoadingSpinner from '@/components/reusable/LoadingSpinner.vue'
+import gsap from 'gsap'
 
 // Props
 const props = defineProps({
@@ -13,19 +11,43 @@ const props = defineProps({
   },
 })
 
-// Spinner Logic
-const { isLoading } = usePageLoader(2000)
-const spinnerMessage = 'Hang tight!'
-
 // Store
 const blogStore = useBlogStore()
 const post = blogStore.getPostBySlug(props.slug)
+
+const postContainer = ref(null)
+let ctx
+
+onMounted(async () => {
+  await nextTick()
+
+  ctx = gsap.context(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+
+    tl.from('.post-hero-anim', {
+      y: 30,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.1,
+    }).from(
+      '.post-content-anim',
+      {
+        y: 25,
+        opacity: 0,
+        duration: 0.8,
+      },
+      '-=0.3',
+    )
+  }, postContainer.value)
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+})
 </script>
 
 <template>
-  <div :data-slug="slug">
-    <LoadingSpinner v-if="isLoading" :message="spinnerMessage" />
-
+  <div ref="postContainer" :data-slug="slug">
     <section class="mx-auto mt-16 px-4 font-main max-w-7xl">
       <div v-if="post">
         <!-- Cover Image -->
@@ -33,11 +55,11 @@ const post = blogStore.getPostBySlug(props.slug)
           v-if="post.coverImage"
           :src="post.coverImage"
           :alt="post.imageAlt || post.title"
-          class="w-full max-w-[400px] rounded-sm mx-auto"
+          class="post-hero-anim w-full max-w-[400px] rounded-sm mx-auto mb-8"
         />
 
         <!-- Author Info -->
-        <div v-if="post.author" class="flex items-center gap-4 mb-10">
+        <div v-if="post.author" class="post-hero-anim flex items-center gap-4 mb-10">
           <img
             v-if="post.author.avatar"
             :src="post.author.avatar"
@@ -54,15 +76,15 @@ const post = blogStore.getPostBySlug(props.slug)
         </div>
 
         <!-- Title + Meta -->
-        <h1 class="text-4xl font-bold mb-2">{{ post.title }}</h1>
-        <div class="text-sm text-start mb-4 space-x-8 font-light">
+        <h1 class="post-hero-anim text-4xl font-bold mb-2">{{ post.title }}</h1>
+        <div class="post-hero-anim text-sm text-start mb-4 space-x-8 font-light">
           <span>{{ post.date }}</span>
           <span v-if="post.readingTime">· {{ post.readingTime }}</span>
           <span v-if="post.category">· {{ post.category }}</span>
         </div>
 
         <!-- Content -->
-        <div class="prose prose-lg max-w-none" v-html="post.content" />
+        <div class="post-content-anim prose prose-lg max-w-none" v-html="post.content" />
 
         <!-- Optional UX-style sections -->
         <div
@@ -101,4 +123,9 @@ const post = blogStore.getPostBySlug(props.slug)
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.post-hero-anim,
+.post-content-anim {
+  will-change: transform, opacity;
+}
+</style>
