@@ -89,25 +89,6 @@ onUnmounted(() => {
     </header>
 
     <div ref="container" class="home-projects-container">
-      <ProjectCard
-        class="project-card-animate"
-        title="Built a Confidence-First Bilingual Learning Product for Young Children in Japan"
-        ux-type="Product Design · UX Strategy"
-        description="An end-to-end, self-initiated product combining pedagogy, UX strategy, visual systems, and front-end development to launch a character-driven English learning platform for Japanese families."
-        :image="tlfMockUp"
-        bg-color="bg-blue/30"
-        :deliverables="[
-          'Zero-to-one design and production shipped in 45 days',
-          'Reduced cognitive load via single-pattern pedagogical framework',
-          '5 published bilingual picture books with custom character IP',
-          'Code-first bilingual web app with responsive Japanese typography',
-        ]"
-        visualRoute="/blog/tlf-case-study"
-        url="https://the-language-friends.com/"
-        route="/case-tlf"
-        loading="lazy"
-      />
-
       <div class="relative project-card-animate">
         <ProjectCard
           title="Strengthened Trust and Service Clarity for a Japanese Solar Maintenance Business"
@@ -115,7 +96,6 @@ onUnmounted(() => {
           description="Redesigned and rebuilt a live solar maintenance website to improve credibility, service clarity, and usability for business and government clients in Japan."
           :image="denkiMockUp"
           bg-color="bg-pink/30"
-          reversed
           :deliverables="[
             'Redesigned B2B conversion funnel targeting public sector & commercial clients',
             'Solved 3-year content stall by replacing legacy WP with headless Contentful',
@@ -128,6 +108,25 @@ onUnmounted(() => {
           loading="lazy"
         />
       </div>
+      <ProjectCard
+        class="project-card-animate"
+        title="Built a Confidence-First Bilingual Learning Product for Young Children in Japan"
+        ux-type="Product Design · UX Strategy"
+        description="An end-to-end, self-initiated product combining pedagogy, UX strategy, visual systems, and front-end development to launch a character-driven English learning platform for Japanese families."
+        :image="tlfMockUp"
+        bg-color="bg-blue/30"
+        reversed
+        :deliverables="[
+          'Zero-to-one design and production shipped in 45 days',
+          'Reduced cognitive load via single-pattern pedagogical framework',
+          '5 published bilingual picture books with custom character IP',
+          'Code-first bilingual web app with responsive Japanese typography',
+        ]"
+        visualRoute="/blog/tlf-case-study"
+        url="https://the-language-friends.com/"
+        route="/case-tlf"
+        loading="lazy"
+      />
 
       <ProjectCard
         class="project-card-animate"

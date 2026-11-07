@@ -1,8 +1,14 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { IconCircleCheck, IconTrendingUp, IconUsers, IconAward } from '@tabler/icons-vue'
 
+gsap.registerPlugin(ScrollTrigger)
+
 const iconComponents = [IconCircleCheck, IconTrendingUp, IconUsers, IconAward]
-//Props
+
+// Props
 defineProps({
   intro: {
     type: String,
@@ -23,10 +29,48 @@ defineProps({
     validator: (arr) => arr.length === 4,
   },
 })
+
+const outcomeRoot = ref(null)
+let ctx
+
+onMounted(() => {
+  ctx = gsap.context(() => {
+    // 1. Subtle upward fade for the header
+    gsap.from('.section-header-wrapper', {
+      y: 24,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.section-header-wrapper',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    // 2. Staggered fade for the outcome cards
+    gsap.from('.outcome-card', {
+      y: 28,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.outcome-card-grid',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+  }, outcomeRoot.value)
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
+})
 </script>
 
 <template>
-  <section id="outcome-section" class="w-full my-32">
+  <section ref="outcomeRoot" id="outcome-section" class="w-fit mx-auto my-32">
     <div class="section-header-wrapper">
       <h3 class="section-title">The Outcome</h3>
       <div class="section-phase">Prototype - Test</div>
@@ -56,4 +100,8 @@ defineProps({
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.outcome-card {
+  will-change: transform, opacity;
+}
+</style>

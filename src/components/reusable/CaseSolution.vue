@@ -1,5 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
   IconTarget,
   IconRoute,
@@ -8,6 +10,8 @@ import {
   IconChevronRight,
   IconPlus,
 } from '@tabler/icons-vue'
+
+gsap.registerPlugin(ScrollTrigger)
 
 // Props
 const props = defineProps({
@@ -49,11 +53,12 @@ const allCards = computed(() => {
 })
 
 // Refs & State
+const solutionRoot = ref(null)
 const carouselRef = ref(null)
 const isModalOpen = ref(false)
 const modalImageSrc = ref('')
 
-// Auto-Scroll State
+let ctx
 let autoScrollTimer = null
 const autoDirection = ref('right')
 
@@ -61,7 +66,6 @@ const autoDirection = ref('right')
 const scrollCarousel = (direction) => {
   if (!carouselRef.value) return
 
-  // Scrolls by roughly one card width
   const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : window.innerWidth * 0.4
 
   carouselRef.value.scrollBy({
@@ -76,12 +80,9 @@ const autoScrollStep = () => {
 
   const el = carouselRef.value
 
-  // Check if we hit the right boundary
   if (autoDirection.value === 'right' && el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
     autoDirection.value = 'left'
-  }
-  // Check if we hit the left boundary
-  else if (autoDirection.value === 'left' && el.scrollLeft <= 10) {
+  } else if (autoDirection.value === 'left' && el.scrollLeft <= 10) {
     autoDirection.value = 'right'
   }
 
@@ -89,7 +90,7 @@ const autoScrollStep = () => {
 }
 
 const startAutoScroll = () => {
-  stopAutoScroll() // Clear to prevent duplicate intervals
+  stopAutoScroll()
   autoScrollTimer = setInterval(autoScrollStep, 3000)
 }
 
@@ -97,16 +98,15 @@ const stopAutoScroll = () => {
   if (autoScrollTimer) clearInterval(autoScrollTimer)
 }
 
-// User clicked a button manually
 const handleManualScroll = (direction) => {
-  autoDirection.value = direction // Sync autoscroll direction with user intent
+  autoDirection.value = direction
   scrollCarousel(direction)
-  startAutoScroll() // Reset the 3-second timer so it doesn't jump immediately
+  startAutoScroll()
 }
 
 // Modal Logic
 const openModal = (imageSrc) => {
-  stopAutoScroll() // Pause autoscroll while modal is open
+  stopAutoScroll()
   modalImageSrc.value = imageSrc
   isModalOpen.value = true
 }
@@ -114,21 +114,77 @@ const openModal = (imageSrc) => {
 const closeModal = () => {
   isModalOpen.value = false
   modalImageSrc.value = ''
-  startAutoScroll() // Resume autoscroll
+  startAutoScroll()
 }
 
-// Lifecycle Hooks
 onMounted(() => {
   startAutoScroll()
+
+  ctx = gsap.context(() => {
+    // 1. Header fade-in
+    gsap.from('.section-header-wrapper', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.section-header-wrapper',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    // 2. Vision, Strategy, Blueprint blocks fade-in
+    gsap.from('.solution-block', {
+      y: 35,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.solution-intro-grid',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    // 3. Gallery section fade-in
+    gsap.from('.gallery-section-wrap', {
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.gallery-section-wrap',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    // 4. Detail cards staggered reveal
+    gsap.from('.detail-card-item', {
+      y: 40,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.details-grid',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+  }, solutionRoot.value)
 })
 
 onUnmounted(() => {
   stopAutoScroll()
+  if (ctx) ctx.revert()
 })
 </script>
 
 <template>
-  <section id="the-solution" class="mt-10 mx-auto px-4">
+  <section ref="solutionRoot" id="the-solution" class="mt-10 mx-auto px-4 overflow-x-hidden">
     <div class="section-header-wrapper mb-12">
       <h3 class="section-title text-4xl md:text-5xl font-black uppercase">The Solution</h3>
       <div class="section-phase font-bold tracking-widest uppercase text-sm">
@@ -169,7 +225,7 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <div class="w-full mb-16 md:my-24 relative">
+      <div class="gallery-section-wrap w-full mb-16 md:my-24 relative">
         <h4 class="text-2xl md:text-3xl font-black uppercase mb-6">Gallery</h4>
 
         <div
@@ -198,7 +254,7 @@ onUnmounted(() => {
                   />
                 </div>
                 <div
-                  class="absolute top-6 right-6 rounded-md bg-pink text-white p-2 shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none border"
+                  class="absolute top-6 right-6 rounded-2xl bg-pink text-white p-2 shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none border"
                 >
                   <IconPlus size="24" />
                 </div>
@@ -230,14 +286,14 @@ onUnmounted(() => {
       <div class="w-full mb-16">
         <h4 class="text-2xl md:text-3xl font-black uppercase mb-8">The Details</h4>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div class="details-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           <template v-for="(card, idx) in allCards" :key="`text-${idx}`">
             <div
               v-if="card.heading"
-              class="flex flex-col p-6 md:p-8 rounded-xl shadow-sm border border-gray-300 h-full"
+              class="detail-card-item flex flex-col p-6 md:p-8 rounded-xl shadow-sm border border-gray-300 h-full"
             >
               <span
-                class="text-xs font-black tracking-widest uppercase border px-2 py-1 rounded w-fit mb-4 block bg-pink"
+                class="text-xs font-black tracking-widest uppercase border border-dark/10 px-4 py-2 rounded-2xl w-fit mb-4 block bg-pink"
               >
                 {{ card.phaseTitle }}
               </span>
@@ -289,12 +345,17 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* Utility to hide the ugly native scrollbar while keeping the swipe/scroll functionality intact */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.solution-block,
+.detail-card-item,
+.gallery-section-wrap {
+  will-change: transform, opacity;
 }
 </style>

@@ -82,31 +82,40 @@ watch(isMenuOpen, (isOpen) => {
 
 <template>
   <div class="case-nav-system">
+    <!-- Backdrop overlay when open -->
+    <div v-if="isMenuOpen" class="fixed inset-0 bg-dark/30 z-30 lg:hidden" @click="closeMenu"></div>
+
     <div class="mobile-nav-wrapper lg:hidden" @mouseenter="openMenu" @mouseleave="closeMenu">
       <button
         @click="toggleMenu"
-        :class="['mobile-nav-toggle', { 'is-faded': !isButtonActive && !isMenuOpen }]"
+        :class="[
+          'mobile-nav-toggle !bg-light !text-copy !border-dark/15',
+          { 'is-faded': !isButtonActive && !isMenuOpen },
+        ]"
       >
-        <span class="font-bold uppercase">Scroll to</span>
-        <IconChevronDown v-if="!isMenuOpen" :size="32" />
-        <IconX v-else :size="32" />
+        <span class="font-bold uppercase !text-copy">Scroll to</span>
+        <IconChevronDown v-if="!isMenuOpen" :size="32" class="!text-copy" />
+        <IconX v-else :size="32" class="!text-copy" />
       </button>
 
       <Transition name="pop">
-        <div v-if="isMenuOpen" class="mobile-nav-card">
+        <div
+          v-if="isMenuOpen"
+          class="mobile-nav-card !bg-light !text-copy !border-dark/15 shadow-xl"
+        >
           <ul class="mobile-modal-list font-main">
             <li
               v-for="(section, index) in sections"
               :key="section.id"
               @click="scrollToSection(section.id)"
-              class="mobile-modal-item hover:cursor-pointer"
+              class="mobile-modal-item hover:cursor-pointer !text-copy"
               :class="{ 'is-active': activeSectionId === section.id }"
             >
               <div class="item-content">
-                <span class="item-num">0{{ index + 1 }}</span>
-                <span class="item-label">{{ section.label }}</span>
+                <span class="item-num !text-copy/60">0{{ index + 1 }}</span>
+                <span class="item-label !text-copy">{{ section.label }}</span>
               </div>
-              <div class="item-indicator"></div>
+              <div class="item-indicator !bg-copy"></div>
             </li>
           </ul>
         </div>

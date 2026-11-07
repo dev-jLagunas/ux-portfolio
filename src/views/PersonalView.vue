@@ -107,7 +107,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4">
           <div class="sticky top-32 personal-intro">
             <IconCamera class="text-pink mb-4" size="48" />
-            <h2 class="section-title mb-4">
+            <h2 class="text-8xl font-bold mb-4 font-special">
               Gra<br />
               phic
             </h2>
@@ -181,7 +181,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4 order-1">
           <div class="sticky top-32 personal-intro">
             <IconPalette class="text-blue mb-4" size="48" />
-            <h2 class="section-title mb-4">Digi Art</h2>
+            <h2 class="text-8xl font-special font-bold mb-4">Digi Art</h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               I’ve always enjoyed sketching on paper, but it wasn’t until last year that I started
               exploring digital art. I use Linearity Curve on my iPad to create.
@@ -199,7 +199,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4">
           <div class="sticky top-32 personal-intro">
             <IconCamera class="text-pink mb-4" size="48" />
-            <h2 class="section-title mb-4">
+            <h2 class="text-8xl font-special font-bold mb-4">
               Pho<br />
               tos
             </h2>
@@ -251,7 +251,7 @@ onUnmounted(() => {
         <div class="lg:col-span-4 lg:order-last">
           <div class="sticky top-32 personal-intro">
             <IconCoffee class="text-pink mb-4" size="48" />
-            <h2 class="section-title mb-4">Our Cafe</h2>
+            <h2 class="text-8xl font-bold font-special mb-4">Our Cafe</h2>
             <p class="text-lg leading-relaxed mb-4 opacity-80">
               Cafe Triangle was the cafe my wife and I owned in Japan. It taught me a multitude of
               skills that align perfectly with UX: empathy, branding, and service design.

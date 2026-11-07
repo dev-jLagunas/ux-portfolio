@@ -107,7 +107,7 @@ const props = defineProps({
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="1"
               stroke-linecap="round"
               stroke-linejoin="round"
             >
@@ -190,7 +190,7 @@ const props = defineProps({
             >
               <div class="slide-text-content w-full md:w-[55%] flex flex-col">
                 <span
-                  class="slide-number bg-pink border py-1 px-2 rounded-xs w-fit block font-black tracking-widest text-xs uppercase mb-4"
+                  class="slide-number bg-pink border border-dark/10 py-2 px-4 rounded-2xl w-fit block font-black tracking-widest text-xs uppercase mb-4"
                 >
                   Artifact 0{{ idx + 1 }}
                 </span>
@@ -200,7 +200,7 @@ const props = defineProps({
                 <p class="slide-blurb text-lg leading-relaxed mb-8">{{ artifact.blurb }}</p>
 
                 <div
-                  class="slide-statement-grid bg-pink border rounded-sm px-4 py-2 md:text-lg shadow-sm"
+                  class="slide-statement-grid border border-dark/10 rounded-sm px-4 py-2 md:text-lg shadow-sm"
                 >
                   <div class="statement-item">
                     <h4 class="statement-label font-bold text-xs uppercase tracking-wider mb-1">
@@ -212,7 +212,7 @@ const props = defineProps({
               </div>
 
               <div
-                class="editorial-img-wrapper relative w-full md:w-[40%] cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
+                class="editorial-img-wrapper relative w-full md:w-[30%] cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
                 @click="openModal(idx)"
               >
                 <img
@@ -232,7 +232,7 @@ const props = defineProps({
       </div>
 
       <p
-        class="text-5xl xl:text-6xl text-left mt-24 md:mt-32 font-black font-special uppercase leading-[1.3] tracking-tighter text-pink"
+        class="text-3xl text-center my-24 md:mt-32 font-black font-special uppercase leading-[1.3] tracking-tighter text-pink"
       >
         "{{ quote }}"
       </p>

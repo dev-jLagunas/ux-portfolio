@@ -91,7 +91,7 @@ body {
 }
 
 .section-header-wrapper {
-  @apply w-full mt-32 mb-8 gap-4 items-start;
+  @apply w-full mt-32 mb-8 gap-4 text-center;
 }
 
 .section-title {
@@ -99,7 +99,7 @@ body {
 }
 
 .section-phase {
-  @apply bg-pink  rounded border px-5 py-2 text-xs font-black w-fit  uppercase tracking-[0.4em] leading-none;
+  @apply rounded text-copy/90 text-center px-5 py-2 text-xs font-black w-full uppercase tracking-[0.4em] leading-none;
 }
 /***************************************
 Navbar Styles
@@ -290,7 +290,7 @@ Case Reflections Styles
 *****************************************/
 
 .reflections-container {
-  @apply mt-20 w-full max-w-6xl;
+  @apply mt-20 w-fit mx-auto max-w-6xl;
 }
 
 .reflections-intro {
@@ -398,7 +398,7 @@ Case Problem Styles
 }
 
 .problem-card {
-  @apply flex flex-col gap-4 mb-4;
+  @apply flex flex-col gap-4 mb-4 items-center;
 }
 
 .problem-card-wide {
@@ -406,7 +406,7 @@ Case Problem Styles
 }
 
 .problem-card-icon {
-  @apply w-12 h-12 flex items-center justify-center rounded-lg bg-pink/10 text-pink;
+  @apply w-12 h-12 flex items-center justify-center rounded-lg;
 }
 
 .problem-card-icon svg {
@@ -418,7 +418,7 @@ Case Problem Styles
 }
 
 .research-header {
-  @apply w-full font-black uppercase tracking-widest mt-8;
+  @apply w-full text-center font-black uppercase tracking-widest mt-8;
 }
 
 .research-insights-container {

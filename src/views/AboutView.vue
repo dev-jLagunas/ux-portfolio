@@ -150,7 +150,7 @@ onMounted(async () => {
 
         <div class="animate-text grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6">
           <div v-for="item in principles" :key="item.title" class="flex items-center gap-4">
-            <div class="p-2 border border-gray-200 dark:border-gray-700 rounded-md shrink-0">
+            <div class="p-2 border border-gray-200/10 dark:border-gray-700 rounded-full shrink-0">
               <component :is="item.icon" size="24" stroke-width="1.5" />
             </div>
             <div>
@@ -160,12 +160,12 @@ onMounted(async () => {
           </div>
         </div>
 
-        <div class="animate-text pt-6 border-t border-gray-100 dark:border-gray-800">
+        <div class="animate-text pt-6 border-t border-gray-100/10 dark:border-gray-800">
           <div class="flex flex-wrap gap-2">
             <span
               v-for="tech in techStack"
               :key="tech"
-              class="tech-pill px-3 py-1 text-[10px] md:text-xs font-bold tracking-widest border border-gray-200 dark:border-gray-700"
+              class="tech-pill px-3 py-1 text-[10px] md:text-xs font-bold tracking-widest border rounded-2xl border-gray-200 dark:border-gray-700"
             >
               {{ tech }}
             </span>
@@ -176,7 +176,7 @@ onMounted(async () => {
             <span
               v-for="skill in designSkills"
               :key="skill"
-              class="tech-pill px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest border border-gray-200 dark:border-gray-700"
+              class="tech-pill px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-widest border rounded-2xl border-gray-200 dark:border-gray-700"
             >
               {{ skill }}
             </span>
@@ -189,17 +189,14 @@ onMounted(async () => {
           <div
             v-for="(img, index) in gallery"
             :key="index"
-            :class="[
-              'masonry-item overflow-hidden rounded-sm border border-gray-50 dark:border-gray-500 bg-gray-50',
-              img.span,
-            ]"
+            :class="['masonry-item overflow-hidden rounded-2xl  bg-gray-50', img.span]"
           >
             <img :src="img.src" class="w-full h-full object-cover" />
           </div>
 
           <button
             @click="openModal"
-            class="masonry-item col-span-3 row-span-1 flex flex-col items-center justify-center gap-2 border rounded-sm hover:cursor-pointer hover:bg-pink hover:text-white transition-all duration-300 group"
+            class="masonry-item col-span-3 row-span-1 flex flex-col items-center justify-center gap-2 border rounded-2xl hover:cursor-pointer hover:bg-pink hover:text-white transition-all duration-300 group"
           >
             <IconMail
               size="28"
