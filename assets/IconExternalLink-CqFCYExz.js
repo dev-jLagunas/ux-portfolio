@@ -1,4 +1,4 @@
-import{c as a}from"./createVueComponent-NWcYdWjM.js";/**
+import{c as a}from"./createVueComponent-exwHu_wR.js";/**
  * @license @tabler/icons-vue v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.
