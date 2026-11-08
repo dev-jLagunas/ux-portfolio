@@ -127,13 +127,30 @@ onUnmounted(() => {
         route="/case-tlf"
         loading="lazy"
       />
-
+      <ProjectCard
+        class="project-card-animate"
+        title="Improved Clarity for a Multilingual Cafe Website in Japan"
+        ux-type="Website UX · Multilingual Design"
+        description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
+        :image="cafeMockUp"
+        bg-color="bg-emerald-100"
+        :deliverables="[
+          'Overcame static image menu friction with structured mobile-first navigation',
+          'Drove direct customer call volume and foot traffic via one-touch CTA architecture',
+          'Trilingual localization engine (JP/EN/ES) built using Angular ngx-translate',
+          'Custom component library, dark mode system, and zero-dependency Netlify pipeline',
+        ]"
+        url="https://cafetriangle-refresh.netlify.app/#home"
+        route="/case-one"
+        loading="lazy"
+      />
       <ProjectCard
         class="project-card-animate"
         title="Designed a Character-Driven E-Commerce Experience from Scratch"
         ux-type="Product Design · UX Strategy"
         description="A fully self-directed, research-driven product design project defining the brand, UX strategy, visual system, and front-end implementation for a production-ready e-commerce experience."
         :image="beanMockUp"
+        reversed
         bg-color="bg-amber-100"
         :deliverables="[
           'User-tested gifting UX built on 5 qualitative user interviews & journey mapping',
@@ -147,24 +164,6 @@ onUnmounted(() => {
         loading="lazy"
       />
 
-      <ProjectCard
-        class="project-card-animate"
-        title="Improved Clarity for a Multilingual Cafe Website in Japan"
-        ux-type="Website UX · Multilingual Design"
-        description="A redesign of a local cafe website focused on clear communication, mobile usability, and serving both Japanese and international customers."
-        :image="cafeMockUp"
-        reversed
-        bg-color="bg-emerald-100"
-        :deliverables="[
-          'Overcame static image menu friction with structured mobile-first navigation',
-          'Drove direct customer call volume and foot traffic via one-touch CTA architecture',
-          'Trilingual localization engine (JP/EN/ES) built using Angular ngx-translate',
-          'Custom component library, dark mode system, and zero-dependency Netlify pipeline',
-        ]"
-        url="https://cafetriangle-refresh.netlify.app/#home"
-        route="/case-one"
-        loading="lazy"
-      />
       <h2 class="section-title bonus my-4">Bonus</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <ProjectCard

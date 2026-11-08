@@ -1,10 +1,10 @@
 import avatar1 from '@/assets/images/blogPosts/post1/avatar-hoodie.webp'
 import coverImg from '@/assets/images/blogPosts/post16/tdt-logo-transparent.webp'
 
-import screenshot1 from '@/assets/images/blogPosts/post16/dt-preview-1.jpg'
-// import screenshot2 from '@/assets/images/blogPosts/post16/dt-preview-2.webp'
-// import screenshot3 from '@/assets/images/blogPosts/post16/dt-preview-3.webp'
-// import screenshot4 from '@/assets/images/blogPosts/post16/dt-preview-4.webp'
+import screenshot1 from '@/assets/images/blogPosts/post16/dt-preview-1.webp'
+import screenshot2 from '@/assets/images/blogPosts/post16/dt-preview-2.webp'
+import screenshot3 from '@/assets/images/blogPosts/post16/dt-preview-3.webp'
+import screenshot4 from '@/assets/images/blogPosts/post16/dt-preview-4.webp'
 
 export default {
   id: 16,
@@ -55,20 +55,20 @@ export default {
     <h2 class="mt-8 mb-4 text-xl font-semibold">Platform Preview</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-      <figure class="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
+      <figure class="overflow-hidden rounded-2xl border border-gray-100/10 shadow-sm">
         <img src="${screenshot1}" alt="The Design Tutor movement catalog grid" class="w-full h-auto object-cover" />
       </figure>
 
-      <figure class="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
-        <img src="${screenshot1}" alt="Dual-mode live commercial view" class="w-full h-auto object-cover" />
+      <figure class="overflow-hidden rounded-2xl border border-gray-100/10 shadow-sm">
+        <img src="${screenshot2}" alt="Dual-mode live commercial view" class="w-full h-full object-cover" />
       </figure>
 
-      <figure class="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
-        <img src="${screenshot1}" alt="Educational mode style breakdown" class="w-full h-auto object-cover" />
+      <figure class="overflow-hidden rounded-2xl border border-gray-100/10 shadow-sm">
+        <img src="${screenshot3}" alt="Educational mode style breakdown" class="w-full h-auto object-cover" />
       </figure>
 
-      <figure class="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
-        <img src="${screenshot1}" alt="Design token palette and typography spec" class="w-full h-auto object-cover" />
+      <figure class="overflow-hidden rounded-2xl border border-gray-100/10 shadow-sm">
+        <img src="${screenshot4}" alt="Design token palette and typography spec" class="w-full h-auto object-cover" />
       </figure>
     </div>
   `,
