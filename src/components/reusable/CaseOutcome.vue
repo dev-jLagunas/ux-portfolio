@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 const iconComponents = [IconCircleCheck, IconTrendingUp, IconUsers, IconAward]
 
-// Props
 defineProps({
+  id: String,
   intro: {
     type: String,
     required: true,
@@ -25,8 +25,7 @@ defineProps({
   },
   icons: {
     type: Array,
-    required: true,
-    validator: (arr) => arr.length === 4,
+    required: false,
   },
 })
 
@@ -35,25 +34,24 @@ let ctx
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    // 1. Subtle upward fade for the header
-    gsap.from('.section-header-wrapper', {
+    gsap.from('.outcome-reveal', {
       y: 24,
       opacity: 0,
-      duration: 0.7,
+      duration: 0.65,
+      stagger: 0.1,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: '.section-header-wrapper',
+        trigger: outcomeRoot.value,
         start: 'top 85%',
         toggleActions: 'play none none reverse',
       },
     })
 
-    // 2. Staggered fade for the outcome cards
     gsap.from('.outcome-card', {
-      y: 28,
+      y: 24,
       opacity: 0,
       duration: 0.6,
-      stagger: 0.1,
+      stagger: 0.08,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.outcome-card-grid',
@@ -70,37 +68,48 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="outcomeRoot" id="outcome-section" class="max-w-7xl mx-auto my-32">
-    <div class="section-header-wrapper">
-      <h3 class="section-title">The Outcome</h3>
-      <div class="section-phase">Prototype - Test</div>
+  <section
+    :id="id || 'outcome-section'"
+    ref="outcomeRoot"
+    class="pt-20 md:pt-28 md:my-32 max-w-7xl mx-auto"
+  >
+    <!-- Top 2-Column Split -->
+    <div class="outcome-reveal outcome-top-grid">
+      <div class="outcome-main-col">
+        <span class="outcome-eyebrow">Impact & Results</span>
+        <h2 class="outcome-title">The Outcome</h2>
+        <p class="outcome-body-text mt-4">{{ intro }}</p>
+      </div>
+
+      <div class="outcome-context-col">
+        <div class="outcome-context-box">
+          <span class="outcome-meta-label">Key Takeaways</span>
+          <p class="outcome-context-text">{{ context }}</p>
+        </div>
+      </div>
     </div>
 
-    <article class="max-w-6xl">
-      <p class="mb-4 leading-normal text-lg">
-        {{ intro }}
-      </p>
-
-      <p class="mb-10 leading-normal text-lg">
-        {{ context }}
-      </p>
-
-      <ul class="outcome-card-grid">
-        <li v-for="(item, index) in outcomes" :key="index" class="outcome-card">
+    <!-- 2x2 Outcome Cards Grid -->
+    <ul class="outcome-card-grid">
+      <li v-for="(item, index) in outcomes" :key="index" class="outcome-card">
+        <div class="outcome-card-header">
           <div class="outcome-icon-box">
             <component :is="iconComponents[index % iconComponents.length]" class="outcome-icon" />
           </div>
-          <div class="outcome-content">
-            <h5 class="outcome-card-title">{{ item.title }}</h5>
-            <p class="outcome-card-desc">{{ item.description }}</p>
-          </div>
-        </li>
-      </ul>
-    </article>
+          <span class="outcome-index">0{{ index + 1 }}</span>
+        </div>
+
+        <div class="outcome-content">
+          <h3 class="outcome-card-title">{{ item.title }}</h3>
+          <p class="outcome-card-desc">{{ item.description }}</p>
+        </div>
+      </li>
+    </ul>
   </section>
 </template>
 
 <style scoped>
+.outcome-reveal,
 .outcome-card {
   will-change: transform, opacity;
 }

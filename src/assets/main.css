@@ -257,24 +257,68 @@ Back Home Button Styles
 Case Outcome Styles
 *****************************************/
 
+.outcome-top-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end;
+}
+
+.outcome-main-col {
+  @apply lg:col-span-7;
+}
+
+.outcome-eyebrow {
+  @apply text-xs font-black uppercase tracking-[0.3em] text-pink block mb-2;
+}
+
+.outcome-title {
+  @apply font-special text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight;
+}
+
+.outcome-body-text {
+  @apply text-base md:text-lg leading-relaxed;
+}
+
+.outcome-context-col {
+  @apply lg:col-span-5;
+}
+
+.outcome-context-box {
+  @apply rounded-3xl border border-black/5 px-6 py-5;
+}
+
+.outcome-meta-label {
+  @apply text-[11px] font-black uppercase tracking-[0.25em] text-blue block mb-1;
+}
+
+.outcome-context-text {
+  @apply text-sm md:text-base leading-relaxed opacity-90;
+}
+
 .outcome-card-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-4 mt-8;
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 mt-10;
 }
 
 .outcome-card {
-  @apply flex flex-col gap-4  rounded-sm;
+  @apply flex flex-col gap-4 p-6 rounded-3xl border border-black/5;
+}
+
+.outcome-card-header {
+  @apply flex items-center justify-between;
 }
 
 .outcome-icon-box {
-  @apply w-10 h-10 flex items-center justify-center bg-pink/10 rounded-lg border border-pink/20;
+  @apply w-10 h-10 flex items-center justify-center bg-pink/10 rounded-xl;
 }
 
 .outcome-icon {
   @apply w-5 h-5 text-pink;
 }
 
+.outcome-index {
+  @apply text-xs font-black tracking-widest opacity-40;
+}
+
 .outcome-content {
-  @apply flex flex-col gap-1;
+  @apply flex flex-col gap-1.5;
 }
 
 .outcome-card-title {
@@ -282,47 +326,70 @@ Case Outcome Styles
 }
 
 .outcome-card-desc {
-  @apply leading-normal text-lg;
+  @apply text-sm md:text-base leading-relaxed opacity-90;
 }
-
 /***************************************
 Case Reflections Styles
 *****************************************/
 
-.reflections-container {
-  @apply mt-20 w-fit mx-auto max-w-6xl;
+.reflections-top-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end;
+}
+
+.reflections-main-col {
+  @apply lg:col-span-5;
+}
+
+.reflections-eyebrow {
+  @apply text-xs font-black uppercase tracking-[0.3em] text-pink block mb-2;
+}
+
+.reflections-title {
+  @apply font-special text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight;
+}
+
+.reflections-intro-col {
+  @apply lg:col-span-7;
 }
 
 .reflections-intro {
-  @apply mb-10 leading-normal text-base md:text-lg;
+  @apply text-base md:text-lg leading-relaxed opacity-90;
 }
 
 .reflections-list {
-  @apply space-y-6;
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 mt-10;
 }
 
 .reflection-item {
-  @apply flex flex-col;
+  @apply flex flex-col gap-4 p-6 rounded-3xl border border-black/5;
 }
 
 .reflection-header {
-  @apply flex items-center gap-2;
+  @apply flex items-center justify-between;
 }
 
 .reflection-icon-box {
-  @apply w-10 h-10 flex items-center justify-center bg-pink/10 rounded-lg border border-pink/20 shrink-0;
+  @apply w-10 h-10 flex items-center justify-center bg-pink/10 rounded-xl shrink-0;
 }
 
 .reflection-icon {
   @apply w-5 h-5 text-pink;
 }
 
+.reflection-index {
+  @apply text-xs font-black tracking-widest opacity-40;
+}
+
+.reflection-content {
+  @apply flex flex-col gap-1.5;
+}
+
 .reflection-title {
-  @apply font-bold text-lg md:text-xl uppercase tracking-tight;
+  @apply font-bold text-lg uppercase tracking-tight;
 }
 
 .reflection-desc {
-  @apply pl-12 leading-normal text-base md:text-lg opacity-80;
+  @apply text-sm md:text-base leading-relaxed opacity-90;
 }
 
 /***************************************

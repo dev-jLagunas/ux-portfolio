@@ -13,10 +13,10 @@ defineProps({
 </script>
 
 <template>
-  <section id="ux-timeline-section">
+  <section id="ux-timeline-section" class="max-w-7xl mx-auto">
     <div class="section-header-wrapper">
+      <p class="section-phase">Full Framework</p>
       <h3 class="section-title">TLDR</h3>
-      <div class="section-phase">Full Framework</div>
     </div>
 
     <article>
