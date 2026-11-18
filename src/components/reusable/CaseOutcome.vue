@@ -36,15 +36,14 @@ onMounted(() => {
   ctx = gsap.context(() => {
     const mm = gsap.matchMedia()
 
-    // Desktop: Directional 2-column & 2x2 grid choreography that re-triggers on scroll
+    // Desktop: Directional 2-column & 2x2 grid choreography triggered once on first view
     mm.add('(min-width: 1024px)', () => {
       // 1. Top Outcome Split (Left slides from left, Context box slides from right)
       const topTl = gsap.timeline({
         scrollTrigger: {
           trigger: '.outcome-top-grid',
           start: 'top 84%',
-          end: 'bottom 15%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         },
       })
 
@@ -54,6 +53,7 @@ onMounted(() => {
           opacity: 0,
           duration: 0.75,
           ease: 'power3.out',
+          clearProps: 'transform,opacity',
         })
         .from(
           '.outcome-context-col',
@@ -62,6 +62,7 @@ onMounted(() => {
             opacity: 0,
             duration: 0.75,
             ease: 'power3.out',
+            clearProps: 'transform,opacity',
           },
           '-=0.55',
         )
@@ -76,27 +77,27 @@ onMounted(() => {
         duration: 0.65,
         stagger: 0.1,
         ease: 'power3.out',
+        clearProps: 'transform,opacity',
         scrollTrigger: {
           trigger: '.outcome-card-grid',
           start: 'top 84%',
-          end: 'bottom 15%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         },
       })
     })
 
-    // Mobile & Tablet: Clean vertical reveals without horizontal overflow
+    // Mobile & Tablet: Clean vertical reveals triggered once on first view
     mm.add('(max-width: 1023px)', () => {
       gsap.from('.outcome-reveal', {
         y: 24,
         opacity: 0,
         duration: 0.6,
         ease: 'power2.out',
+        clearProps: 'transform,opacity',
         scrollTrigger: {
           trigger: '.outcome-top-grid',
           start: 'top 88%',
-          end: 'bottom 12%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         },
       })
 
@@ -107,11 +108,11 @@ onMounted(() => {
           opacity: 0,
           duration: 0.55,
           ease: 'power2.out',
+          clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: card,
             start: 'top 90%',
-            end: 'bottom 10%',
-            toggleActions: 'play reverse play reverse',
+            once: true,
           },
         })
       })
@@ -123,7 +124,6 @@ onUnmounted(() => {
   if (ctx) ctx.revert()
 })
 </script>
-
 <template>
   <section
     :id="id || 'outcome-section'"

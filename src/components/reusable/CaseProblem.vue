@@ -96,15 +96,14 @@ onMounted(() => {
   ctx = gsap.context(() => {
     const mm = gsap.matchMedia()
 
-    // Desktop: Directional 2-column choreography that re-triggers on scroll
+    // Desktop: Directional 2-column choreography triggered once on first view
     mm.add('(min-width: 1024px)', () => {
       // 1. Top Problem Split (Left slides from left, Aside slides from right)
       const topTl = gsap.timeline({
         scrollTrigger: {
           trigger: '.problem-top-grid',
           start: 'top 84%',
-          end: 'bottom 15%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         },
       })
 
@@ -114,6 +113,7 @@ onMounted(() => {
           opacity: 0,
           duration: 0.75,
           ease: 'power3.out',
+          clearProps: 'transform,opacity',
         })
         .from(
           '.problem-aside-col',
@@ -122,6 +122,7 @@ onMounted(() => {
             opacity: 0,
             duration: 0.75,
             ease: 'power3.out',
+            clearProps: 'transform,opacity',
           },
           '-=0.55',
         )
@@ -131,8 +132,7 @@ onMounted(() => {
         scrollTrigger: {
           trigger: '.problem-research-wrap',
           start: 'top 84%',
-          end: 'bottom 15%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         },
       })
 
@@ -142,6 +142,7 @@ onMounted(() => {
           opacity: 0,
           duration: 0.6,
           ease: 'power2.out',
+          clearProps: 'transform,opacity',
         })
         .from(
           '.research-row',
@@ -151,6 +152,7 @@ onMounted(() => {
             duration: 0.6,
             stagger: 0.12,
             ease: 'power2.out',
+            clearProps: 'transform,opacity',
           },
           '-=0.35',
         )
@@ -160,8 +162,7 @@ onMounted(() => {
         scrollTrigger: {
           trigger: '.artifact-section-wrap',
           start: 'top 84%',
-          end: 'bottom 15%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         },
       })
 
@@ -171,6 +172,7 @@ onMounted(() => {
           opacity: 0,
           duration: 0.55,
           ease: 'power2.out',
+          clearProps: 'transform,opacity',
         })
         .from(
           '.artifact-copy-col',
@@ -179,6 +181,7 @@ onMounted(() => {
             opacity: 0,
             duration: 0.7,
             ease: 'power3.out',
+            clearProps: 'transform,opacity',
           },
           '-=0.3',
         )
@@ -189,12 +192,13 @@ onMounted(() => {
             opacity: 0,
             duration: 0.7,
             ease: 'power3.out',
+            clearProps: 'transform,opacity',
           },
           '-=0.6',
         )
     })
 
-    // Mobile & Tablet: Clean vertical reveals without horizontal overflow
+    // Mobile & Tablet: Clean vertical reveals triggered once on first view
     mm.add('(max-width: 1023px)', () => {
       const mobileBlocks = gsap.utils.toArray('.problem-mobile-reveal')
 
@@ -204,11 +208,11 @@ onMounted(() => {
           opacity: 0,
           duration: 0.6,
           ease: 'power2.out',
+          clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: block,
             start: 'top 88%',
-            end: 'bottom 12%',
-            toggleActions: 'play reverse play reverse',
+            once: true,
           },
         })
       })
