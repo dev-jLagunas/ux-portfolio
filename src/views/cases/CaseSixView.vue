@@ -76,52 +76,52 @@ const outcomeList = [
   },
 ]
 
-// Solution Tabs Data
+// Solution Features Data (Kept on existing beforeTabs/afterTabs props for component compatibility)
 const beforeTabs = [
   {
-    title: 'Navigation',
+    title: 'Information Architecture',
     image: solution1,
-    heading: 'Buried Service Scope',
+    heading: 'Scannable B2B Service Hierarchy',
     description:
-      'Pages ran long without clear visual anchors, forcing facility managers to dig through walls of text just to confirm whether the company handled high-voltage inspections or snow removal.',
+      'Reorganized the site around the exact sequence municipal and corporate facility buyers use to vet contractors: core solar maintenance services, past project capacity, safety credentials, and direct contact paths.',
   },
   {
-    title: 'Visuals',
+    title: 'Japanese Typography & Grids',
     image: solution2,
-    heading: 'Dated Presentation',
+    heading: 'High-Density Clarity Without Clutter',
     description:
-      'Mismatched colors, low-contrast yellow text overlays, and cramped spacing made a licensed electrical contractor look like an unmaintained side project.',
+      'Japanese infrastructure buyers expect thorough technical documentation upfront. I tuned line heights, font weights, and modular card grouping so dense service specs stay easy to scan on both desktop and mobile.',
   },
   {
-    title: 'Operations',
+    title: 'Trust & Credibility Signals',
     image: solution3,
-    heading: 'Stalled Content Workflow',
+    heading: 'Upfront Track Record & Licensing Proof',
     description:
-      'The old WordPress backend intimidated the office staff, leaving the news feed frozen for three years and making the business look inactive to prospective buyers.',
+      'Surfaced key operational proof points, including their 5 MW+ maintenance track record, licensing compliance, and regional client history, giving decision-makers immediate confidence before reaching out.',
   },
 ]
 
 const afterTabs = [
   {
-    title: 'Architecture',
+    title: 'Phone-First Conversion',
     image: solution4,
-    heading: 'Scannable B2B Hierarchy',
+    heading: 'Persistent Call Actions & Streamlined Inquiry Flow',
     description:
-      'Restructured the navigation around how facility buyers vet vendors: core maintenance services, completed installation capacity, company credentials, and direct contact paths.',
+      'Aligned conversion paths with real Japanese B2B habits by pairing prominent tap-to-call buttons and clear office hours with a friction-free Netlify contact form for written quote requests.',
   },
   {
-    title: 'Design System',
+    title: 'Visual & Brand System',
     image: solution5,
-    heading: 'Structured Japanese UI',
+    heading: 'Cohesive Industrial Identity',
     description:
-      'Built a clean grid and Japanese typography system that respects local expectations for thorough documentation while using whitespace and card grouping to prevent visual fatigue.',
+      'Established a unified visual system built on clean technical blues, balanced whitespace, and modular service cards that reflect a licensed commercial electrical contractor.',
   },
   {
-    title: 'Conversion & CMS',
+    title: 'Contentful CMS Workflow',
     image: solution6,
-    heading: 'Phone-First CTAs & Simple Publishing',
+    heading: 'Friction-Free Publishing for Office Staff',
     description:
-      'Paired persistent phone call actions with a simplified contact form for buyers, while replacing WordPress with a clean Contentful workflow for the internal team.',
+      'Replaced an overwhelming WordPress dashboard with a focused Contentful setup and global rich-text styling, enabling non-technical staff to publish news and project updates independently.',
   },
   {
     image: solution7,
@@ -257,13 +257,13 @@ const reflections = [
     />
     <CaseSolution
       id="solution-section"
-      introText="Rather than applying a generic template, I built a custom design system tailored to Japanese B2B expectations. Every layout decision focused on helping buyers verify credibility quickly while keeping the site simple for a small office team to maintain."
-      introText2="I focused on three practical fixes: restructuring the site around how buyers vet contractors, designing a clean Japanese typographic hierarchy that handles dense information without clutter, and replacing WordPress with a lightweight Contentful workflow."
-      introText3="Below is a look at what held the old site back and how the new architecture solves both buyer trust and internal maintenance."
+      introText="I built a custom design system tailored to Japanese B2B expectations, focusing on helping facility managers verify credibility quickly while keeping day-to-day updates effortless for a small office team."
+      introText2="The rebuild centered on three core pillars: structuring service information around how buyers vet contractors, designing a clean Japanese typographic hierarchy that handles dense technical specs without clutter, and replacing WordPress with a focused Contentful publishing workflow."
+      introText3="Below is a breakdown of the key UX, visual, and technical features across the redesigned site."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="Before Redesign"
-      afterTitle="After Redesign"
+      beforeTitle="UX & Structure"
+      afterTitle="Conversion & CMS"
       hmwTitle="Key Design Questions"
       hmwIntro="Three practical questions kept the rebuild focused on buyer trust and day-to-day usability."
       :hmwItems="[

@@ -26,29 +26,87 @@ let ctx
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    gsap.from('.reflections-reveal', {
-      y: 24,
-      opacity: 0,
-      duration: 0.65,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: reflectionsRoot.value,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
+    const mm = gsap.matchMedia()
+
+    // Desktop: Directional 2-column & 2-column grid choreography that re-triggers on scroll
+    mm.add('(min-width: 1024px)', () => {
+      // 1. Top Reflections Split (Title slides from left, Intro slides from right)
+      const topTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.reflections-top-grid',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      topTl
+        .from('.reflections-main-col', {
+          x: -36,
+          opacity: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+        })
+        .from(
+          '.reflections-intro-col',
+          {
+            x: 36,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+          },
+          '-=0.55',
+        )
+
+      // 2. Reflection Cards Grid (Left column cards from left, right column cards from right)
+      const cards = gsap.utils.toArray('.reflection-item')
+
+      gsap.from(cards, {
+        x: (idx) => (idx % 2 === 0 ? -28 : 28),
+        y: 16,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.reflections-list',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
     })
 
-    gsap.from('.reflection-item', {
-      y: 24,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.reflections-list',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
+    // Mobile & Tablet: Clean vertical reveals without horizontal overflow
+    mm.add('(max-width: 1023px)', () => {
+      gsap.from('.reflections-reveal', {
+        y: 24,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.reflections-top-grid',
+          start: 'top 88%',
+          end: 'bottom 12%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      const mobileCards = gsap.utils.toArray('.reflection-item')
+      mobileCards.forEach((card) => {
+        gsap.from(card, {
+          y: 22,
+          opacity: 0,
+          duration: 0.55,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play reverse play reverse',
+          },
+        })
+      })
     })
   }, reflectionsRoot.value)
 })
@@ -62,7 +120,7 @@ onUnmounted(() => {
   <section
     :id="id || 'reflections-section'"
     ref="reflectionsRoot"
-    class="pt-20 md:pt-28 max-w-7xl mx-auto"
+    class="pt-20 md:pt-28 max-w-7xl mx-auto overflow-x-clip"
   >
     <!-- Top 2-Column Split -->
     <div class="reflections-reveal reflections-top-grid">
@@ -99,6 +157,8 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.reflections-main-col,
+.reflections-intro-col,
 .reflections-reveal,
 .reflection-item {
   will-change: transform, opacity;

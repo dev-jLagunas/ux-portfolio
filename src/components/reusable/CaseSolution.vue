@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { IconPlus, IconX, IconHelpCircle } from '@tabler/icons-vue'
@@ -70,6 +70,8 @@ const extraScreens = computed(() => {
 })
 
 const solutionRoot = ref(null)
+const featureCopyRef = ref(null)
+const featureMediaRef = ref(null)
 const activeFeatureIdx = ref(0)
 const isModalOpen = ref(false)
 const modalData = ref(null)
@@ -85,15 +87,65 @@ const clearDemoTimers = () => {
 
 const selectTab = (idx) => {
   clearDemoTimers()
+  if (idx === activeFeatureIdx.value) return
   activeFeatureIdx.value = idx
 }
+
+// Smooth directional transition whenever the active feature tab changes
+watch(activeFeatureIdx, async () => {
+  await nextTick()
+  if (!featureCopyRef.value) return
+
+  const isDesktop = window.innerWidth >= 1024
+  const targets = featureMediaRef.value
+    ? [featureCopyRef.value, featureMediaRef.value]
+    : [featureCopyRef.value]
+
+  gsap.killTweensOf(targets)
+
+  if (isDesktop) {
+    gsap.fromTo(
+      featureCopyRef.value,
+      { x: -22, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.45, ease: 'power3.out', clearProps: 'transform' },
+    )
+    if (featureMediaRef.value) {
+      gsap.fromTo(
+        featureMediaRef.value,
+        { x: 22, opacity: 0, scale: 0.98 },
+        {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.45,
+          ease: 'power3.out',
+          clearProps: 'transform',
+        },
+      )
+    }
+  } else {
+    gsap.fromTo(
+      targets,
+      { y: 12, opacity: 0, scale: 0.985 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.38,
+        stagger: 0.06,
+        ease: 'power2.out',
+        clearProps: 'transform',
+      },
+    )
+  }
+})
 
 const runTabPreviewCycle = () => {
   const count = featureItems.value.length
   if (hasRunDemo.value || count <= 1) return
   hasRunDemo.value = true
 
-  const stepMs = 260
+  const stepMs = 340
 
   for (let i = 1; i <= count; i++) {
     const timerId = setTimeout(() => {
@@ -134,31 +186,134 @@ const closeModal = () => {
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    const blocks = gsap.utils.toArray('.solution-reveal')
+    const mm = gsap.matchMedia()
 
-    blocks.forEach((block) => {
-      gsap.from(block, {
-        y: 24,
-        opacity: 0,
-        duration: 0.65,
-        ease: 'power2.out',
+    // Desktop: Directional 2-column choreography that re-triggers on scroll
+    mm.add('(min-width: 1024px)', () => {
+      // 1. Top Solution Split (Left slides from left, Aside slides from right)
+      const topTl = gsap.timeline({
         scrollTrigger: {
-          trigger: block,
-          start: 'top 88%',
-          toggleActions: 'play none none reverse',
+          trigger: '.solution-top-grid',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
         },
+      })
+
+      topTl
+        .from('.solution-main-col', {
+          x: -38,
+          opacity: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+        })
+        .from(
+          '.solution-aside-col',
+          {
+            x: 38,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+          },
+          '-=0.55',
+        )
+        .from(
+          '.hmw-card',
+          {
+            y: 16,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.08,
+            ease: 'power2.out',
+          },
+          '-=0.45',
+        )
+
+      // 2. System Breakdown Stage (Header from bottom, Left copy from left, Right mockup from right)
+      const breakdownTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.solution-breakdown-wrap',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      breakdownTl
+        .from('.solution-header-bar', {
+          y: 22,
+          opacity: 0,
+          duration: 0.55,
+          ease: 'power2.out',
+        })
+        .from(
+          '.solution-copy-col',
+          {
+            x: -34,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+          },
+          '-=0.3',
+        )
+        .from(
+          '.solution-media-col',
+          {
+            x: 34,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+          },
+          '-=0.6',
+        )
+
+      // 3. Additional Screens Strip (Staggered rise from bottom)
+      if (extraScreens.value.length) {
+        gsap.from('.solution-extra-card', {
+          y: 26,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.solution-extras-wrap',
+            start: 'top 86%',
+            end: 'bottom 15%',
+            toggleActions: 'play reverse play reverse',
+          },
+        })
+      }
+    })
+
+    // Mobile & Tablet: Clean vertical reveals without horizontal overflow
+    mm.add('(max-width: 1023px)', () => {
+      const mobileBlocks = gsap.utils.toArray('.solution-mobile-reveal')
+
+      mobileBlocks.forEach((block) => {
+        gsap.from(block, {
+          y: 24,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 88%',
+            end: 'bottom 12%',
+            toggleActions: 'play reverse play reverse',
+          },
+        })
       })
     })
 
-    // Quick one-time tab cycle when the System Breakdown enters view
+    // Quick one-time tab cycle when the System Breakdown enters view for the first time
     ScrollTrigger.create({
       trigger: '.solution-breakdown-wrap',
-      start: 'top 80%',
+      start: 'top 78%',
       once: true,
       onEnter: () => {
         const startDelay = setTimeout(() => {
           runTabPreviewCycle()
-        }, 350)
+        }, 550)
         demoTimers.push(startDelay)
       },
     })
@@ -175,10 +330,10 @@ onUnmounted(() => {
   <section
     :id="id || 'solution-section'"
     ref="solutionRoot"
-    class="pt-20 md:pt-48 max-w-7xl mx-auto"
+    class="pt-20 md:pt-48 max-w-7xl mx-auto overflow-x-clip"
   >
     <!-- Part 1: Solution Narrative + Key Design Questions -->
-    <div class="solution-reveal solution-top-grid">
+    <div class="solution-mobile-reveal solution-top-grid">
       <div class="solution-main-col">
         <span class="solution-eyebrow">Execution & Architecture</span>
         <h2 class="solution-title">The Solution</h2>
@@ -207,8 +362,8 @@ onUnmounted(() => {
     </div>
 
     <!-- Part 2: Interactive Feature & UI Explorer -->
-    <div v-if="featureItems.length" class="solution-reveal solution-breakdown-wrap mt-32">
-      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+    <div v-if="featureItems.length" class="solution-mobile-reveal solution-breakdown-wrap mt-32">
+      <div class="solution-header-bar flex flex-wrap items-center justify-between gap-4 mb-8">
         <div>
           <span class="solution-meta-label">System Breakdown</span>
           <h3 class="text-xl md:text-2xl font-black uppercase tracking-tight">
@@ -234,12 +389,8 @@ onUnmounted(() => {
       </div>
 
       <!-- Active Feature Stage -->
-      <div
-        v-if="featureItems[activeFeatureIdx]"
-        :key="activeFeatureIdx"
-        class="solution-stage-grid"
-      >
-        <div class="solution-copy-col">
+      <div v-if="featureItems[activeFeatureIdx]" class="solution-stage-grid">
+        <div ref="featureCopyRef" class="solution-copy-col">
           <div class="flex items-center gap-3">
             <span class="solution-index-label">
               0{{ activeFeatureIdx + 1 }} / 0{{ featureItems.length }}
@@ -263,7 +414,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <div class="solution-media-col">
+        <div ref="featureMediaRef" class="solution-media-col">
           <div
             v-if="featureItems[activeFeatureIdx].image"
             class="solution-img-wrapper group"
@@ -284,7 +435,7 @@ onUnmounted(() => {
     </div>
 
     <!-- Part 3: Additional Screens Strip (if extra screenshots exist) -->
-    <div v-if="extraScreens.length" class="solution-reveal mt-16">
+    <div v-if="extraScreens.length" class="solution-mobile-reveal solution-extras-wrap mt-16">
       <span class="solution-meta-label mb-4">Additional Views</span>
       <div class="solution-extras-grid">
         <div
@@ -359,7 +510,14 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.solution-reveal {
+.solution-main-col,
+.solution-aside-col,
+.hmw-card,
+.solution-header-bar,
+.solution-copy-col,
+.solution-media-col,
+.solution-extra-card,
+.solution-mobile-reveal {
   will-change: transform, opacity;
 }
 </style>

@@ -34,30 +34,87 @@ let ctx
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    gsap.from('.outcome-reveal', {
-      y: 24,
-      opacity: 0,
-      duration: 0.65,
-      stagger: 0.1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: outcomeRoot.value,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
+    const mm = gsap.matchMedia()
+
+    // Desktop: Directional 2-column & 2x2 grid choreography that re-triggers on scroll
+    mm.add('(min-width: 1024px)', () => {
+      // 1. Top Outcome Split (Left slides from left, Context box slides from right)
+      const topTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.outcome-top-grid',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      topTl
+        .from('.outcome-main-col', {
+          x: -36,
+          opacity: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+        })
+        .from(
+          '.outcome-context-col',
+          {
+            x: 36,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+          },
+          '-=0.55',
+        )
+
+      // 2. 2x2 Outcome Cards (Left column cards from left, right column cards from right)
+      const cards = gsap.utils.toArray('.outcome-card')
+
+      gsap.from(cards, {
+        x: (idx) => (idx % 2 === 0 ? -28 : 28),
+        y: 16,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.outcome-card-grid',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
     })
 
-    gsap.from('.outcome-card', {
-      y: 24,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.outcome-card-grid',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
+    // Mobile & Tablet: Clean vertical reveals without horizontal overflow
+    mm.add('(max-width: 1023px)', () => {
+      gsap.from('.outcome-reveal', {
+        y: 24,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.outcome-top-grid',
+          start: 'top 88%',
+          end: 'bottom 12%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      const mobileCards = gsap.utils.toArray('.outcome-card')
+      mobileCards.forEach((card) => {
+        gsap.from(card, {
+          y: 22,
+          opacity: 0,
+          duration: 0.55,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play reverse play reverse',
+          },
+        })
+      })
     })
   }, outcomeRoot.value)
 })
@@ -71,7 +128,7 @@ onUnmounted(() => {
   <section
     :id="id || 'outcome-section'"
     ref="outcomeRoot"
-    class="pt-20 md:pt-28 md:my-32 max-w-7xl mx-auto"
+    class="pt-20 md:pt-24 max-w-7xl mx-auto overflow-x-clip"
   >
     <!-- Top 2-Column Split -->
     <div class="outcome-reveal outcome-top-grid">
@@ -109,6 +166,8 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.outcome-main-col,
+.outcome-context-col,
 .outcome-reveal,
 .outcome-card {
   will-change: transform, opacity;

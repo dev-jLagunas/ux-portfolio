@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { IconPlus, IconX, IconQuote } from '@tabler/icons-vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -7,10 +7,85 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const isModalOpen = ref(false)
 const activeArtifactIdx = ref(0)
 const sectionRef = ref(null)
+const artifactCopyRef = ref(null)
+const artifactMediaRef = ref(null)
 
 let ctx
+let demoTimers = []
+const hasRunDemo = ref(false)
+
+const clearDemoTimers = () => {
+  demoTimers.forEach((id) => clearTimeout(id))
+  demoTimers = []
+}
+
+const selectArtifactTab = (idx) => {
+  clearDemoTimers()
+  if (idx === activeArtifactIdx.value) return
+  activeArtifactIdx.value = idx
+}
+
+// Smooth directional transition whenever the active artifact tab changes
+watch(activeArtifactIdx, async () => {
+  await nextTick()
+  if (!artifactCopyRef.value || !artifactMediaRef.value) return
+
+  const isDesktop = window.innerWidth >= 1024
+
+  gsap.killTweensOf([artifactCopyRef.value, artifactMediaRef.value])
+
+  if (isDesktop) {
+    gsap.fromTo(
+      artifactCopyRef.value,
+      { x: -22, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.45, ease: 'power3.out', clearProps: 'transform' },
+    )
+    gsap.fromTo(
+      artifactMediaRef.value,
+      { x: 22, opacity: 0, scale: 0.98 },
+      {
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.45,
+        ease: 'power3.out',
+        clearProps: 'transform',
+      },
+    )
+  } else {
+    gsap.fromTo(
+      [artifactCopyRef.value, artifactMediaRef.value],
+      { y: 12, opacity: 0, scale: 0.985 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.38,
+        stagger: 0.06,
+        ease: 'power2.out',
+        clearProps: 'transform',
+      },
+    )
+  }
+})
+
+const runArtifactPreviewCycle = () => {
+  const count = props.artifacts?.length || 0
+  if (hasRunDemo.value || count <= 1) return
+  hasRunDemo.value = true
+
+  const stepMs = 340
+
+  for (let i = 1; i <= count; i++) {
+    const timerId = setTimeout(() => {
+      activeArtifactIdx.value = i === count ? 0 : i
+    }, i * stepMs)
+    demoTimers.push(timerId)
+  }
+}
 
 const openModal = (idx) => {
+  clearDemoTimers()
   activeArtifactIdx.value = idx
   isModalOpen.value = true
 }
@@ -19,25 +94,143 @@ onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
   ctx = gsap.context(() => {
-    const blocks = gsap.utils.toArray('.problem-reveal')
+    const mm = gsap.matchMedia()
 
-    blocks.forEach((block) => {
-      gsap.from(block, {
-        y: 24,
-        opacity: 0,
-        duration: 0.65,
-        ease: 'power2.out',
+    // Desktop: Directional 2-column choreography that re-triggers on scroll
+    mm.add('(min-width: 1024px)', () => {
+      // 1. Top Problem Split (Left slides from left, Aside slides from right)
+      const topTl = gsap.timeline({
         scrollTrigger: {
-          trigger: block,
-          start: 'top 88%',
-          toggleActions: 'play none none reverse',
+          trigger: '.problem-top-grid',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
         },
       })
+
+      topTl
+        .from('.problem-main-col', {
+          x: -38,
+          opacity: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+        })
+        .from(
+          '.problem-aside-col',
+          {
+            x: 38,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+          },
+          '-=0.55',
+        )
+
+      // 2. Research Intro + Staggered 3-Column Cards from bottom
+      const researchTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.problem-research-wrap',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      researchTl
+        .from('.problem-research-intro', {
+          y: 24,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+        })
+        .from(
+          '.research-row',
+          {
+            y: 28,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.12,
+            ease: 'power2.out',
+          },
+          '-=0.35',
+        )
+
+      // 3. Research Artifacts Stage (Header from bottom, Left card from left, Right image from right)
+      const artifactTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.artifact-section-wrap',
+          start: 'top 84%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse',
+        },
+      })
+
+      artifactTl
+        .from('.artifact-header-bar', {
+          y: 22,
+          opacity: 0,
+          duration: 0.55,
+          ease: 'power2.out',
+        })
+        .from(
+          '.artifact-copy-col',
+          {
+            x: -34,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+          },
+          '-=0.3',
+        )
+        .from(
+          '.artifact-media-col',
+          {
+            x: 34,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+          },
+          '-=0.6',
+        )
+    })
+
+    // Mobile & Tablet: Clean vertical reveals without horizontal overflow
+    mm.add('(max-width: 1023px)', () => {
+      const mobileBlocks = gsap.utils.toArray('.problem-mobile-reveal')
+
+      mobileBlocks.forEach((block) => {
+        gsap.from(block, {
+          y: 24,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 88%',
+            end: 'bottom 12%',
+            toggleActions: 'play reverse play reverse',
+          },
+        })
+      })
+    })
+
+    // Quick one-time tab cycle when Research Artifacts enters view for the first time
+    ScrollTrigger.create({
+      trigger: '.artifact-section-wrap',
+      start: 'top 78%',
+      once: true,
+      onEnter: () => {
+        const startDelay = setTimeout(() => {
+          runArtifactPreviewCycle()
+        }, 550)
+        demoTimers.push(startDelay)
+      },
     })
   }, sectionRef.value)
 })
 
 onUnmounted(() => {
+  clearDemoTimers()
   if (ctx) ctx.revert()
 })
 
@@ -64,9 +257,13 @@ const props = defineProps({
 </script>
 
 <template>
-  <section :id="id || 'problem-section'" ref="sectionRef" class="pt-20 md:pt-28 max-w-7xl mx-auto">
+  <section
+    :id="id || 'problem-section'"
+    ref="sectionRef"
+    class="pt-20 md:pt-28 max-w-7xl mx-auto overflow-x-clip"
+  >
     <!-- Part 1: Problem Framing + Anchor Quote & Key Takeaway -->
-    <div class="problem-reveal problem-top-grid">
+    <div class="problem-mobile-reveal problem-top-grid">
       <div class="problem-main-col">
         <span class="problem-eyebrow">Discovery & Friction</span>
         <h2 class="problem-title">The Problem</h2>
@@ -93,9 +290,9 @@ const props = defineProps({
     <!-- Part 2: Research Approach & Methods -->
     <div
       v-if="userResearchIntro || (researchMethods && researchMethods.length)"
-      class="problem-reveal mt-16"
+      class="problem-mobile-reveal problem-research-wrap mt-16"
     >
-      <div class="max-w-7xl mb-8">
+      <div class="problem-research-intro max-w-7xl mb-8">
         <span class="problem-meta-label">Research & Validation</span>
         <p class="text-base md:text-lg leading-relaxed mt-2">
           {{ userResearchIntro }}
@@ -116,8 +313,11 @@ const props = defineProps({
     </div>
 
     <!-- Part 3: Tabbed Research Artifacts -->
-    <div v-if="artifacts && artifacts.length" class="problem-reveal mt-32">
-      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+    <div
+      v-if="artifacts && artifacts.length"
+      class="problem-mobile-reveal artifact-section-wrap mt-32"
+    >
+      <div class="artifact-header-bar flex flex-wrap items-center justify-between gap-4 mb-8">
         <div>
           <span class="problem-meta-label">Research Artifacts</span>
           <h3 class="text-xl md:text-2xl font-black uppercase tracking-tight">
@@ -132,7 +332,7 @@ const props = defineProps({
             type="button"
             role="tab"
             :aria-selected="activeArtifactIdx === idx"
-            @click="activeArtifactIdx = idx"
+            @click="selectArtifactTab(idx)"
             class="artifact-tab-btn"
             :class="{ 'is-active': activeArtifactIdx === idx }"
           >
@@ -141,31 +341,36 @@ const props = defineProps({
         </div>
       </div>
 
-      <div v-if="artifacts[activeArtifactIdx]" :key="activeArtifactIdx" class="artifact-stage-grid">
-        <div class="artifact-copy-col">
-          <span class="artifact-index-label"
-            >0{{ activeArtifactIdx + 1 }} / 0{{ artifacts.length }}</span
-          >
-          <h4 class="artifact-heading">{{ artifacts[activeArtifactIdx].caption }}</h4>
+      <div v-if="artifacts[activeArtifactIdx]" class="artifact-stage-grid">
+        <div
+          ref="artifactCopyRef"
+          class="artifact-copy-col artifact-texture-wrap rounded-2xl p-6 md:p-8 relative overflow-hidden"
+        >
+          <div class="relative z-10 flex flex-col gap-4">
+            <span class="artifact-index-label"
+              >0{{ activeArtifactIdx + 1 }} / 0{{ artifacts.length }}</span
+            >
+            <h4 class="artifact-heading">{{ artifacts[activeArtifactIdx].caption }}</h4>
 
-          <div v-if="artifacts[activeArtifactIdx].statementDetails" class="artifact-callout">
-            <span class="artifact-callout-label">
-              {{ artifacts[activeArtifactIdx].statement }}
-            </span>
-            <p class="artifact-callout-text">
-              {{ artifacts[activeArtifactIdx].statementDetails }}
+            <div v-if="artifacts[activeArtifactIdx].statementDetails" class="artifact-callout">
+              <span class="artifact-callout-label">
+                {{ artifacts[activeArtifactIdx].statement }}
+              </span>
+              <p class="artifact-callout-text">
+                {{ artifacts[activeArtifactIdx].statementDetails }}
+              </p>
+            </div>
+
+            <p
+              v-if="artifacts[activeArtifactIdx].blurb"
+              class="text-base md:text-lg leading-relaxed opacity-90"
+            >
+              {{ artifacts[activeArtifactIdx].blurb }}
             </p>
           </div>
-
-          <p
-            v-if="artifacts[activeArtifactIdx].blurb"
-            class="text-base md:text-lg leading-relaxed opacity-90"
-          >
-            {{ artifacts[activeArtifactIdx].blurb }}
-          </p>
         </div>
 
-        <div class="artifact-media-col">
+        <div ref="artifactMediaRef" class="artifact-media-col">
           <div class="editorial-img-wrapper group" @click="openModal(activeArtifactIdx)">
             <img
               :src="artifacts[activeArtifactIdx].imageSrc"
@@ -234,7 +439,28 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.problem-reveal {
+.problem-main-col,
+.problem-aside-col,
+.problem-research-intro,
+.research-row,
+.artifact-header-bar,
+.artifact-copy-col,
+.artifact-media-col,
+.problem-mobile-reveal {
   will-change: transform, opacity;
+}
+
+.artifact-texture-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 2 L30 16 L16 30 L2 16 Z' fill='none' stroke='%23000000' stroke-opacity='0.030' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 28px 28px;
+  z-index: 0;
+}
+
+:global(.dark) .artifact-texture-wrap::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 2 L30 16 L16 30 L2 16 Z' fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1'/%3E%3C/svg%3E");
 }
 </style>
