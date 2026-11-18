@@ -47,32 +47,32 @@ import userImg from '@/assets/svgs/research/user-research.svg'
 import denkiVideoLight from '@/assets/images/cases/case-six/denki-video-light.mp4'
 import denkiVideoDark from '@/assets/images/cases/case-six/denki-video-dark.mp4'
 
-const uxIntro = `A quick breakdown of how this project came together from strategy to launch. This TLDR highlights the key steps I took, the decisions that shaped the final experience, and how the redesign supported Tanaka Denki’s business goals.`
-const uxSubheading = 'Project Workflow at a Glance'
+const uxIntro = `How I took this rebuild from initial discovery and wireframes to a live production site as a solo freelance designer.`
+const uxSubheading = 'How It Came Together'
 
 const icons = [smileIcon, thumbsIcon, upwardIcon, medalIcon]
 
 // Outcome Data & Icons
 const outcomeList = [
   {
-    title: 'Clearer Service Understanding',
+    title: 'Active Inquiry Pipeline',
     description:
-      'Users quickly understood what Tanaka Denki offers. Streamlined hierarchy and clearer copy reduced confusion and helped visitors reach high-value pages like Services and Projects without drop-offs.',
+      'While phone calls remain the primary channel in Japanese B2B, the redesigned site began generating consistent email inquiries through the new contact flow, proving visitors could actually find and trust the service offerings.',
   },
   {
-    title: 'Stronger Contact Intent',
+    title: 'Zero-Bottleneck Publishing',
     description:
-      'Early analytics showed more clicks on both the phone CTA and contact button. With a cleaner layout and mobile-first design, visitors moved from browsing to action faster and with less friction.',
+      'Moving off a bloated WordPress dashboard to a focused Contentful setup eliminated a three-year content stall. Non-technical staff can now publish company news and project updates without calling a developer.',
   },
   {
-    title: 'Credibility Boost',
+    title: 'Stronger B2B Positioning',
     description:
-      'Stakeholders and early testers described the site as more professional and trustworthy. This stronger first impression supports B2B decision-making and positions Tanaka Denki as a reliable local partner.',
+      'Company leadership noted an immediate lift in client perception when sharing the URL during sales introductions, aligning their digital presence with the scale of their commercial and municipal contracts.',
   },
   {
-    title: 'Improved Engagement',
+    title: 'Ongoing Client Retention',
     description:
-      'Pages held attention longer due to better readability, structure, and visuals. Mobile users in particular scrolled deeper and explored more sections, signaling higher overall engagement.',
+      'Since launch, the client has re-engaged me to scope and build additional site features to support their expansion into a new headquarters facility.',
   },
 ]
 
@@ -81,47 +81,47 @@ const beforeTabs = [
   {
     title: 'Navigation',
     image: solution1,
-    heading: 'Unstructured Layout',
+    heading: 'Buried Service Scope',
     description:
-      'Pages were long, dense, and inconsistent. Key information like services, certifications, and past work was buried. Users had to scroll and guess where things were. This slowed evaluation and hurt credibility.',
+      'Pages ran long without clear visual anchors, forcing facility managers to dig through walls of text just to confirm whether the company handled high-voltage inspections or snow removal.',
   },
   {
-    title: 'Branding',
+    title: 'Visuals',
     image: solution2,
-    heading: 'Outdated Visuals',
+    heading: 'Dated Presentation',
     description:
-      'The old site relied on mismatched colors, unbalanced spacing, and non-branded components. To B2B users, this created doubt about professionalism. The digital impression did not match the quality of the real company.',
+      'Mismatched colors, low-contrast yellow text overlays, and cramped spacing made a licensed electrical contractor look like an unmaintained side project.',
   },
   {
-    title: 'Trust Signals',
+    title: 'Operations',
     image: solution3,
-    heading: 'Low Transparency',
+    heading: 'Stalled Content Workflow',
     description:
-      'Certifications, project history, and safety compliance were missing or hard to find. For municipal and industrial clients, these signals are essential for risk reduction. Without them, the company looked less reliable than it actually is.',
+      'The old WordPress backend intimidated the office staff, leaving the news feed frozen for three years and making the business look inactive to prospective buyers.',
   },
 ]
 
 const afterTabs = [
   {
-    title: 'Navigation',
+    title: 'Architecture',
     image: solution4,
-    heading: 'Clear Information Architecture',
+    heading: 'Scannable B2B Hierarchy',
     description:
-      'I reorganized the site into simple, predictable sections: Services, Projects, Company Info, Certifications, and Contact. Users now find what they need in seconds. This directly supports faster vendor evaluation and fewer drop-offs.',
+      'Restructured the navigation around how facility buyers vet vendors: core maintenance services, completed installation capacity, company credentials, and direct contact paths.',
   },
   {
-    title: 'Branding',
+    title: 'Design System',
     image: solution5,
-    heading: 'Modern and Consistent UI',
+    heading: 'Structured Japanese UI',
     description:
-      'I introduced a fully unified design system: spacing rules, typography, color usage, layout patterns, and component styling. The brand now communicates stability and expertise, increasing perceived trust at first glance.',
+      'Built a clean grid and Japanese typography system that respects local expectations for thorough documentation while using whitespace and card grouping to prevent visual fatigue.',
   },
   {
-    title: 'Trust Signals',
+    title: 'Conversion & CMS',
     image: solution6,
-    heading: 'Proof of Expertise',
+    heading: 'Phone-First CTAs & Simple Publishing',
     description:
-      'Certifications, past projects, safety information, and company credentials are now front and center. These updates directly reduce user hesitation and give decision-makers the confidence to follow through with inquiries.',
+      'Paired persistent phone call actions with a simplified contact form for buyers, while replacing WordPress with a clean Contentful workflow for the internal team.',
   },
   {
     image: solution7,
@@ -137,40 +137,28 @@ const afterTabs = [
 // Reflections Data
 const reflections = [
   {
-    title: 'Freelance work demands clarity.',
+    title: 'Working solo means owning every trade-off.',
     icon: arrowBlue,
     description:
-      'Working directly with stakeholders taught me the value of fast communication, structured updates, and guiding clients through each UX decision with confidence.',
+      'Without a separate PM, copywriter, or dev team, I had to balance visual polish against practical maintenance. Every design choice had to be something I could build cleanly and the client could actually run.',
   },
   {
-    title: 'Designing across cultures requires adaptation.',
+    title: 'Western minimalism does not always translate in Japan.',
     icon: arrowPink,
     description:
-      'Japanese UX norms prioritize detail and upfront information. Balancing that expectation with modern IA pushed me to adapt my process instead of relying on Western standards.',
+      'Stripping away text to make the site look sleek would have hurt trust. Japanese B2B buyers look for thorough technical details upfront, so the real design problem was organizing density, not deleting it.',
   },
   {
-    title: 'Brand identity must support business goals.',
+    title: 'Internal staff are users too.',
     icon: arrowBlue,
     description:
-      'I had to modernize the brand without disconnecting it from its industry. The design needed to feel clean and reliable, but still approachable and local. Every decision aimed at building trust quickly.',
+      'A redesign fails if the site goes stale six months later. Watching office staff struggle with WordPress made it clear that simplifying the publishing workflow was just as critical as fixing the public homepage.',
   },
   {
-    title: 'International UX requires precision.',
+    title: 'Stakeholder alignment happens in the details.',
     icon: arrowPink,
     description:
-      'Working in Japanese, handling content in two languages, and presenting to stakeholders in their native language made accuracy essential. It strengthened my attention to detail and cross-cultural communication.',
-  },
-  {
-    title: 'Complex systems need simple foundations.',
-    icon: arrowBlue,
-    description:
-      'Between CMS structure, form handling, and technical constraints, the build had many moving parts. Clear architecture and clean documentation made the final product stable and scalable.',
-  },
-  {
-    title: 'This project expanded my range.',
-    icon: arrowPink,
-    description:
-      'It blended UX, UI, branding, development, and client management. It improved my ability to deliver professional work end to end, even under real-world constraints and cultural expectations.',
+      'Conducting discovery, presenting design rationale, and iterating on technical copy directly in Japanese pushed me to communicate clearly and translate vague business requests into concrete UI decisions.',
   },
 ]
 </script>
@@ -193,45 +181,45 @@ const reflections = [
       url="https://tdss.co.jp"
       workTitle="Tanaka Denki Website Redesign"
       :tags="[
-        'UX Research',
+        'Product Design',
         'Information Architecture',
-        'Visual Design',
-        'Front-End Development',
-        'CMS Integration',
+        'Design Systems',
+        'Japanese UX',
+        'End-to-End Delivery',
       ]"
       :videoSrc="denkiVideo"
       :paragraphs="[
-        'Tanaka Denki Service is a solar maintenance company based in Ishikawa, Japan. Their existing WordPress site had not been updated in years and no longer reflected the professionalism or reliability of their business. The content was difficult to scan, visually outdated, and overwhelming for internal staff to maintain.',
-        'I partnered with the company to redesign the entire website using Nuxt 4, Tailwind CSS, and a streamlined Contentful CMS. My focus was improving clarity, communication, and trust for their core audience, which includes universities, public institutions, and medium-sized businesses across the region. The result is a modern, mobile-first, and easy-to-maintain website that supports stronger communication and long-term business growth.',
+        'Tanaka Denki System Services (TDSS) is a 20-person commercial solar maintenance company in Ishikawa, Japan. When they brought me on as a solo freelance designer, their website had not been updated in three years. Cluttered layouts and a confusing WordPress backend left them with an outdated digital brochure that undermined their credibility with corporate and municipal clients.',
+        'I owned the entire rebuild from initial discovery and information architecture to visual design, front-end production, and CMS setup. The goal was straightforward: give B2B facility managers a clear, trustworthy way to verify services and initiate contact, while giving internal staff a publishing setup they could actually use.',
       ]"
-      role="UX Designer, UX Researcher, Developer"
-      date="November – December 2025"
+      role="Lead Product Designer (End-to-End Freelance)"
+      date="November - December 2025"
       toolkit="Figma, Nuxt 4, Tailwind CSS, Contentful, Netlify"
       pdfFile="case-study-denki.pdf"
     />
     <CaseProblem
       id="problem-section"
-      problemStatement="Tanaka Denki’s original website lacked clarity, structure, and credibility. Key services were buried, contact information was inconsistent, and the visual design did not reflect the professionalism of a licensed electrical safety contractor. For a company whose work focuses on compliance, inspections, and long-term maintenance, the site failed to communicate reliability or expertise."
-      problemStatementB="Navigation issues and poor information hierarchy made it difficult for decision-makers to understand what the company offered. The outdated WordPress build also required manual upkeep that the team rarely performed. As a result, the site did little to support sales, trust building, or long-term client acquisition."
-      userResearchIntro="I approached the redesign with a clear goal: understand how corporate and public-sector clients evaluate maintenance vendors and identify the friction points that slowed their decision process. Through market research, competitor analysis, and stakeholder conversations, patterns quickly emerged that shaped the strategic direction of the new site."
+      problemStatement="TDSS maintains solar infrastructure for commercial plants, universities, and municipal buildings, yet their website looked neglected. Key service details were buried in dense, unformatted blocks, low-contrast yellow text hurt readability, and inconsistent layouts made it hard for facility buyers to verify licensing and scope."
+      problemStatementB="The problem was not just visual. Because the legacy WordPress dashboard was intimidating for non-technical staff, nobody updated the site for three years. In Japanese B2B contracting, an inactive website signals operational risk, hurting sales conversations before a buyer ever picks up the phone."
+      userResearchIntro="Before touching layouts, I audited the existing site, reviewed five regional solar maintenance competitors, and interviewed company leadership and staff to see how buyers actually evaluate vendors and where internal workflows broke down."
       :research-methods="[
         {
-          caption: 'Competitive Analysis',
+          caption: 'Competitive Audit',
           imageSrc: analysisImg,
           description:
-            'Reviewed 5 regional solar maintenance websites to identify common UX gaps and benchmark communication standards.',
+            'Benchmarked 5 regional solar contractors to see how competitors structure compliance proof, service tiers, and high-density technical specs.',
         },
         {
           caption: 'Stakeholder Interviews',
           imageSrc: userImg,
           description:
-            'Spoke directly with leadership to understand operational needs, client expectations, and internal limitations around updating content.',
+            'Interviewed leadership and office staff to map sales workflows, phone inquiry habits, and why internal CMS updates had stalled.',
         },
         {
-          caption: 'Market Research',
+          caption: 'Buyer Vetting Research',
           imageSrc: storeImg,
           description:
-            'Studied how municipalities and companies in Japan vet contractors, with a focus on clarity, compliance, and visual trust signals.',
+            'Analyzed how municipal and manufacturing buyers in Japan screen electrical contractors, focusing on trust signals and contact preferences.',
         },
       ]"
       :artifacts="[
@@ -239,18 +227,18 @@ const reflections = [
           caption: 'Persona',
           statement: 'Goal',
           statementDetails:
-            'Communicate safety and reliability at a glance while providing municipal staff with a friction-free path to verify services and initiate contact.',
+            'Let municipal and corporate facility managers confirm service scope, safety compliance, and contact details within seconds of landing.',
           blurb:
-            'Mr. Nakamura’s profile highlighted the weight of trust signals in public-sector decision-making. This led to a structured hierarchy focused on certifications and direct, transparent contact paths.',
+            'Public-sector buyers like Mr. Nakamura visit vendor sites after receiving a business card or referral. If the site looks disorganized, they question the contractor’s field reliability.',
           imageSrc: personaNakamura,
         },
         {
           caption: 'Empathy',
           statement: 'Problem',
           statementDetails:
-            'Cluttered or outdated vendor sites create uncertainty for municipal managers, slowing critical decisions regarding service scope and regulatory compliance.',
+            'Dense, unstructured pages and buried phone numbers create friction for busy managers comparing multiple maintenance vendors.',
           blurb:
-            'Mapping his frustrations revealed a deep need for professional presentation. This directly influenced our decision to prioritize trust signals and phone-first communication in the global CTA strategy.',
+            'Mapping buyer frustrations confirmed that aggressive web forms are secondary in Japanese B2B. Decision-makers want visible credentials and an immediate phone number.',
           imageSrc: empathyMapNakamura,
         },
 
@@ -258,53 +246,55 @@ const reflections = [
           caption: 'Journey Map',
           statement: 'Hypothesis',
           statementDetails:
-            'A clean hierarchy paired with visible compliance signals will give municipal users the confidence to move from site-scanning to requesting formal inspections.',
+            'Pairing scannable service grids with upfront track-record metrics and persistent phone CTAs will shorten vendor evaluation and increase inquiries.',
           blurb:
-            'Tracing his workflow identified major pain points in cognitive load. We addressed these by streamlining the path from service discovery to credibility verification and final contact.',
+            'Tracing the path from initial referral check to inquiry showed exactly where buyers stalled: verifying past installation capacity and finding direct contact hours.',
           imageSrc: journeyNakamura,
         },
       ]"
-      takeaway="B2B clients depend on clarity, speed, and professionalism when choosing a maintenance partner. By understanding their decision flow and expectations, the redesign positioned Tanaka Denki as a reliable, compliant, and easy-to-contact vendor that supports business continuity."
+      takeaway="Japanese B2B buyers expect thorough information upfront, not stripped-down marketing copy. The real challenge was organizing high-density technical and compliance details so busy managers could scan them fast and reach out with confidence."
       quote="I need to confirm your services quickly and know I can trust you."
     />
     <CaseSolution
       id="solution-section"
-      introText="The original site made it difficult for potential clients to understand what Tanaka Denki offered, why they should trust the company, and how to contact them quickly. My goal was to create a modern, structured, and credible digital presence that supported real business outcomes."
-      introText2="I approached the redesign by breaking down the core UX failures: unclear navigation, weak hierarchy, inconsistent branding, and a complete lack of trust signals. Each issue pointed to the same opportunity: improve clarity and reduce friction for the two primary personas, municipal managers and manufacturing operations leads."
-      introText3="The work is shown below in two parts. The first captures the problems in the original site: scattered content, unclear structure, and low perceived credibility. The second shows the improvements I delivered through modern UI, tighter information architecture, and a system that supports long-term business growth."
+      introText="Rather than applying a generic template, I built a custom design system tailored to Japanese B2B expectations. Every layout decision focused on helping buyers verify credibility quickly while keeping the site simple for a small office team to maintain."
+      introText2="I focused on three practical fixes: restructuring the site around how buyers vet contractors, designing a clean Japanese typographic hierarchy that handles dense information without clutter, and replacing WordPress with a lightweight Contentful workflow."
+      introText3="Below is a look at what held the old site back and how the new architecture solves both buyer trust and internal maintenance."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
       beforeTitle="Before Redesign"
       afterTitle="After Redesign"
-      hmwTitle="How Might We"
-      hmwIntro="These questions guided the direction of the redesign and kept the work focused on clarity, trust, and measurable business value."
+      hmwTitle="Key Design Questions"
+      hmwIntro="Three practical questions kept the rebuild focused on buyer trust and day-to-day usability."
       :hmwItems="[
         {
           question:
-            'HMW make service offerings instantly clear for busy municipal and manufacturing users?',
-          response: 'Reorganize all content into a clean, predictable hierarchy.',
-        },
-        {
-          question: 'HMW increase trust and reduce doubt during vendor evaluation?',
+            'How do we present dense technical services without overwhelming busy facility managers?',
           response:
-            'Use consistent branding, certifications, past projects, and proof of expertise.',
+            'Modular service cards, clear visual grouping, and scannable Japanese typography.',
         },
         {
-          question: 'HMW improve conversion for users who prefer quick communication?',
-          response: 'Prominent call buttons, simplified contact paths, and mobile-first layout.',
+          question: 'How do we build instant credibility with municipal and corporate buyers?',
+          response:
+            'Upfront installation metrics (5 MW+ track record), safety credentials, and clean industrial branding.',
+        },
+        {
+          question: 'How do we stop the site from going stale again after launch?',
+          response:
+            'Replace WordPress with a stripped-down Contentful setup for easy blog updates.',
         },
       ]"
     />
     <CaseOutcome
       id="outcome-section"
-      intro="The redesigned site gave Tanaka Denki a clearer, more credible digital presence. Even in the first months after launch, early analytics showed stronger engagement, better navigation behavior, and higher intent to contact. The new IA, modern UI, and mobile-first layout made the site faster to understand and easier to act on."
-      context="Because I implemented Google Analytics from day one, I can now track performance weekly and measure real ROI. Early results point to a more confident, user-friendly experience that supports actual business decisions. Below are the initial outcomes shaped by the redesign:"
+      intro="The rebuilt site gave TDSS a credible, mobile-ready presence that reflects the real scale of their operations. Beyond cleaner visuals, the redesign fixed the operational bottlenecks that kept their previous site frozen for years."
+      context="With Google Analytics wired in from day one, the team now has visibility into traffic and inquiry behavior. Here is what changed after launch:"
       :outcomes="outcomeList"
       :icons="icons"
     />
     <CaseReflections
       id="reflections-section"
-      intro="This project sharpened my ability to design for international clients, manage cultural constraints, and deliver a product that balances brand identity with the expectations of Japan’s B2B solar market. It pushed me to think beyond visuals and consider how trust, clarity, and communication work differently across cultures."
+      intro="Handling discovery, visual systems, Japanese client communication, and front-end execution as a solo designer taught me how much real-world UX depends on practical trade-offs rather than textbook frameworks."
       :reflections="reflections"
     />
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
@@ -312,12 +302,12 @@ const reflections = [
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Understand the Business</h3>
-        <p class="text-xs tracking-wide uppercase">Goals, Audience, Constraints</p>
+        <h3 class="text-xl font-semibold tracking-wide">Audit & Stakeholder Discovery</h3>
+        <p class="text-xs tracking-wide uppercase">Mapping Real Bottlenecks</p>
         <p class="mt-3 md:text-lg leading-normal">
-          I met with stakeholders to clarify goals, understand service offerings, and identify the
-          core audiences. This step grounded the redesign in real needs, not assumptions, and
-          revealed the importance of clear communication for B2B clients.
+          Reviewed the legacy WordPress site, benchmarked five regional competitors, and interviewed
+          leadership and staff. Discovered that buyers relied heavily on phone inquiries and staff
+          avoided updates because the CMS felt overwhelming.
         </p>
       </div>
 
@@ -325,12 +315,12 @@ const reflections = [
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Analyze the Current Experience</h3>
-        <p class="text-xs tracking-wide uppercase">Pain Points and Risks</p>
+        <h3 class="text-xl font-semibold tracking-wide">Information Architecture</h3>
+        <p class="text-xs tracking-wide uppercase">Structuring for B2B Vetting</p>
         <p class="mt-3 md:text-lg leading-normal">
-          I reviewed the old WordPress site and mapped its UX issues like unclear hierarchy,
-          outdated visuals, inconsistent branding, and friction in essential tasks like contacting
-          the company. This clarified where the redesign needed to deliver immediate value.
+          Reorganized scattered pages into a clear flow built around buyer evaluation: core solar
+          maintenance services, past project capacity, company credentials, recruitment, and direct
+          contact options.
         </p>
       </div>
 
@@ -338,12 +328,12 @@ const reflections = [
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Research the Market</h3>
-        <p class="text-xs tracking-wide uppercase">Industry Patterns and Expectations</p>
+        <h3 class="text-xl font-semibold tracking-wide">Visual System & Japanese UI</h3>
+        <p class="text-xs tracking-wide uppercase">Balancing Density with Clarity</p>
         <p class="mt-3 md:text-lg leading-normal">
-          I reviewed competitor sites and studied patterns across Japan’s solar maintenance
-          industry. This helped me design an interface that felt modern but still aligned with the
-          information-heavy expectations of Japanese B2B customers.
+          Designed a cohesive blue and neutral palette with structured grids and tuned Japanese line
+          heights. Kept the detailed technical specs B2B buyers expect while eliminating visual
+          clutter and low-contrast text.
         </p>
       </div>
 
@@ -351,12 +341,12 @@ const reflections = [
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Define the Structure</h3>
-        <p class="text-xs tracking-wide uppercase">Navigation and Information Architecture</p>
+        <h3 class="text-xl font-semibold tracking-wide">Production Build & CMS</h3>
+        <p class="text-xs tracking-wide uppercase">From Figma to Live Deployment</p>
         <p class="mt-3 md:text-lg leading-normal">
-          I reorganized the site into a simple, predictable structure with clear paths to Services,
-          Company Info, and Contact. The goal was to reduce decision friction and highlight
-          high-value information quickly.
+          Built the responsive site from scratch in Nuxt 4 and Tailwind CSS, connecting Contentful
+          for friction-free blog publishing, Netlify Forms for email inquiries, and GA4 for ongoing
+          analytics.
         </p>
       </div>
 
@@ -364,51 +354,12 @@ const reflections = [
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Design the Interface</h3>
-        <p class="text-xs tracking-wide uppercase">UI, Branding, and Trust Signals</p>
+        <h3 class="text-xl font-semibold tracking-wide">Launch & Post-Launch Iteration</h3>
+        <p class="text-xs tracking-wide uppercase">Refining Live Behavior</p>
         <p class="mt-3 md:text-lg leading-normal">
-          Using a new visual system, I built layouts that increased clarity, consistency, and trust.
-          Colors, spacing, typography, and imagery all reinforced a professional, reliable brand
-          without losing the company's approachable tone.
-        </p>
-      </div>
-
-      <!-- Step 6 -->
-      <div
-        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
-      >
-        <h3 class="text-xl font-semibold tracking-wide">Build the System</h3>
-        <p class="text-xs tracking-wide uppercase">Nuxt, Tailwind, CMS, Forms</p>
-        <p class="mt-3 md:text-lg leading-normal">
-          I built the site with Nuxt 4, Tailwind CSS, and Contentful. Each choice supported speed,
-          consistency, and long-term scalability. Netlify Forms handled submissions, while Supabase
-          prepared the project for admin access later.
-        </p>
-      </div>
-
-      <!-- Step 7 -->
-      <div
-        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
-      >
-        <h3 class="text-xl font-semibold tracking-wide">Test and Refine</h3>
-        <p class="text-xs tracking-wide uppercase">Feedback and Adjustments</p>
-        <p class="mt-3 md:text-lg leading-normal">
-          I tested layouts with stakeholders, confirmed copy accuracy, and resolved issues like form
-          parsing, rich text rendering, and asset handling. Every round made the experience smoother
-          and more reliable.
-        </p>
-      </div>
-
-      <!-- Step 8 -->
-      <div
-        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
-      >
-        <h3 class="text-xl font-semibold tracking-wide">Launch and Measure</h3>
-        <p class="text-xs tracking-wide uppercase">Analytics and Continuous Insight</p>
-        <p class="mt-3 md:text-lg leading-normal">
-          I implemented Google Analytics at launch so I can track engagement, contact intent, and
-          scroll behavior over time. This ensures future improvements are guided by real user data,
-          not assumptions.
+          Handled DNS cutover, tested mobile tap-to-call and form routing across devices, and
+          continued partnering with the client on post-launch feature additions as their operations
+          expanded.
         </p>
       </div>
     </CaseUxLens>

@@ -51,25 +51,25 @@ import tlfDarkVid from '@/assets/images/cases/case-tlf/tlf-video-dark.mp4'
 // Solution Tabs Data
 const solutionA = [
   {
-    title: 'Trust-First UX Strategy',
+    title: 'Trust-First Onboarding',
     image: solution1,
-    heading: 'Designed to Earn Confidence, Not Rush Sales',
+    heading: 'Explain the Method Before Asking for a Purchase',
     description:
-      'From the very beginning, the site was intentionally designed to explain before selling. Every decision, from the absence of a Buy Now CTA to the emphasis on pedagogy and characters, reflects a clear strategy: earn parental trust first, then invite commitment once confidence is established.',
+      'For a brand-new educational product with zero initial reviews, pushing a hard purchase button creates immediate friction. The landing experience prioritizes clear explanations of the learning method, full-book interactive previews, and character introductions so parents can evaluate the books first.',
   },
   {
-    title: 'Guided Learning Flow',
+    title: 'Guided Scroll Tour',
     image: solution2,
-    heading: 'A Landing Page That Teaches Like the Books',
+    heading: 'A Landing Page Paced Like the Books',
     description:
-      'The landing page functions as a guided learning experience, using a numbered scroll tour to introduce ideas one at a time. This mirrors how the books teach language, reinforcing clarity, reducing overwhelm, and helping parents understand the system intuitively.',
+      'The homepage uses a numbered scroll tour to introduce one core idea at a time. This mirrors how the books teach language, keeping visual density low and helping hesitant parents grasp the system in under a minute.',
   },
   {
-    title: 'Character-Driven System Design',
+    title: 'Character Anchors',
     image: solution3,
-    heading: 'Characters as UX Anchors',
+    heading: 'Visual Continuity Across Every Surface',
     description:
-      'Moko, Niko, and Okja are not decorative mascots but core UX elements. Their consistent use across the site and books creates familiarity, emotional safety, and continuity, helping both parents and children quickly understand what the product is and how it works.',
+      'Moko (blue), Niko (purple), and Okja (yellow) serve as consistent behavioral cues across the books and website. Color coding and recurring character roles help young children predict sentence patterns while giving parents a clear series structure.',
   },
   {
     image: solution7,
@@ -84,86 +84,85 @@ const solutionA = [
 
 const solutionB = [
   {
-    title: 'Pedagogy Embedded in UX',
+    title: 'Single-Pattern Book UX',
     image: solution4,
-    heading: 'Teaching Principles Reflected in the Interface',
+    heading: 'Low Cognitive Load for Early Readers',
     description:
-      'The website mirrors the learning philosophy of the books through clear structure, repetition, visual consistency, and progressive disclosure, helping parents understand how the system works without requiring dense explanations.',
+      'Each 25 to 33 page book isolates one sentence structure with large typography, romaji and katakana pronunciation guides for parents, and end-of-book review activities. Parents can read aloud naturally without needing prior English fluency.',
   },
-
   {
-    title: 'Multilingual-First Execution',
+    title: 'Bilingual Typography',
     image: solution5,
-    heading: 'Built for Real Japanese and English Use',
+    heading: 'Designed Directly in Code for JP and EN',
     description:
-      'The site was designed directly in code to properly handle the realities of bilingual typography. Spacing, hierarchy, and rhythm were refined with real language switching, prioritizing readability and usability over artificial design perfection.',
+      'Japanese and English follow completely different line-breaking and spacing rules. Building the web platform directly in Nuxt and Tailwind allowed me to tune line heights, character wrapping, and light/dark mode contrast across real bilingual layouts.',
   },
   {
-    title: 'Flexible, User-Controlled Navigation',
+    title: 'Flexible Navigation',
     image: solution6,
-    heading: 'Guidance Without Restriction',
+    heading: 'Guided Tour or Direct Exploration',
     description:
-      'A sticky navigation and clickable progress indicator allow users to follow the guided experience or freely explore. New visitors receive structure, while returning users retain full control, respecting different intent levels without forcing a single path.',
+      'A sticky progress rail lets first-time visitors follow the step-by-step introduction while allowing returning parents to jump straight to the book catalog, free full-book previews, or Amazon and Rakuten store links.',
   },
 ]
 
 // Outcome Tabs Data
 const outcomeList = [
   {
-    title: 'Launch-Ready Product Ecosystem',
+    title: 'Full Product Ecosystem Shipped',
     description:
-      'I designed and built a complete, cohesive system: five finished children’s books, a bilingual website, supporting assets, and a clear launch pipeline. The project is fully prepared for release across Amazon, the website, and social channels.',
+      'Designed, illustrated, and published five complete bilingual picture books (over 125 pages total) across Amazon KDP and Rakuten Kobo, paired with a live bilingual web platform featuring embedded full-book previews.',
   },
   {
-    title: 'Clear Pedagogical Foundation',
+    title: 'Repeatable Production System',
     description:
-      'The books and site consistently reflect a confidence-first, pattern-based learning approach grounded in linguistics and real teaching experience. Every design and content decision reinforces clarity, repetition, and low cognitive load for both parents and children.',
+      'Built standardized page templates, character assets, and bilingual layout rules that reduced per-book production time while keeping visual hierarchy, pronunciation guides, and activity pages uniform across all five titles.',
   },
   {
-    title: 'Scalable Systems, Not One-Off Designs',
+    title: 'Zero-Inventory Digital Validation',
     description:
-      'Reusable layouts, structured i18n files, character systems, and modular components make it easy to add new books, pages, and features without rework. The system is designed to scale intentionally, not patch itself together later.',
+      'Launching e-book first eliminated upfront printing and warehouse costs while proving the end-to-end publishing pipeline. Initial sales came primarily from personal networks, giving me real-world feedback on format preferences.',
   },
   {
-    title: 'Business-Ready Growth Channels',
+    title: 'Clear Post-Launch Channel Insights',
     description:
-      'The site prioritizes trust-building and email capture ahead of aggressive sales, creating a foundation for long-term growth. Instagram and YouTube Shorts are aligned to launch alongside the books, extending reach beyond the site and supporting organic discovery.',
+      'Running initial social promotion revealed two clear realities: Japanese parents strongly prefer physical picture books for toddlers, and sustaining consumer growth requires ongoing parenting-influencer marketing. Recognizing that channel mismatch, I paused active promotion while keeping the catalog live.',
   },
 ]
 
 // Reflections Data
 const reflections = [
   {
-    title: 'Designing in code changed how I think.',
+    title: 'Designing in code exposes real bilingual constraints early.',
     icon: arrowBlue,
     description:
-      'Skipping Figma was a deliberate choice. Designing directly in code allowed me to confront real constraints early, especially around multilingual typography and responsive behavior. It made the process more honest and forced decisions that actually work in production.',
+      'Japanese and English text expand and wrap at completely different rates. Iterating directly in the browser let me solve line-break, font-weight, and responsive spacing issues under real language switching.',
   },
   {
-    title: 'Multilingual UX is never perfect, only intentional.',
+    title: 'Subtle branding choices shape user trust.',
     icon: arrowPink,
     description:
-      'Balancing Japanese and English typography revealed limits I couldn’t “design away.” Widows, spacing tradeoffs, and line breaks became exercises in judgment rather than perfection. I learned to prioritize readability and clarity over pixel-level control.',
+      'Research showed Japanese parents look for native English credibility when choosing home study materials. Publishing under the pen name Joe Lapalo was an intentional UX trust signal designed to remove doubt for parents browsing online marketplaces.',
   },
   {
-    title: 'Systems matter more than single artifacts.',
+    title: 'Shipping a product and marketing a product are two different jobs.',
     icon: arrowBlue,
     description:
-      'Building five books and a full website in 45 days was only possible because everything was systemized: characters, color rules, layouts, i18n structure, and reusable components. This project reinforced that scalability is a design skill, not an afterthought.',
+      'Building five books and a custom bilingual web app played directly to my strengths in systems and product execution. Once live, I realized that day-to-day consumer marketing in the parenting niche was not work I wanted to pursue long term.',
   },
   {
-    title: 'Trust is a design outcome, not a marketing trick.',
+    title: 'Format matters as much as interface.',
     icon: arrowPink,
     description:
-      'Resisting aggressive sales patterns forced me to design for confidence and understanding first. The site reflects a belief that when users feel informed and respected, conversion follows naturally. This mindset shaped every major UX decision.',
+      'Digital distribution kept financial risk at zero, but parents reading with two-to-six-year-olds strongly favor physical books over screens. If I revisit this series later, small-batch physical printing for direct distribution is the clear next step.',
   },
 ]
 
 // TLDR
 const uxIntro =
-  'A high-level summary of the design process, focusing on the decisions that had the greatest impact on usability, clarity, and outcomes.'
+  'A practical look at how The Language Friends went from a local observation in Japan to five published bilingual books and a live web platform.'
 
-const uxSubheading = 'Quick breakdown of process.'
+const uxSubheading = 'Project Breakdown'
 </script>
 
 <template>
@@ -182,42 +181,42 @@ const uxSubheading = 'Quick breakdown of process.'
       id="overview-section"
       title="Project Overview"
       url="https://the-language-friends.com/"
-      workTitle="The Language Friends — Bilingual Children’s Book Series"
-      :tags="['Product Design', 'UX Strategy', 'Multilingual UX', 'Pedagogy-Driven Design']"
+      workTitle="The Language Friends: Bilingual Children's Book Series"
+      :tags="['Product Design', 'Design Systems', 'Bilingual UX', 'End-to-End Execution']"
       :videoSrc="tlfVideo"
       :paragraphs="[
-        'The Language Friends began with a simple question: why does early English learning in Japan so often feel stressful and confidence-damaging for children and parents? Drawing on years of teaching English in Japan, I wanted to explore an approach centered on comfort, familiarity, and emotional safety rather than correctness.',
-        'What began as a small book concept evolved into a full product ecosystem. I designed a character-driven learning system, defined its visual and pedagogical structure, and built a bilingual website to communicate the approach clearly to parents, iterating directly in code while balancing multilingual typography, early childhood learning, and real product constraints.',
+        'The Language Friends started from a simple observation while browsing children’s books at a city hall in Japan. Drawing on over eight years of teaching English in Japan, I saw how early English materials often overwhelm young kids and parents with grammar rules before children feel comfortable speaking.',
+        'I designed and built a complete bilingual learning ecosystem from scratch: five original 25 to 33 page picture books published on Amazon KDP and Rakuten Kobo, paired with a Japanese-first bilingual web platform featuring full-book interactive previews. Every piece was built as a modular system to balance educational clarity with real-world publishing constraints.',
       ]"
-      role="Product Designer, UX Designer, UI Designer, Front-End Developer, Brand Strategist"
-      date="December 2025 – January 2026"
-      toolkit="Nuxt 4, Vue 3, Tailwind CSS, GSAP, Canva Pro, Google Gemini, Netlify"
+      role="Product Designer, Brand & Character Designer, Front-End Developer"
+      date="December 2025 - January 2026"
+      toolkit="Nuxt 4, Vue 3, Tailwind CSS, GSAP, Canva Pro, Netlify"
       pdfFile="case-study-tlf.pdf"
     />
 
     <CaseProblem
       id="problem-section"
-      problemStatement="Many parents want to introduce English to their young children, but the experience often feels confusing, intimidating, or too academic. English books are either overloaded with explanations, focused on memorization, or assume parents need to actively teach a language they may not feel confident using themselves. Instead of feeling natural and enjoyable, early English exposure becomes something families postpone or avoid."
-      problemStatementB="I wanted to rethink what an English learning experience for young children could feel like. Rather than treating English as a subject to master, I aimed to create something gentle, visual, and confidence-first. A series that fits naturally into everyday family life, where parents can simply read together with their child and trust that learning is happening through familiarity, repetition, and joy."
-      userResearchIntro="To better understand how families actually approach early English learning, I focused on the emotional side of the experience. I examined parental concerns, daily routines, and how children respond to language through play, visuals, and shared moments. The following research artifacts helped ground the project in real behaviors and guided every decision toward clarity, comfort, and trust."
+      problemStatement="Parents in Japan face growing pressure to introduce English early, yet most beginner materials treat language like a school test. Books packed with grammar notes or dense vocabulary create anxiety for children and leave parents feeling unqualified to read aloud at home."
+      problemStatementB="My goal was to design a calm, confidence-first English system that fits naturally into daily family routines. Both the books and the website needed to remove teaching pressure for parents while giving children visual repetition they could understand immediately."
+      userResearchIntro="To shape the product around real family habits in Japan, I combined competitive analysis of existing children’s English books, bilingual language acquisition principles, and eight years of firsthand classroom and parent-child teaching experience."
       :research-methods="[
         {
-          caption: 'Pedagogical Research',
+          caption: 'Market & Book Audit',
           imageSrc: analysisImg,
           description:
-            'Reviewed existing early childhood English books and teaching materials to understand how language is typically introduced to young learners, identifying common patterns, gaps, and pressure-heavy approaches.',
+            'Reviewed popular English picture books and KDP titles in Japan to identify common friction points in typography, bilingual layout, and parental usability.',
         },
         {
-          caption: 'Linguistics & Bilingual Theory',
+          caption: 'Language Acquisition Principles',
           imageSrc: analysisImg,
           description:
-            'Applied principles from linguistics and bilingual language acquisition to design learning patterns based on exposure, repetition, and emotional safety rather than memorization or testing.',
+            'Structured the learning flow around comprehensible input and pattern repetition so children internalize sentence structure visually without explicit grammar drills.',
         },
         {
-          caption: 'Teaching Experience',
+          caption: '8+ Years Teaching Insight',
           imageSrc: userImg,
           description:
-            'Grounded every decision in over eight years of real-world English teaching experience across all ages, with a deep understanding of how children, parents, and learners respond to language emotionally and cognitively.',
+            'Drew directly from years of teaching toddlers, elementary students, and parents in Japan to understand where learners hesitate and what builds speaking confidence.',
         },
       ]"
       :artifacts="[
@@ -225,18 +224,18 @@ const uxSubheading = 'Quick breakdown of process.'
           caption: 'Persona',
           statement: 'Focus',
           statementDetails:
-            'Design for a parent who values emotional safety, simplicity, and long-term confidence over fast results or measurable performance.',
+            'Support Japanese parents who want to share English at home with their two-to-six-year-old children without feeling like they have to act as a teacher.',
           blurb:
-            'Yuki represents parents who want English to feel natural and positive for their child. Her goals guided decisions around pacing, language simplicity, character design, and how the books are framed for parents.',
+            'Yuki represents busy parents looking for approachable, low-stress resources. Her needs shaped the pronunciation guides, calm visual pacing, and clear parent onboarding on the website.',
           imageSrc: userPersona,
         },
         {
           caption: 'Empathy',
           statement: 'Insight',
           statementDetails:
-            'Japanese parents want to support their child’s English learning, but feel unsure where to start and wary of resources that feel overly academic, overwhelming, or pressure-driven.',
+            'Parents worry about mispronouncing words or choosing materials that are too academic, causing them to delay home English exposure altogether.',
           blurb:
-            'This empathy map helped me step into a parent’s mindset and emotional state. It clarified the importance of trust, gentleness, and clarity, shaping everything from visual tone to how learning concepts are introduced.',
+            'Mapping parental hesitation led to adding katakana and romaji reading cues inside the books and offering full-book free previews on the site before purchase.',
           imageSrc: empathyMap,
         },
 
@@ -244,130 +243,116 @@ const uxSubheading = 'Quick breakdown of process.'
           caption: 'Journey',
           statement: 'Opportunity',
           statementDetails:
-            'Parents often struggle to find age-appropriate English materials that feel approachable, effective, and aligned with how young children actually learn.',
+            'Parents discovering a new independent book series online need clear proof of quality and pedagogical intent before committing to a purchase.',
           blurb:
-            'Mapping the journey revealed frustration during discovery and uncertainty around trust. This reinforced the need for a calm, transparent website and a book experience that feels supportive rather than instructional.',
+            'Tracing the path from social discovery to marketplace checkout highlighted the need for a guided web tour that explains the learning method upfront.',
           imageSrc: journeyMap,
         },
       ]"
-      takeaway="Parents need English learning tools that feel safe, simple, and confidence-building. When the experience respects both the child’s natural learning process and the parent’s comfort level, engagement becomes consistent and meaningful."
-      quote="I don’t need to teach perfectly. I just want to share English with my child in a way that feels natural."
+      takeaway="Early language products succeed when they lower anxiety for both the child and the parent. Clear visual patterns, pronunciation support, and transparent previews turn hesitant browsers into confident readers."
+      quote="I don't need to teach perfectly. I just want to share English with my child in a way that feels natural."
     />
     <CaseSolution
       id="solution-section"
-      introText="The solution was designed to balance trust-building with long-term business viability. In a category where parents are cautious and credibility matters, the website needed to explain the value of the books before asking for a purchase."
-      introText2="By prioritizing clarity, pedagogy, and guided discovery over aggressive sales tactics, the site reduces hesitation and builds confidence. This creates a stronger foundation for repeat visits, word-of-mouth sharing, and email growth, all of which support sustainable revenue over time."
-      introText3="Each solution below reflects that balance: thoughtful UX decisions that serve real user needs while quietly setting the groundwork for conversion, retention, and future expansion."
+      introText="Because The Language Friends launched as a brand-new independent series with no existing brand recognition, the product experience had to earn trust before asking parents to buy."
+      introText2="I designed the books and website as one connected system. The books use fixed sentence patterns, color-coded characters, and bilingual support to make reading effortless, while the web app walks parents through the learning method and lets them read full books for free before visiting Amazon or Rakuten."
+      introText3="Below is how the product strategy, visual system, and bilingual web architecture work together across both surfaces."
       :beforeTabs="solutionA"
       :afterTabs="solutionB"
-      beforeTitle="Solution Features"
-      afterTitle="Solution Features"
-      hmwTitle="How Might We"
-      hmwIntro="These questions helped translate teaching philosophy into concrete UX decisions and guided how the site introduces learning without pressure."
+      beforeTitle="Product & Brand System"
+      afterTitle="Bilingual Web Experience"
+      hmwTitle="Key Design Questions"
+      hmwIntro="Three core questions shaped both the book templates and the web platform."
       :hmwItems="[
         {
           question:
-            'How might we help parents feel confident sharing English with their child, even if they are not fluent themselves?',
+            'How can parents read English aloud with confidence even if they are not fluent themselves?',
           response:
-            'By designing a system that relies on repetition, visuals, and fixed sentence patterns so parents can simply read and participate without teaching.',
+            'Pair one simple English sentence pattern per page with natural Japanese translations and pronunciation cues.',
         },
         {
           question:
-            'How might we introduce English in a way that feels natural rather than academic for young children?',
+            'How do we keep young children engaged without overwhelming them with visual clutter?',
           response:
-            'By focusing on one clear sentence pattern per book and reinforcing it through consistent characters, color coding, and familiar structure.',
+            'Use three color-coded cat characters (Moko, Niko, Okja) and consistent page layouts to anchor meaning.',
         },
         {
-          question:
-            'How might we build trust with first-time visitors before asking them to buy anything?',
+          question: 'How do we build credibility for a brand-new independent book series online?',
           response:
-            'By leading with explanation, pedagogy, and guided exploration through a calm, step-by-step landing experience instead of sales-driven CTAs.',
+            'Lead with a guided web tour, clear pedagogical explanations, and embedded full-book previews.',
         },
       ]"
     />
     <CaseOutcome
       id="outcome-section"
-      intro="The Language Friends is approaching launch, not a retrospective success story. I built a complete, real product from zero: five finished books, a bilingual website, a clear pedagogy, and the systems needed to ship and grow. While analytics and sales data will come post-launch, the product itself is finished, coherent, and ready to be tested in the real world."
-      context="Rather than measuring outcomes by metrics that don’t yet exist, this section focuses on what has already been achieved: a launch-ready system, validated learning principles, and a foundation designed to scale. These outcomes reflect execution, judgment, and readiness, not hypothetical impact."
+      intro="I took The Language Friends from an initial concept to a live, multi-channel product ecosystem: five published bilingual picture books on Amazon KDP and Rakuten Kobo alongside a custom bilingual web application."
+      context="Launching digital-first kept upfront financial risk at zero and revealed clear lessons about product format and go-to-market fit:"
       :outcomes="outcomeList"
       :icons="icons"
     />
     <CaseReflections
       id="reflections-section"
-      intro="The Language Friends is still days away from launch, but taking it from nothing to a complete, real product in 45 days reshaped how I think about design. Building five books, a bilingual website, and the systems behind them forced me to make hard tradeoffs, trust my judgment, and design under real constraints. This project wasn’t about polish or perfection; it was about execution, clarity, and building something that can exist in the world and grow."
+      intro="Building five full-length picture books, an original character system, and a bilingual web platform solo taught me a lot about systemized production, cross-cultural trust signals, and the difference between building a product and running consumer marketing."
       :reflections="reflections"
     />
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Empathize</h3>
-        <p class="text-xs tracking-wide uppercase">Notice a Real-World Problem</p>
+        <h3 class="text-xl font-semibold tracking-wide">Observation & Domain Insight</h3>
+        <p class="text-xs tracking-wide uppercase">Identifying the Confidence Gap</p>
         <p class="mt-3">
-          The project began with a simple observation at a local city hall, where I noticed
-          children’s books and started questioning how English is introduced to kids in Japan. That
-          moment sparked a deeper reflection on how parents approach early language exposure.
+          Browsing children's books at a local city hall sparked a clear connection to my eight-plus
+          years teaching in Japan: early English materials focus heavily on grammar and correctness,
+          leaving young kids anxious and parents unsure how to help.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Define</h3>
-        <p class="text-xs tracking-wide uppercase">Identify the Learning Gap</p>
+        <h3 class="text-xl font-semibold tracking-wide">Pedagogical & Character System</h3>
+        <p class="text-xs tracking-wide uppercase">Designing for Pattern Recognition</p>
         <p class="mt-3">
-          Through research into Japanese education culture, existing children’s book series, and my
-          own teaching experience, I identified a core issue: English learning focuses heavily on
-          grammar and correctness, while confidence, speaking, and pattern recognition are often
-          neglected.
+          Created three color-coded characters (Moko, Niko, Okja) and a repeatable 25 to 33 page
+          book structure built around one sentence pattern per book, bilingual text, and end-of-book
+          activities.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Ideate</h3>
-        <p class="text-xs tracking-wide uppercase">Reframe How Language Is Introduced</p>
+        <h3 class="text-xl font-semibold tracking-wide">Code-First Bilingual Web App</h3>
+        <p class="text-xs tracking-wide uppercase">Solving JP/EN Typography in Production</p>
         <p class="mt-3">
-          I explored how character-driven storytelling, repetition, and visual structure could
-          support confidence-first language exposure. The goal was not mastery, but familiarity,
-          comfort, and positive emotional association with English.
+          Built the website directly in Nuxt 4 and Tailwind CSS to handle real Japanese and English
+          typography switching, light and dark modes, a guided scroll tour, and embedded full-book
+          previews.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Prototype</h3>
-        <p class="text-xs tracking-wide uppercase">Design Through Code</p>
+        <h3 class="text-xl font-semibold tracking-wide">Multi-Marketplace Publishing</h3>
+        <p class="text-xs tracking-wide uppercase">Shipping Five Titles Digitally</p>
         <p class="mt-3">
-          Instead of formal wireframes or Figma flows, I designed directly in code with light paper
-          sketches for direction. This allowed me to iterate quickly, confront multilingual
-          typography constraints early, and shape the experience as it would exist in production.
+          Produced and formatted five complete books, publishing them across Amazon KDP and Rakuten
+          Kobo under a native-sounding pen name to establish immediate marketplace credibility with
+          zero inventory risk.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Build</h3>
-        <p class="text-xs tracking-wide uppercase">Create the Full System</p>
+        <h3 class="text-xl font-semibold tracking-wide">Post-Launch Reality & Evaluation</h3>
+        <p class="text-xs tracking-wide uppercase">Assessing Channel & Format Fit</p>
         <p class="mt-3">
-          I produced five complete books and returned to finalize the website, ensuring that
-          pedagogy, visuals, characters, and language systems were fully aligned. Everything was
-          built as a reusable, scalable system rather than a one-off release.
-        </p>
-      </div>
-
-      <div
-        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
-      >
-        <h3 class="text-xl font-semibold tracking-wide">Launch & Iterate</h3>
-        <p class="text-xs tracking-wide uppercase">Prepare for the Real World</p>
-        <p class="mt-3">
-          With the product now launch-ready, the next phase focuses on analytics, usability testing,
-          and real market feedback. The system is designed to evolve post-launch, guided by actual
-          user behavior rather than assumptions.
+          Early feedback from initial sales confirmed parents love the clarity of the books, while
+          also showing that toddler books perform best in physical print and require ongoing
+          parenting-niche social marketing. I kept the catalog live while pausing active promotion.
         </p>
       </div>
     </CaseUxLens>

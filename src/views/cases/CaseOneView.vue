@@ -6,37 +6,38 @@ import { useThemeStore } from '@/stores/theme'
 const theme = useThemeStore()
 
 // Computed Properties
-const cafeVideo = computed(() => (theme.isDarkMode ? cafeVideoDark : cafeVideoLight))
+const beanVideo = computed(() => (theme.isDarkMode ? beanVideoDark : beanVideoLight))
 
-//Components
+// Components
+import CaseNav from '@/components/reusable/CaseStickyNav.vue'
 import CaseOverview from '@/components/reusable/CaseOverview.vue'
 import CaseProblem from '@/components/reusable/CaseProblem.vue'
 import CaseSolution from '@/components/reusable/CaseSolution.vue'
 import CaseOutcome from '@/components/reusable/CaseOutcome.vue'
-import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
-import CaseNav from '@/components/reusable/CaseStickyNav.vue'
-import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 import CaseReflections from '@/components/reusable/CaseReflections.vue'
+import CaseUxLens from '@/components/reusable/CaseUxLens.vue'
+import BackHomeBtn from '@/components/reusable/BackHomeBtn.vue'
 
 // Images
-import userPersona from '@/assets/images/cases/case-one/persona-cafe.webp'
-import journeyMap from '@/assets/images/cases/case-one/journey-map-cafe.webp'
-import empathyMap from '@/assets/images/cases/case-one/empathy-map-cafe.webp'
-import analysisImg from '@/assets/svgs/research/analysis-research.svg'
-import storeImg from '@/assets/svgs/research/store-research.svg'
-import userImg from '@/assets/svgs/research/user-research.svg'
-import solution1 from '@/assets/images/cases/case-one/cafe-solution-1.webp'
-import solution2 from '@/assets/images/cases/case-one/cafe-solution-2.webp'
-import solution3 from '@/assets/images/cases/case-one/cafe-solution-3.webp'
-import solution4 from '@/assets/images/cases/case-one/cafe-solution-4.webp'
-import solution5 from '@/assets/images/cases/case-one/cafe-solution-5.webp'
-import solution6 from '@/assets/images/cases/case-one/cafe-solution-6.webp'
-import solution7 from '@/assets/images/cases/case-one/cafe-solution-7.webp'
-import solution8 from '@/assets/images/cases/case-one/cafe-solution-8.webp'
+import empathyMapLisa from '@/assets/images/cases/case-five/lisa-empathy-map.webp'
+import personaLisa from '@/assets/images/cases/case-five/lisa-user-persona.webp'
+import journeyLisa from '@/assets/images/cases/case-five/lisa-user-journey.webp'
+import interviewImg from '@/assets/svgs/research/interview-research.svg'
+import competitionImg from '@/assets/svgs/research/official-research.svg'
+import ideaImg from '@/assets/svgs/research/best-practice.svg'
+import solution1 from '@/assets/images/cases/case-five/bean-solution-1.webp'
+import solution2 from '@/assets/images/cases/case-five/bean-solution-2.webp'
+import solution3 from '@/assets/images/cases/case-five/bean-solution-3.webp'
+import solution4 from '@/assets/images/cases/case-five/bean-solution-4.webp'
+import solution5 from '@/assets/images/cases/case-five/bean-solution-5.webp'
+import solution6 from '@/assets/images/cases/case-five/bean-solution-6.webp'
+import solution7 from '@/assets/images/cases/case-five/bean-solution-7.webp'
+import solution8 from '@/assets/images/cases/case-five/bean-solution-8.webp'
+import solution9 from '@/assets/images/cases/case-five/bean-solution-9.webp'
 
 // Videos
-import cafeVideoLight from '@/assets/images/cases/case-one/cafe-video-light.mp4'
-import cafeVideoDark from '@/assets/images/cases/case-one/cafe-video-dark.mp4'
+import beanVideoLight from '@/assets/images/cases/case-five/bnb-video-light.mp4'
+import beanVideoDark from '@/assets/images/cases/case-five/bnb-video-dark.mp4'
 
 // Icons
 import smileIcon from '@/assets/svgs/highlights/smile-icon.svg'
@@ -49,49 +50,49 @@ import arrowPink from '@/assets/svgs/right-arrow-pink.svg'
 // Tab Data
 const beforeTabs = [
   {
-    title: 'Multilingual Support',
+    title: 'Brand & Packaging System',
     image: solution1,
-    heading: 'Browse in Three Languages',
+    heading: 'Six Distinct Character Identities',
     description:
-      'The original site supported only English. Adding English, Japanese, and Spanish reduced friction and made the experience inclusive and culturally aligned.',
+      'Expanded a series of six black-and-white animal illustrations into a complete product lineup. Each chocolate bar pairs a character silhouette and vibrant color palette with custom wrapper mockups, flavor notes, and full nutrition facts.',
   },
   {
-    title: 'Responsive Design',
+    title: 'Paper & Digital Wireframes',
     image: solution2,
-    heading: 'Optimized for Any Screen',
+    heading: 'Validating Hierarchy Before Visual Polish',
     description:
-      'The old site broke down on mobile. A mobile-first rebuild ensured clarity and consistency across all devices.',
+      'Started with Crazy 8s sketches and translated the strongest flows into grayscale Figma wireframes. Locking in navigation, card density, and gifting entry points early kept the storefront scannable before applying color and imagery.',
   },
   {
-    title: 'Interactive Menu',
+    title: 'High-Fidelity Figma Prototypes',
     image: solution3,
-    heading: 'Scannable, Visual Menu',
+    heading: 'Aligning Product Packaging and Storefront UI',
     description:
-      'We replaced a static PDF with a filterable, image-based menu to improve readability and reinforce brand tone.',
+      'Built high-fidelity Figma screens covering the full catalog, character lore pages, apparel and art frames, and responsive mobile views so the digital experience matched the physical packaging system.',
   },
 ]
 
 const afterTabs = [
   {
-    title: 'One-Touch Contact',
+    title: 'Component Architecture',
     image: solution4,
-    heading: 'Call or Navigate Instantly',
+    heading: 'Data-Driven Vue 3 & Tailwind Build',
     description:
-      'Tap-to-call and map buttons removed friction for mobile users making quick decisions.',
+      'Translated the Figma prototypes into modular Vue 3 components backed by a centralized Pinia store. Product cards, flavor detail routes, hoodies, and art prints render dynamically from structured data.',
   },
   {
-    title: 'Visual Identity',
+    title: 'Custom Gift-Box Configurator',
     image: solution5,
-    heading: 'Human, Culture-Driven Design',
+    heading: 'Adaptive Cart Logic by Product Type',
     description:
-      'Color, imagery, and layout were used intentionally to express warmth, culture, and personality.',
+      'Built a global cart modal that adapts to what the shopper adds: standard quantity controls for single bars and merch, and an interactive bar-picker when building a custom multi-bar gift box.',
   },
   {
-    title: 'Clear Information Architecture',
+    title: 'End-to-End Checkout Simulation',
     image: solution6,
-    heading: 'Easy to Scan, Easy to Find',
+    heading: '4-Step Order Flow with Receipt Summary',
     description:
-      'Content was reorganized around how people actually look for information, with clear sections for menu, hours, location, and contact to reduce confusion and speed up decision-making.',
+      'Engineered a complete four-step checkout experience with empty-cart fallbacks, form state validation, and a live order confirmation receipt displaying itemized selections.',
   },
   {
     image: solution7,
@@ -99,29 +100,32 @@ const afterTabs = [
   {
     image: solution8,
   },
+  {
+    image: solution9,
+  },
 ]
 
-// Outcome Data & Icons
+// Outcome Data
 const outcomeList = [
   {
-    title: 'Brand Alignment',
+    title: 'Complete Retail-Ready Brand System',
     description:
-      'Users consistently said the site felt like the cafe, warm, vibrant, and inclusive.',
+      'Created a cohesive brand ecosystem spanning six chocolate flavors, print-ready packaging mockups with nutrition panels, character lore, apparel, and framed artwork.',
   },
   {
-    title: 'Clearer Usability',
+    title: 'Research-Backed Gifting Flows',
     description:
-      'Navigation, layout, and content structure made key information faster to find, especially on mobile.',
+      'Turned qualitative interview findings about buyer hesitation into concrete UI solutions: occasion tags, character personality matching, and custom gift-box bundling.',
   },
   {
-    title: 'Stronger Differentiation',
+    title: 'Production-Grade Front-End Architecture',
     description:
-      'Compared to local competitors, the site felt more polished and intentional, increasing credibility.',
+      'Implemented the full storefront in Vue 3, Tailwind CSS, and Pinia with dynamic routing, adaptive cart modals, and a four-step checkout flow ending in a generated order receipt.',
   },
   {
-    title: 'Organic Sharing',
+    title: 'Positive Walkthrough Validation',
     description:
-      'The multilingual, playful design encouraged visitors to share the site with others.',
+      'Reviews with five early participants confirmed high clarity across browsing and gift configuration, with testers noting the polish and cohesion of the brand.',
   },
 ]
 
@@ -130,36 +134,36 @@ const icons = [smileIcon, thumbsIcon, upwardIcon, medalIcon]
 // Reflections Data
 const reflections = [
   {
-    title: 'Instinct is valuable, but process sharpens it.',
+    title: 'Wireframing in Figma first elevates visual craft.',
     icon: arrowBlue,
     description:
-      'When I first built this site, I relied entirely on intuition. Now, I know how much stronger that instinct becomes when paired with tools like design frameworks and knowledge about visual design principles.',
+      'Starting with paper sketches and grayscale Figma wireframes before writing code gave me space to test layout hierarchy, spacing, and gifting flows without getting pulled into CSS details early.',
   },
   {
-    title: 'Design is about care, not credentials.',
+    title: 'Connecting brand packaging with UI creates stronger products.',
     icon: arrowPink,
     description:
-      'This project reminded me that great UX isn’t limited to people with formal titles. It’s about empathy, clarity, and thoughtful execution. Even if you’re teaching yourself from scratch.',
+      'Designing the chocolate wrappers, nutrition labels, merch, and storefront together ensured every touchpoint reinforced the same visual language and tone.',
   },
   {
-    title: 'Simplicity but vibrant as a design goal.',
+    title: 'Clean state management simplifies complex UI.',
     icon: arrowBlue,
     description:
-      'The layout, navigation, or color use, all served to keep things simple and user-friendly but make sure we still let the brand personality shine through.',
+      'Using Pinia to manage product data, adaptive cart rules, and multi-step checkout receipts showed how structured front-end architecture supports rich user interactions.',
   },
   {
-    title: 'Post-launch is where the real UX begins.',
+    title: 'Next step: moderated usability testing.',
     icon: arrowPink,
     description:
-      'I used to think “done” meant going live. But now I understand that testing, iteration, and user feedback are just as critical as the build. That’s how good becomes great.',
+      'The immediate next milestone is running structured usability sessions with the original interview participants to observe how quickly they navigate the gift-box configurator and flavor discovery flows.',
   },
 ]
 
-// Ux Lens Data
+// UX Lens Data
 const uxIntro =
-  'A quick snapshot of how this project moved from real-world observation to a fully built, user-centered website.'
+  'A concise breakdown of how an original animal illustration series grew into a researched, wireframed, and coded e-commerce experience.'
 
-const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
+const uxSubheading = 'From Illustration Concept to Interactive Storefront'
 </script>
 
 <template>
@@ -177,40 +181,42 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
     <CaseOverview
       id="overview-section"
       title="Project Overview"
-      url="https://cafetriangle-refresh.netlify.app/"
-      workTitle="Cafe Triangle Redesign"
-      :tags="['UX Research', 'Visual Design', 'Front-End Development', 'Branding', 'Accessibility']"
-      :videoSrc="cafeVideo"
+      url="https://dev-jlagunas.github.io/bean-and-beast/#/"
+      workTitle="Bean & Beast: Character-Driven E-Commerce Experience"
+      :tags="['Product Design', 'Design Systems', 'User Research', 'Vue 3 & Pinia']"
+      :videoSrc="beanVideo"
       :paragraphs="[
-        'In the second year of running our culture-driven cafe in Kanazawa, Japan, my wife and I reached a crossroads. We had built Cafe Triangle to reflect the three sides of our life together. My Mexican-American culture, her Japanese culture, and the home we created together, but the daily grind left us burnt out and unable to scale. That’s when I set a personal challenge: teach myself web development and rebuild our entire cafe website from scratch, without templates or shortcuts',
-        'Over seven months, I studied every morning before opening shop, eventually launching a fully custom-coded site built with Angular and Tailwind CSS. It was responsive, multilingual, and deeply personal. Designed not just to function, but to feel like an extension of who we were. I didn’t know it then, but I was practicing UX: prioritizing usability, accessibility, clarity, and user-centered design from the very beginning.',
+        'Bean & Beast is a self-initiated e-commerce product design project that grew out of an original series of six black-and-white animal illustrations set against vibrant color fields. Seeing how well the artwork worked on packaging mockups, I built out a complete specialty chocolate brand from zero, including flavor profiles, print-ready wrapper designs with nutrition facts, apparel, and art prints.',
+        'To turn the brand into an intuitive digital storefront, I ran qualitative user interviews, sketched and wireframed flows in Figma, and engineered a responsive Vue 3 application with Pinia state management, a custom gift-box configurator, and an interactive four-step checkout with order receipt generation.',
       ]"
-      role="UX Designer, UX Researcher, Developer, Owner"
-      date="January – April 2025"
-      toolkit="Figma, Canva, Angular, TailwindCSS, Typescript"
+      role="Product Designer, Brand & Packaging Designer, Front-End Developer"
+      date="March - July 2025"
+      toolkit="Figma, Vue 3, Pinia, Tailwind CSS, Canva, Photopea"
+      pdfFile="case-study-5-bean-and-beast.pdf"
     />
-
     <CaseProblem
       id="problem-section"
-      problemStatement="The original Cafe Triangle website lacked responsiveness, multilingual support, and clear access to basic information. Key details like hours, menu, and contact info were difficult to find, especially on mobile."
-      problemStatementB="The site also failed to reflect the cafe’s warmth and personality. While the physical space felt welcoming and inclusive, the digital experience felt generic and disconnected from the brand."
-      userResearchIntro="I approached the redesign with a user-first mindset grounded in daily customer interactions, direct feedback, and real-world observation. These artifacts helped translate intuition into actionable UX insights."
+      problemStatement="Buying specialty chocolate online often creates choice overload. Standard product grids list cacao percentages and ingredients without helping shoppers match a flavor to a specific mood, occasion, or gift recipient."
+      problemStatementB="My goal was to design an e-commerce experience that makes online gift selection intuitive and memorable, pairing distinct character storytelling with guided bundling and clear product hierarchy."
+      userResearchIntro="Before designing screens, I interviewed five consumers (ages 33 to 41) about how they buy chocolate for themselves, while traveling, and as gifts, alongside a competitive audit of specialty chocolatiers."
       :research-methods="[
         {
-          caption: 'Competitive Analysis',
-          imageSrc: analysisImg,
-          description: 'Reviewed 10+ cafe websites to benchmark structure, flow, and clarity.',
-        },
-        {
-          caption: 'Field Research',
-          imageSrc: storeImg,
+          caption: 'User Interviews (n=5)',
+          imageSrc: interviewImg,
           description:
-            'Visited 10 local cafes to observe atmosphere, layout, and customer touchpoints.',
+            'Conducted 15 to 20 minute interviews exploring chocolate buying triggers, flavor preferences, and what makes packaging feel gift-worthy.',
         },
         {
-          caption: 'Contextual Inquiry',
-          imageSrc: userImg,
-          description: 'Studied local habits and cultural expectations to guide tone and features.',
+          caption: 'Competitive Packaging & UX Audit',
+          imageSrc: competitionImg,
+          description:
+            'Reviewed specialty chocolate brands to evaluate how they balance visual tone, product storytelling, and e-commerce navigation.',
+        },
+        {
+          caption: 'Crazy 8s Sketching',
+          imageSrc: ideaImg,
+          description:
+            'Ran five timed ideation sprints mapped to user pain points to generate features like occasion tags, character lore cards, and custom gift boxes.',
         },
       ]"
       :artifacts="[
@@ -218,139 +224,127 @@ const uxSubheading = 'TLDR: How the Cafe Triangle redesign came together'
           caption: 'Persona',
           statement: 'Goal',
           statementDetails:
-            'Create a bilingual website that reflects the cafe’s values while clearly communicating menu, hours, and policies.',
+            'Help design-conscious shoppers quickly discover distinctive, gift-worthy flavors that feel personal and intentional.',
           blurb:
-            'Megumi represents culturally curious, pet-friendly customers. Her needs guided decisions around messaging, hierarchy, and visual storytelling.',
-          imageSrc: userPersona,
+            'Lisa represents buyers who pick up specialty treats while traveling or shopping for friends. Her preferences shaped our focus on expressive packaging, flavor notes, and gifting cues.',
+          imageSrc: personaLisa,
         },
         {
           caption: 'Empathy Map',
           statement: 'Problem',
           statementDetails:
-            'Local customers struggled to find clear, up-to-date information online. The lack of a polished web presence weakened trust and limited growth.',
+            'Shoppers want gifts that feel thoughtful and memorable, yet flat product catalogs give them little confidence in which flavor fits the recipient.',
           blurb:
-            'This empathy map surfaced emotional needs around inclusivity, clarity, and vibe. Insights directly shaped content structure and tone.',
-          imageSrc: empathyMap,
+            'Mapping buyer hesitations shifted the storefront architecture from a basic product grid toward character-led discovery and curated gift sets.',
+          imageSrc: empathyMapLisa,
         },
         {
           caption: 'Journey Map',
           statement: 'Hypothesis',
           statementDetails:
-            'If the site is clear, bilingual, and visually welcoming, customers will better understand the cafe and be more likely to visit or share it.',
+            'Pairing bold character identities with occasion tags and a custom gift-box builder will reduce decision fatigue and encourage multi-bar orders.',
           blurb:
-            'The journey map revealed early friction and late-stage delight, informing choices like a clear menu, pet cues, and a warmer tone.',
-          imageSrc: journeyMap,
+            'Tracing the path from landing page to order receipt highlighted where guided prompts, flavor breakdowns, and clear cart feedback keep momentum high.',
+          imageSrc: journeyLisa,
         },
       ]"
-      takeaway="Megumi values clarity, inclusivity, and atmosphere. When a cafe communicates these well online, she becomes a repeat visitor and advocate."
-      quote="It's hard to know if a place is truly pet-friendly."
+      takeaway="When shopping for food gifts online, clear visual storytelling and guided bundling do the heavy lifting that in-store sampling cannot."
+      quote="Buying chocolate shouldn't feel like a gamble or a chore."
     />
-
     <CaseSolution
       id="solution-section"
-      introText="I redesigned Cafe Triangle’s website from the ground up with a clear focus on usability, accessibility, and brand expression. The goal was simple: make the digital experience feel as welcoming and intuitive as the cafe itself."
-      introText2="I framed solutions around a small set of guiding questions. These helped translate real user friction into focused design decisions, from mobile access to language support and brand expression."
-      introText3="The solutions are grouped into two areas. Core usability improvements address access and clarity. Experience refinements reinforce personality, accessibility, and ease of use. Together, they form a cohesive, user-centered system."
-      hmwTitle="How Might We"
-      hmwIntro="A few guiding questions shaped every design decision below."
-      :hmwItems="[
-        {
-          question: 'HMW make essential info instantly accessible on mobile?',
-          response: 'One-Touch Contact + Responsive Design',
-        },
-        {
-          question: 'HMW reduce language barriers for locals and tourists?',
-          response: 'Multilingual Support',
-        },
-        {
-          question: 'HMW reflect our warm, pet-friendly identity online?',
-          response: 'Visual Identity + Interactive Menu',
-        },
-      ]"
+      introText="I built Bean & Beast across two connected layers: a cohesive brand and packaging system giving each flavor a clear identity, and a stateful e-commerce storefront guiding shoppers from discovery to order confirmation."
+      introText2="Every interactive flow ties back to interview insights, using character lore, gifting cues, and a custom box builder to help buyers choose with confidence."
+      introText3="Below is how the brand system, Figma wireframes, and Vue 3 front-end architecture come together."
       :beforeTabs="beforeTabs"
       :afterTabs="afterTabs"
-      beforeTitle="Design Features"
-      afterTitle="Design Features"
+      beforeTitle="Brand & Figma Process"
+      afterTitle="Front-End & Cart Architecture"
+      hmwTitle="Key Design Questions"
+      hmwIntro="Three core questions guided the wireframes, packaging system, and front-end build."
+      :hmwItems="[
+        {
+          question: 'How might we make online chocolate selection feel personal and gift-worthy?',
+          response:
+            'Distinct animal character identities, full wrapper packaging mockups, and build-your-own gift boxes.',
+        },
+        {
+          question: 'How might we turn browsing into an engaging brand discovery experience?',
+          response:
+            'Interactive character lore views, detailed flavor notes, and cohesive merch and art collections.',
+        },
+        {
+          question: 'How might we keep multi-item gift building simple through checkout?',
+          response:
+            'An adaptive Pinia cart modal paired with a four-step checkout flow and instant order receipt.',
+        },
+      ]"
     />
-
     <CaseOutcome
       id="outcome-section"
-      intro="The redesigned Cafe Triangle site immediately improved clarity, navigation, and brand alignment. Informal testing and customer feedback confirmed it felt easier to use and more representative of the cafe."
-      context="The redesign improved both usability and emotional connection. Four outcomes stood out:"
+      intro="Bean & Beast showcases a full product design lifecycle, taking an original illustration concept through qualitative research, Figma prototyping, retail packaging design, and a stateful Vue 3 storefront."
+      context="Walkthroughs with five early reviewers confirmed strong visual cohesion and intuitive shopping flows:"
       :outcomes="outcomeList"
       :icons="icons"
     />
-
     <CaseReflections
       id="reflections-section"
-      intro="This project was more than just building a website, it was the start of a deeper shift in how I think about design, users, and problem-solving. Looking back, it helped shape the foundation of my UX mindset without me even knowing it. Here are a few key lessons I took away. What worked, what didn’t, and how the experience changed the way I approach design today."
+      intro="Building Bean & Beast from a blank canvas reinforced how structured user research, Figma wireframing, and clean component architecture support each other."
       :reflections="reflections"
     />
-
     <CaseUxLens id="ux-section" :intro="uxIntro" :subheading="uxSubheading">
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Empathize</h3>
-        <p class="text-xs tracking-wide uppercase">Real Users, Real Context</p>
+        <h3 class="text-xl font-semibold tracking-wide">User Interviews & Market Audit</h3>
+        <p class="text-xs tracking-wide uppercase">Understanding Gifting Drivers</p>
         <p class="mt-3">
-          I studied local cafe websites, observed in-store behavior, and gathered daily customer
-          feedback. This revealed gaps in accessibility, mobile usability, and language support.
+          Interviewed five target shoppers and audited specialty chocolate brands, identifying a gap
+          between strong packaging design and guided online gift selection.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Define</h3>
-        <p class="text-xs tracking-wide uppercase">Clarify the Core Problem</p>
+        <h3 class="text-xl font-semibold tracking-wide">Personas & Journey Mapping</h3>
+        <p class="text-xs tracking-wide uppercase">Pinpointing Buyer Friction</p>
         <p class="mt-3">
-          The site was hard to use, English-only, and failed to reflect the cafe’s identity. Users
-          struggled to find basic info and understand what made us different.
+          Synthesized interview findings into personas, empathy maps, and journey maps to clarify
+          where shoppers hesitate when choosing flavors for others.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Ideate</h3>
-        <p class="text-xs tracking-wide uppercase">Design for Inclusion and Clarity</p>
+        <h3 class="text-xl font-semibold tracking-wide">Wireframes & High-Fidelity Figma</h3>
+        <p class="text-xs tracking-wide uppercase">Structuring Flows Before Code</p>
         <p class="mt-3">
-          I focused on multilingual access, mobile-first layouts, and clear content hierarchy. Every
-          idea supported discoverability and emotional connection.
+          Sketched Crazy 8s concepts and built low- and high-fidelity Figma prototypes to validate
+          product hierarchy, lore pages, and multi-bar gift box flows.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Build</h3>
-        <p class="text-xs tracking-wide uppercase">Code as Iteration</p>
+        <h3 class="text-xl font-semibold tracking-wide">Brand & Retail Packaging System</h3>
+        <p class="text-xs tracking-wide uppercase">Wrappers, Nutrition Panels & Merch</p>
         <p class="mt-3">
-          I built the site from scratch using Angular and Tailwind, iterating directly in code.
-          Features were refined through trial, feedback, and constant usability checks.
+          Expanded six animal illustrations into complete wrapper mockups with nutritional facts,
+          color-coded flavor palettes, apparel, and framed prints.
         </p>
       </div>
 
       <div
         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
       >
-        <h3 class="text-xl font-semibold tracking-wide">Test</h3>
-        <p class="text-xs tracking-wide uppercase">Refine with Feedback</p>
+        <h3 class="text-xl font-semibold tracking-wide">Vue 3 & Pinia Storefront</h3>
+        <p class="text-xs tracking-wide uppercase">Interactive Cart & Order Receipt</p>
         <p class="mt-3">
-          Friends, family, and customers tested the site across devices. I adjusted spacing,
-          navigation, and readability based on their input.
-        </p>
-      </div>
-
-      <div
-        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-blue"
-      >
-        <h3 class="text-xl font-semibold tracking-wide">Deliver</h3>
-        <p class="text-xs tracking-wide uppercase">Launch and Learn</p>
-        <p class="mt-3">
-          The site launched as a fast, responsive, multilingual experience. While analytics came
-          later, qualitative feedback confirmed strong usability and brand alignment.
+          Engineered a responsive single-page app featuring reusable product cards, an adaptive
+          gift-box cart modal, and a four-step checkout flow with receipt confirmation.
         </p>
       </div>
     </CaseUxLens>
