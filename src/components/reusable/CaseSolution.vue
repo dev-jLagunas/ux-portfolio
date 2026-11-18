@@ -2,19 +2,12 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import {
-  IconTarget,
-  IconRoute,
-  IconStack2,
-  IconChevronLeft,
-  IconChevronRight,
-  IconPlus,
-} from '@tabler/icons-vue'
+import { IconPlus, IconX, IconHelpCircle } from '@tabler/icons-vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Props
 const props = defineProps({
+  id: String,
   introText: {
     type: String,
     required: true,
@@ -25,7 +18,7 @@ const props = defineProps({
   },
   introText3: {
     type: String,
-    required: true,
+    required: false,
   },
   beforeTabs: {
     type: Array,
@@ -37,325 +30,336 @@ const props = defineProps({
   },
   beforeTitle: {
     type: String,
-    default: 'Before',
+    default: 'Phase One',
   },
   afterTitle: {
     type: String,
-    default: 'After',
+    default: 'Phase Two',
+  },
+  hmwTitle: {
+    type: String,
+    default: 'Key Design Questions',
+  },
+  hmwIntro: {
+    type: String,
+    default: '',
+  },
+  hmwItems: {
+    type: Array,
+    default: () => [],
   },
 })
 
-// Combined Data
-const allCards = computed(() => {
-  const before = props.beforeTabs.map((tab) => ({ ...tab, phaseTitle: props.beforeTitle }))
-  const after = props.afterTabs.map((tab) => ({ ...tab, phaseTitle: props.afterTitle }))
-  return [...before, ...after]
+// Feature items that have both copy and visual
+const featureItems = computed(() => {
+  const firstGroup = (props.beforeTabs || [])
+    .filter((tab) => tab.heading)
+    .map((tab) => ({ ...tab, groupLabel: props.beforeTitle }))
+
+  const secondGroup = (props.afterTabs || [])
+    .filter((tab) => tab.heading)
+    .map((tab) => ({ ...tab, groupLabel: props.afterTitle }))
+
+  return [...firstGroup, ...secondGroup]
 })
 
-// Refs & State
+// Extra standalone screenshots without headings (e.g., solution7, solution8, solution9)
+const extraScreens = computed(() => {
+  const all = [...(props.beforeTabs || []), ...(props.afterTabs || [])]
+  return all.filter((tab) => !tab.heading && tab.image)
+})
+
 const solutionRoot = ref(null)
-const carouselRef = ref(null)
+const activeFeatureIdx = ref(0)
 const isModalOpen = ref(false)
-const modalImageSrc = ref('')
+const modalData = ref(null)
 
 let ctx
-let autoScrollTimer = null
-const autoDirection = ref('right')
+let demoTimers = []
+const hasRunDemo = ref(false)
 
-// Base Carousel Scrolling Logic
-const scrollCarousel = (direction) => {
-  if (!carouselRef.value) return
-
-  const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : window.innerWidth * 0.4
-
-  carouselRef.value.scrollBy({
-    left: direction === 'left' ? -scrollAmount : scrollAmount,
-    behavior: 'smooth',
-  })
+const clearDemoTimers = () => {
+  demoTimers.forEach((id) => clearTimeout(id))
+  demoTimers = []
 }
 
-// Autoscroll Ping-Pong Logic
-const autoScrollStep = () => {
-  if (!carouselRef.value) return
+const selectTab = (idx) => {
+  clearDemoTimers()
+  activeFeatureIdx.value = idx
+}
 
-  const el = carouselRef.value
+const runTabPreviewCycle = () => {
+  const count = featureItems.value.length
+  if (hasRunDemo.value || count <= 1) return
+  hasRunDemo.value = true
 
-  if (autoDirection.value === 'right' && el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
-    autoDirection.value = 'left'
-  } else if (autoDirection.value === 'left' && el.scrollLeft <= 10) {
-    autoDirection.value = 'right'
+  const stepMs = 260
+
+  for (let i = 1; i <= count; i++) {
+    const timerId = setTimeout(() => {
+      activeFeatureIdx.value = i === count ? 0 : i
+    }, i * stepMs)
+    demoTimers.push(timerId)
   }
-
-  scrollCarousel(autoDirection.value)
 }
 
-const startAutoScroll = () => {
-  stopAutoScroll()
-  autoScrollTimer = setInterval(autoScrollStep, 3000)
+const openFeatureModal = (item) => {
+  clearDemoTimers()
+  modalData.value = {
+    image: item.image,
+    eyebrow: item.groupLabel || 'Solution Detail',
+    title: item.heading || item.title || 'Screen Preview',
+    subtitle: item.title || '',
+    description: item.description || '',
+  }
+  isModalOpen.value = true
 }
 
-const stopAutoScroll = () => {
-  if (autoScrollTimer) clearInterval(autoScrollTimer)
-}
-
-const handleManualScroll = (direction) => {
-  autoDirection.value = direction
-  scrollCarousel(direction)
-  startAutoScroll()
-}
-
-// Modal Logic
-const openModal = (imageSrc) => {
-  stopAutoScroll()
-  modalImageSrc.value = imageSrc
+const openScreenModal = (imgSrc, index) => {
+  clearDemoTimers()
+  modalData.value = {
+    image: imgSrc,
+    eyebrow: 'Interface Preview',
+    title: `Additional View 0${index + 1}`,
+    subtitle: '',
+    description: '',
+  }
   isModalOpen.value = true
 }
 
 const closeModal = () => {
   isModalOpen.value = false
-  modalImageSrc.value = ''
-  startAutoScroll()
+  modalData.value = null
 }
 
 onMounted(() => {
-  startAutoScroll()
-
   ctx = gsap.context(() => {
-    // 1. Header fade-in
-    gsap.from('.section-header-wrapper', {
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.section-header-wrapper',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
+    const blocks = gsap.utils.toArray('.solution-reveal')
+
+    blocks.forEach((block) => {
+      gsap.from(block, {
+        y: 24,
+        opacity: 0,
+        duration: 0.65,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 88%',
+          toggleActions: 'play none none reverse',
+        },
+      })
     })
 
-    // 2. Vision, Strategy, Blueprint blocks fade-in
-    gsap.from('.solution-block', {
-      y: 35,
-      opacity: 0,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.solution-intro-grid',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
-    })
-
-    // 3. Gallery section fade-in
-    gsap.from('.gallery-section-wrap', {
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.gallery-section-wrap',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
-      },
-    })
-
-    // 4. Detail cards staggered reveal
-    gsap.from('.detail-card-item', {
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.details-grid',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
+    // Quick one-time tab cycle when the System Breakdown enters view
+    ScrollTrigger.create({
+      trigger: '.solution-breakdown-wrap',
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        const startDelay = setTimeout(() => {
+          runTabPreviewCycle()
+        }, 350)
+        demoTimers.push(startDelay)
       },
     })
   }, solutionRoot.value)
 })
 
 onUnmounted(() => {
-  stopAutoScroll()
+  clearDemoTimers()
   if (ctx) ctx.revert()
 })
 </script>
 
 <template>
-  <section ref="solutionRoot" id="the-solution" class="mt-10 mx-auto px-4 overflow-x-hidden">
-    <div class="section-header-wrapper mb-12">
-      <h3 class="section-title text-4xl md:text-5xl font-black uppercase">The Solution</h3>
-      <div class="section-phase font-bold tracking-widest uppercase text-sm">
-        Ideate – Prototype
+  <section
+    :id="id || 'solution-section'"
+    ref="solutionRoot"
+    class="pt-20 md:pt-48 max-w-7xl mx-auto"
+  >
+    <!-- Part 1: Solution Narrative + Key Design Questions -->
+    <div class="solution-reveal solution-top-grid">
+      <div class="solution-main-col">
+        <span class="solution-eyebrow">Execution & Architecture</span>
+        <h2 class="solution-title">The Solution</h2>
+
+        <div class="space-y-4 mt-5">
+          <p class="solution-body-text">{{ introText }}</p>
+          <p class="solution-body-text">{{ introText2 }}</p>
+          <p v-if="introText3" class="solution-body-text opacity-90">{{ introText3 }}</p>
+        </div>
+      </div>
+
+      <aside v-if="hmwItems && hmwItems.length" class="solution-aside-col">
+        <div class="mb-1">
+          <span class="solution-meta-label">{{ hmwTitle }}</span>
+          <p v-if="hmwIntro" class="text-sm opacity-75">{{ hmwIntro }}</p>
+        </div>
+
+        <div v-for="(item, idx) in hmwItems" :key="idx" class="hmw-card">
+          <div class="flex items-start gap-2.5 mb-2">
+            <IconHelpCircle class="text-pink shrink-0 mt-0.5" :size="18" />
+            <p class="hmw-question">{{ item.question }}</p>
+          </div>
+          <p class="hmw-response">{{ item.response }}</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Part 2: Interactive Feature & UI Explorer -->
+    <div v-if="featureItems.length" class="solution-reveal solution-breakdown-wrap mt-32">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="solution-meta-label">System Breakdown</span>
+          <h3 class="text-xl md:text-2xl font-black uppercase tracking-tight">
+            Key Decisions & Interface
+          </h3>
+        </div>
+
+        <!-- Pill Navigation -->
+        <div class="solution-tab-bar" role="tablist">
+          <button
+            v-for="(item, idx) in featureItems"
+            :key="idx"
+            type="button"
+            role="tab"
+            :aria-selected="activeFeatureIdx === idx"
+            @click="selectTab(idx)"
+            class="solution-tab-btn"
+            :class="{ 'is-active': activeFeatureIdx === idx }"
+          >
+            {{ item.title || item.heading }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Feature Stage -->
+      <div
+        v-if="featureItems[activeFeatureIdx]"
+        :key="activeFeatureIdx"
+        class="solution-stage-grid"
+      >
+        <div class="solution-copy-col">
+          <div class="flex items-center gap-3">
+            <span class="solution-index-label">
+              0{{ activeFeatureIdx + 1 }} / 0{{ featureItems.length }}
+            </span>
+            <span v-if="featureItems[activeFeatureIdx].groupLabel" class="solution-group-pill">
+              {{ featureItems[activeFeatureIdx].groupLabel }}
+            </span>
+          </div>
+
+          <h4 class="solution-feature-heading">
+            {{ featureItems[activeFeatureIdx].heading }}
+          </h4>
+
+          <p class="text-base md:text-lg leading-relaxed opacity-90">
+            {{ featureItems[activeFeatureIdx].description }}
+          </p>
+
+          <div v-if="featureItems[activeFeatureIdx].title" class="solution-pillar-callout">
+            <span class="solution-pillar-label">Focus Area</span>
+            <p class="solution-pillar-value">{{ featureItems[activeFeatureIdx].title }}</p>
+          </div>
+        </div>
+
+        <div class="solution-media-col">
+          <div
+            v-if="featureItems[activeFeatureIdx].image"
+            class="solution-img-wrapper group"
+            @click="openFeatureModal(featureItems[activeFeatureIdx])"
+          >
+            <img
+              :src="featureItems[activeFeatureIdx].image"
+              :alt="featureItems[activeFeatureIdx].heading"
+              class="solution-image-file"
+            />
+            <span class="solution-zoom-badge">
+              <IconPlus :size="15" />
+              <span>Inspect</span>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <article>
-      <div class="solution-intro-grid grid grid-cols-1 md:grid-cols-3 gap-4 mb-16 md:mb-24">
-        <div class="solution-block">
-          <div class="solution-icon-wrapper mb-4">
-            <IconTarget size="32" class="solution-icon" />
-          </div>
-          <div class="solution-content">
-            <h4 class="solution-block-title font-bold uppercase text-lg mb-2">The Vision</h4>
-            <p class="solution-text leading-relaxed">{{ introText }}</p>
-          </div>
-        </div>
-
-        <div class="solution-block">
-          <div class="solution-icon-wrapper mb-4">
-            <IconRoute size="32" class="solution-icon" />
-          </div>
-          <div class="solution-content">
-            <h4 class="solution-block-title font-bold uppercase text-lg mb-2">The Strategy</h4>
-            <p class="solution-text leading-relaxed">{{ introText2 }}</p>
-          </div>
-        </div>
-
-        <div class="solution-block">
-          <div class="solution-icon-wrapper mb-4">
-            <IconStack2 size="32" class="solution-icon" />
-          </div>
-          <div class="solution-content">
-            <h4 class="solution-block-title font-bold uppercase text-lg mb-2">The Blueprint</h4>
-            <p class="solution-text leading-relaxed">{{ introText3 }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-section-wrap w-full mb-16 md:my-24 relative">
-        <h4 class="text-2xl md:text-3xl font-black uppercase mb-6">Gallery</h4>
-
+    <!-- Part 3: Additional Screens Strip (if extra screenshots exist) -->
+    <div v-if="extraScreens.length" class="solution-reveal mt-16">
+      <span class="solution-meta-label mb-4">Additional Views</span>
+      <div class="solution-extras-grid">
         <div
-          class="relative w-full -mx-4 md:-mx-8 px-4 md:px-8"
-          @mouseenter="stopAutoScroll"
-          @mouseleave="startAutoScroll"
+          v-for="(screen, idx) in extraScreens"
+          :key="idx"
+          class="solution-extra-card group"
+          @click="openScreenModal(screen.image, idx)"
         >
-          <div
-            ref="carouselRef"
-            class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide"
-          >
-            <template v-for="(card, idx) in allCards" :key="`img-${idx}`">
-              <div
-                v-if="card.image"
-                class="relative shrink-0 snap-center w-[85vw] md:w-[60vw] lg:w-[45vw] cursor-pointer group"
-                @click="openModal(card.image)"
-              >
-                <div
-                  class="w-full h-[300px] md:h-[450px] rounded-xl overflow-hidden border border-gray-300 shadow-sm group-hover:shadow-xl transition-shadow p-4"
-                >
-                  <img
-                    :src="card.image"
-                    :alt="`Gallery image ${idx + 1}`"
-                    class="w-full h-full object-contain bg-blue/30 transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div
-                  class="absolute top-6 right-6 rounded-2xl bg-pink text-white p-2 shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none border"
-                >
-                  <IconPlus size="24" />
-                </div>
-              </div>
-            </template>
-          </div>
-
-          <div
-            class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-6 z-20 pointer-events-none"
-          >
-            <button
-              @click="handleManualScroll('left')"
-              class="pointer-events-auto w-14 h-14 md:w-16 md:h-16 rounded-full text-light bg-pink flex items-center justify-center hover:scale-110 transition-transform shadow-2xl backdrop-blur-xl"
-              aria-label="Scroll left"
-            >
-              <IconChevronLeft size="32" stroke-width="2.5" />
-            </button>
-            <button
-              @click="handleManualScroll('right')"
-              class="pointer-events-auto w-14 h-14 md:w-16 md:h-16 rounded-full text-light bg-pink flex items-center justify-center hover:scale-110 transition-transform shadow-2xl backdrop-blur-xl"
-              aria-label="Scroll right"
-            >
-              <IconChevronRight size="32" stroke-width="2.5" />
-            </button>
-          </div>
+          <img
+            :src="screen.image"
+            :alt="`Additional interface view ${idx + 1}`"
+            class="solution-extra-img"
+            loading="lazy"
+          />
+          <span class="solution-zoom-badge">
+            <IconPlus :size="14" />
+            <span>View</span>
+          </span>
         </div>
-      </div>
-
-      <div class="w-full mb-16">
-        <h4 class="text-2xl md:text-3xl font-black uppercase mb-8">The Details</h4>
-
-        <div class="details-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          <template v-for="(card, idx) in allCards" :key="`text-${idx}`">
-            <div
-              v-if="card.heading"
-              class="detail-card-item flex flex-col p-6 md:p-8 rounded-xl shadow-sm border border-gray-300 h-full"
-            >
-              <span
-                class="text-xs font-black tracking-widest uppercase border border-dark/10 px-4 py-2 rounded-2xl w-fit mb-4 block bg-pink"
-              >
-                {{ card.phaseTitle }}
-              </span>
-
-              <h3 class="text-2xl font-black uppercase leading-tight mb-4">
-                {{ card.heading }}
-              </h3>
-
-              <p class="text-base mb-6 flex-grow">
-                {{ card.description }}
-              </p>
-
-              <div v-if="card.title" class="rounded p-4 mt-auto border-l-4 border-l-pink">
-                <h4 class="text-xs font-bold uppercase tracking-wider">
-                  {{ card.title }}
-                </h4>
-                <p v-if="card.statementDetails" class="text-sm mt-2 font-medium">
-                  {{ card.statementDetails }}
-                </p>
-              </div>
-            </div>
-          </template>
-        </div>
-      </div>
-    </article>
-
-    <div
-      v-if="isModalOpen"
-      class="fixed inset-0 flex items-center justify-center z-50 p-4 bg-dark/99"
-      @click.self="closeModal"
-    >
-      <div class="relative w-full max-w-5xl flex flex-col items-center">
-        <button
-          @click="closeModal"
-          class="absolute text-pink text-6xl right-0 hover:scale-110 font-bold hover:cursor-pointer z-10 transition-all"
-        >
-          &times;
-        </button>
-
-        <img
-          v-if="modalImageSrc"
-          :src="modalImageSrc"
-          alt="Enlarged gallery view"
-          class="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
-        />
       </div>
     </div>
   </section>
+
+  <!-- 2-Column Light Solution Modal -->
+  <div v-if="isModalOpen && modalData" class="solution-modal-backdrop" @click.self="closeModal">
+    <div class="solution-modal-card" :class="modalData.description ? 'max-w-4xl' : 'max-w-3xl'">
+      <button
+        type="button"
+        @click="closeModal"
+        class="solution-modal-close"
+        aria-label="Close preview"
+      >
+        <IconX :size="22" />
+      </button>
+
+      <div v-if="modalData.description" class="solution-modal-grid">
+        <div class="solution-modal-media">
+          <img
+            :src="modalData.image"
+            :alt="modalData.title"
+            class="solution-modal-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="solution-modal-copy">
+          <span class="solution-eyebrow">{{ modalData.eyebrow }}</span>
+          <h3 class="solution-feature-heading mb-4">{{ modalData.title }}</h3>
+
+          <div v-if="modalData.subtitle" class="solution-pillar-callout mb-4">
+            <span class="solution-pillar-label">Focus Area</span>
+            <p class="solution-pillar-value">{{ modalData.subtitle }}</p>
+          </div>
+
+          <p class="text-sm md:text-base leading-relaxed opacity-90">
+            {{ modalData.description }}
+          </p>
+        </div>
+      </div>
+
+      <div v-else class="flex flex-col items-center pt-4">
+        <span class="solution-eyebrow mb-3">{{ modalData.eyebrow }}</span>
+        <img
+          :src="modalData.image"
+          :alt="modalData.title"
+          class="w-full max-h-[65vh] object-contain rounded-2xl"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.solution-block,
-.detail-card-item,
-.gallery-section-wrap {
+.solution-reveal {
   will-change: transform, opacity;
 }
 </style>

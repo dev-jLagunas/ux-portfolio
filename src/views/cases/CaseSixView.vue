@@ -193,7 +193,7 @@ const reflections = [
         'I owned the entire rebuild from initial discovery and information architecture to visual design, front-end production, and CMS setup. The goal was straightforward: give B2B facility managers a clear, trustworthy way to verify services and initiate contact, while giving internal staff a publishing setup they could actually use.',
       ]"
       role="Lead Product Designer (End-to-End Freelance)"
-      date="November - December 2025"
+      date="11/25 - 1/2026"
       toolkit="Figma, Nuxt 4, Tailwind CSS, Contentful, Netlify"
       pdfFile="case-study-denki.pdf"
     />

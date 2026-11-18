@@ -91,15 +91,15 @@ body {
 }
 
 .section-header-wrapper {
-  @apply w-full mt-32 mb-8 gap-4 text-center;
+  @apply w-full mt-32 mb-8 gap-4;
 }
 
 .section-title {
-  @apply text-3xl md:text-5xl text-center font-black font-special uppercase tracking-tighter;
+  @apply text-3xl md:text-5xl  font-black font-special uppercase tracking-tighter;
 }
 
 .section-phase {
-  @apply rounded text-copy/90 text-center px-5 py-2 text-xs font-black w-full uppercase tracking-[0.4em] leading-none;
+  @apply rounded text-pink text-start mb-2 text-xs font-black w-full uppercase tracking-[0.4em] leading-none;
 }
 /***************************************
 Navbar Styles
@@ -326,115 +326,138 @@ Case Reflections Styles
 }
 
 /***************************************
-Case Overview Styles (Full-Sized Refactor)
+Case Overview Styles
 *****************************************/
 
-/* Scale the title significantly on larger screens */
-.overview-title {
-  @apply text-5xl  md:text-6xl xl:text-7xl w-full font-black uppercase my-2;
+.overview-header {
+  @apply mb-8;
 }
 
-.tag-slot-machine-wrapper {
-  @apply flex justify-center items-center h-8 overflow-hidden mb-4;
+.overview-eyebrow {
+  @apply text-xs font-black uppercase tracking-[0.3em] text-pink;
+}
+
+.overview-title {
+  @apply font-special text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight mb-5;
 }
 
 .overview-tag-list {
-  @apply relative h-full w-full flex justify-center items-center;
-  @apply text-sm md:text-base font-bold uppercase tracking-widest text-pink;
+  @apply flex flex-wrap items-center gap-2;
 }
 
-.tag-item {
-  @apply absolute list-none whitespace-nowrap;
-  /* Ensure they are stacked on top of each other for the animation logic */
-  transform: translateY(0);
+.overview-tag-pill {
+  @apply px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full border border-black/15;
 }
 
-/* Metadata Container */
+.overview-body-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start;
+}
+
+.overview-copy-col {
+  @apply lg:col-span-5;
+}
+
+.overview-media-col {
+  @apply lg:col-span-7 flex flex-col gap-6;
+}
+
+/* Metadata Row Beneath Video */
 .header-metadata {
-  @apply mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-4;
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-4;
 }
 
-/* Individual Card Styling */
 .metadata-card {
-  @apply flex items-center gap-2;
-  @apply transition-colors duration-300;
+  @apply flex items-start gap-2.5;
 }
 
-/* Text Wrapper for better alignment */
 .metadata-text {
-  @apply flex flex-col items-start text-left overflow-hidden;
+  @apply flex flex-col text-left;
 }
 
 .metadata-label {
-  @apply text-[10px] uppercase tracking-widest font-black opacity-50 mb-0.5;
+  @apply text-[10px] font-black uppercase tracking-widest opacity-60 mb-0.5;
 }
 
 .metadata-value {
-  @apply text-sm  w-full xl:text-base;
+  @apply text-sm font-medium leading-snug;
 }
 
-/* High-impact Video Container */
+/* Borderless Video Container */
 .video-container-full {
-  @apply w-full max-w-[1100px] mx-auto px-4;
+  @apply w-full rounded-2xl overflow-hidden;
 }
 
 .hero-video {
-  @apply w-full h-auto rounded-sm;
-}
-
-.work-title {
-  @apply text-3xl md:text-4xl font-black mb-4 border-l-8 border-pink pl-4;
+  @apply w-full h-auto block;
 }
 
 .live-site-link {
-  @apply flex items-center gap-2  text-blue hover:text-pink transition-colors underline underline-offset-8 decoration-2 text-base;
+  @apply inline-flex items-center gap-1.5 text-blue text-xs font-bold uppercase tracking-wider hover:underline underline-offset-4 decoration-2 transition-all duration-200;
 }
 
 /***************************************
 Case Problem Styles
 *****************************************/
-.problem-cards-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-4;
+
+.problem-top-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch;
 }
 
-.problem-card {
-  @apply flex flex-col gap-4 mb-4 items-center;
+.problem-main-col {
+  @apply lg:col-span-7 flex flex-col justify-center;
 }
 
-.problem-card-wide {
-  @apply md:col-span-2 xl:col-span-1;
+.problem-eyebrow {
+  @apply text-xs font-black uppercase tracking-[0.3em] text-pink block mb-2;
 }
 
-.problem-card-icon {
-  @apply w-12 h-12 flex items-center justify-center rounded-lg;
+.problem-title {
+  @apply font-special text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight;
 }
 
-.problem-card-icon svg {
-  @apply w-6 h-6;
+.problem-body-text {
+  @apply text-base md:text-lg leading-relaxed;
 }
 
-.problem-card-text {
-  @apply text-lg;
+.problem-aside-col {
+  @apply lg:col-span-5 flex flex-col justify-center gap-4 lg:mt-24;
 }
 
-.research-header {
-  @apply w-full text-center font-black uppercase tracking-widest mt-8;
+.problem-quote-box {
+  @apply rounded-3xl border border-black/5  px-6 py-5;
 }
 
+.problem-quote-text {
+  @apply text-base md:text-lg font-bold leading-snug;
+}
+
+.problem-takeaway-box {
+  @apply rounded-3xl border border-black/5  px-6 py-5;
+}
+
+.problem-meta-label {
+  @apply text-[11px] font-black uppercase tracking-[0.25em] text-pink block mb-1;
+}
+
+.problem-takeaway-text {
+  @apply text-sm md:text-base leading-relaxed opacity-90;
+}
+
+/* Research Methods 3-Column Grid */
 .research-insights-container {
-  @apply w-full  mb-8;
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
 }
 
 .research-row {
-  @apply flex items-center gap-6 p-4;
+  @apply flex items-start gap-4 p-5 rounded-3xl border border-black/5;
 }
 
 .research-row-icon {
-  @apply flex-shrink-0;
+  @apply shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-pink/10 p-2;
 }
 
 .research-row-icon img {
-  @apply h-12 w-12 object-contain;
+  @apply w-full h-full object-contain;
 }
 
 .research-row-content {
@@ -442,11 +465,101 @@ Case Problem Styles
 }
 
 .research-row-title {
-  @apply font-bold text-lg;
+  @apply font-bold text-base uppercase tracking-tight;
 }
 
 .research-row-desc {
-  @apply text-lg;
+  @apply text-sm leading-relaxed opacity-85;
+}
+
+/* Tabbed Artifact Switcher */
+.artifact-tab-bar {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.artifact-tab-btn {
+  @apply px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-black/5  transition-all duration-200 cursor-pointer;
+}
+
+.artifact-tab-btn:hover {
+  @apply border-pink text-pink;
+}
+
+.artifact-tab-btn.is-active {
+  @apply bg-pink text-white border-pink;
+}
+
+.artifact-stage-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center;
+}
+
+.artifact-copy-col {
+  @apply lg:col-span-6 flex flex-col gap-4;
+}
+
+.artifact-index-label {
+  @apply text-xs font-black tracking-widest opacity-50;
+}
+
+.artifact-heading {
+  @apply font-special text-2xl md:text-3xl uppercase tracking-tight;
+}
+
+.artifact-callout {
+  @apply rounded-2xl border border-black/5  px-5 py-4;
+}
+
+.artifact-callout-label {
+  @apply text-[10px] font-black uppercase tracking-widest text-blue block mb-1;
+}
+
+.artifact-callout-text {
+  @apply text-sm md:text-base font-medium leading-snug;
+}
+
+.artifact-media-col {
+  @apply lg:col-span-6 flex justify-center;
+}
+
+.editorial-img-wrapper {
+  @apply relative w-full max-w-md rounded-2xl overflow-hidden border border-black/5  cursor-zoom-in transition-transform duration-300 hover:scale-[1.01];
+}
+
+.artifact-image-file {
+  @apply w-full max-h-[550px] object-contain mx-auto block;
+}
+
+.artifact-zoom-badge {
+  @apply absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark/85 text-white text-xs font-bold uppercase tracking-wider group-hover:bg-pink transition-colors duration-200;
+}
+
+/* 2-Column Light Artifact Modal */
+.artifact-modal-backdrop {
+  @apply fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 md:p-8 cursor-zoom-out;
+}
+
+.artifact-modal-card {
+  @apply relative w-full max-w-4xl rounded-3xl bg-light border-black/15  p-6 md:p-8 shadow-xl cursor-default;
+}
+
+.artifact-modal-close {
+  @apply absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full border border-black/15  hover:bg-pink hover:text-white hover:border-pink transition-colors cursor-pointer;
+}
+
+.artifact-modal-grid {
+  @apply grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center;
+}
+
+.artifact-modal-media {
+  @apply md:col-span-6 flex items-center justify-center rounded-2xl  p-3;
+}
+
+.artifact-modal-img {
+  @apply w-full max-h-[55vh] object-contain rounded-xl;
+}
+
+.artifact-modal-copy {
+  @apply md:col-span-6 flex flex-col justify-center;
 }
 
 /***************************************
@@ -531,32 +644,152 @@ Case Sticky Nav (Visibility Fix)
 Case Solution
 *****************************************/
 
-.solution-intro-grid {
-  @apply flex flex-col w-full mt-8 mb-4 space-y-4 max-w-6xl;
+.solution-top-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch;
 }
 
-.solution-block {
-  @apply flex flex-col md:flex-row gap-2 md:gap-4 items-start;
+.solution-main-col {
+  @apply lg:col-span-7 flex flex-col justify-center;
 }
 
-.solution-icon-wrapper {
-  @apply shrink-0 p-4 bg-pink/5 rounded-xl border border-pink/10;
+.solution-eyebrow {
+  @apply text-xs font-black uppercase tracking-[0.3em] text-pink block mb-2;
 }
 
-.solution-icon {
-  @apply w-8 h-8 md:w-10 md:h-10 text-pink;
+.solution-title {
+  @apply font-special text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight;
 }
 
-.solution-content {
-  @apply flex flex-col;
+.solution-body-text {
+  @apply text-base md:text-lg leading-relaxed;
 }
 
-.solution-block-title {
-  @apply text-xl md:text-2xl font-black uppercase tracking-tight;
+.solution-aside-col {
+  @apply lg:col-span-5 flex flex-col justify-center gap-3;
 }
 
-.solution-text {
-  @apply text-base md:text-lg leading-normal;
+.solution-meta-label {
+  @apply text-[11px] font-black uppercase tracking-[0.25em] text-pink block mb-1;
+}
+
+.hmw-card {
+  @apply rounded-3xl border border-black/5 dark:border-white/10 px-5;
+}
+
+.hmw-question {
+  @apply text-sm font-bold leading-snug;
+}
+
+.hmw-response {
+  @apply text-xs md:text-sm leading-relaxed opacity-85 pl-7;
+}
+
+/* Feature Tab Bar */
+.solution-tab-bar {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.solution-tab-btn {
+  @apply px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-black/15 dark:border-white/15 transition-all duration-200 cursor-pointer;
+}
+
+.solution-tab-btn:hover {
+  @apply border-pink text-pink;
+}
+
+.solution-tab-btn.is-active {
+  @apply bg-pink text-white border-pink;
+}
+
+/* Active Feature Stage */
+.solution-stage-grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center;
+}
+
+.solution-copy-col {
+  @apply lg:col-span-5 flex flex-col gap-4;
+}
+
+.solution-index-label {
+  @apply text-xs font-black tracking-widest opacity-50;
+}
+
+.solution-group-pill {
+  @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-black/15 dark:border-white/15 opacity-80;
+}
+
+.solution-feature-heading {
+  @apply font-special text-2xl md:text-3xl uppercase tracking-tight leading-snug;
+}
+
+.solution-pillar-callout {
+  @apply rounded-2xl border border-black/5 px-5 py-3.5 mt-1;
+}
+
+.solution-pillar-label {
+  @apply text-[10px] font-black uppercase tracking-widest text-blue block mb-0.5;
+}
+
+.solution-pillar-value {
+  @apply text-sm font-bold leading-snug;
+}
+
+.solution-media-col {
+  @apply lg:col-span-7 flex justify-center;
+}
+
+.solution-img-wrapper {
+  @apply relative w-full rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 cursor-zoom-in transition-transform duration-300 hover:scale-[1.01];
+}
+
+.solution-image-file {
+  @apply w-full max-h-[420px] object-contain mx-auto block;
+}
+
+.solution-zoom-badge {
+  @apply absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark/85 text-white text-xs font-bold uppercase tracking-wider group-hover:bg-pink transition-colors duration-200;
+}
+
+/* Extra Screenshots Grid */
+.solution-extras-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.solution-extra-card {
+  @apply relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 cursor-zoom-in transition-transform duration-300 hover:scale-[1.01];
+}
+
+.solution-extra-img {
+  @apply w-full h-56 object-contain mx-auto block p-2;
+}
+
+/* 2-Column Light Solution Modal */
+.solution-modal-backdrop {
+  @apply fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 md:p-8 cursor-zoom-out;
+}
+
+.solution-modal-card {
+  @apply relative w-full rounded-3xl bg-light  border border-black/15 dark:border-white/15 p-6 md:p-12 shadow-xl cursor-default;
+}
+
+.solution-modal-close {
+  @apply absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full border border-black/15 dark:border-white/15 hover:bg-pink hover:text-white hover:border-pink transition-colors cursor-pointer;
+}
+
+.solution-modal-grid {
+  @apply grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center;
+}
+
+.solution-modal-media {
+  @apply md:col-span-6 flex items-center justify-center rounded-2xl p-3;
+}
+
+.solution-modal-img {
+  @apply w-full max-h-[55vh] object-contain rounded-xl;
+}
+
+.solution-modal-copy {
+  @apply md:col-span-6 flex flex-col justify-center;
 }
 
 /***************************************

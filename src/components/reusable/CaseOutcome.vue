@@ -70,7 +70,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="outcomeRoot" id="outcome-section" class="w-fit mx-auto my-32">
+  <section ref="outcomeRoot" id="outcome-section" class="max-w-7xl mx-auto my-32">
     <div class="section-header-wrapper">
       <h3 class="section-title">The Outcome</h3>
       <div class="section-phase">Prototype - Test</div>

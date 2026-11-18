@@ -1,66 +1,40 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { IconPlus } from '@tabler/icons-vue'
+import { IconPlus, IconX, IconQuote } from '@tabler/icons-vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const isModalOpen = ref(false)
-const currentIndex = ref(0)
-const artifactsContainer = ref(null)
+const activeArtifactIdx = ref(0)
+const sectionRef = ref(null)
 
 let ctx
 
 const openModal = (idx) => {
+  activeArtifactIdx.value = idx
   isModalOpen.value = true
-  currentIndex.value = idx
 }
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
   ctx = gsap.context(() => {
-    // Only run the alternating animation on desktop so mobile doesn't feel erratic
-    const mm = gsap.matchMedia()
+    const blocks = gsap.utils.toArray('.problem-reveal')
 
-    mm.add('(min-width: 768px)', () => {
-      const cards = gsap.utils.toArray('.artifact-slide')
-
-      cards.forEach((card, index) => {
-        // Even indices come from the left (-100), odd from the right (100)
-        const xOffset = index % 2 === 0 ? -100 : 100
-
-        gsap.from(card, {
-          x: xOffset,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
-        })
+    blocks.forEach((block) => {
+      gsap.from(block, {
+        y: 24,
+        opacity: 0,
+        duration: 0.65,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 88%',
+          toggleActions: 'play none none reverse',
+        },
       })
     })
-
-    // Mobile fallback: simple fade in up
-    mm.add('(max-width: 767px)', () => {
-      const cards = gsap.utils.toArray('.artifact-slide')
-      cards.forEach((card) => {
-        gsap.from(card, {
-          y: 50,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse',
-          },
-        })
-      })
-    })
-  }, artifactsContainer.value)
+  }, sectionRef.value)
 })
 
 onUnmounted(() => {
@@ -90,183 +64,177 @@ const props = defineProps({
 </script>
 
 <template>
-  <section id="problem-section" class="my-24">
-    <div class="section-header-wrapper">
-      <h3 class="section-title">The Problem</h3>
-      <div class="section-phase">Empathize – Define</div>
+  <section :id="id || 'problem-section'" ref="sectionRef" class="pt-20 md:pt-28 max-w-7xl mx-auto">
+    <!-- Part 1: Problem Framing + Anchor Quote & Key Takeaway -->
+    <div class="problem-reveal problem-top-grid">
+      <div class="problem-main-col">
+        <span class="problem-eyebrow">Discovery & Friction</span>
+        <h2 class="problem-title">The Problem</h2>
+
+        <div class="space-y-4 mt-5">
+          <p class="problem-body-text">{{ problemStatement }}</p>
+          <p class="problem-body-text">{{ problemStatementB }}</p>
+        </div>
+      </div>
+
+      <aside class="problem-aside-col">
+        <div v-if="quote" class="problem-quote-box">
+          <IconQuote class="text-pink shrink-0 mb-2" :size="20" />
+          <blockquote class="problem-quote-text">“{{ quote }}”</blockquote>
+        </div>
+
+        <div v-if="takeaway" class="problem-takeaway-box">
+          <span class="problem-meta-label">Core Takeaway</span>
+          <p class="problem-takeaway-text">{{ takeaway }}</p>
+        </div>
+      </aside>
     </div>
 
-    <article class="flex-col-center">
-      <div class="problem-cards-grid">
-        <div class="problem-card">
-          <div class="problem-card-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="m15 9-6 6" />
-              <path d="m9 9 6 6" />
-            </svg>
-          </div>
-          <p class="problem-card-text">{{ problemStatement }}</p>
-        </div>
-
-        <div class="problem-card">
-          <div class="problem-card-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m7.5 4.27 9 5.15" />
-              <path
-                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
-              />
-              <path d="m3.3 7 8.7 5 8.7-5" />
-              <path d="M12 22V12" />
-            </svg>
-          </div>
-          <p class="problem-card-text">{{ problemStatementB }}</p>
-        </div>
-
-        <div class="problem-card problem-card-wide">
-          <div class="problem-card-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h9z" />
-            </svg>
-          </div>
-          <p class="problem-card-text">{{ userResearchIntro }}</p>
-        </div>
+    <!-- Part 2: Research Approach & Methods -->
+    <div
+      v-if="userResearchIntro || (researchMethods && researchMethods.length)"
+      class="problem-reveal mt-16"
+    >
+      <div class="max-w-7xl mb-8">
+        <span class="problem-meta-label">Research & Validation</span>
+        <p class="text-base md:text-lg leading-relaxed mt-2">
+          {{ userResearchIntro }}
+        </p>
       </div>
 
-      <h4 class="research-header">How I gathered insights?</h4>
-      <article v-if="researchMethods && researchMethods.length" class="research-insights-container">
-        <div v-for="(method, idx) in researchMethods" :key="idx" class="research-row">
+      <div v-if="researchMethods && researchMethods.length" class="research-insights-container">
+        <article v-for="(method, idx) in researchMethods" :key="idx" class="research-row">
           <div class="research-row-icon">
-            <img :src="method.imageSrc" alt="research technique icon" />
+            <img :src="method.imageSrc" :alt="method.caption" />
           </div>
           <div class="research-row-content">
-            <h5 class="research-row-title">{{ method.caption }}</h5>
+            <h3 class="research-row-title">{{ method.caption }}</h3>
             <p class="research-row-desc">{{ method.description }}</p>
           </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Part 3: Tabbed Research Artifacts -->
+    <div v-if="artifacts && artifacts.length" class="problem-reveal mt-32">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="problem-meta-label">Research Artifacts</span>
+          <h3 class="text-xl md:text-2xl font-black uppercase tracking-tight">
+            User Insights & Mapping
+          </h3>
         </div>
-      </article>
 
-      <div class="mb-8 md:mb-16 w-full">
-        <h4 class="research-header">Visualizing the research.</h4>
+        <div class="artifact-tab-bar" role="tablist">
+          <button
+            v-for="(artifact, idx) in artifacts"
+            :key="idx"
+            type="button"
+            role="tab"
+            :aria-selected="activeArtifactIdx === idx"
+            @click="activeArtifactIdx = idx"
+            class="artifact-tab-btn"
+            :class="{ 'is-active': activeArtifactIdx === idx }"
+          >
+            {{ artifact.caption }}
+          </button>
+        </div>
       </div>
 
-      <div ref="artifactsContainer" class="w-full flex flex-col gap-16 md:gap-32">
-        <template v-for="(artifact, idx) in props.artifacts" :key="idx">
-          <div class="artifact-slide w-full bg-transparent flex justify-center">
-            <div
-              class="slide-inner w-full max-w-[90rem] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16"
-              :class="idx % 2 !== 0 ? 'md:flex-row-reverse' : ''"
-            >
-              <div class="slide-text-content w-full md:w-[55%] flex flex-col">
-                <span
-                  class="slide-number bg-pink border border-dark/10 py-2 px-4 rounded-2xl w-fit block font-black tracking-widest text-xs uppercase mb-4"
-                >
-                  Artifact 0{{ idx + 1 }}
-                </span>
-                <h3 class="slide-title text-4xl md:text-5xl font-black uppercase leading-none mb-6">
-                  {{ artifact.caption }}
-                </h3>
-                <p class="slide-blurb text-lg leading-relaxed mb-8">{{ artifact.blurb }}</p>
+      <div v-if="artifacts[activeArtifactIdx]" :key="activeArtifactIdx" class="artifact-stage-grid">
+        <div class="artifact-copy-col">
+          <span class="artifact-index-label"
+            >0{{ activeArtifactIdx + 1 }} / 0{{ artifacts.length }}</span
+          >
+          <h4 class="artifact-heading">{{ artifacts[activeArtifactIdx].caption }}</h4>
 
-                <div
-                  class="slide-statement-grid border border-dark/10 rounded-sm px-4 py-2 md:text-lg shadow-sm"
-                >
-                  <div class="statement-item">
-                    <h4 class="statement-label font-bold text-xs uppercase tracking-wider mb-1">
-                      {{ artifact.statement }}
-                    </h4>
-                    <p class="statement-text leading-snug">{{ artifact.statementDetails }}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="editorial-img-wrapper relative w-full md:w-[30%] cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
-                @click="openModal(idx)"
-              >
-                <img
-                  :src="artifact.imageSrc"
-                  :alt="artifact.caption"
-                  class="artifact-image-file w-full h-auto object-contain rounded shadow-xl"
-                />
-                <div
-                  class="absolute bottom-2 right-2 bg-pink text-white rounded-sm p-1.5 shadow-md pointer-events-none"
-                >
-                  <IconPlus size="20" />
-                </div>
-              </div>
-            </div>
+          <div v-if="artifacts[activeArtifactIdx].statementDetails" class="artifact-callout">
+            <span class="artifact-callout-label">
+              {{ artifacts[activeArtifactIdx].statement }}
+            </span>
+            <p class="artifact-callout-text">
+              {{ artifacts[activeArtifactIdx].statementDetails }}
+            </p>
           </div>
-        </template>
-      </div>
 
-      <p
-        class="text-3xl text-center my-24 md:mt-32 font-black font-special uppercase leading-[1.3] tracking-tighter text-pink"
-      >
-        "{{ quote }}"
-      </p>
-    </article>
+          <p
+            v-if="artifacts[activeArtifactIdx].blurb"
+            class="text-base md:text-lg leading-relaxed opacity-90"
+          >
+            {{ artifacts[activeArtifactIdx].blurb }}
+          </p>
+        </div>
+
+        <div class="artifact-media-col">
+          <div class="editorial-img-wrapper group" @click="openModal(activeArtifactIdx)">
+            <img
+              :src="artifacts[activeArtifactIdx].imageSrc"
+              :alt="artifacts[activeArtifactIdx].caption"
+              class="artifact-image-file"
+            />
+            <span class="artifact-zoom-badge">
+              <IconPlus :size="15" />
+              <span>Inspect</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <div
-    v-if="isModalOpen"
-    class="fixed inset-0 bg-dark/99 flex items-center justify-center z-50 p-4"
-    @click.self="isModalOpen = false"
-  >
-    <div class="relative w-full max-w-4xl bg-transparent rounded-lg">
+  <!-- 2-Column Light Artifact Modal -->
+  <div v-if="isModalOpen" class="artifact-modal-backdrop" @click.self="isModalOpen = false">
+    <div class="artifact-modal-card">
       <button
+        type="button"
         @click="isModalOpen = false"
-        class="absolute -top-10 right-0 md:right-24 text-pink hover:scale-110 hover:font-bold hover:cursor-pointer text-5xl z-10 transition-transform"
+        class="artifact-modal-close"
+        aria-label="Close preview"
       >
-        X
+        <IconX :size="22" />
       </button>
-      <img
-        :src="props.artifacts[currentIndex].imageSrc"
-        :alt="props.artifacts[currentIndex].caption"
-        class="w-full rounded-md shadow-2xl object-contain max-h-[70vh] mx-auto"
-        loading="lazy"
-      />
-      <div class="mt-4 text-center">
-        <p class="text-white font-bold text-2xl mb-1">
-          {{ props.artifacts[currentIndex].caption }}
-        </p>
-        <p class="text-gray-200 leading-relaxed max-w-2xl mx-auto">
-          {{ props.artifacts[currentIndex].blurb }}
-        </p>
+
+      <div class="artifact-modal-grid">
+        <div class="artifact-modal-media">
+          <img
+            :src="props.artifacts[activeArtifactIdx].imageSrc"
+            :alt="props.artifacts[activeArtifactIdx].caption"
+            class="artifact-modal-img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="artifact-modal-copy">
+          <span class="problem-eyebrow">
+            Artifact 0{{ activeArtifactIdx + 1 }} / 0{{ props.artifacts.length }}
+          </span>
+          <h3 class="artifact-heading mb-4">
+            {{ props.artifacts[activeArtifactIdx].caption }}
+          </h3>
+
+          <div
+            v-if="props.artifacts[activeArtifactIdx].statementDetails"
+            class="artifact-callout mb-4"
+          >
+            <span class="artifact-callout-label">
+              {{ props.artifacts[activeArtifactIdx].statement }}
+            </span>
+            <p class="artifact-callout-text">
+              {{ props.artifacts[activeArtifactIdx].statementDetails }}
+            </p>
+          </div>
+
+          <p class="text-sm md:text-base leading-relaxed opacity-90">
+            {{ props.artifacts[activeArtifactIdx].blurb }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.problem-reveal {
+  will-change: transform, opacity;
+}
+</style>
